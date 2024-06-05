@@ -26,6 +26,15 @@
 /// \brief Alias for the namespace time_shield.
 namespace tsh = time_shield;
 
+/// \namespace time_shield
+/// \brief Main namespace for the Time Shield library.
+///
+/// The time_shield namespace contains all the core components and functions of the Time Shield library.
+/// It includes various utilities for working with time and dates, their formatting, conversion, and validation.
+namespace time_shield {
+
+}
+
 /*!
 \mainpage Time Shield Library
 

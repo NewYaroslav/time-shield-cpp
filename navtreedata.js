@@ -24,12 +24,49 @@
 */
 var NAVTREE =
 [
-  [ "Time Shield", "index.html", ]
+  [ "Time Shield", "index.html", [
+    [ "Time Shield Library", "index.html", [
+      [ "Introduction", "index.html#intro_sec", null ],
+      [ "Features", "index.html#features_sec", null ],
+      [ "Usage", "index.html#usage_sec", null ],
+      [ "Installation", "index.html#install_sec", null ],
+      [ "License", "index.html#license_sec", null ]
+    ] ],
+    [ "Namespaces", "namespaces.html", [
+      [ "Namespace List", "namespaces.html", "namespaces_dup" ],
+      [ "Namespace Members", "namespacemembers.html", [
+        [ "All", "namespacemembers.html", "namespacemembers_dup" ],
+        [ "Functions", "namespacemembers_func.html", "namespacemembers_func" ],
+        [ "Variables", "namespacemembers_vars.html", null ],
+        [ "Typedefs", "namespacemembers_type.html", null ],
+        [ "Enumerations", "namespacemembers_enum.html", null ],
+        [ "Enumerator", "namespacemembers_eval.html", null ]
+      ] ]
+    ] ],
+    [ "Classes", "annotated.html", [
+      [ "Class List", "annotated.html", "annotated_dup" ],
+      [ "Class Index", "classes.html", null ],
+      [ "Class Members", "functions.html", [
+        [ "All", "functions.html", null ],
+        [ "Variables", "functions_vars.html", null ]
+      ] ]
+    ] ],
+    [ "Files", "files.html", [
+      [ "File List", "files.html", "files_dup" ],
+      [ "File Members", "globals.html", [
+        [ "All", "globals.html", null ],
+        [ "Macros", "globals_defs.html", null ]
+      ] ]
+    ] ]
+  ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"index.html"
+"annotated.html",
+"namespacetime__shield.html#a3a73dea5d312b6f3c16903b53a9ecc5f",
+"namespacetime__shield.html#ae1efe1bed6e52c1142d78230ec4da101",
+"time__shield_8hpp_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

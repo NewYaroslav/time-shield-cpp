@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Time Shield: Main Page</title>
+<title>Time Shield: Time Shield Library</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -82,11 +82,60 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </iframe>
 </div>
 
-<div class="header">
+<div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">Time Shield Documentation</div>  </div>
+<div class="title">Time Shield Library </div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><h1><a class="anchor" id="intro_sec"></a>
+Introduction</h1>
+<p>The Time Shield Library is a comprehensive C++ library designed for time manipulation, formatting, and conversion. This library aims to provide a robust and flexible set of tools for handling various time-related tasks with ease.</p>
+<h1><a class="anchor" id="features_sec"></a>
+Features</h1>
+<ul>
+<li>Validation of dates and times</li>
+<li>Time and date formatting</li>
+<li>Time zone calculations</li>
+<li>Conversion between different time representations</li>
+<li>Utilities for time manipulation</li>
+</ul>
+<h1><a class="anchor" id="usage_sec"></a>
+Usage</h1>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="time__shield_8hpp.html">time_shield.hpp</a>&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> main() {</div>
+<div class="line">    <span class="comment">// Get the current timestamp</span></div>
+<div class="line">    <a class="code" href="namespacetime__shield.html#a183c70b9c541a395d47690a82cdad282">tsh::ts_t</a> current_ts = <a class="code" href="namespacetime__shield.html#ac79dbc8c3db1c21986c160782d639cc8">tsh::timestamp</a>();</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Get the timestamp for the end of the year</span></div>
+<div class="line">    <a class="code" href="namespacetime__shield.html#a183c70b9c541a395d47690a82cdad282">tsh::ts_t</a> future_ts = <a class="code" href="namespacetime__shield.html#aaa71d1ceea75490b1b18b2ea49751d5b">tsh::end_of_year</a>(current_ts);</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Calculate the number of days between the two timestamps</span></div>
+<div class="line">    <span class="keywordtype">int</span> <a class="code" href="namespacetime__shield.html#ad47b7d55f85e6cb69c98f06ed53cc4ab">days</a> = <a class="code" href="namespacetime__shield.html#ad47b7d55f85e6cb69c98f06ed53cc4ab">tsh::days</a>(current_ts, future_ts);</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Days until the end of the year: &quot;</span> &lt;&lt; <a class="code" href="namespacetime__shield.html#ad47b7d55f85e6cb69c98f06ed53cc4ab">days</a> &lt;&lt; std::endl;</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Convert the timestamp to a formatted string</span></div>
+<div class="line">    std::string formatted_time = <a class="code" href="namespacetime__shield.html#ae6316a4e5fc2327f6945c3a1c411eef5">tsh::to_iso8601_str</a>(future_ts);</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Output the formatted time</span></div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Future time: &quot;</span> &lt;&lt; formatted_time &lt;&lt; std::endl;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="ttc" id="anamespacetime__shield_html_a183c70b9c541a395d47690a82cdad282"><div class="ttname"><a href="namespacetime__shield.html#a183c70b9c541a395d47690a82cdad282">time_shield::ts_t</a></div><div class="ttdeci">int64_t ts_t</div><div class="ttdoc">Integer timestamp type.</div><div class="ttdef"><b>Definition:</b> <a href="types_8hpp_source.html#l00015">types.hpp:15</a></div></div>
+<div class="ttc" id="anamespacetime__shield_html_aaa71d1ceea75490b1b18b2ea49751d5b"><div class="ttname"><a href="namespacetime__shield.html#aaa71d1ceea75490b1b18b2ea49751d5b">time_shield::end_of_year</a></div><div class="ttdeci">TIME_SHIELD_CONSTEXPR ts_t end_of_year(const ts_t &amp;ts=ts())</div><div class="ttdoc">Get the end-of-year timestamp.</div><div class="ttdef"><b>Definition:</b> <a href="time__conversions_8hpp_source.html#l01367">time_conversions.hpp:1367</a></div></div>
+<div class="ttc" id="anamespacetime__shield_html_ac79dbc8c3db1c21986c160782d639cc8"><div class="ttname"><a href="namespacetime__shield.html#ac79dbc8c3db1c21986c160782d639cc8">time_shield::timestamp</a></div><div class="ttdeci">TIME_SHIELD_CONSTEXPR const ts_t timestamp(const T1 &amp;year, const T2 &amp;month, const T2 &amp;day, const T2 &amp;hour=0, const T2 &amp;min=0, const T2 &amp;sec=0)</div><div class="ttdoc">Alias for to_timestamp function.</div><div class="ttdef"><b>Definition:</b> <a href="time__conversions_8hpp_source.html#l00438">time_conversions.hpp:438</a></div></div>
+<div class="ttc" id="anamespacetime__shield_html_ad47b7d55f85e6cb69c98f06ed53cc4ab"><div class="ttname"><a href="namespacetime__shield.html#ad47b7d55f85e6cb69c98f06ed53cc4ab">time_shield::days</a></div><div class="ttdeci">constexpr const T days(const ts_t &amp;start, const ts_t &amp;stop) noexcept</div><div class="ttdoc">Alias for get_days_difference function.</div><div class="ttdef"><b>Definition:</b> <a href="time__conversions_8hpp_source.html#l00970">time_conversions.hpp:970</a></div></div>
+<div class="ttc" id="anamespacetime__shield_html_ae6316a4e5fc2327f6945c3a1c411eef5"><div class="ttname"><a href="namespacetime__shield.html#ae6316a4e5fc2327f6945c3a1c411eef5">time_shield::to_iso8601_str</a></div><div class="ttdeci">const std::string to_iso8601_str(const T &amp;ts)</div><div class="ttdoc">Converts a timestamp to an ISO8601 string.</div><div class="ttdef"><b>Definition:</b> <a href="time__formatting_8hpp_source.html#l00436">time_formatting.hpp:436</a></div></div>
+<div class="ttc" id="atime__shield_8hpp_html"><div class="ttname"><a href="time__shield_8hpp.html">time_shield.hpp</a></div><div class="ttdoc">Main header file for the Time Shield library.</div></div>
+</div><!-- fragment --><h1><a class="anchor" id="install_sec"></a>
+Installation</h1>
+<p>To use the Time Shield Library in your project, include the header file <code><a class="el" href="time__shield_8hpp.html" title="Main header file for the Time Shield library.">time_shield.hpp</a></code> in your source code. Ensure that your project is set up to compile with standards from C++11 to C++17.</p>
+<h1><a class="anchor" id="license_sec"></a>
+License</h1>
+<p>This library is licensed under the MIT License. See the LICENSE file for more details. </p>
+</div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

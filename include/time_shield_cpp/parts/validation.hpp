@@ -90,6 +90,30 @@ namespace time_shield {
 	TIME_SHIELD_CONSTEXPR const bool is_leap_year(const ts_t& ts) {
 		return is_leap_year_ts(ts);
 	}
+	
+	/// \brief Check if the time zone is valid.
+	/// \tparam T The type of the time zone components (default is int).
+	/// \param hour The hour component of the time zone.
+	/// \param min The minute component of the time zone.
+	/// \return True if the time zone is valid, false otherwise.
+	template<class T = int>
+	TIME_SHIELD_CONSTEXPR inline const bool is_valid_time_zone(
+			const T& hour,
+			const T& min) noexcept {
+		if (hour < 0 || hour > 23) return false;
+		if (min < 0 || min > 59) return false;
+		return true;
+	}
+	
+	/// \brief Check if the time zone is valid.
+	/// \tparam T The type of the time zone structure (default is int).
+	/// \param time_zone The time zone structure containing hour and minute components.
+	/// \return True if the time zone is valid, false otherwise.
+	template<class T = int>
+	TIME_SHIELD_CONSTEXPR inline const bool is_valid_time_zone(
+			const T& time_zone) noexcept {
+		return is_valid_time_zone(time_zone.hour, time_zone.min);
+	}
 
 	/// \brief Checks the correctness of the specified time.
 	/// \tparam T1 The type of the hour, minute, and second values (default is int).

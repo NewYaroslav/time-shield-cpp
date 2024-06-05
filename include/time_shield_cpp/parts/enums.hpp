@@ -104,14 +104,17 @@ namespace time_shield {
 	/// \return A const char* pointing to the string representation of the month.
 	const char* to_cstr(const Month &value, const FormatType &format = UPPERCASE_NAME) {
 		static const char* const uppercase_names[] = {
+			"",
 			"JAN", "FEB", "MAR", "APR", "MAY", "JUN",
 			"JUL", "AUG", "SEP", "OCT", "NOV", "DEC"
 		};
 		static const char* const short_names[] = {
+			"",
 			"Jan", "Feb", "Mar", "Apr", "May", "Jun",
 			"Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
 		};
 		static const char* const full_names[] = {
+			"",
 			"January", "February", "March", "April", "May", "June",
 			"July", "August", "September", "October", "November", "December"
 		};
@@ -132,15 +135,18 @@ namespace time_shield {
 	/// \param format The format to use for the string representation (default is UPPERCASE_NAME).
 	/// \return A const std::string& pointing to the string representation of the month.
 	const std::string& to_str(const Month &value, const FormatType &format = UPPERCASE_NAME) {
-		static const std::array<std::string, 12> uppercase_names = {
+		static const std::array<std::string, 13> uppercase_names = {
+			"",
 			"JAN", "FEB", "MAR", "APR", "MAY", "JUN",
 			"JUL", "AUG", "SEP", "OCT", "NOV", "DEC"
 		};
-		static const std::array<std::string, 12> short_names = {
+		static const std::array<std::string, 13> short_names = {
+			"",
 			"Jan", "Feb", "Mar", "Apr", "May", "Jun",
 			"Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
 		};
-		static const std::array<std::string, 12> full_names = {
+		static const std::array<std::string, 13> full_names = {
+			"",
 			"January", "February", "March", "April", "May", "June",
 			"July", "August", "September", "October", "November", "December"
 		};

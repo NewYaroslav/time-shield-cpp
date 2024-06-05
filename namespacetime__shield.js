@@ -164,6 +164,8 @@ var namespacetime__shield =
     [ "is_valid_date_time", "namespacetime__shield.html#aaa97d173c03a0386bff242b316b848f9", null ],
     [ "is_valid_time", "namespacetime__shield.html#a15cb44f88d0e70233cef8707d93695f8", null ],
     [ "is_valid_time", "namespacetime__shield.html#a8ed66866e93fdca1ca9a4c283a0c5ab9", null ],
+    [ "is_valid_time_zone", "namespacetime__shield.html#a42bea0c9654f9d0ced7083f0339a531d", null ],
+    [ "is_valid_time_zone", "namespacetime__shield.html#ae23cd802a08191b792ad2546638b3dcb", null ],
     [ "is_weekend", "namespacetime__shield.html#aa18346205f48f2e5c0e96ada5e9a8226", null ],
     [ "is_weekend_unix_day", "namespacetime__shield.html#a7e9045dd058a423a1942aa1c8c4d9f35", null ],
     [ "last_day_of_month", "namespacetime__shield.html#a1a3046ca12b0c645a1b6d6854a2011d6", null ],

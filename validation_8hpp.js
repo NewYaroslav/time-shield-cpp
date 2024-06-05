@@ -14,6 +14,8 @@ var validation_8hpp =
     [ "is_valid_date_time", "validation_8hpp.html#aaa97d173c03a0386bff242b316b848f9", null ],
     [ "is_valid_time", "validation_8hpp.html#a15cb44f88d0e70233cef8707d93695f8", null ],
     [ "is_valid_time", "validation_8hpp.html#a8ed66866e93fdca1ca9a4c283a0c5ab9", null ],
+    [ "is_valid_time_zone", "validation_8hpp.html#a42bea0c9654f9d0ced7083f0339a531d", null ],
+    [ "is_valid_time_zone", "validation_8hpp.html#ae23cd802a08191b792ad2546638b3dcb", null ],
     [ "is_weekend", "validation_8hpp.html#aa18346205f48f2e5c0e96ada5e9a8226", null ],
     [ "is_weekend_unix_day", "validation_8hpp.html#a7e9045dd058a423a1942aa1c8c4d9f35", null ],
     [ "leap_year", "validation_8hpp.html#a6f5fbe2676117df1b8a7110b6eb316e1", null ],

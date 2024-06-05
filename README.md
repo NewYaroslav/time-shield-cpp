@@ -32,12 +32,12 @@ int main() {
     // Get the current timestamp
     tsh::ts_t current_ts = tsh::timestamp(); // or ts();
 	
-	// Calculate the timestamp for the end of the current year
-	tsh::ts_t future_ts = tsh::end_of_year(current_ts);
+    // Calculate the timestamp for the end of the current year
+    tsh::ts_t future_ts = tsh::end_of_year(current_ts);
 	
-	// Calculate the number of days between current timestamp and the future timestamp
-	int days = tsh::get_days_difference(current_ts, future_ts); // or days(current_ts, future_ts);
-	std::cout << "Days until end of year: " << days << std::endl;
+    // Calculate the number of days between current timestamp and the future timestamp
+    int days = tsh::get_days_difference(current_ts, future_ts); // or days(current_ts, future_ts);
+    std::cout << "Days until end of year: " << days << std::endl;
 	
     // Convert the future timestamp to a formatted string in ISO8601 format
     std::string formatted_time = tsh::to_iso8601_str(future_ts);

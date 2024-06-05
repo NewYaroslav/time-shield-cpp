@@ -26,4 +26,55 @@
 /// \brief Alias for the namespace time_shield.
 namespace tsh = time_shield;
 
+/*!
+\mainpage Time Shield Library
+
+\section intro_sec Introduction
+
+The Time Shield Library is a comprehensive C++ library designed for time manipulation, formatting, and conversion. This library aims to provide a robust and flexible set of tools for handling various time-related tasks with ease.
+
+\section features_sec Features
+
+- Validation of dates and times
+- Time and date formatting
+- Time zone calculations
+- Conversion between different time representations
+- Utilities for time manipulation
+
+\section usage_sec Usage
+
+\code{.cpp}
+#include <iostream>
+#include "time_shield.hpp"
+
+int main() {
+    // Get the current timestamp
+    tsh::ts_t current_ts = tsh::timestamp();
+
+    // Get the timestamp for the end of the year
+    tsh::ts_t future_ts = tsh::end_of_year(current_ts);
+
+    // Calculate the number of days between the two timestamps
+    int days = tsh::days(current_ts, future_ts);
+    std::cout << "Days until the end of the year: " << days << std::endl;
+
+    // Convert the timestamp to a formatted string
+    std::string formatted_time = tsh::to_iso8601_str(future_ts);
+
+    // Output the formatted time
+    std::cout << "Future time: " << formatted_time << std::endl;
+
+    return 0;
+}
+\endcode
+
+\section install_sec Installation
+
+To use the Time Shield Library in your project, include the header file `time_shield.hpp` in your source code. Ensure that your project is set up to compile with standards from C++11 to C++17.
+
+\section license_sec License
+
+This library is licensed under the MIT License. See the LICENSE file for more details.
+*/
+
 #endif // _TIME_SHIELD_HPP_INCLUDED

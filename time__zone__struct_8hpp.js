@@ -9,5 +9,6 @@ var time__zone__struct_8hpp =
     [ "to_str", "time__zone__struct_8hpp.html#a2dc4c57a2cdce24f0823af3a195b92f0", null ],
     [ "to_string", "time__zone__struct_8hpp.html#ac3c22c510de7562c372649c4ea32bab7", null ],
     [ "to_time_zone_struct", "time__zone__struct_8hpp.html#a514c2c51dbd4511f829688ae293d8080", null ],
-    [ "to_tz", "time__zone__struct_8hpp.html#ace788490b1b2d27c110ddb737a943e3d", null ]
+    [ "to_tz", "time__zone__struct_8hpp.html#ace788490b1b2d27c110ddb737a943e3d", null ],
+    [ "tz_to_offset", "time__zone__struct_8hpp.html#aabb438072b92ba912ae0ff25d5c20ee2", null ]
 ];

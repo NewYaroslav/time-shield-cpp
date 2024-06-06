@@ -7,6 +7,7 @@ var dir_e2dddd6fcd66cb7f2e3d1d9e4073096f =
     [ "enums.hpp", "enums_8hpp.html", "enums_8hpp" ],
     [ "time_conversions.hpp", "time__conversions_8hpp.html", "time__conversions_8hpp" ],
     [ "time_formatting.hpp", "time__formatting_8hpp.html", "time__formatting_8hpp" ],
+    [ "time_parser.hpp", "time__parser_8hpp.html", "time__parser_8hpp" ],
     [ "time_struct.hpp", "time__struct_8hpp.html", "time__struct_8hpp" ],
     [ "time_utils.hpp", "time__utils_8hpp.html", "time__utils_8hpp" ],
     [ "time_zone_struct.hpp", "time__zone__struct_8hpp.html", "time__zone__struct_8hpp" ],

@@ -15,8 +15,8 @@ var searchData=
   ['end_5fof_5fyear_58',['end_of_year',['../namespacetime__shield.html#aaa71d1ceea75490b1b18b2ea49751d5b',1,'time_shield']]],
   ['end_5fof_5fyear_5fms_59',['end_of_year_ms',['../namespacetime__shield.html#a639c4dcf149f7bece2060fc858000541',1,'time_shield']]],
   ['enums_2ehpp_60',['enums.hpp',['../enums_8hpp.html',1,'']]],
-  ['error_5ftimestamp_61',['ERROR_TIMESTAMP',['../namespacetime__shield.html#abeadeaf420cee63071cd6c2842d735dd',1,'time_shield']]],
-  ['error_5fyear_62',['ERROR_YEAR',['../namespacetime__shield.html#aca8f7fba995982296908e8cbf3da8ddf',1,'time_shield']]],
+  ['error_5ftimestamp_61',['ERROR_TIMESTAMP',['../namespacetime__shield.html#a88f50610a4743e500a2515fd59c10166',1,'time_shield']]],
+  ['error_5fyear_62',['ERROR_YEAR',['../namespacetime__shield.html#af5fe26d6299569ec01a5261e1c98fa49',1,'time_shield']]],
   ['european_5fmonth_5fday_63',['EUROPEAN_MONTH_DAY',['../namespacetime__shield.html#a81dfe20e6515b855c625bd9c7aea58e6aeb8c3991e33f7fcc70989ea9349b302f',1,'time_shield']]],
   ['european_5ftime_64',['EUROPEAN_TIME',['../namespacetime__shield.html#a81dfe20e6515b855c625bd9c7aea58e6a5015afc23d5eb7327d737c9a6b0f534a',1,'time_shield']]]
 ];

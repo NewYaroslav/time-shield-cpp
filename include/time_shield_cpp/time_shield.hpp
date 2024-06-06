@@ -21,6 +21,7 @@
 #include "parts/time_utils.hpp"         ///< Utility functions for time manipulation.
 #include "parts/time_conversions.hpp"   ///< Functions for converting between different time representations.
 #include "parts/time_formatting.hpp"    ///< Functions for formatting time in various standard formats.
+#include "parts/time_parser.hpp"        ///< Functions for parsing time in various standard formats.
 
 /// \namespace tsh
 /// \brief Alias for the namespace time_shield.

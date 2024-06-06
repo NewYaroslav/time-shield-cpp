@@ -31,19 +31,28 @@ Here's a quick example demonstrating how to use Time Shield for time manipulatio
 int main() {
     // Get the current timestamp
     tsh::ts_t current_ts = tsh::timestamp(); // or ts();
-	
+    
     // Calculate the timestamp for the end of the current year
     tsh::ts_t future_ts = tsh::end_of_year(current_ts);
-	
+    
     // Calculate the number of days between current timestamp and the future timestamp
     int days = tsh::get_days_difference(current_ts, future_ts); // or days(current_ts, future_ts);
     std::cout << "Days until end of year: " << days << std::endl;
-	
+    
     // Convert the future timestamp to a formatted string in ISO8601 format
     std::string formatted_time = tsh::to_iso8601_str(future_ts);
 
     // Output the formatted time
     std::cout << "Future time: " << formatted_time << std::endl;
+    
+    tsh::ts_ms_t ts_ms = 0;
+    if (!tsh::str_to_ts_ms(formatted_time, ts_ms)) {
+        std::cout << "Error occurred while parsing ISO8601 string" << std::endl;
+        return -1;
+    }
+
+    // Convert the milliseconds timestamp to a formatted string in ISO8601 UTC format
+    std::cout << "ISO8601 UTC string with milliseconds: " << tsh::to_iso8601_utc_str_ms(ts_ms) << std::endl;
 
     return 0;
 }

@@ -1,16 +1,12 @@
 var searchData=
 [
-  ['year_346',['year',['../structtime__shield_1_1DateStruct.html#a56ca407ae07270a65b2090fdfb4b26d5',1,'time_shield::DateStruct::year()'],['../structtime__shield_1_1DateTimeStruct.html#a6aaf7ee7664f6caeb970a0fe1dd503e5',1,'time_shield::DateTimeStruct::year()'],['../namespacetime__shield.html#aa013e9ad8569bb770a8b8ca8e28ae096',1,'time_shield::year(const ts_t &amp;ts=ts())']]],
-  ['year_5fbegin_347',['year_begin',['../namespacetime__shield.html#affdfac8a25f3269aa9618c016b3c2a0e',1,'time_shield']]],
-  ['year_5fbegin_5fdate_348',['year_begin_date',['../namespacetime__shield.html#a961e571772d99a26c1848cd4db4b6362',1,'time_shield']]],
-  ['year_5fbegin_5fdate_5fms_349',['year_begin_date_ms',['../namespacetime__shield.html#ad25649cf738d36f8b88c1f4ecade0181',1,'time_shield']]],
-  ['year_5fbegin_5fms_350',['year_begin_ms',['../namespacetime__shield.html#ac37f778b0a9dabd0a031956b47ee5706',1,'time_shield']]],
-  ['year_5fend_351',['year_end',['../namespacetime__shield.html#a8796f851392fbff0bcb2ed03bb0685c2',1,'time_shield']]],
-  ['year_5fend_5fms_352',['year_end_ms',['../namespacetime__shield.html#a0de6f3f17f6b11b5a0ae0adcbbc40425',1,'time_shield']]],
-  ['year_5fms_353',['year_ms',['../namespacetime__shield.html#a76eb6453b40d5bcf0697acc906b24c20',1,'time_shield']]],
-  ['year_5fstart_354',['year_start',['../namespacetime__shield.html#a93d27aca5c49d5cd0e9d1cc844f2c95c',1,'time_shield']]],
-  ['year_5fstart_5fdate_355',['year_start_date',['../namespacetime__shield.html#aecce5777cf008c48a43af89558b86d0a',1,'time_shield']]],
-  ['year_5fstart_5fdate_5fms_356',['year_start_date_ms',['../namespacetime__shield.html#aca17db0aa46d1b43eebc431ac88b620f',1,'time_shield']]],
-  ['year_5fstart_5fms_357',['year_start_ms',['../namespacetime__shield.html#abde32ed2c1ada234416ded6e46c92a88',1,'time_shield']]],
-  ['year_5ft_358',['year_t',['../namespacetime__shield.html#ab9f26871d6521b013bea4c65e6697ad9',1,'time_shield']]]
+  ['waning_5fcrescent_0',['WANING_CRESCENT',['../namespacetime__shield.html#a5fa51beb76e014adfffcd028fe1804aca928c48c2517e2dae025429dbf91139bb',1,'time_shield']]],
+  ['waning_5fgibbous_1',['WANING_GIBBOUS',['../namespacetime__shield.html#a5fa51beb76e014adfffcd028fe1804acab01b15a0b538242476796d142a6218b6',1,'time_shield']]],
+  ['waxing_5fcrescent_2',['WAXING_CRESCENT',['../namespacetime__shield.html#a5fa51beb76e014adfffcd028fe1804aca5f1b8df93849c22963e4a72d83b8772e',1,'time_shield']]],
+  ['waxing_5fgibbous_3',['WAXING_GIBBOUS',['../namespacetime__shield.html#a5fa51beb76e014adfffcd028fe1804acab6bea3708a20999768f220bbb537bde0',1,'time_shield']]],
+  ['wed_4',['WED',['../namespacetime__shield.html#adf684443100352064316f6134bbe44f8a09b3678d689ef14cf2c11ecbace1571b',1,'time_shield']]],
+  ['week_5fbegin_5',['week_begin',['../namespacetime__shield.html#a52996733cca651766b092162b94ff324',1,'time_shield']]],
+  ['weekday_6',['Weekday',['../namespacetime__shield.html#adf684443100352064316f6134bbe44f8',1,'time_shield']]],
+  ['west_7',['WEST',['../namespacetime__shield.html#ad8cb858fb6cedcf76c4f0630d56e042ba83b8ba19f83255d4d752187f2786a616',1,'time_shield']]],
+  ['wet_8',['WET',['../namespacetime__shield.html#ad8cb858fb6cedcf76c4f0630d56e042bac60aae48eeefe085becacea96efb0f77',1,'time_shield']]]
 ];

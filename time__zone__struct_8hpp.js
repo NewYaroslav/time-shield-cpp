@@ -1,6 +1,6 @@
 var time__zone__struct_8hpp =
 [
-    [ "TimeZoneStruct", "structtime__shield_1_1TimeZoneStruct.html", "structtime__shield_1_1TimeZoneStruct" ],
+    [ "time_shield::TimeZoneStruct", "structtime__shield_1_1TimeZoneStruct.html", "structtime__shield_1_1TimeZoneStruct" ],
     [ "_TIME_SHIELD_TIME_ZONE_STRUCT_HPP_INCLUDED", "time__zone__struct_8hpp.html#a6b6a85d5244f2a0351dba87c703e7814", null ],
     [ "create_time_zone_struct", "time__zone__struct_8hpp.html#a3228e7a9af70a84331d92961568955bf", null ],
     [ "time_zone_struct_to_offset", "time__zone__struct_8hpp.html#a823bf50804c6616238f6d8c717ef491f", null ],

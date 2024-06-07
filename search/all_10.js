@@ -2,8 +2,8 @@ var searchData=
 [
   ['sat_0',['SAT',['../namespacetime__shield.html#adf684443100352064316f6134bbe44f8a97194245c51cbf87e37ba2f0885cf7a7',1,'time_shield']]],
   ['saturday_5fbegin_1',['saturday_begin',['../namespacetime__shield.html#a118e0453fe4e33ff988a4af088c0e51a',1,'time_shield']]],
-  ['sec_2',['sec',['../structtime__shield_1_1TimeStruct.html#a764bc903f34c6f250e0051cc892aa6a9',1,'time_shield::TimeStruct::sec'],['../structtime__shield_1_1DateTimeStruct.html#aedb0924a6f970dcc0e83991d6168d808',1,'time_shield::DateTimeStruct::sec']]],
-  ['sec_5fof_5fday_3',['sec_of_day',['../namespacetime__shield.html#a57cec279f7cad9c08529b13b69935fc4',1,'time_shield::sec_of_day(const T2 &amp;hour, const T2 &amp;min, const T2 &amp;sec) noexcept'],['../namespacetime__shield.html#a24b32b981fdf1b9e427756a8402b4b63',1,'time_shield::sec_of_day(const ts_t &amp;ts=ts())']]],
+  ['sec_2',['sec',['../structtime__shield_1_1DateTimeStruct.html#aedb0924a6f970dcc0e83991d6168d808',1,'time_shield::DateTimeStruct::sec'],['../structtime__shield_1_1TimeStruct.html#a764bc903f34c6f250e0051cc892aa6a9',1,'time_shield::TimeStruct::sec']]],
+  ['sec_5fof_5fday_3',['sec_of_day',['../namespacetime__shield.html#a24b32b981fdf1b9e427756a8402b4b63',1,'time_shield::sec_of_day(const ts_t &amp;ts=ts())'],['../namespacetime__shield.html#a57cec279f7cad9c08529b13b69935fc4',1,'time_shield::sec_of_day(const T2 &amp;hour, const T2 &amp;min, const T2 &amp;sec) noexcept']]],
   ['sec_5fof_5fday_5fms_4',['sec_of_day_ms',['../namespacetime__shield.html#ac7d939cd568135030c46bc7aac2bee99',1,'time_shield']]],
   ['sec_5fof_5fhour_5',['sec_of_hour',['../namespacetime__shield.html#a35ef3df72df92aab98d650faca37b6eb',1,'time_shield']]],
   ['sec_5fof_5fmin_6',['sec_of_min',['../namespacetime__shield.html#a56256faa7d4794e975d3fbf05497d610',1,'time_shield']]],

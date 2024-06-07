@@ -8,7 +8,7 @@ Time-Shield is ~~not only a combat tool of Homura Akemi, but also~~ a header-onl
 - **Time Formatting:** Convert timestamps to formatted strings according to standard or custom patterns.
 - **Time Conversions:** Convert between different time representations, including timestamps, date-time structures, and time zones.
 - **Utility Functions:** Access a collection of utility functions for time-related calculations and conversions.
-- Supports standards from C++11 to C++17.
+- Supports standards from `C++11` to `C++17`.
 
 ## Installation
 

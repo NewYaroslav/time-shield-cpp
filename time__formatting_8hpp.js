@@ -5,6 +5,7 @@ var time__formatting_8hpp =
     [ "to_iso8601_date_str", "time__formatting_8hpp.html#afdf8d05d15e9b4d5b114f1fd0c92a96d", null ],
     [ "to_iso8601_str", "time__formatting_8hpp.html#ae6316a4e5fc2327f6945c3a1c411eef5", null ],
     [ "to_iso8601_str", "time__formatting_8hpp.html#a36e9c9708d2bf1ec90772aace0e0779c", null ],
+    [ "to_iso8601_str_ms", "time__formatting_8hpp.html#af18b9b4442774e4edd2886c982c6dd50", null ],
     [ "to_iso8601_str_ms", "time__formatting_8hpp.html#a3a3807d2c72ab4698ab1b253e8270902", null ],
     [ "to_iso8601_time_str", "time__formatting_8hpp.html#a1a7e3aee6a6c236d6db53dc65bf3acc3", null ],
     [ "to_iso8601_time_utc_str", "time__formatting_8hpp.html#a9b91c1cda931f1f341f2cb731c1d01b1", null ],

@@ -1153,25 +1153,25 @@ namespace time_shield {
     /// This function returns the year of the specified timestamp in milliseconds since the Unix epoch.
     ///
     /// \tparam T The return type of the function (default is year_t).
-    /// \param t_ms Timestamp in milliseconds (default is current timestamp).
+    /// \param ts_ms Timestamp in milliseconds (default is current timestamp).
     /// \return Year of the specified timestamp.
     template<class T = year_t>
-    TIME_SHIELD_CONSTEXPR inline const T get_year_ms(const ts_ms_t& t_ms = ts_ms()) {
-        return get_year(ms_to_sec(t_ms));
+    TIME_SHIELD_CONSTEXPR inline const T get_year_ms(const ts_ms_t& ts_ms = ts_ms()) {
+        return get_year(ms_to_sec(ts_ms));
     }
 
     /// \brief Alias for get_year_ms function.
     /// \copydoc get_year_ms
     template<class T = year_t>
-    TIME_SHIELD_CONSTEXPR inline const T year_ms(const ts_t& ts = ts()) {
-        return get_year_ms(ts);
+    TIME_SHIELD_CONSTEXPR inline const T year_ms(const ts_ms_t& ts_ms = ts_ms()) {
+        return get_year_ms(ts_ms);
     }
 
     /// \brief Alias for get_year_ms function.
     /// \copydoc get_year_ms
     template<class T = year_t>
-    TIME_SHIELD_CONSTEXPR inline const T to_year_ms(const ts_t& ts = ts()) {
-        return get_year_ms(ts);
+    TIME_SHIELD_CONSTEXPR inline const T to_year_ms(const ts_ms_t& ts_ms = ts_ms()) {
+        return get_year_ms(ts_ms);
     }
 
 //------------------------------------------------------------------------------
@@ -1258,20 +1258,20 @@ namespace time_shield {
     ///
     /// \param ts_ms Timestamp in milliseconds.
     /// \return Start of year timestamp in milliseconds.
-    TIME_SHIELD_CONSTEXPR inline const ts_ms_t start_of_year_ms(const ts_ms_t& ts_ms) noexcept {
+    TIME_SHIELD_CONSTEXPR inline const ts_ms_t start_of_year_ms(const ts_ms_t& ts_ms = ts_ms()) noexcept {
         return sec_to_ms(start_of_year(ms_to_sec(ts_ms)));
     }
 
     /// \brief Alias for start_of_year_ms function.
     /// \copydoc start_of_year_ms
-    TIME_SHIELD_CONSTEXPR inline const ts_t year_start_ms(const ts_t& ts = ts()) {
-        return start_of_year_ms(ts);
+    TIME_SHIELD_CONSTEXPR inline const ts_t year_start_ms(const ts_t& ts_ms = ts_ms()) {
+        return start_of_year_ms(ts_ms);
     }
 
     /// \brief Alias for start_of_year_ms function.
     /// \copydoc start_of_year_ms
-    TIME_SHIELD_CONSTEXPR inline const ts_t year_begin_ms(const ts_t& ts = ts()) {
-        return start_of_year_ms(ts);
+    TIME_SHIELD_CONSTEXPR inline const ts_t year_begin_ms(const ts_t& ts_ms = ts_ms()) {
+        return start_of_year_ms(ts_ms);
     }
 
 //------------------------------------------------------------------------------
@@ -1611,8 +1611,8 @@ namespace time_shield {
     /// \brief Alias for num_days_in_year_ts function.
     /// \copydoc num_days_in_year_ts
     template<class T = int>
-    constexpr const T days_in_year_ts(const ts_t& t = ts()) {
-        return num_days_in_year_ts(t);
+    constexpr const T days_in_year_ts(const ts_t& ts = ts()) {
+        return num_days_in_year_ts(ts);
     }
 
 //------------------------------------------------------------------------------
@@ -1670,8 +1670,8 @@ namespace time_shield {
 
     /// \brief Alias for start_of_day_sec function.
     /// \copydoc start_of_day_sec
-    constexpr const ts_t day_start_sec(const ts_ms_t& t_ms = ts_ms()) {
-        return start_of_day_sec(t_ms);
+    constexpr const ts_t day_start_sec(const ts_ms_t& ts_ms = ts_ms()) {
+        return start_of_day_sec(ts_ms);
     }
 
 //------------------------------------------------------------------------------
@@ -1689,8 +1689,8 @@ namespace time_shield {
 
     /// \brief Alias for start_of_day_ms function.
     /// \copydoc start_of_day_ms
-    constexpr const ts_ms_t day_start_ms(const ts_ms_t& t_ms = ts_ms()) {
-        return start_of_day_ms(t_ms);
+    constexpr const ts_ms_t day_start_ms(const ts_ms_t& ts_ms = ts_ms()) {
+        return start_of_day_ms(ts_ms);
     }
 
 //------------------------------------------------------------------------------
@@ -1764,8 +1764,8 @@ namespace time_shield {
 
     /// \brief Alias for end_of_day_ms function.
     /// \copydoc end_of_day_ms
-    constexpr const ts_ms_t day_end_ms(const ts_ms_t& t_ms = ts_ms()) noexcept {
-        return end_of_day_ms(t_ms);
+    constexpr const ts_ms_t day_end_ms(const ts_ms_t& ts_ms = ts_ms()) noexcept {
+        return end_of_day_ms(ts_ms);
     }
 
 //------------------------------------------------------------------------------
@@ -2079,8 +2079,8 @@ namespace time_shield {
 
     /// \brief Alias for start_of_week function.
     /// \copydoc start_of_week
-    constexpr const ts_t week_begin(const ts_t& t = ts()) {
-        return start_of_week(t);
+    constexpr const ts_t week_begin(const ts_t& ts = ts()) {
+        return start_of_week(ts);
     }
 
 //------------------------------------------------------------------------------

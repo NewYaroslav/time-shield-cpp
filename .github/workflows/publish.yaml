@@ -1,7 +1,11 @@
 name: publish
+
 on:
-  release:
-    types: [published]
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
 jobs:
   deploy:
     runs-on: ubuntu-20.04

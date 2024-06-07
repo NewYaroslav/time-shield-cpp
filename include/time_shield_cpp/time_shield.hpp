@@ -59,17 +59,26 @@ The Time Shield Library is a comprehensive C++ library designed for time manipul
 
 int main() {
     // Get the current timestamp
-    tsh::ts_t current_ts = tsh::timestamp();
+    tsh::ts_t current_ts = tsh::timestamp(); // or ts();
 
-    // Get the timestamp for the end of the year
+    // Calculate the timestamp for the end of the current year
     tsh::ts_t future_ts = tsh::end_of_year(current_ts);
 
-    // Calculate the number of days between the two timestamps
-    int days = tsh::days(current_ts, future_ts);
-    std::cout << "Days until the end of the year: " << days << std::endl;
+    // Calculate the number of days between current timestamp and the future timestamp
+    int days = tsh::get_days_difference(current_ts, future_ts); // or days(current_ts, future_ts);
+    std::cout << "Days until end of year: " << days << std::endl;
 
-    // Convert the timestamp to a formatted string
+    // Convert the future timestamp to a formatted string in ISO8601 format
     std::string formatted_time = tsh::to_iso8601_str(future_ts);
+
+    tsh::ts_ms_t ts_ms = 0;
+    if (!tsh::str_to_ts_ms(formatted_time, ts_ms)) {
+        std::cout << "Error occurred while parsing ISO8601 string" << std::endl;
+        return -1;
+    }
+
+    // Convert the milliseconds timestamp to a formatted string in ISO8601 UTC format
+    formatted_time = tsh::to_iso8601_utc_str_ms(ts_ms);
 
     // Output the formatted time
     std::cout << "Future time: " << formatted_time << std::endl;
@@ -81,6 +90,10 @@ int main() {
 \section install_sec Installation
 
 To use the Time Shield Library in your project, include the header file `time_shield.hpp` in your source code. Ensure that your project is set up to compile with standards from C++11 to C++17.
+
+\section repo_sec Repository
+
+[Time Shield Library GitHub repository](https://github.com/NewYaroslav/time-shield-cpp).
 
 \section license_sec License
 

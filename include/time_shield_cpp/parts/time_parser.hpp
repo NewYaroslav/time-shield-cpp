@@ -1,6 +1,6 @@
 #pragma once
 /// \file time_parser.hpp
-/// \brief Provides functions for parsing dates and times in ISO8601 format and converting them to various timestamp formats.
+/// \brief Header file with functions for parsing dates and times in ISO8601 format and converting them to various timestamp formats.
 ///
 /// This file contains functions for parsing ISO8601 date and time strings, extracting month numbers from month names,
 /// and converting parsed date and time information to different timestamp formats.
@@ -188,7 +188,7 @@ namespace time_shield {
             }
             return is_valid_date_time(dt);
         }
-        return false;
+        return true;
     }
 
     /// \brief Convert an ISO8601 string to a timestamp (ts_t).
@@ -267,6 +267,40 @@ namespace time_shield {
     /// \param str The ISO8601 string.
     /// \return The floating-point timestamp if successful, 0 otherwise.
     inline const fts_t fts(const std::string& str) {
+        fts_t ts = 0;
+        str_to_fts(str, ts);
+        return ts;
+    }
+
+
+    /// \brief Convert an ISO8601 C-style string to a timestamp (ts_t).
+    /// \details This function parses a string in ISO8601 format and converts it to a timestamp.
+    /// If parsing fails, it returns 0.
+    /// \param str The ISO8601 C-style string.
+    /// \return The timestamp value. Returns 0 if parsing fails.
+    inline const ts_t ts(const char *str) {
+        ts_t ts = 0;
+        str_to_ts(str, ts);
+        return ts;
+    }
+
+    /// \brief Convert an ISO8601 C-style string to a millisecond timestamp (ts_ms_t).
+    /// \details This function parses a string in ISO8601 format and converts it to a millisecond timestamp.
+    /// If parsing fails, it returns 0.
+    /// \param str The ISO8601 C-style string.
+    /// \return The parsed millisecond timestamp, or 0 if parsing fails.
+    inline const ts_ms_t ts_ms(const char *str) {
+        ts_ms_t ts = 0;
+        str_to_ts_ms(str, ts);
+        return ts;
+    }
+
+    /// \brief Convert an ISO8601 C-style string to a floating-point timestamp (fts_t).
+    /// \details This function parses a string in ISO8601 format and converts it to a floating-point timestamp.
+    /// If the parsing fails, it returns 0.
+    /// \param str The ISO8601 C-style string.
+    /// \return The floating-point timestamp if successful, 0 otherwise.
+    inline const fts_t fts(const char *str) {
         fts_t ts = 0;
         str_to_fts(str, ts);
         return ts;

@@ -529,6 +529,19 @@ namespace time_shield {
         return std::string(buffer);
     }
 
+    /// \brief Converts a timestamp in milliseconds to an ISO8601 string.
+    ///
+    /// This function converts a timestamp in milliseconds to a string in ISO8601 format.
+    ///
+    /// \param ts_ms The timestamp in milliseconds to convert.
+    /// \return A string representing the timestamp in ISO8601 format with milliseconds.
+    inline const std::string to_iso8601_str_ms(const ts_ms_t& ts_ms) {
+        DateTimeStruct dt = to_date_time_ms<DateTimeStruct>(ts_ms);
+        char buffer[32] = {0};
+        snprintf(buffer, sizeof(buffer), "%lld-%.2d-%.2dT%.2d:%.2d:%.2d.%.3d", dt.year, dt.mon, dt.day, dt.hour, dt.min, dt.sec, dt.ms);
+        return std::string(buffer);
+    }
+
     /// \brief Converts a timestamp to an ISO8601 string with timezone offset.
     ///
     /// This function converts a timestamp to a string in ISO8601 format with timezone offset.

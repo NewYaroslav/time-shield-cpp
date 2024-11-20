@@ -61,10 +61,10 @@ var enums_8hpp =
       [ "FRI", "enums_8hpp.html#adf684443100352064316f6134bbe44f8ac533217e813e2b23b5112257b8b2c7cf", null ],
       [ "SAT", "enums_8hpp.html#adf684443100352064316f6134bbe44f8a97194245c51cbf87e37ba2f0885cf7a7", null ]
     ] ],
-    [ "to_cstr", "enums_8hpp.html#a68890f05d2eaa35aea618cbd48b4da83", null ],
-    [ "to_cstr", "enums_8hpp.html#a5b1279e2553fa0cebd164a942051c55d", null ],
-    [ "to_cstr", "enums_8hpp.html#a663f8ad60c4f0bdf30dff3bcc9046a1c", null ],
-    [ "to_str", "enums_8hpp.html#a252b9166cf2f95aa2d34ca57edb3117f", null ],
-    [ "to_str", "enums_8hpp.html#a7a5a7d4013fbf5d497b70c4cde0a2fa3", null ],
-    [ "to_str", "enums_8hpp.html#a077743ca9def5e1e2e320bf9406f801b", null ]
+    [ "to_cstr", "enums_8hpp.html#a1e6b9d39d01a5055b7355f92bbc6b2d7", null ],
+    [ "to_cstr", "enums_8hpp.html#a3b05733e4a4f78c2ba220b0b80a5e0a2", null ],
+    [ "to_cstr", "enums_8hpp.html#adabbcdd686f20fd99f925027729ae341", null ],
+    [ "to_str", "enums_8hpp.html#a87bfc1639312496aa064fd2386e6791f", null ],
+    [ "to_str", "enums_8hpp.html#a4c17141c39c50a3100ea7b29b440fde8", null ],
+    [ "to_str", "enums_8hpp.html#af9e200cf52a7e32e169597440b9c064b", null ]
 ];

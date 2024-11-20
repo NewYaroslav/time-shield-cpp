@@ -49,7 +49,7 @@ int main() {
     }
 
     // Convert the milliseconds timestamp to a formatted string in ISO8601 UTC format
-    formatted_time = tsh::to_iso8601_utc_str_ms(ts_ms);
+    formatted_time = tsh::to_iso8601_utc_ms(ts_ms);
 
     // Output the formatted time
     std::cout << "Future time: " << formatted_time << std::endl;

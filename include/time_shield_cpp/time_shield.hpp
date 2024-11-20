@@ -27,14 +27,16 @@
 /// \brief Alias for the namespace time_shield.
 namespace tsh = time_shield;
 
+/// \namespace tshield
+/// \brief Alias for the namespace time_shield.
+namespace tshield = time_shield;
+
 /// \namespace time_shield
 /// \brief Main namespace for the Time Shield library.
 ///
 /// The time_shield namespace contains all the core components and functions of the Time Shield library.
 /// It includes various utilities for working with time and dates, their formatting, conversion, and validation.
-namespace time_shield {
-
-}
+namespace time_shield {};
 
 /*!
 \mainpage Time Shield Library
@@ -78,7 +80,7 @@ int main() {
     }
 
     // Convert the milliseconds timestamp to a formatted string in ISO8601 UTC format
-    formatted_time = tsh::to_iso8601_utc_str_ms(ts_ms);
+    formatted_time = tsh::to_iso8601_utc_ms(ts_ms);
 
     // Output the formatted time
     std::cout << "Future time: " << formatted_time << std::endl;

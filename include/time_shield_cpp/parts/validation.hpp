@@ -9,6 +9,7 @@
 #include "config.hpp"
 #include "types.hpp"
 #include "constants.hpp"
+#include "time_zone_struct.hpp"
 
 namespace time_shield {
 
@@ -17,21 +18,21 @@ namespace time_shield {
     /// \param year Year to check.
     /// \return true if the year is a leap year, false otherwise.
     template<class T = year_t>
-    constexpr const bool is_leap_year_date(const T& year) noexcept {
+    constexpr const bool is_leap_year_date(T year) noexcept {
         return ((year & 3) == 0 && ((year % 25) != 0 || (year & 15) == 0));
     }
 
     /// \brief Alias for is_leap_year_date function.
     /// \copydoc is_leap_year_date
     template<class T = year_t>
-    constexpr const bool check_leap_year(const T& year) noexcept {
+    constexpr const bool check_leap_year(T year) noexcept {
         return is_leap_year_date(year);
     }
 
     /// \brief Alias for is_leap_year_date function.
     /// \copydoc is_leap_year_date
     template<class T = year_t>
-    constexpr const bool leap_year(const T& year) noexcept {
+    constexpr const bool leap_year(T year) noexcept {
         return is_leap_year_date(year);
     }
 
@@ -45,7 +46,7 @@ namespace time_shield {
     /// \tparam T The type of the year parameter (default is year_t).
     /// \param ts Timestamp in seconds since the Unix epoch.
     /// \return Returns true if the year is a leap year.
-    TIME_SHIELD_CONSTEXPR const bool is_leap_year_ts(const ts_t& ts) {
+    TIME_SHIELD_CONSTEXPR const bool is_leap_year_ts(ts_t ts) {
         // 9223372029693630000 - значение на момент 292277024400 от 2000 года
         // Такое значение приводит к неправильному вычислению умножения n_400_years * SEC_PER_400_YEARS
         // Поэтому пришлось снизить до 9223371890843040000
@@ -77,19 +78,19 @@ namespace time_shield {
 
     /// \brief Alias for is_leap_year_ts function.
     /// \copydoc is_leap_year_ts
-    TIME_SHIELD_CONSTEXPR const bool leap_year_ts(const ts_t& ts) {
+    TIME_SHIELD_CONSTEXPR const bool leap_year_ts(ts_t ts) {
         return is_leap_year_ts(ts);
     }
 
     /// \brief Alias for is_leap_year_ts function.
     /// \copydoc is_leap_year_ts
-    TIME_SHIELD_CONSTEXPR const bool check_leap_year_ts(const ts_t& ts) {
+    TIME_SHIELD_CONSTEXPR const bool check_leap_year_ts(ts_t ts) {
         return is_leap_year_ts(ts);
     }
 
     /// \brief Alias for is_leap_year_ts function.
     /// \copydoc is_leap_year_ts
-    TIME_SHIELD_CONSTEXPR const bool is_leap_year(const ts_t& ts) {
+    TIME_SHIELD_CONSTEXPR const bool is_leap_year(ts_t ts) {
         return is_leap_year_ts(ts);
     }
 
@@ -102,8 +103,8 @@ namespace time_shield {
     /// \return True if the time zone is valid, false otherwise.
     template<class T = int>
     TIME_SHIELD_CONSTEXPR inline const bool is_valid_time_zone(
-            const T& hour,
-            const T& min) noexcept {
+            T hour,
+            T min) noexcept {
         if (hour < 0 || hour > 23) return false;
         if (min < 0 || min > 59) return false;
         return true;
@@ -113,8 +114,8 @@ namespace time_shield {
     /// \copydoc is_valid_time_zone
     template<class T = int>
     TIME_SHIELD_CONSTEXPR inline bool is_valid_tz(
-            const T& hour,
-            const T& min) {
+            T hour,
+            T min) {
         return is_valid_time_zone(hour, min);
     }
 
@@ -158,10 +159,10 @@ namespace time_shield {
     /// \return true if the time is valid, false otherwise.
     template<class T1 = int, class T2 = int>
     TIME_SHIELD_CONSTEXPR inline const bool is_valid_time(
-            const T1& hour,
-            const T1& min,
-            const T1& sec,
-            const T2& ms = 0) noexcept {
+            T1 hour,
+            T1 min,
+            T1 sec,
+            T2 ms = 0) noexcept {
         if (hour < 0 || hour > 23) return false;
         if (min < 0 || min > 59) return false;
         if (sec < 0 || sec > 59) return false;
@@ -188,9 +189,9 @@ namespace time_shield {
     /// \return true if the date is valid, false otherwise.
     template<class T1 = year_t, class T2 = int>
     TIME_SHIELD_CONSTEXPR inline const bool is_valid_date(
-            const T1& year,
-            const T2& month,
-            const T2& day) noexcept {
+            T1 year,
+            T2 month,
+            T2 day) noexcept {
         if (day > 31 && year <= 31) {
             return is_valid_date((T1)day, month, (T2)year);
         }
@@ -238,13 +239,13 @@ namespace time_shield {
     /// \return true if the date and time are valid, false otherwise.
     template<class T1 = year_t, class T2 = int, class T3 = int>
     TIME_SHIELD_CONSTEXPR inline const bool is_valid_date_time(
-            const T1& year,
-            const T2& month,
-            const T2& day,
-            const T2& hour  = 0,
-            const T2& min   = 0,
-            const T2& sec   = 0,
-            const T3& ms    = 0) noexcept {
+            T1 year,
+            T2 month,
+            T2 day,
+            T2 hour  = 0,
+            T2 min   = 0,
+            T2 sec   = 0,
+            T3 ms    = 0) noexcept {
         if (!is_valid_date(year, month, day)) return false;
         if (!is_valid_time(hour, min, sec, ms)) return false;
         return true;
@@ -270,14 +271,14 @@ namespace time_shield {
     ///
     /// \param ts Timestamp to check (default: current timestamp).
     /// \return true if the day is a weekend day, false otherwise.
-    TIME_SHIELD_CONSTEXPR inline const bool is_day_off(const ts_t& ts) noexcept {
+    TIME_SHIELD_CONSTEXPR inline const bool is_day_off(ts_t ts) noexcept {
         const int wd = ((ts / SEC_PER_DAY + THU) % DAYS_PER_WEEK);
         return (wd == SUN || wd == SAT);
     }
 
     /// \brief Alias for is_day_off function.
     /// \copydoc is_day_off
-    TIME_SHIELD_CONSTEXPR inline const bool is_weekend(const ts_t& ts) noexcept {
+    TIME_SHIELD_CONSTEXPR inline const bool is_weekend(ts_t ts) noexcept {
         return is_day_off(ts);
     }
 
@@ -289,7 +290,7 @@ namespace time_shield {
     /// \param unix_day Day to check (number of days since Unix epoch).
     /// \return true if the day is a weekend day, false otherwise.
     template<class T = uday_t>
-    TIME_SHIELD_CONSTEXPR inline bool is_day_off_unix_day(const T& unix_day) noexcept {
+    TIME_SHIELD_CONSTEXPR inline bool is_day_off_unix_day(T unix_day) noexcept {
         const int wd = (unix_day + THU) % DAYS_PER_WEEK;
         return (wd == SUN || wd == SAT);
     }
@@ -297,7 +298,7 @@ namespace time_shield {
     /// \brief Alias for is_day_off_unix_day function.
     /// \copydoc is_day_off_unix_day
     template<class T = uday_t>
-    TIME_SHIELD_CONSTEXPR inline bool is_weekend_unix_day(const T& unix_day) noexcept {
+    TIME_SHIELD_CONSTEXPR inline bool is_weekend_unix_day(T unix_day) noexcept {
         return is_day_off_unix_day(unix_day);
     }
 

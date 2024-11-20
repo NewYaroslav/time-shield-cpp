@@ -25,9 +25,9 @@ namespace time_shield {
     /// \param is_positive True if the time zone offset is positive, false if negative.
     /// \return A TimeZoneStruct instance with the provided time components.
     inline const TimeZoneStruct create_time_zone_struct(
-            const int& hour,
-            const int& min,
-            const bool& is_positive = true) {
+            int hour,
+            int min,
+            bool is_positive = true) {
         return TimeZoneStruct{hour, min, is_positive};
     }
 
@@ -36,8 +36,7 @@ namespace time_shield {
     /// \brief Converts an integer to a TimeZoneStruct.
     /// \param offset The integer to convert.
     /// \return A TimeZoneStruct represented by the given integer.
-    inline const TimeZoneStruct to_time_zone_struct(
-            const tz_t& offset) {
+    inline const TimeZoneStruct to_time_zone_struct(tz_t offset) {
         int abs_val = std::abs(offset);
         int hour = abs_val / SEC_PER_HOUR;
         int min = abs_val % SEC_PER_MIN;
@@ -47,7 +46,7 @@ namespace time_shield {
 
     /// \brief Alias for to_time_zone_struct function.
     /// \copydoc to_time_zone_struct
-    inline const TimeZoneStruct to_tz(const tz_t& offset) {
+    inline const TimeZoneStruct to_tz(tz_t offset) {
         return to_time_zone_struct(offset);
     }
 

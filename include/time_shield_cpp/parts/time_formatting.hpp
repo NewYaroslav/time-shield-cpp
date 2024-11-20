@@ -15,10 +15,10 @@
 namespace time_shield {
 
     inline void process_format_impl(
-            const char& last_char,
-            const size_t& repeat_count,
-            const ts_t& ts,
-            const tz_t& utc_offset,
+            char last_char,
+            size_t repeat_count,
+            ts_t ts,
+            tz_t utc_offset,
             const DateTimeStruct& dt,
             std::string& result) {
         switch (last_char) {
@@ -220,7 +220,7 @@ namespace time_shield {
                 result += std::to_string(ts);
                 break;
             }
-            if (repeat_count == 4) {
+            if (repeat_count == 3) {
                 result += std::to_string(dt.ms);
                 break;
             }
@@ -230,6 +230,10 @@ namespace time_shield {
                 char buffer[4] = {0};
                 snprintf(buffer, sizeof(buffer), "%.2d", dt.sec);
                 result += std::string(buffer);
+            }
+            if (repeat_count == 3) {
+                result += std::to_string(dt.ms);
+                break;
             }
             break;
         case 't':
@@ -369,13 +373,11 @@ namespace time_shield {
     template<class T = ts_t>
     const std::string to_string(
             const std::string& format_str,
-            const T& timestamp,
-            const tz_t& utc_offset = 0) {
+            T timestamp,
+            tz_t utc_offset = 0) {
         std::string result;
         if (format_str.empty()) return result;
         DateTimeStruct dt = to_date_time<DateTimeStruct>(timestamp);
-
-        char buffer[32];
 
         bool is_command = false;
         size_t repeat_count = 0;
@@ -420,9 +422,92 @@ namespace time_shield {
     template<class T = ts_t>
     inline const std::string to_str(
             const std::string& format_str,
-            const T& timestamp,
-            const tz_t& utc_offset = 0) {
+            T timestamp,
+            tz_t utc_offset = 0) {
         return to_string<T>(format_str, timestamp, utc_offset);
+    }
+
+    /// \brief Convert timestamp in milliseconds to string with custom format.
+    ///
+    /// This function is similar to the strftime function and supports the majority of its specifiers,
+    /// as well as additional ones: YY, YYYY, YYYYYY, WWW, www, hh, mm, ss, dd, sss.
+    ///
+    /// The function accepts the following format specifiers as parameters:
+    /// - %YYYYYY: Year with reduction in the number of millennia.
+    /// - %YYYY: Year represented by 4 digits.
+    /// - %YY: Last two digits of the year.
+    /// - %MM: Month (01-12).
+    /// - %MMM: Abbreviated month name.
+    /// - %DD: Day of the month (01-31).
+    /// - %hh: Hour of the day in 24-hour format (00-23).
+    /// - %mm: Minute of the hour (00-59).
+    /// - %ss: Second (00-59).
+    /// - %sss: Millisecond (000-999).
+    /// - %WWW: Abbreviated day of the week name in uppercase (SUN, MON, TUE, etc.).
+    /// - %www: Abbreviated day of the week name (Sun, Mon, Tue, etc.).
+    ///
+    /// For more information, see the strftime specifiers documentation:
+    /// \sa https://manpages.debian.org/bullseye/manpages-dev/strftime.3.en.html
+    ///
+    /// \param format_str Format string with custom parameters, e.g., "%H:%M:%S".
+    /// \param timestamp Timestamp in milliseconds.
+    /// \param utc_offset UTC offset in seconds (default is 0).
+    /// \return Returns a string in the format specified by the user.
+    template<class T = ts_ms_t>
+    const std::string to_string_ms(
+            const std::string& format_str,
+            T timestamp,
+            tz_t utc_offset = 0) {
+        std::string result;
+        if (format_str.empty()) return result;
+        DateTimeStruct dt = to_date_time_ms<DateTimeStruct>(timestamp);
+
+        bool is_command = false;
+        size_t repeat_count = 0;
+        char last_char = format_str[0];
+        if (last_char != '%') result += last_char;
+        for (size_t i = 0; i < format_str.size(); ++i) {
+            const char& current_char = format_str[i];
+            if (!is_command) {
+                if (current_char == '%') {
+                    ++repeat_count;
+                    if (repeat_count == 2) {
+                        result += current_char;
+                        repeat_count = 0;
+                    }
+                    continue;
+                }
+                if (!repeat_count) {
+                    result += current_char;
+                    continue;
+                }
+                last_char = current_char;
+                is_command = true;
+                continue;
+            }
+            if (last_char == current_char) {
+                ++repeat_count;
+                continue;
+            }
+            process_format_impl(last_char, repeat_count, timestamp, utc_offset, dt, result);
+            repeat_count = 0;
+            is_command = false;
+            --i;
+        }
+        if (is_command) {
+            process_format_impl(last_char, repeat_count, timestamp, utc_offset, dt, result);
+        }
+        return result;
+    }
+
+    /// \brief Alias for to_string function.
+    /// \copydoc to_string
+    template<class T = ts_t>
+    inline const std::string to_str_ms(
+            const std::string& format_str,
+            T timestamp,
+            tz_t utc_offset = 0) {
+        return to_string_ms<T>(format_str, timestamp, utc_offset);
     }
 
     /// \brief Converts a timestamp to an ISO8601 string.
@@ -433,10 +518,10 @@ namespace time_shield {
     /// \param ts The timestamp to convert.
     /// \return A string representing the timestamp in ISO8601 format.
     template<class T = ts_t>
-    inline const std::string to_iso8601_str(const T& ts) {
+    inline const std::string to_iso8601(T ts) {
         DateTimeStruct dt = to_date_time<DateTimeStruct>(ts);
         char buffer[32] = {0};
-        if TIME_SHIELD_CONSTEXPR (std::is_floating_point<T>::value) {
+        if TIME_SHIELD_IF_CONSTEXPR (std::is_floating_point<T>::value) {
             snprintf(buffer, sizeof(buffer), "%lld-%.2d-%.2dT%.2d:%.2d:%.2d.%.3d", dt.year, dt.mon, dt.day, dt.hour, dt.min, dt.sec, dt.ms);
         } else {
             snprintf(buffer, sizeof(buffer), "%lld-%.2d-%.2dT%.2d:%.2d:%.2d", dt.year, dt.mon, dt.day, dt.hour, dt.min, dt.sec);
@@ -452,7 +537,7 @@ namespace time_shield {
     /// \param ts The timestamp to convert.
     /// \return A string representing the date part of the timestamp in ISO8601 format.
     template<class T = ts_t>
-    inline const std::string to_iso8601_date_str(const T& ts) {
+    inline const std::string to_iso8601_date(T ts) {
         DateTimeStruct dt = to_date_time<DateTimeStruct>(ts);
         char buffer[32] = {0};
         snprintf(buffer, sizeof(buffer), "%lld-%.2d-%.2d", dt.year, dt.mon, dt.day);
@@ -467,10 +552,10 @@ namespace time_shield {
     /// \param ts The timestamp to convert.
     /// \return A string representing the time part of the timestamp in ISO8601 format.
     template<class T = ts_t>
-    inline const std::string to_iso8601_time_str(const T& ts) {
+    inline const std::string to_iso8601_time(T ts) {
         DateTimeStruct dt = to_date_time<DateTimeStruct>(ts);
         char buffer[32] = {0};
-        if TIME_SHIELD_CONSTEXPR (std::is_floating_point<T>::value) {
+        if TIME_SHIELD_IF_CONSTEXPR (std::is_floating_point<T>::value) {
             snprintf(buffer, sizeof(buffer), "%.2d:%.2d:%.2d.%.3d", dt.hour, dt.min, dt.sec, dt.ms);
         } else {
             snprintf(buffer, sizeof(buffer), "%.2d:%.2d:%.2d", dt.hour, dt.min, dt.sec);
@@ -486,10 +571,10 @@ namespace time_shield {
     /// \param ts The timestamp to convert.
     /// \return A string representing the time part of the timestamp in ISO8601 format with 'Z' indicating UTC.
     template<class T = ts_t>
-    inline const std::string to_iso8601_time_utc_str(const T& ts) {
+    inline const std::string to_iso8601_time_utc(T ts) {
         DateTimeStruct dt = to_date_time<DateTimeStruct>(ts);
         char buffer[32] = {0};
-        if TIME_SHIELD_CONSTEXPR (std::is_floating_point<T>::value) {
+        if TIME_SHIELD_IF_CONSTEXPR (std::is_floating_point<T>::value) {
             snprintf(buffer, sizeof(buffer), "%.2d:%.2d:%.2d.%.3dZ", dt.hour, dt.min, dt.sec, dt.ms);
         } else {
             snprintf(buffer, sizeof(buffer), "%.2d:%.2d:%.2dZ", dt.hour, dt.min, dt.sec);
@@ -505,10 +590,10 @@ namespace time_shield {
     /// \param ts The timestamp to convert.
     /// \return A string representing the timestamp in ISO8601 UTC format.
     template<class T = ts_t>
-    inline const std::string to_iso8601_utc_str(const T& ts) {
+    inline const std::string to_iso8601_utc(T ts) {
         DateTimeStruct dt = to_date_time<DateTimeStruct>(ts);
         char buffer[32] = {0};
-        if TIME_SHIELD_CONSTEXPR (std::is_floating_point<T>::value) {
+        if TIME_SHIELD_IF_CONSTEXPR (std::is_floating_point<T>::value) {
             snprintf(buffer, sizeof(buffer), "%lld-%.2d-%.2dT%.2d:%.2d:%.2d.%.3dZ", dt.year, dt.mon, dt.day, dt.hour, dt.min, dt.sec, dt.ms);
         } else {
             snprintf(buffer, sizeof(buffer), "%lld-%.2d-%.2dT%.2d:%.2d:%.2dZ", dt.year, dt.mon, dt.day, dt.hour, dt.min, dt.sec);
@@ -522,7 +607,7 @@ namespace time_shield {
     ///
     /// \param ts_ms The timestamp in milliseconds to convert.
     /// \return A string representing the timestamp in ISO8601 UTC format with milliseconds.
-    inline const std::string to_iso8601_utc_str_ms(const ts_ms_t& ts_ms) {
+    inline const std::string to_iso8601_utc_ms(ts_ms_t ts_ms) {
         DateTimeStruct dt = to_date_time_ms<DateTimeStruct>(ts_ms);
         char buffer[32] = {0};
         snprintf(buffer, sizeof(buffer), "%lld-%.2d-%.2dT%.2d:%.2d:%.2d.%.3dZ", dt.year, dt.mon, dt.day, dt.hour, dt.min, dt.sec, dt.ms);
@@ -535,7 +620,7 @@ namespace time_shield {
     ///
     /// \param ts_ms The timestamp in milliseconds to convert.
     /// \return A string representing the timestamp in ISO8601 format with milliseconds.
-    inline const std::string to_iso8601_str_ms(const ts_ms_t& ts_ms) {
+    inline const std::string to_iso8601_ms(ts_ms_t ts_ms) {
         DateTimeStruct dt = to_date_time_ms<DateTimeStruct>(ts_ms);
         char buffer[32] = {0};
         snprintf(buffer, sizeof(buffer), "%lld-%.2d-%.2dT%.2d:%.2d:%.2d.%.3d", dt.year, dt.mon, dt.day, dt.hour, dt.min, dt.sec, dt.ms);
@@ -551,11 +636,11 @@ namespace time_shield {
     /// \param utc_offset The timezone offset in seconds.
     /// \return A string representing the timestamp in ISO8601 format with timezone offset.
     template<class T = ts_t>
-    inline const std::string to_iso8601_str(const T& ts, const tz_t &utc_offset) {
+    inline const std::string to_iso8601(T ts, tz_t utc_offset) {
         TimeZoneStruct tz = to_time_zone(utc_offset);
         DateTimeStruct dt = to_date_time(ts);
         char buffer[32] = {0};
-        if TIME_SHIELD_CONSTEXPR (std::is_floating_point<T>::value) {
+        if TIME_SHIELD_IF_CONSTEXPR (std::is_floating_point<T>::value) {
             if (tz.is_positive) {
                 snprintf(buffer, sizeof(buffer), "%lld-%.2d-%.2dT%.2d:%.2d:%.2d.%.3d+%.2d:%.2d", dt.year, dt.mon, dt.day, dt.hour, dt.min, dt.sec, dt.ms, tz.hour, tz.min);
             } else {
@@ -578,7 +663,7 @@ namespace time_shield {
     /// \param ts_ms The timestamp in milliseconds to convert.
     /// \param utc_offset The timezone offset in seconds.
     /// \return A string representing the timestamp in ISO8601 format with timezone offset and milliseconds.
-    inline const std::string to_iso8601_str_ms(const ts_ms_t& ts_ms, const tz_t &utc_offset) {
+    inline const std::string to_iso8601_ms(ts_ms_t ts_ms, tz_t utc_offset) {
         TimeZoneStruct tz = to_time_zone(utc_offset);
         DateTimeStruct dt = to_date_time_ms<DateTimeStruct>(ts_ms);
         char buffer[32] = {0};
@@ -592,11 +677,11 @@ namespace time_shield {
 
     /// \brief Converts a timestamp to a string in MQL5 date and time format.
     ///
-    /// This function converts a timestamp to a string in MQL5 date and time format (yyyy.mm.dd hh:mi:ss).
+    /// This function converts a timestamp to a string in MQL5 date and time format (yyyy.mm.dd hh:mm:ss).
     ///
     /// \param ts The timestamp to convert.
     /// \return A string representing the timestamp in MQL5 date and time format.
-    inline const std::string to_mql5_date_time_str(const ts_t& ts) {
+    inline const std::string to_mql5_date_time(ts_t ts) {
         DateTimeStruct dt = to_date_time<DateTimeStruct>(ts);
         char buffer[32] = {0};
         snprintf(buffer, sizeof(buffer), "%lld.%.2d.%.2d %.2d:%.2d:%.2d", dt.year, dt.mon, dt.day, dt.hour, dt.min, dt.sec);
@@ -605,8 +690,8 @@ namespace time_shield {
 
     /// \brief Alias for to_mql5_date_time_str function.
     /// \copydoc to_mql5_date_time_str
-    inline const std::string to_mql5_full_str(const ts_t& ts) {
-        return to_mql5_date_time_str(ts);
+    inline const std::string to_mql5_full(ts_t ts) {
+        return to_mql5_date_time(ts);
     }
 
     /// \brief Converts a timestamp to a string in MQL5 date format.
@@ -615,7 +700,7 @@ namespace time_shield {
     ///
     /// \param ts The timestamp to convert.
     /// \return A string representing the date part of the timestamp in MQL5 format.
-    inline const std::string to_mql5_date_str(const ts_t& ts) {
+    inline const std::string to_mql5_date(ts_t ts) {
         DateTimeStruct dt = to_date_time<DateTimeStruct>(ts);
         char buffer[32] = {0};
         snprintf(buffer, sizeof(buffer), "%lld.%.2d.%.2d", dt.year, dt.mon, dt.day);
@@ -624,14 +709,54 @@ namespace time_shield {
 
     /// \brief Converts a timestamp to a string in MQL5 time format.
     ///
-    /// This function converts a timestamp to a string in MQL5 time format (hh:mi:ss).
+    /// This function converts a timestamp to a string in MQL5 time format (hh:mm:ss).
     ///
     /// \param ts The timestamp to convert.
     /// \return A string representing the time part of the timestamp in MQL5 format.
-    inline const std::string to_mql5_time_str(const ts_t& ts) {
+    inline const std::string to_mql5_time(ts_t ts) {
         DateTimeStruct dt = to_date_time<DateTimeStruct>(ts);
         char buffer[32] = {0};
         snprintf(buffer, sizeof(buffer), "%.2d:%.2d:%.2d", dt.hour, dt.min, dt.sec);
+        return std::string(buffer);
+    }
+
+    /// \brief Converts a timestamp in seconds to a Windows-compatible filename format.
+    /// \param timestamp_ms The timestamp in seconds.
+    /// \return A string in the format "YYYY-MM-DD_HH-MM-SS".
+    inline const std::string to_windows_filename(ts_t ts) {
+        DateTimeStruct dt = to_date_time<DateTimeStruct>(ts);
+        char buffer[32] = {0};
+        snprintf(buffer, sizeof(buffer), "%lld-%.2d-%.2d_%.2d-%.2d-%.2d", dt.year, dt.mon, dt.day, dt.hour, dt.min, dt.sec);
+        return std::string(buffer);
+    }
+
+    /// \brief Converts a timestamp in milliseconds to a Windows-compatible filename format.
+    /// \param timestamp_ms The timestamp in milliseconds.
+    /// \return A string in the format "YYYY-MM-DD_HH-MM-SS-SSS".
+    inline const std::string to_windows_filename_ms(ts_ms_t ts) {
+        DateTimeStruct dt = to_date_time_ms<DateTimeStruct>(ts);
+        char buffer[32] = {0};
+        snprintf(buffer, sizeof(buffer), "%lld-%.2d-%.2d_%.2d-%.2d-%.2d-%.3d", dt.year, dt.mon, dt.day, dt.hour, dt.min, dt.sec, dt.ms);
+        return std::string(buffer);
+    }
+
+    /// \brief Converts a timestamp in seconds to a human-readable format.
+    /// \param timestamp_ms The timestamp in seconds.
+    /// \return A string in the format "YYYY-MM-DD HH:MM:SS".
+    std::string to_human_readable(ts_t ts) {
+        DateTimeStruct dt = to_date_time_ms<DateTimeStruct>(ts);
+        char buffer[32] = {0};
+        snprintf(buffer, sizeof(buffer), "%lld-%.2d-%.2d %.2d:%.2d:%.2d", dt.year, dt.mon, dt.day, dt.hour, dt.min, dt.sec);
+        return std::string(buffer);
+    }
+
+    /// \brief Converts a timestamp in milliseconds to a human-readable format.
+    /// \param timestamp_ms The timestamp in milliseconds.
+    /// \return A string in the format "YYYY-MM-DD HH:MM:SS.SSS".
+    std::string to_human_readable_ms(ts_ms_t ts) {
+        DateTimeStruct dt = to_date_time_ms<DateTimeStruct>(ts);
+        char buffer[32] = {0};
+        snprintf(buffer, sizeof(buffer), "%lld-%.2d-%.2d %.2d:%.2d:%.2d.%.3d", dt.year, dt.mon, dt.day, dt.hour, dt.min, dt.sec, dt.ms);
         return std::string(buffer);
     }
 

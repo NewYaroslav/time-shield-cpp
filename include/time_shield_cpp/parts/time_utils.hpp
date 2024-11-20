@@ -96,7 +96,7 @@ namespace time_shield {
 	/// \brief Get the current UTC timestamp in milliseconds.
 	/// \return ts_ms_t Current UTC timestamp in milliseconds.
 	inline const ts_ms_t now() noexcept {
-		const struct timespec ts = get_timespec_impl();
+        const struct timespec ts = get_timespec_impl();
 		return MS_PER_SEC * ts.tv_sec + ts.tv_nsec / NS_PER_MS;
 	}
 

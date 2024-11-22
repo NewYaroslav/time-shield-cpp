@@ -13,6 +13,7 @@
 #include "time_zone_struct.hpp"
 #include <cmath>
 #include <ctime>
+#include <stdexcept>
 
 namespace time_shield {
 

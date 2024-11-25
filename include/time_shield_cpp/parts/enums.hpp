@@ -11,6 +11,24 @@
 
 namespace time_shield {
 
+/// \defgroup time_enums Time Enumerations
+/// \brief Enumerations for time-related concepts.
+///
+/// This group contains various enums that represent time-related concepts such as
+/// weekdays, months, time zones, and formatting options.
+///
+/// ### Key Features:
+/// - Defines enumerations for consistent handling of weekdays, months, and other time units.
+/// - Provides utility functions for converting enum values to string representations.
+///
+/// ### Example Usage:
+/// ```cpp
+/// auto weekday = time_shield::Weekday::MON;
+/// std::cout << time_shield::to_cstr(weekday, time_shield::FormatType::FULL_NAME); // "Monday"
+/// ```
+///
+/// \{
+
     /// Enumeration of the format options for representing a weekday or month.
     enum FormatType {
         UPPERCASE_NAME = 0, ///< Uppercase short name
@@ -254,6 +272,8 @@ namespace time_shield {
         AMERICAN_TIME,        ///< American time format (e.g., "12:30 PM")
         EUROPEAN_TIME,        ///< European time format (e.g., "12:30")
     };
+
+/// \}
 
 }; // namespace time_shield
 

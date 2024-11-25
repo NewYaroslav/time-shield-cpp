@@ -14,6 +14,37 @@
 
 namespace time_shield {
 
+/// \defgroup time_formatting Time Formatting
+/// \brief A comprehensive set of functions for converting timestamps to formatted strings.
+///
+/// This module provides utilities for formatting timestamps into human-readable strings,
+/// custom formats, ISO8601, and other standardized formats.
+///
+/// ### Key Features:
+/// - Custom formatting of timestamps using `strftime`-like specifiers.
+/// - ISO8601 date and time representation.
+/// - MQL5-compatible date and time formatting.
+/// - Conversion to Windows-compatible filename formats.
+/// - Human-readable timestamp formatting.
+///
+/// ### Usage Examples:
+/// - Format a timestamp to a custom string:
+///   \code{.cpp}
+///   std::string formatted = time_shield::to_string("%H:%M:%S", 1698249600);
+///   \endcode
+///
+/// - Convert a timestamp to ISO8601 format:
+///   \code{.cpp}
+///   std::string iso8601 = time_shield::to_iso8601(1698249600);
+///   \endcode
+///
+/// - Generate a Windows-compatible filename:
+///   \code{.cpp}
+///   std::string filename = time_shield::to_windows_filename(1698249600);
+///   \endcode
+///
+/// \{
+
     inline void process_format_impl(
             char last_char,
             size_t repeat_count,
@@ -759,6 +790,8 @@ namespace time_shield {
         snprintf(buffer, sizeof(buffer), "%lld-%.2d-%.2d %.2d:%.2d:%.2d.%.3d", dt.year, dt.mon, dt.day, dt.hour, dt.min, dt.sec, dt.ms);
         return std::string(buffer);
     }
+
+/// \}
 
 }; // namespace time_shield
 

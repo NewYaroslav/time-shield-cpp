@@ -17,6 +17,38 @@
 
 namespace time_shield {
 
+/// \defgroup time_conversions Time Conversions
+/// \brief A comprehensive set of functions and utilities for working with timestamps and time-related data.
+///
+/// This module provides functionalities to convert, manipulate, and analyze timestamps
+/// in seconds, milliseconds, and floating-point formats. It also includes utilities
+/// for working with date-time structures, UNIX days, and various time units (hours, minutes, seconds, etc.).
+///
+/// ### Key Features:
+/// - Convert timestamps between seconds, milliseconds, and floating-point seconds.
+/// - Extract components such as nanoseconds, microseconds, and milliseconds from timestamps.
+/// - Convert timestamps to and from date-time structures.
+/// - Calculate the start and end of various time intervals (e.g., days, hours, months, years).
+/// - Analyze time data (e.g., day of the week, day of the year, days in a month or year).
+///
+/// ### Usage Examples:
+/// - Obtain the millisecond component of a timestamp:
+///   \code{.cpp}
+///   auto ms = time_shield::ms_of_sec(123.456);
+///   \endcode
+///
+/// - Convert a date-time structure to a timestamp:
+///   \code{.cpp}
+///   auto ts = time_shield::to_timestamp(2024, 11, 25, 14, 30, 0);
+///   \endcode
+///
+/// - Determine the start of the current year:
+///   \code{.cpp}
+///   auto year_start = time_shield::start_of_year(current_timestamp());
+///   \endcode
+///
+/// \{
+
     /// \brief Get the nanosecond part of the second from a floating-point timestamp.
     /// \tparam T Type of the returned value (default is int).
     /// \param ts Timestamp in floating-point seconds.
@@ -187,6 +219,7 @@ namespace time_shield {
 
 //------------------------------------------------------------------------------
 
+    /// \ingroup time_structures
     /// \brief Converts a timestamp to a date-time structure.
     ///
     /// This function converts a timestamp (usually an integer representing seconds since epoch)
@@ -294,6 +327,7 @@ namespace time_shield {
         return date_time;
     }
 
+    /// \ingroup time_structures
     /// \brief Alias for to_date_time function.
     /// \copydoc to_date_time
     template<class T1, class T2 = ts_t>
@@ -303,6 +337,7 @@ namespace time_shield {
 
 //------------------------------------------------------------------------------
 
+    /// \ingroup time_structures
     /// \brief Converts a timestamp in milliseconds to a date-time structure with milliseconds.
     /// \tparam T The type of the date-time structure to return.
     /// \param ts The timestamp in milliseconds to convert.
@@ -314,6 +349,7 @@ namespace time_shield {
         return date_time;
     }
 
+    /// \ingroup time_structures
     /// \brief Alias for to_date_time_ms function.
     /// \copydoc to_date_time_ms
     template<class T>
@@ -461,6 +497,7 @@ namespace time_shield {
 
 //------------------------------------------------------------------------------
 
+    /// \ingroup time_structures
     /// \brief Converts a date-time structure to a timestamp.
     ///
     /// This function converts a given date and time to a timestamp, which is the number
@@ -482,6 +519,7 @@ namespace time_shield {
             date_time.sec);
     }
 
+    /// \ingroup time_structures
     /// \brief Alias for dt_to_timestamp function.
     /// \copydoc dt_to_timestamp
     template<class T>
@@ -490,6 +528,7 @@ namespace time_shield {
         return dt_to_timestamp(date_time);
     }
 
+    /// \ingroup time_structures
     /// \brief Alias for dt_to_timestamp function.
     /// \copydoc dt_to_timestamp
     template<class T>
@@ -498,6 +537,7 @@ namespace time_shield {
         return dt_to_timestamp(date_time);
     }
 
+    /// \ingroup time_structures
     /// \brief Alias for dt_to_timestamp function.
     /// \copydoc dt_to_timestamp
     template<class T>
@@ -506,6 +546,7 @@ namespace time_shield {
         return dt_to_timestamp(date_time);
     }
 
+    /// \ingroup time_structures
     /// \brief Alias for dt_to_timestamp function.
     /// \copydoc dt_to_timestamp
     template<class T>
@@ -644,6 +685,7 @@ namespace time_shield {
 
 //------------------------------------------------------------------------------
 
+    /// \ingroup time_structures
     /// \brief Converts a date-time structure to a timestamp in milliseconds.
     ///
     /// This function converts a given date-time structure to a timestamp in milliseconds,
@@ -659,6 +701,7 @@ namespace time_shield {
         return sec_to_ms(dt_to_timestamp(date_time)) + date_time.ms;
     }
 
+    /// \ingroup time_structures
     /// \brief Alias for dt_to_timestamp_ms function.
     /// \copydoc dt_to_timestamp_ms
     template<class T>
@@ -667,6 +710,7 @@ namespace time_shield {
         return dt_to_timestamp_ms(date_time);
     }
 
+    /// \ingroup time_structures
     /// \brief Alias for dt_to_timestamp_ms function.
     /// \copydoc dt_to_timestamp_ms
     template<class T>
@@ -675,6 +719,7 @@ namespace time_shield {
         return dt_to_timestamp_ms(date_time);
     }
 
+    /// \ingroup time_structures
     /// \brief Alias for dt_to_timestamp_ms function.
     /// \copydoc dt_to_timestamp_ms
     template<class T>
@@ -683,6 +728,7 @@ namespace time_shield {
         return dt_to_timestamp_ms(date_time);
     }
 
+    /// \ingroup time_structures
     /// \brief Alias for dt_to_timestamp_ms function.
     /// \copydoc dt_to_timestamp_ms
     template<class T>
@@ -810,6 +856,7 @@ namespace time_shield {
 
 //------------------------------------------------------------------------------
 
+    /// \ingroup time_structures
     /// \brief Converts a date-time structure to a floating-point timestamp.
     ///
     /// This function converts a given date and time structure to a floating-point timestamp,
@@ -827,6 +874,7 @@ namespace time_shield {
             static_cast<fts_t>(date_time.ms)/static_cast<fts_t>(MS_PER_SEC);
     }
 
+    /// \ingroup time_structures
     /// \brief Alias for dt_to_ftimestamp function.
     /// \copydoc dt_to_ftimestamp
     template<class T>
@@ -835,6 +883,7 @@ namespace time_shield {
         return dt_to_ftimestamp(date_time);
     }
 
+    /// \ingroup time_structures
     /// \brief Alias for dt_to_ftimestamp function.
     /// \copydoc dt_to_ftimestamp
     template<class T>
@@ -843,6 +892,7 @@ namespace time_shield {
         return dt_to_ftimestamp(date_time);
     }
 
+    /// \ingroup time_structures
     /// \brief Alias for dt_to_ftimestamp function.
     /// \copydoc dt_to_ftimestamp
     template<class T>
@@ -851,6 +901,7 @@ namespace time_shield {
         return dt_to_ftimestamp(date_time);
     }
 
+    /// \ingroup time_structures
     /// \brief Alias for dt_to_ftimestamp function.
     /// \copydoc dt_to_ftimestamp
     template<class T>
@@ -909,12 +960,19 @@ namespace time_shield {
     ///
     /// This function returns the number of days elapsed since the UNIX epoch.
     ///
-    /// \tparam T The return type of the function (default is unix_day_t).
+    /// \tparam T The return type of the function (default is unixday_t).
     /// \param ts Timestamp in seconds (default is current timestamp).
     /// \return Number of days since the UNIX epoch.
     template<class T = uday_t>
     constexpr const T get_unix_day(ts_t ts = ts()) noexcept {
         return ts / SEC_PER_DAY;
+    }
+
+    /// \brief Alias for get_unix_day function.
+    /// \copydoc get_unix_day
+    template<class T = uday_t>
+    constexpr const T get_unixday(ts_t ts = ts()) noexcept {
+        return get_unix_day(ts);
     }
 
     /// \brief Alias for get_unix_day function.
@@ -927,9 +985,20 @@ namespace time_shield {
     /// \brief Alias for get_unix_day function.
     /// \copydoc get_unix_day
     template<class T = uday_t>
+    constexpr const T unixday(ts_t ts = ts()) noexcept {
+        return get_unix_day(ts);
+    }
+
+    /// \brief Alias for get_unix_day function.
+    /// \copydoc get_unix_day
+    template<class T = uday_t>
     constexpr const T uday(ts_t ts = ts()) noexcept {
         return get_unix_day(ts);
     }
+
+//------------------------------------------------------------------------------
+
+
 
 //------------------------------------------------------------------------------
 
@@ -966,12 +1035,19 @@ namespace time_shield {
     ///
     /// This function returns the number of days elapsed since the UNIX epoch, given a timestamp in milliseconds.
     ///
-    /// \tparam T The return type of the function (default is unix_day_t).
+    /// \tparam T The return type of the function (default is unixday_t).
     /// \param t_ms Timestamp in milliseconds (default is current timestamp in milliseconds).
     /// \return Number of days since the UNIX epoch.
     template<class T = uday_t>
     constexpr const T get_unix_day_ms(ts_ms_t t_ms = ts_ms()) noexcept {
         return get_unix_day(ms_to_sec(t_ms));
+    }
+
+    /// \brief Alias for get_unix_day_ms function.
+    /// \copydoc get_unix_day_ms
+    template<class T = uday_t>
+    constexpr const T get_unixday_ms(ts_ms_t t_ms = ts_ms()) noexcept {
+        return get_unix_day_ms(t_ms);
     }
 
     /// \brief Alias for get_unix_day_ms function.
@@ -984,19 +1060,27 @@ namespace time_shield {
     /// \brief Alias for get_unix_day_ms function.
     /// \copydoc get_unix_day_ms
     template<class T = uday_t>
+    constexpr const T unixday_ms(ts_ms_t t_ms = ts_ms()) noexcept {
+        return get_unix_day_ms(t_ms);
+    }
+
+    /// \brief Alias for get_unix_day_ms function.
+    /// \copydoc get_unix_day_ms
+    template<class T = uday_t>
     constexpr const T uday_ms(ts_ms_t t_ms = ts_ms()) noexcept {
         return get_unix_day_ms(t_ms);
     }
 
 //------------------------------------------------------------------------------
 
-    /// \brief Convert a UNIX day to a timestamp.
+    /// \brief Converts a UNIX day to a timestamp in seconds.
     ///
-    /// This function converts a number of days since the UNIX epoch to a timestamp in seconds.
+    /// Converts a number of days since the UNIX epoch (January 1, 1970) to the corresponding
+    /// timestamp in seconds at the start of the specified day.
     ///
     /// \tparam T The return type of the function (default is ts_t).
-    /// \param unix_day Number of days since the beginning of UNIX time.
-    /// \return Timestamp at the beginning of the given day.
+    /// \param unix_day Number of days since the UNIX epoch.
+    /// \return The timestamp in seconds representing the beginning of the specified UNIX day.
     template<class T = ts_t>
     constexpr const T unix_day_to_timestamp(uday_t unix_day) noexcept {
         return unix_day * SEC_PER_DAY;
@@ -1012,8 +1096,159 @@ namespace time_shield {
     /// \brief Alias for unix_day_to_timestamp function.
     /// \copydoc unix_day_to_timestamp
     template<class T = ts_t>
+    constexpr const T unixday_to_ts(uday_t unix_day) noexcept {
+        return unix_day_to_timestamp(unix_day);
+    }
+
+    /// \brief Alias for unix_day_to_timestamp function.
+    /// \copydoc unix_day_to_timestamp
+    template<class T = ts_t>
     constexpr const T uday_to_ts(uday_t unix_day) noexcept {
         return unix_day_to_timestamp(unix_day);
+    }
+
+    /// \brief Alias for unix_day_to_timestamp function.
+    /// \copydoc unix_day_to_timestamp
+    template<class T = ts_t>
+    constexpr const T start_of_day_from_unix_day(uday_t unix_day) noexcept {
+        return unix_day_to_timestamp(unix_day);
+    }
+
+    /// \brief Converts a UNIX day to a timestamp in milliseconds.
+    ///
+    /// Converts a number of days since the UNIX epoch (January 1, 1970) to the corresponding timestamp
+    /// in milliseconds at the start of the specified day.
+    ///
+    /// \tparam T The return type of the function (default is ts_t).
+    /// \param unix_day Number of days since the UNIX epoch.
+    /// \return The timestamp in milliseconds representing the beginning of the specified UNIX day.
+    template<class T = ts_t>
+    constexpr const T unix_day_to_timestamp_ms(uday_t unix_day) noexcept {
+        return unix_day * MS_PER_DAY;
+    }
+
+    /// \brief Alias for unix_day_to_timestamp_ms function.
+    /// \copydoc unix_day_to_timestamp_ms
+    template<class T = ts_t>
+    constexpr const T unix_day_to_ts_ms(uday_t unix_day) noexcept {
+        return unix_day_to_timestamp_ms(unix_day);
+    }
+
+    /// \brief Alias for unix_day_to_timestamp_ms function.
+    /// \copydoc unix_day_to_timestamp_ms
+    template<class T = ts_t>
+    constexpr const T unixday_to_ts_ms(uday_t unix_day) noexcept {
+        return unix_day_to_timestamp_ms(unix_day);
+    }
+
+    /// \brief Alias for unix_day_to_timestamp_ms function.
+    /// \copydoc unix_day_to_timestamp_ms
+    template<class T = ts_t>
+    constexpr const T uday_to_ts_ms(uday_t unix_day) noexcept {
+        return unix_day_to_timestamp_ms(unix_day);
+    }
+
+    /// \brief Alias for unix_day_to_timestamp_ms function.
+    /// \copydoc unix_day_to_timestamp_ms
+    template<class T = ts_t>
+    constexpr const T start_of_day_from_unix_day_ms(uday_t unix_day) noexcept {
+        return unix_day_to_timestamp_ms(unix_day);
+    }
+
+//------------------------------------------------------------------------------
+
+    /// \brief Converts a UNIX day to a timestamp representing the end of the day in seconds.
+    ///
+    /// Converts a number of days since the UNIX epoch (January 1, 1970) to the corresponding
+    /// timestamp in seconds at the end of the specified day (23:59:59).
+    ///
+    /// \tparam T The return type of the function (default is ts_t).
+    /// \param unix_day The number of days since the UNIX epoch.
+    /// \return The timestamp in seconds representing the end of the specified UNIX day.
+    template<class T = ts_t>
+    constexpr const T end_of_day_from_unix_day(uday_t unix_day) noexcept {
+        return unix_day * SEC_PER_DAY + SEC_PER_DAY - 1;
+    }
+
+    /// \brief Converts a UNIX day to a timestamp representing the end of the day in milliseconds.
+    ///
+    /// Converts a number of days since the UNIX epoch (January 1, 1970) to the corresponding
+    /// timestamp in milliseconds at the end of the specified day (23:59:59.999).
+    ///
+    /// \tparam T The return type of the function (default is ts_ms_t).
+    /// \param unix_day The number of days since the UNIX epoch.
+    /// \return The timestamp in milliseconds representing the end of the specified UNIX day.
+    template<class T = ts_ms_t>
+    constexpr const T end_of_day_from_unix_day_ms(uday_t unix_day) noexcept {
+        return unix_day * MS_PER_DAY + MS_PER_DAY - 1;
+    }
+
+    /// \brief Converts a UNIX day to a timestamp representing the start of the next day in seconds.
+    ///
+    /// Converts a number of days since the UNIX epoch (January 1, 1970) to the corresponding
+    /// timestamp in seconds at the start of the next day (00:00:00).
+    ///
+    /// \tparam T The return type of the function (default is ts_t).
+    /// \param unix_day The number of days since the UNIX epoch.
+    /// \return The timestamp in seconds representing the beginning of the next UNIX day.
+    template<class T = ts_ms_t>
+    constexpr const T start_of_next_day_from_unix_day(uday_t unix_day) noexcept {
+        return unix_day * SEC_PER_DAY + SEC_PER_DAY;
+    }
+
+    /// \brief Converts a UNIX day to a timestamp representing the start of the next day in milliseconds.
+    ///
+    /// Converts a number of days since the UNIX epoch (January 1, 1970) to the corresponding
+    /// timestamp in milliseconds at the start of the next day (00:00:00.000).
+    ///
+    /// \tparam T The return type of the function (default is ts_ms_t).
+    /// \param unix_day The number of days since the UNIX epoch.
+    /// \return The timestamp in milliseconds representing the beginning of the next UNIX day.
+    template<class T = ts_ms_t>
+    constexpr const T start_of_next_day_from_unix_day_ms(uday_t unix_day) noexcept {
+        return unix_day * MS_PER_DAY + MS_PER_DAY;
+    }
+
+    /// \brief Alias for start_of_next_day_from_unix_day function.
+    /// \copydoc start_of_next_day_from_unix_day
+    template<class T = ts_t>
+    constexpr const T next_day_from_unix_day(uday_t unix_day) noexcept {
+        return start_of_next_day_from_unix_day(unix_day);
+    }
+
+    /// \brief Alias for start_of_next_day_from_unix_day function.
+    /// \copydoc start_of_next_day_from_unix_day
+    template<class T = ts_t>
+    constexpr const T next_day_unix_day(uday_t unix_day) noexcept {
+        return start_of_next_day_from_unix_day(unix_day);
+    }
+
+    /// \brief Alias for start_of_next_day_from_unix_day function.
+    /// \copydoc start_of_next_day_from_unix_day
+    template<class T = ts_t>
+    constexpr const T next_day_unixday(uday_t unix_day) noexcept {
+        return start_of_next_day_from_unix_day(unix_day);
+    }
+
+    /// \brief Alias for start_of_next_day_from_unix_day_ms function.
+    /// \copydoc start_of_next_day_from_unix_day_ms
+    template<class T = ts_ms_t>
+    constexpr const T next_day_from_unix_day_ms(uday_t unix_day) noexcept {
+        return start_of_next_day_from_unix_day_ms(unix_day);
+    }
+
+    /// \brief Alias for start_of_next_day_from_unix_day_ms function.
+    /// \copydoc start_of_next_day_from_unix_day_ms
+    template<class T = ts_ms_t>
+    constexpr const T next_day_unix_day_ms(uday_t unix_day) noexcept {
+        return start_of_next_day_from_unix_day_ms(unix_day);
+    }
+
+    /// \brief Alias for start_of_next_day_from_unix_day_ms function.
+    /// \copydoc start_of_next_day_from_unix_day_ms
+    template<class T = ts_ms_t>
+    constexpr const T next_day_unixday_ms(uday_t unix_day) noexcept {
+        return start_of_next_day_from_unix_day_ms(unix_day);
     }
 
 //------------------------------------------------------------------------------
@@ -1696,13 +1931,14 @@ namespace time_shield {
 
 //------------------------------------------------------------------------------
 
-    /// \brief Get timestamp of the first day after a specified number of days.
+    /// \brief Get the timestamp of the start of the day after a specified number of days.
     ///
-    /// This function returns the timestamp of the start of the day after a specified number of days.
+    /// Calculates the timestamp for the beginning of the day after a specified number of days
+    /// relative to the given timestamp.
     ///
-    /// \param ts Current timestamp.
-    /// \param days Number of days after the current day (default is 1).
-    /// \return Timestamp of the first day after the specified number of days.
+    /// \param ts The current timestamp in seconds.
+    /// \param days The number of days after the current day (default is 1).
+    /// \return The timestamp in seconds representing the beginning of the specified future day.
     template<class T = int>
     constexpr const ts_t start_of_next_day(ts_t ts, T days = 1) noexcept {
         return start_of_day(ts) + days * SEC_PER_DAY;
@@ -1713,6 +1949,54 @@ namespace time_shield {
     template<class T = int>
     constexpr const ts_t next_day_start(ts_t ts, T days = 1) noexcept {
         return start_of_next_day(ts, days);
+    }
+
+//------------------------------------------------------------------------------
+
+    /// \brief Get the timestamp of the start of the day after a specified number of days.
+    ///
+    /// Calculates the timestamp for the beginning of the day after a specified number of days
+    /// relative to the given timestamp in milliseconds.
+    ///
+    /// \param ts_ms The current timestamp in milliseconds.
+    /// \param days The number of days after the current day (default is 1).
+    /// \return The timestamp in milliseconds representing the beginning of the specified future day.
+    template<class T = int>
+    constexpr const ts_ms_t start_of_next_day_ms(ts_ms_t ts_ms, T days = 1) noexcept {
+        return start_of_day_ms(ts_ms) + days * MS_PER_DAY;
+    }
+
+    /// \brief Alias for start_of_next_day_ms function.
+    /// \copydoc start_of_next_day_ms
+    template<class T = int>
+    constexpr const ts_ms_t next_day_start_ms(ts_ms_t ts_ms, T days = 1) noexcept {
+        return start_of_next_day_ms(ts_ms, days);
+    }
+
+//------------------------------------------------------------------------------
+
+    /// \brief Calculate the timestamp for a specified number of days in the future.
+    ///
+    /// Adds the given number of days to the provided timestamp, without adjusting to the start of the day.
+    ///
+    /// \param ts The current timestamp in seconds.
+    /// \param days The number of days to add to the current timestamp (default is 1).
+    /// \return The timestamp in seconds after adding the specified number of days.
+    template<class T = int>
+    constexpr const ts_t next_day(ts_t ts, T days = 1) noexcept {
+        return ts + days * SEC_PER_DAY;
+    }
+
+    /// \brief Calculate the timestamp for a specified number of days in the future (milliseconds).
+    ///
+    /// Adds the given number of days to the provided timestamp, without adjusting to the start of the day.
+    ///
+    /// \param ts_ms The current timestamp in milliseconds.
+    /// \param days The number of days to add to the current timestamp (default is 1).
+    /// \return The timestamp in milliseconds after adding the specified number of days.
+    template<class T = int>
+    constexpr const ts_ms_t next_day_ms(ts_ms_t ts_ms, T days = 1) noexcept {
+        return ts_ms + days * MS_PER_DAY;
     }
 
 //------------------------------------------------------------------------------
@@ -1802,6 +2086,7 @@ namespace time_shield {
 
 //------------------------------------------------------------------------------
 
+    /// \ingroup time_structures
     /// \brief Get the day of the week from a date structure.
     ///
     /// This function takes a date structure with fields 'year', 'mon', and 'day',
@@ -1814,6 +2099,7 @@ namespace time_shield {
         return day_of_week_date(date.year, date.mon, date.day);
     }
 
+    /// \ingroup time_structures
     /// \brief Alias for get_weekday_from_date function that accepts a date structure.
     /// \copydoc get_weekday_from_date
     template<class T1 = int, class T2>
@@ -1821,6 +2107,7 @@ namespace time_shield {
         return get_weekday_from_date(date);
     }
 
+    /// \ingroup time_structures
     /// \brief Alias for get_weekday_from_date function that accepts a date structure.
     /// \copydoc get_weekday_from_date
     template<class T1 = int, class T2>
@@ -2212,6 +2499,8 @@ namespace time_shield {
         tz.is_positive = (offset >= 0);
         return tz;
     }
+
+/// \}
 
 }; // namespace time_shield
 

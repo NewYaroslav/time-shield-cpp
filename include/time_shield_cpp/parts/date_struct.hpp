@@ -8,13 +8,15 @@
 
 namespace time_shield {
 
+    /// \ingroup time_structures
     /// \brief Structure to represent a date.
     struct DateStruct {
         int64_t year;   ///< Year component of the date.
-        int     mon;    ///< Month component of the date (1-12).
-        int     day;    ///< Day component of the date (1-31).
+        int32_t mon;    ///< Month component of the date (1-12).
+        int32_t day;    ///< Day component of the date (1-31).
     };
 
+    /// \ingroup time_structures
     /// \brief Creates a DateStruct instance.
     /// \param year The year component of the date.
     /// \param mon The month component of the date, defaults to 1 (January).
@@ -22,8 +24,8 @@ namespace time_shield {
     /// \return A DateStruct instance with the provided date components.
     inline const DateStruct create_date_struct(
             int64_t year,
-            int mon = 1,
-            int day = 1) {
+            int32_t mon = 1,
+            int32_t day = 1) {
         DateStruct data{year, mon, day};
         return data;
     }

@@ -13,6 +13,38 @@
 
 namespace time_shield {
 
+/// \defgroup time_validation Time Validation
+/// \brief A comprehensive set of functions for validating dates, times, leap years, and time zones.
+///
+/// This module provides functionalities to validate the correctness of date-time values,
+/// leap years, and time zone offsets. It also includes utilities for determining weekends
+/// and ensuring the validity of timestamp-based calculations.
+///
+/// ### Key Features:
+/// - Validate leap years using dates or timestamps.
+/// - Ensure the correctness of date components (year, month, day).
+/// - Verify the validity of time components (hour, minute, second, millisecond).
+/// - Check the validity of time zones and time zone structures.
+/// - Determine if a given timestamp or day corresponds to a weekend.
+///
+/// ### Usage Examples:
+/// - Check if a year is a leap year:
+///   \code{.cpp}
+///   bool is_leap = time_shield::is_leap_year_date(2024);
+///   \endcode
+///
+/// - Validate a specific date:
+///   \code{.cpp}
+///   bool is_valid = time_shield::is_valid_date(2024, 2, 29);
+///   \endcode
+///
+/// - Check if a timestamp falls on a weekend:
+///   \code{.cpp}
+///   bool is_weekend = time_shield::is_day_off(1698249600); // Saturday, Oct 26, 2024
+///   \endcode
+///
+/// \{
+
     /// \brief Checks if the given year is a leap year.
     /// \tparam T The type of the year (default is year_t).
     /// \param year Year to check.
@@ -121,6 +153,7 @@ namespace time_shield {
 
 //------------------------------------------------------------------------------
 
+    /// \ingroup time_structures
     /// \brief Check if the time zone is valid.
     /// \tparam T The type of the time zone structure (default is TimeZoneStruct).
     /// \param time_zone The time zone structure containing hour and minute components.
@@ -131,6 +164,7 @@ namespace time_shield {
         return is_valid_time_zone(time_zone.hour, time_zone.min);
     }
 
+    /// \ingroup time_structures
     /// \brief Alias for is_valid_time_zone_offset function.
     /// \copydoc is_valid_time_zone_offset
     template<class T = TimeZoneStruct>
@@ -139,6 +173,7 @@ namespace time_shield {
         return is_valid_time_zone_offset(time_zone);
     }
 
+    /// \ingroup time_structures
     /// \brief Alias for is_valid_time_zone_offset function.
     /// \copydoc is_valid_time_zone_offset
     template<class T = TimeZoneStruct>
@@ -170,6 +205,7 @@ namespace time_shield {
         return true;
     }
 
+    /// \ingroup time_structures
     /// \brief Checks the correctness of the specified time.
     /// \tparam T The type of the time structure.
     /// \param time Time structure.
@@ -216,6 +252,7 @@ namespace time_shield {
         return true;
     }
 
+    /// \ingroup time_structures
     /// \brief Checks the correctness of the specified date.
     /// \tparam T The type of the date-time structure.
     /// \param date Date-time structure.
@@ -251,6 +288,7 @@ namespace time_shield {
         return true;
     }
 
+    /// \ingroup time_structures
     /// \brief Checks the correctness of a date and time.
     /// \tparam T The type of the date-time structure.
     /// \param date_time Date-time structure.
@@ -301,6 +339,8 @@ namespace time_shield {
     TIME_SHIELD_CONSTEXPR inline bool is_weekend_unix_day(T unix_day) noexcept {
         return is_day_off_unix_day(unix_day);
     }
+
+/// \}
 
 }; // namespace time_shield
 

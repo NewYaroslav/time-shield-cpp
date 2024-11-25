@@ -11,6 +11,23 @@
 
 namespace time_shield {
 
+/// \defgroup time_constants Time Constants
+/// \brief A collection of constants for time calculations and conversions.
+///
+/// This group includes constants for time units (nanoseconds, microseconds, milliseconds, seconds, minutes, hours, days),
+/// and other values related to the representation of time, such as UNIX and OLE epochs.
+///
+/// ### Key Features:
+/// - Provides constants for common time conversions.
+/// - Includes limits and special values like MAX_YEAR and ERROR_YEAR.
+///
+/// ### Example Usage:
+/// ```cpp
+/// int64_t milliseconds_in_a_day = time_shield::MS_PER_DAY;
+/// ```
+///
+/// \{
+
     // Nanoseconds and microseconds
     constexpr int64_t NS_PER_US     = 1000;         ///< Nanoseconds per microsecond
     constexpr int64_t NS_PER_MS     = 1000000;      ///< Nanoseconds per millisecond
@@ -86,6 +103,8 @@ namespace time_shield {
     constexpr int64_t ERROR_TIMESTAMP   = 9223372036854770000LL; ///< Error timestamp value
     constexpr double MAX_OADATE         = std::numeric_limits<double>::max();   ///< Maximum OLE automation date
     constexpr double AVG_DAYS_PER_YEAR  = 365.25;   ///< Average days per year
+
+/// \}
 
 }; // namespace time_shield
 

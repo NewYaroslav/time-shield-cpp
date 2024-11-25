@@ -8,6 +8,7 @@
 
 namespace time_shield {
 
+    /// \ingroup time_structures
     /// \brief Structure to represent date and time.
     struct DateTimeStruct {
         int64_t year;   ///< Year component of the date.
@@ -19,6 +20,7 @@ namespace time_shield {
         int     ms;     ///< Millisecond component of time (0-999)
     };
 
+    /// \ingroup time_structures
     /// \brief Creates a DateTimeStruct instance.
     /// \param year The year component of the date.
     /// \param mon The month component of the date, defaults to 1 (January).

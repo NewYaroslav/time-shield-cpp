@@ -11,6 +11,36 @@
 
 namespace time_shield {
 
+/// \defgroup time_utils Time Utilities
+/// \brief A collection of utility functions for working with timestamps and time components.
+///
+/// This module provides functions for obtaining the current timestamps in various formats
+/// (e.g., seconds, milliseconds, microseconds, floating-point seconds) and extracting
+/// sub-second components such as nanoseconds, microseconds, and milliseconds.
+///
+/// ### Key Features:
+/// - Obtain current UTC timestamps in seconds, milliseconds, and microseconds.
+/// - Support for floating-point and integer timestamp formats.
+/// - Extract nanoseconds, microseconds, and milliseconds from the current second.
+///
+/// ### Usage Examples:
+/// - Get the current timestamp in seconds:
+///   \code{.cpp}
+///   time_shield::ts_t current_time = time_shield::ts();
+///   \endcode
+///
+/// - Get the millisecond part of the current second:
+///   \code{.cpp}
+///   int ms = time_shield::ms_of_sec();
+///   \endcode
+///
+/// - Get the current timestamp in milliseconds:
+///   \code{.cpp}
+///   time_shield::ts_ms_t current_time_ms = time_shield::ts_ms();
+///   \endcode
+///
+/// \{
+
 	/// \brief Get the current timespec.
 	/// \return struct timespec The current timespec.
 	inline const struct timespec get_timespec_impl() noexcept {
@@ -113,6 +143,9 @@ namespace time_shield {
 		const struct timespec ts = get_timespec_impl();
 		return US_PER_SEC * ts.tv_sec + ts.tv_nsec / NS_PER_US;
 	}
+
+/// \}
+
 }; // namespace time_shield
 
 #endif // _TIME_SHIELD_TIME_UTILS_HPP_INCLUDED

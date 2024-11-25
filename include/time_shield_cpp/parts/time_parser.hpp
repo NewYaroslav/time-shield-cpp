@@ -21,6 +21,38 @@
 
 namespace time_shield {
 
+/// \defgroup time_parsing Time Parsing
+/// \brief A comprehensive set of functions for parsing and converting date and time strings.
+///
+/// This module provides utilities for parsing date and time strings in ISO8601 format,
+/// extracting date components, and converting them into various timestamp formats.
+///
+/// ### Key Features:
+/// - Parse ISO8601 date and time strings.
+/// - Extract month numbers from month names.
+/// - Convert parsed date and time to timestamp formats (seconds, milliseconds, floating-point).
+///
+/// ### Usage Examples:
+/// - Parse an ISO8601 string and get a timestamp:
+///   \code{.cpp}
+///   ts_t timestamp;
+///   bool success = time_shield::str_to_ts("2024-11-25T14:30:00Z", timestamp);
+///   \endcode
+///
+/// - Extract a month number from a string:
+///   \code{.cpp}
+///   time_shield::Month month = time_shield::get_month_number<Month>("March");
+///   \endcode
+///
+/// - Parse an ISO8601 string into a DateTimeStruct:
+///   \code{.cpp}
+///   time_shield::DateTimeStruct dt;
+///   time_shield::TimeZoneStruct tz;
+///   bool valid = time_shield::parse_iso8601("2024-11-25T14:30:00+01:00", dt, tz);
+///   \endcode
+///
+/// \{
+
     /// \brief Get the month number by name.
     /// \tparam T The return type, default is Month enum.
     /// \param month The name of the month as a string.
@@ -305,6 +337,9 @@ namespace time_shield {
         str_to_fts(str, ts);
         return ts;
     }
+
+/// \}
+
 };
 
 #endif // _TIME_SHIELD_TIME_PARSER_HPP_INCLUDED

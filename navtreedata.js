@@ -31,6 +31,7 @@ var NAVTREE =
     [ "Installation", "index.html#install_sec", null ],
     [ "Repository", "index.html#repo_sec", null ],
     [ "License", "index.html#license_sec", null ],
+    [ "Topics", "topics.html", "topics" ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
@@ -63,9 +64,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"namespacetime__shield.html#a285e5f033050850055494c97b7c83260",
-"namespacetime__shield.html#aca6ac912d7f6e5add19c1e1dc9fb0236",
-"time__conversions_8hpp.html#aa30dd61ed3a8bab8976e3c4d1a5b7004"
+"group__time__conversions.html#gae48c0bcdfa10ad6d6322001fc67e140f",
+"namespacemembers_o.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

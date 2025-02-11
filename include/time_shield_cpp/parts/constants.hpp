@@ -36,27 +36,42 @@ namespace time_shield {
     // Microseconds and milliseconds
     constexpr int64_t US_PER_SEC        = 1000000;  ///< Microseconds per second
     constexpr int64_t MS_PER_SEC        = 1000;     ///< Milliseconds per second
+    constexpr int64_t MS_PER_1_SEC      = 1000;     ///< Milliseconds per 1 second
     constexpr int64_t MS_PER_5_SEC      = 5000;     ///< Milliseconds per 5 second
     constexpr int64_t MS_PER_10_SEC     = 5000;     ///< Milliseconds per 10 second
     constexpr int64_t MS_PER_15_SEC     = 15000;    ///< Milliseconds per 15 second
     constexpr int64_t MS_PER_30_SEC     = 30000;    ///< Milliseconds per 30 second
     constexpr int64_t MS_PER_MIN        = 60000;    ///< Milliseconds per minute
+    constexpr int64_t MS_PER_1_MIN      = 60000;    ///< Milliseconds per 1 minute
     constexpr int64_t MS_PER_5_MIN      = 300000;   ///< Milliseconds per 5 minute
     constexpr int64_t MS_PER_10_MIN     = 600000;   ///< Milliseconds per 10 minute
     constexpr int64_t MS_PER_15_MIN     = 900000;   ///< Milliseconds per 15 minute
     constexpr int64_t MS_PER_30_MIN     = 1800000;  ///< Milliseconds per 30 minute
     constexpr int64_t MS_PER_HALF_HOUR  = 1800000;  ///< Milliseconds per half hour
     constexpr int64_t MS_PER_HOUR       = 3600000;  ///< Milliseconds per hour
+    constexpr int64_t MS_PER_1_HOUR     = 3600000;  ///< Milliseconds per 1 hour
+	constexpr int64_t MS_PER_2_HOUR     = 7200000;  ///< Milliseconds per 2 hour
+	constexpr int64_t MS_PER_4_HOUR     = 14400000; ///< Milliseconds per 4 hour
+	constexpr int64_t MS_PER_5_HOUR     = 18000000; ///< Milliseconds per 5 hour
+	constexpr int64_t MS_PER_8_HOUR     = 28800000; ///< Milliseconds per 8 hour
+	constexpr int64_t MS_PER_12_HOUR    = 43200000; ///< Milliseconds per 12 hour
     constexpr int64_t MS_PER_DAY        = 86400000; ///< Milliseconds per day
 
     // Seconds
     constexpr int64_t SEC_PER_MIN       = 60;       ///< Seconds per minute
+    constexpr int64_t SEC_PER_1_MIN     = 60;       ///< Seconds per 1 minute
     constexpr int64_t SEC_PER_3_MIN     = 180;      ///< Seconds per 3 minute
     constexpr int64_t SEC_PER_5_MIN     = 300;      ///< Seconds per 5 minute
     constexpr int64_t SEC_PER_10_MIN    = 600;      ///< Seconds per 10 minute
     constexpr int64_t SEC_PER_15_MIN    = 900;      ///< Seconds per 15 minute
     constexpr int64_t SEC_PER_HALF_HOUR = 1800;     ///< Seconds per half hour
     constexpr int64_t SEC_PER_HOUR      = 3600;     ///< Seconds per hour
+    constexpr int64_t SEC_PER_1_HOUR    = 3600;     ///< Seconds per 1 hour
+    constexpr int64_t SEC_PER_2_HOUR    = 7200;     ///< Seconds per 2 hour
+    constexpr int64_t SEC_PER_4_HOUR    = 14400;    ///< Seconds per 4 hour
+    constexpr int64_t SEC_PER_5_HOUR    = 18000;    ///< Seconds per 5 hour
+    constexpr int64_t SEC_PER_8_HOUR    = 28800;    ///< Seconds per 8 hour
+    constexpr int64_t SEC_PER_12_HOUR   = 43200;    ///< Seconds per 12 hour
     constexpr int64_t SEC_PER_DAY       = 86400;    ///< Seconds per day
     constexpr int64_t SEC_PER_YEAR      = 31536000; ///< Seconds per year (365 days)
     constexpr int64_t AVG_SEC_PER_YEAR  = 31557600; ///< Average seconds per year (365.25 days)
@@ -70,6 +85,7 @@ namespace time_shield {
     // Minutes
     constexpr int64_t MIN_PER_HOUR      = 60;       ///< Minutes per hour
     constexpr int64_t MIN_PER_DAY       = 1440;     ///< Minutes per day
+    constexpr int64_t MIN_PER_1_DAY     = 1440;     ///< Minutes per 1 day
     constexpr int64_t MIN_PER_2_DAY     = 2*1440;   ///< Minutes per 2 day
     constexpr int64_t MIN_PER_5_DAY     = 5*1440;   ///< Minutes per 5 day
     constexpr int64_t MIN_PER_7_DAY     = 7*1440;   ///< Minutes per 7 day

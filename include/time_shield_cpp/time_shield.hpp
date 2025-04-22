@@ -9,19 +9,19 @@
 #ifndef _TIME_SHIELD_HPP_INCLUDED
 #define _TIME_SHIELD_HPP_INCLUDED
 
-#include "parts/config.hpp"             ///< Configuration settings for the Time Shield library.
-#include "parts/types.hpp"              ///< Type definitions used throughout the library.
-#include "parts/constants.hpp"          ///< Constants used in time calculations.
-#include "parts/enums.hpp"              ///< Enumerations used in time representations.
-#include "parts/time_struct.hpp"        ///< Structures representing time components.
-#include "parts/date_struct.hpp"        ///< Structures representing date components.
-#include "parts/time_zone_struct.hpp"   ///< Structure representing a time zone.
-#include "parts/date_time_struct.hpp"   ///< Structure representing date and time components.
-#include "parts/validation.hpp"         ///< Functions for validation of time-related values.
-#include "parts/time_utils.hpp"         ///< Utility functions for time manipulation.
-#include "parts/time_conversions.hpp"   ///< Functions for converting between different time representations.
-#include "parts/time_formatting.hpp"    ///< Functions for formatting time in various standard formats.
-#include "parts/time_parser.hpp"        ///< Functions for parsing time in various standard formats.
+#include "time_shield/config.hpp"             ///< Configuration settings for the Time Shield library.
+#include "time_shield/types.hpp"              ///< Type definitions used throughout the library.
+#include "time_shield/constants.hpp"          ///< Constants used in time calculations.
+#include "time_shield/enums.hpp"              ///< Enumerations used in time representations.
+#include "time_shield/time_struct.hpp"        ///< Structures representing time components.
+#include "time_shield/date_struct.hpp"        ///< Structures representing date components.
+#include "time_shield/time_zone_struct.hpp"   ///< Structure representing a time zone.
+#include "time_shield/date_time_struct.hpp"   ///< Structure representing date and time components.
+#include "time_shield/validation.hpp"         ///< Functions for validation of time-related values.
+#include "time_shield/time_utils.hpp"         ///< Utility functions for time manipulation.
+#include "time_shield/time_conversions.hpp"   ///< Functions for converting between different time representations.
+#include "time_shield/time_formatting.hpp"    ///< Functions for formatting time in various standard formats.
+#include "time_shield/time_parser.hpp"        ///< Functions for parsing time in various standard formats.
 
 /// \namespace tsh
 /// \brief Alias for the namespace time_shield.

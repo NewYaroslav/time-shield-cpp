@@ -63,10 +63,10 @@ namespace time_shield {
         if (month.empty()) throw std::invalid_argument("Invalid month name");
 
         std::string month_copy = month;
-        std::transform(month_copy .begin(), month_copy .end(), month_copy .begin(), [](char &ch) {
+        std::transform(month_copy.begin(), month_copy.end(), month_copy.begin(), [](char &ch) {
             return std::use_facet<std::ctype<char>>(std::locale()).tolower(ch);
         });
-        month_copy [0] = toupper(month_copy [0]);
+        month_copy[0] = toupper(month_copy[0]);
 
         static const std::array<std::string, 12> short_names = {
             "Jan", "Feb", "Mar", "Apr", "May", "Jun",

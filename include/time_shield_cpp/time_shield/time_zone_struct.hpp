@@ -111,4 +111,4 @@ namespace time_shield {
 
 }; // namespace time_shield
 
-#endif // _TIME_SHIELD_TIME_STRUCT_HPP_INCLUDED
+#endif // _TIME_SHIELD_TIME_ZONE_STRUCT_HPP_INCLUDED

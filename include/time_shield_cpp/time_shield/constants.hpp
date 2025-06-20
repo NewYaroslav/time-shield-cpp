@@ -38,7 +38,7 @@ namespace time_shield {
     constexpr int64_t MS_PER_SEC        = 1000;     ///< Milliseconds per second
     constexpr int64_t MS_PER_1_SEC      = 1000;     ///< Milliseconds per 1 second
     constexpr int64_t MS_PER_5_SEC      = 5000;     ///< Milliseconds per 5 second
-    constexpr int64_t MS_PER_10_SEC     = 5000;     ///< Milliseconds per 10 second
+    constexpr int64_t MS_PER_10_SEC     = 10000;    ///< Milliseconds per 10 seconds
     constexpr int64_t MS_PER_15_SEC     = 15000;    ///< Milliseconds per 15 second
     constexpr int64_t MS_PER_30_SEC     = 30000;    ///< Milliseconds per 30 second
     constexpr int64_t MS_PER_MIN        = 60000;    ///< Milliseconds per minute

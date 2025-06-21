@@ -1,10 +1,11 @@
 #pragma once
+#ifndef _TIME_SHIELD_TYPES_HPP_INCLUDED
+#define _TIME_SHIELD_TYPES_HPP_INCLUDED
+
 /// \file types.hpp
 /// \brief Header file with type definitions.
 ///
 /// This file contains type definitions for various time-related units and formats.
-#ifndef _TIME_SHIELD_TYPES_HPP_INCLUDED
-#define _TIME_SHIELD_TYPES_HPP_INCLUDED
 
 #include <cstdint>
 

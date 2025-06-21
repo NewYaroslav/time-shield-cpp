@@ -1,10 +1,11 @@
 #pragma once
+#ifndef _TIME_SHIELD_TIME_STRUCT_HPP_INCLUDED
+#define _TIME_SHIELD_TIME_STRUCT_HPP_INCLUDED
+
 /// \file time_struct.hpp
 /// \brief Header for time structure and related functions.
 ///
 /// This file contains the definition of the TimeStruct structure and a function to create TimeStruct instances.
-#ifndef _TIME_SHIELD_TIME_STRUCT_HPP_INCLUDED
-#define _TIME_SHIELD_TIME_STRUCT_HPP_INCLUDED
 
 namespace time_shield {
 

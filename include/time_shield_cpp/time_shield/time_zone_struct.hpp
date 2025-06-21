@@ -1,8 +1,9 @@
 #pragma once
-/// \file time_zone_struct.hpp
-/// \brief Header for time zone structure and related functions.
 #ifndef _TIME_SHIELD_TIME_ZONE_STRUCT_HPP_INCLUDED
 #define _TIME_SHIELD_TIME_ZONE_STRUCT_HPP_INCLUDED
+
+/// \file time_zone_struct.hpp
+/// \brief Header for time zone structure and related functions.
 
 #include "types.hpp"
 #include "constants.hpp"

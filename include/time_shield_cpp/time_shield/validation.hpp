@@ -1,10 +1,11 @@
 #pragma once
+#ifndef _TIME_SHIELD_VALIDATION_HPP_INCLUDED
+#define _TIME_SHIELD_VALIDATION_HPP_INCLUDED
+
 /// \file validation.hpp
 /// \brief Header file with time-related validation functions.
 ///
 /// This file contains functions for validating dates, times, and timestamps.
-#ifndef _TIME_SHIELD_VALIDATION_HPP_INCLUDED
-#define _TIME_SHIELD_VALIDATION_HPP_INCLUDED
 
 #include "config.hpp"
 #include "types.hpp"

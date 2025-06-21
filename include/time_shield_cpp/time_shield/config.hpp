@@ -1,11 +1,12 @@
 #pragma once
+#ifndef _TIME_SHIELD_CONFIG_HPP_INCLUDED
+#define _TIME_SHIELD_CONFIG_HPP_INCLUDED
+
 /// \file config.hpp
 /// \brief Header file with preprocessor definitions for C++ standards and `constexpr` usage.
 ///
 /// This file defines macros to check the C++ standard version being used and configure
 /// `constexpr` and `if constexpr` support accordingly.
-#ifndef _TIME_SHIELD_CONFIG_HPP_INCLUDED
-#define _TIME_SHIELD_CONFIG_HPP_INCLUDED
 
 // Check and define macros based on the C++ standard version
 #if __cplusplus == 201103L

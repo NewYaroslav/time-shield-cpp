@@ -1,12 +1,13 @@
 #pragma once
+#ifndef _TIME_SHIELD_TIME_FORMATTING_HPP_INCLUDED
+#define _TIME_SHIELD_TIME_FORMATTING_HPP_INCLUDED
+
 /// \file time_formatting.hpp
 /// \brief Header file for time formatting utilities.
 ///
 /// This file contains functions for converting timestamps to formatted strings.
 /// It provides utilities for custom formatting based on user-defined patterns
 /// and for standard date-time string representations.
-#ifndef _TIME_SHIELD_TIME_FORMATTING_HPP_INCLUDED
-#define _TIME_SHIELD_TIME_FORMATTING_HPP_INCLUDED
 
 #include "date_time_struct.hpp"
 #include "time_zone_struct.hpp"

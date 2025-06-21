@@ -1,10 +1,11 @@
 #pragma once
+#ifndef _TIME_SHIELD_TIME_UTILS_HPP_INCLUDED
+#define _TIME_SHIELD_TIME_UTILS_HPP_INCLUDED
+
 /// \file time_utils.hpp
 /// \brief Header file with time-related utility functions.
 ///
 /// This file contains various functions used for time calculations and conversions.
-#ifndef _TIME_SHIELD_TIME_UTILS_HPP_INCLUDED
-#define _TIME_SHIELD_TIME_UTILS_HPP_INCLUDED
 
 #include "config.hpp"
 #include <ctime>

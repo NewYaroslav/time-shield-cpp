@@ -1,10 +1,11 @@
 #pragma once
+#ifndef _TIME_SHIELD_CONSTANTS_HPP_INCLUDED
+#define _TIME_SHIELD_CONSTANTS_HPP_INCLUDED
+
 /// \file constants.hpp
 /// \brief Header file with time-related constants.
 ///
 /// This file contains various constants used for time calculations and conversions.
-#ifndef _TIME_SHIELD_CONSTANTS_HPP_INCLUDED
-#define _TIME_SHIELD_CONSTANTS_HPP_INCLUDED
 
 #include <cstdint>
 #include <limits>
@@ -50,11 +51,11 @@ namespace time_shield {
     constexpr int64_t MS_PER_HALF_HOUR  = 1800000;  ///< Milliseconds per half hour
     constexpr int64_t MS_PER_HOUR       = 3600000;  ///< Milliseconds per hour
     constexpr int64_t MS_PER_1_HOUR     = 3600000;  ///< Milliseconds per 1 hour
-	constexpr int64_t MS_PER_2_HOUR     = 7200000;  ///< Milliseconds per 2 hour
-	constexpr int64_t MS_PER_4_HOUR     = 14400000; ///< Milliseconds per 4 hour
-	constexpr int64_t MS_PER_5_HOUR     = 18000000; ///< Milliseconds per 5 hour
-	constexpr int64_t MS_PER_8_HOUR     = 28800000; ///< Milliseconds per 8 hour
-	constexpr int64_t MS_PER_12_HOUR    = 43200000; ///< Milliseconds per 12 hour
+    constexpr int64_t MS_PER_2_HOUR     = 7200000;  ///< Milliseconds per 2 hour
+    constexpr int64_t MS_PER_4_HOUR     = 14400000; ///< Milliseconds per 4 hour
+    constexpr int64_t MS_PER_5_HOUR     = 18000000; ///< Milliseconds per 5 hour
+    constexpr int64_t MS_PER_8_HOUR     = 28800000; ///< Milliseconds per 8 hour
+    constexpr int64_t MS_PER_12_HOUR    = 43200000; ///< Milliseconds per 12 hour
     constexpr int64_t MS_PER_DAY        = 86400000; ///< Milliseconds per day
 
     // Seconds

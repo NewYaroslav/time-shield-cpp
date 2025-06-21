@@ -1,11 +1,12 @@
 #pragma once
+#ifndef _TIME_SHIELD_TIME_PARSER_HPP_INCLUDED
+#define _TIME_SHIELD_TIME_PARSER_HPP_INCLUDED
+
 /// \file time_parser.hpp
 /// \brief Header file with functions for parsing dates and times in ISO8601 format and converting them to various timestamp formats.
 ///
 /// This file contains functions for parsing ISO8601 date and time strings, extracting month numbers from month names,
 /// and converting parsed date and time information to different timestamp formats.
-#ifndef _TIME_SHIELD_TIME_PARSER_HPP_INCLUDED
-#define _TIME_SHIELD_TIME_PARSER_HPP_INCLUDED
 
 #include "enums.hpp"
 #include "constants.hpp"

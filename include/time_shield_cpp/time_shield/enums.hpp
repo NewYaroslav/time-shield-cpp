@@ -1,10 +1,11 @@
 #pragma once
+#ifndef _TIME_SHIELD_ENUMS_HPP_INCLUDED
+#define _TIME_SHIELD_ENUMS_HPP_INCLUDED
+
 /// \file enums.hpp
 /// \brief Header file with enumerations for weekdays, months, and other time-related categories.
 ///
 /// This file contains enum definitions for representing various time-related concepts.
-#ifndef _TIME_SHIELD_ENUMS_HPP_INCLUDED
-#define _TIME_SHIELD_ENUMS_HPP_INCLUDED
 
 #include <string>
 #include <array>

@@ -1,13 +1,13 @@
 #pragma once
+#ifndef _TIME_SHIELD_HPP_INCLUDED
+#define _TIME_SHIELD_HPP_INCLUDED
+
 /// \file time_shield.hpp
 /// \brief Main header file for the Time Shield library.
 ///
 /// This header file includes all the components of the Time Shield library,
 /// making it easy to include the entire library in your projects with a single
 /// include directive.
-///
-#ifndef _TIME_SHIELD_HPP_INCLUDED
-#define _TIME_SHIELD_HPP_INCLUDED
 
 #include "time_shield/config.hpp"             ///< Configuration settings for the Time Shield library.
 #include "time_shield/types.hpp"              ///< Type definitions used throughout the library.
@@ -38,25 +38,27 @@ namespace tshield = time_shield;
 /// It includes various utilities for working with time and dates, their formatting, conversion, and validation.
 namespace time_shield {};
 
-/// \defgroup time_structures Time Structures
-/// \brief Structures for representing and working with time and date components.
-///
-/// This group includes various structures used for representing time, date, and date-time combinations,
-/// along with related utility functions for creating and manipulating these structures.
-///
-/// ### Included Structures:
-/// - `TimeStruct`: Represents time components (hour, minute, second, millisecond).
-/// - `DateStruct`: Represents date components (year, month, day).
-/// - `DateTimeStruct`: Represents combined date and time components.
-/// - `TimeZoneStruct`: Represents time zone offsets.
-///
-/// ### Example Usage:
-/// ```cpp
-/// auto time = time_shield::create_time_struct(12, 30, 45);       // 12:30:45
-/// auto date = time_shield::create_date_struct(2024, 11, 25);    // 2024-11-25
-/// auto date_time = time_shield::create_date_time_struct(2024, 11, 25, 12, 30, 45);
-/// auto tz = time_shield::to_time_zone_struct(3600);             // +01:00
-/// ```
+/*!
+\defgroup time_structures Time Structures
+\brief Structures for representing and working with time and date components.
+
+This group includes various structures used for representing time, date, and date-time combinations,
+along with related utility functions for creating and manipulating these structures.
+
+### Included Structures:
+- `TimeStruct`: Represents time components (hour, minute, second, millisecond).
+- `DateStruct`: Represents date components (year, month, day).
+- `DateTimeStruct`: Represents combined date and time components.
+- `TimeZoneStruct`: Represents time zone offsets.
+
+### Example Usage:
+```cpp
+auto time = time_shield::create_time_struct(12, 30, 45);       // 12:30:45
+auto date = time_shield::create_date_struct(2024, 11, 25);    // 2024-11-25
+auto date_time = time_shield::create_date_time_struct(2024, 11, 25, 12, 30, 45);
+auto tz = time_shield::to_time_zone_struct(3600);             // +01:00
+```
+*/
 
 /*!
 \mainpage Time Shield Library
@@ -77,7 +79,7 @@ The Time Shield Library is a comprehensive C++ library designed for time manipul
 
 \code{.cpp}
 #include <iostream>
-#include "time_shield.hpp"
+#include <time_shield.hpp>
 
 int main() {
     // Get the current timestamp

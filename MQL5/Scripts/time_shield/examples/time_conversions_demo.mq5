@@ -38,7 +38,6 @@ void OnStart()
     Print("start_of_day: ", start_of_day(ts));
     Print("end_of_day_ms: ", end_of_day_ms(ts_ms));
     Print("next_day_ms: ", next_day_ms(ts_ms));
-
     Print("day_of_year: ", day_of_year(ts));
     Print("month_of_year: ", month_of_year(ts));
     Print("day_of_month: ", day_of_month(ts));

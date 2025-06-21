@@ -21,8 +21,6 @@
 // Configuration settings for the Time Shield library
 #include <time_shield/config.mqh>
 
-// Type definitions used throughout the library
-#include <time_shield/types.mqh>
 
 // Constants used in time calculations
 #include <time_shield/constants.mqh>

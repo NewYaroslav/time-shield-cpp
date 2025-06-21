@@ -29,6 +29,6 @@ var searchData=
   ['days_5fper_5fyear_26',['DAYS_PER_YEAR',['../group__time__constants.html#ga453d0b8c49df09ec99ef2c7c64c8d161',1,'time_shield']]],
   ['dec_27',['DEC',['../group__time__enums.html#ggac2ffd79e06ab94cf1bb50fec432c68a8aac2438c280003c2656406a18f0211491',1,'time_shield']]],
   ['dt_5fto_5fftimestamp_28',['dt_to_ftimestamp',['../group__time__structures.html#ga0227287106fb5050e2c9b5bafd45dcb1',1,'time_shield']]],
-  ['dt_5fto_5ftimestamp_29',['dt_to_timestamp',['../group__time__structures.html#ga8b018d3036649afa8ea784c347e15f3e',1,'time_shield']]],
+  ['dt_5fto_5ftimestamp_29',['dt_to_timestamp',['../group__time__structures.html#ga8b018d3036649afa8ea784c347e15f3e',1,'time_shield::dt_to_timestamp(const T &amp;date_time)'],['../group__time__conversions.html#gaf1eca4382dbf770b3414804c00f400e5',1,'time_shield::dt_to_timestamp(const DateTimeStruct &amp;dt)']]],
   ['dt_5fto_5ftimestamp_5fms_30',['dt_to_timestamp_ms',['../group__time__structures.html#gaceea58b31e5097df20bd267f098c2a0c',1,'time_shield']]]
 ];

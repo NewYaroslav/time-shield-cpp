@@ -17,6 +17,6 @@ var searchData=
   ['is_5fvalid_5ftz_14',['is_valid_tz',['../group__time__validation.html#ga1fd2b3ac3931988a17195c4f6b9512dc',1,'time_shield::is_valid_tz(T hour, T min)'],['../group__time__structures.html#gacfe82b0ccb7effc77eadd15bfd7bb59e',1,'time_shield::is_valid_tz(const T &amp;time_zone)']]],
   ['is_5fweekend_15',['is_weekend',['../group__time__validation.html#ga9dd7081110088dbcdd5fb48e0dff187c',1,'time_shield']]],
   ['is_5fweekend_5funix_5fday_16',['is_weekend_unix_day',['../group__time__validation.html#gaa5c72c3a49ed1baaa84ce5f0f50e6fb1',1,'time_shield']]],
-  ['iso8601_5fno_5ftz_17',['ISO8601_NO_TZ',['../group__time__enums.html#gga81dfe20e6515b855c625bd9c7aea58e6a984967f1d8a75ab52aa8ea1c0b8ab04b',1,'time_shield']]],
-  ['iso8601_5fwith_5ftz_18',['ISO8601_WITH_TZ',['../group__time__enums.html#gga81dfe20e6515b855c625bd9c7aea58e6aee2886bdb70727c454f2ba51435fd685',1,'time_shield']]]
+  ['iso8601_5fno_5ftz_17',['ISO8601_NO_TZ',['../group__time__enums.html#gga81dfe20e6515b855c625bd9c7aea58e6a277f00aa177ee8df19291e95198592fa',1,'time_shield']]],
+  ['iso8601_5fwith_5ftz_18',['ISO8601_WITH_TZ',['../group__time__enums.html#gga81dfe20e6515b855c625bd9c7aea58e6a4ff17c3d5d81826da9439478a0bbf5fb',1,'time_shield']]]
 ];

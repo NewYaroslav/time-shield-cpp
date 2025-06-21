@@ -27,6 +27,7 @@ var NAVTREEINDEX0 =
 "enums_8hpp.html":[9,0,0,0,0,4],
 "enums_8hpp.html#afe2f410c2219004f13c480004e2b182f":[9,0,0,0,0,4,0],
 "enums_8hpp_source.html":[9,0,0,0,0,4],
+"enums_8mqh.html":[6,9,2],
 "files.html":[9,0],
 "functions.html":[8,2,0],
 "functions_vars.html":[8,2,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "group__time__conversions.html#gaaf186f3686ad7fd09f8fe8d89cedcee3":[6,3,79],
 "group__time__conversions.html#gaaf188d9a22b146815a661dc5fa5dac6b":[6,3,112],
 "group__time__conversions.html#gab191d39fc88e3174efc2955a4c92f537":[6,3,23],
-"group__time__conversions.html#gab4808e2e1eaa06f326c02132be12e1ac":[6,3,91],
-"group__time__conversions.html#gab5278db2fa03696dbb616693ecf6064f":[6,3,106]
+"group__time__conversions.html#gab4808e2e1eaa06f326c02132be12e1ac":[6,3,91]
 };

@@ -20,13 +20,13 @@ var searchData=
   ['unixday_5ft_17',['unixday_t',['../group__time__types.html#ga391046d8662dee26a659793b8c0daf6a',1,'time_shield']]],
   ['unixday_5fto_5fts_18',['unixday_to_ts',['../group__time__conversions.html#ga793d0703760433302923b0c23602084c',1,'time_shield']]],
   ['unixday_5fto_5fts_5fms_19',['unixday_to_ts_ms',['../group__time__conversions.html#ga28b947a614839ef75e0553daa42b4968',1,'time_shield']]],
-  ['unknown_20',['UNKNOWN',['../group__time__enums.html#ggad8cb858fb6cedcf76c4f0630d56e042badd67dfc71f4f9c751363f4e60d03a6d0',1,'time_shield']]],
-  ['uppercase_5fname_21',['UPPERCASE_NAME',['../group__time__enums.html#gga97004b8781e8dbb9b46201b0a5280b81aa0f175fd427de3a4c0d72ee3685e82e6',1,'time_shield']]],
+  ['unknown_20',['UNKNOWN',['../group__time__enums.html#ggad8cb858fb6cedcf76c4f0630d56e042baaf1aac3774bda46f8b9677cc4d51e20e',1,'time_shield']]],
+  ['uppercase_5fname_21',['UPPERCASE_NAME',['../group__time__enums.html#gga97004b8781e8dbb9b46201b0a5280b81af8205b66c3e2d00b8c0d631ab195b1ac',1,'time_shield']]],
   ['us_5fof_5fsec_22',['us_of_sec',['../group__time__conversions.html#gaf925e9c2c76bd1435baacf303b1c25a7',1,'time_shield::us_of_sec(fts_t ts) noexcept'],['../group__time__utils.html#ga358d459fc542986786d21fbb963bc6cb',1,'time_shield::us_of_sec() noexcept']]],
   ['us_5fper_5fsec_23',['US_PER_SEC',['../group__time__constants.html#gafe246ee14e1743fcba2128081b6aef20',1,'time_shield']]],
   ['usage_24',['Usage',['../index.html#usage_sec',1,'']]],
   ['usage_20examples_3a_25',['Usage Examples:',['../group__time__conversions.html#autotoc_md7',1,'Usage Examples:'],['../group__time__formatting.html#autotoc_md9',1,'Usage Examples:'],['../group__time__parsing.html#autotoc_md11',1,'Usage Examples:'],['../group__time__utils.html#autotoc_md13',1,'Usage Examples:'],['../group__time__validation.html#autotoc_md17',1,'Usage Examples:']]],
-  ['usage_3a_26',['Usage:',['../group__time__structures.html#autotoc_md1',1,'Example Usage:'],['../group__time__constants.html#autotoc_md3',1,'Example Usage:'],['../group__time__enums.html#autotoc_md5',1,'Example Usage:'],['../group__time__types.html#autotoc_md15',1,'Example Usage:']]],
-  ['utc_27',['UTC',['../group__time__enums.html#ggad8cb858fb6cedcf76c4f0630d56e042ba0ef413918aff1cacd5b7c92478ed0212',1,'time_shield']]],
+  ['usage_3a_26',['Usage:',['../group__time__structures.html#autotoc_md1',1,'Example Usage:'],['../group__time__constants.html#autotoc_md3',1,'Example Usage:'],['../group__time__enums.html#autotoc_md5',1,'Example Usage:'],['../group__time__types.html#autotoc_md15',1,'Example Usage:'],['../group__time__enums.html#autotoc_md19',1,'Example Usage:']]],
+  ['utc_27',['UTC',['../group__time__enums.html#ggad8cb858fb6cedcf76c4f0630d56e042babba774a48b6685a9417e93da1f64d7e3',1,'time_shield']]],
   ['utilities_28',['Time Utilities',['../group__time__utils.html',1,'']]]
 ];

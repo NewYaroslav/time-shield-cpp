@@ -1,6 +1,6 @@
-var enums_8hpp =
+var enums_8mqh =
 [
-    [ "_TIME_SHIELD_ENUMS_HPP_INCLUDED", "enums_8hpp.html#afe2f410c2219004f13c480004e2b182f", null ],
+    [ "__TIME_SHIELD_ENUMS_MQH__", "enums_8mqh.html#a9b9b69b9cf373f5755ea57bbe48ddbd7", null ],
     [ "time_shield::FormatType", "group__time__enums.html#ga97004b8781e8dbb9b46201b0a5280b81", [
       [ "time_shield::UPPERCASE_NAME", "group__time__enums.html#gga97004b8781e8dbb9b46201b0a5280b81af8205b66c3e2d00b8c0d631ab195b1ac", null ],
       [ "time_shield::SHORT_NAME", "group__time__enums.html#gga97004b8781e8dbb9b46201b0a5280b81a38a1849c37306ba0e0a6e8a86a15e8d5", null ],
@@ -109,9 +109,6 @@ var enums_8hpp =
       [ "time_shield::FRI", "group__time__enums.html#ggadf684443100352064316f6134bbe44f8a74be2ada11289d5b8c69d0e5f83291b5", null ],
       [ "time_shield::SAT", "group__time__enums.html#ggadf684443100352064316f6134bbe44f8ae2bf2f0672007a58be8af305dc0f4d60", null ]
     ] ],
-    [ "time_shield::to_cstr", "group__time__enums.html#ga1e6b9d39d01a5055b7355f92bbc6b2d7", null ],
-    [ "time_shield::to_cstr", "group__time__enums.html#ga3b05733e4a4f78c2ba220b0b80a5e0a2", null ],
-    [ "time_shield::to_cstr", "group__time__enums.html#gadabbcdd686f20fd99f925027729ae341", null ],
     [ "time_shield::to_str", "group__time__enums.html#gab554fa3d85259dd230ca2e83cbb2621e", null ],
     [ "time_shield::to_str", "group__time__enums.html#ga938c3354424036afbfd596acaa76f805", null ],
     [ "time_shield::to_str", "group__time__enums.html#ga29763e675c720ecce12688dea1d6fee0", null ]

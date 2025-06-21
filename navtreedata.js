@@ -66,7 +66,8 @@ var NAVTREEINDEX =
 "TimeShield_8mqh.html",
 "group__time__conversions.html#ga59da94c04d571a9b7aebca0ac2d1046a",
 "group__time__conversions.html#gaf6779ed413e646883649bc8713ca4e01",
-"group__time__formatting.html#gacc69c16c40fec07d1b620c1e613abb3c"
+"group__time__formatting.html#ga7debd74ce9fc5a6371749b8aefba0817",
+"time__struct_8hpp.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

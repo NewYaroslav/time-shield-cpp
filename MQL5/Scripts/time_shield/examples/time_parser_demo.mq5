@@ -13,6 +13,8 @@ using namespace time_shield;
 
 void OnStart()
 {
+    initialize_library();
+
     string iso = "2024-11-25T14:30:00+01:00";
 
     datetime ts;

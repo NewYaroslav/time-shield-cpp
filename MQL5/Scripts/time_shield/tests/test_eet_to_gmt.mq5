@@ -13,6 +13,8 @@ using namespace time_shield;
 
 void OnStart()
 {
+    initialize_library();
+
     // Winter timestamp: 2024-01-15 12:00:00 EET
     datetime winter_eet = to_ts(2024, JAN, 15, 12, 0, 0);
     datetime winter_expected = to_ts(2024, JAN, 15, 10, 0, 0);

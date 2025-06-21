@@ -13,6 +13,8 @@ using namespace time_shield;
 
 void OnStart()
 {
+    initialize_library();
+
     datetime ts = to_ts(2024, JUN, 21, 15, 30, 5);
     long ts_ms = to_ts_ms(2024, JUN, 21, 15, 30, 5, 123);
 

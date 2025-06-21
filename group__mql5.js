@@ -7,6 +7,7 @@ var group__mql5 =
     [ "enums.mqh", "enums_8mqh.html", null ],
     [ "time_conversions.mqh", "time__conversions_8mqh.html", null ],
     [ "time_formatting.mqh", "time__formatting_8mqh.html", null ],
+    [ "time_parser.mqh", "time__parser_8mqh.html", null ],
     [ "time_struct.mqh", "time__struct_8mqh.html", null ],
     [ "time_utils.mqh", "time__utils_8mqh.html", null ],
     [ "time_zone_struct.mqh", "time__zone__struct_8mqh.html", null ],

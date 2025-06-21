@@ -6,6 +6,7 @@ var dir_60326dd3f086d866f3850ba7fd4f9d91 =
     [ "enums.mqh", "enums_8mqh.html", "enums_8mqh" ],
     [ "time_conversions.mqh", "time__conversions_8mqh.html", "time__conversions_8mqh" ],
     [ "time_formatting.mqh", "time__formatting_8mqh.html", "time__formatting_8mqh" ],
+    [ "time_parser.mqh", "time__parser_8mqh.html", "time__parser_8mqh" ],
     [ "time_struct.mqh", "time__struct_8mqh.html", "time__struct_8mqh" ],
     [ "time_utils.mqh", "time__utils_8mqh.html", "time__utils_8mqh" ],
     [ "time_zone_struct.mqh", "time__zone__struct_8mqh.html", "time__zone__struct_8mqh" ],

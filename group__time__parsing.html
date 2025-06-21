@@ -175,6 +175,48 @@ Functions</h2></td></tr>
 <tr class="memitem:gabf35e2560f331ab8a2b0a59dd4415aac" id="r_gabf35e2560f331ab8a2b0a59dd4415aac"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f">fts_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gabf35e2560f331ab8a2b0a59dd4415aac">time_shield::fts</a> (const char *str)</td></tr>
 <tr class="memdesc:gabf35e2560f331ab8a2b0a59dd4415aac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an ISO8601 C-style string to a floating-point timestamp (<a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f" title="Type for representing timestamps as floating-point numbers (e.g., fractional seconds).">fts_t</a>).  <br /></td></tr>
 <tr class="separator:gabf35e2560f331ab8a2b0a59dd4415aac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac7f0b3a5d18f64f39a00bd7be162ba17" id="r_gac7f0b3a5d18f64f39a00bd7be162ba17"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac7f0b3a5d18f64f39a00bd7be162ba17">time_shield::get_month_number</a> (const string &amp;month)</td></tr>
+<tr class="memdesc:gac7f0b3a5d18f64f39a00bd7be162ba17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the month number by name.  <br /></td></tr>
+<tr class="separator:gac7f0b3a5d18f64f39a00bd7be162ba17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga96f13d7c82aa7fdf53bd6d7556c76483" id="r_ga96f13d7c82aa7fdf53bd6d7556c76483"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga96f13d7c82aa7fdf53bd6d7556c76483">time_shield::month_of_year</a> (const string &amp;month)</td></tr>
+<tr class="memdesc:ga96f13d7c82aa7fdf53bd6d7556c76483"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for get_month_number function.  <br /></td></tr>
+<tr class="separator:ga96f13d7c82aa7fdf53bd6d7556c76483"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae5afcec77153a9503ff6c62e7180a79e" id="r_gae5afcec77153a9503ff6c62e7180a79e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae5afcec77153a9503ff6c62e7180a79e">time_shield::try_get_month_number</a> (const string &amp;month, int &amp;value)</td></tr>
+<tr class="memdesc:gae5afcec77153a9503ff6c62e7180a79e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the month number by name, with output parameter.  <br /></td></tr>
+<tr class="separator:gae5afcec77153a9503ff6c62e7180a79e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga486f058ffcd8c903fc613f426e18a5e6" id="r_ga486f058ffcd8c903fc613f426e18a5e6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga486f058ffcd8c903fc613f426e18a5e6">time_shield::get_month_number</a> (const string &amp;month, int &amp;value)</td></tr>
+<tr class="memdesc:ga486f058ffcd8c903fc613f426e18a5e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for try_get_month_number function.  <br /></td></tr>
+<tr class="separator:ga486f058ffcd8c903fc613f426e18a5e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga79a3b1cef75b3874d4a8ec44b3a532de" id="r_ga79a3b1cef75b3874d4a8ec44b3a532de"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga79a3b1cef75b3874d4a8ec44b3a532de">time_shield::month_of_year</a> (const string &amp;month, int &amp;value)</td></tr>
+<tr class="memdesc:ga79a3b1cef75b3874d4a8ec44b3a532de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for try_get_month_number function.  <br /></td></tr>
+<tr class="separator:ga79a3b1cef75b3874d4a8ec44b3a532de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4275a88c5419f0c32d456fe1f471b52e" id="r_ga4275a88c5419f0c32d456fe1f471b52e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4275a88c5419f0c32d456fe1f471b52e">time_shield::parse_time_zone</a> (const string &amp;tz_str, <a class="el" href="structtime__shield_1_1TimeZoneStruct.html">TimeZoneStruct</a> &amp;tz)</td></tr>
+<tr class="memdesc:ga4275a88c5419f0c32d456fe1f471b52e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse a time zone string into a <a class="el" href="structtime__shield_1_1TimeZoneStruct.html" title="Structure to represent time zone information.">TimeZoneStruct</a>.  <br /></td></tr>
+<tr class="separator:ga4275a88c5419f0c32d456fe1f471b52e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabbfb5b21ecd330755407086de759112f" id="r_gabbfb5b21ecd330755407086de759112f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gabbfb5b21ecd330755407086de759112f">time_shield::parse_tz</a> (const string &amp;tz_str, <a class="el" href="structtime__shield_1_1TimeZoneStruct.html">TimeZoneStruct</a> &amp;tz)</td></tr>
+<tr class="memdesc:gabbfb5b21ecd330755407086de759112f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for parse_time_zone function.  <br /></td></tr>
+<tr class="separator:gabbfb5b21ecd330755407086de759112f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga565635760eafcbd4d8193965141f32ba" id="r_ga565635760eafcbd4d8193965141f32ba"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga565635760eafcbd4d8193965141f32ba">time_shield::parse_iso8601</a> (const string &amp;input, <a class="el" href="structtime__shield_1_1DateTimeStruct.html">DateTimeStruct</a> &amp;dt, <a class="el" href="structtime__shield_1_1TimeZoneStruct.html">TimeZoneStruct</a> &amp;tz)</td></tr>
+<tr class="memdesc:ga565635760eafcbd4d8193965141f32ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse a date and time string in ISO8601 format.  <br /></td></tr>
+<tr class="separator:ga565635760eafcbd4d8193965141f32ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0782476607497d1f90768c312411bb5f" id="r_ga0782476607497d1f90768c312411bb5f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0782476607497d1f90768c312411bb5f">time_shield::str_to_ts</a> (const string &amp;str, long &amp;<a class="el" href="group__time__conversions.html#ga129d392927c24f77f45827d55e048eb4">ts</a>)</td></tr>
+<tr class="memdesc:ga0782476607497d1f90768c312411bb5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an ISO8601 string to a timestamp (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Type for representing timestamps in seconds.">ts_t</a>).  <br /></td></tr>
+<tr class="separator:ga0782476607497d1f90768c312411bb5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga86da3fad2d8668e497e98712252fcebc" id="r_ga86da3fad2d8668e497e98712252fcebc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga86da3fad2d8668e497e98712252fcebc">time_shield::str_to_ts_ms</a> (const string &amp;str, long &amp;<a class="el" href="group__time__conversions.html#ga129d392927c24f77f45827d55e048eb4">ts</a>)</td></tr>
+<tr class="memdesc:ga86da3fad2d8668e497e98712252fcebc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an ISO8601 string to a millisecond timestamp (<a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Type for representing timestamps in milliseconds.">ts_ms_t</a>).  <br /></td></tr>
+<tr class="separator:ga86da3fad2d8668e497e98712252fcebc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga14ee0b212c61b1338a9e3aa07e07a474" id="r_ga14ee0b212c61b1338a9e3aa07e07a474"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga14ee0b212c61b1338a9e3aa07e07a474">time_shield::str_to_fts</a> (const string &amp;str, double &amp;<a class="el" href="group__time__conversions.html#ga129d392927c24f77f45827d55e048eb4">ts</a>)</td></tr>
+<tr class="memdesc:ga14ee0b212c61b1338a9e3aa07e07a474"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an ISO8601 string to a floating-point timestamp (<a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f" title="Type for representing timestamps as floating-point numbers (e.g., fractional seconds).">fts_t</a>).  <br /></td></tr>
+<tr class="separator:ga14ee0b212c61b1338a9e3aa07e07a474"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa52b1a606c32e480f84d9e07f1e22171" id="r_gaa52b1a606c32e480f84d9e07f1e22171"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa52b1a606c32e480f84d9e07f1e22171">time_shield::ts</a> (const string &amp;str)</td></tr>
+<tr class="memdesc:gaa52b1a606c32e480f84d9e07f1e22171"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an ISO8601 string to a timestamp (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Type for representing timestamps in seconds.">ts_t</a>).  <br /></td></tr>
+<tr class="separator:gaa52b1a606c32e480f84d9e07f1e22171"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafc821126dd7ea5eadf277f8d2a6e8520" id="r_gafc821126dd7ea5eadf277f8d2a6e8520"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gafc821126dd7ea5eadf277f8d2a6e8520">time_shield::ts_ms</a> (const string &amp;str)</td></tr>
+<tr class="memdesc:gafc821126dd7ea5eadf277f8d2a6e8520"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an ISO8601 string to a millisecond timestamp (<a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Type for representing timestamps in milliseconds.">ts_ms_t</a>).  <br /></td></tr>
+<tr class="separator:gafc821126dd7ea5eadf277f8d2a6e8520"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa0156690d95ce901bfd28d04e521cb2b" id="r_gaa0156690d95ce901bfd28d04e521cb2b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa0156690d95ce901bfd28d04e521cb2b">time_shield::fts</a> (const string &amp;str)</td></tr>
+<tr class="memdesc:gaa0156690d95ce901bfd28d04e521cb2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an ISO8601 string to a floating-point timestamp (<a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f" title="Type for representing timestamps as floating-point numbers (e.g., fractional seconds).">fts_t</a>).  <br /></td></tr>
+<tr class="separator:gaa0156690d95ce901bfd28d04e521cb2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>A comprehensive set of functions for parsing and converting date and time strings. </p>
@@ -209,7 +251,7 @@ Usage Examples:</h3>
 </ul>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="gabf35e2560f331ab8a2b0a59dd4415aac" name="gabf35e2560f331ab8a2b0a59dd4415aac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gabf35e2560f331ab8a2b0a59dd4415aac">&#9670;&#160;</a></span>fts() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gabf35e2560f331ab8a2b0a59dd4415aac">&#9670;&#160;</a></span>fts() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -245,7 +287,7 @@ Usage Examples:</h3>
 </div>
 </div>
 <a id="ga220f706635cd68c3054580c39ae19d9c" name="ga220f706635cd68c3054580c39ae19d9c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga220f706635cd68c3054580c39ae19d9c">&#9670;&#160;</a></span>fts() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga220f706635cd68c3054580c39ae19d9c">&#9670;&#160;</a></span>fts() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -280,8 +322,36 @@ Usage Examples:</h3>
 
 </div>
 </div>
+<a id="gaa0156690d95ce901bfd28d04e521cb2b" name="gaa0156690d95ce901bfd28d04e521cb2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa0156690d95ce901bfd28d04e521cb2b">&#9670;&#160;</a></span>fts() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double time_shield::fts </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;</td>          <td class="paramname"><span class="paramname"><em>str</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert an ISO8601 string to a floating-point timestamp (<a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f" title="Type for representing timestamps as floating-point numbers (e.g., fractional seconds).">fts_t</a>). </p>
+<p>Returns 0.0 if parsing fails. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>The ISO8601 string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Floating-point timestamp or 0.0 on error. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00247">247</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
+
+</div>
+</div>
 <a id="ga9469b286be904ac68e7d6469a9d136db" name="ga9469b286be904ac68e7d6469a9d136db"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga9469b286be904ac68e7d6469a9d136db">&#9670;&#160;</a></span>get_month_number() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9469b286be904ac68e7d6469a9d136db">&#9670;&#160;</a></span>get_month_number() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -323,7 +393,7 @@ template&lt;class T = Month&gt; </div>
 </div>
 </div>
 <a id="gacb4b7ec0d24c6affff82d9251e025bf7" name="gacb4b7ec0d24c6affff82d9251e025bf7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gacb4b7ec0d24c6affff82d9251e025bf7">&#9670;&#160;</a></span>get_month_number() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gacb4b7ec0d24c6affff82d9251e025bf7">&#9670;&#160;</a></span>get_month_number() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -364,8 +434,76 @@ template&lt;class T = Month&gt; </div>
 
 </div>
 </div>
+<a id="gac7f0b3a5d18f64f39a00bd7be162ba17" name="gac7f0b3a5d18f64f39a00bd7be162ba17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac7f0b3a5d18f64f39a00bd7be162ba17">&#9670;&#160;</a></span>get_month_number() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int time_shield::get_month_number </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;</td>          <td class="paramname"><span class="paramname"><em>month</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the month number by name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">month</td><td>The name of the month as a string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The month number corresponding to the given name, or 0 on error. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00039">39</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
+
+</div>
+</div>
+<a id="ga486f058ffcd8c903fc613f426e18a5e6" name="ga486f058ffcd8c903fc613f426e18a5e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga486f058ffcd8c903fc613f426e18a5e6">&#9670;&#160;</a></span>get_month_number() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool time_shield::get_month_number </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;</td>          <td class="paramname"><span class="paramname"><em>month</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Alias for try_get_month_number function. </p>
+<p>Get the month number by name, with output parameter.   </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The type for the month number, default is <a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8" title="Enumeration of the months of the year.">Month</a> enum. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">month</td><td>The name of the month as a string. </td></tr>
+    <tr><td class="paramname">value</td><td>The reference to store the month number if found. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the month name is valid, false otherwise.    </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00082">82</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
+
+</div>
+</div>
 <a id="ga7da1be1b0e717c9b261bd485b324e0d0" name="ga7da1be1b0e717c9b261bd485b324e0d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga7da1be1b0e717c9b261bd485b324e0d0">&#9670;&#160;</a></span>month_of_year() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7da1be1b0e717c9b261bd485b324e0d0">&#9670;&#160;</a></span>month_of_year() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -408,7 +546,7 @@ template&lt;class T = Month&gt; </div>
 </div>
 </div>
 <a id="ga5041ac9fbcdd3880a9fcf0e1003cdf23" name="ga5041ac9fbcdd3880a9fcf0e1003cdf23"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga5041ac9fbcdd3880a9fcf0e1003cdf23">&#9670;&#160;</a></span>month_of_year() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5041ac9fbcdd3880a9fcf0e1003cdf23">&#9670;&#160;</a></span>month_of_year() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -449,8 +587,89 @@ template&lt;class T = Month&gt; </div>
 
 </div>
 </div>
+<a id="ga96f13d7c82aa7fdf53bd6d7556c76483" name="ga96f13d7c82aa7fdf53bd6d7556c76483"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga96f13d7c82aa7fdf53bd6d7556c76483">&#9670;&#160;</a></span>month_of_year() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int time_shield::month_of_year </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;</td>          <td class="paramname"><span class="paramname"><em>month</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Alias for get_month_number function. </p>
+<p>Get the month number by name.   </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The return type, default is <a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8" title="Enumeration of the months of the year.">Month</a> enum. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">month</td><td>The name of the month as a string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The month number corresponding to the given name. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>if the month name is invalid.    </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00063">63</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
+
+</div>
+</div>
+<a id="ga79a3b1cef75b3874d4a8ec44b3a532de" name="ga79a3b1cef75b3874d4a8ec44b3a532de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga79a3b1cef75b3874d4a8ec44b3a532de">&#9670;&#160;</a></span>month_of_year() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool time_shield::month_of_year </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;</td>          <td class="paramname"><span class="paramname"><em>month</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Alias for try_get_month_number function. </p>
+<p>Get the month number by name, with output parameter.   </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The type for the month number, default is <a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8" title="Enumeration of the months of the year.">Month</a> enum. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">month</td><td>The name of the month as a string. </td></tr>
+    <tr><td class="paramname">value</td><td>The reference to store the month number if found. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the month name is valid, false otherwise.    </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00086">86</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
+
+</div>
+</div>
 <a id="gaf70532fba4720cdaa1e3ee67dfba0c41" name="gaf70532fba4720cdaa1e3ee67dfba0c41"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf70532fba4720cdaa1e3ee67dfba0c41">&#9670;&#160;</a></span>parse_iso8601()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf70532fba4720cdaa1e3ee67dfba0c41">&#9670;&#160;</a></span>parse_iso8601() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -488,8 +707,47 @@ template&lt;class T = Month&gt; </div>
 
 </div>
 </div>
+<a id="ga565635760eafcbd4d8193965141f32ba" name="ga565635760eafcbd4d8193965141f32ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga565635760eafcbd4d8193965141f32ba">&#9670;&#160;</a></span>parse_iso8601() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool time_shield::parse_iso8601 </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;</td>          <td class="paramname"><span class="paramname"><em>input</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structtime__shield_1_1DateTimeStruct.html">DateTimeStruct</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>dt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structtime__shield_1_1TimeZoneStruct.html">TimeZoneStruct</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>tz</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Parse a date and time string in ISO8601 format. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>The input string in ISO8601 format. </td></tr>
+    <tr><td class="paramname">dt</td><td>The <a class="el" href="structtime__shield_1_1DateTimeStruct.html" title="Structure to represent date and time.">DateTimeStruct</a> to be filled with parsed values. </td></tr>
+    <tr><td class="paramname">tz</td><td>The <a class="el" href="structtime__shield_1_1TimeZoneStruct.html" title="Structure to represent time zone information.">TimeZoneStruct</a> to be filled with parsed time zone. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if parsing succeeds and the date and time values are valid, false otherwise. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00119">119</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
+
+</div>
+</div>
 <a id="ga380e128c27922bf4db53c4dfba93b189" name="ga380e128c27922bf4db53c4dfba93b189"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga380e128c27922bf4db53c4dfba93b189">&#9670;&#160;</a></span>parse_time_zone()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga380e128c27922bf4db53c4dfba93b189">&#9670;&#160;</a></span>parse_time_zone() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -521,8 +779,41 @@ template&lt;class T = Month&gt; </div>
 
 </div>
 </div>
+<a id="ga4275a88c5419f0c32d456fe1f471b52e" name="ga4275a88c5419f0c32d456fe1f471b52e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4275a88c5419f0c32d456fe1f471b52e">&#9670;&#160;</a></span>parse_time_zone() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool time_shield::parse_time_zone </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;</td>          <td class="paramname"><span class="paramname"><em>tz_str</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structtime__shield_1_1TimeZoneStruct.html">TimeZoneStruct</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>tz</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Parse a time zone string into a <a class="el" href="structtime__shield_1_1TimeZoneStruct.html" title="Structure to represent time zone information.">TimeZoneStruct</a>. </p>
+<p>Parses a time zone string in the format "+hh:mm", "-hh:mm" or "Z". If the string is empty or "Z", UTC is assumed. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tz_str</td><td>The time zone string. </td></tr>
+    <tr><td class="paramname">tz</td><td>The <a class="el" href="structtime__shield_1_1TimeZoneStruct.html" title="Structure to represent time zone information.">TimeZoneStruct</a> to be filled. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the parsing is successful and the time zone is valid, false otherwise. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00096">96</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
+
+</div>
+</div>
 <a id="ga6720fde5b41ea5e1ebdfd312f8a86371" name="ga6720fde5b41ea5e1ebdfd312f8a86371"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga6720fde5b41ea5e1ebdfd312f8a86371">&#9670;&#160;</a></span>parse_tz()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6720fde5b41ea5e1ebdfd312f8a86371">&#9670;&#160;</a></span>parse_tz() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -563,8 +854,42 @@ template&lt;class T = Month&gt; </div>
 
 </div>
 </div>
+<a id="gabbfb5b21ecd330755407086de759112f" name="gabbfb5b21ecd330755407086de759112f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabbfb5b21ecd330755407086de759112f">&#9670;&#160;</a></span>parse_tz() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool time_shield::parse_tz </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;</td>          <td class="paramname"><span class="paramname"><em>tz_str</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structtime__shield_1_1TimeZoneStruct.html">TimeZoneStruct</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>tz</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Alias for parse_time_zone function. </p>
+<p>Parse a time zone string into a <a class="el" href="structtime__shield_1_1TimeZoneStruct.html" title="Structure to represent time zone information.">TimeZoneStruct</a>.   </p>
+<p>This function parses a time zone string in the format "+hh:mm" or "Z" into a <a class="el" href="structtime__shield_1_1TimeZoneStruct.html" title="Structure to represent time zone information.">TimeZoneStruct</a>. If the string is empty or "Z", it sets the time zone to UTC. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tz_str</td><td>The time zone string. </td></tr>
+    <tr><td class="paramname">tz</td><td>The <a class="el" href="structtime__shield_1_1TimeZoneStruct.html" title="Structure to represent time zone information.">TimeZoneStruct</a> to be filled. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the parsing is successful and the time zone is valid, false otherwise.    </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00110">110</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
+
+</div>
+</div>
 <a id="ga4a33787eebe38e674185d341db118c37" name="ga4a33787eebe38e674185d341db118c37"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga4a33787eebe38e674185d341db118c37">&#9670;&#160;</a></span>str_to_fts()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4a33787eebe38e674185d341db118c37">&#9670;&#160;</a></span>str_to_fts() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -604,8 +929,41 @@ template&lt;class T = Month&gt; </div>
 
 </div>
 </div>
+<a id="ga14ee0b212c61b1338a9e3aa07e07a474" name="ga14ee0b212c61b1338a9e3aa07e07a474"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga14ee0b212c61b1338a9e3aa07e07a474">&#9670;&#160;</a></span>str_to_fts() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool time_shield::str_to_fts </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;</td>          <td class="paramname"><span class="paramname"><em>str</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;</td>          <td class="paramname"><span class="paramname"><em>ts</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert an ISO8601 string to a floating-point timestamp (<a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f" title="Type for representing timestamps as floating-point numbers (e.g., fractional seconds).">fts_t</a>). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>The ISO8601 string. </td></tr>
+    <tr><td class="paramname">ts</td><td>The floating-point timestamp to be filled. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the parsing and conversion are successful, false otherwise. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00213">213</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
+
+</div>
+</div>
 <a id="ga5672a2652970721df21c0a2c78f00704" name="ga5672a2652970721df21c0a2c78f00704"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga5672a2652970721df21c0a2c78f00704">&#9670;&#160;</a></span>str_to_ts()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5672a2652970721df21c0a2c78f00704">&#9670;&#160;</a></span>str_to_ts() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -645,8 +1003,41 @@ template&lt;class T = Month&gt; </div>
 
 </div>
 </div>
+<a id="ga0782476607497d1f90768c312411bb5f" name="ga0782476607497d1f90768c312411bb5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0782476607497d1f90768c312411bb5f">&#9670;&#160;</a></span>str_to_ts() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool time_shield::str_to_ts </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;</td>          <td class="paramname"><span class="paramname"><em>str</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long &amp;</td>          <td class="paramname"><span class="paramname"><em>ts</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert an ISO8601 string to a timestamp (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Type for representing timestamps in seconds.">ts_t</a>). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>The ISO8601 string. </td></tr>
+    <tr><td class="paramname">ts</td><td>The timestamp to be filled. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the parsing and conversion are successful, false otherwise. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00189">189</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
+
+</div>
+</div>
 <a id="ga4fb8f209ba8bfe214d8ccbdf113f3e91" name="ga4fb8f209ba8bfe214d8ccbdf113f3e91"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga4fb8f209ba8bfe214d8ccbdf113f3e91">&#9670;&#160;</a></span>str_to_ts_ms()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4fb8f209ba8bfe214d8ccbdf113f3e91">&#9670;&#160;</a></span>str_to_ts_ms() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -686,8 +1077,41 @@ template&lt;class T = Month&gt; </div>
 
 </div>
 </div>
+<a id="ga86da3fad2d8668e497e98712252fcebc" name="ga86da3fad2d8668e497e98712252fcebc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga86da3fad2d8668e497e98712252fcebc">&#9670;&#160;</a></span>str_to_ts_ms() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool time_shield::str_to_ts_ms </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;</td>          <td class="paramname"><span class="paramname"><em>str</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long &amp;</td>          <td class="paramname"><span class="paramname"><em>ts</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert an ISO8601 string to a millisecond timestamp (<a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Type for representing timestamps in milliseconds.">ts_ms_t</a>). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>The ISO8601 string. </td></tr>
+    <tr><td class="paramname">ts</td><td>The millisecond timestamp to be filled. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the parsing and conversion are successful, false otherwise. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00201">201</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
+
+</div>
+</div>
 <a id="ga08d4e93531c45fce52dcf6738317f1f2" name="ga08d4e93531c45fce52dcf6738317f1f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga08d4e93531c45fce52dcf6738317f1f2">&#9670;&#160;</a></span>try_get_month_number()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga08d4e93531c45fce52dcf6738317f1f2">&#9670;&#160;</a></span>try_get_month_number() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -727,8 +1151,41 @@ template&lt;class T = Month&gt; </div>
 
 </div>
 </div>
+<a id="gae5afcec77153a9503ff6c62e7180a79e" name="gae5afcec77153a9503ff6c62e7180a79e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae5afcec77153a9503ff6c62e7180a79e">&#9670;&#160;</a></span>try_get_month_number() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool time_shield::try_get_month_number </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;</td>          <td class="paramname"><span class="paramname"><em>month</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the month number by name, with output parameter. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">month</td><td>The name of the month as a string. </td></tr>
+    <tr><td class="paramname">value</td><td>Reference to store the month number if found. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the month name is valid, false otherwise. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00071">71</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
+
+</div>
+</div>
 <a id="ga9a21560bfcce6b2cdca86994e34ad1ff" name="ga9a21560bfcce6b2cdca86994e34ad1ff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga9a21560bfcce6b2cdca86994e34ad1ff">&#9670;&#160;</a></span>ts() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9a21560bfcce6b2cdca86994e34ad1ff">&#9670;&#160;</a></span>ts() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -764,7 +1221,7 @@ template&lt;class T = Month&gt; </div>
 </div>
 </div>
 <a id="gac98f96e3d401ed54d0ba4ff844f4c427" name="gac98f96e3d401ed54d0ba4ff844f4c427"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac98f96e3d401ed54d0ba4ff844f4c427">&#9670;&#160;</a></span>ts() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gac98f96e3d401ed54d0ba4ff844f4c427">&#9670;&#160;</a></span>ts() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -799,8 +1256,36 @@ template&lt;class T = Month&gt; </div>
 
 </div>
 </div>
+<a id="gaa52b1a606c32e480f84d9e07f1e22171" name="gaa52b1a606c32e480f84d9e07f1e22171"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa52b1a606c32e480f84d9e07f1e22171">&#9670;&#160;</a></span>ts() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">long time_shield::ts </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;</td>          <td class="paramname"><span class="paramname"><em>str</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert an ISO8601 string to a timestamp (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Type for representing timestamps in seconds.">ts_t</a>). </p>
+<p>Returns 0 if parsing fails. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>The ISO8601 string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Timestamp value or 0 on error. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00225">225</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
+
+</div>
+</div>
 <a id="ga2a51269948639823e03f886419ab1279" name="ga2a51269948639823e03f886419ab1279"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga2a51269948639823e03f886419ab1279">&#9670;&#160;</a></span>ts_ms() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2a51269948639823e03f886419ab1279">&#9670;&#160;</a></span>ts_ms() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -836,7 +1321,7 @@ template&lt;class T = Month&gt; </div>
 </div>
 </div>
 <a id="gad0554f960c1032da3f6997dc8b6eb467" name="gad0554f960c1032da3f6997dc8b6eb467"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gad0554f960c1032da3f6997dc8b6eb467">&#9670;&#160;</a></span>ts_ms() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gad0554f960c1032da3f6997dc8b6eb467">&#9670;&#160;</a></span>ts_ms() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -868,6 +1353,34 @@ template&lt;class T = Month&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>The parsed millisecond timestamp, or 0 if parsing fails. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00291">291</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gafc821126dd7ea5eadf277f8d2a6e8520" name="gafc821126dd7ea5eadf277f8d2a6e8520"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafc821126dd7ea5eadf277f8d2a6e8520">&#9670;&#160;</a></span>ts_ms() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">long time_shield::ts_ms </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;</td>          <td class="paramname"><span class="paramname"><em>str</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert an ISO8601 string to a millisecond timestamp (<a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Type for representing timestamps in milliseconds.">ts_ms_t</a>). </p>
+<p>Returns 0 if parsing fails. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>The ISO8601 string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Millisecond timestamp value or 0 on error. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00236">236</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
 
 </div>
 </div>

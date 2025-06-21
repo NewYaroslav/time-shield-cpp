@@ -9,7 +9,7 @@ var searchData=
   ['get_5funix_5fday_6',['get_unix_day',['../group__time__conversions.html#ga49298b0e3b94ad754684989f35427fc6',1,'time_shield']]],
   ['get_5funix_5fday_5fms_7',['get_unix_day_ms',['../group__time__conversions.html#ga2c81d7983ce518fb25070c2675d06b23',1,'time_shield']]],
   ['get_5funix_5fmin_8',['get_unix_min',['../group__time__conversions.html#gad98137631528764b2c173ed1e9199e66',1,'time_shield']]],
-  ['get_5funix_5fyear_9',['get_unix_year',['../group__time__conversions.html#ga7b577dca60f425d0975603800f35f0f8',1,'time_shield']]],
+  ['get_5funix_5fyear_9',['get_unix_year',['../group__time__conversions.html#ga7b577dca60f425d0975603800f35f0f8',1,'time_shield::get_unix_year(ts_t ts) noexcept'],['../group__time__conversions.html#ga3b39315738db8f3db9d58cc0529aa0be',1,'time_shield::get_unix_year(long ts)']]],
   ['get_5funixday_10',['get_unixday',['../group__time__conversions.html#ga5b4d5b20aa02d4eee778e7697af765ee',1,'time_shield']]],
   ['get_5funixday_5fms_11',['get_unixday_ms',['../group__time__conversions.html#gaf3538b582d9456218fa3488a459c399e',1,'time_shield']]],
   ['get_5fweekday_12',['get_weekday',['../group__time__conversions.html#gaeb11f34d28a86ccc88b8daba72ebc67a',1,'time_shield']]],

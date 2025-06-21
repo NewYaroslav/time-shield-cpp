@@ -41,7 +41,7 @@ var searchData=
   ['to_5fts_5fms_38',['to_ts_ms',['../group__time__conversions.html#gac03b6dadea6750e977f3206a0a31a038',1,'time_shield::to_ts_ms(T1 year, T2 month, T2 day, T2 hour=0, T2 min=0, T2 sec=0, T2 ms=0)'],['../group__time__structures.html#ga9ea2efc90fb504eee9d8e9edca51450b',1,'time_shield::to_ts_ms(const T &amp;date_time)'],['../group__time__conversions.html#gace1bd9039e049b79396cc232251072ee',1,'time_shield::to_ts_ms(const std::tm *timeinfo)']]],
   ['to_5ftz_39',['to_tz',['../group__time__conversions.html#gaa96c5b03c60c4e20d33dc738b8562acd',1,'time_shield']]],
   ['to_5funix_5fmin_40',['to_unix_min',['../group__time__conversions.html#gad88d3a69c5edfefe82f44009eaf1ab0c',1,'time_shield']]],
-  ['to_5funix_5fyear_41',['to_unix_year',['../group__time__conversions.html#ga813f92a8a647195d5100624b3e5c7609',1,'time_shield']]],
+  ['to_5funix_5fyear_41',['to_unix_year',['../group__time__conversions.html#ga813f92a8a647195d5100624b3e5c7609',1,'time_shield::to_unix_year(ts_t ts) noexcept'],['../group__time__conversions.html#ga9343941f07049ffe78efab0902751569',1,'time_shield::to_unix_year(long ts)']]],
   ['to_5fwindows_5ffilename_42',['to_windows_filename',['../group__time__formatting.html#ga4fe4ab8fc88358861f38d88aa1bcd96c',1,'time_shield']]],
   ['to_5fwindows_5ffilename_5fms_43',['to_windows_filename_ms',['../group__time__formatting.html#gadf9ef0d3d5477ce7ea705dc10c88b695',1,'time_shield']]],
   ['to_5fyear_44',['to_year',['../group__time__conversions.html#ga796031fa6f38fb3d4579e1205bae30eb',1,'time_shield']]],

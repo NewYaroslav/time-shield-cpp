@@ -945,6 +945,15 @@ Functions</h2></td></tr>
 <tr class="memitem:gae58e725d26b7754e9bc184f7503fad57" id="r_gae58e725d26b7754e9bc184f7503fad57"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae58e725d26b7754e9bc184f7503fad57">time_shield::sec_to_fhour</a> (long sec)</td></tr>
 <tr class="memdesc:gae58e725d26b7754e9bc184f7503fad57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert seconds to floating-point hours.  <br /></td></tr>
 <tr class="separator:gae58e725d26b7754e9bc184f7503fad57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3b39315738db8f3db9d58cc0529aa0be" id="r_ga3b39315738db8f3db9d58cc0529aa0be"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3b39315738db8f3db9d58cc0529aa0be">time_shield::get_unix_year</a> (long <a class="el" href="#ga129d392927c24f77f45827d55e048eb4">ts</a>)</td></tr>
+<tr class="memdesc:ga3b39315738db8f3db9d58cc0529aa0be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a UNIX timestamp to a year.  <br /></td></tr>
+<tr class="separator:ga3b39315738db8f3db9d58cc0529aa0be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga93a6c7e27ccce15344ca74b7808e9261" id="r_ga93a6c7e27ccce15344ca74b7808e9261"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga93a6c7e27ccce15344ca74b7808e9261">time_shield::unix_year</a> (long <a class="el" href="#ga129d392927c24f77f45827d55e048eb4">ts</a>)</td></tr>
+<tr class="memdesc:ga93a6c7e27ccce15344ca74b7808e9261"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for get_unix_year function.  <br /></td></tr>
+<tr class="separator:ga93a6c7e27ccce15344ca74b7808e9261"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9343941f07049ffe78efab0902751569" id="r_ga9343941f07049ffe78efab0902751569"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9343941f07049ffe78efab0902751569">time_shield::to_unix_year</a> (long <a class="el" href="#ga129d392927c24f77f45827d55e048eb4">ts</a>)</td></tr>
+<tr class="memdesc:ga9343941f07049ffe78efab0902751569"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for get_unix_year function.  <br /></td></tr>
+<tr class="separator:ga9343941f07049ffe78efab0902751569"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gadf3c725a9d0d2a39b7294a0f80998b6e" id="r_gadf3c725a9d0d2a39b7294a0f80998b6e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structtime__shield_1_1DateTimeStruct.html">DateTimeStruct</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gadf3c725a9d0d2a39b7294a0f80998b6e">time_shield::to_date_time</a> (long <a class="el" href="#ga129d392927c24f77f45827d55e048eb4">ts</a>)</td></tr>
 <tr class="memdesc:gadf3c725a9d0d2a39b7294a0f80998b6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a timestamp to a <a class="el" href="structtime__shield_1_1DateTimeStruct.html" title="Structure to represent date and time.">DateTimeStruct</a>.  <br /></td></tr>
 <tr class="separator:gadf3c725a9d0d2a39b7294a0f80998b6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1728,7 +1737,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Timestamp in seconds. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l00208">208</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l00250">250</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
 
 </div>
 </div>
@@ -1793,7 +1802,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Timestamp at 23:59:59 of the same day. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l00237">237</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l00279">279</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
 
 </div>
 </div>
@@ -2173,7 +2182,7 @@ template&lt;class T = ts_ms_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Timestamp of the end of the period. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l00271">271</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l00313">313</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
 
 </div>
 </div>
@@ -2281,7 +2290,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Timestamp of 23:59:59 on December 31st of the year. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l00253">253</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l00295">295</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
 
 </div>
 </div>
@@ -3334,8 +3343,36 @@ template&lt;class T = int64_t&gt; </div>
 
 </div>
 </div>
+<a id="ga3b39315738db8f3db9d58cc0529aa0be" name="ga3b39315738db8f3db9d58cc0529aa0be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3b39315738db8f3db9d58cc0529aa0be">&#9670;&#160;</a></span>get_unix_year() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">long time_shield::get_unix_year </td>
+          <td>(</td>
+          <td class="paramtype">long</td>          <td class="paramname"><span class="paramname"><em>ts</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert a UNIX timestamp to a year. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ts</td><td>UNIX timestamp in seconds. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Year corresponding to the given timestamp. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l00187">187</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
+
+</div>
+</div>
 <a id="ga7b577dca60f425d0975603800f35f0f8" name="ga7b577dca60f425d0975603800f35f0f8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga7b577dca60f425d0975603800f35f0f8">&#9670;&#160;</a></span>get_unix_year()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7b577dca60f425d0975603800f35f0f8">&#9670;&#160;</a></span>get_unix_year() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -7071,7 +7108,7 @@ template&lt;class T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Timestamp at 00:00:00 of the same day. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l00230">230</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l00272">272</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
 
 </div>
 </div>
@@ -7668,7 +7705,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Timestamp of the start of the period. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l00263">263</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l00305">305</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
 
 </div>
 </div>
@@ -7857,7 +7894,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Timestamp at 00:00:00 on January 1st of the year. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l00244">244</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l00286">286</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
 
 </div>
 </div>
@@ -8468,7 +8505,7 @@ template&lt;class T1 = year_t, class T2 = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Filled <a class="el" href="structtime__shield_1_1DateTimeStruct.html" title="Structure to represent date and time.">DateTimeStruct</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l00187">187</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l00229">229</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
 
 </div>
 </div>
@@ -8505,7 +8542,7 @@ template&lt;class T1 = year_t, class T2 = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A date-time structure of type T1.    </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l00203">203</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l00245">245</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
 
 </div>
 </div>
@@ -8947,7 +8984,7 @@ template&lt;class T = TimeZoneStruct&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l00221">221</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l00263">263</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
 
 </div>
 </div>
@@ -9545,8 +9582,43 @@ template&lt;class T = int64_t&gt; </div>
 
 </div>
 </div>
+<a id="ga9343941f07049ffe78efab0902751569" name="ga9343941f07049ffe78efab0902751569"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9343941f07049ffe78efab0902751569">&#9670;&#160;</a></span>to_unix_year() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">long time_shield::to_unix_year </td>
+          <td>(</td>
+          <td class="paramtype">long</td>          <td class="paramname"><span class="paramname"><em>ts</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Alias for get_unix_year function. </p>
+<p>Converts a UNIX timestamp to a year.   </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The type of the year (default is <a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9" title="Type for representing years as integers.">year_t</a>). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ts</td><td>UNIX timestamp. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>T Year corresponding to the given timestamp.    </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l00220">220</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
+
+</div>
+</div>
 <a id="ga813f92a8a647195d5100624b3e5c7609" name="ga813f92a8a647195d5100624b3e5c7609"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga813f92a8a647195d5100624b3e5c7609">&#9670;&#160;</a></span>to_unix_year()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga813f92a8a647195d5100624b3e5c7609">&#9670;&#160;</a></span>to_unix_year() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -10574,8 +10646,43 @@ template&lt;class T = int64_t&gt; </div>
 
 </div>
 </div>
+<a id="ga93a6c7e27ccce15344ca74b7808e9261" name="ga93a6c7e27ccce15344ca74b7808e9261"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga93a6c7e27ccce15344ca74b7808e9261">&#9670;&#160;</a></span>unix_year() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">long time_shield::unix_year </td>
+          <td>(</td>
+          <td class="paramtype">long</td>          <td class="paramname"><span class="paramname"><em>ts</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Alias for get_unix_year function. </p>
+<p>Converts a UNIX timestamp to a year.   </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The type of the year (default is <a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9" title="Type for representing years as integers.">year_t</a>). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ts</td><td>UNIX timestamp. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>T Year corresponding to the given timestamp.    </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l00216">216</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
+
+</div>
+</div>
 <a id="ga09fd97942bc444b1c953157ce2d642c4" name="ga09fd97942bc444b1c953157ce2d642c4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga09fd97942bc444b1c953157ce2d642c4">&#9670;&#160;</a></span>unix_year()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga09fd97942bc444b1c953157ce2d642c4">&#9670;&#160;</a></span>unix_year() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">

@@ -5,6 +5,7 @@ var time__conversions_8mqh =
     [ "time_shield::end_of_day", "group__time__conversions.html#ga33cf687d216c8aeb66007e768e4fe642", null ],
     [ "time_shield::end_of_period", "group__time__conversions.html#gae42e77c181ff827dcf0baf1bed25f42f", null ],
     [ "time_shield::end_of_year", "group__time__conversions.html#ga0b30a86cbcfba883bbd4d365b4f4d99a", null ],
+    [ "time_shield::get_unix_year", "group__time__conversions.html#ga3b39315738db8f3db9d58cc0529aa0be", null ],
     [ "time_shield::hour_to_fsec", "group__time__conversions.html#ga1bb4323145b987cb6dd3a8370e40a78c", null ],
     [ "time_shield::hour_to_ms", "group__time__conversions.html#gac4e08d16b0232c9fceebac680ddecdee", null ],
     [ "time_shield::hour_to_sec", "group__time__conversions.html#ga61fd8a41693bbe9b9015f30e08acc6b4", null ],
@@ -29,5 +30,7 @@ var time__conversions_8mqh =
     [ "time_shield::to_date_time", "group__time__conversions.html#gadf3c725a9d0d2a39b7294a0f80998b6e", null ],
     [ "time_shield::to_dt", "group__time__conversions.html#ga2513ac450f3fc7a7c8ddbd92f9a834ac", null ],
     [ "time_shield::to_timestamp", "group__time__conversions.html#ga366c4ed1c65d3ade9b5b9eed0e2424d7", null ],
+    [ "time_shield::to_unix_year", "group__time__conversions.html#ga9343941f07049ffe78efab0902751569", null ],
+    [ "time_shield::unix_year", "group__time__conversions.html#ga93a6c7e27ccce15344ca74b7808e9261", null ],
     [ "time_shield::us_of_sec", "group__time__conversions.html#gac9040bd2876cafb225cafc89b4109b07", null ]
 ];

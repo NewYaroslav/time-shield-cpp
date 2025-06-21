@@ -14,7 +14,7 @@ var searchData=
   ['unix_5fday_5fto_5fts_5fms_11',['unix_day_to_ts_ms',['../group__time__conversions.html#ga97e7d66a81528e653d6ccdc5a246fcab',1,'time_shield']]],
   ['unix_5fepoch_12',['UNIX_EPOCH',['../group__time__constants.html#gaac58f5745079905f99b9a15610a946f4',1,'time_shield']]],
   ['unix_5fmin_13',['unix_min',['../group__time__conversions.html#ga7e92f54e70506cd3b9cc5bc2324bd3d1',1,'time_shield']]],
-  ['unix_5fyear_14',['unix_year',['../group__time__conversions.html#ga09fd97942bc444b1c953157ce2d642c4',1,'time_shield']]],
+  ['unix_5fyear_14',['unix_year',['../group__time__conversions.html#ga09fd97942bc444b1c953157ce2d642c4',1,'time_shield::unix_year(ts_t ts) noexcept'],['../group__time__conversions.html#ga93a6c7e27ccce15344ca74b7808e9261',1,'time_shield::unix_year(long ts)']]],
   ['unixday_15',['unixday',['../group__time__conversions.html#gacbc2171b5838d317b0e223a5008305a2',1,'time_shield']]],
   ['unixday_5fms_16',['unixday_ms',['../group__time__conversions.html#ga0bd57d9a7ea975b74b856b26b72dbe8b',1,'time_shield']]],
   ['unixday_5ft_17',['unixday_t',['../group__time__types.html#ga391046d8662dee26a659793b8c0daf6a',1,'time_shield']]],

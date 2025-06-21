@@ -1,5 +1,7 @@
 var group__time__conversions =
 [
+    [ "time_shield::cet_to_gmt", "group__time__conversions.html#gab510347fe16134c9b63a223c85528493", null ],
+    [ "time_shield::cet_to_gmt", "group__time__conversions.html#gae3bc7446e716571e6cab5a76b94892ec", null ],
     [ "time_shield::day_end", "group__time__conversions.html#gad508e5bd1e6e32c4c7845a26db681004", null ],
     [ "time_shield::day_end", "group__time__conversions.html#ga2c6ad7694430a3dd803c1e0edb70e344", null ],
     [ "time_shield::day_end_ms", "group__time__conversions.html#gae9d9a526bea3c946c0f11d250385d99d", null ],
@@ -44,6 +46,8 @@ var group__time__conversions =
     [ "time_shield::dt_to_timestamp", "group__time__conversions.html#ga52474a1603512725dacd84a091a1d004", null ],
     [ "time_shield::dt_to_timestamp_ms", "group__time__conversions.html#gafc3b8c8ebd24757148ca31b17bd191cf", null ],
     [ "time_shield::dt_to_timestamp_ms", "group__time__conversions.html#ga7ccad18067dfa9b0bef01f5c2fdadd80", null ],
+    [ "time_shield::eet_to_gmt", "group__time__conversions.html#gaa4887077a2d3a3a89c0cc1f70bffa5f9", null ],
+    [ "time_shield::eet_to_gmt", "group__time__conversions.html#ga72cff8db923c27b0ae566590cd8c1015", null ],
     [ "time_shield::end_of_day", "group__time__conversions.html#ga46508f05eaa8f0241b82acca0f4b016d", null ],
     [ "time_shield::end_of_day", "group__time__conversions.html#ga33cf687d216c8aeb66007e768e4fe642", null ],
     [ "time_shield::end_of_day_from_unix_day", "group__time__conversions.html#ga4185764b74c78b0de5d56248eba51713", null ],

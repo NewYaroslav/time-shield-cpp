@@ -1,5 +1,9 @@
 var NAVTREEINDEX3 =
 {
+"group__time__formatting.html#ga4fe4ab8fc88358861f38d88aa1bcd96c":[6,4,45],
+"group__time__formatting.html#ga5c811e785788aaf4e099cc4a080973bc":[6,4,13],
+"group__time__formatting.html#ga71e1c7acaa90a895bd73cfe988e3b465":[6,4,27],
+"group__time__formatting.html#ga7628b1cb7b3cfad10ae6c8a673504eb1":[6,4,2],
 "group__time__formatting.html#ga7debd74ce9fc5a6371749b8aefba0817":[6,4,3],
 "group__time__formatting.html#ga7f90462dce13ab1ba1bda84211a42785":[6,4,31],
 "group__time__formatting.html#ga7fccdd480a0425b2401f0a97efbd2b74":[6,4,20],
@@ -245,9 +249,5 @@ var NAVTREEINDEX3 =
 "structtime__shield_1_1TimeStruct.html#ac5d2d37b298ef8f2427e315482ecbb1b":[6,0,2,2],
 "structtime__shield_1_1TimeStruct.html#af73103a8b5d29c54de39cfe93e5e6f37":[6,0,2,1],
 "structtime__shield_1_1TimeStruct.html#af8d209a3412547ac06280ca7825e9f49":[6,0,2,3],
-"structtime__shield_1_1TimeZoneStruct.html":[6,0,3],
-"structtime__shield_1_1TimeZoneStruct.html#a83b023980ce397878cb2c742bb9dc8b7":[6,0,3,0],
-"structtime__shield_1_1TimeZoneStruct.html#ab24fabc460ae071150d4317efc1ecbdb":[6,0,3,2],
-"structtime__shield_1_1TimeZoneStruct.html#abe789b40db8bbbc3046dee910ca7804b":[6,0,3,1],
-"time__conversions_8hpp.html":[9,0,0,0,0,5]
+"structtime__shield_1_1TimeZoneStruct.html":[6,0,3]
 };

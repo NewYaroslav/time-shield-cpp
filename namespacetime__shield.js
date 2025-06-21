@@ -232,6 +232,8 @@ var namespacetime__shield =
       [ "FRI", "group__time__enums.html#ggadf684443100352064316f6134bbe44f8a74be2ada11289d5b8c69d0e5f83291b5", null ],
       [ "SAT", "group__time__enums.html#ggadf684443100352064316f6134bbe44f8ae2bf2f0672007a58be8af305dc0f4d60", null ]
     ] ],
+    [ "cet_to_gmt", "group__time__conversions.html#gab510347fe16134c9b63a223c85528493", null ],
+    [ "cet_to_gmt", "group__time__conversions.html#gae3bc7446e716571e6cab5a76b94892ec", null ],
     [ "check_leap_year", "group__time__validation.html#gad4b8ac012407d765d149fc5b0be8b4a9", null ],
     [ "check_leap_year", "group__time__validation.html#ga30ea193ecbc9c3493b9bac8df01d82ba", null ],
     [ "check_leap_year_ts", "group__time__validation.html#ga43da8dd61e14b485bf6bb491278241f8", null ],
@@ -292,6 +294,8 @@ var namespacetime__shield =
     [ "dt_to_timestamp_ms", "group__time__conversions.html#gafc3b8c8ebd24757148ca31b17bd191cf", null ],
     [ "dt_to_timestamp_ms", "group__time__conversions.html#ga7ccad18067dfa9b0bef01f5c2fdadd80", null ],
     [ "dt_to_timestamp_ms", "group__time__structures.html#gaceea58b31e5097df20bd267f098c2a0c", null ],
+    [ "eet_to_gmt", "group__time__conversions.html#gaa4887077a2d3a3a89c0cc1f70bffa5f9", null ],
+    [ "eet_to_gmt", "group__time__conversions.html#ga72cff8db923c27b0ae566590cd8c1015", null ],
     [ "end_of_day", "group__time__conversions.html#ga46508f05eaa8f0241b82acca0f4b016d", null ],
     [ "end_of_day", "group__time__conversions.html#ga33cf687d216c8aeb66007e768e4fe642", null ],
     [ "end_of_day_from_unix_day", "group__time__conversions.html#ga4185764b74c78b0de5d56248eba51713", null ],

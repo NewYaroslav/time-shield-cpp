@@ -9,6 +9,7 @@ var dir_60326dd3f086d866f3850ba7fd4f9d91 =
     [ "time_parser.mqh", "time__parser_8mqh.html", "time__parser_8mqh" ],
     [ "time_struct.mqh", "time__struct_8mqh.html", "time__struct_8mqh" ],
     [ "time_utils.mqh", "time__utils_8mqh.html", "time__utils_8mqh" ],
+    [ "time_zone_conversions.mqh", "time__zone__conversions_8mqh.html", "time__zone__conversions_8mqh" ],
     [ "time_zone_struct.mqh", "time__zone__struct_8mqh.html", "time__zone__struct_8mqh" ],
     [ "validation.mqh", "validation_8mqh.html", "validation_8mqh" ]
 ];

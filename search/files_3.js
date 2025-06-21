@@ -12,8 +12,10 @@ var searchData=
   ['time_5fstruct_2emqh_9',['time_struct.mqh',['../time__struct_8mqh.html',1,'']]],
   ['time_5futils_2ehpp_10',['time_utils.hpp',['../time__utils_8hpp.html',1,'']]],
   ['time_5futils_2emqh_11',['time_utils.mqh',['../time__utils_8mqh.html',1,'']]],
-  ['time_5fzone_5fstruct_2ehpp_12',['time_zone_struct.hpp',['../time__zone__struct_8hpp.html',1,'']]],
-  ['time_5fzone_5fstruct_2emqh_13',['time_zone_struct.mqh',['../time__zone__struct_8mqh.html',1,'']]],
-  ['timeshield_2emqh_14',['TimeShield.mqh',['../TimeShield_8mqh.html',1,'']]],
-  ['types_2ehpp_15',['types.hpp',['../types_8hpp.html',1,'']]]
+  ['time_5fzone_5fconversions_2ehpp_12',['time_zone_conversions.hpp',['../time__zone__conversions_8hpp.html',1,'']]],
+  ['time_5fzone_5fconversions_2emqh_13',['time_zone_conversions.mqh',['../time__zone__conversions_8mqh.html',1,'']]],
+  ['time_5fzone_5fstruct_2ehpp_14',['time_zone_struct.hpp',['../time__zone__struct_8hpp.html',1,'']]],
+  ['time_5fzone_5fstruct_2emqh_15',['time_zone_struct.mqh',['../time__zone__struct_8mqh.html',1,'']]],
+  ['timeshield_2emqh_16',['TimeShield.mqh',['../TimeShield_8mqh.html',1,'']]],
+  ['types_2ehpp_17',['types.hpp',['../types_8hpp.html',1,'']]]
 ];

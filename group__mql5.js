@@ -10,6 +10,7 @@ var group__mql5 =
     [ "time_parser.mqh", "time__parser_8mqh.html", null ],
     [ "time_struct.mqh", "time__struct_8mqh.html", null ],
     [ "time_utils.mqh", "time__utils_8mqh.html", null ],
+    [ "time_zone_conversions.mqh", "time__zone__conversions_8mqh.html", null ],
     [ "time_zone_struct.mqh", "time__zone__struct_8mqh.html", null ],
     [ "validation.mqh", "validation_8mqh.html", null ]
 ];

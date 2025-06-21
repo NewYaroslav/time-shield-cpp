@@ -18,9 +18,6 @@
 #property link      "https://github.com/NewYaroslav/time-shield-cpp"
 #property strict
 
-// Configuration settings for the Time Shield library
-#include <time_shield/config.mqh>
-
 
 // Constants used in time calculations
 #include <time_shield/constants.mqh>
@@ -48,6 +45,9 @@
 
 // Functions for converting between different time representations
 #include <time_shield/time_conversions.mqh>
+
+// Functions for converting between time zones
+#include <time_shield/time_zone_conversions.mqh>
 
 // Functions for formatting time in various standard formats
 #include <time_shield/time_formatting.mqh>

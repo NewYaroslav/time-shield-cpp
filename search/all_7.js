@@ -13,5 +13,5 @@ var searchData=
   ['hour_5fto_5fms_5fimpl_10',['hour_to_ms_impl',['../group__time__conversions.html#ga96396a60f19e6d092b6a8a3d3d1c9dfe',1,'time_shield::hour_to_ms_impl(T t, std::true_type) noexcept'],['../group__time__conversions.html#gaea071894d542eff7b482209633474131',1,'time_shield::hour_to_ms_impl(T t, std::false_type) noexcept']]],
   ['hour_5fto_5fsec_11',['hour_to_sec',['../group__time__conversions.html#ga61bb965a9c4d23ec37a7d4e9a837776b',1,'time_shield']]],
   ['hour_5fto_5fsec_5fimpl_12',['hour_to_sec_impl',['../group__time__conversions.html#ga363af36769e77d3c7d9c297355178a26',1,'time_shield::hour_to_sec_impl(T t, std::true_type) noexcept'],['../group__time__conversions.html#gaec527182dfa8a2478006e1f0a81c79cc',1,'time_shield::hour_to_sec_impl(T t, std::false_type) noexcept']]],
-  ['hours_5fper_5fday_13',['HOURS_PER_DAY',['../group__time__constants.html#ga089da10c66257f01fa121ac21367b17c',1,'time_shield']]]
+  ['hours_5fper_5fday_13',['HOURS_PER_DAY',['../group__time__constants.html#ga506f55f244c514d712211eeb8e06bb33',1,'time_shield']]]
 ];

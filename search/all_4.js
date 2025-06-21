@@ -19,10 +19,10 @@ var searchData=
   ['enumerations_16',['Time Enumerations',['../group__time__enums.html',1,'']]],
   ['enums_2ehpp_17',['enums.hpp',['../enums_8hpp.html',1,'']]],
   ['enums_2emqh_18',['enums.mqh',['../enums_8mqh.html',1,'']]],
-  ['error_5ftimestamp_19',['ERROR_TIMESTAMP',['../group__time__constants.html#ga88f50610a4743e500a2515fd59c10166',1,'time_shield']]],
-  ['error_5fyear_20',['ERROR_YEAR',['../group__time__constants.html#gaf5fe26d6299569ec01a5261e1c98fa49',1,'time_shield']]],
+  ['error_5ftimestamp_19',['ERROR_TIMESTAMP',['../group__time__constants.html#ga1844be7ac6c1c9af10a78f801eae3dca',1,'time_shield']]],
+  ['error_5fyear_20',['ERROR_YEAR',['../group__time__constants.html#ga00d48741b41d0ebe330adaf07fcb51bf',1,'time_shield']]],
   ['european_5fmonth_5fday_21',['EUROPEAN_MONTH_DAY',['../group__time__enums.html#gga81dfe20e6515b855c625bd9c7aea58e6aee2480639b1a03f1459f2b2ba8c4e577',1,'time_shield']]],
   ['european_5ftime_22',['EUROPEAN_TIME',['../group__time__enums.html#gga81dfe20e6515b855c625bd9c7aea58e6a2556ff1bc58098178bdfc25effbeaf4b',1,'time_shield']]],
-  ['example_20usage_3a_23',['Example Usage:',['../group__time__structures.html#autotoc_md1',1,'Example Usage:'],['../group__time__constants.html#autotoc_md3',1,'Example Usage:'],['../group__time__enums.html#autotoc_md5',1,'Example Usage:'],['../group__time__types.html#autotoc_md15',1,'Example Usage:'],['../group__time__enums.html#autotoc_md19',1,'Example Usage:']]],
+  ['example_20usage_3a_23',['Example Usage:',['../group__time__structures.html#autotoc_md1',1,'Example Usage:'],['../group__time__constants.html#autotoc_md3',1,'Example Usage:'],['../group__time__enums.html#autotoc_md5',1,'Example Usage:'],['../group__time__types.html#autotoc_md15',1,'Example Usage:'],['../group__time__constants.html#autotoc_md19',1,'Example Usage:'],['../group__time__enums.html#autotoc_md21',1,'Example Usage:']]],
   ['examples_3a_24',['Examples:',['../group__time__conversions.html#autotoc_md7',1,'Usage Examples:'],['../group__time__formatting.html#autotoc_md9',1,'Usage Examples:'],['../group__time__parsing.html#autotoc_md11',1,'Usage Examples:'],['../group__time__utils.html#autotoc_md13',1,'Usage Examples:'],['../group__time__validation.html#autotoc_md17',1,'Usage Examples:']]]
 ];

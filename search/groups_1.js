@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['enumerations_0',['Time Enumerations',['../group__time__enums.html',1,'']]]
+  ['constants_0',['Time Constants',['../group__time__constants.html',1,'']]],
+  ['conversions_1',['Time Conversions',['../group__time__conversions.html',1,'']]]
 ];

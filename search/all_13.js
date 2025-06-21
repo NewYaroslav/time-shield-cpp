@@ -25,8 +25,8 @@ var searchData=
   ['us_5fof_5fsec_22',['us_of_sec',['../group__time__conversions.html#gaf925e9c2c76bd1435baacf303b1c25a7',1,'time_shield::us_of_sec(fts_t ts) noexcept'],['../group__time__utils.html#ga358d459fc542986786d21fbb963bc6cb',1,'time_shield::us_of_sec() noexcept']]],
   ['us_5fper_5fsec_23',['US_PER_SEC',['../group__time__constants.html#gafe246ee14e1743fcba2128081b6aef20',1,'time_shield']]],
   ['usage_24',['Usage',['../index.html#usage_sec',1,'']]],
-  ['usage_20examples_3a_25',['Usage Examples:',['../group__time__conversions.html#autotoc_md5',1,'Usage Examples:'],['../group__time__formatting.html#autotoc_md7',1,'Usage Examples:'],['../group__time__parsing.html#autotoc_md9',1,'Usage Examples:'],['../group__time__utils.html#autotoc_md11',1,'Usage Examples:'],['../group__time__validation.html#autotoc_md15',1,'Usage Examples:']]],
-  ['usage_3a_26',['Usage:',['../group__time__constants.html#autotoc_md1',1,'Example Usage:'],['../group__time__enums.html#autotoc_md3',1,'Example Usage:'],['../group__time__types.html#autotoc_md13',1,'Example Usage:'],['../group__time__structures.html#autotoc_md17',1,'Example Usage:']]],
+  ['usage_20examples_3a_25',['Usage Examples:',['../group__time__conversions.html#autotoc_md7',1,'Usage Examples:'],['../group__time__formatting.html#autotoc_md9',1,'Usage Examples:'],['../group__time__parsing.html#autotoc_md11',1,'Usage Examples:'],['../group__time__utils.html#autotoc_md13',1,'Usage Examples:'],['../group__time__validation.html#autotoc_md17',1,'Usage Examples:']]],
+  ['usage_3a_26',['Usage:',['../group__time__structures.html#autotoc_md1',1,'Example Usage:'],['../group__time__constants.html#autotoc_md3',1,'Example Usage:'],['../group__time__enums.html#autotoc_md5',1,'Example Usage:'],['../group__time__types.html#autotoc_md15',1,'Example Usage:']]],
   ['utc_27',['UTC',['../group__time__enums.html#ggad8cb858fb6cedcf76c4f0630d56e042ba0ef413918aff1cacd5b7c92478ed0212',1,'time_shield']]],
   ['utilities_28',['Time Utilities',['../group__time__utils.html',1,'']]]
 ];

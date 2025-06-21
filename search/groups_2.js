@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['formatting_0',['Time Formatting',['../group__time__formatting.html',1,'']]]
+  ['enumerations_0',['Time Enumerations',['../group__time__enums.html',1,'']]]
 ];

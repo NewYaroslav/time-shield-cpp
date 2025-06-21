@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['constants_0',['Time Constants',['../group__time__constants.html',1,'']]],
-  ['conversions_1',['Time Conversions',['../group__time__conversions.html',1,'']]]
+  ['api_0',['MQL5 TimeShield API',['../group__mql5.html',1,'']]]
 ];

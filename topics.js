@@ -1,5 +1,6 @@
 var topics =
 [
+    [ "Time Structures", "group__time__structures.html", "group__time__structures" ],
     [ "Time Constants", "group__time__constants.html", "group__time__constants" ],
     [ "Time Enumerations", "group__time__enums.html", "group__time__enums" ],
     [ "Time Conversions", "group__time__conversions.html", "group__time__conversions" ],
@@ -8,5 +9,5 @@ var topics =
     [ "Time Utilities", "group__time__utils.html", "group__time__utils" ],
     [ "Time Types", "group__time__types.html", "group__time__types" ],
     [ "Time Validation", "group__time__validation.html", "group__time__validation" ],
-    [ "Time Structures", "group__time__structures.html", "group__time__structures" ]
+    [ "MQL5 TimeShield API", "group__mql5.html", "group__mql5" ]
 ];

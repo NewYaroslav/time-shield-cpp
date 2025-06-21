@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['year_0',['year',['../structtime__shield_1_1DateStruct.html#a56ca407ae07270a65b2090fdfb4b26d5',1,'time_shield::DateStruct::year'],['../structtime__shield_1_1DateTimeStruct.html#a6aaf7ee7664f6caeb970a0fe1dd503e5',1,'time_shield::DateTimeStruct::year'],['../group__time__conversions.html#gad75c64fa3e74278845449a672dc4f540',1,'time_shield::year(ts_t ts=ts())']]],
+  ['year_0',['year',['../structtime__shield_1_1DateStruct.html#a56ca407ae07270a65b2090fdfb4b26d5',1,'time_shield::DateStruct::year'],['../structtime__shield_1_1DateTimeStruct.html#a6aaf7ee7664f6caeb970a0fe1dd503e5',1,'time_shield::DateTimeStruct::year'],['../structtime__shield_1_1DateStruct.html#aefc0387bdb59d6b61395bf4bc1219390',1,'time_shield::DateStruct::year'],['../group__time__conversions.html#gad75c64fa3e74278845449a672dc4f540',1,'time_shield::year(ts_t ts=ts())']]],
   ['year_5fbegin_1',['year_begin',['../group__time__conversions.html#gaf13a1a54ce4559b856bf68191bb7ced9',1,'time_shield']]],
   ['year_5fbegin_5fdate_2',['year_begin_date',['../group__time__conversions.html#ga35dd94d82adfe7d221bbcbbe1669951f',1,'time_shield']]],
   ['year_5fbegin_5fdate_5fms_3',['year_begin_date_ms',['../group__time__conversions.html#ga8fce4a403e6119781dca243ed720480c',1,'time_shield']]],

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['parsing_0',['Time Parsing',['../group__time__parsing.html',1,'']]]
+  ['formatting_0',['Time Formatting',['../group__time__formatting.html',1,'']]]
 ];

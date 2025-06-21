@@ -1,7 +1,7 @@
 var searchData=
 [
   ['features_0',['Features',['../index.html#features_sec',1,'']]],
-  ['features_3a_1',['Features:',['../group__time__constants.html#autotoc_md0',1,'Key Features:'],['../group__time__enums.html#autotoc_md2',1,'Key Features:'],['../group__time__conversions.html#autotoc_md4',1,'Key Features:'],['../group__time__formatting.html#autotoc_md6',1,'Key Features:'],['../group__time__parsing.html#autotoc_md8',1,'Key Features:'],['../group__time__utils.html#autotoc_md10',1,'Key Features:'],['../group__time__types.html#autotoc_md12',1,'Key Features:'],['../group__time__validation.html#autotoc_md14',1,'Key Features:']]],
+  ['features_3a_1',['Features:',['../group__time__constants.html#autotoc_md2',1,'Key Features:'],['../group__time__enums.html#autotoc_md4',1,'Key Features:'],['../group__time__conversions.html#autotoc_md6',1,'Key Features:'],['../group__time__formatting.html#autotoc_md8',1,'Key Features:'],['../group__time__parsing.html#autotoc_md10',1,'Key Features:'],['../group__time__utils.html#autotoc_md12',1,'Key Features:'],['../group__time__types.html#autotoc_md14',1,'Key Features:'],['../group__time__validation.html#autotoc_md16',1,'Key Features:']]],
   ['feb_2',['FEB',['../group__time__enums.html#ggac2ffd79e06ab94cf1bb50fec432c68a8a682f714bbd36e86e62a3123c9fbfcd63',1,'time_shield']]],
   ['final_5fsunday_5fmonth_5fday_3',['final_sunday_month_day',['../group__time__conversions.html#gaa86b8701e71fb2af2dce57f7c98f24ed',1,'time_shield']]],
   ['final_5fsunday_5fof_5fmonth_4',['final_sunday_of_month',['../group__time__conversions.html#gac4988d57a7719871a33cf7f851b6daa5',1,'time_shield']]],

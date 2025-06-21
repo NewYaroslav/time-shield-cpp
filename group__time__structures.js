@@ -20,9 +20,13 @@ var group__time__structures =
     ] ],
     [ "time_shield::TimeStruct", "structtime__shield_1_1TimeStruct.html", [
       [ "hour", "structtime__shield_1_1TimeStruct.html#a692bac8100db9b338841461a38092a0f", null ],
+      [ "hour", "structtime__shield_1_1TimeStruct.html#af73103a8b5d29c54de39cfe93e5e6f37", null ],
       [ "min", "structtime__shield_1_1TimeStruct.html#ac5d2d37b298ef8f2427e315482ecbb1b", null ],
+      [ "min", "structtime__shield_1_1TimeStruct.html#af8d209a3412547ac06280ca7825e9f49", null ],
       [ "ms", "structtime__shield_1_1TimeStruct.html#a54fc894e99a769c1e07c4a21482a2d14", null ],
-      [ "sec", "structtime__shield_1_1TimeStruct.html#abab289c0807d3c6f067d42a6aa17ea2f", null ]
+      [ "ms", "structtime__shield_1_1TimeStruct.html#a52851328d16e509eba2ba19dfa5fbd03", null ],
+      [ "sec", "structtime__shield_1_1TimeStruct.html#abab289c0807d3c6f067d42a6aa17ea2f", null ],
+      [ "sec", "structtime__shield_1_1TimeStruct.html#a764bc903f34c6f250e0051cc892aa6a9", null ]
     ] ],
     [ "time_shield::TimeZoneStruct", "structtime__shield_1_1TimeZoneStruct.html", [
       [ "hour", "structtime__shield_1_1TimeZoneStruct.html#a83b023980ce397878cb2c742bb9dc8b7", null ],
@@ -33,6 +37,7 @@ var group__time__structures =
     [ "time_shield::create_date_struct", "group__time__structures.html#ga2ea065cf0bd4d934cb3c64ae54975448", null ],
     [ "time_shield::create_date_time_struct", "group__time__structures.html#ga0c596486a334547054b4e8ac71e4b3e4", null ],
     [ "time_shield::create_date_time_struct", "group__time__structures.html#gab6cf08da5ef726f11d460ad3e45f6800", null ],
+    [ "time_shield::create_time_struct", "group__time__structures.html#ga13b01721128561fc611a2044ff5b7b0c", null ],
     [ "time_shield::create_time_struct", "group__time__structures.html#ga31f445e3e85cba85035f71b35de12e25", null ],
     [ "time_shield::create_time_zone_struct", "group__time__structures.html#gac09cde0cbe8d1a8a3b5702f04ef6585a", null ],
     [ "time_shield::day_of_week", "group__time__structures.html#ga442ddd64e7adc570eafd6f7629c164e2", null ],

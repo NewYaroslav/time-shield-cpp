@@ -238,6 +238,7 @@ var namespacetime__shield =
     [ "create_date_struct", "group__time__structures.html#ga2ea065cf0bd4d934cb3c64ae54975448", null ],
     [ "create_date_time_struct", "group__time__structures.html#ga0c596486a334547054b4e8ac71e4b3e4", null ],
     [ "create_date_time_struct", "group__time__structures.html#gab6cf08da5ef726f11d460ad3e45f6800", null ],
+    [ "create_time_struct", "group__time__structures.html#ga13b01721128561fc611a2044ff5b7b0c", null ],
     [ "create_time_struct", "group__time__structures.html#ga31f445e3e85cba85035f71b35de12e25", null ],
     [ "create_time_zone_struct", "group__time__structures.html#gac09cde0cbe8d1a8a3b5702f04ef6585a", null ],
     [ "day_end", "group__time__conversions.html#gad508e5bd1e6e32c4c7845a26db681004", null ],

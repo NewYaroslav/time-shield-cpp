@@ -55,4 +55,7 @@
 // Functions for parsing time in various standard formats
 #include <time_shield/time_parser.mqh>
 
+// Functions for initializing the library
+#include <time_shield/initialization.mqh>
+
 #endif // __TIME_SHIELD_MQH__

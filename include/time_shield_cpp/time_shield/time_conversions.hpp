@@ -2769,7 +2769,7 @@ namespace time_shield {
     /// \return A time zone structure of type T represented by the given integer.
     /// \details The function assumes that the type T has members `hour`, `min`, and `is_positive`.
     template<class T = TimeZoneStruct>
-    inline const TimeZoneStruct to_time_zone(tz_t offset) {
+    inline const T to_time_zone(tz_t offset) {
         T tz;
         int abs_val = std::abs(offset);
         tz.hour = abs_val / SEC_PER_HOUR;

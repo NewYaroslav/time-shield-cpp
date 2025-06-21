@@ -1,4 +1,5 @@
 # Time Shield
+<img src="docs/logo-1280x640.png" alt="Logo" width="600"/>
 
 Time-Shield is ~~not only a combat tool of Homura Akemi, but also~~ a header-only C++ library designed for time manipulation. This powerful library offers a wide range of functionalities, including time conversion, string formatting, and various transformations.
 

@@ -1,0 +1,21 @@
+/*!
+\defgroup time_structures Time Structures
+\brief Structures for representing and working with time and date components.
+
+This group includes various structures used for representing time, date, and date-time combinations,
+along with related utility functions for creating and manipulating these structures.
+
+### Included Structures:
+- `TimeStruct`: Represents time components (hour, minute, second, millisecond).
+- `DateStruct`: Represents date components (year, month, day).
+- `DateTimeStruct`: Represents combined date and time components.
+- `TimeZoneStruct`: Represents time zone offsets.
+
+### Example Usage:
+```cpp
+auto time = time_shield::create_time_struct(12, 30, 45);       // 12:30:45
+auto date = time_shield::create_date_struct(2024, 11, 25);    // 2024-11-25
+auto date_time = time_shield::create_date_time_struct(2024, 11, 25, 12, 30, 45);
+auto tz = time_shield::to_time_zone_struct(3600);             // +01:00
+```
+*/

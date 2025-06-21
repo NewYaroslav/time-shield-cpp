@@ -412,6 +412,7 @@ var namespacetime__shield =
     [ "hour_to_sec", "group__time__conversions.html#ga61bb965a9c4d23ec37a7d4e9a837776b", null ],
     [ "hour_to_sec_impl", "group__time__conversions.html#gaec527182dfa8a2478006e1f0a81c79cc", null ],
     [ "hour_to_sec_impl", "group__time__conversions.html#ga363af36769e77d3c7d9c297355178a26", null ],
+    [ "initialize_library", "group__time__initialization.html#ga85b12efd997cf090aa4a9a0b12b72d5c", null ],
     [ "is_day_off", "group__time__validation.html#gac26f9a68b2235ea4af9e8a66ad51c8dc", null ],
     [ "is_day_off", "group__time__validation.html#ga2b6396c94de3fc478ce81658c4d75994", null ],
     [ "is_day_off_unix_day", "group__time__validation.html#ga0fd18b51b9fc61d69dba8839bc712692", null ],

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['utilities_0',['Time Utilities',['../group__time__utils.html',1,'']]]
+  ['structures_0',['Time Structures',['../group__time__structures.html',1,'']]]
 ];

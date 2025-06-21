@@ -1,5 +1,6 @@
 var topics =
 [
+    [ "Library Initialization", "group__time__initialization.html", "group__time__initialization" ],
     [ "MQL5 TimeShield API", "group__mql5.html", "group__mql5" ],
     [ "Time Constants", "group__time__constants.html", "group__time__constants" ],
     [ "Time Conversions", "group__time__conversions.html", "group__time__conversions" ],

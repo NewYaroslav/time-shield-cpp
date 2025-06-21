@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['parsing_0',['Time Parsing',['../group__time__parsing.html',1,'']]]
+  ['library_20initialization_0',['Library Initialization',['../group__time__initialization.html',1,'']]]
 ];

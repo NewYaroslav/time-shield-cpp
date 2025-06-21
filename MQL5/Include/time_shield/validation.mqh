@@ -1,6 +1,6 @@
 //+------------------------------------------------------------------+
-//|                                            validation.mqh        |
-//|                     Time Shield - MQL5 Validation Functions      |
+//|                                                   validation.mqh |
+//|                          Time Shield - MQL5 Validation Functions |
 //|                                      Copyright 2025, NewYaroslav |
 //|                   https://github.com/NewYaroslav/time-shield-cpp |
 //+------------------------------------------------------------------+

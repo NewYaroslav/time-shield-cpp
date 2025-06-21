@@ -1,6 +1,6 @@
 //+------------------------------------------------------------------+
-//|                                             date_struct.mqh      |
-//|                        Time Shield - MQL5 Date Structure         |
+//|                                                  date_struct.mqh |
+//|                                Time Shield - MQL5 Date Structure |
 //|                                      Copyright 2025, NewYaroslav |
 //|                   https://github.com/NewYaroslav/time-shield-cpp |
 //+------------------------------------------------------------------+

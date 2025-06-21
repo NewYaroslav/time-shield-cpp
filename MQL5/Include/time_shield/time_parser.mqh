@@ -1,6 +1,6 @@
 //+------------------------------------------------------------------+
-//|                                            time_parser.mqh       |
-//|                        Time Shield - MQL5 Time Parser            |
+//|                                                  time_parser.mqh |
+//|                                   Time Shield - MQL5 Time Parser |
 //|                                      Copyright 2025, NewYaroslav |
 //|                   https://github.com/NewYaroslav/time-shield-cpp |
 //+------------------------------------------------------------------+

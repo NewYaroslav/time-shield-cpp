@@ -1,6 +1,6 @@
 //+------------------------------------------------------------------+
-//|                                            time_conversions.mqh  |
-//|                      Time Shield - MQL5 Time Conversions         |
+//|                                             time_conversions.mqh |
+//|                              Time Shield - MQL5 Time Conversions |
 //|                                      Copyright 2025, NewYaroslav |
 //|                   https://github.com/NewYaroslav/time-shield-cpp |
 //+------------------------------------------------------------------+

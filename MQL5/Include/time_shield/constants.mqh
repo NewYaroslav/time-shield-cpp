@@ -1,6 +1,6 @@
 //+------------------------------------------------------------------+
-//|                                            constants.mqh         |
-//|                     Time Shield - MQL5 Constants                 |
+//|                                                    constants.mqh |
+//|                                     Time Shield - MQL5 Constants |
 //|                                      Copyright 2025, NewYaroslav |
 //|                   https://github.com/NewYaroslav/time-shield-cpp |
 //+------------------------------------------------------------------+

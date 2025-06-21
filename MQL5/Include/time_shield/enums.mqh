@@ -1,6 +1,6 @@
 //+------------------------------------------------------------------+
-//|                                                enums.mqh         |
-//|                        Time Shield - MQL5 Enumerations           |
+//|                                                        enums.mqh |
+//|                                  Time Shield - MQL5 Enumerations |
 //|                                      Copyright 2025, NewYaroslav |
 //|                   https://github.com/NewYaroslav/time-shield-cpp |
 //+------------------------------------------------------------------+

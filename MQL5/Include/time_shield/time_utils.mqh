@@ -1,6 +1,6 @@
 //+------------------------------------------------------------------+
-//|                                                time_utils.mqh    |
-//|                     Time Shield - MQL5 Time Utilities            |
+//|                                                   time_utils.mqh |
+//|                                Time Shield - MQL5 Time Utilities |
 //|                                      Copyright 2025, NewYaroslav |
 //|                   https://github.com/NewYaroslav/time-shield-cpp |
 //+------------------------------------------------------------------+

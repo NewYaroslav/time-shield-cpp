@@ -1,6 +1,6 @@
 //+------------------------------------------------------------------+
-//|                                            time_zone_struct.mqh  |
-//|                      Time Shield - MQL5 Time Zone Structure      |
+//|                                             time_zone_struct.mqh |
+//|                           Time Shield - MQL5 Time Zone Structure |
 //|                                      Copyright 2025, NewYaroslav |
 //|                   https://github.com/NewYaroslav/time-shield-cpp |
 //+------------------------------------------------------------------+

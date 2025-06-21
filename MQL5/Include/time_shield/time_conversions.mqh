@@ -178,6 +178,48 @@ namespace time_shield {
     }
 
     //----------------------------------------------------------------------
+    // Timestamp <-> Year
+    //----------------------------------------------------------------------
+
+    /// \brief Convert a UNIX timestamp to a year.
+    /// \param ts UNIX timestamp in seconds.
+    /// \return Year corresponding to the given timestamp.
+    long get_unix_year(long ts) {
+       const long BIAS_292277022000 = 9223371890843040000;
+       const long BIAS_2000         = 946684800;
+
+       long y    = MAX_YEAR;
+       long secs = -((ts - BIAS_2000) - BIAS_292277022000);
+
+       long n_400_years = secs / SEC_PER_400_YEARS;
+       secs -= n_400_years * SEC_PER_400_YEARS;
+       y    -= n_400_years * 400;
+
+       long n_100_years = secs / SEC_PER_100_YEARS;
+       secs -= n_100_years * SEC_PER_100_YEARS;
+       y    -= n_100_years * 100;
+
+       long n_4_years = secs / SEC_PER_4_YEARS;
+       secs -= n_4_years * SEC_PER_4_YEARS;
+       y    -= n_4_years * 4;
+
+       long n_1_years = secs / SEC_PER_YEAR;
+       secs -= n_1_years * SEC_PER_YEAR;
+       y    -= n_1_years;
+
+       y = secs == 0 ? y : y - 1;
+       return y - UNIX_EPOCH;
+    }
+
+    /// \brief Alias for get_unix_year function.
+    /// \copydoc get_unix_year
+    long unix_year(long ts) { return get_unix_year(ts); }
+
+    /// \brief Alias for get_unix_year function.
+    /// \copydoc get_unix_year
+    long to_unix_year(long ts) { return get_unix_year(ts); }
+
+    //----------------------------------------------------------------------
     // DateTime conversions
     //----------------------------------------------------------------------
 

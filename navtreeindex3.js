@@ -16,6 +16,7 @@ var NAVTREEINDEX3 =
 "time__zone__struct_8hpp.html":[9,0,0,0,0,10],
 "time__zone__struct_8hpp.html#a6b6a85d5244f2a0351dba87c703e7814":[9,0,0,0,0,10,0],
 "time__zone__struct_8hpp_source.html":[9,0,0,0,0,10],
+"time__zone__struct_8mqh.html":[6,9,6],
 "topics.html":[6],
 "types_8hpp.html":[9,0,0,0,0,11],
 "types_8hpp.html#ab867b7414a01757031c8e06247a6b828":[9,0,0,0,0,11,0],

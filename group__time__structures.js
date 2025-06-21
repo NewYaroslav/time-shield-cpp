@@ -39,7 +39,7 @@ var group__time__structures =
     [ "time_shield::create_date_time_struct", "group__time__structures.html#gab6cf08da5ef726f11d460ad3e45f6800", null ],
     [ "time_shield::create_time_struct", "group__time__structures.html#ga13b01721128561fc611a2044ff5b7b0c", null ],
     [ "time_shield::create_time_struct", "group__time__structures.html#ga31f445e3e85cba85035f71b35de12e25", null ],
-    [ "time_shield::create_time_zone_struct", "group__time__structures.html#gac09cde0cbe8d1a8a3b5702f04ef6585a", null ],
+    [ "time_shield::create_time_zone_struct", "group__time__structures.html#gae83e4d4791a1f6ce69657a3868b00504", null ],
     [ "time_shield::day_of_week", "group__time__structures.html#ga442ddd64e7adc570eafd6f7629c164e2", null ],
     [ "time_shield::day_of_week_dt", "group__time__structures.html#gaa8209e2784a29a01825ded9e2e93d43c", null ],
     [ "time_shield::dt_to_ftimestamp", "group__time__structures.html#ga0227287106fb5050e2c9b5bafd45dcb1", null ],

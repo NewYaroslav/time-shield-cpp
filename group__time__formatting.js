@@ -1,7 +1,7 @@
 var group__time__formatting =
 [
     [ "time_shield::process_format_impl", "group__time__formatting.html#ga4d804fd113939339058f7940cd4c0b80", null ],
-    [ "time_shield::time_zone_struct_to_string", "group__time__formatting.html#gab4eb65e463d083b628141dff0558bf93", null ],
+    [ "time_shield::time_zone_struct_to_string", "group__time__formatting.html#ga7debd74ce9fc5a6371749b8aefba0817", null ],
     [ "time_shield::to_human_readable", "group__time__formatting.html#ga9d28f8d6f987ba844902415fbec3951e", null ],
     [ "time_shield::to_human_readable_ms", "group__time__formatting.html#gaca9ab1f562f92431e598b36e988c2fa9", null ],
     [ "time_shield::to_iso8601", "group__time__formatting.html#gabb0f16dfbea86ef687537fa8251722d8", null ],
@@ -18,10 +18,10 @@ var group__time__formatting =
     [ "time_shield::to_mql5_full", "group__time__formatting.html#ga7f90462dce13ab1ba1bda84211a42785", null ],
     [ "time_shield::to_mql5_time", "group__time__formatting.html#ga93c56957d81ab53062a73b4c5a1e58e2", null ],
     [ "time_shield::to_str", "group__time__formatting.html#ga252c4a847a5c9681e76b33020fe101d3", null ],
-    [ "time_shield::to_str", "group__time__formatting.html#ga2dc4c57a2cdce24f0823af3a195b92f0", null ],
+    [ "time_shield::to_str", "group__time__formatting.html#ga9bb2597d3210bcfc33d527812859d2ee", null ],
     [ "time_shield::to_str_ms", "group__time__formatting.html#ga9af5b5811bb191ed1ba80fccbf444fc9", null ],
     [ "time_shield::to_string", "group__time__formatting.html#ga1481063d4a73a5de0746416e139da3f1", null ],
-    [ "time_shield::to_string", "group__time__formatting.html#gac3c22c510de7562c372649c4ea32bab7", null ],
+    [ "time_shield::to_string", "group__time__formatting.html#gad5f9a170d6b3f3330f7a71819490c25f", null ],
     [ "time_shield::to_string_ms", "group__time__formatting.html#gad5d0140a5f043109db7a738edff5cb53", null ],
     [ "time_shield::to_windows_filename", "group__time__formatting.html#ga4fe4ab8fc88358861f38d88aa1bcd96c", null ],
     [ "time_shield::to_windows_filename_ms", "group__time__formatting.html#gadf9ef0d3d5477ce7ea705dc10c88b695", null ]

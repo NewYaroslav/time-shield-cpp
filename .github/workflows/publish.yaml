@@ -15,7 +15,10 @@ jobs:
         with:
           submodules: "true"
       - name: set version
-        run: echo "PROJECT_NUMBER = `git describe --tags`" >> Doxyfile
+        run: |
+          TAG=$(git describe --tags --abbrev=0 2>/dev/null | sed 's/^v//' || echo "0.0.0-untagged")
+          echo "Using version: $TAG"
+          sed -i "s/^PROJECT_NUMBER.*/PROJECT_NUMBER = $TAG/" Doxyfile
       - name: Generate Documentation
         uses: mattnotmitt/doxygen-action@edge
       - name: Publish generated content to GitHub Pages

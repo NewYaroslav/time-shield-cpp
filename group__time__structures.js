@@ -15,7 +15,8 @@ var group__time__structures =
       [ "mon", "structtime__shield_1_1DateTimeStruct.html#ad3704de6007b827ccc9e2850f930c364", null ],
       [ "ms", "structtime__shield_1_1DateTimeStruct.html#a00bed4f36ef83ab2ff4f9d8e0f1e181f", null ],
       [ "sec", "structtime__shield_1_1DateTimeStruct.html#aedb0924a6f970dcc0e83991d6168d808", null ],
-      [ "year", "structtime__shield_1_1DateTimeStruct.html#a6aaf7ee7664f6caeb970a0fe1dd503e5", null ]
+      [ "year", "structtime__shield_1_1DateTimeStruct.html#a6aaf7ee7664f6caeb970a0fe1dd503e5", null ],
+      [ "year", "structtime__shield_1_1DateTimeStruct.html#a70c144b159ef73168083002b102001c0", null ]
     ] ],
     [ "time_shield::TimeStruct", "structtime__shield_1_1TimeStruct.html", [
       [ "hour", "structtime__shield_1_1TimeStruct.html#a692bac8100db9b338841461a38092a0f", null ],
@@ -30,6 +31,7 @@ var group__time__structures =
     ] ],
     [ "time_shield::create_date_struct", "group__time__structures.html#gaa556c97bfce724e9739a5fb57ae7a9ef", null ],
     [ "time_shield::create_date_struct", "group__time__structures.html#ga2ea065cf0bd4d934cb3c64ae54975448", null ],
+    [ "time_shield::create_date_time_struct", "group__time__structures.html#ga0c596486a334547054b4e8ac71e4b3e4", null ],
     [ "time_shield::create_date_time_struct", "group__time__structures.html#gab6cf08da5ef726f11d460ad3e45f6800", null ],
     [ "time_shield::create_time_struct", "group__time__structures.html#ga31f445e3e85cba85035f71b35de12e25", null ],
     [ "time_shield::create_time_zone_struct", "group__time__structures.html#gac09cde0cbe8d1a8a3b5702f04ef6585a", null ],

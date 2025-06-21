@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Time Shield Library: MQL5/Include/time_shield.mqh File Reference</title>
+<title>Time Shield Library: MQL5/Include/time_shield/date_time_struct.mqh File Reference</title>
 <link rel="icon" href="icon-64x64.png" type="image/x-icon" />
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -82,7 +82,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){initNavTree('time__shield_8mqh.html',''); initResizable(true); });
+$(function(){initNavTree('date__time__struct_8mqh.html',''); initResizable(true); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -109,53 +109,61 @@ $(function(){initNavTree('time__shield_8mqh.html',''); initResizable(true); });
 
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a>  </div>
-  <div class="headertitle"><div class="title">time_shield.mqh File Reference<div class="ingroups"><a class="el" href="group__mql5.html">MQL5 TimeShield API</a></div></div></div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle"><div class="title">date_time_struct.mqh File Reference<div class="ingroups"><a class="el" href="group__mql5.html">MQL5 TimeShield API</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Main header file for the Time Shield library.  
+<p>Header for date and time structure and related functions (MQL5).  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;time_shield/config.mqh&gt;</code><br />
-<code>#include &lt;time_shield/types.mqh&gt;</code><br />
-<code>#include &lt;time_shield/constants.mqh&gt;</code><br />
-<code>#include &lt;<a class="el" href="enums_8mqh_source.html">time_shield/enums.mqh</a>&gt;</code><br />
-<code>#include &lt;time_shield/time_struct.mqh&gt;</code><br />
-<code>#include &lt;<a class="el" href="date__struct_8mqh_source.html">time_shield/date_struct.mqh</a>&gt;</code><br />
-<code>#include &lt;time_shield/time_zone_struct.mqh&gt;</code><br />
-<code>#include &lt;<a class="el" href="date__time__struct_8mqh_source.html">time_shield/date_time_struct.mqh</a>&gt;</code><br />
-<code>#include &lt;time_shield/validation.mqh&gt;</code><br />
-<code>#include &lt;time_shield/time_utils.mqh&gt;</code><br />
-<code>#include &lt;time_shield/time_conversions.mqh&gt;</code><br />
-<code>#include &lt;time_shield/time_formatting.mqh&gt;</code><br />
-<code>#include &lt;time_shield/time_parser.mqh&gt;</code><br />
-</div>
-<p><a href="time__shield_8mqh_source.html">Go to the source code of this file.</a></p>
+
+<p><a href="date__time__struct_8mqh_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtime__shield_1_1DateTimeStruct.html">time_shield::DateTimeStruct</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure to represent date and time.  <a href="structtime__shield_1_1DateTimeStruct.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetime__shield.html">time_shield</a></td></tr>
+<tr class="memdesc:namespacetime__shield"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main namespace for the Time Shield library. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:aa39ebbc8b702af036d4fa5c6a41ac7bd" id="r_aa39ebbc8b702af036d4fa5c6a41ac7bd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa39ebbc8b702af036d4fa5c6a41ac7bd">__TIME_SHIELD_MQH__</a></td></tr>
-<tr class="separator:aa39ebbc8b702af036d4fa5c6a41ac7bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5e28a53a5eb7d643bd0eceb0e08d12a" id="r_ad5e28a53a5eb7d643bd0eceb0e08d12a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad5e28a53a5eb7d643bd0eceb0e08d12a">__TIME_SHIELD_DATE_TIME_STRUCT_MQH__</a></td></tr>
+<tr class="separator:ad5e28a53a5eb7d643bd0eceb0e08d12a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga0c596486a334547054b4e8ac71e4b3e4" id="r_ga0c596486a334547054b4e8ac71e4b3e4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structtime__shield_1_1DateTimeStruct.html">DateTimeStruct</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__time__structures.html#ga0c596486a334547054b4e8ac71e4b3e4">time_shield::create_date_time_struct</a> (const long <a class="el" href="group__time__conversions.html#gad75c64fa3e74278845449a672dc4f540">year</a>, const int mon=1, const int day=1, const int hour=0, const int min=0, const int sec=0, const int ms=0)</td></tr>
+<tr class="memdesc:ga0c596486a334547054b4e8ac71e4b3e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <code><a class="el" href="structtime__shield_1_1DateTimeStruct.html" title="Structure to represent date and time.">DateTimeStruct</a></code> instance.  <br /></td></tr>
+<tr class="separator:ga0c596486a334547054b4e8ac71e4b3e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Main header file for the Time Shield library. </p>
-<p>This header file includes all the components of the Time Shield library, making it easy to include the entire library in your projects with a single include directive. </p>
+<div class="textblock"><p>Header for date and time structure and related functions (MQL5). </p>
+<p>This file contains the definition of the <code>DateTimeStruct</code> structure and a function to create <code>DateTimeStruct</code> instances for working with combined date and time values in MQL5. </p>
 
-<p class="definition">Definition in file <a class="el" href="time__shield_8mqh_source.html">time_shield.mqh</a>.</p>
+<p class="definition">Definition in file <a class="el" href="date__time__struct_8mqh_source.html">date_time_struct.mqh</a>.</p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="aa39ebbc8b702af036d4fa5c6a41ac7bd" name="aa39ebbc8b702af036d4fa5c6a41ac7bd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa39ebbc8b702af036d4fa5c6a41ac7bd">&#9670;&#160;</a></span>__TIME_SHIELD_MQH__</h2>
+<a id="ad5e28a53a5eb7d643bd0eceb0e08d12a" name="ad5e28a53a5eb7d643bd0eceb0e08d12a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5e28a53a5eb7d643bd0eceb0e08d12a">&#9670;&#160;</a></span>__TIME_SHIELD_DATE_TIME_STRUCT_MQH__</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define __TIME_SHIELD_MQH__</td>
+          <td class="memname">#define __TIME_SHIELD_DATE_TIME_STRUCT_MQH__</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="time__shield_8mqh_source.html#l00007">7</a> of file <a class="el" href="time__shield_8mqh_source.html">time_shield.mqh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__struct_8mqh_source.html#l00008">8</a> of file <a class="el" href="date__time__struct_8mqh_source.html">date_time_struct.mqh</a>.</p>
 
 </div>
 </div>
@@ -164,7 +172,7 @@ Macros</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_023a4b85dcdce17cdb38aba1524ef4de.html">MQL5</a></li><li class="navelem"><a class="el" href="dir_3524ab402aa6c84427515d52afa51b84.html">Include</a></li><li class="navelem"><a class="el" href="time__shield_8mqh.html">time_shield.mqh</a></li>
+    <li class="navelem"><a class="el" href="dir_023a4b85dcdce17cdb38aba1524ef4de.html">MQL5</a></li><li class="navelem"><a class="el" href="dir_3524ab402aa6c84427515d52afa51b84.html">Include</a></li><li class="navelem"><a class="el" href="dir_60326dd3f086d866f3850ba7fd4f9d91.html">time_shield</a></li><li class="navelem"><a class="el" href="date__time__struct_8mqh.html">date_time_struct.mqh</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>

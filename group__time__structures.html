@@ -262,6 +262,9 @@ Functions</h2></td></tr>
 <tr class="memitem:gaa556c97bfce724e9739a5fb57ae7a9ef" id="r_gaa556c97bfce724e9739a5fb57ae7a9ef"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structtime__shield_1_1DateStruct.html">DateStruct</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa556c97bfce724e9739a5fb57ae7a9ef">time_shield::create_date_struct</a> (const long <a class="el" href="group__time__conversions.html#gad75c64fa3e74278845449a672dc4f540">year</a>, const int mon=1, const int day=1)</td></tr>
 <tr class="memdesc:gaa556c97bfce724e9739a5fb57ae7a9ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <code><a class="el" href="structtime__shield_1_1DateStruct.html" title="Structure to represent a date.">DateStruct</a></code> instance.  <br /></td></tr>
 <tr class="separator:gaa556c97bfce724e9739a5fb57ae7a9ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0c596486a334547054b4e8ac71e4b3e4" id="r_ga0c596486a334547054b4e8ac71e4b3e4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structtime__shield_1_1DateTimeStruct.html">DateTimeStruct</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0c596486a334547054b4e8ac71e4b3e4">time_shield::create_date_time_struct</a> (const long <a class="el" href="group__time__conversions.html#gad75c64fa3e74278845449a672dc4f540">year</a>, const int mon=1, const int day=1, const int hour=0, const int min=0, const int sec=0, const int ms=0)</td></tr>
+<tr class="memdesc:ga0c596486a334547054b4e8ac71e4b3e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <code><a class="el" href="structtime__shield_1_1DateTimeStruct.html" title="Structure to represent date and time.">DateTimeStruct</a></code> instance.  <br /></td></tr>
+<tr class="separator:ga0c596486a334547054b4e8ac71e4b3e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Structures for representing and working with time and date components. </p>
@@ -371,8 +374,71 @@ Example Usage:</h3>
 
 </div>
 </div>
+<a id="ga0c596486a334547054b4e8ac71e4b3e4" name="ga0c596486a334547054b4e8ac71e4b3e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0c596486a334547054b4e8ac71e4b3e4">&#9670;&#160;</a></span>create_date_time_struct() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structtime__shield_1_1DateTimeStruct.html">DateTimeStruct</a> time_shield::create_date_time_struct </td>
+          <td>(</td>
+          <td class="paramtype">const long</td>          <td class="paramname"><span class="paramname"><em>year</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int</td>          <td class="paramname"><span class="paramname"><em>mon</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int</td>          <td class="paramname"><span class="paramname"><em>day</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int</td>          <td class="paramname"><span class="paramname"><em>hour</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int</td>          <td class="paramname"><span class="paramname"><em>min</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int</td>          <td class="paramname"><span class="paramname"><em>sec</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int</td>          <td class="paramname"><span class="paramname"><em>ms</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates a <code><a class="el" href="structtime__shield_1_1DateTimeStruct.html" title="Structure to represent date and time.">DateTimeStruct</a></code> instance. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">year</td><td>The year component of the date. </td></tr>
+    <tr><td class="paramname">mon</td><td>The month component of the date, defaults to 1 (January). </td></tr>
+    <tr><td class="paramname">day</td><td>The day component of the date, defaults to 1. </td></tr>
+    <tr><td class="paramname">hour</td><td>The hour component of the time, defaults to 0. </td></tr>
+    <tr><td class="paramname">min</td><td>The minute component of the time, defaults to 0. </td></tr>
+    <tr><td class="paramname">sec</td><td>The second component of the time, defaults to 0. </td></tr>
+    <tr><td class="paramname">ms</td><td>The millisecond component of the time, defaults to 0. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="structtime__shield_1_1DateTimeStruct.html" title="Structure to represent date and time.">DateTimeStruct</a></code> instance with the provided date and time components. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="date__time__struct_8mqh_source.html#l00046">46</a> of file <a class="el" href="date__time__struct_8mqh_source.html">date_time_struct.mqh</a>.</p>
+
+</div>
+</div>
 <a id="gab6cf08da5ef726f11d460ad3e45f6800" name="gab6cf08da5ef726f11d460ad3e45f6800"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab6cf08da5ef726f11d460ad3e45f6800">&#9670;&#160;</a></span>create_date_time_struct()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gab6cf08da5ef726f11d460ad3e45f6800">&#9670;&#160;</a></span>create_date_time_struct() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">

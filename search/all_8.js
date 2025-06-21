@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['included_20structures_3a_0',['Included Structures:',['../group__time__structures.html#autotoc_md0',1,'']]],
+  ['included_20structures_3a_0',['Included Structures:',['../group__time__structures.html#autotoc_md20',1,'']]],
   ['installation_1',['Installation',['../index.html#install_sec',1,'']]],
   ['introduction_2',['Introduction',['../index.html#intro_sec',1,'']]],
   ['is_5fday_5foff_3',['is_day_off',['../group__time__validation.html#ga2b6396c94de3fc478ce81658c4d75994',1,'time_shield::is_day_off(ts_t ts) noexcept'],['../group__time__validation.html#gac26f9a68b2235ea4af9e8a66ad51c8dc',1,'time_shield::is_day_off(const long ts)']]],

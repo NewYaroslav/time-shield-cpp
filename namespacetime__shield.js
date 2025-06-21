@@ -695,7 +695,7 @@ var namespacetime__shield =
     [ "to_string_ms", "group__time__formatting.html#gad5d0140a5f043109db7a738edff5cb53", null ],
     [ "to_string_ms", "group__time__formatting.html#gafd0f5f37fe1eb38cbd5036228f5dbcb4", null ],
     [ "to_time_zone", "group__time__conversions.html#ga2288b972747366017a0dcacd55a376ed", null ],
-    [ "to_time_zone", "group__time__conversions.html#ga1dbce5a812cbbb0e0e7c7d62854aafb7", null ],
+    [ "to_time_zone", "group__time__conversions.html#ga19821253642f96e9d01a6ce21ee09bb4", null ],
     [ "to_time_zone_struct", "group__time__conversions.html#gae9d54b9e9dfbd0e269399c73f926f8bf", null ],
     [ "to_timestamp", "group__time__conversions.html#ga366c4ed1c65d3ade9b5b9eed0e2424d7", null ],
     [ "to_timestamp", "group__time__conversions.html#gafe7d94c0faf514ea035cb36975c63d55", null ],

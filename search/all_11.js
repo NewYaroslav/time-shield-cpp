@@ -63,6 +63,6 @@ var searchData=
   ['str_5fto_5fts_60',['str_to_ts',['../group__time__parsing.html#ga5672a2652970721df21c0a2c78f00704',1,'time_shield::str_to_ts(const std::string &amp;str, ts_t &amp;ts)'],['../group__time__parsing.html#ga0782476607497d1f90768c312411bb5f',1,'time_shield::str_to_ts(const string &amp;str, long &amp;ts)']]],
   ['str_5fto_5fts_5fms_61',['str_to_ts_ms',['../group__time__parsing.html#ga4fb8f209ba8bfe214d8ccbdf113f3e91',1,'time_shield::str_to_ts_ms(const std::string &amp;str, ts_ms_t &amp;ts)'],['../group__time__parsing.html#ga86da3fad2d8668e497e98712252fcebc',1,'time_shield::str_to_ts_ms(const string &amp;str, long &amp;ts)']]],
   ['structures_62',['Time Structures',['../group__time__structures.html',1,'']]],
-  ['structures_3a_63',['Included Structures:',['../group__time__structures.html#autotoc_md0',1,'']]],
+  ['structures_3a_63',['Included Structures:',['../group__time__structures.html#autotoc_md20',1,'']]],
   ['sun_64',['SUN',['../group__time__enums.html#ggadf684443100352064316f6134bbe44f8a435b4a7299946a56caaeba3190113f57',1,'time_shield']]]
 ];

@@ -64,10 +64,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "TimeShield_8mqh.html",
-"group__time__conversions.html#ga59da94c04d571a9b7aebca0ac2d1046a",
-"group__time__conversions.html#gaf20a81188124d0b0bf0b78047d6df6ab",
-"group__time__formatting.html#ga4fe4ab8fc88358861f38d88aa1bcd96c",
-"structtime__shield_1_1TimeZoneStruct.html#a83b023980ce397878cb2c742bb9dc8b7"
+"group__time__conversions.html#ga59ccd7f6b6021ea5e739cdc45025a153",
+"group__time__conversions.html#gaf1eca4382dbf770b3414804c00f400e5",
+"group__time__formatting.html#ga4d804fd113939339058f7940cd4c0b80",
+"structtime__shield_1_1TimeZoneStruct.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

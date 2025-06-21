@@ -311,7 +311,7 @@ var group__time__conversions =
     [ "time_shield::to_mql_dt", "group__time__conversions.html#gadd80bea4c67b14c2e8f04e6d4568658b", null ],
     [ "time_shield::to_offset", "group__time__conversions.html#gab9c3742f0ce4f9fabf632b9f5c612781", null ],
     [ "time_shield::to_time_zone", "group__time__conversions.html#ga2288b972747366017a0dcacd55a376ed", null ],
-    [ "time_shield::to_time_zone", "group__time__conversions.html#ga1dbce5a812cbbb0e0e7c7d62854aafb7", null ],
+    [ "time_shield::to_time_zone", "group__time__conversions.html#ga19821253642f96e9d01a6ce21ee09bb4", null ],
     [ "time_shield::to_time_zone_struct", "group__time__conversions.html#gae9d54b9e9dfbd0e269399c73f926f8bf", null ],
     [ "time_shield::to_timestamp", "group__time__conversions.html#ga366c4ed1c65d3ade9b5b9eed0e2424d7", null ],
     [ "time_shield::to_timestamp", "group__time__conversions.html#gafe7d94c0faf514ea035cb36975c63d55", null ],

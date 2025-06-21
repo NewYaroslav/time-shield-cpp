@@ -18,5 +18,6 @@ var searchData=
   ['get_5fweekday_5ffrom_5fts_5fms_15',['get_weekday_from_ts_ms',['../group__time__conversions.html#gaa44211052a2e64e127ba4e4b921d4808',1,'time_shield::get_weekday_from_ts_ms(ts_ms_t ts_ms)'],['../group__time__conversions.html#gae2d60831270f9b92747fd169210b676d',1,'time_shield::get_weekday_from_ts_ms(long ts_ms)']]],
   ['get_5fyear_16',['get_year',['../group__time__conversions.html#gac6bbf50a985fcd37f386f806f96e6ff7',1,'time_shield::get_year(ts_t ts=ts())'],['../group__time__conversions.html#gaf1adbfd5d12eb5b19dd138f99fe964e2',1,'time_shield::get_year(long ts)']]],
   ['get_5fyear_5fms_17',['get_year_ms',['../group__time__conversions.html#gaba9cf68b8b884c76bfd7b96fa4caf436',1,'time_shield::get_year_ms(ts_ms_t ts_ms=ts_ms())'],['../group__time__conversions.html#ga0357efcbe68667dc90a3aeca6acdc80d',1,'time_shield::get_year_ms(long ts_ms)']]],
-  ['gmt_18',['GMT',['../group__time__enums.html#ggad8cb858fb6cedcf76c4f0630d56e042bacce69cd6d90a968533a24acb0a5d3a72',1,'time_shield']]]
+  ['gmt_18',['GMT',['../group__time__enums.html#ggad8cb858fb6cedcf76c4f0630d56e042bacce69cd6d90a968533a24acb0a5d3a72',1,'time_shield']]],
+  ['groups_2edox_19',['groups.dox',['../groups_8dox.html',1,'']]]
 ];

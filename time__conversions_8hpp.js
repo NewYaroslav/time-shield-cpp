@@ -173,7 +173,7 @@ var time__conversions_8hpp =
     [ "time_shield::to_fts", "group__time__conversions.html#ga10135c047c990ac70df10cc6b020dcf8", null ],
     [ "time_shield::to_fts", "group__time__structures.html#gafb6450adadecdabd2dbf5191890853c9", null ],
     [ "time_shield::to_fts", "group__time__conversions.html#gacc967378ec60ed84425f1f0ea84a2573", null ],
-    [ "time_shield::to_time_zone", "group__time__conversions.html#ga1dbce5a812cbbb0e0e7c7d62854aafb7", null ],
+    [ "time_shield::to_time_zone", "group__time__conversions.html#ga19821253642f96e9d01a6ce21ee09bb4", null ],
     [ "time_shield::to_timestamp", "group__time__conversions.html#gab95a6c212098ca42d6e0a8b8fbe51a68", null ],
     [ "time_shield::to_timestamp", "group__time__structures.html#gadd9cd995456125a88691f306dd259ead", null ],
     [ "time_shield::to_timestamp", "group__time__conversions.html#ga889786a711165111583028d5153f055b", null ],

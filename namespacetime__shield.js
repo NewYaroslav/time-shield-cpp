@@ -352,6 +352,7 @@ var namespacetime__shield =
     [ "fts", "group__time__parsing.html#gaa0156690d95ce901bfd28d04e521cb2b", null ],
     [ "fts", "group__time__structures.html#ga7c5ee22f789c75031cc22fd99bc2b80b", null ],
     [ "fts", "group__time__conversions.html#ga5d815fbd753586a7b3cd54e79cf8d52c", null ],
+    [ "get_cpu_time", "group__time__utils.html#ga728309531b205ec0ffcdee304db2bcbd", null ],
     [ "get_days", "group__time__conversions.html#gaa09257560026abfa603a44693432738c", null ],
     [ "get_days", "group__time__conversions.html#gaf1b9395353dad5b1ae569a08530c707b", null ],
     [ "get_days_difference", "group__time__conversions.html#ga2fa8e48a81d6c00ddb352977b285004f", null ],

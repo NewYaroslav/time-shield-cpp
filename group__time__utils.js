@@ -2,6 +2,7 @@ var group__time__utils =
 [
     [ "time_shield::ftimestamp", "group__time__utils.html#ga4c21fdc0252aa07037e4325dccad9222", null ],
     [ "time_shield::fts", "group__time__utils.html#gad6e2af7c1ddd04c8f8f170c329b4e492", null ],
+    [ "time_shield::get_cpu_time", "group__time__utils.html#ga728309531b205ec0ffcdee304db2bcbd", null ],
     [ "time_shield::get_timespec_impl", "group__time__utils.html#gabdb20ba05553d7fd83ee91e8ba561160", null ],
     [ "time_shield::microseconds", "group__time__utils.html#ga2171fd068ca657997d72c30b5af8e8fb", null ],
     [ "time_shield::ms_of_sec", "group__time__utils.html#gadf64c75e90c1da9707493c17c22ffe27", null ],

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['included_20structures_3a_0',['Included Structures:',['../group__time__structures.html#autotoc_md20',1,'']]],
+  ['included_20structures_3a_0',['Included Structures:',['../group__time__structures.html#autotoc_md18',1,'']]],
   ['initialization_1',['Library Initialization',['../group__time__initialization.html',1,'']]],
   ['initialization_2ehpp_2',['initialization.hpp',['../initialization_8hpp.html',1,'']]],
   ['initialization_2emqh_3',['initialization.mqh',['../initialization_8mqh.html',1,'']]],

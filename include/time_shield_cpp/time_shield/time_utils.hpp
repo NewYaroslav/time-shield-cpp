@@ -8,8 +8,11 @@
 /// This file contains various functions used for time calculations and conversions.
 
 #include "config.hpp"
-#include <ctime>
-#include <limits>
+
+#include <limits>       // For std::numeric_limits
+#include <ctime>        // For clock_t and timespec (POSIX)
+#include <time.h>       // For clock(), times(), etc.
+#include <mutex>        // For std::once_flag
 
 #if defined(_WIN32)
     #include <Windows.h>
@@ -36,6 +39,51 @@ namespace time_shield {
         timespec_get(&ts, TIME_UTC);
 #       endif
         return ts;
+    }
+	
+    /// \ingroup time_utils
+    /// \brief Get current real time in microseconds using a hybrid method.
+    ///
+    /// This function combines `QueryPerformanceCounter` (high-resolution monotonic clock)
+    /// with `GetSystemTimeAsFileTime` to compute an accurate, stable UTC timestamp.
+    /// The base time is initialized only once per process (lazy init).
+    ///
+    /// \return Current UTC timestamp in microseconds.
+    /// \note Windows only. Not available on Unix-like systems.
+    inline int64_t now_realtime_us() {
+#	if defined(_WIN32)
+        static std::once_flag init_flag;
+        static int64_t s_perf_freq = 0;
+        static int64_t s_anchor_perf = 0;
+        static int64_t s_anchor_realtime_us = 0;
+
+        std::call_once(init_flag, [] {
+            LARGE_INTEGER freq, counter;
+            QueryPerformanceFrequency(&freq);
+            QueryPerformanceCounter(&counter);
+
+            s_perf_freq = freq.QuadPart;
+            s_anchor_perf = counter.QuadPart;
+
+            FILETIME ft;
+            GetSystemTimeAsFileTime(&ft);
+            ULARGE_INTEGER uli;
+            uli.LowPart = ft.dwLowDateTime;
+            uli.HighPart = ft.dwHighDateTime;
+            // Convert from 100ns since 1601 to microseconds since 1970
+            s_anchor_realtime_us = (uli.QuadPart - 116444736000000000ULL) / 10;
+        });
+
+        LARGE_INTEGER now;
+        QueryPerformanceCounter(&now);
+
+        int64_t delta_ticks = now.QuadPart - s_anchor_perf;
+        int64_t delta_us = (delta_ticks * 1000000) / s_perf_freq;
+
+        return s_anchor_realtime_us + delta_us;
+#	else
+#		error "now_realtime_us() is only supported on Windows."
+#	endif
     }
 
     /// \ingroup time_utils

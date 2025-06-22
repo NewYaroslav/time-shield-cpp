@@ -42,11 +42,15 @@ namespace time_shield {
         bool query() {
             s_last_error_code = 0;
             if (!WsaGuard::instance().success()) {
+                m_is_success = false;
                 throw std::runtime_error("WSAStartup failed with error: " + std::to_string(WsaGuard::instance().ret_code()));
             }
 
             SOCKET sock = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
-            if (sock == INVALID_SOCKET) return false;
+            if (sock == INVALID_SOCKET) {
+                m_is_success = false;
+                return false;
+            }
 
             struct sockaddr_in addr{};
             addr.sin_family = AF_INET;
@@ -60,6 +64,7 @@ namespace time_shield {
             if (getaddrinfo(m_host.c_str(), nullptr, &hints, &res) != 0 || !res) {
                 s_last_error_code = WSAGetLastError();
                 closesocket(sock);
+                m_is_success = false;
                 return false;
             }
 
@@ -76,6 +81,7 @@ namespace time_shield {
                        reinterpret_cast<sockaddr*>(&addr), sizeof(addr)) < 0) {
                 s_last_error_code = WSAGetLastError();
                 closesocket(sock);
+                m_is_success = false;
                 return false;
             }
 
@@ -85,6 +91,7 @@ namespace time_shield {
                          reinterpret_cast<sockaddr*>(&from), &from_len) < 0) {
                 s_last_error_code = WSAGetLastError();
                 closesocket(sock);
+                m_is_success = false;
                 return false;
             }
 
@@ -93,15 +100,43 @@ namespace time_shield {
             int64_t result_offset;
             if (parse_packet(pkt, result_offset)) {
                 m_offset_us = result_offset;
+                m_is_success = true;
                 return true;
             }
 
+            m_is_success = false;
             return false;
+        }
+        
+        /// \brief Returns whether the last NTP query was successful.
+        /// \return True if the last offset measurement succeeded.
+        bool success() const noexcept {
+            return m_is_success.load();
         }
 
         /// \brief Returns the last measured offset in microseconds.
         int64_t get_offset_us() const noexcept {
             return m_offset_us;
+        }
+        
+        /// \brief Returns current UTC time in microseconds based on last NTP offset.
+        /// \return Current UTC time in µs.
+        int64_t get_utc_time_us() const noexcept {
+            const int64_t offset = m_offset_us.load();
+            return now_realtime_us() + offset;
+        }
+        
+        /// \brief Returns current UTC time in milliseconds based on last NTP offset.
+        /// \return Current UTC time in ms.
+        int64_t get_utc_time_ms() const noexcept {
+            return get_utc_time_us() / 1000;
+        }
+
+        /// \brief Returns current UTC time as time_t (seconds since Unix epoch).
+        /// \return UTC time in seconds.
+        time_t get_utc_time() const noexcept {
+            const int64_t utc_us = get_utc_time_us();
+            return static_cast<time_t>(get_utc_time_us() / 1000000);
         }
         
         /// \brief Returns last WinSock error code (if any).
@@ -138,6 +173,7 @@ namespace time_shield {
         std::string              m_host;
         int                      m_port = 123;
         std::atomic<int64_t>     m_offset_us{0};
+        std::atomic<bool>        m_is_success{false};
         static thread_local int  s_last_error_code;
 
         /// \brief Converts local time to NTP timestamp format.

@@ -17,8 +17,7 @@ namespace time_shield {
 
 /// \brief Initialize the Time Shield library.
 ///
-/// This function performs any required setup steps. Currently it
-/// triggers the lazy initialization inside microseconds().
+/// This function performs any required setup steps.
 inline void initialize_library() {
     microseconds();
 }

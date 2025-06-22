@@ -19,3 +19,35 @@ auto date_time = time_shield::create_date_time_struct(2024, 11, 25, 12, 30, 45);
 auto tz = time_shield::to_time_zone_struct(3600);             // +01:00
 ```
 */
+
+/*!
+\defgroup time_utils Time Utilities
+\brief A collection of utility functions for working with timestamps and time components.
+
+This module provides functions for obtaining the current timestamps in various formats
+(e.g., seconds, milliseconds, microseconds, floating-point seconds) and extracting
+sub-second components such as nanoseconds, microseconds, and milliseconds.
+
+### Key Features:
+- Obtain current UTC timestamps in seconds, milliseconds, and microseconds.
+- Support for floating-point and integer timestamp formats.
+- Extract nanoseconds, microseconds, and milliseconds from the current second.
+
+### Usage Examples:
+- Get the current timestamp in seconds:
+  \code{.cpp}
+  time_shield::ts_t current_time = time_shield::ts();
+  \endcode
+
+- Get the millisecond part of the current second:
+  \code{.cpp}
+  int ms = time_shield::ms_of_sec();
+  \endcode
+
+- Get the current timestamp in milliseconds:
+  \code{.cpp}
+  time_shield::ts_ms_t current_time_ms = time_shield::ts_ms();
+  \endcode
+
+\{
+*/

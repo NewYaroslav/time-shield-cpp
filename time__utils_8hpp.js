@@ -7,6 +7,7 @@ var time__utils_8hpp =
     [ "time_shield::get_timespec_impl", "group__time__utils.html#gabdb20ba05553d7fd83ee91e8ba561160", null ],
     [ "time_shield::ms_of_sec", "group__time__utils.html#gae799b7ae8a36ae788cbc832789542628", null ],
     [ "time_shield::now", "group__time__utils.html#ga11b0b830fdc6c5505db1cd2683457d0e", null ],
+    [ "time_shield::now_realtime_us", "group__time__utils.html#ga1aab54866cecab960bce9d55beea71ae", null ],
     [ "time_shield::ns_of_sec", "group__time__utils.html#ga8062b62c38f3013363c22ddb5427717e", null ],
     [ "time_shield::timestamp", "group__time__utils.html#ga450be3ba3ddf294da4c9bc4cd01f8216", null ],
     [ "time_shield::timestamp_ms", "group__time__utils.html#gac63e52f7e2dfd3395ee4fc82743dd8b8", null ],

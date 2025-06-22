@@ -129,11 +129,16 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtime__shield_1_1DateTimeStruct.html">DateTimeStruct</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure to represent date and time.  <a href="structtime__shield_1_1DateTimeStruct.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtime__shield_1_1NtpClient.html">NtpClient</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtime__shield_1_1TimeStruct.html">TimeStruct</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure to represent time.  <a href="structtime__shield_1_1TimeStruct.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtime__shield_1_1TimeZoneStruct.html">TimeZoneStruct</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure to represent time zone information.  <a href="structtime__shield_1_1TimeZoneStruct.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtime__shield_1_1WsaGuard.html">WsaGuard</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Singleton guard for WinSock initialization.  <a href="classtime__shield_1_1WsaGuard.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
@@ -1478,6 +1483,9 @@ Functions</h2></td></tr>
 <tr class="memitem:gabdb20ba05553d7fd83ee91e8ba561160" id="r_gabdb20ba05553d7fd83ee91e8ba561160"><td class="memItemLeft" align="right" valign="top">const struct timespec&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__time__utils.html#gabdb20ba05553d7fd83ee91e8ba561160">get_timespec_impl</a> () noexcept</td></tr>
 <tr class="memdesc:gabdb20ba05553d7fd83ee91e8ba561160"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current timespec.  <br /></td></tr>
 <tr class="separator:gabdb20ba05553d7fd83ee91e8ba561160"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1aab54866cecab960bce9d55beea71ae" id="r_ga1aab54866cecab960bce9d55beea71ae"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__time__utils.html#ga1aab54866cecab960bce9d55beea71ae">now_realtime_us</a> ()</td></tr>
+<tr class="memdesc:ga1aab54866cecab960bce9d55beea71ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get current real time in microseconds using a hybrid method.  <br /></td></tr>
+<tr class="separator:ga1aab54866cecab960bce9d55beea71ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8062b62c38f3013363c22ddb5427717e" id="r_ga8062b62c38f3013363c22ddb5427717e"><td class="memTemplParams" colspan="2">template&lt;class T = int&gt; </td></tr>
 <tr class="memitem:ga8062b62c38f3013363c22ddb5427717e"><td class="memTemplItemLeft" align="right" valign="top">const T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__time__utils.html#ga8062b62c38f3013363c22ddb5427717e">ns_of_sec</a> () noexcept</td></tr>
 <tr class="memdesc:ga8062b62c38f3013363c22ddb5427717e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the nanosecond part of the current second.  <br /></td></tr>

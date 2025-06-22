@@ -2,8 +2,10 @@ var namespacetime__shield =
 [
     [ "DateStruct", "structtime__shield_1_1DateStruct.html", "structtime__shield_1_1DateStruct" ],
     [ "DateTimeStruct", "structtime__shield_1_1DateTimeStruct.html", "structtime__shield_1_1DateTimeStruct" ],
+    [ "NtpClient", "classtime__shield_1_1NtpClient.html", null ],
     [ "TimeStruct", "structtime__shield_1_1TimeStruct.html", "structtime__shield_1_1TimeStruct" ],
     [ "TimeZoneStruct", "structtime__shield_1_1TimeZoneStruct.html", "structtime__shield_1_1TimeZoneStruct" ],
+    [ "WsaGuard", "classtime__shield_1_1WsaGuard.html", "classtime__shield_1_1WsaGuard" ],
     [ "fts_t", "group__time__types.html#ga922ce1d0bc31869e531512c233b7633f", null ],
     [ "jd_t", "group__time__types.html#gad6b7a13bb33749e9f503f913d445a6e7", null ],
     [ "jdn_t", "group__time__types.html#ga9f2039b057978a2b41d1a4b2418158a6", null ],
@@ -520,6 +522,7 @@ var namespacetime__shield =
     [ "next_day_unixday_ms", "group__time__conversions.html#ga21eab50c6efb34ab1e5953772c4cb980", null ],
     [ "next_day_unixday_ms", "group__time__conversions.html#ga25a87a4043d7e01e9e6e3da6f5555968", null ],
     [ "now", "group__time__utils.html#ga11b0b830fdc6c5505db1cd2683457d0e", null ],
+    [ "now_realtime_us", "group__time__utils.html#ga1aab54866cecab960bce9d55beea71ae", null ],
     [ "ns_of_sec", "group__time__utils.html#ga9031689720470d841b233d297fe91746", null ],
     [ "ns_of_sec", "group__time__utils.html#ga8062b62c38f3013363c22ddb5427717e", null ],
     [ "ns_of_sec", "group__time__conversions.html#ga65694ea8d18e26868d75860e78f1f8c2", null ],

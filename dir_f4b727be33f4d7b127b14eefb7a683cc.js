@@ -1,11 +1,13 @@
 var dir_f4b727be33f4d7b127b14eefb7a683cc =
 [
+    [ "ntp_client", "dir_d99c526331f209916ab6a25034a251ea.html", "dir_d99c526331f209916ab6a25034a251ea" ],
     [ "config.hpp", "config_8hpp.html", "config_8hpp" ],
     [ "constants.hpp", "constants_8hpp.html", "constants_8hpp" ],
     [ "date_struct.hpp", "date__struct_8hpp.html", "date__struct_8hpp" ],
     [ "date_time_struct.hpp", "date__time__struct_8hpp.html", "date__time__struct_8hpp" ],
     [ "enums.hpp", "enums_8hpp.html", "enums_8hpp" ],
     [ "initialization.hpp", "initialization_8hpp.html", "initialization_8hpp" ],
+    [ "ntp_client.hpp", "ntp__client_8hpp.html", "ntp__client_8hpp" ],
     [ "time_conversions.hpp", "time__conversions_8hpp.html", "time__conversions_8hpp" ],
     [ "time_formatting.hpp", "time__formatting_8hpp.html", "time__formatting_8hpp" ],
     [ "time_parser.hpp", "time__parser_8hpp.html", "time__parser_8hpp" ],

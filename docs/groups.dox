@@ -114,6 +114,30 @@ custom formats, ISO8601, and other standardized formats.
 */
 
 /*!
+\defgroup ntp NTP Client
+\brief Facilities for retrieving time using the Network Time Protocol.
+
+This module contains a minimal client capable of querying remote NTP
+servers to measure the offset between local and network time. It uses
+WinSock via the `WsaGuard` helper and therefore works only on Windows.
+
+### Features:
+- Query NTP servers and obtain the time offset.
+- Retrieve corrected UTC time in microseconds and milliseconds.
+- Automatic WinSock initialization through `WsaGuard`.
+- Requires network connectivity.
+
+### Example Usage:
+```cpp
+time_shield::NtpClient client;
+if (client.query()) {
+    int64_t offset = client.get_offset_us();
+    int64_t utc_ms = client.get_utc_time_ms();
+}
+```
+*/
+
+/*!
 \defgroup time_structures_time_conversions Time structure conversions
 \ingroup time_structures
 \ingroup time_conversions

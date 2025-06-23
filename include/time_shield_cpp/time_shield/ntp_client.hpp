@@ -9,6 +9,7 @@
 /// and calculate the offset between local system time and the NTP-reported time.
 ///
 /// Currently only Windows is supported (WinSock-based implementation).
+/// \ingroup ntp
 
 #if defined(_WIN32)
 
@@ -28,6 +29,7 @@
 
 namespace time_shield {
 
+    /// \ingroup ntp
     /// \brief Simple Windows-only NTP client for measuring time offset.
     class NtpClient {
     public:

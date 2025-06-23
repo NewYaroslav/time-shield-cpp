@@ -1,6 +1,11 @@
+
 #pragma once
 #ifndef _TIME_SHIELD_WSA_GUARD_HPP_INCLUDED
 #define _TIME_SHIELD_WSA_GUARD_HPP_INCLUDED
+
+/// \file wsa_guard.hpp
+/// \brief Singleton guard for WinSock initialization.
+/// \ingroup ntp
 
 #include <winsock2.h>  // Must be included before windows.h
 #include <windows.h>   // (optional, but safe if later needed)
@@ -9,6 +14,7 @@
 
 namespace time_shield {
 
+    /// \ingroup ntp
     /// \brief Singleton guard for WinSock initialization.
     class WsaGuard {
     public:

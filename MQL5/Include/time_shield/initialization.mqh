@@ -19,7 +19,7 @@
 #property link      "https://github.com/NewYaroslav/time-shield-cpp"
 #property strict
 
-#include <time_shield/time_utils.mqh>
+#include "time_utils.mqh"
 
 namespace time_shield {
 
@@ -31,11 +31,12 @@ namespace time_shield {
    ///
    /// This function performs all necessary setup steps. Call it in
    /// `OnStart` before invoking any other Time Shield functions.
-   void initialize_library() {
+   void init() {
       microseconds();
    }
 
    /// \}
+
 }; // namespace time_shield
 
 #endif // __TIME_SHIELD_INITIALIZATION_MQH__

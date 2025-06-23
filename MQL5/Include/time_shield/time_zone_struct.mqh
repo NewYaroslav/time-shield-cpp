@@ -18,6 +18,8 @@
 #property link      "https://github.com/NewYaroslav/time-shield-cpp"
 #property strict
 
+#include "constants.mqh"
+
 namespace time_shield {
 
     /// \ingroup time_structures
@@ -53,8 +55,8 @@ namespace time_shield {
     /// \return A `TimeZoneStruct` represented by the given offset.
     TimeZoneStruct to_time_zone_struct(const int offset) {
        int abs_val      = (int)MathAbs(offset);
-       int hour         = abs_val / SEC_PER_HOUR;
-       int min          = abs_val % SEC_PER_MIN;
+       int hour         = abs_val / (int)SEC_PER_HOUR;
+       int min          = abs_val % (int)SEC_PER_MIN;
        bool is_positive = (offset >= 0);
        return create_time_zone_struct(hour, min, is_positive);
     }
@@ -106,7 +108,7 @@ namespace time_shield {
     /// \return An integer representing the offset in seconds.
     int time_zone_struct_to_offset(const TimeZoneStruct &tz) {
        int sign = tz.is_positive ? 1 : -1;
-       return sign * (tz.hour * SEC_PER_HOUR + tz.min * SEC_PER_MIN);
+       return sign * (tz.hour * (int)SEC_PER_HOUR + tz.min * (int)SEC_PER_MIN);
     }
 
     /// \ingroup time_structures_time_conversions

@@ -20,11 +20,11 @@
 #property link      "https://github.com/NewYaroslav/time-shield-cpp"
 #property strict
 
-#include <time_shield/constants.mqh>
-#include <time_shield/date_time_struct.mqh>
-#include <time_shield/enums.mqh>
-#include <time_shield/validation.mqh>
-#include <time_shield/time_zone_struct.mqh>
+#include "constants.mqh"
+#include "date_time_struct.mqh"
+#include "enums.mqh"
+#include "validation.mqh"
+#include "time_zone_struct.mqh"
 
 namespace time_shield {
 
@@ -565,73 +565,73 @@ double sec_to_fhour(long sec) {
     /// \param month Month value.
     /// \param day   Day of the month.
     /// \return Weekday (SUN=0, MON=1, ... SAT=6).
-    int day_of_week_date(long year, int month, int day) {
+    Weekday day_of_week_date(long year, int month, int day) {
        long a = (14 - month) / MONTHS_PER_YEAR;
        long y = year - a;
        long m = month + MONTHS_PER_YEAR * a - 2;
        long r = 7000 + day + y + (y / 4) - (y / 100) + (y / 400) + (31 * m) / MONTHS_PER_YEAR;
-       return (int)(r % DAYS_PER_WEEK);
+       return (Weekday)(r % DAYS_PER_WEEK);
     }
 
     /// \brief Alias for day_of_week_date.
     /// \copydoc day_of_week_date
-    int get_weekday(long year, int month, int day) { return day_of_week_date(year, month, day); }
+    Weekday get_weekday(long year, int month, int day) { return day_of_week_date(year, month, day); }
 
     /// \brief Alias for day_of_week_date.
     /// \copydoc day_of_week_date
-    int day_of_week(long year, int month, int day) { return day_of_week_date(year, month, day); }
+    Weekday day_of_week(long year, int month, int day) { return day_of_week_date(year, month, day); }
 
     /// \brief Get weekday from a DateTimeStruct.
     /// \param dt Date structure with fields year, mon, day.
     /// \return Weekday (SUN=0, MON=1, ... SAT=6).
-    int get_weekday_from_date(const DateTimeStruct &dt) {
+    Weekday get_weekday_from_date(const DateTimeStruct &dt) {
        return day_of_week_date(dt.year, dt.mon, dt.day);
     }
 
     /// \brief Get weekday from a MqlDateTime structure.
     /// \param dt Standard MqlDateTime structure.
     /// \return Weekday (SUN=0, MON=1, ... SAT=6).
-    int get_weekday_from_date(const MqlDateTime &dt) {
+    Weekday get_weekday_from_date(const MqlDateTime &dt) {
        return day_of_week_date(dt.year, dt.mon, dt.day);
     }
 
     /// \brief Alias for get_weekday_from_date with DateTimeStruct.
     /// \copydoc get_weekday_from_date(const DateTimeStruct&)
-    int day_of_week_dt(const DateTimeStruct &dt) { return get_weekday_from_date(dt); }
+    Weekday day_of_week_dt(const DateTimeStruct &dt) { return get_weekday_from_date(dt); }
 
     /// \brief Alias for get_weekday_from_date with DateTimeStruct.
     /// \copydoc get_weekday_from_date(const DateTimeStruct&)
-    int day_of_week(const DateTimeStruct &dt) { return get_weekday_from_date(dt); }
+    Weekday day_of_week(const DateTimeStruct &dt) { return get_weekday_from_date(dt); }
 
     /// \brief Alias for get_weekday_from_date with MqlDateTime.
     /// \copydoc get_weekday_from_date(const MqlDateTime&)
-    int day_of_week_dt(const MqlDateTime &dt) { return get_weekday_from_date(dt); }
+    Weekday day_of_week_dt(const MqlDateTime &dt) { return get_weekday_from_date(dt); }
 
     /// \brief Alias for get_weekday_from_date with MqlDateTime.
     /// \copydoc get_weekday_from_date(const MqlDateTime&)
-    int day_of_week(const MqlDateTime &dt) { return get_weekday_from_date(dt); }
+    Weekday day_of_week(const MqlDateTime &dt) { return get_weekday_from_date(dt); }
 
     /// \brief Get weekday from timestamp.
     /// \param ts Timestamp in seconds.
     /// \return Weekday (SUN=0, MON=1, ... SAT=6).
-    int get_weekday_from_ts(long ts) {
-       return (int)((ts / SEC_PER_DAY + THU) % DAYS_PER_WEEK);
+    Weekday get_weekday_from_ts(long ts) {
+       return (Weekday)((ts / SEC_PER_DAY + THU) % DAYS_PER_WEEK);
     }
 
     /// \brief Alias for get_weekday_from_ts.
     /// \copydoc get_weekday_from_ts
-    int day_of_week(long ts) { return get_weekday_from_ts(ts); }
+    Weekday day_of_week(long ts) { return get_weekday_from_ts(ts); }
 
     /// \brief Get weekday from millisecond timestamp.
     /// \param ts_ms Timestamp in milliseconds.
     /// \return Weekday (SUN=0, MON=1, ... SAT=6).
-    int get_weekday_from_ts_ms(long ts_ms) {
+    Weekday get_weekday_from_ts_ms(long ts_ms) {
        return get_weekday_from_ts(ms_to_sec(ts_ms));
     }
 
     /// \brief Alias for get_weekday_from_ts_ms.
     /// \copydoc get_weekday_from_ts_ms
-    int day_of_week_ms(long ts_ms) { return get_weekday_from_ts_ms(ts_ms); }
+    Weekday day_of_week_ms(long ts_ms) { return get_weekday_from_ts_ms(ts_ms); }
 
     /// \brief Get the start of the year for a timestamp.
     /// \param ts Timestamp in seconds.
@@ -678,13 +678,13 @@ double sec_to_fhour(long sec) {
     /// \param year Year value.
     /// \return Timestamp at 00:00:00 on January 1st of the given year.
     long start_of_year_date(long year) {
-       if(year < 2100) {
-          long year_diff      = year >= UNIX_EPOCH ? year - UNIX_EPOCH : UNIX_EPOCH - year;
-          long year_start_ts  = (year_diff / 4) * SEC_PER_4_YEARS;
-          long year_remainder = year_diff % 4;
+       if (year < 2100) {
+          long year_diff     = year >= UNIX_EPOCH ? year - UNIX_EPOCH : UNIX_EPOCH - year;
+          long year_start_ts = (year_diff / 4) * SEC_PER_4_YEARS;
+          int year_remainder = (int)(year_diff % 4);
           long SEC_PER_YEAR_X2 = 2 * SEC_PER_YEAR;
           long SEC_PER_YEAR_V2 = SEC_PER_YEAR_X2 + SEC_PER_LEAP_YEAR;
-          switch(year_remainder) {
+          switch (year_remainder) {
              case 0: return year_start_ts;
              case 1: return year_start_ts + SEC_PER_YEAR;
              case 2: return year_start_ts + SEC_PER_YEAR_X2;
@@ -830,8 +830,8 @@ double sec_to_fhour(long sec) {
     /// \param year Year value.
     /// \return Days in the year.
     int num_days_in_year(long year) {
-       if(is_leap_year_date(year)) return DAYS_PER_LEAP_YEAR;
-       return DAYS_PER_YEAR;
+       if (is_leap_year_date(year)) return (int)DAYS_PER_LEAP_YEAR;
+       return (int)DAYS_PER_YEAR;
     }
 
     /// \brief Alias for num_days_in_year.
@@ -842,8 +842,8 @@ double sec_to_fhour(long sec) {
     /// \param ts Timestamp in seconds.
     /// \return Days in the year of the timestamp.
     int num_days_in_year_ts(long ts) {
-       if(is_leap_year_ts(ts)) return DAYS_PER_LEAP_YEAR;
-       return DAYS_PER_YEAR;
+       if(is_leap_year_ts(ts)) return (int)DAYS_PER_LEAP_YEAR;
+       return (int)DAYS_PER_YEAR;
     }
 
     /// \brief Alias for num_days_in_year_ts.
@@ -1269,7 +1269,7 @@ double sec_to_fhour(long sec) {
     /// \param sec  Second value.
     /// \return Second of the day.
     int sec_of_day(int hour, int min, int sec) {
-       return hour * SEC_PER_HOUR + min * SEC_PER_MIN + sec;
+       return hour * (int)SEC_PER_HOUR + min * (int)SEC_PER_MIN + sec;
     }
 
     /// \brief Convert an integer offset to a TimeZoneStruct.

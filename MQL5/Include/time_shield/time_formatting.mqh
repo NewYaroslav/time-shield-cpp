@@ -19,10 +19,11 @@
 #property link      "https://github.com/NewYaroslav/time-shield-cpp"
 #property strict
 
-#include <time_shield/date_time_struct.mqh>
-#include <time_shield/time_zone_struct.mqh>
-#include <time_shield/time_conversions.mqh>
-#include <time_shield/enums.mqh>
+#include "enums.mqh"
+#include "date_time_struct.mqh"
+#include "time_zone_struct.mqh"
+#include "time_conversions.mqh"
+
 
 namespace time_shield {
 
@@ -61,16 +62,15 @@ namespace time_shield {
            long ts,
            int utc_offset,
            const DateTimeStruct &dt,
-           string &result)
-    {
+           string &result) {
        switch(last_char) {
           case 'a':
              if(repeat_count<=1)
-                result += to_str(day_of_week(dt.year, dt.mon, dt.day), SHORT_NAME);
+                result += time_shield::to_str(day_of_week(dt.year, dt.mon, dt.day), time_shield::FormatType::SHORT_NAME);
              break;
           case 'A':
              if(repeat_count<=1)
-                result += to_str(day_of_week(dt.year, dt.mon, dt.day), FULL_NAME);
+                result += time_shield::to_str(day_of_week(dt.year, dt.mon, dt.day), time_shield::FormatType::FULL_NAME);
              break;
           case 'I':
              if(repeat_count==1)
@@ -241,10 +241,10 @@ namespace time_shield {
        DateTimeStruct dt = to_date_time(timestamp);
        bool is_command=false;
        int repeat_count=0;
-       char last_char = StringGetChar(format_str,0);
+       char last_char = (char)format_str[0];
        if(last_char!='%') result+=CharToString(last_char);
        for(int i=0;i<StringLen(format_str);++i) {
-          char current_char = StringGetChar(format_str,i);
+          char current_char = (char)format_str[i];
           if(!is_command) {
              if(current_char=='%') {
                 ++repeat_count;
@@ -296,10 +296,10 @@ namespace time_shield {
        DateTimeStruct dt = to_date_time_ms(timestamp_ms);
        bool is_command=false;
        int repeat_count=0;
-       char last_char = StringGetChar(format_str,0);
+       char last_char = (char)format_str[0];
        if(last_char!='%') result+=CharToString(last_char);
        for(int i=0;i<StringLen(format_str);++i) {
-          char current_char = StringGetChar(format_str,i);
+          char current_char = (char)format_str[i];
           if(!is_command) {
              if(current_char=='%') {
                 ++repeat_count;

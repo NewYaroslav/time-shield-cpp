@@ -18,6 +18,13 @@
 #property link      "https://github.com/NewYaroslav/time-shield-cpp"
 #property strict
 
+#include "constants.mqh"
+#include "enums.mqh"
+#include "time_struct.mqh"
+#include "date_struct.mqh"
+#include "date_time_struct.mqh"
+#include "time_zone_struct.mqh"
+
 namespace time_shield {
 
     /// \defgroup time_validation Time Validation
@@ -206,8 +213,8 @@ namespace time_shield {
     /// \param date_time Date-time structure.
     /// \return true if the date and time are valid, false otherwise.
     bool is_valid_date_time(const DateTimeStruct &date_time) {
-       if (!is_valid_date(date_time)) return false;
-       if (!is_valid_time(date_time)) return false;
+       if (!is_valid_date(date_time.year, date_time.mon, date_time.day)) return false;
+       if (!is_valid_time(date_time.hour, date_time.min, date_time.sec, date_time.ms)) return false;
        return true;
     }
 

@@ -81,7 +81,6 @@ namespace time_shield {
         return "";
     }
 
-
     /// Enumeration of the months of the year.
     enum Month {
         JAN = 1,    ///< January

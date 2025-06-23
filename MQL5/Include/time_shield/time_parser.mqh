@@ -43,8 +43,8 @@ namespace time_shield {
        string month_copy = month;
        string tmp = "";
        StringConcatenate(tmp,
-                        StringUpper(StringSubstr(month_copy,0,1)),
-                        StringLower(StringSubstr(month_copy,1)));
+                        StringToUpper(StringSubstr(month_copy,0,1)),
+                        StringToLower(StringSubstr(month_copy,1)));
        month_copy = tmp;
        static const string short_names[] = {"Jan","Feb","Mar","Apr","May","Jun",
                                             "Jul","Aug","Sep","Oct","Nov","Dec"};
@@ -99,7 +99,7 @@ namespace time_shield {
        {
           tz.hour=0; tz.min=0; tz.is_positive=true; return true;
        }
-       tz.is_positive = (StringGetChar(tz_str,0)=='+');
+       tz.is_positive = ((char)tz_str[0] =='+');
        tz.hour = (int)StringToInteger(StringSubstr(tz_str,1,2));
        tz.min  = (int)StringToInteger(StringSubstr(tz_str,4,2));
        return is_valid_time_zone(tz);
@@ -116,68 +116,60 @@ namespace time_shield {
     /// \param dt The DateTimeStruct to be filled with parsed values.
     /// \param tz The TimeZoneStruct to be filled with parsed time zone.
     /// \return True if parsing succeeds and the date and time values are valid, false otherwise.
-    bool parse_iso8601(const string &input, DateTimeStruct &dt, TimeZoneStruct &tz)
-    {
+    bool parse_iso8601(const string &input_str, DateTimeStruct &dt, TimeZoneStruct &tz) {
        dt = create_date_time_struct(0);
        tz = create_time_zone_struct(0,0);
 
-       string date_part=input;
+       string date_part=input_str;
        string time_part="";
-       int posT=StringFind(input,"T");
-       if(posT<0) posT=StringFind(input," ");
-       if(posT>=0)
-       {
-          date_part=StringSubstr(input,0,posT);
-          time_part=StringSubstr(input,posT+1);
+       int posT=StringFind(input_str,"T");
+       if (posT<0) posT=StringFind(input_str," ");
+       if (posT>=0) {
+          date_part=StringSubstr(input_str,0,posT);
+          time_part=StringSubstr(input_str,posT+1);
        }
 
        string parts[];
-       int cnt=StringSplit(date_part,'-',parts);
-       if(cnt<3)
-       {
-          cnt=StringSplit(date_part,'/',parts);
-          if(cnt<3)
-             cnt=StringSplit(date_part,'.',parts);
+       int cnt = StringSplit(date_part,'-',parts);
+       if (cnt<3) {
+          cnt = StringSplit(date_part,'/',parts);
+          if (cnt<3) cnt = StringSplit(date_part,'.',parts);
        }
-       if(cnt<3)
-          return false;
+       if (cnt<3) return false;
        dt.year=(long)StringToInteger(parts[0]);
        dt.mon =(int)StringToInteger(parts[1]);
        dt.day =(int)StringToInteger(parts[2]);
 
-       if(StringLen(time_part)>0)
-       {
-          string tz_str="";
-          int zpos=StringFind(time_part,"Z");
-          int ppos=StringFind(time_part,"+");
-          int npos=StringFind(time_part,"-");
-          int tzpos=-1;
-          if(zpos>=0){ tzpos=zpos; tz_str=StringSubstr(time_part,zpos); }
-          else if(ppos>=0){ tzpos=ppos; tz_str=StringSubstr(time_part,ppos); }
-          else if(npos>0){ tzpos=npos; tz_str=StringSubstr(time_part,npos); }
-          if(tzpos>=0)
-             time_part=StringSubstr(time_part,0,tzpos);
+       if (StringLen(time_part)>0) {
+          string tz_str = "";
+          int zpos = StringFind(time_part,"Z");
+          int ppos = StringFind(time_part,"+");
+          int npos = StringFind(time_part,"-");
+          int tzpos = -1;
+          if (zpos >= 0){ tzpos=zpos; tz_str=StringSubstr(time_part,zpos); }
+          else if(ppos >= 0){ tzpos=ppos; tz_str=StringSubstr(time_part,ppos); }
+          else if(npos > 0){ tzpos=npos; tz_str=StringSubstr(time_part,npos); }
+          if (tzpos >= 0) time_part=StringSubstr(time_part,0,tzpos);
 
           string tparts[];
           int tcnt=StringSplit(time_part,':',tparts);
-          if(tcnt<2)
+          if (tcnt < 2)
              return is_valid_date_time(dt);
-          dt.hour=(int)StringToInteger(tparts[0]);
-          dt.min =(int)StringToInteger(tparts[1]);
-          if(tcnt>=3)
-          {
+          dt.hour = (int)StringToInteger(tparts[0]);
+          dt.min  = (int)StringToInteger(tparts[1]);
+          if (tcnt >= 3) {
              string sec_part=tparts[2];
-             int dot=StringFind(sec_part,'.');
-             if(dot>=0)
-             {
-                dt.sec=(int)StringToInteger(StringSubstr(sec_part,0,dot));
-                dt.ms =(int)StringToInteger(StringSubstr(sec_part,dot+1));
+             int dot = StringFind(sec_part, ".");
+             if (dot >= 0) {
+                dt.sec = (int)StringToInteger(StringSubstr(sec_part,0,dot));
+                dt.ms  = (int)StringToInteger(StringSubstr(sec_part,dot+1));
+             } else {
+                dt.sec = (int)StringToInteger(sec_part);
              }
-             else
-                dt.sec=(int)StringToInteger(sec_part);
           }
-          if(StringLen(tz_str)>0)
-             if(!parse_time_zone(tz_str,tz)) return false;
+          if (StringLen(tz_str)>0) {
+             if (!parse_time_zone(tz_str,tz)) return false;
+          }
        }
        return is_valid_date_time(dt);
     }

@@ -18,6 +18,9 @@
 #property link      "https://github.com/NewYaroslav/time-shield-cpp"
 #property strict
 
+#include "constants.mqh"
+
+
 namespace time_shield {
 
     /// \defgroup time_utils Time Utilities

@@ -6,7 +6,7 @@ var time__parser_8mqh =
     [ "time_shield::get_month_number", "group__time__parsing.html#ga486f058ffcd8c903fc613f426e18a5e6", null ],
     [ "time_shield::month_of_year", "group__time__parsing.html#ga96f13d7c82aa7fdf53bd6d7556c76483", null ],
     [ "time_shield::month_of_year", "group__time__parsing.html#ga79a3b1cef75b3874d4a8ec44b3a532de", null ],
-    [ "time_shield::parse_iso8601", "group__time__parsing.html#ga565635760eafcbd4d8193965141f32ba", null ],
+    [ "time_shield::parse_iso8601", "group__time__parsing.html#ga55e40e10101293f4e93a36f10164a228", null ],
     [ "time_shield::parse_time_zone", "group__time__parsing.html#ga4275a88c5419f0c32d456fe1f471b52e", null ],
     [ "time_shield::parse_tz", "group__time__parsing.html#gabbfb5b21ecd330755407086de759112f", null ],
     [ "time_shield::str_to_fts", "group__time__parsing.html#ga14ee0b212c61b1338a9e3aa07e07a474", null ],

@@ -12,7 +12,7 @@ var group__time__parsing =
     [ "time_shield::month_of_year", "group__time__parsing.html#ga96f13d7c82aa7fdf53bd6d7556c76483", null ],
     [ "time_shield::month_of_year", "group__time__parsing.html#ga79a3b1cef75b3874d4a8ec44b3a532de", null ],
     [ "time_shield::parse_iso8601", "group__time__parsing.html#gaf70532fba4720cdaa1e3ee67dfba0c41", null ],
-    [ "time_shield::parse_iso8601", "group__time__parsing.html#ga565635760eafcbd4d8193965141f32ba", null ],
+    [ "time_shield::parse_iso8601", "group__time__parsing.html#ga55e40e10101293f4e93a36f10164a228", null ],
     [ "time_shield::parse_time_zone", "group__time__parsing.html#ga380e128c27922bf4db53c4dfba93b189", null ],
     [ "time_shield::parse_time_zone", "group__time__parsing.html#ga4275a88c5419f0c32d456fe1f471b52e", null ],
     [ "time_shield::parse_tz", "group__time__parsing.html#ga6720fde5b41ea5e1ebdfd312f8a86371", null ],

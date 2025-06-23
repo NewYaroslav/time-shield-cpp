@@ -143,8 +143,8 @@ $(function(){initNavTree('time__parser_8mqh_source.html',''); initResizable(true
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>       <span class="keywordtype">string</span> month_copy = month;</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>       <span class="keywordtype">string</span> tmp = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>       StringConcatenate(tmp,</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                        StringUpper(StringSubstr(month_copy,0,1)),</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                        StringLower(StringSubstr(month_copy,1)));</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                        StringToUpper(StringSubstr(month_copy,0,1)),</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                        StringToLower(StringSubstr(month_copy,1)));</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>       month_copy = tmp;</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>       <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">string</span> short_names[] = {<span class="stringliteral">&quot;Jan&quot;</span>,<span class="stringliteral">&quot;Feb&quot;</span>,<span class="stringliteral">&quot;Mar&quot;</span>,<span class="stringliteral">&quot;Apr&quot;</span>,<span class="stringliteral">&quot;May&quot;</span>,<span class="stringliteral">&quot;Jun&quot;</span>,</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                                            <span class="stringliteral">&quot;Jul&quot;</span>,<span class="stringliteral">&quot;Aug&quot;</span>,<span class="stringliteral">&quot;Sep&quot;</span>,<span class="stringliteral">&quot;Oct&quot;</span>,<span class="stringliteral">&quot;Nov&quot;</span>,<span class="stringliteral">&quot;Dec&quot;</span>};</div>
@@ -187,7 +187,7 @@ $(function(){initNavTree('time__parser_8mqh_source.html',''); initResizable(true
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>       {</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>          tz.<a class="code hl_variable" href="structtime__shield_1_1TimeZoneStruct.html#a83b023980ce397878cb2c742bb9dc8b7">hour</a>=0; tz.<a class="code hl_variable" href="structtime__shield_1_1TimeZoneStruct.html#ab24fabc460ae071150d4317efc1ecbdb">min</a>=0; tz.<a class="code hl_variable" href="structtime__shield_1_1TimeZoneStruct.html#abe789b40db8bbbc3046dee910ca7804b">is_positive</a>=<span class="keyword">true</span>; <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>       }</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>       tz.<a class="code hl_variable" href="structtime__shield_1_1TimeZoneStruct.html#abe789b40db8bbbc3046dee910ca7804b">is_positive</a> = (StringGetChar(tz_str,0)==<span class="charliteral">&#39;+&#39;</span>);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>       tz.<a class="code hl_variable" href="structtime__shield_1_1TimeZoneStruct.html#abe789b40db8bbbc3046dee910ca7804b">is_positive</a> = ((char)tz_str[0] ==<span class="charliteral">&#39;+&#39;</span>);</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>       tz.<a class="code hl_variable" href="structtime__shield_1_1TimeZoneStruct.html#a83b023980ce397878cb2c742bb9dc8b7">hour</a> = (int)StringToInteger(StringSubstr(tz_str,1,2));</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>       tz.<a class="code hl_variable" href="structtime__shield_1_1TimeZoneStruct.html#ab24fabc460ae071150d4317efc1ecbdb">min</a>  = (int)StringToInteger(StringSubstr(tz_str,4,2));</div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>       <span class="keywordflow">return</span> <a class="code hl_function" href="group__time__validation.html#ga2dc878ca26b31d7d169a7b877113f756">is_valid_time_zone</a>(tz);</div>
@@ -199,134 +199,126 @@ $(function(){initNavTree('time__parser_8mqh_source.html',''); initResizable(true
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="comment">//------------------------------------------------------------------------------</span></div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span></div>
 <div class="foldopen" id="foldopen00119" data-start="{" data-end="}">
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="group__time__parsing.html#ga565635760eafcbd4d8193965141f32ba">  119</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="group__time__parsing.html#gaf70532fba4720cdaa1e3ee67dfba0c41">parse_iso8601</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;input, <a class="code hl_struct" href="structtime__shield_1_1DateTimeStruct.html">DateTimeStruct</a> &amp;dt, <a class="code hl_struct" href="structtime__shield_1_1TimeZoneStruct.html">TimeZoneStruct</a> &amp;tz)</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    {</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>       dt = <a class="code hl_function" href="group__time__structures.html#gab6cf08da5ef726f11d460ad3e45f6800">create_date_time_struct</a>(0);</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>       tz = <a class="code hl_function" href="group__time__structures.html#gae83e4d4791a1f6ce69657a3868b00504">create_time_zone_struct</a>(0,0);</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>       <span class="keywordtype">string</span> date_part=input;</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>       <span class="keywordtype">string</span> time_part=<span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>       <span class="keywordtype">int</span> posT=StringFind(input,<span class="stringliteral">&quot;T&quot;</span>);</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>       <span class="keywordflow">if</span>(posT&lt;0) posT=StringFind(input,<span class="stringliteral">&quot; &quot;</span>);</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>       <span class="keywordflow">if</span>(posT&gt;=0)</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>       {</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>          date_part=StringSubstr(input,0,posT);</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>          time_part=StringSubstr(input,posT+1);</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>       }</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>       <span class="keywordtype">string</span> parts[];</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>       <span class="keywordtype">int</span> cnt=StringSplit(date_part,<span class="charliteral">&#39;-&#39;</span>,parts);</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>       <span class="keywordflow">if</span>(cnt&lt;3)</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>       {</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>          cnt=StringSplit(date_part,<span class="charliteral">&#39;/&#39;</span>,parts);</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>          <span class="keywordflow">if</span>(cnt&lt;3)</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>             cnt=StringSplit(date_part,<span class="charliteral">&#39;.&#39;</span>,parts);</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>       }</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>       <span class="keywordflow">if</span>(cnt&lt;3)</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>          <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>       dt.<a class="code hl_variable" href="structtime__shield_1_1DateTimeStruct.html#a6aaf7ee7664f6caeb970a0fe1dd503e5">year</a>=(long)StringToInteger(parts[0]);</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>       dt.<a class="code hl_variable" href="structtime__shield_1_1DateTimeStruct.html#ad3704de6007b827ccc9e2850f930c364">mon</a> =(int)StringToInteger(parts[1]);</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>       dt.<a class="code hl_variable" href="structtime__shield_1_1DateTimeStruct.html#ab813648acee62116ce68cb7572604358">day</a> =(int)StringToInteger(parts[2]);</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>       <span class="keywordflow">if</span>(StringLen(time_part)&gt;0)</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>       {</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>          <span class="keywordtype">string</span> tz_str=<span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>          <span class="keywordtype">int</span> zpos=StringFind(time_part,<span class="stringliteral">&quot;Z&quot;</span>);</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>          <span class="keywordtype">int</span> ppos=StringFind(time_part,<span class="stringliteral">&quot;+&quot;</span>);</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>          <span class="keywordtype">int</span> npos=StringFind(time_part,<span class="stringliteral">&quot;-&quot;</span>);</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>          <span class="keywordtype">int</span> tzpos=-1;</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>          <span class="keywordflow">if</span>(zpos&gt;=0){ tzpos=zpos; tz_str=StringSubstr(time_part,zpos); }</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>          <span class="keywordflow">else</span> <span class="keywordflow">if</span>(ppos&gt;=0){ tzpos=ppos; tz_str=StringSubstr(time_part,ppos); }</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>          <span class="keywordflow">else</span> <span class="keywordflow">if</span>(npos&gt;0){ tzpos=npos; tz_str=StringSubstr(time_part,npos); }</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>          <span class="keywordflow">if</span>(tzpos&gt;=0)</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>             time_part=StringSubstr(time_part,0,tzpos);</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>          <span class="keywordtype">string</span> tparts[];</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>          <span class="keywordtype">int</span> tcnt=StringSplit(time_part,<span class="charliteral">&#39;:&#39;</span>,tparts);</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>          <span class="keywordflow">if</span>(tcnt&lt;2)</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>             <span class="keywordflow">return</span> <a class="code hl_function" href="group__time__validation.html#ga97dc0bcd88cde62e7a50b85af20861de">is_valid_date_time</a>(dt);</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>          dt.<a class="code hl_variable" href="structtime__shield_1_1DateTimeStruct.html#a38c26152cf943d43929348466ea1db75">hour</a>=(int)StringToInteger(tparts[0]);</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>          dt.<a class="code hl_variable" href="structtime__shield_1_1DateTimeStruct.html#acefde9058a7c6b4c1b0accca74c4650b">min</a> =(int)StringToInteger(tparts[1]);</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>          <span class="keywordflow">if</span>(tcnt&gt;=3)</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>          {</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>             <span class="keywordtype">string</span> sec_part=tparts[2];</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>             <span class="keywordtype">int</span> dot=StringFind(sec_part,<span class="charliteral">&#39;.&#39;</span>);</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>             <span class="keywordflow">if</span>(dot&gt;=0)</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>             {</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>                dt.<a class="code hl_variable" href="structtime__shield_1_1DateTimeStruct.html#aedb0924a6f970dcc0e83991d6168d808">sec</a>=(int)StringToInteger(StringSubstr(sec_part,0,dot));</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>                dt.<a class="code hl_variable" href="structtime__shield_1_1DateTimeStruct.html#a00bed4f36ef83ab2ff4f9d8e0f1e181f">ms</a> =(int)StringToInteger(StringSubstr(sec_part,dot+1));</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>             }</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>             <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>                dt.<a class="code hl_variable" href="structtime__shield_1_1DateTimeStruct.html#aedb0924a6f970dcc0e83991d6168d808">sec</a>=(int)StringToInteger(sec_part);</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>          }</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>          <span class="keywordflow">if</span>(StringLen(tz_str)&gt;0)</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>             <span class="keywordflow">if</span>(!<a class="code hl_function" href="group__time__parsing.html#ga380e128c27922bf4db53c4dfba93b189">parse_time_zone</a>(tz_str,tz)) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>       }</div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>       <span class="keywordflow">return</span> <a class="code hl_function" href="group__time__validation.html#ga97dc0bcd88cde62e7a50b85af20861de">is_valid_date_time</a>(dt);</div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    }</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="group__time__parsing.html#ga55e40e10101293f4e93a36f10164a228">  119</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="group__time__parsing.html#gaf70532fba4720cdaa1e3ee67dfba0c41">parse_iso8601</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;input_str, <a class="code hl_struct" href="structtime__shield_1_1DateTimeStruct.html">DateTimeStruct</a> &amp;dt, <a class="code hl_struct" href="structtime__shield_1_1TimeZoneStruct.html">TimeZoneStruct</a> &amp;tz) {</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>       dt = <a class="code hl_function" href="group__time__structures.html#gab6cf08da5ef726f11d460ad3e45f6800">create_date_time_struct</a>(0);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>       tz = <a class="code hl_function" href="group__time__structures.html#gae83e4d4791a1f6ce69657a3868b00504">create_time_zone_struct</a>(0,0);</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>       <span class="keywordtype">string</span> date_part=input_str;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>       <span class="keywordtype">string</span> time_part=<span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>       <span class="keywordtype">int</span> posT=StringFind(input_str,<span class="stringliteral">&quot;T&quot;</span>);</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>       <span class="keywordflow">if</span> (posT&lt;0) posT=StringFind(input_str,<span class="stringliteral">&quot; &quot;</span>);</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>       <span class="keywordflow">if</span> (posT&gt;=0) {</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>          date_part=StringSubstr(input_str,0,posT);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>          time_part=StringSubstr(input_str,posT+1);</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>       }</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>       <span class="keywordtype">string</span> parts[];</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>       <span class="keywordtype">int</span> cnt = StringSplit(date_part,<span class="charliteral">&#39;-&#39;</span>,parts);</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>       <span class="keywordflow">if</span> (cnt&lt;3) {</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>          cnt = StringSplit(date_part,<span class="charliteral">&#39;/&#39;</span>,parts);</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>          <span class="keywordflow">if</span> (cnt&lt;3) cnt = StringSplit(date_part,<span class="charliteral">&#39;.&#39;</span>,parts);</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>       }</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>       <span class="keywordflow">if</span> (cnt&lt;3) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>       dt.<a class="code hl_variable" href="structtime__shield_1_1DateTimeStruct.html#a6aaf7ee7664f6caeb970a0fe1dd503e5">year</a>=(long)StringToInteger(parts[0]);</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>       dt.<a class="code hl_variable" href="structtime__shield_1_1DateTimeStruct.html#ad3704de6007b827ccc9e2850f930c364">mon</a> =(int)StringToInteger(parts[1]);</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>       dt.<a class="code hl_variable" href="structtime__shield_1_1DateTimeStruct.html#ab813648acee62116ce68cb7572604358">day</a> =(int)StringToInteger(parts[2]);</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>       <span class="keywordflow">if</span> (StringLen(time_part)&gt;0) {</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>          <span class="keywordtype">string</span> tz_str = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>          <span class="keywordtype">int</span> zpos = StringFind(time_part,<span class="stringliteral">&quot;Z&quot;</span>);</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>          <span class="keywordtype">int</span> ppos = StringFind(time_part,<span class="stringliteral">&quot;+&quot;</span>);</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>          <span class="keywordtype">int</span> npos = StringFind(time_part,<span class="stringliteral">&quot;-&quot;</span>);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>          <span class="keywordtype">int</span> tzpos = -1;</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>          <span class="keywordflow">if</span> (zpos &gt;= 0){ tzpos=zpos; tz_str=StringSubstr(time_part,zpos); }</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>          <span class="keywordflow">else</span> <span class="keywordflow">if</span>(ppos &gt;= 0){ tzpos=ppos; tz_str=StringSubstr(time_part,ppos); }</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>          <span class="keywordflow">else</span> <span class="keywordflow">if</span>(npos &gt; 0){ tzpos=npos; tz_str=StringSubstr(time_part,npos); }</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>          <span class="keywordflow">if</span> (tzpos &gt;= 0) time_part=StringSubstr(time_part,0,tzpos);</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>          <span class="keywordtype">string</span> tparts[];</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>          <span class="keywordtype">int</span> tcnt=StringSplit(time_part,<span class="charliteral">&#39;:&#39;</span>,tparts);</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>          <span class="keywordflow">if</span> (tcnt &lt; 2)</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>             <span class="keywordflow">return</span> <a class="code hl_function" href="group__time__validation.html#ga97dc0bcd88cde62e7a50b85af20861de">is_valid_date_time</a>(dt);</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>          dt.<a class="code hl_variable" href="structtime__shield_1_1DateTimeStruct.html#a38c26152cf943d43929348466ea1db75">hour</a> = (int)StringToInteger(tparts[0]);</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>          dt.<a class="code hl_variable" href="structtime__shield_1_1DateTimeStruct.html#acefde9058a7c6b4c1b0accca74c4650b">min</a>  = (int)StringToInteger(tparts[1]);</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>          <span class="keywordflow">if</span> (tcnt &gt;= 3) {</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>             <span class="keywordtype">string</span> sec_part=tparts[2];</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>             <span class="keywordtype">int</span> dot = StringFind(sec_part, <span class="stringliteral">&quot;.&quot;</span>);</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>             <span class="keywordflow">if</span> (dot &gt;= 0) {</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>                dt.<a class="code hl_variable" href="structtime__shield_1_1DateTimeStruct.html#aedb0924a6f970dcc0e83991d6168d808">sec</a> = (int)StringToInteger(StringSubstr(sec_part,0,dot));</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>                dt.<a class="code hl_variable" href="structtime__shield_1_1DateTimeStruct.html#a00bed4f36ef83ab2ff4f9d8e0f1e181f">ms</a>  = (int)StringToInteger(StringSubstr(sec_part,dot+1));</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>             } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>                dt.<a class="code hl_variable" href="structtime__shield_1_1DateTimeStruct.html#aedb0924a6f970dcc0e83991d6168d808">sec</a> = (int)StringToInteger(sec_part);</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>             }</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>          }</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>          <span class="keywordflow">if</span> (StringLen(tz_str)&gt;0) {</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>             <span class="keywordflow">if</span> (!<a class="code hl_function" href="group__time__parsing.html#ga380e128c27922bf4db53c4dfba93b189">parse_time_zone</a>(tz_str,tz)) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>          }</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>       }</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>       <span class="keywordflow">return</span> <a class="code hl_function" href="group__time__validation.html#ga97dc0bcd88cde62e7a50b85af20861de">is_valid_date_time</a>(dt);</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    }</div>
 </div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span></div>
-<div class="foldopen" id="foldopen00189" data-start="{" data-end="}">
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno"><a class="line" href="group__time__parsing.html#ga0782476607497d1f90768c312411bb5f">  189</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="group__time__parsing.html#ga5672a2652970721df21c0a2c78f00704">str_to_ts</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;str, <span class="keywordtype">long</span> &amp;<a class="code hl_function" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>)</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    {</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>       <a class="code hl_struct" href="structtime__shield_1_1DateTimeStruct.html">DateTimeStruct</a> dt; <a class="code hl_struct" href="structtime__shield_1_1TimeZoneStruct.html">TimeZoneStruct</a> tz;</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>       <span class="keywordflow">if</span>(!<a class="code hl_function" href="group__time__parsing.html#gaf70532fba4720cdaa1e3ee67dfba0c41">parse_iso8601</a>(str, dt, tz)) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>       <a class="code hl_function" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a> = <a class="code hl_function" href="group__time__conversions.html#gadd9cd995456125a88691f306dd259ead">to_timestamp</a>(dt) + <a class="code hl_function" href="group__time__structures__time__conversions.html#gab9c3742f0ce4f9fabf632b9f5c612781">to_offset</a>(tz);</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>       <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    }</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span></div>
+<div class="foldopen" id="foldopen00181" data-start="{" data-end="}">
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno"><a class="line" href="group__time__parsing.html#ga0782476607497d1f90768c312411bb5f">  181</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="group__time__parsing.html#ga5672a2652970721df21c0a2c78f00704">str_to_ts</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;str, <span class="keywordtype">long</span> &amp;<a class="code hl_function" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>)</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    {</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>       <a class="code hl_struct" href="structtime__shield_1_1DateTimeStruct.html">DateTimeStruct</a> dt; <a class="code hl_struct" href="structtime__shield_1_1TimeZoneStruct.html">TimeZoneStruct</a> tz;</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>       <span class="keywordflow">if</span>(!<a class="code hl_function" href="group__time__parsing.html#gaf70532fba4720cdaa1e3ee67dfba0c41">parse_iso8601</a>(str, dt, tz)) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>       <a class="code hl_function" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a> = <a class="code hl_function" href="group__time__conversions.html#gadd9cd995456125a88691f306dd259ead">to_timestamp</a>(dt) + <a class="code hl_function" href="group__time__structures__time__conversions.html#gab9c3742f0ce4f9fabf632b9f5c612781">to_offset</a>(tz);</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>       <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    }</div>
 </div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span></div>
-<div class="foldopen" id="foldopen00201" data-start="{" data-end="}">
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno"><a class="line" href="group__time__parsing.html#ga86da3fad2d8668e497e98712252fcebc">  201</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="group__time__parsing.html#ga4fb8f209ba8bfe214d8ccbdf113f3e91">str_to_ts_ms</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;str, <span class="keywordtype">long</span> &amp;<a class="code hl_function" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>)</div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    {</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>       <a class="code hl_struct" href="structtime__shield_1_1DateTimeStruct.html">DateTimeStruct</a> dt; <a class="code hl_struct" href="structtime__shield_1_1TimeZoneStruct.html">TimeZoneStruct</a> tz;</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>       <span class="keywordflow">if</span>(!<a class="code hl_function" href="group__time__parsing.html#gaf70532fba4720cdaa1e3ee67dfba0c41">parse_iso8601</a>(str, dt, tz)) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>       <a class="code hl_function" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a> = <a class="code hl_function" href="group__time__conversions.html#ga118c41fd06d0dc45c0c5137cb5522d12">to_timestamp_ms</a>(dt) + <a class="code hl_function" href="group__time__conversions.html#gacf399fc904a25ad11845fffcf161cb87">sec_to_ms</a>(<a class="code hl_function" href="group__time__structures__time__conversions.html#gab9c3742f0ce4f9fabf632b9f5c612781">to_offset</a>(tz));</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>       <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    }</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span></div>
+<div class="foldopen" id="foldopen00193" data-start="{" data-end="}">
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno"><a class="line" href="group__time__parsing.html#ga86da3fad2d8668e497e98712252fcebc">  193</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="group__time__parsing.html#ga4fb8f209ba8bfe214d8ccbdf113f3e91">str_to_ts_ms</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;str, <span class="keywordtype">long</span> &amp;<a class="code hl_function" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>)</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    {</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>       <a class="code hl_struct" href="structtime__shield_1_1DateTimeStruct.html">DateTimeStruct</a> dt; <a class="code hl_struct" href="structtime__shield_1_1TimeZoneStruct.html">TimeZoneStruct</a> tz;</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>       <span class="keywordflow">if</span>(!<a class="code hl_function" href="group__time__parsing.html#gaf70532fba4720cdaa1e3ee67dfba0c41">parse_iso8601</a>(str, dt, tz)) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>       <a class="code hl_function" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a> = <a class="code hl_function" href="group__time__conversions.html#ga118c41fd06d0dc45c0c5137cb5522d12">to_timestamp_ms</a>(dt) + <a class="code hl_function" href="group__time__conversions.html#gacf399fc904a25ad11845fffcf161cb87">sec_to_ms</a>(<a class="code hl_function" href="group__time__structures__time__conversions.html#gab9c3742f0ce4f9fabf632b9f5c612781">to_offset</a>(tz));</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>       <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    }</div>
 </div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span></div>
-<div class="foldopen" id="foldopen00213" data-start="{" data-end="}">
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno"><a class="line" href="group__time__parsing.html#ga14ee0b212c61b1338a9e3aa07e07a474">  213</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="group__time__parsing.html#ga4a33787eebe38e674185d341db118c37">str_to_fts</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;str, <span class="keywordtype">double</span> &amp;<a class="code hl_function" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>)</div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    {</div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>       <a class="code hl_struct" href="structtime__shield_1_1DateTimeStruct.html">DateTimeStruct</a> dt; <a class="code hl_struct" href="structtime__shield_1_1TimeZoneStruct.html">TimeZoneStruct</a> tz;</div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>       <span class="keywordflow">if</span>(!<a class="code hl_function" href="group__time__parsing.html#gaf70532fba4720cdaa1e3ee67dfba0c41">parse_iso8601</a>(str, dt, tz)) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>       <a class="code hl_function" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a> = <a class="code hl_function" href="group__time__conversions.html#ga8c817a893ff5c3d26cd59cedb0e3eb96">to_ftimestamp</a>(dt) + (double)<a class="code hl_function" href="group__time__structures__time__conversions.html#gab9c3742f0ce4f9fabf632b9f5c612781">to_offset</a>(tz);</div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>       <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    }</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span></div>
+<div class="foldopen" id="foldopen00205" data-start="{" data-end="}">
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno"><a class="line" href="group__time__parsing.html#ga14ee0b212c61b1338a9e3aa07e07a474">  205</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="group__time__parsing.html#ga4a33787eebe38e674185d341db118c37">str_to_fts</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;str, <span class="keywordtype">double</span> &amp;<a class="code hl_function" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>)</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    {</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>       <a class="code hl_struct" href="structtime__shield_1_1DateTimeStruct.html">DateTimeStruct</a> dt; <a class="code hl_struct" href="structtime__shield_1_1TimeZoneStruct.html">TimeZoneStruct</a> tz;</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>       <span class="keywordflow">if</span>(!<a class="code hl_function" href="group__time__parsing.html#gaf70532fba4720cdaa1e3ee67dfba0c41">parse_iso8601</a>(str, dt, tz)) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>       <a class="code hl_function" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a> = <a class="code hl_function" href="group__time__conversions.html#ga8c817a893ff5c3d26cd59cedb0e3eb96">to_ftimestamp</a>(dt) + (double)<a class="code hl_function" href="group__time__structures__time__conversions.html#gab9c3742f0ce4f9fabf632b9f5c612781">to_offset</a>(tz);</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>       <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    }</div>
 </div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span></div>
-<div class="foldopen" id="foldopen00225" data-start="{" data-end="}">
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno"><a class="line" href="group__time__parsing.html#gaa52b1a606c32e480f84d9e07f1e22171">  225</a></span>    <span class="keywordtype">long</span> <a class="code hl_function" href="group__time__utils.html#ga1d1c996fff6a55bf6a064991fec1f819">ts</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;str)</div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    {</div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>       <span class="keywordtype">long</span> v=0;</div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>       <a class="code hl_function" href="group__time__parsing.html#ga5672a2652970721df21c0a2c78f00704">str_to_ts</a>(str,v);</div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>       <span class="keywordflow">return</span> v;</div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    }</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span></div>
+<div class="foldopen" id="foldopen00217" data-start="{" data-end="}">
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno"><a class="line" href="group__time__parsing.html#gaa52b1a606c32e480f84d9e07f1e22171">  217</a></span>    <span class="keywordtype">long</span> <a class="code hl_function" href="group__time__utils.html#ga1d1c996fff6a55bf6a064991fec1f819">ts</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;str)</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    {</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>       <span class="keywordtype">long</span> v=0;</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>       <a class="code hl_function" href="group__time__parsing.html#ga5672a2652970721df21c0a2c78f00704">str_to_ts</a>(str,v);</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>       <span class="keywordflow">return</span> v;</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    }</div>
 </div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span></div>
-<div class="foldopen" id="foldopen00236" data-start="{" data-end="}">
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno"><a class="line" href="group__time__parsing.html#gafc821126dd7ea5eadf277f8d2a6e8520">  236</a></span>    <span class="keywordtype">long</span> <a class="code hl_function" href="group__time__utils.html#gaaa261ef6a082be5820665e8136f885ae">ts_ms</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;str)</div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    {</div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>       <span class="keywordtype">long</span> v=0;</div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>       <a class="code hl_function" href="group__time__parsing.html#ga4fb8f209ba8bfe214d8ccbdf113f3e91">str_to_ts_ms</a>(str,v);</div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>       <span class="keywordflow">return</span> v;</div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    }</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span></div>
+<div class="foldopen" id="foldopen00228" data-start="{" data-end="}">
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno"><a class="line" href="group__time__parsing.html#gafc821126dd7ea5eadf277f8d2a6e8520">  228</a></span>    <span class="keywordtype">long</span> <a class="code hl_function" href="group__time__utils.html#gaaa261ef6a082be5820665e8136f885ae">ts_ms</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;str)</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    {</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>       <span class="keywordtype">long</span> v=0;</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>       <a class="code hl_function" href="group__time__parsing.html#ga4fb8f209ba8bfe214d8ccbdf113f3e91">str_to_ts_ms</a>(str,v);</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>       <span class="keywordflow">return</span> v;</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>    }</div>
 </div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span></div>
-<div class="foldopen" id="foldopen00247" data-start="{" data-end="}">
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno"><a class="line" href="group__time__parsing.html#gaa0156690d95ce901bfd28d04e521cb2b">  247</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="group__time__utils.html#gad6e2af7c1ddd04c8f8f170c329b4e492">fts</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;str)</div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>    {</div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>       <span class="keywordtype">double</span> v=0.0;</div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>       <a class="code hl_function" href="group__time__parsing.html#ga4a33787eebe38e674185d341db118c37">str_to_fts</a>(str,v);</div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>       <span class="keywordflow">return</span> v;</div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>    }</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span></div>
+<div class="foldopen" id="foldopen00239" data-start="{" data-end="}">
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno"><a class="line" href="group__time__parsing.html#gaa0156690d95ce901bfd28d04e521cb2b">  239</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="group__time__utils.html#gad6e2af7c1ddd04c8f8f170c329b4e492">fts</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;str)</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    {</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>       <span class="keywordtype">double</span> v=0.0;</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>       <a class="code hl_function" href="group__time__parsing.html#ga4a33787eebe38e674185d341db118c37">str_to_fts</a>(str,v);</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>       <span class="keywordflow">return</span> v;</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    }</div>
 </div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span></div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span> </div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>}; <span class="comment">// namespace time_shield</span></div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span> </div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span><span class="preprocessor">#endif </span><span class="comment">// __TIME_SHIELD_TIME_PARSER_MQH__</span></div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span></div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span> </div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>}; <span class="comment">// namespace time_shield</span></div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span> </div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span><span class="preprocessor">#endif </span><span class="comment">// __TIME_SHIELD_TIME_PARSER_MQH__</span></div>
 <div class="ttc" id="aconstants_8mqh_html"><div class="ttname"><a href="constants_8mqh.html">constants.mqh</a></div><div class="ttdoc">Header file with time-related constants.</div></div>
 <div class="ttc" id="adate__time__struct_8mqh_html"><div class="ttname"><a href="date__time__struct_8mqh.html">date_time_struct.mqh</a></div><div class="ttdoc">Header for date and time structure and related functions (MQL5).</div></div>
 <div class="ttc" id="aenums_8mqh_html"><div class="ttname"><a href="enums_8mqh.html">enums.mqh</a></div><div class="ttdoc">Header file with enumerations for weekdays, months, and other time-related categories.</div></div>

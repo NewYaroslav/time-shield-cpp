@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['cet_5fto_5fgmt_0',['cet_to_gmt',['../group__time__conversions.html#gae3bc7446e716571e6cab5a76b94892ec',1,'time_shield::cet_to_gmt(ts_t cet)'],['../group__time__conversions.html#gab510347fe16134c9b63a223c85528493',1,'time_shield::cet_to_gmt(const datetime cet)']]],
+  ['cet_5fto_5fgmt_0',['cet_to_gmt',['../group__time__conversions__time__zone__conversions.html#gae3bc7446e716571e6cab5a76b94892ec',1,'time_shield::cet_to_gmt(ts_t cet)'],['../group__time__conversions.html#gab510347fe16134c9b63a223c85528493',1,'time_shield::cet_to_gmt(const datetime cet)']]],
   ['check_5fleap_5fyear_1',['check_leap_year',['../group__time__validation.html#ga30ea193ecbc9c3493b9bac8df01d82ba',1,'time_shield::check_leap_year(T year) noexcept'],['../group__time__validation.html#gad4b8ac012407d765d149fc5b0be8b4a9',1,'time_shield::check_leap_year(const long year)']]],
   ['check_5fleap_5fyear_5fts_2',['check_leap_year_ts',['../group__time__validation.html#gac6498174d5a46f29615d696c3a659380',1,'time_shield::check_leap_year_ts(ts_t ts)'],['../group__time__validation.html#ga43da8dd61e14b485bf6bb491278241f8',1,'time_shield::check_leap_year_ts(const long ts)']]],
   ['create_5fdate_5fstruct_3',['create_date_struct',['../group__time__structures.html#ga2ea065cf0bd4d934cb3c64ae54975448',1,'time_shield::create_date_struct(int64_t year, int32_t mon=1, int32_t day=1)'],['../group__time__structures.html#gaa556c97bfce724e9739a5fb57ae7a9ef',1,'time_shield::create_date_struct(const long year, const int mon=1, const int day=1)']]],

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['initialization_0',['Library Initialization',['../group__time__initialization.html',1,'']]]
+  ['helpers_0',['Time zone conversion helpers',['../group__time__conversions__time__zone__conversions.html',1,'']]]
 ];

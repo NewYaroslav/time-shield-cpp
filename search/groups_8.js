@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['parsing_0',['Time Parsing',['../group__time__parsing.html',1,'']]]
+  ['ntp_20client_0',['NTP Client',['../group__ntp.html',1,'']]]
 ];

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Time Shield Library: include/time_shield_cpp/time_shield/time_zone_conversions.hpp File Reference</title>
+<title>Time Shield Library: Time zone conversion helpers</title>
 <link rel="icon" href="icon-64x64.png" type="image/x-icon" />
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -82,7 +82,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){initNavTree('time__zone__conversions_8hpp.html',''); initResizable(true); });
+$(function(){initNavTree('group__time__conversions__time__zone__conversions.html',''); initResizable(true); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -108,59 +108,88 @@ $(function(){initNavTree('time__zone__conversions_8hpp.html',''); initResizable(
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#define-members">Macros</a>  </div>
-  <div class="headertitle"><div class="title">time_zone_conversions.hpp File Reference</div></div>
+  <div class="headertitle"><div class="title">Time zone conversion helpers<div class="ingroups"><a class="el" href="group__time__conversions.html">Time Conversions</a> &#124; <a class="el" href="group__time__conversions.html">Time Conversions</a> &raquo; <a class="el" href="group__time__zone__conversions.html">Time Zone Conversions</a></div></div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>Helpers for converting CET/EET timestamps to GMT.  
-<a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="date__time__struct_8hpp_source.html">date_time_struct.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="time__conversions_8hpp_source.html">time_conversions.hpp</a>&quot;</code><br />
-</div>
-<p><a href="time__zone__conversions_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetime__shield.html">time_shield</a></td></tr>
-<tr class="memdesc:namespacetime__shield"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main namespace for the Time Shield library. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a8bfd9b71f663db4e33b72d0c9fe2adbf" id="r_a8bfd9b71f663db4e33b72d0c9fe2adbf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8bfd9b71f663db4e33b72d0c9fe2adbf">_TIME_SHIELD_TIME_ZONE_CONVERSIONS_HPP_INCLUDED</a></td></tr>
-<tr class="separator:a8bfd9b71f663db4e33b72d0c9fe2adbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
-<tr class="memitem:gae3bc7446e716571e6cab5a76b94892ec" id="r_gae3bc7446e716571e6cab5a76b94892ec"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__time__conversions__time__zone__conversions.html#gae3bc7446e716571e6cab5a76b94892ec">time_shield::cet_to_gmt</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> cet)</td></tr>
+<tr class="memitem:gae3bc7446e716571e6cab5a76b94892ec" id="r_gae3bc7446e716571e6cab5a76b94892ec"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae3bc7446e716571e6cab5a76b94892ec">time_shield::cet_to_gmt</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> cet)</td></tr>
 <tr class="memdesc:gae3bc7446e716571e6cab5a76b94892ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert Central European Time to Greenwich Mean Time.  <br /></td></tr>
 <tr class="separator:gae3bc7446e716571e6cab5a76b94892ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga72cff8db923c27b0ae566590cd8c1015" id="r_ga72cff8db923c27b0ae566590cd8c1015"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__time__conversions__time__zone__conversions.html#ga72cff8db923c27b0ae566590cd8c1015">time_shield::eet_to_gmt</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> eet)</td></tr>
+<tr class="memitem:ga72cff8db923c27b0ae566590cd8c1015" id="r_ga72cff8db923c27b0ae566590cd8c1015"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga72cff8db923c27b0ae566590cd8c1015">time_shield::eet_to_gmt</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> eet)</td></tr>
 <tr class="memdesc:ga72cff8db923c27b0ae566590cd8c1015"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert Eastern European Time to Greenwich Mean Time.  <br /></td></tr>
 <tr class="separator:ga72cff8db923c27b0ae566590cd8c1015"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Helpers for converting CET/EET timestamps to GMT. </p>
-
-<p class="definition">Definition in file <a class="el" href="time__zone__conversions_8hpp_source.html">time_zone_conversions.hpp</a>.</p>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a8bfd9b71f663db4e33b72d0c9fe2adbf" name="a8bfd9b71f663db4e33b72d0c9fe2adbf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8bfd9b71f663db4e33b72d0c9fe2adbf">&#9670;&#160;</a></span>_TIME_SHIELD_TIME_ZONE_CONVERSIONS_HPP_INCLUDED</h2>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="gae3bc7446e716571e6cab5a76b94892ec" name="gae3bc7446e716571e6cab5a76b94892ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae3bc7446e716571e6cab5a76b94892ec">&#9670;&#160;</a></span>cet_to_gmt()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">#define _TIME_SHIELD_TIME_ZONE_CONVERSIONS_HPP_INCLUDED</td>
+          <td class="memname">const <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> time_shield::cet_to_gmt </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a></td>          <td class="paramname"><span class="paramname"><em>cet</em></span></td><td>)</td>
+          <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="time__zone__conversions_8hpp_source.html#l00003">3</a> of file <a class="el" href="time__zone__conversions_8hpp_source.html">time_zone_conversions.hpp</a>.</p>
+<p>Convert Central European Time to Greenwich Mean Time. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cet</td><td>Timestamp in seconds in CET. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Timestamp in seconds in GMT. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="time__zone__conversions_8hpp_source.html#l00020">20</a> of file <a class="el" href="time__zone__conversions_8hpp_source.html">time_zone_conversions.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga72cff8db923c27b0ae566590cd8c1015" name="ga72cff8db923c27b0ae566590cd8c1015"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga72cff8db923c27b0ae566590cd8c1015">&#9670;&#160;</a></span>eet_to_gmt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> time_shield::eet_to_gmt </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a></td>          <td class="paramname"><span class="paramname"><em>eet</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert Eastern European Time to Greenwich Mean Time. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">eet</td><td>Timestamp in seconds in EET. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Timestamp in seconds in GMT. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="time__zone__conversions_8hpp_source.html#l00093">93</a> of file <a class="el" href="time__zone__conversions_8hpp_source.html">time_zone_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -169,7 +198,6 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_98bef1042d1384ad3e1c5f8c3a735170.html">time_shield_cpp</a></li><li class="navelem"><a class="el" href="dir_f4b727be33f4d7b127b14eefb7a683cc.html">time_shield</a></li><li class="navelem"><a class="el" href="time__zone__conversions_8hpp.html">time_zone_conversions.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mql5_20timeshield_20api_0',['MQL5 TimeShield API',['../group__mql5.html',1,'']]]
+  ['library_20initialization_0',['Library Initialization',['../group__time__initialization.html',1,'']]]
 ];

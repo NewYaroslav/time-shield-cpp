@@ -8,6 +8,8 @@
 #include "types.hpp"
 #include "constants.hpp"
 
+#include <string>
+
 namespace time_shield {
 
     /// \ingroup time_structures
@@ -36,8 +38,7 @@ namespace time_shield {
 
 //------------------------------------------------------------------------------
 
-    /// \ingroup time_structures
-    /// \ingroup time_conversions
+    /// \ingroup time_structures_time_conversions
     /// \brief Converts an integer to a TimeZoneStruct.
     /// \param offset The integer to convert.
     /// \return A TimeZoneStruct represented by the given integer.
@@ -49,8 +50,7 @@ namespace time_shield {
         return TimeZoneStruct{hour, min, is_positive};
     }
 
-    /// \ingroup time_structures
-    /// \ingroup time_conversions
+    /// \ingroup time_structures_time_conversions
     /// \brief Alias for to_time_zone_struct function.
     /// \copydoc to_time_zone_struct
     inline const TimeZoneStruct to_tz(tz_t offset) {
@@ -59,8 +59,7 @@ namespace time_shield {
 
 //------------------------------------------------------------------------------
 
-    /// \ingroup time_structures
-    /// \ingroup time_formatting
+    /// \ingroup time_structures_time_formatting
     /// \brief Converts a TimeZoneStruct to a string representation.
     /// \param tz The TimeZoneStruct to convert.
     /// \return A string representation of the TimeZoneStruct.
@@ -69,16 +68,14 @@ namespace time_shield {
         return std::string(1, sign) + (tz.hour < 10 ? "0" : "") + std::to_string(tz.hour) + ":" + (tz.min < 10 ? "0" : "") + std::to_string(tz.min);
     }
 
-    /// \ingroup time_structures
-    /// \ingroup time_formatting
+    /// \ingroup time_structures_time_formatting
     /// \brief Alias for time_zone_struct_to_string function.
     /// \copydoc time_zone_struct_to_string
     inline const std::string to_string(const TimeZoneStruct& tz) {
         return time_zone_struct_to_string(tz);
     }
 
-    /// \ingroup time_structures
-    /// \ingroup time_formatting
+    /// \ingroup time_structures_time_formatting
     /// \brief Alias for time_zone_struct_to_string function.
     /// \copydoc time_zone_struct_to_string
     inline const std::string to_str(const TimeZoneStruct& tz) {
@@ -87,8 +84,7 @@ namespace time_shield {
 
 //------------------------------------------------------------------------------
 
-    /// \ingroup time_structures
-    /// \ingroup time_conversions
+    /// \ingroup time_structures_time_conversions
     /// \brief Converts a TimeZoneStruct to a single integer representation.
     /// \param tz The TimeZoneStruct to convert.
     /// \return An integer representing the TimeZoneStruct.
@@ -96,14 +92,14 @@ namespace time_shield {
         return (tz.is_positive ? 1 : -1) * (tz.hour * SEC_PER_HOUR + tz.min * SEC_PER_MIN);
     }
 
-    /// \ingroup time_conversions
+    /// \ingroup time_structures_time_conversions
     /// \brief Alias for time_zone_struct_to_offset function.
     /// \copydoc time_zone_struct_to_offset
     inline const tz_t tz_to_offset(const TimeZoneStruct& tz) {
         return time_zone_struct_to_offset(tz);
     }
 
-    /// \ingroup time_conversions
+    /// \ingroup time_structures_time_conversions
     /// \brief Alias for time_zone_struct_to_offset function.
     /// \copydoc time_zone_struct_to_offset
     inline const tz_t to_offset(const TimeZoneStruct& tz) {

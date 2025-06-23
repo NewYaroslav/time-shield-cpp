@@ -803,7 +803,7 @@ double sec_to_fhour(long sec) {
     }
 
     /// \brief Alias for num_days_in_month.
-    /// \copydoc num_days_in_month
+    /// \copydoc num_days_in_month(long, int)
     int days_in_month(long year, int month) { return num_days_in_month(year, month); }
 
     /// \brief Get the number of days in the month of a timestamp.
@@ -1189,11 +1189,11 @@ double sec_to_fhour(long sec) {
     }
 
     /// \brief Alias for end_of_day_from_unix_day.
-    /// \copydoc end_of_day_from_unix_day
+    /// \copydoc end_of_day_from_unix_day(long)
     long eod_from_unix_day(long uday) { return end_of_day_from_unix_day(uday); }
 
     /// \brief Alias for end_of_day_from_unix_day_ms.
-    /// \copydoc end_of_day_from_unix_day_ms
+    /// \copydoc end_of_day_from_unix_day_ms(long)
     long eod_from_unix_day_ms(long uday) { return end_of_day_from_unix_day_ms(uday); }
 
     /// \brief Get start of next day timestamp from UNIX day.

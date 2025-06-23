@@ -28,6 +28,8 @@ int main() {
     std::cout << "Human readable:         " << to_human_readable(now_sec) << '\n';
     std::cout << "Human readable (ms):    " << to_human_readable_ms(now_ms) << '\n';
 
+    std::cout << "Press Enter to exit..." << std::endl;
+    std::cin.get();
     return 0;
 }
 #else

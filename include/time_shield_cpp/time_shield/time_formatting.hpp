@@ -15,35 +15,7 @@
 
 namespace time_shield {
 
-/// \defgroup time_formatting Time Formatting
-/// \brief A comprehensive set of functions for converting timestamps to formatted strings.
-///
-/// This module provides utilities for formatting timestamps into human-readable strings,
-/// custom formats, ISO8601, and other standardized formats.
-///
-/// ### Key Features:
-/// - Custom formatting of timestamps using `strftime`-like specifiers.
-/// - ISO8601 date and time representation.
-/// - MQL5-compatible date and time formatting.
-/// - Conversion to Windows-compatible filename formats.
-/// - Human-readable timestamp formatting.
-///
-/// ### Usage Examples:
-/// - Format a timestamp to a custom string:
-///   \code{.cpp}
-///   std::string formatted = time_shield::to_string("%H:%M:%S", 1698249600);
-///   \endcode
-///
-/// - Convert a timestamp to ISO8601 format:
-///   \code{.cpp}
-///   std::string iso8601 = time_shield::to_iso8601(1698249600);
-///   \endcode
-///
-/// - Generate a Windows-compatible filename:
-///   \code{.cpp}
-///   std::string filename = time_shield::to_windows_filename(1698249600);
-///   \endcode
-///
+/// \ingroup time_formatting
 /// \{
 
     inline void process_format_impl(
@@ -721,7 +693,7 @@ namespace time_shield {
     }
 
     /// \brief Alias for to_mql5_date_time_str function.
-    /// \copydoc to_mql5_date_time_str
+    /// \copydoc to_mql5_date_time
     inline const std::string to_mql5_full(ts_t ts) {
         return to_mql5_date_time(ts);
     }
@@ -753,7 +725,7 @@ namespace time_shield {
     }
 
     /// \brief Converts a timestamp in seconds to a Windows-compatible filename format.
-    /// \param timestamp_ms The timestamp in seconds.
+    /// \param ts The timestamp in seconds.
     /// \return A string in the format "YYYY-MM-DD_HH-MM-SS".
     inline const std::string to_windows_filename(ts_t ts) {
         DateTimeStruct dt = to_date_time<DateTimeStruct>(ts);
@@ -763,7 +735,7 @@ namespace time_shield {
     }
 
     /// \brief Converts a timestamp in milliseconds to a Windows-compatible filename format.
-    /// \param timestamp_ms The timestamp in milliseconds.
+    /// \param ts The timestamp in milliseconds.
     /// \return A string in the format "YYYY-MM-DD_HH-MM-SS-SSS".
     inline const std::string to_windows_filename_ms(ts_ms_t ts) {
         DateTimeStruct dt = to_date_time_ms<DateTimeStruct>(ts);
@@ -773,7 +745,7 @@ namespace time_shield {
     }
 
     /// \brief Converts a timestamp in seconds to a human-readable format.
-    /// \param timestamp_ms The timestamp in seconds.
+    /// \param ts The timestamp in seconds.
     /// \return A string in the format "YYYY-MM-DD HH:MM:SS".
     std::string to_human_readable(ts_t ts) {
         DateTimeStruct dt = to_date_time_ms<DateTimeStruct>(ts);
@@ -783,7 +755,7 @@ namespace time_shield {
     }
 
     /// \brief Converts a timestamp in milliseconds to a human-readable format.
-    /// \param timestamp_ms The timestamp in milliseconds.
+    /// \param ts The timestamp in milliseconds.
     /// \return A string in the format "YYYY-MM-DD HH:MM:SS.SSS".
     std::string to_human_readable_ms(ts_ms_t ts) {
         DateTimeStruct dt = to_date_time_ms<DateTimeStruct>(ts);

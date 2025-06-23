@@ -18,36 +18,7 @@
 
 namespace time_shield {
 
-/// \defgroup time_conversions Time Conversions
-/// \brief A comprehensive set of functions and utilities for working with timestamps and time-related data.
-///
-/// This module provides functionalities to convert, manipulate, and analyze timestamps
-/// in seconds, milliseconds, and floating-point formats. It also includes utilities
-/// for working with date-time structures, UNIX days, and various time units (hours, minutes, seconds, etc.).
-///
-/// ### Key Features:
-/// - Convert timestamps between seconds, milliseconds, and floating-point seconds.
-/// - Extract components such as nanoseconds, microseconds, and milliseconds from timestamps.
-/// - Convert timestamps to and from date-time structures.
-/// - Calculate the start and end of various time intervals (e.g., days, hours, months, years).
-/// - Analyze time data (e.g., day of the week, day of the year, days in a month or year).
-///
-/// ### Usage Examples:
-/// - Obtain the millisecond component of a timestamp:
-///   \code{.cpp}
-///   auto ms = time_shield::ms_of_sec(123.456);
-///   \endcode
-///
-/// - Convert a date-time structure to a timestamp:
-///   \code{.cpp}
-///   auto ts = time_shield::to_timestamp(2024, 11, 25, 14, 30, 0);
-///   \endcode
-///
-/// - Determine the start of the current year:
-///   \code{.cpp}
-///   auto year_start = time_shield::start_of_year(current_timestamp());
-///   \endcode
-///
+/// \ingroup time_conversions
 /// \{
 
     /// \brief Get the nanosecond part of the second from a floating-point timestamp.
@@ -96,7 +67,7 @@ namespace time_shield {
     /// \param tag std::true_type indicates a floating-point type.
     /// \return ts_ms_t Timestamp in milliseconds.
     template<class T>
-    constexpr ts_ms_t sec_to_ms_impl(T t, std::true_type) noexcept {
+    constexpr ts_ms_t sec_to_ms_impl(T t, std::true_type tag) noexcept {
         return static_cast<ts_ms_t>(std::round(t * static_cast<T>(MS_PER_SEC)));
     }
 
@@ -106,7 +77,7 @@ namespace time_shield {
     /// \param tag std::false_type indicates a non-floating-point type.
     /// \return ts_ms_t Timestamp in milliseconds.
     template<class T>
-    constexpr ts_ms_t sec_to_ms_impl(T t, std::false_type) noexcept {
+    constexpr ts_ms_t sec_to_ms_impl(T t, std::false_type tag) noexcept {
         return static_cast<ts_ms_t>(t) * static_cast<ts_ms_t>(MS_PER_SEC);
     }
 #   endif // TIME_SHIELD_CPP17
@@ -136,7 +107,7 @@ namespace time_shield {
     /// \brief Converts a floating-point timestamp from seconds to milliseconds.
     /// \param ts Timestamp in floating-point seconds.
     /// \return ts_ms_t Timestamp in milliseconds.
-    constexpr const ts_ms_t fsec_to_ms(fts_t ts) noexcept {
+    inline ts_ms_t fsec_to_ms(fts_t ts) noexcept {
         return static_cast<ts_ms_t>(std::round(ts * static_cast<fts_t>(MS_PER_SEC)));
     }
 
@@ -169,7 +140,7 @@ namespace time_shield {
     /// \param tag std::true_type indicates a floating-point type (double or float).
     /// \return ts_ms_t Timestamp in milliseconds.
     template<class T>
-    constexpr ts_ms_t min_to_ms_impl(T t, std::true_type) noexcept {
+    constexpr ts_ms_t min_to_ms_impl(T t, std::true_type tag) noexcept {
         return static_cast<ts_ms_t>(std::round(t * static_cast<T>(MS_PER_MIN)));
     }
 
@@ -179,7 +150,7 @@ namespace time_shield {
     /// \param tag std::false_type indicates a non-floating-point type.
     /// \return ts_ms_t Timestamp in milliseconds.
     template<class T>
-    constexpr ts_ms_t min_to_ms_impl(T t, std::false_type) noexcept {
+    constexpr ts_ms_t min_to_ms_impl(T t, std::false_type tag) noexcept {
         return static_cast<ts_ms_t>(t) * static_cast<ts_ms_t>(MS_PER_MIN);
     }
 #   endif // TIME_SHIELD_CPP17
@@ -226,7 +197,7 @@ namespace time_shield {
     /// \param tag std::true_type indicates a floating-point type (double or float).
     /// \return ts_t Timestamp in seconds.
     template<class T>
-    constexpr ts_t min_to_sec_impl(T t, std::true_type) noexcept {
+    constexpr ts_t min_to_sec_impl(T t, std::true_type tag) noexcept {
         return static_cast<ts_t>(std::round(t * static_cast<T>(SEC_PER_MIN)));
     }
 
@@ -236,7 +207,7 @@ namespace time_shield {
     /// \param tag std::false_type indicates a non-floating-point type.
     /// \return ts_t Timestamp in seconds.
     template<class T>
-    constexpr ts_t min_to_sec_impl(T t, std::false_type) noexcept {
+    constexpr ts_t min_to_sec_impl(T t, std::false_type tag) noexcept {
         return static_cast<ts_t>(t) * static_cast<ts_t>(SEC_PER_MIN);
     }
 #   endif // TIME_SHIELD_CPP17
@@ -302,17 +273,17 @@ namespace time_shield {
     /// \param tag std::true_type indicates a floating-point type (double or float).
     /// \return ts_ms_t Timestamp in milliseconds.
     template<class T>
-    constexpr ts_ms_t hour_to_ms_impl(T t, std::true_type) noexcept {
+    constexpr ts_ms_t hour_to_ms_impl(T t, std::true_type tag) noexcept {
         return static_cast<ts_ms_t>(std::round(t * static_cast<T>(MS_PER_HOUR)));
     }
 
     /// \brief Helper function for converting hours to milliseconds (integral version).
     /// \tparam T Type of the input timestamp.
     /// \param t Timestamp in hours.
-    /// \param tag std::false_type indicates a non-floating-point type.
+    /// \param tag Type tag used to select the integral overload (must be std::false_type).
     /// \return ts_ms_t Timestamp in milliseconds.
     template<class T>
-    constexpr ts_ms_t hour_to_ms_impl(T t, std::false_type) noexcept {
+    constexpr ts_ms_t hour_to_ms_impl(T t, std::false_type tag) noexcept {
         return static_cast<ts_ms_t>(t) * static_cast<ts_ms_t>(MS_PER_HOUR);
     }
 #   endif // TIME_SHIELD_CPP17
@@ -360,7 +331,7 @@ namespace time_shield {
     /// \param tag std::true_type indicates a floating-point type (double or float).
     /// \return ts_t Timestamp in seconds.
     template<class T>
-    constexpr ts_t hour_to_sec_impl(T t, std::true_type) noexcept {
+    constexpr ts_t hour_to_sec_impl(T t, std::true_type tag) noexcept {
         return static_cast<ts_t>(std::round(t * static_cast<T>(SEC_PER_HOUR)));
     }
 
@@ -370,7 +341,7 @@ namespace time_shield {
     /// \param tag std::false_type indicates a non-floating-point type.
     /// \return ts_t Timestamp in seconds.
     template<class T>
-    constexpr ts_t hour_to_sec_impl(T t, std::false_type) noexcept {
+    constexpr ts_t hour_to_sec_impl(T t, std::false_type tag) noexcept {
         return static_cast<ts_t>(t) * static_cast<ts_t>(SEC_PER_HOUR);
     }
 #   endif // TIME_SHIELD_CPP17
@@ -462,20 +433,6 @@ namespace time_shield {
         return y - UNIX_EPOCH;
     }
 
-    /// \brief Alias for get_unix_year function.
-    /// \copydoc get_unix_year
-    template<class T = year_t>
-    constexpr const T unix_year(ts_t ts) noexcept {
-        return get_unix_year(ts);
-    }
-
-    /// \brief Alias for get_unix_year function.
-    /// \copydoc get_unix_year
-    template<class T = year_t>
-    constexpr const T to_unix_year(ts_t ts) noexcept {
-        return get_unix_year(ts);
-    }
-
 //------------------------------------------------------------------------------
 
     /// \brief Converts a 24-hour format hour to a 12-hour format.
@@ -486,13 +443,6 @@ namespace time_shield {
     TIME_SHIELD_CONSTEXPR inline const T hour24_to_12(T hour) noexcept {
         if (hour == 0 || hour > 12) return 12;
         return hour;
-    }
-
-    /// \brief Alias for hour24_to_12 function.
-    /// \copydoc hour24_to_12
-    template<class T = int>
-    TIME_SHIELD_CONSTEXPR inline const T h24_to_h12(T hour) noexcept {
-        return hour24_to_12(hour);
     }
 
 //------------------------------------------------------------------------------
@@ -507,7 +457,7 @@ namespace time_shield {
     /// \tparam T2 The type of the timestamp (default is int64_t).
     /// \param ts The timestamp to be converted.
     /// \return A date-time structure of type T1.
-    template<class T1, class T2 = ts_t>
+    template<class T1 = DateTimeStruct, class T2 = ts_t>
     T1 to_date_time(T2 ts) {
         // 9223372029693630000 - значение на момент 292277024400 от 2000 года
         // Такое значение приводит к неправильному вычислению умножения n_400_years * SEC_PER_400_YEARS
@@ -594,7 +544,7 @@ namespace time_shield {
         date_time.min = min_secs / SEC_PER_MIN;
         date_time.sec = min_secs - date_time.min * SEC_PER_MIN;
 #       ifdef TIME_SHIELD_CPP17
-        if constexpr (std::is_floating_point<T2>::value) {
+        if TIME_SHIELD_IF_CONSTEXPR (std::is_floating_point<T2>::value) {
             date_time.ms = static_cast<int>(std::round(std::fmod(static_cast<double>(ts), static_cast<double>(MS_PER_SEC))));
         } else date_time.ms = 0;
 #       else
@@ -603,14 +553,6 @@ namespace time_shield {
         } else date_time.ms = 0;
 #       endif
         return date_time;
-    }
-
-    /// \ingroup time_structures
-    /// \brief Alias for to_date_time function.
-    /// \copydoc to_date_time
-    template<class T1, class T2 = ts_t>
-    T1 to_dt(T2 ts) {
-        return to_date_time(ts);
     }
 
 //------------------------------------------------------------------------------
@@ -627,20 +569,15 @@ namespace time_shield {
         return date_time;
     }
 
-    /// \ingroup time_structures
-    /// \brief Alias for to_date_time_ms function.
-    /// \copydoc to_date_time_ms
-    template<class T>
-    inline T to_dt_ms(ts_ms_t ts) {
-        return to_date_time_ms<T>(ts);
-    }
-
 //------------------------------------------------------------------------------
 
     /// \brief Converts a date and time to a timestamp.
     ///
     /// This function converts a given date and time to a timestamp, which is the number
     /// of seconds since the Unix epoch (January 1, 1970).
+    ///
+    /// If the `day` is ≥ 1970 and `year` ≤ 31, parameters are assumed to be in DD-MM-YYYY order
+    /// and are automatically reordered.
     ///
     /// \tparam T1 The type of the year parameter (default is int64_t).
     /// \tparam T2 The type of the other date and time parameters (default is int).
@@ -652,6 +589,18 @@ namespace time_shield {
     /// \param sec   The second value (default is 0).
     /// \return Timestamp representing the given date and time.
     /// \throws std::invalid_argument if the date-time combination is invalid.
+    ///
+    /// \par Aliases:
+    /// The following function names are provided as aliases:
+    /// - `ts(...)`
+    /// - `get_ts(...)`
+    /// - `get_timestamp(...)`
+    /// - `timestamp(...)`
+    /// - `to_ts(...)`
+    ///
+    /// These aliases are macro-generated and behave identically to `to_timestamp`.
+    ///
+    /// \sa ts() \sa get_ts() \sa get_timestamp() \sa timestamp() \sa to_ts()
     template<class T1 = year_t, class T2 = int>
     TIME_SHIELD_CONSTEXPR inline const ts_t to_timestamp(
             T1 year,
@@ -708,71 +657,6 @@ namespace time_shield {
         return secs;
     }
 
-    /// \brief Alias for to_timestamp function.
-    /// \copydoc to_timestamp
-    template<class T1 = year_t, class T2 = int>
-    TIME_SHIELD_CONSTEXPR inline const ts_t to_ts(
-            T1 year,
-            T2 month,
-            T2 day,
-            T2 hour  = 0,
-            T2 min   = 0,
-            T2 sec   = 0) {
-        return to_timestamp<T1, T2>(year, month, day, hour, min, sec);
-    }
-
-    /// \brief Alias for to_timestamp function.
-    /// \copydoc to_timestamp
-    template<class T1 = year_t, class T2 = int>
-    TIME_SHIELD_CONSTEXPR inline const ts_t get_ts(
-            T1 year,
-            T2 month,
-            T2 day,
-            T2 hour  = 0,
-            T2 min   = 0,
-            T2 sec   = 0) {
-        return to_timestamp<T1, T2>(year, month, day, hour, min, sec);
-    }
-
-    /// \brief Alias for to_timestamp function.
-    /// \copydoc to_timestamp
-    template<class T1 = year_t, class T2 = int>
-    TIME_SHIELD_CONSTEXPR inline const ts_t ts(
-            T1 year,
-            T2 month,
-            T2 day,
-            T2 hour  = 0,
-            T2 min   = 0,
-            T2 sec   = 0) {
-        return to_timestamp<T1, T2>(year, month, day, hour, min, sec);
-    }
-
-    /// \brief Alias for to_timestamp function.
-    /// \copydoc to_timestamp
-    template<class T1 = year_t, class T2 = int>
-    TIME_SHIELD_CONSTEXPR inline const ts_t timestamp(
-            T1 year,
-            T2 month,
-            T2 day,
-            T2 hour  = 0,
-            T2 min   = 0,
-            T2 sec   = 0) {
-        return to_timestamp<T1, T2>(year, month, day, hour, min, sec);
-    }
-
-    /// \brief Alias for to_timestamp function.
-    /// \copydoc to_timestamp
-    template<class T1 = year_t, class T2 = int>
-    TIME_SHIELD_CONSTEXPR inline const ts_t get_timestamp(
-            T1 year,
-            T2 month,
-            T2 day,
-            T2 hour  = 0,
-            T2 min   = 0,
-            T2 sec   = 0) {
-        return to_timestamp<T1, T2>(year, month, day, hour, min, sec);
-    }
-
 //------------------------------------------------------------------------------
 
     /// \ingroup time_structures
@@ -797,42 +681,6 @@ namespace time_shield {
             date_time.sec);
     }
 
-    /// \ingroup time_structures
-    /// \brief Alias for dt_to_timestamp function.
-    /// \copydoc dt_to_timestamp
-    template<class T>
-    TIME_SHIELD_CONSTEXPR inline const ts_t to_timestamp(
-            const T& date_time) {
-        return dt_to_timestamp(date_time);
-    }
-
-    /// \ingroup time_structures
-    /// \brief Alias for dt_to_timestamp function.
-    /// \copydoc dt_to_timestamp
-    template<class T>
-    TIME_SHIELD_CONSTEXPR inline const ts_t to_ts(
-            const T& date_time) {
-        return dt_to_timestamp(date_time);
-    }
-
-    /// \ingroup time_structures
-    /// \brief Alias for dt_to_timestamp function.
-    /// \copydoc dt_to_timestamp
-    template<class T>
-    TIME_SHIELD_CONSTEXPR inline const ts_t ts(
-            const T& date_time) {
-        return dt_to_timestamp(date_time);
-    }
-
-    /// \ingroup time_structures
-    /// \brief Alias for dt_to_timestamp function.
-    /// \copydoc dt_to_timestamp
-    template<class T>
-    TIME_SHIELD_CONSTEXPR inline const ts_t timestamp(
-            const T& date_time) {
-        return dt_to_timestamp(date_time);
-    }
-
 //------------------------------------------------------------------------------
 
     /// \brief Converts a std::tm structure to a timestamp.
@@ -852,41 +700,6 @@ namespace time_shield {
             timeinfo->tm_hour,
             timeinfo->tm_min,
             timeinfo->tm_sec);
-    }
-
-    /// \brief Alias for tm_to_timestamp function.
-    /// \copydoc tm_to_timestamp
-    TIME_SHIELD_CONSTEXPR inline const ts_t to_timestamp(
-            const std::tm *timeinfo) {
-        return tm_to_timestamp(timeinfo);
-    }
-
-    /// \brief Alias for tm_to_timestamp function.
-    /// \copydoc tm_to_timestamp
-    TIME_SHIELD_CONSTEXPR inline const ts_t to_ts(
-            const std::tm *timeinfo) {
-        return tm_to_timestamp(timeinfo);
-    }
-
-    /// \brief Alias for tm_to_timestamp function.
-    /// \copydoc tm_to_timestamp
-    TIME_SHIELD_CONSTEXPR inline const ts_t ts(
-            const std::tm *timeinfo) {
-        return tm_to_timestamp(timeinfo);
-    }
-
-    /// \brief Alias for tm_to_timestamp function.
-    /// \copydoc tm_to_timestamp
-    TIME_SHIELD_CONSTEXPR inline const ts_t timestamp(
-            const std::tm *timeinfo) {
-        return tm_to_timestamp(timeinfo);
-    }
-
-    /// \brief Alias for tm_to_timestamp function.
-    /// \copydoc tm_to_timestamp
-    TIME_SHIELD_CONSTEXPR inline const ts_t ts_from_tm(
-            const std::tm *timeinfo) {
-        return tm_to_timestamp(timeinfo);
     }
 
 //------------------------------------------------------------------------------
@@ -919,48 +732,6 @@ namespace time_shield {
         return sec_to_ms(to_timestamp<T1, T2>(year, month, day, hour, min, sec)) + ms;
     }
 
-    /// \brief Alias for to_timestamp_ms function.
-    /// \copydoc to_timestamp_ms
-    template<class T1 = year_t, class T2 = int>
-    TIME_SHIELD_CONSTEXPR inline const ts_ms_t to_ts_ms(
-            T1 year,
-            T2 month,
-            T2 day,
-            T2 hour  = 0,
-            T2 min   = 0,
-            T2 sec   = 0,
-            T2 ms    = 0) {
-        return to_timestamp_ms(year, month, day, hour, min, sec, ms);
-    }
-
-    /// \brief Alias for to_timestamp_ms function.
-    /// \copydoc to_timestamp_ms
-    template<class T1 = year_t, class T2 = int>
-    TIME_SHIELD_CONSTEXPR inline const ts_ms_t ts_ms(
-            T1 year,
-            T2 month,
-            T2 day,
-            T2 hour  = 0,
-            T2 min   = 0,
-            T2 sec   = 0,
-            T2 ms    = 0) {
-        return to_timestamp_ms(year, month, day, hour, min, sec, ms);
-    }
-
-    /// \brief Alias for to_timestamp_ms function.
-    /// \copydoc to_timestamp_ms
-    template<class T1 = year_t, class T2 = int>
-    TIME_SHIELD_CONSTEXPR inline const ts_ms_t timestamp_ms(
-            T1 year,
-            T2 month,
-            T2 day,
-            T2 hour  = 0,
-            T2 min   = 0,
-            T2 sec   = 0,
-            T2 ms    = 0) {
-        return to_timestamp_ms(year, month, day, hour, min, sec, ms);
-    }
-
 //------------------------------------------------------------------------------
 
     /// \ingroup time_structures
@@ -979,44 +750,9 @@ namespace time_shield {
         return sec_to_ms(dt_to_timestamp(date_time)) + date_time.ms;
     }
 
-    /// \ingroup time_structures
-    /// \brief Alias for dt_to_timestamp_ms function.
-    /// \copydoc dt_to_timestamp_ms
-    template<class T>
-    TIME_SHIELD_CONSTEXPR inline const ts_t to_timestamp_ms(
-            const T& date_time) {
-        return dt_to_timestamp_ms(date_time);
-    }
-
-    /// \ingroup time_structures
-    /// \brief Alias for dt_to_timestamp_ms function.
-    /// \copydoc dt_to_timestamp_ms
-    template<class T>
-    TIME_SHIELD_CONSTEXPR inline const ts_t to_ts_ms(
-            const T& date_time) {
-        return dt_to_timestamp_ms(date_time);
-    }
-
-    /// \ingroup time_structures
-    /// \brief Alias for dt_to_timestamp_ms function.
-    /// \copydoc dt_to_timestamp_ms
-    template<class T>
-    TIME_SHIELD_CONSTEXPR inline const ts_t ts_ms(
-            const T& date_time) {
-        return dt_to_timestamp_ms(date_time);
-    }
-
-    /// \ingroup time_structures
-    /// \brief Alias for dt_to_timestamp_ms function.
-    /// \copydoc dt_to_timestamp_ms
-    template<class T>
-    TIME_SHIELD_CONSTEXPR inline const ts_t timestamp_ms(
-            const T& date_time) {
-        return dt_to_timestamp_ms(date_time);
-    }
-
 //------------------------------------------------------------------------------
 
+    /// \ingroup time_structures
     /// \brief Converts a std::tm structure to a timestamp in milliseconds.
     ///
     /// This function converts a given std::tm structure to a timestamp in milliseconds,
@@ -1027,34 +763,6 @@ namespace time_shield {
     TIME_SHIELD_CONSTEXPR inline const ts_t tm_to_timestamp_ms(
             const std::tm *timeinfo) {
         return sec_to_ms(tm_to_timestamp(timeinfo));
-    }
-
-    /// \brief Alias for tm_to_timestamp_ms function.
-    /// \copydoc tm_to_timestamp_ms
-    TIME_SHIELD_CONSTEXPR inline const ts_t to_timestamp_ms(
-            const std::tm *timeinfo) {
-        return tm_to_timestamp_ms(timeinfo);
-    }
-
-    /// \brief Alias for tm_to_timestamp_ms function.
-    /// \copydoc tm_to_timestamp_ms
-    TIME_SHIELD_CONSTEXPR inline const ts_t to_ts_ms(
-            const std::tm *timeinfo) {
-        return tm_to_timestamp_ms(timeinfo);
-    }
-
-    /// \brief Alias for tm_to_timestamp_ms function.
-    /// \copydoc tm_to_timestamp_ms
-    TIME_SHIELD_CONSTEXPR inline const ts_t ts_ms(
-            const std::tm *timeinfo) {
-        return tm_to_timestamp_ms(timeinfo);
-    }
-
-    /// \brief Alias for tm_to_timestamp_ms function.
-    /// \copydoc tm_to_timestamp_ms
-    TIME_SHIELD_CONSTEXPR inline const ts_t timestamp_ms(
-            const std::tm *timeinfo) {
-        return tm_to_timestamp_ms(timeinfo);
     }
 
 //------------------------------------------------------------------------------
@@ -1090,48 +798,6 @@ namespace time_shield {
             static_cast<fts_t>(ms)/static_cast<fts_t>(MS_PER_SEC);
     }
 
-    /// \brief Alias for to_ftimestamp function.
-    /// \copydoc to_ftimestamp
-    template<class T1 = year_t, class T2 = int, class T3 = int>
-    TIME_SHIELD_CONSTEXPR inline const fts_t to_fts(
-            T1 year,
-            T2 month,
-            T2 day,
-            T2 hour  = 0,
-            T2 min   = 0,
-            T2 sec   = 0,
-            T3 ms    = 0) {
-        return to_ftimestamp(year, month, day, hour, min, sec, ms);
-    }
-
-    /// \brief Alias for to_ftimestamp function.
-    /// \copydoc to_ftimestamp
-    template<class T1 = year_t, class T2 = int, class T3 = int>
-    TIME_SHIELD_CONSTEXPR inline const fts_t fts(
-            T1 year,
-            T2 month,
-            T2 day,
-            T2 hour  = 0,
-            T2 min   = 0,
-            T2 sec   = 0,
-            T3 ms    = 0) {
-        return to_ftimestamp(year, month, day, hour, min, sec, ms);
-    }
-
-    /// \brief Alias for to_ftimestamp function.
-    /// \copydoc to_ftimestamp
-    template<class T1 = year_t, class T2 = int, class T3 = int>
-    TIME_SHIELD_CONSTEXPR inline const fts_t ftimestamp(
-            T1 year,
-            T2 month,
-            T2 day,
-            T2 hour  = 0,
-            T2 min   = 0,
-            T2 sec   = 0,
-            T3 ms    = 0) {
-        return to_ftimestamp(year, month, day, hour, min, sec, ms);
-    }
-
 //------------------------------------------------------------------------------
 
     /// \ingroup time_structures
@@ -1152,42 +818,6 @@ namespace time_shield {
             static_cast<fts_t>(date_time.ms)/static_cast<fts_t>(MS_PER_SEC);
     }
 
-    /// \ingroup time_structures
-    /// \brief Alias for dt_to_ftimestamp function.
-    /// \copydoc dt_to_ftimestamp
-    template<class T>
-    TIME_SHIELD_CONSTEXPR inline const fts_t to_ftimestamp(
-            const T& date_time) {
-        return dt_to_ftimestamp(date_time);
-    }
-
-    /// \ingroup time_structures
-    /// \brief Alias for dt_to_ftimestamp function.
-    /// \copydoc dt_to_ftimestamp
-    template<class T>
-    TIME_SHIELD_CONSTEXPR inline const fts_t to_fts(
-            const T& date_time) {
-        return dt_to_ftimestamp(date_time);
-    }
-
-    /// \ingroup time_structures
-    /// \brief Alias for dt_to_ftimestamp function.
-    /// \copydoc dt_to_ftimestamp
-    template<class T>
-    TIME_SHIELD_CONSTEXPR inline const fts_t fts(
-            const T& date_time) {
-        return dt_to_ftimestamp(date_time);
-    }
-
-    /// \ingroup time_structures
-    /// \brief Alias for dt_to_ftimestamp function.
-    /// \copydoc dt_to_ftimestamp
-    template<class T>
-    TIME_SHIELD_CONSTEXPR inline const fts_t ftimestamp(
-            const T& date_time) {
-        return dt_to_ftimestamp(date_time);
-    }
-
 //------------------------------------------------------------------------------
 
     /// \brief Converts a std::tm structure to a floating-point timestamp.
@@ -1204,34 +834,6 @@ namespace time_shield {
         return static_cast<fts_t>(tm_to_timestamp(timeinfo));
     }
 
-    /// \brief Alias for tm_to_ftimestamp function.
-    /// \copydoc tm_to_ftimestamp
-    TIME_SHIELD_CONSTEXPR inline const fts_t to_ftimestamp(
-            const std::tm* timeinfo) {
-        return tm_to_ftimestamp(timeinfo);
-    }
-
-    /// \brief Alias for tm_to_ftimestamp function.
-    /// \copydoc tm_to_ftimestamp
-    TIME_SHIELD_CONSTEXPR inline const fts_t to_fts(
-            const std::tm* timeinfo) {
-        return tm_to_ftimestamp(timeinfo);
-    }
-
-    /// \brief Alias for tm_to_ftimestamp function.
-    /// \copydoc tm_to_ftimestamp
-    TIME_SHIELD_CONSTEXPR inline const fts_t fts(
-            const std::tm* timeinfo) {
-        return tm_to_ftimestamp(timeinfo);
-    }
-
-    /// \brief Alias for tm_to_ftimestamp function.
-    /// \copydoc tm_to_ftimestamp
-    TIME_SHIELD_CONSTEXPR inline const fts_t ftimestamp(
-            const std::tm* timeinfo) {
-        return tm_to_ftimestamp(timeinfo);
-    }
-
 //------------------------------------------------------------------------------
 
     /// \brief Get UNIX day.
@@ -1242,41 +844,9 @@ namespace time_shield {
     /// \param ts Timestamp in seconds (default is current timestamp).
     /// \return Number of days since the UNIX epoch.
     template<class T = uday_t>
-    constexpr const T get_unix_day(ts_t ts = ts()) noexcept {
+    constexpr const T get_unix_day(ts_t ts = time_shield::ts()) noexcept {
         return ts / SEC_PER_DAY;
     }
-
-    /// \brief Alias for get_unix_day function.
-    /// \copydoc get_unix_day
-    template<class T = uday_t>
-    constexpr const T get_unixday(ts_t ts = ts()) noexcept {
-        return get_unix_day(ts);
-    }
-
-    /// \brief Alias for get_unix_day function.
-    /// \copydoc get_unix_day
-    template<class T = uday_t>
-    constexpr const T unix_day(ts_t ts = ts()) noexcept {
-        return get_unix_day(ts);
-    }
-
-    /// \brief Alias for get_unix_day function.
-    /// \copydoc get_unix_day
-    template<class T = uday_t>
-    constexpr const T unixday(ts_t ts = ts()) noexcept {
-        return get_unix_day(ts);
-    }
-
-    /// \brief Alias for get_unix_day function.
-    /// \copydoc get_unix_day
-    template<class T = uday_t>
-    constexpr const T uday(ts_t ts = ts()) noexcept {
-        return get_unix_day(ts);
-    }
-
-//------------------------------------------------------------------------------
-
-
 
 //------------------------------------------------------------------------------
 
@@ -1293,20 +863,6 @@ namespace time_shield {
         return (stop - start) / SEC_PER_DAY;
     }
 
-    /// \brief Alias for get_days_difference function.
-    /// \copydoc get_days_difference
-    template<class T = int>
-    constexpr const T get_days(ts_t start, ts_t stop) noexcept {
-        return get_days_difference(start, stop);
-    }
-
-    /// \brief Alias for get_days_difference function.
-    /// \copydoc get_days_difference
-    template<class T = int>
-    constexpr const T days(ts_t start, ts_t stop) noexcept {
-        return get_days_difference(start, stop);
-    }
-
 //------------------------------------------------------------------------------
 
     /// \brief Get UNIX day from milliseconds timestamp.
@@ -1317,36 +873,8 @@ namespace time_shield {
     /// \param t_ms Timestamp in milliseconds (default is current timestamp in milliseconds).
     /// \return Number of days since the UNIX epoch.
     template<class T = uday_t>
-    constexpr const T get_unix_day_ms(ts_ms_t t_ms = ts_ms()) noexcept {
+    constexpr const T get_unix_day_ms(ts_ms_t t_ms = time_shield::ts_ms()) noexcept {
         return get_unix_day(ms_to_sec(t_ms));
-    }
-
-    /// \brief Alias for get_unix_day_ms function.
-    /// \copydoc get_unix_day_ms
-    template<class T = uday_t>
-    constexpr const T get_unixday_ms(ts_ms_t t_ms = ts_ms()) noexcept {
-        return get_unix_day_ms(t_ms);
-    }
-
-    /// \brief Alias for get_unix_day_ms function.
-    /// \copydoc get_unix_day_ms
-    template<class T = uday_t>
-    constexpr const T unix_day_ms(ts_ms_t t_ms = ts_ms()) noexcept {
-        return get_unix_day_ms(t_ms);
-    }
-
-    /// \brief Alias for get_unix_day_ms function.
-    /// \copydoc get_unix_day_ms
-    template<class T = uday_t>
-    constexpr const T unixday_ms(ts_ms_t t_ms = ts_ms()) noexcept {
-        return get_unix_day_ms(t_ms);
-    }
-
-    /// \brief Alias for get_unix_day_ms function.
-    /// \copydoc get_unix_day_ms
-    template<class T = uday_t>
-    constexpr const T uday_ms(ts_ms_t t_ms = ts_ms()) noexcept {
-        return get_unix_day_ms(t_ms);
     }
 
 //------------------------------------------------------------------------------
@@ -1364,34 +892,8 @@ namespace time_shield {
         return unix_day * SEC_PER_DAY;
     }
 
-    /// \brief Alias for unix_day_to_timestamp function.
-    /// \copydoc unix_day_to_timestamp
-    template<class T = ts_t>
-    constexpr const T unix_day_to_ts(uday_t unix_day) noexcept {
-        return unix_day_to_timestamp(unix_day);
-    }
-
-    /// \brief Alias for unix_day_to_timestamp function.
-    /// \copydoc unix_day_to_timestamp
-    template<class T = ts_t>
-    constexpr const T unixday_to_ts(uday_t unix_day) noexcept {
-        return unix_day_to_timestamp(unix_day);
-    }
-
-    /// \brief Alias for unix_day_to_timestamp function.
-    /// \copydoc unix_day_to_timestamp
-    template<class T = ts_t>
-    constexpr const T uday_to_ts(uday_t unix_day) noexcept {
-        return unix_day_to_timestamp(unix_day);
-    }
-
-    /// \brief Alias for unix_day_to_timestamp function.
-    /// \copydoc unix_day_to_timestamp
-    template<class T = ts_t>
-    constexpr const T start_of_day_from_unix_day(uday_t unix_day) noexcept {
-        return unix_day_to_timestamp(unix_day);
-    }
-
+//------------------------------------------------------------------------------
+    
     /// \brief Converts a UNIX day to a timestamp in milliseconds.
     ///
     /// Converts a number of days since the UNIX epoch (January 1, 1970) to the corresponding timestamp
@@ -1403,34 +905,6 @@ namespace time_shield {
     template<class T = ts_t>
     constexpr const T unix_day_to_timestamp_ms(uday_t unix_day) noexcept {
         return unix_day * MS_PER_DAY;
-    }
-
-    /// \brief Alias for unix_day_to_timestamp_ms function.
-    /// \copydoc unix_day_to_timestamp_ms
-    template<class T = ts_t>
-    constexpr const T unix_day_to_ts_ms(uday_t unix_day) noexcept {
-        return unix_day_to_timestamp_ms(unix_day);
-    }
-
-    /// \brief Alias for unix_day_to_timestamp_ms function.
-    /// \copydoc unix_day_to_timestamp_ms
-    template<class T = ts_t>
-    constexpr const T unixday_to_ts_ms(uday_t unix_day) noexcept {
-        return unix_day_to_timestamp_ms(unix_day);
-    }
-
-    /// \brief Alias for unix_day_to_timestamp_ms function.
-    /// \copydoc unix_day_to_timestamp_ms
-    template<class T = ts_t>
-    constexpr const T uday_to_ts_ms(uday_t unix_day) noexcept {
-        return unix_day_to_timestamp_ms(unix_day);
-    }
-
-    /// \brief Alias for unix_day_to_timestamp_ms function.
-    /// \copydoc unix_day_to_timestamp_ms
-    template<class T = ts_t>
-    constexpr const T start_of_day_from_unix_day_ms(uday_t unix_day) noexcept {
-        return unix_day_to_timestamp_ms(unix_day);
     }
 
 //------------------------------------------------------------------------------
@@ -1487,48 +961,6 @@ namespace time_shield {
         return unix_day * MS_PER_DAY + MS_PER_DAY;
     }
 
-    /// \brief Alias for start_of_next_day_from_unix_day function.
-    /// \copydoc start_of_next_day_from_unix_day
-    template<class T = ts_t>
-    constexpr const T next_day_from_unix_day(uday_t unix_day) noexcept {
-        return start_of_next_day_from_unix_day(unix_day);
-    }
-
-    /// \brief Alias for start_of_next_day_from_unix_day function.
-    /// \copydoc start_of_next_day_from_unix_day
-    template<class T = ts_t>
-    constexpr const T next_day_unix_day(uday_t unix_day) noexcept {
-        return start_of_next_day_from_unix_day(unix_day);
-    }
-
-    /// \brief Alias for start_of_next_day_from_unix_day function.
-    /// \copydoc start_of_next_day_from_unix_day
-    template<class T = ts_t>
-    constexpr const T next_day_unixday(uday_t unix_day) noexcept {
-        return start_of_next_day_from_unix_day(unix_day);
-    }
-
-    /// \brief Alias for start_of_next_day_from_unix_day_ms function.
-    /// \copydoc start_of_next_day_from_unix_day_ms
-    template<class T = ts_ms_t>
-    constexpr const T next_day_from_unix_day_ms(uday_t unix_day) noexcept {
-        return start_of_next_day_from_unix_day_ms(unix_day);
-    }
-
-    /// \brief Alias for start_of_next_day_from_unix_day_ms function.
-    /// \copydoc start_of_next_day_from_unix_day_ms
-    template<class T = ts_ms_t>
-    constexpr const T next_day_unix_day_ms(uday_t unix_day) noexcept {
-        return start_of_next_day_from_unix_day_ms(unix_day);
-    }
-
-    /// \brief Alias for start_of_next_day_from_unix_day_ms function.
-    /// \copydoc start_of_next_day_from_unix_day_ms
-    template<class T = ts_ms_t>
-    constexpr const T next_day_unixday_ms(uday_t unix_day) noexcept {
-        return start_of_next_day_from_unix_day_ms(unix_day);
-    }
-
 //------------------------------------------------------------------------------
 
     /// \brief Get UNIX minute.
@@ -1541,27 +973,6 @@ namespace time_shield {
     template<class T = int64_t>
     constexpr const T get_unix_min(ts_t ts = ts()) {
         return ts / SEC_PER_MIN;
-    }
-
-    /// \brief Alias for get_unix_min function.
-    /// \copydoc get_unix_min
-    template<class T = int64_t>
-    constexpr const T unix_min(ts_t ts = ts()) {
-        return get_unix_min(ts);
-    }
-
-    /// \brief Alias for get_unix_min function.
-    /// \copydoc get_unix_min
-    template<class T = int64_t>
-    constexpr const T to_unix_min(ts_t ts = ts()) {
-        return get_unix_min(ts);
-    }
-
-    /// \brief Alias for get_unix_min function.
-    /// \copydoc get_unix_min
-    template<class T = int64_t>
-    constexpr const T umin(ts_t ts = ts()) {
-        return get_unix_min(ts);
     }
 
 //------------------------------------------------------------------------------
@@ -1646,20 +1057,6 @@ namespace time_shield {
         return get_unix_year(ts) + UNIX_EPOCH;
     }
 
-    /// \brief Alias for get_year function.
-    /// \copydoc get_year
-    template<class T = year_t>
-    TIME_SHIELD_CONSTEXPR inline const T year(ts_t ts = ts()) {
-        return get_year(ts);
-    }
-
-    /// \brief Alias for get_year function.
-    /// \copydoc get_year
-    template<class T = year_t>
-    TIME_SHIELD_CONSTEXPR inline const T to_year(ts_t ts = ts()) {
-        return get_year(ts);
-    }
-
 //------------------------------------------------------------------------------
 
     /// \brief Get the year from the timestamp in milliseconds.
@@ -1672,20 +1069,6 @@ namespace time_shield {
     template<class T = year_t>
     TIME_SHIELD_CONSTEXPR inline const T get_year_ms(ts_ms_t ts_ms = ts_ms()) {
         return get_year(ms_to_sec(ts_ms));
-    }
-
-    /// \brief Alias for get_year_ms function.
-    /// \copydoc get_year_ms
-    template<class T = year_t>
-    TIME_SHIELD_CONSTEXPR inline const T year_ms(ts_ms_t ts_ms = ts_ms()) {
-        return get_year_ms(ts_ms);
-    }
-
-    /// \brief Alias for get_year_ms function.
-    /// \copydoc get_year_ms
-    template<class T = year_t>
-    TIME_SHIELD_CONSTEXPR inline const T to_year_ms(ts_ms_t ts_ms = ts_ms()) {
-        return get_year_ms(ts_ms);
     }
 
 //------------------------------------------------------------------------------
@@ -1751,18 +1134,6 @@ namespace time_shield {
         return start_ts;
     }
 
-    /// \brief Alias for start_of_year function.
-    /// \copydoc start_of_year
-    TIME_SHIELD_CONSTEXPR inline const ts_t year_start(ts_t ts = ts()) {
-        return start_of_year(ts);
-    }
-
-    /// \brief Alias for start_of_year function.
-    /// \copydoc start_of_year
-    TIME_SHIELD_CONSTEXPR inline const ts_t year_begin(ts_t ts = ts()) {
-        return start_of_year(ts);
-    }
-
 //------------------------------------------------------------------------------
 
     /// \brief Get the start of the year timestamp in milliseconds.
@@ -1772,20 +1143,8 @@ namespace time_shield {
     ///
     /// \param ts_ms Timestamp in milliseconds.
     /// \return Start of year timestamp in milliseconds.
-    TIME_SHIELD_CONSTEXPR inline const ts_ms_t start_of_year_ms(ts_ms_t ts_ms = ts_ms()) noexcept {
+    TIME_SHIELD_CONSTEXPR inline const ts_ms_t start_of_year_ms(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
         return sec_to_ms(start_of_year(ms_to_sec(ts_ms)));
-    }
-
-    /// \brief Alias for start_of_year_ms function.
-    /// \copydoc start_of_year_ms
-    TIME_SHIELD_CONSTEXPR inline const ts_t year_start_ms(ts_t ts_ms = ts_ms()) {
-        return start_of_year_ms(ts_ms);
-    }
-
-    /// \brief Alias for start_of_year_ms function.
-    /// \copydoc start_of_year_ms
-    TIME_SHIELD_CONSTEXPR inline const ts_t year_begin_ms(ts_t ts_ms = ts_ms()) {
-        return start_of_year_ms(ts_ms);
     }
 
 //------------------------------------------------------------------------------
@@ -1816,20 +1175,6 @@ namespace time_shield {
         return to_timestamp(year, 1, 1);
     }
 
-    /// \brief Alias for start_of_year_date function.
-    /// \copydoc start_of_year_date
-    template<class T = year_t>
-    TIME_SHIELD_CONSTEXPR inline const ts_t year_start_date(T year) {
-        return start_of_year_date(year);
-    }
-
-    /// \brief Alias for start_of_year_date function.
-    /// \copydoc start_of_year_date
-    template<class T = year_t>
-    TIME_SHIELD_CONSTEXPR inline const ts_t year_begin_date(T year) {
-        return start_of_year_date(year);
-    }
-
 //------------------------------------------------------------------------------
 
     /// \brief Get the timestamp in milliseconds of the start of the year.
@@ -1844,20 +1189,6 @@ namespace time_shield {
         return sec_to_ms(start_of_year_date(year));
     }
 
-    /// \brief Alias for start_of_year_date_ms function.
-    /// \copydoc start_of_year_date_ms
-    template<class T = year_t>
-    TIME_SHIELD_CONSTEXPR inline const ts_ms_t year_start_date_ms(T year) {
-        return start_of_year_date_ms(year);
-    }
-
-    /// \brief Alias for start_of_year_date_ms function.
-    /// \copydoc start_of_year_date_ms
-    template<class T = year_t>
-    TIME_SHIELD_CONSTEXPR inline const ts_ms_t year_begin_date_ms(T year) {
-        return start_of_year_date_ms(year);
-    }
-
 //------------------------------------------------------------------------------
 
     /// \brief Get the end-of-year timestamp.
@@ -1866,7 +1197,7 @@ namespace time_shield {
     ///
     /// \param ts Timestamp.
     /// \return End-of-year timestamp.
-    TIME_SHIELD_CONSTEXPR inline ts_t end_of_year(ts_t ts = ts()) {
+    TIME_SHIELD_CONSTEXPR inline ts_t end_of_year(ts_t ts = time_shield::ts()) {
         constexpr ts_t BIAS_2100 = 4102444800;
         if (ts < BIAS_2100) {
             constexpr ts_t SEC_PER_YEAR_X2 = SEC_PER_YEAR * 2;
@@ -1925,12 +1256,6 @@ namespace time_shield {
         return end_ts - 1;
     }
 
-    /// \brief Alias for end_of_year function.
-    /// \copydoc end_of_year
-    TIME_SHIELD_CONSTEXPR inline const ts_t year_end(ts_t ts = ts()) {
-        return end_of_year(ts);
-    }
-
 //------------------------------------------------------------------------------
 
     /// \brief Get the timestamp in milliseconds of the end of the year.
@@ -1944,12 +1269,6 @@ namespace time_shield {
         return sec_to_ms(end_of_year(ms_to_sec(ts_ms)));
     }
 
-    /// \brief Alias for end_of_year_ms function.
-    /// \copydoc end_of_year_ms
-    TIME_SHIELD_CONSTEXPR inline const ts_ms_t year_end_ms(ts_ms_t ts_ms = ts_ms()) {
-        return end_of_year_ms(ts_ms);
-    }
-
 //------------------------------------------------------------------------------
 
     /// \brief Get the day of the year.
@@ -1959,7 +1278,7 @@ namespace time_shield {
     /// \param ts Timestamp.
     /// \return Day of the year.
     template<class T = int>
-    inline const T day_of_year(ts_t ts = ts()) {
+    inline const T day_of_year(ts_t ts = time_shield::ts()) {
         return ((ts - start_of_year(ts)) / SEC_PER_DAY) + 1;
     }
 
@@ -2002,7 +1321,7 @@ namespace time_shield {
     /// \param ts Timestamp.
     /// \return Day of the month.
     template<class T = int>
-    TIME_SHIELD_CONSTEXPR inline const T day_of_month(ts_t ts) {
+    TIME_SHIELD_CONSTEXPR inline const T day_of_month(ts_t ts = time_shield::ts()) {
         constexpr int JAN_AND_FEB_DAY_LEAP_YEAR = 60;
         // таблица для обычного года, не високосного
         constexpr int TABLE_DAY_OF_YEAR[] = {
@@ -2048,13 +1367,6 @@ namespace time_shield {
         return num_days[month];
     }
 
-    /// \brief Alias for num_days_in_month function.
-    /// \copydoc num_days_in_month
-    template<class T1 = int, class T2 = year_t, class T3 = int>
-    constexpr const T1 days_in_month(T2 year, T3 month) noexcept {
-        return num_days_in_month(year, month);
-    }
-
 //------------------------------------------------------------------------------
 
     /// \brief Get the number of days in the month of the given timestamp.
@@ -2064,27 +1376,13 @@ namespace time_shield {
     /// \param ts The timestamp to extract month and year from.
     /// \return The number of days in the month of the given timestamp.
     template<class T1 = int>
-    TIME_SHIELD_CONSTEXPR const T1 num_days_in_month_ts(ts_t ts = ts()) noexcept {
+    TIME_SHIELD_CONSTEXPR const T1 num_days_in_month_ts(ts_t ts = time_shield::ts()) noexcept {
         constexpr T1 num_days[13] = {0,31,28,31,30,31,30,31,31,30,31,30,31};
         const int month = month_of_year(ts);
         if (month == FEB) {
             return is_leap_year(ts) ? 29 : 28;
         }
         return num_days[month];
-    }
-
-    /// \brief Alias for num_days_in_month_ts function.
-    /// \copydoc num_days_in_month_ts
-    template<class T1 = int>
-    constexpr const T1 num_days_in_month(ts_t ts = ts()) noexcept {
-        return num_days_in_month_ts(ts);
-    }
-
-    /// \brief Alias for num_days_in_month_ts function.
-    /// \copydoc num_days_in_month_ts
-    template<class T1 = int>
-    constexpr const T1 days_in_month(ts_t ts = ts()) noexcept {
-        return num_days_in_month_ts(ts);
     }
 
 //------------------------------------------------------------------------------
@@ -2101,13 +1399,6 @@ namespace time_shield {
         return DAYS_PER_YEAR;
     }
 
-    /// \brief Alias for num_days_in_year function.
-    /// \copydoc num_days_in_year
-    template<class T1 = int, class T2 = year_t>
-    constexpr const T1 days_in_year(T2 year) noexcept {
-        return num_days_in_year(year);
-    }
-
 //------------------------------------------------------------------------------
 
     /// \brief Get the number of days in the current year.
@@ -2117,16 +1408,9 @@ namespace time_shield {
     /// \param ts Timestamp.
     /// \return Number of days in the current year.
     template<class T = int>
-    constexpr const T num_days_in_year_ts(ts_t ts = ts()) {
+    constexpr const T num_days_in_year_ts(ts_t ts = time_shield::ts()) {
         if (is_leap_year_ts(ts)) return DAYS_PER_LEAP_YEAR;
         return DAYS_PER_YEAR;
-    }
-
-    /// \brief Alias for num_days_in_year_ts function.
-    /// \copydoc num_days_in_year_ts
-    template<class T = int>
-    constexpr const T days_in_year_ts(ts_t ts = ts()) {
-        return num_days_in_year_ts(ts);
     }
 
 //------------------------------------------------------------------------------
@@ -2138,14 +1422,8 @@ namespace time_shield {
     ///
     /// \param ts Timestamp.
     /// \return Start of the day timestamp.
-    constexpr const ts_t start_of_day(ts_t ts = ts()) noexcept {
+    constexpr const ts_t start_of_day(ts_t ts = time_shield::ts()) noexcept {
         return ts - (ts % SEC_PER_DAY);
-    }
-
-    /// \brief Alias for start_of_day function.
-    /// \copydoc start_of_day
-    constexpr const ts_t day_start(ts_t ts = ts()) noexcept {
-        return start_of_day(ts);
     }
 
 //------------------------------------------------------------------------------
@@ -2158,15 +1436,8 @@ namespace time_shield {
     /// \param days Number of days to go back (default is 1).
     /// \return Timestamp of the start of the previous day.
     template<class T = int>
-    constexpr const ts_t start_of_prev_day(ts_t ts = ts(), T days = 1) noexcept {
+    constexpr const ts_t start_of_prev_day(ts_t ts = time_shield::ts(), T days = 1) noexcept {
         return ts - (ts % SEC_PER_DAY) - SEC_PER_DAY * days;
-    }
-
-    /// \brief Alias for start_of_prev_day function.
-    /// \copydoc start_of_prev_day
-    template<class T = int>
-    constexpr const ts_t previous_day_start(ts_t ts = ts(), T days = 1) noexcept {
-        return start_of_prev_day(ts, days);
     }
 
 //------------------------------------------------------------------------------
@@ -2178,14 +1449,8 @@ namespace time_shield {
     ///
     /// \param ts_ms Timestamp in milliseconds.
     /// \return Start of the day timestamp in seconds.
-    constexpr const ts_t start_of_day_sec(ts_ms_t ts_ms = ts_ms()) noexcept {
+    constexpr const ts_t start_of_day_sec(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
         return start_of_day(ms_to_sec(ts_ms));
-    }
-
-    /// \brief Alias for start_of_day_sec function.
-    /// \copydoc start_of_day_sec
-    constexpr const ts_t day_start_sec(ts_ms_t ts_ms = ts_ms()) noexcept {
-        return start_of_day_sec(ts_ms);
     }
 
 //------------------------------------------------------------------------------
@@ -2197,14 +1462,8 @@ namespace time_shield {
     ///
     /// \param ts_ms Timestamp in milliseconds.
     /// \return Start of the day timestamp in milliseconds.
-    constexpr const ts_ms_t start_of_day_ms(ts_ms_t ts_ms = ts_ms()) noexcept {
+    constexpr const ts_ms_t start_of_day_ms(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
         return ts_ms - (ts_ms % MS_PER_DAY);
-    }
-
-    /// \brief Alias for start_of_day_ms function.
-    /// \copydoc start_of_day_ms
-    constexpr const ts_ms_t day_start_ms(ts_ms_t ts_ms = ts_ms()) noexcept {
-        return start_of_day_ms(ts_ms);
     }
 
 //------------------------------------------------------------------------------
@@ -2222,13 +1481,6 @@ namespace time_shield {
         return start_of_day(ts) + days * SEC_PER_DAY;
     }
 
-    /// \brief Alias for start_of_next_day function.
-    /// \copydoc start_of_next_day
-    template<class T = int>
-    constexpr const ts_t next_day_start(ts_t ts, T days = 1) noexcept {
-        return start_of_next_day(ts, days);
-    }
-
 //------------------------------------------------------------------------------
 
     /// \brief Get the timestamp of the start of the day after a specified number of days.
@@ -2242,13 +1494,6 @@ namespace time_shield {
     template<class T = int>
     constexpr const ts_ms_t start_of_next_day_ms(ts_ms_t ts_ms, T days = 1) noexcept {
         return start_of_day_ms(ts_ms) + days * MS_PER_DAY;
-    }
-
-    /// \brief Alias for start_of_next_day_ms function.
-    /// \copydoc start_of_next_day_ms
-    template<class T = int>
-    constexpr const ts_ms_t next_day_start_ms(ts_ms_t ts_ms, T days = 1) noexcept {
-        return start_of_next_day_ms(ts_ms, days);
     }
 
 //------------------------------------------------------------------------------
@@ -2285,14 +1530,8 @@ namespace time_shield {
     ///
     /// \param ts Timestamp.
     /// \return Timestamp at the end of the day.
-    constexpr const ts_t end_of_day(const ts_t& ts = ts()) noexcept {
+    constexpr const ts_t end_of_day(const ts_t& ts = time_shield::ts()) noexcept {
         return ts - (ts % SEC_PER_DAY) + SEC_PER_DAY - 1;
-    }
-
-    /// \brief Alias for end_of_day function.
-    /// \copydoc end_of_day
-    constexpr const ts_t day_end(const ts_t& ts = ts()) noexcept {
-        return end_of_day(ts);
     }
 
 //------------------------------------------------------------------------------
@@ -2303,14 +1542,8 @@ namespace time_shield {
     ///
     /// \param ts_ms Timestamp in milliseconds.
     /// \return Timestamp at the end of the day in seconds.
-    constexpr const ts_t end_of_day_sec(ts_ms_t ts_ms = ts_ms()) noexcept {
+    constexpr const ts_t end_of_day_sec(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
         return end_of_day(ms_to_sec(ts_ms));
-    }
-
-    /// \brief Alias for end_of_day_sec function.
-    /// \copydoc end_of_day_sec
-    constexpr const ts_t day_end_sec(ts_ms_t ts_ms = ts_ms()) noexcept {
-        return end_of_day_sec(ts_ms);
     }
 
 //------------------------------------------------------------------------------
@@ -2321,45 +1554,29 @@ namespace time_shield {
     ///
     /// \param ts_ms Timestamp in milliseconds.
     /// \return Timestamp at the end of the day in milliseconds.
-    constexpr const ts_ms_t end_of_day_ms(ts_ms_t ts_ms = ts_ms()) noexcept {
+    constexpr const ts_ms_t end_of_day_ms(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
         return ts_ms - (ts_ms % MS_PER_DAY) + MS_PER_DAY - 1;
-    }
-
-    /// \brief Alias for end_of_day_ms function.
-    /// \copydoc end_of_day_ms
-    constexpr const ts_ms_t day_end_ms(ts_ms_t ts_ms = ts_ms()) noexcept {
-        return end_of_day_ms(ts_ms);
     }
 
 //------------------------------------------------------------------------------
 
     /// \brief Get the day of the week.
+    /// \tparam T1 Return type (default: Weekday).
+    /// \tparam T2 Year type.
+    /// \tparam T3 Month type.
+    /// \tparam T4 Day type.
     /// \param year Year.
-    /// \param month Month of the year.
-    /// \param day Day of the month.
+    /// \param month Month.
+    /// \param day Day.
     /// \return Day of the week (SUN = 0, MON = 1, ... SAT = 6).
-    template<class T1 = Weekday, class T2 = year_t, class T3 = int>
-    constexpr const T1 day_of_week_date(T2 year, T3 month, T3 day) {
+    template<class T1 = Weekday, class T2 = year_t, class T3 = int, class T4 = int>
+    constexpr const T1 day_of_week_date(T2 year, T3 month, T4 day) {
         year_t a, y, m, R;
         a = (14 - month) / MONTHS_PER_YEAR;
         y = year - a;
         m = month + MONTHS_PER_YEAR * a - 2;
         R = 7000 + ( day + y + (y / 4) - (y / 100) + (y / 400) + (31 * m) / MONTHS_PER_YEAR);
         return static_cast<T1>(R % DAYS_PER_WEEK);
-    }
-
-    /// \brief Alias for day_of_week_date function.
-    /// \copydoc day_of_week_date
-    template<class T1 = Weekday, class T2 = year_t, class T3 = int>
-    constexpr const T1 get_weekday(T2 year, T3 month, T3 day) {
-        return day_of_week_date(year, month, day);
-    }
-
-    /// \brief Alias for day_of_week_date function.
-    /// \copydoc day_of_week_date
-    template<class T1 = Weekday, class T2 = year_t, class T3 = int>
-    constexpr const T1 day_of_week(T2 year, T3 month, T3 day) {
-        return day_of_week_date(year, month, day);
     }
 
 //------------------------------------------------------------------------------
@@ -2377,22 +1594,6 @@ namespace time_shield {
         return day_of_week_date(date.year, date.mon, date.day);
     }
 
-    /// \ingroup time_structures
-    /// \brief Alias for get_weekday_from_date function that accepts a date structure.
-    /// \copydoc get_weekday_from_date
-    template<class T1 = int, class T2>
-    constexpr const T1 day_of_week_dt(const T2& date) {
-        return get_weekday_from_date(date);
-    }
-
-    /// \ingroup time_structures
-    /// \brief Alias for get_weekday_from_date function that accepts a date structure.
-    /// \copydoc get_weekday_from_date
-    template<class T1 = int, class T2>
-    constexpr const T1 day_of_week(const T2& date) {
-        return get_weekday_from_date(date);
-    }
-
 //------------------------------------------------------------------------------
 
     /// \brief Get the weekday from a timestamp.
@@ -2401,13 +1602,6 @@ namespace time_shield {
     template<class T = Weekday>
     constexpr const T get_weekday_from_ts(ts_t ts) noexcept {
         return static_cast<T>((ts / SEC_PER_DAY + THU) % DAYS_PER_WEEK);
-    }
-
-    /// \brief Alias for get_weekday_from_ts function.
-    /// \copydoc get_weekday_from_ts
-    template<class T = Weekday>
-    constexpr const T day_of_week(ts_t ts) noexcept {
-        return get_weekday_from_ts(ts);
     }
 
 //------------------------------------------------------------------------------
@@ -2420,13 +1614,6 @@ namespace time_shield {
         return get_weekday_from_ts(ms_to_sec(ts_ms));
     }
 
-    /// \brief Alias for get_weekday_from_ts_ms function.
-    /// \copydoc get_weekday_from_ts_ms
-    template<class T = Weekday>
-    constexpr const T day_of_week_ms(const ts_ms_t& ts_ms) {
-        return get_weekday_from_ts_ms(ts_ms);
-    }
-
 //------------------------------------------------------------------------------
 
     /// \brief Get the timestamp at the start of the current month.
@@ -2436,14 +1623,8 @@ namespace time_shield {
     ///
     /// \param ts Timestamp (default is current timestamp)
     /// \return Timestamp at the start of the current month
-    TIME_SHIELD_CONSTEXPR inline const ts_t start_of_month(ts_t ts = ts()) {
+    TIME_SHIELD_CONSTEXPR inline const ts_t start_of_month(ts_t ts = time_shield::ts()) {
         return start_of_day(ts) - (day_of_month(ts) - 1) * SEC_PER_DAY;
-    }
-
-    /// \brief Alias for start_of_month function.
-    /// \copydoc start_of_month
-    TIME_SHIELD_CONSTEXPR inline const ts_t month_begin(ts_t ts = ts()) {
-        return start_of_month(ts);
     }
 
 //------------------------------------------------------------------------------
@@ -2455,14 +1636,8 @@ namespace time_shield {
     ///
     /// \param ts Timestamp (default is current timestamp)
     /// \return Last timestamp of the current month
-    TIME_SHIELD_CONSTEXPR inline const ts_t end_of_month(ts_t ts = ts()) {
-        return end_of_day(ts) + (num_days_in_month(ts) - day_of_month(ts)) * SEC_PER_DAY;
-    }
-
-    /// \brief Alias for end_of_month function.
-    /// \copydoc end_of_month
-    TIME_SHIELD_CONSTEXPR inline const ts_t last_day_of_month(ts_t ts = ts()) {
-        return end_of_month(ts);
+    TIME_SHIELD_CONSTEXPR inline const ts_t end_of_month(ts_t ts = time_shield::ts()) {
+        return end_of_day(ts) + (num_days_in_month_ts(ts) - day_of_month(ts)) * SEC_PER_DAY;
     }
 
 //------------------------------------------------------------------------------
@@ -2474,14 +1649,8 @@ namespace time_shield {
     ///
     /// \param ts Timestamp (default is current timestamp)
     /// \return Timestamp of the last Sunday of the current month
-    TIME_SHIELD_CONSTEXPR inline const ts_t last_sunday_of_month(ts_t ts = ts()) {
-        return end_of_month(ts) - day_of_week(ts) * SEC_PER_DAY;
-    }
-
-    /// \brief Alias for last_sunday_of_month function.
-    /// \copydoc last_sunday_of_month
-    TIME_SHIELD_CONSTEXPR inline const ts_t final_sunday_of_month(ts_t ts = ts()) {
-        return last_sunday_of_month(ts);
+    TIME_SHIELD_CONSTEXPR inline ts_t last_sunday_of_month(ts_t ts = time_shield::ts()) {
+        return end_of_month(ts) - get_weekday_from_ts(ts) * SEC_PER_DAY;
     }
 
 //------------------------------------------------------------------------------
@@ -2499,13 +1668,6 @@ namespace time_shield {
         return days - day_of_week_date(year, month, days);
     }
 
-    /// \brief Alias for last_sunday_month_day function.
-    /// \copydoc last_sunday_month_day
-    template<class T1 = int, class T2 = year_t, class T3 = int>
-    TIME_SHIELD_CONSTEXPR inline const T1 final_sunday_month_day(T2 year, T3 month) {
-        return last_sunday_month_day(year, month);
-    }
-
 //------------------------------------------------------------------------------
 
     /// \brief Get the timestamp at the start of the hour.
@@ -2514,14 +1676,8 @@ namespace time_shield {
     ///
     /// \param ts Timestamp (default: current timestamp).
     /// \return Timestamp at the start of the hour.
-    constexpr const ts_t start_of_hour(ts_t ts = ts()) noexcept {
+    constexpr const ts_t start_of_hour(ts_t ts = time_shield::ts()) noexcept {
         return ts - (ts % SEC_PER_HOUR);
-    }
-
-    /// \brief Alias for start_of_hour function.
-    /// \copydoc start_of_hour
-    constexpr const ts_t hour_begin(ts_t ts = ts()) noexcept {
-        return start_of_hour(ts);
     }
 
 //------------------------------------------------------------------------------
@@ -2532,14 +1688,8 @@ namespace time_shield {
     ///
     /// \param ts_ms Timestamp in milliseconds (default: current timestamp in milliseconds).
     /// \return Timestamp at the start of the hour in seconds.
-    constexpr const ts_t start_of_hour_sec(ts_ms_t ts_ms = ts_ms()) noexcept {
+    constexpr const ts_t start_of_hour_sec(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
         return start_of_hour(ms_to_sec(ts_ms));
-    }
-
-    /// \brief Alias for start_of_hour_sec function.
-    /// \copydoc start_of_hour_sec
-    constexpr const ts_t hour_begin_sec(ts_ms_t ts_ms = ts_ms()) noexcept {
-        return start_of_hour_sec(ts_ms);
     }
 
 //------------------------------------------------------------------------------
@@ -2548,14 +1698,8 @@ namespace time_shield {
     /// This function sets the minute and second to zero.
     /// \param ts_ms Timestamp in milliseconds (default: current timestamp in milliseconds).
     /// \return Timestamp at the start of the hour in milliseconds.
-    constexpr const ts_ms_t start_of_hour_ms(ts_ms_t ts_ms = ts_ms()) noexcept {
+    constexpr const ts_ms_t start_of_hour_ms(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
         return ts_ms - (ts_ms % MS_PER_HOUR);
-    }
-
-    /// \brief Alias for start_of_hour_ms function.
-    /// \copydoc start_of_hour_ms
-    constexpr const ts_ms_t hour_begin_ms(ts_ms_t ts_ms = ts_ms()) noexcept {
-        return start_of_hour_ms(ts_ms);
     }
 
 //------------------------------------------------------------------------------
@@ -2564,14 +1708,8 @@ namespace time_shield {
     /// This function sets the minute and second to 59.
     /// \param ts Timestamp (default: current timestamp).
     /// \return Timestamp at the end of the hour.
-    constexpr const ts_t end_of_hour(ts_t ts = ts()) noexcept {
+    constexpr const ts_t end_of_hour(ts_t ts = time_shield::ts()) noexcept {
         return ts - (ts % SEC_PER_HOUR) + SEC_PER_HOUR - 1;
-    }
-
-    /// \brief Alias for end_of_hour function.
-    /// \copydoc end_of_hour
-    constexpr const ts_t finish_of_hour(ts_t ts = ts()) noexcept {
-        return end_of_hour(ts);
     }
 
 //------------------------------------------------------------------------------
@@ -2582,14 +1720,8 @@ namespace time_shield {
     ///
     /// \param ts_ms Timestamp in milliseconds (default: current timestamp in milliseconds).
     /// \return Timestamp at the end of the hour in seconds.
-    constexpr const ts_t end_of_hour_sec(ts_ms_t ts_ms = ts_ms()) noexcept {
+    constexpr const ts_t end_of_hour_sec(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
         return end_of_hour(ms_to_sec(ts_ms));
-    }
-
-    /// \brief Alias for end_of_hour_sec function.
-    /// \copydoc end_of_hour_sec
-    constexpr const ts_t finish_of_hour_sec(ts_ms_t ts_ms = ts_ms()) noexcept {
-        return end_of_hour_sec(ts_ms);
     }
 
 //------------------------------------------------------------------------------
@@ -2600,14 +1732,8 @@ namespace time_shield {
     ///
     /// \param ts_ms Timestamp in milliseconds (default: current timestamp in milliseconds).
     /// \return Timestamp at the end of the hour in milliseconds.
-    constexpr const ts_ms_t end_of_hour_ms(ts_ms_t ts_ms = ts_ms()) noexcept {
+    constexpr const ts_ms_t end_of_hour_ms(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
         return ts_ms - (ts_ms % MS_PER_HOUR) + MS_PER_HOUR - 1;
-    }
-
-    /// \brief Alias for end_of_hour_ms function.
-    /// \copydoc end_of_hour_ms
-    constexpr const ts_ms_t finish_of_hour_ms(ts_ms_t ts_ms = ts_ms()) noexcept {
-        return end_of_hour_ms(ts_ms);
     }
 
 //------------------------------------------------------------------------------
@@ -2619,15 +1745,8 @@ namespace time_shield {
     /// \param ts Timestamp (default: current timestamp).
     /// \return Hour of the day.
     template<class T = int>
-    constexpr const T hour_of_day(ts_t ts = ts()) noexcept {
+    constexpr const T hour_of_day(ts_t ts = time_shield::ts()) noexcept {
         return ((ts / SEC_PER_HOUR) % HOURS_PER_DAY);
-    }
-
-    /// \brief Alias for hour_of_day function.
-    /// \copydoc hour_of_day
-    template<class T = int>
-    constexpr const T hour_in_day(ts_t ts = ts()) noexcept {
-        return hour_of_day(ts);
     }
 
 //------------------------------------------------------------------------------
@@ -2639,14 +1758,8 @@ namespace time_shield {
     ///
     /// \param ts Timestamp (default: current timestamp).
     /// \return Returns the timestamp of the beginning of the week.
-    constexpr const ts_t start_of_week(ts_t ts = ts()) {
-        return start_of_day(ts) - day_of_week(ts) * SEC_PER_DAY;
-    }
-
-    /// \brief Alias for start_of_week function.
-    /// \copydoc start_of_week
-    constexpr const ts_t week_begin(ts_t ts = ts()) {
-        return start_of_week(ts);
+    constexpr const ts_t start_of_week(ts_t ts = time_shield::ts()) {
+        return start_of_day(ts) - get_weekday_from_ts(ts) * SEC_PER_DAY;
     }
 
 //------------------------------------------------------------------------------
@@ -2658,14 +1771,8 @@ namespace time_shield {
     ///
     /// \param ts Timestamp (default: current timestamp).
     /// \return Returns the timestamp of the end of the week.
-    constexpr const ts_t end_of_week(ts_t ts = ts()) {
-        return start_of_day(ts) + (DAYS_PER_WEEK - day_of_week(ts)) * SEC_PER_DAY - 1;
-    }
-
-    /// \brief Alias for end_of_week function.
-    /// \copydoc end_of_week
-    constexpr const ts_t finish_of_week(ts_t ts = ts()) {
-        return end_of_week(ts);
+    constexpr const ts_t end_of_week(ts_t ts = time_shield::ts()) {
+        return start_of_day(ts) + (DAYS_PER_WEEK - get_weekday_from_ts(ts)) * SEC_PER_DAY - 1;
     }
 
 //------------------------------------------------------------------------------
@@ -2677,14 +1784,8 @@ namespace time_shield {
     ///
     /// \param ts Timestamp (default: current timestamp).
     /// \return Returns the timestamp of the start of Saturday.
-    constexpr const ts_t start_of_saturday(ts_t ts = ts()) {
-        return start_of_day(ts) + (SAT - day_of_week(ts)) * SEC_PER_DAY;
-    }
-
-    /// \brief Alias for start_of_saturday function.
-    /// \copydoc start_of_saturday
-    constexpr const ts_t saturday_begin(ts_t ts = ts()) {
-        return start_of_saturday(ts);
+    constexpr const ts_t start_of_saturday(ts_t ts = time_shield::ts()) {
+        return start_of_day(ts) + (SAT - get_weekday_from_ts(ts)) * SEC_PER_DAY;
     }
 
 //------------------------------------------------------------------------------
@@ -2692,14 +1793,8 @@ namespace time_shield {
     /// \brief Get the timestamp of the beginning of the minute.
     /// \param ts Timestamp (default: current timestamp).
     /// \return Returns the timestamp of the beginning of the minute.
-    constexpr const ts_t start_of_min(ts_t ts = ts()) noexcept {
+    constexpr const ts_t start_of_min(ts_t ts = time_shield::ts()) noexcept {
         return ts - (ts % SEC_PER_MIN);
-    }
-
-    /// \brief Alias for start_of_min function.
-    /// \copydoc start_of_min
-    constexpr const ts_t min_begin(ts_t ts = ts()) noexcept {
-        return start_of_min(ts);
     }
 
 //------------------------------------------------------------------------------
@@ -2707,14 +1802,8 @@ namespace time_shield {
     /// \brief Get the timestamp of the end of the minute.
     /// \param ts Timestamp (default: current timestamp).
     /// \return Returns the timestamp of the end of the minute.
-    constexpr const ts_t end_of_min(ts_t ts = ts()) noexcept {
+    constexpr const ts_t end_of_min(ts_t ts = time_shield::ts()) noexcept {
         return ts - (ts % SEC_PER_MIN) + SEC_PER_MIN - 1;
-    }
-
-    /// \brief Alias for end_of_min function.
-    /// \copydoc end_of_min
-    constexpr const ts_t finish_of_min(ts_t ts = ts()) noexcept {
-        return end_of_min(ts);
     }
 
 //------------------------------------------------------------------------------
@@ -2724,7 +1813,7 @@ namespace time_shield {
     /// \param ts Timestamp in seconds (default: current timestamp).
     /// \return Minute of day.
     template<class T = int>
-    constexpr const T min_of_day(ts_t ts = ts()) noexcept {
+    constexpr const T min_of_day(ts_t ts = time_shield::ts()) noexcept {
         return ((ts / SEC_PER_MIN) % MIN_PER_DAY);
     }
 
@@ -2735,7 +1824,7 @@ namespace time_shield {
     /// \param ts Timestamp in seconds (default: current timestamp).
     /// \return Minute of hour.
     template<class T = int>
-    constexpr const T min_of_hour(ts_t ts = ts()) noexcept {
+    constexpr const T min_of_hour(ts_t ts = time_shield::ts()) noexcept {
         return ((ts / SEC_PER_MIN) % MIN_PER_HOUR);
     }
 
@@ -2746,7 +1835,7 @@ namespace time_shield {
     /// \param ts Timestamp (default: current timestamp).
     /// \return Returns the timestamp of the start of the period.
     template<class T = int>
-    constexpr const ts_t start_of_period(T p, ts_t ts = ts()) {
+    constexpr const ts_t start_of_period(T p, ts_t ts = time_shield::ts()) {
         return ts - (ts % p);
     }
 
@@ -2757,7 +1846,7 @@ namespace time_shield {
     /// \param ts Timestamp (default: current timestamp).
     /// \return Returns the timestamp of the end of the period.
     template<class T = int>
-    constexpr const ts_t end_of_period(T p, ts_t ts = ts()) {
+    constexpr const ts_t end_of_period(T p, ts_t ts = time_shield::ts()) {
         return ts - (ts % p) + p - 1;
     }
 
@@ -2781,5 +1870,7 @@ namespace time_shield {
 /// \}
 
 }; // namespace time_shield
+
+#include "time_conversion_aliases.hpp"
 
 #endif // _TIME_SHIELD_TIME_CONVERSIONS_HPP_INCLUDED

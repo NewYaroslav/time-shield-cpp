@@ -3,6 +3,11 @@
 cmake_minimum_required(VERSION 3.18)
 project(time_shield LANGUAGES CXX)
 
+if(NOT DEFINED CMAKE_CXX_STANDARD)
+    set(CMAKE_CXX_STANDARD 11)
+endif()
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 # Пути к инклудам и библиотекам
 set(PROJECT_INCLUDE_DIRS
     ${CMAKE_CURRENT_SOURCE_DIR}/include/time_shield_cpp
@@ -30,12 +35,17 @@ foreach(example_src ${EXAMPLES_SOURCES})
     target_link_directories(${example_name} PRIVATE ${PROJECT_LIBRARY_DIRS})
     target_compile_definitions(${example_name} PRIVATE ${PROJECT_DEFINES})
     target_link_libraries(${example_name} PRIVATE ${PROJECT_LIBS})
-	
-	# Добавляем заголовочные файлы в IDE-представление цели
-	set_source_files_properties(${PROJECT_HEADERS} PROPERTIES HEADER_FILE_ONLY ON)
+    
+    # Только под Windows: линковка с ws2_32 для NtpClient
+    if(WIN32)
+        target_link_libraries(${example_name} PRIVATE ws2_32)
+    endif()
+    
+    # Добавляем заголовки как SOURCES (чтобы IDE показывала их)
+    set_source_files_properties(${PROJECT_HEADERS} PROPERTIES HEADER_FILE_ONLY ON)
     target_sources(${example_name} PRIVATE ${PROJECT_HEADERS})
-	
-	foreach(dll ${DLL_FILES})
+    
+    foreach(dll ${DLL_FILES})
         add_custom_command(TARGET ${example_name} POST_BUILD
             COMMAND ${CMAKE_COMMAND} -E copy_if_different
             "${dll}"

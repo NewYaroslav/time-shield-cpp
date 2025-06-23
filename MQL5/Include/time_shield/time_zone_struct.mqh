@@ -47,8 +47,7 @@ namespace time_shield {
 
     //----------------------------------------------------------------------
 
-    /// \ingroup time_structures
-    /// \ingroup time_conversions
+    /// \ingroup time_structures_time_conversions
     /// \brief Converts an integer offset to a `TimeZoneStruct`.
     /// \param offset The integer offset in seconds to convert.
     /// \return A `TimeZoneStruct` represented by the given offset.
@@ -60,8 +59,7 @@ namespace time_shield {
        return create_time_zone_struct(hour, min, is_positive);
     }
 
-    /// \ingroup time_structures
-    /// \ingroup time_conversions
+    /// \ingroup time_structures_time_conversions
     /// \brief Alias for `to_time_zone_struct`.
     /// \copydoc to_time_zone_struct
     TimeZoneStruct to_tz(const int offset) {
@@ -70,8 +68,7 @@ namespace time_shield {
 
     //----------------------------------------------------------------------
 
-    /// \ingroup time_structures
-    /// \ingroup time_formatting
+    /// \ingroup time_structures_time_formatting
     /// \brief Converts a `TimeZoneStruct` to a string representation.
     /// \param tz The `TimeZoneStruct` to convert.
     /// \return A string representation like "+03:00" or "-05:30".
@@ -87,16 +84,14 @@ namespace time_shield {
        return result;
     }
 
-    /// \ingroup time_structures
-    /// \ingroup time_formatting
+    /// \ingroup time_structures_time_formatting
     /// \brief Alias for `time_zone_struct_to_string`.
     /// \copydoc time_zone_struct_to_string
     string to_string(const TimeZoneStruct &tz) {
        return time_zone_struct_to_string(tz);
     }
 
-    /// \ingroup time_structures
-    /// \ingroup time_formatting
+    /// \ingroup time_structures_time_formatting
     /// \brief Alias for `time_zone_struct_to_string`.
     /// \copydoc time_zone_struct_to_string
     string to_str(const TimeZoneStruct &tz) {
@@ -105,8 +100,7 @@ namespace time_shield {
 
     //----------------------------------------------------------------------
 
-    /// \ingroup time_structures
-    /// \ingroup time_conversions
+    /// \ingroup time_structures_time_conversions
     /// \brief Converts a `TimeZoneStruct` to a single integer offset.
     /// \param tz The `TimeZoneStruct` to convert.
     /// \return An integer representing the offset in seconds.
@@ -115,14 +109,14 @@ namespace time_shield {
        return sign * (tz.hour * SEC_PER_HOUR + tz.min * SEC_PER_MIN);
     }
 
-    /// \ingroup time_conversions
+    /// \ingroup time_structures_time_conversions
     /// \brief Alias for `time_zone_struct_to_offset`.
     /// \copydoc time_zone_struct_to_offset
     int tz_to_offset(const TimeZoneStruct &tz) {
        return time_zone_struct_to_offset(tz);
     }
 
-    /// \ingroup time_conversions
+    /// \ingroup time_structures_time_conversions
     /// \brief Alias for `time_zone_struct_to_offset`.
     /// \copydoc time_zone_struct_to_offset
     int to_offset(const TimeZoneStruct &tz) {

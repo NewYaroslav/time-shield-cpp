@@ -47,6 +47,8 @@ int main() {
     std::cout << "day_of_week_date(2024, JUN, 21): "
               << static_cast<int>(day_of_week_date(2024, Month::JUN, 21)) << '\n';
 
+    std::cout << "Press Enter to exit..." << std::endl;
+    std::cin.get();
     return 0;
 }
 #else

@@ -42,6 +42,9 @@ int main() {
               << std::endl;
 
     std::cout << "Offset (us): " << offset_us << std::endl;
+    
+    std::cout << "Press Enter to exit..." << std::endl;
+    std::cin.get();
     return 0;
 }
 

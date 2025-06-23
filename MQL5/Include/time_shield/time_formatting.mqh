@@ -26,15 +26,14 @@
 
 namespace time_shield {
 
-    /// \defgroup time_formatting Time Formatting
-    /// \brief Utility functions for formatting timestamps.
+    /// \ingroup time_formatting
     /// \{
 
-   /// \brief Internal helper to pad integer with leading zeros.
-   /// \param value Integer value to pad.
-   /// \param width Desired width of the number.
-   /// \return String with left-padded digits.
-   string pad_int(int value, int width) {
+    /// \brief Internal helper to pad integer with leading zeros.
+    /// \param value Integer value to pad.
+    /// \param width Desired width of the number.
+    /// \return String with left-padded digits.
+    string pad_int(int value, int width) {
        string s = IntegerToString(value);
        while(StringLen(s) < width)
           s = "0" + s;

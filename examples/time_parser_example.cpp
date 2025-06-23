@@ -49,6 +49,8 @@ int main() {
     Month mon = get_month_number<Month>("March");
     std::cout << "Month number for March: " << static_cast<int>(mon) << '\n';
 
+    std::cout << "Press Enter to exit..." << std::endl;
+    std::cin.get();
     return 0;
 }
 #else

@@ -5,6 +5,7 @@
 /// \file time_zone_conversions.hpp
 /// \brief Helpers for converting CET/EET timestamps to GMT.
 
+#include "date_time_struct.hpp"
 #include "time_conversions.hpp"
 
 namespace time_shield {

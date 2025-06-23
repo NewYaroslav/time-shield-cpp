@@ -26,6 +26,9 @@ int main() {
 
     std::cout << "CPU time used: " << get_cpu_time() << " s" << '\n';
     std::cout << "Realtime (us) via QPC: " << now_realtime_us() << '\n';
+    
+    std::cout << "Press Enter to exit..." << std::endl;
+    std::cin.get();
     return 0;
 }
 #else

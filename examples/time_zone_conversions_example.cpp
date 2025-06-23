@@ -26,6 +26,9 @@ int main() {
 
     std::cout << "EET time: " << to_iso8601(eet_ts) << '\n';
     std::cout << "GMT from EET: " << to_iso8601(gmt_from_eet) << '\n';
+    
+    std::cout << "Press Enter to exit..." << std::endl;
+    std::cin.get();
     return 0;
 }
 #else

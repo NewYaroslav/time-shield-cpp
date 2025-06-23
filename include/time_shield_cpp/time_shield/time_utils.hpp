@@ -8,6 +8,8 @@
 /// This file contains various functions used for time calculations and conversions.
 
 #include "config.hpp"
+#include "types.hpp"
+#include "constants.hpp"
 
 #include <limits>       // For std::numeric_limits
 #include <ctime>        // For clock_t and timespec (POSIX)
@@ -40,7 +42,7 @@ namespace time_shield {
 #       endif
         return ts;
     }
-	
+    
     /// \ingroup time_utils
     /// \brief Get current real time in microseconds using a hybrid method.
     ///
@@ -51,7 +53,7 @@ namespace time_shield {
     /// \return Current UTC timestamp in microseconds.
     /// \note Windows only. Not available on Unix-like systems.
     inline int64_t now_realtime_us() {
-#	if defined(_WIN32)
+#   if defined(_WIN32)
         static std::once_flag init_flag;
         static int64_t s_perf_freq = 0;
         static int64_t s_anchor_perf = 0;
@@ -81,9 +83,9 @@ namespace time_shield {
         int64_t delta_us = (delta_ticks * 1000000) / s_perf_freq;
 
         return s_anchor_realtime_us + delta_us;
-#	else
-#		error "now_realtime_us() is only supported on Windows."
-#	endif
+#   else
+#       error "now_realtime_us() is only supported on Windows."
+#   endif
     }
 
     /// \ingroup time_utils

@@ -445,20 +445,21 @@ Key Features:</h3>
 </ul>
 <h3><a class="anchor" id="autotoc_md3"></a>
 Example Usage:</h3>
-<div class="fragment"><div class="line"><span class="keyword">auto</span> weekday = time_shield::Weekday::MON;</div>
-<div class="line">std::cout &lt;&lt; <a class="code hl_function" href="#gadabbcdd686f20fd99f925027729ae341">time_shield::to_cstr</a>(weekday, time_shield::FormatType::FULL_NAME); <span class="comment">// &quot;Monday&quot;</span></div>
+<div class="fragment"><div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="group__time__conversions.html#ga32b1e644b3b2d7fd90248908e2286252">weekday</a> = time_shield::Weekday::MON;</div>
+<div class="line">std::cout &lt;&lt; <a class="code hl_function" href="#gadabbcdd686f20fd99f925027729ae341">time_shield::to_cstr</a>(<a class="code hl_function" href="group__time__conversions.html#ga32b1e644b3b2d7fd90248908e2286252">weekday</a>, time_shield::FormatType::FULL_NAME); <span class="comment">// &quot;Monday&quot;</span></div>
+<div class="ttc" id="agroup__time__conversions_html_ga32b1e644b3b2d7fd90248908e2286252"><div class="ttname"><a href="group__time__conversions.html#ga32b1e644b3b2d7fd90248908e2286252">time_shield::weekday</a></div><div class="ttdeci">constexpr const T1 weekday(year_t year, int month, int day)</div><div class="ttdoc">Alias for day_of_week_date.</div><div class="ttdef"><b>Definition</b> <a href="time__conversion__aliases_8hpp_source.html#l01733">time_conversion_aliases.hpp:1733</a></div></div>
 <div class="ttc" id="agroup__time__enums_html_gadabbcdd686f20fd99f925027729ae341"><div class="ttname"><a href="#gadabbcdd686f20fd99f925027729ae341">time_shield::to_cstr</a></div><div class="ttdeci">const char * to_cstr(Weekday value, FormatType format=UPPERCASE_NAME)</div><div class="ttdoc">Converts a Weekday enum value to a string.</div><div class="ttdef"><b>Definition</b> <a href="enums_8hpp_source.html#l00056">enums.hpp:56</a></div></div>
 </div><!-- fragment --><p>This group contains various enums that represent time-related concepts such as weekdays, months, time zones, and formatting options.</p>
-<h3><a class="anchor" id="autotoc_md16"></a>
+<h3><a class="anchor" id="autotoc_md12"></a>
 Key Features:</h3>
 <ul>
 <li>Defines enumerations for consistent handling of weekdays, months, and other time units.</li>
 <li>Provides utility functions for converting enum values to string representations.</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md17"></a>
+<h3><a class="anchor" id="autotoc_md13"></a>
 Example Usage:</h3>
-<div class="fragment"><div class="line"><a class="code hl_enumeration" href="#gadf684443100352064316f6134bbe44f8">Weekday</a> weekday = <a class="code hl_enumvalue" href="#ggadf684443100352064316f6134bbe44f8a5b11118a7636fdc29afca49294441398">MON</a>;</div>
-<div class="line">Print(<a class="code hl_function" href="#ga29763e675c720ecce12688dea1d6fee0">time_shield::to_str</a>(weekday, FormatType::FULL_NAME)); <span class="comment">// &quot;Monday&quot;</span></div>
+<div class="fragment"><div class="line"><a class="code hl_enumeration" href="#gadf684443100352064316f6134bbe44f8">Weekday</a> <a class="code hl_function" href="group__time__conversions.html#ga32b1e644b3b2d7fd90248908e2286252">weekday</a> = <a class="code hl_enumvalue" href="#ggadf684443100352064316f6134bbe44f8a5b11118a7636fdc29afca49294441398">MON</a>;</div>
+<div class="line">Print(<a class="code hl_function" href="#ga29763e675c720ecce12688dea1d6fee0">time_shield::to_str</a>(<a class="code hl_function" href="group__time__conversions.html#ga32b1e644b3b2d7fd90248908e2286252">weekday</a>, FormatType::FULL_NAME)); <span class="comment">// &quot;Monday&quot;</span></div>
 <div class="ttc" id="agroup__time__enums_html_ga29763e675c720ecce12688dea1d6fee0"><div class="ttname"><a href="#ga29763e675c720ecce12688dea1d6fee0">time_shield::to_str</a></div><div class="ttdeci">const std::string &amp; to_str(Weekday value, FormatType format=UPPERCASE_NAME)</div><div class="ttdoc">Converts a Weekday enum value to a string.</div><div class="ttdef"><b>Definition</b> <a href="enums_8hpp_source.html#l00082">enums.hpp:82</a></div></div>
 <div class="ttc" id="agroup__time__enums_html_gadf684443100352064316f6134bbe44f8"><div class="ttname"><a href="#gadf684443100352064316f6134bbe44f8">time_shield::Weekday</a></div><div class="ttdeci">Weekday</div><div class="ttdoc">Enumeration of the days of the week.</div><div class="ttdef"><b>Definition</b> <a href="enums_8hpp_source.html#l00041">enums.hpp:41</a></div></div>
 <div class="ttc" id="agroup__time__enums_html_ggadf684443100352064316f6134bbe44f8a5b11118a7636fdc29afca49294441398"><div class="ttname"><a href="#ggadf684443100352064316f6134bbe44f8a5b11118a7636fdc29afca49294441398">time_shield::MON</a></div><div class="ttdeci">@ MON</div><div class="ttdoc">Monday.</div><div class="ttdef"><b>Definition</b> <a href="enums_8hpp_source.html#l00043">enums.hpp:43</a></div></div>

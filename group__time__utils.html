@@ -184,26 +184,26 @@ Functions</h2></td></tr>
 <p>Utility functions for working with timestamps and time components. </p>
 <p>A collection of utility functions for working with timestamps and time components.</p>
 <p>This module provides functions for obtaining the current timestamps in various formats (e.g., seconds, milliseconds, microseconds, floating-point seconds) and extracting sub-second components such as nanoseconds, microseconds, and milliseconds.</p>
-<h3><a class="anchor" id="autotoc_md20"></a>
+<h3><a class="anchor" id="autotoc_md16"></a>
 Key Features:</h3>
 <ul>
 <li>Obtain current UTC timestamps in seconds, milliseconds, and microseconds.</li>
 <li>Support for floating-point and integer timestamp formats.</li>
 <li>Extract nanoseconds, microseconds, and milliseconds from the current second.</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md21"></a>
+<h3><a class="anchor" id="autotoc_md17"></a>
 Usage Examples:</h3>
 <ul>
 <li>Get the current timestamp in seconds: <div class="fragment"><div class="line"><a class="code hl_typedef" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">time_shield::ts_t</a> current_time = <a class="code hl_function" href="#ga1d1c996fff6a55bf6a064991fec1f819">time_shield::ts</a>();</div>
 <div class="ttc" id="agroup__time__types_html_ga183c70b9c541a395d47690a82cdad282"><div class="ttname"><a href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">time_shield::ts_t</a></div><div class="ttdeci">int64_t ts_t</div><div class="ttdoc">Type for representing timestamps in seconds.</div><div class="ttdef"><b>Definition</b> <a href="types_8hpp_source.html#l00034">types.hpp:34</a></div></div>
-<div class="ttc" id="agroup__time__utils_html_ga1d1c996fff6a55bf6a064991fec1f819"><div class="ttname"><a href="#ga1d1c996fff6a55bf6a064991fec1f819">time_shield::ts</a></div><div class="ttdeci">const ts_t ts() noexcept</div><div class="ttdoc">Get the current UTC timestamp in seconds.</div><div class="ttdef"><b>Definition</b> <a href="time__utils_8hpp_source.html#l00121">time_utils.hpp:121</a></div></div>
+<div class="ttc" id="agroup__time__utils_html_ga1d1c996fff6a55bf6a064991fec1f819"><div class="ttname"><a href="#ga1d1c996fff6a55bf6a064991fec1f819">time_shield::ts</a></div><div class="ttdeci">const ts_t ts() noexcept</div><div class="ttdoc">Get the current UTC timestamp in seconds.</div><div class="ttdef"><b>Definition</b> <a href="time__utils_8hpp_source.html#l00123">time_utils.hpp:123</a></div></div>
 </div><!-- fragment --></li>
 <li>Get the millisecond part of the current second: <div class="fragment"><div class="line"><span class="keywordtype">int</span> ms = <a class="code hl_function" href="#gae799b7ae8a36ae788cbc832789542628">time_shield::ms_of_sec</a>();</div>
-<div class="ttc" id="agroup__time__utils_html_gae799b7ae8a36ae788cbc832789542628"><div class="ttname"><a href="#gae799b7ae8a36ae788cbc832789542628">time_shield::ms_of_sec</a></div><div class="ttdeci">const T ms_of_sec() noexcept</div><div class="ttdoc">Get the millisecond part of the current second.</div><div class="ttdef"><b>Definition</b> <a href="time__utils_8hpp_source.html#l00114">time_utils.hpp:114</a></div></div>
+<div class="ttc" id="agroup__time__utils_html_gae799b7ae8a36ae788cbc832789542628"><div class="ttname"><a href="#gae799b7ae8a36ae788cbc832789542628">time_shield::ms_of_sec</a></div><div class="ttdeci">const T ms_of_sec() noexcept</div><div class="ttdoc">Get the millisecond part of the current second.</div><div class="ttdef"><b>Definition</b> <a href="time__utils_8hpp_source.html#l00116">time_utils.hpp:116</a></div></div>
 </div><!-- fragment --></li>
 <li>Get the current timestamp in milliseconds: <div class="fragment"><div class="line"><a class="code hl_typedef" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">time_shield::ts_ms_t</a> current_time_ms = <a class="code hl_function" href="#gaaa261ef6a082be5820665e8136f885ae">time_shield::ts_ms</a>();</div>
 <div class="ttc" id="agroup__time__types_html_ga4f03438f0a251af75f1ac8eaa3a9eaad"><div class="ttname"><a href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">time_shield::ts_ms_t</a></div><div class="ttdeci">int64_t ts_ms_t</div><div class="ttdoc">Type for representing timestamps in milliseconds.</div><div class="ttdef"><b>Definition</b> <a href="types_8hpp_source.html#l00035">types.hpp:35</a></div></div>
-<div class="ttc" id="agroup__time__utils_html_gaaa261ef6a082be5820665e8136f885ae"><div class="ttname"><a href="#gaaa261ef6a082be5820665e8136f885ae">time_shield::ts_ms</a></div><div class="ttdeci">const ts_ms_t ts_ms() noexcept</div><div class="ttdoc">Get the current UTC timestamp in milliseconds.</div><div class="ttdef"><b>Definition</b> <a href="time__utils_8hpp_source.html#l00153">time_utils.hpp:153</a></div></div>
+<div class="ttc" id="agroup__time__utils_html_gaaa261ef6a082be5820665e8136f885ae"><div class="ttname"><a href="#gaaa261ef6a082be5820665e8136f885ae">time_shield::ts_ms</a></div><div class="ttdeci">const ts_ms_t ts_ms() noexcept</div><div class="ttdoc">Get the current UTC timestamp in milliseconds.</div><div class="ttdef"><b>Definition</b> <a href="time__utils_8hpp_source.html#l00155">time_utils.hpp:155</a></div></div>
 </div><!-- fragment --> </li>
 </ul>
 <h2 class="groupheader">Function Documentation</h2>
@@ -233,8 +233,7 @@ Usage Examples:</h3>
 <p>Get the current UTC timestamp in floating-point seconds. </p>
 <p>Alias for <a class="el" href="#gad6e2af7c1ddd04c8f8f170c329b4e492" title="Get the current UTC timestamp in floating-point seconds.">fts()</a>.</p>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f" title="Type for representing timestamps as floating-point numbers (e.g., fractional seconds).">fts_t</a> Current UTC timestamp in floating-point seconds.</dd></dl>
-<p>Alias for to_ftimestamp function.   </p>
-<p>Converts a date and time to a floating-point timestamp.   </p>
+<p>Alias for to_ftimestamp.   </p>
 <p>This function converts a given date and time to a floating-point timestamp, which is the number of seconds (with fractional milliseconds) since the Unix epoch (January 1, 1970).</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
@@ -259,12 +258,13 @@ Usage Examples:</h3>
 <dl class="section return"><dt>Returns</dt><dd>Floating-point timestamp representing the given date and time. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">std::invalid_argument</td><td>if the date-time combination is invalid.       </td></tr>
+    <tr><td class="paramname">std::invalid_argument</td><td>if the date-time combination is invalid. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__time__conversions.html#ga8c817a893ff5c3d26cd59cedb0e3eb96" title="Alias for dt_to_ftimestamp.">to_ftimestamp</a>    </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00145">145</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00147">147</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
 
 </div>
 </div>
@@ -296,7 +296,7 @@ Usage Examples:</h3>
 <dd>
 Current UTC timestamp in floating-point seconds. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00137">137</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00139">139</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
 
 </div>
 </div>
@@ -328,7 +328,7 @@ Current UTC timestamp in floating-point seconds. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>This function attempts multiple fallback methods depending on platform capabilities. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://habr.com/ru/articles/282301/">https://habr.com/ru/articles/282301/</a> — original implementation idea </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00195">195</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00197">197</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
 
 </div>
 </div>
@@ -358,7 +358,7 @@ Current UTC timestamp in floating-point seconds. </dd></dl>
 <p>Get the current timespec. </p>
 <dl class="section return"><dt>Returns</dt><dd>struct timespec The current timespec. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00033">33</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00035">35</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
 
 </div>
 </div>
@@ -440,7 +440,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>T Millisecond part of the current second. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00114">114</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00116">116</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
 
 </div>
 </div>
@@ -470,8 +470,7 @@ template&lt;class T = int&gt; </div>
 <p>Get the current UTC timestamp in milliseconds. </p>
 <p>Alias for <a class="el" href="#gaaa261ef6a082be5820665e8136f885ae" title="Get the current UTC timestamp in milliseconds.">ts_ms()</a>.</p>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Type for representing timestamps in milliseconds.">ts_ms_t</a> Current UTC timestamp in milliseconds.</dd></dl>
-<p>Alias for to_timestamp_ms function.   </p>
-<p>Converts a date and time to a timestamp in milliseconds.   </p>
+<p>Alias for to_timestamp_ms.   </p>
 <p>This function converts a given date and time to a timestamp in milliseconds, which is the number of milliseconds since the Unix epoch (January 1, 1970).</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
@@ -485,22 +484,19 @@ template&lt;class T = int&gt; </div>
     <tr><td class="paramname">year</td><td>The year value. </td></tr>
     <tr><td class="paramname">month</td><td>The month value. </td></tr>
     <tr><td class="paramname">day</td><td>The day value. </td></tr>
-    <tr><td class="paramname">hour</td><td>The hour value (default is 0). </td></tr>
-    <tr><td class="paramname">min</td><td>The minute value (default is 0). </td></tr>
-    <tr><td class="paramname">sec</td><td>The second value (default is 0). </td></tr>
-    <tr><td class="paramname">ms</td><td>The millisecond value (default is 0). </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Timestamp in milliseconds representing the given date and time. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">std::invalid_argument</td><td>if the date-time combination is invalid.       </td></tr>
+    <tr><td class="paramname">std::invalid_argument</td><td>if the date-time combination is invalid. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__time__conversions.html#ga118c41fd06d0dc45c0c5137cb5522d12" title="Alias for dt_to_timestamp_ms function.">to_timestamp_ms</a>    </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00169">169</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00171">171</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
 
 </div>
 </div>
@@ -532,7 +528,7 @@ template&lt;class T = int&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>Current UTC timestamp in microseconds. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>Windows only. Not available on Unix-like systems. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00053">53</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00055">55</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
 
 </div>
 </div>
@@ -592,7 +588,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>T Nanosecond part of the current second. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00094">94</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00096">96</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
 
 </div>
 </div>
@@ -622,36 +618,27 @@ template&lt;class T = int&gt; </div>
 <p>Get the current UTC timestamp in seconds. </p>
 <p>Alias for <a class="el" href="#ga1d1c996fff6a55bf6a064991fec1f819" title="Get the current UTC timestamp in seconds.">ts()</a>.</p>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Type for representing timestamps in seconds.">ts_t</a> Current UTC timestamp in seconds.</dd></dl>
-<p>Alias for to_timestamp function.   </p>
-<p>Converts a date and time to a timestamp.   </p>
+<p>Alias for to_timestamp.   </p>
 <p>This function converts a given date and time to a timestamp, which is the number of seconds since the Unix epoch (January 1, 1970).</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T1</td><td>The type of the year parameter (default is int64_t). </td></tr>
-    <tr><td class="paramname">T2</td><td>The type of the other date and time parameters (default is int). </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>If the <code>day</code> is ≥ 1970 and <code>year</code> ≤ 31, parameters are assumed to be in DD-MM-YYYY order and are automatically reordered.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">year</td><td>The year value. </td></tr>
     <tr><td class="paramname">month</td><td>The month value. </td></tr>
     <tr><td class="paramname">day</td><td>The day value. </td></tr>
-    <tr><td class="paramname">hour</td><td>The hour value (default is 0). </td></tr>
-    <tr><td class="paramname">min</td><td>The minute value (default is 0). </td></tr>
-    <tr><td class="paramname">sec</td><td>The second value (default is 0). </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Timestamp representing the given date and time. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">std::invalid_argument</td><td>if the date-time combination is invalid.       </td></tr>
+    <tr><td class="paramname">std::invalid_argument</td><td>if the date-time combination is invalid. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__time__conversions.html#gadd9cd995456125a88691f306dd259ead" title="Alias for dt_to_timestamp function.">to_timestamp</a>    </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00129">129</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00131">131</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
 
 </div>
 </div>
@@ -681,8 +668,7 @@ template&lt;class T = int&gt; </div>
 <p>Get the current UTC timestamp in milliseconds. </p>
 <p>Alias for <a class="el" href="#gaaa261ef6a082be5820665e8136f885ae" title="Get the current UTC timestamp in milliseconds.">ts_ms()</a>.</p>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Type for representing timestamps in milliseconds.">ts_ms_t</a> Current UTC timestamp in milliseconds.</dd></dl>
-<p>Alias for to_timestamp_ms function.   </p>
-<p>Converts a date and time to a timestamp in milliseconds.   </p>
+<p>Alias for to_timestamp_ms.   </p>
 <p>This function converts a given date and time to a timestamp in milliseconds, which is the number of milliseconds since the Unix epoch (January 1, 1970).</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
@@ -696,22 +682,19 @@ template&lt;class T = int&gt; </div>
     <tr><td class="paramname">year</td><td>The year value. </td></tr>
     <tr><td class="paramname">month</td><td>The month value. </td></tr>
     <tr><td class="paramname">day</td><td>The day value. </td></tr>
-    <tr><td class="paramname">hour</td><td>The hour value (default is 0). </td></tr>
-    <tr><td class="paramname">min</td><td>The minute value (default is 0). </td></tr>
-    <tr><td class="paramname">sec</td><td>The second value (default is 0). </td></tr>
-    <tr><td class="paramname">ms</td><td>The millisecond value (default is 0). </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Timestamp in milliseconds representing the given date and time. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">std::invalid_argument</td><td>if the date-time combination is invalid.       </td></tr>
+    <tr><td class="paramname">std::invalid_argument</td><td>if the date-time combination is invalid. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__time__conversions.html#ga118c41fd06d0dc45c0c5137cb5522d12" title="Alias for dt_to_timestamp_ms function.">to_timestamp_ms</a>    </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00161">161</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00163">163</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
 
 </div>
 </div>
@@ -746,7 +729,7 @@ template&lt;class T = int&gt; </div>
 <dd>
 Current UTC timestamp in microseconds.    </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00185">185</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00187">187</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
 
 </div>
 </div>
@@ -778,7 +761,7 @@ Current UTC timestamp in microseconds.    </dd></dl>
 <dd>
 Current UTC timestamp in seconds. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00121">121</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00123">123</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
 
 </div>
 </div>
@@ -810,7 +793,7 @@ Current UTC timestamp in seconds. </dd></dl>
 <dd>
 Current UTC timestamp in milliseconds. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00153">153</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00155">155</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
 
 </div>
 </div>
@@ -842,7 +825,7 @@ Current UTC timestamp in milliseconds. </dd></dl>
 <dd>
 Current UTC timestamp in microseconds. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00177">177</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00179">179</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
 
 </div>
 </div>
@@ -902,7 +885,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>T Microsecond part of the current second. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00104">104</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00106">106</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
 
 </div>
 </div>

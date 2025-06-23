@@ -1,9 +1,9 @@
 var group__time__formatting =
 [
+    [ "Time structure formatting", "group__time__structures__time__formatting.html", "group__time__structures__time__formatting" ],
     [ "time_shield::pad_int", "group__time__formatting.html#gaf59471e03315a3af0033f2d816ad3320", null ],
     [ "time_shield::process_format_impl", "group__time__formatting.html#ga4d804fd113939339058f7940cd4c0b80", null ],
     [ "time_shield::process_format_impl", "group__time__formatting.html#ga7628b1cb7b3cfad10ae6c8a673504eb1", null ],
-    [ "time_shield::time_zone_struct_to_string", "group__time__formatting.html#ga7debd74ce9fc5a6371749b8aefba0817", null ],
     [ "time_shield::to_human_readable", "group__time__formatting.html#ga9c3b567d4309ef41bee267c65a4751a2", null ],
     [ "time_shield::to_human_readable", "group__time__formatting.html#ga9d28f8d6f987ba844902415fbec3951e", null ],
     [ "time_shield::to_human_readable_ms", "group__time__formatting.html#ga25caff850939d355e489d12ce70e7745", null ],
@@ -36,12 +36,10 @@ var group__time__formatting =
     [ "time_shield::to_mql5_time", "group__time__formatting.html#ga93c56957d81ab53062a73b4c5a1e58e2", null ],
     [ "time_shield::to_str", "group__time__formatting.html#ga252c4a847a5c9681e76b33020fe101d3", null ],
     [ "time_shield::to_str", "group__time__formatting.html#gac73d7385384e46a5f1267ac132c63106", null ],
-    [ "time_shield::to_str", "group__time__formatting.html#ga9bb2597d3210bcfc33d527812859d2ee", null ],
     [ "time_shield::to_str_ms", "group__time__formatting.html#ga9af5b5811bb191ed1ba80fccbf444fc9", null ],
     [ "time_shield::to_str_ms", "group__time__formatting.html#ga08d9a356e402f16f9ea6d1a0b7370b53", null ],
     [ "time_shield::to_string", "group__time__formatting.html#ga1481063d4a73a5de0746416e139da3f1", null ],
     [ "time_shield::to_string", "group__time__formatting.html#gac0d4e818715f31c78cfda262cc93a1f8", null ],
-    [ "time_shield::to_string", "group__time__formatting.html#gad5f9a170d6b3f3330f7a71819490c25f", null ],
     [ "time_shield::to_string_ms", "group__time__formatting.html#gad5d0140a5f043109db7a738edff5cb53", null ],
     [ "time_shield::to_string_ms", "group__time__formatting.html#gafd0f5f37fe1eb38cbd5036228f5dbcb4", null ],
     [ "time_shield::to_windows_filename", "group__time__formatting.html#ga4b19daf28e595d15e2f5cd89fa73c9b3", null ],

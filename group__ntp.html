@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Time Shield Library: include/time_shield_cpp/time_shield/ntp_client/wsa_guard.hpp File Reference</title>
+<title>Time Shield Library: NTP Client</title>
 <link rel="icon" href="icon-64x64.png" type="image/x-icon" />
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -82,7 +82,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){initNavTree('wsa__guard_8hpp.html',''); initResizable(true); });
+$(function(){initNavTree('group__ntp.html',''); initResizable(true); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -109,66 +109,54 @@ $(function(){initNavTree('wsa__guard_8hpp.html',''); initResizable(true); });
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#define-members">Macros</a>  </div>
-  <div class="headertitle"><div class="title">wsa_guard.hpp File Reference<div class="ingroups"><a class="el" href="group__ntp.html">NTP Client</a></div></div></div>
+<a href="#files">Files</a> &#124;
+<a href="#nested-classes">Classes</a>  </div>
+  <div class="headertitle"><div class="title">NTP Client</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Singleton guard for WinSock initialization.  
+<p>Facilities for retrieving time using the Network Time Protocol.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;winsock2.h&gt;</code><br />
-<code>#include &lt;windows.h&gt;</code><br />
-<code>#include &lt;mutex&gt;</code><br />
-<code>#include &lt;string&gt;</code><br />
-</div>
-<p><a href="wsa__guard_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ntp__client_8hpp.html">ntp_client.hpp</a></td></tr>
+<tr class="memdesc:ntp__client_8hpp"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple NTP client for querying time offset from NTP servers. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="wsa__guard_8hpp.html">wsa_guard.hpp</a></td></tr>
+<tr class="memdesc:wsa__guard_8hpp"><td class="mdescLeft">&#160;</td><td class="mdescRight">Singleton guard for WinSock initialization. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtime__shield_1_1WsaGuard.html">time_shield::WsaGuard</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Singleton guard for WinSock initialization.  <a href="classtime__shield_1_1WsaGuard.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetime__shield.html">time_shield</a></td></tr>
-<tr class="memdesc:namespacetime__shield"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main namespace for the Time Shield library. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:afa46a891d06d462572ef97005d15cf7a" id="r_afa46a891d06d462572ef97005d15cf7a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa46a891d06d462572ef97005d15cf7a">_TIME_SHIELD_WSA_GUARD_HPP_INCLUDED</a></td></tr>
-<tr class="separator:afa46a891d06d462572ef97005d15cf7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Singleton guard for WinSock initialization. </p>
-
-<p class="definition">Definition in file <a class="el" href="wsa__guard_8hpp_source.html">wsa_guard.hpp</a>.</p>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="afa46a891d06d462572ef97005d15cf7a" name="afa46a891d06d462572ef97005d15cf7a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afa46a891d06d462572ef97005d15cf7a">&#9670;&#160;</a></span>_TIME_SHIELD_WSA_GUARD_HPP_INCLUDED</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define _TIME_SHIELD_WSA_GUARD_HPP_INCLUDED</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="wsa__guard_8hpp_source.html#l00004">4</a> of file <a class="el" href="wsa__guard_8hpp_source.html">wsa_guard.hpp</a>.</p>
-
-</div>
-</div>
-</div><!-- contents -->
+<p>Facilities for retrieving time using the Network Time Protocol. </p>
+<p>This module contains a minimal client capable of querying remote NTP servers to measure the offset between local and network time. It uses WinSock via the <code>WsaGuard</code> helper and therefore works only on Windows.</p>
+<h3><a class="anchor" id="autotoc_md22"></a>
+Features:</h3>
+<ul>
+<li>Query NTP servers and obtain the time offset.</li>
+<li>Retrieve corrected UTC time in microseconds and milliseconds.</li>
+<li>Automatic WinSock initialization through <code>WsaGuard</code>.</li>
+<li>Requires network connectivity.</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md23"></a>
+Example Usage:</h3>
+<div class="fragment"><div class="line"><a class="code hl_class" href="classtime__shield_1_1NtpClient.html">time_shield::NtpClient</a> client;</div>
+<div class="line"><span class="keywordflow">if</span> (client.query()) {</div>
+<div class="line">    int64_t offset = client.get_offset_us();</div>
+<div class="line">    int64_t utc_ms = client.get_utc_time_ms();</div>
+<div class="line">}</div>
+<div class="ttc" id="aclasstime__shield_1_1NtpClient_html"><div class="ttname"><a href="classtime__shield_1_1NtpClient.html">time_shield::NtpClient</a></div><div class="ttdef"><b>Definition</b> <a href="ntp__client_8hpp_source.html#l00222">ntp_client.hpp:222</a></div></div>
+</div><!-- fragment --> </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_98bef1042d1384ad3e1c5f8c3a735170.html">time_shield_cpp</a></li><li class="navelem"><a class="el" href="dir_f4b727be33f4d7b127b14eefb7a683cc.html">time_shield</a></li><li class="navelem"><a class="el" href="dir_d99c526331f209916ab6a25034a251ea.html">ntp_client</a></li><li class="navelem"><a class="el" href="wsa__guard_8hpp.html">wsa_guard.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>

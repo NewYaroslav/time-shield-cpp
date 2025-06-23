@@ -10,7 +10,10 @@
 
 namespace time_shield {
 
-    /// \ingroup time_conversions
+    /// \ingroup time_zone_conversions
+    /// \{
+
+    /// \ingroup time_conversions_time_zone_conversions
     /// \brief Convert Central European Time to Greenwich Mean Time.
     /// \param cet Timestamp in seconds in CET.
     /// \return Timestamp in seconds in GMT.
@@ -83,13 +86,15 @@ namespace time_shield {
         return cet - SEC_PER_HOUR;
     }
 
-    /// \ingroup time_conversions
+    /// \ingroup time_conversions_time_zone_conversions
     /// \brief Convert Eastern European Time to Greenwich Mean Time.
     /// \param eet Timestamp in seconds in EET.
     /// \return Timestamp in seconds in GMT.
     inline const ts_t eet_to_gmt(ts_t eet) {
         return cet_to_gmt(eet - SEC_PER_HOUR);
     }
+
+    /// \}
 
 } // namespace time_shield
 

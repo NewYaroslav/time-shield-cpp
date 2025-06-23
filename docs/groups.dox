@@ -114,6 +114,22 @@ custom formats, ISO8601, and other standardized formats.
 */
 
 /*!
+\defgroup time_zone_conversions Time Zone Conversions
+\ingroup time_conversions
+\brief Helpers for converting regional time zones to GMT.
+
+These functions convert Central and Eastern European Time to Greenwich
+Mean Time. Daylight saving time rules before and after 2002 are taken
+into account, so conversions are accurate for legacy timestamps as well.
+
+### Example Usage:
+```cpp
+ts_t cet_ts = time_shield::to_ts(2024, Month::JUN, 21, 12, 0, 0);
+ts_t gmt_ts = time_shield::cet_to_gmt(cet_ts);
+```
+*/
+
+/*!
 \defgroup ntp NTP Client
 \brief Facilities for retrieving time using the Network Time Protocol.
 
@@ -135,6 +151,12 @@ if (client.query()) {
     int64_t utc_ms = client.get_utc_time_ms();
 }
 ```
+*/
+
+/*!
+\defgroup time_conversions_time_zone_conversions Time zone conversion helpers
+\ingroup time_conversions
+\ingroup time_zone_conversions
 */
 
 /*!

@@ -49,6 +49,11 @@ int main() {
     Month mon = get_month_number<Month>("March");
     std::cout << "Month number for March: " << static_cast<int>(mon) << '\n';
 
+    int sod;
+    if (sec_of_day("15:30:10", sod))
+        std::cout << "sec_of_day(\"15:30:10\"): " << sod << '\n';
+    std::cout << "sec_of_day(\"8:20\"): " << sec_of_day("8:20") << '\n';
+
     std::cout << "Press Enter to exit..." << std::endl;
     std::cin.get();
     return 0;

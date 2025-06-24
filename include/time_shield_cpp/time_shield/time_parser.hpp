@@ -19,6 +19,7 @@
 #include <locale>
 #include <array>
 #include <stdexcept>
+#include <sstream>
 
 namespace time_shield {
 
@@ -303,6 +304,61 @@ namespace time_shield {
         fts_t ts = 0;
         str_to_fts(str, ts);
         return ts;
+    }
+
+    //--------------------------------------------------------------------------
+
+    /// \brief Parse time of day string to seconds of day.
+    ///
+    /// Supported formats:
+    /// - HH:MM:SS
+    /// - HH:MM
+    /// - HH
+    ///
+    /// \tparam T Return type (default int).
+    /// \param str Time of day as string.
+    /// \param sec Parsed seconds of day on success.
+    /// \return True on successful parsing.
+    template<class T = int>
+    inline const bool sec_of_day(const std::string& str, T& sec) {
+        if (str.empty()) return false;
+
+        int hour = 0, minute = 0, second = 0;
+        std::istringstream ss(str);
+        std::string part;
+        int idx = 0;
+        while (std::getline(ss, part, ':') && idx < 3) {
+            if (part.empty()) return false;
+            int val = std::stoi(part);
+            if (idx == 0) hour = val;
+            else if (idx == 1) minute = val;
+            else second = val;
+            ++idx;
+        }
+        if (idx == 0) return false;
+        if (hour < 0 || hour >= 24 || minute < 0 || minute >= 60 || second < 0 || second >= 60)
+            return false;
+
+        sec = static_cast<T>(sec_of_day(hour, minute, second));
+        return true;
+    }
+
+    /// \brief Convert time of day string to seconds of day.
+    ///
+    /// Supported formats:
+    /// - HH:MM:SS
+    /// - HH:MM
+    /// - HH
+    ///
+    /// \tparam T Return type (default int).
+    /// \param str Time of day as string.
+    /// \return Parsed seconds of day or SEC_PER_DAY if parsing fails.
+    template<class T = int>
+    inline const T sec_of_day(const std::string& str) {
+        T value{};
+        if (sec_of_day(str, value))
+            return value;
+        return static_cast<T>(SEC_PER_DAY);
     }
 
 

@@ -8,6 +8,7 @@ var time__parser_8mqh =
     [ "time_shield::parse_iso8601", "group__time__parsing.html#ga55e40e10101293f4e93a36f10164a228", null ],
     [ "time_shield::parse_time_zone", "group__time__parsing.html#ga4275a88c5419f0c32d456fe1f471b52e", null ],
     [ "time_shield::parse_tz", "group__time__parsing.html#gabbfb5b21ecd330755407086de759112f", null ],
+    [ "time_shield::sec_of_day", "group__time__parsing.html#gac9740a37c831af52b973b9eb633ca07b", null ],
     [ "time_shield::str_to_fts", "group__time__parsing.html#ga14ee0b212c61b1338a9e3aa07e07a474", null ],
     [ "time_shield::str_to_ts", "group__time__parsing.html#ga0782476607497d1f90768c312411bb5f", null ],
     [ "time_shield::str_to_ts_ms", "group__time__parsing.html#ga86da3fad2d8668e497e98712252fcebc", null ],

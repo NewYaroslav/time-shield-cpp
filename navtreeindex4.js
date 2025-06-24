@@ -1,5 +1,8 @@
 var NAVTREEINDEX4 =
 {
+"group__time__structures__time__formatting.html#gad5f9a170d6b3f3330f7a71819490c25f":[7,8,1,2],
+"group__time__types.html":[7,9],
+"group__time__types.html#ga183c70b9c541a395d47690a82cdad282":[7,9,6],
 "group__time__types.html#ga391046d8662dee26a659793b8c0daf6a":[7,9,10],
 "group__time__types.html#ga467db13fb99208bd078b5abff59866fb":[7,9,8],
 "group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad":[7,9,5],
@@ -124,7 +127,7 @@ var NAVTREEINDEX4 =
 "namespacemembers_y.html":[8,1,0,18],
 "namespaces.html":[8,0],
 "namespacetime__shield.html":[8,0,0],
-"namespacetime__shield.html#a1a82922efb47c2bc736120f69d618ac5":[8,0,0,565],
+"namespacetime__shield.html#a1a82922efb47c2bc736120f69d618ac5":[8,0,0,568],
 "namespacetsh.html":[8,0,1],
 "namespacetshield.html":[8,0,2],
 "ntp__client_8hpp.html":[7,2,0],

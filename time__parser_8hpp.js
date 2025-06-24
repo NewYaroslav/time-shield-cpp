@@ -9,6 +9,8 @@ var time__parser_8hpp =
     [ "time_shield::parse_iso8601", "group__time__parsing.html#gaf70532fba4720cdaa1e3ee67dfba0c41", null ],
     [ "time_shield::parse_time_zone", "group__time__parsing.html#ga380e128c27922bf4db53c4dfba93b189", null ],
     [ "time_shield::parse_tz", "group__time__parsing.html#ga6720fde5b41ea5e1ebdfd312f8a86371", null ],
+    [ "time_shield::sec_of_day", "group__time__parsing.html#ga0fb502da030ecce768a35f3450d0ca92", null ],
+    [ "time_shield::sec_of_day", "group__time__parsing.html#gaadd0cff81e545db9aa95ac25297f2181", null ],
     [ "time_shield::str_to_fts", "group__time__parsing.html#ga4a33787eebe38e674185d341db118c37", null ],
     [ "time_shield::str_to_ts", "group__time__parsing.html#ga5672a2652970721df21c0a2c78f00704", null ],
     [ "time_shield::str_to_ts_ms", "group__time__parsing.html#ga4fb8f209ba8bfe214d8ccbdf113f3e91", null ],

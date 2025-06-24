@@ -152,9 +152,13 @@ $(function(){initNavTree('time__parser__demo_8mq5_source.html',''); initResizabl
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    int mon = time_shield::get_month_number(&quot;March&quot;);</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    Print(&quot;Month number for March: &quot;, mon);</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    datetime direct = (datetime)time_shield::ts(&quot;2024-01-01T00:00:00Z&quot;);</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    Print(&quot;ts() shortcut: &quot;, direct);</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>}</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    int sod = time_shield::sec_of_day(&quot;15:30:10&quot;);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    Print(&quot;sec_of_day(&#39;15:30:10&#39;): &quot;, sod);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    Print(&quot;sec_of_day(&#39;8:20&#39;): &quot;, time_shield::sec_of_day(&quot;8:20&quot;));</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    datetime direct = (datetime)time_shield::ts(&quot;2024-01-01T00:00:00Z&quot;);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    Print(&quot;ts() shortcut: &quot;, direct);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

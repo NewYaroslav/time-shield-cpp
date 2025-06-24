@@ -26,8 +26,10 @@ var NAVTREE =
 [
   [ "Time Shield Library", "index.html", [
     [ "Introduction", "index.html#intro_sec", null ],
+    [ "Why Time Shield?", "index.html#motivation_sec", null ],
     [ "Features", "index.html#features_sec", null ],
-    [ "Usage", "index.html#usage_sec", null ],
+    [ "Example", "index.html#usage_sec", null ],
+    [ "Examples", "index.html#examples_sec", null ],
     [ "Installation", "index.html#install_sec", null ],
     [ "Repository", "index.html#repo_sec", null ],
     [ "License", "index.html#license_sec", null ],

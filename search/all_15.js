@@ -12,6 +12,7 @@ var searchData=
   ['weekday_5fof_5fts_9',['weekday_of_ts',['../group__time__conversions.html#gac746511a4923c6c5abaa3520afe0e056',1,'time_shield']]],
   ['west_10',['WEST',['../group__time__enums.html#ggad8cb858fb6cedcf76c4f0630d56e042ba62b4f1dddfbf15eed8ca9771b9cbfe31',1,'time_shield']]],
   ['wet_11',['WET',['../group__time__enums.html#ggad8cb858fb6cedcf76c4f0630d56e042ba9aacbaaeafc33c56dd9eb3d796b89141',1,'time_shield']]],
-  ['wsa_5fguard_2ehpp_12',['wsa_guard.hpp',['../wsa__guard_8hpp.html',1,'']]],
-  ['wsaguard_13',['WsaGuard',['../classtime__shield_1_1WsaGuard.html',1,'time_shield::WsaGuard'],['../classtime__shield_1_1WsaGuard.html#a8277447b8607ea3a56ab71c38f07552c',1,'time_shield::WsaGuard::WsaGuard()'],['../classtime__shield_1_1WsaGuard.html#afa474487259f824bee4e95d40ab7b7d5',1,'time_shield::WsaGuard::WsaGuard(const WsaGuard &amp;)=delete']]]
+  ['why_20time_20shield_12',['Why Time Shield?',['../index.html#motivation_sec',1,'']]],
+  ['wsa_5fguard_2ehpp_13',['wsa_guard.hpp',['../wsa__guard_8hpp.html',1,'']]],
+  ['wsaguard_14',['WsaGuard',['../classtime__shield_1_1WsaGuard.html',1,'time_shield::WsaGuard'],['../classtime__shield_1_1WsaGuard.html#a8277447b8607ea3a56ab71c38f07552c',1,'time_shield::WsaGuard::WsaGuard()'],['../classtime__shield_1_1WsaGuard.html#afa474487259f824bee4e95d40ab7b7d5',1,'time_shield::WsaGuard::WsaGuard(const WsaGuard &amp;)=delete']]]
 ];

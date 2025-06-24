@@ -1,4 +1,27 @@
 var searchData=
 [
-  ['year_0',['year',['../structtime__shield_1_1DateStruct.html#a56ca407ae07270a65b2090fdfb4b26d5',1,'time_shield::DateStruct::year'],['../structtime__shield_1_1DateTimeStruct.html#a6aaf7ee7664f6caeb970a0fe1dd503e5',1,'time_shield::DateTimeStruct::year'],['../structtime__shield_1_1DateStruct.html#aefc0387bdb59d6b61395bf4bc1219390',1,'time_shield::DateStruct::year'],['../structtime__shield_1_1DateTimeStruct.html#a70c144b159ef73168083002b102001c0',1,'time_shield::DateTimeStruct::year']]]
+  ['s_5flast_5ferror_5fcode_0',['s_last_error_code',['../classtime__shield_1_1NtpClient.html#afc9168de1a8b77cdf4fb7d2f9776b439',1,'time_shield::NtpClient']]],
+  ['sec_1',['sec',['../structtime__shield_1_1DateTimeStruct.html#aedb0924a6f970dcc0e83991d6168d808',1,'time_shield::DateTimeStruct::sec'],['../structtime__shield_1_1TimeStruct.html#abab289c0807d3c6f067d42a6aa17ea2f',1,'time_shield::TimeStruct::sec'],['../structtime__shield_1_1TimeStruct.html#a764bc903f34c6f250e0051cc892aa6a9',1,'time_shield::TimeStruct::sec']]],
+  ['sec_5fper_5f100_5fyears_2',['SEC_PER_100_YEARS',['../group__time__constants.html#ga68902ff2e54fc15e90d996b5154a7eff',1,'time_shield']]],
+  ['sec_5fper_5f10_5fmin_3',['SEC_PER_10_MIN',['../group__time__constants.html#ga1154f2d46e123e3a81ab11718f242c9f',1,'time_shield']]],
+  ['sec_5fper_5f12_5fhour_4',['SEC_PER_12_HOUR',['../group__time__constants.html#ga03df7e8fd0f2f5d524c6505512ccdb66',1,'time_shield']]],
+  ['sec_5fper_5f15_5fmin_5',['SEC_PER_15_MIN',['../group__time__constants.html#ga8a7d682d9e817355a0cc6b47b4f2010c',1,'time_shield']]],
+  ['sec_5fper_5f1_5fhour_6',['SEC_PER_1_HOUR',['../group__time__constants.html#ga42f91d33db076779b45efc9947abadef',1,'time_shield']]],
+  ['sec_5fper_5f1_5fmin_7',['SEC_PER_1_MIN',['../group__time__constants.html#gac950b5a0261c36f90bc2179b65d8f60d',1,'time_shield']]],
+  ['sec_5fper_5f2_5fhour_8',['SEC_PER_2_HOUR',['../group__time__constants.html#ga77f5cd93d7f33492f325a240c113a579',1,'time_shield']]],
+  ['sec_5fper_5f3_5fmin_9',['SEC_PER_3_MIN',['../group__time__constants.html#gaae6faa2f8e72ae966da8543c3d743130',1,'time_shield']]],
+  ['sec_5fper_5f400_5fyears_10',['SEC_PER_400_YEARS',['../group__time__constants.html#gac4641dd07836d2024fa4223051cc9549',1,'time_shield']]],
+  ['sec_5fper_5f4_5fhour_11',['SEC_PER_4_HOUR',['../group__time__constants.html#ga0c0ad427d5b44d8b3439ff9732d3378a',1,'time_shield']]],
+  ['sec_5fper_5f4_5fyears_12',['SEC_PER_4_YEARS',['../group__time__constants.html#gae5202dcd440b941d7151625ca40414aa',1,'time_shield']]],
+  ['sec_5fper_5f5_5fhour_13',['SEC_PER_5_HOUR',['../group__time__constants.html#gad8f4a19d080b6932cfcb766a9a98878e',1,'time_shield']]],
+  ['sec_5fper_5f5_5fmin_14',['SEC_PER_5_MIN',['../group__time__constants.html#ga22a1332b098f751ba394ce375746f211',1,'time_shield']]],
+  ['sec_5fper_5f8_5fhour_15',['SEC_PER_8_HOUR',['../group__time__constants.html#ga16c924473d54fdb5c638cdbbc83b0c09',1,'time_shield']]],
+  ['sec_5fper_5fday_16',['SEC_PER_DAY',['../group__time__constants.html#gac627986a09e12e75ab6b963b31ce7b11',1,'time_shield']]],
+  ['sec_5fper_5ffirst_5f100_5fyears_17',['SEC_PER_FIRST_100_YEARS',['../group__time__constants.html#ga3089e23ffe955d0bb1a49cf06c58e102',1,'time_shield']]],
+  ['sec_5fper_5fhalf_5fhour_18',['SEC_PER_HALF_HOUR',['../group__time__constants.html#gaf69bf17005af655a36c8f8926e38fe0a',1,'time_shield']]],
+  ['sec_5fper_5fhour_19',['SEC_PER_HOUR',['../group__time__constants.html#gaabfcadabef6ff679beaef2c701c2446c',1,'time_shield']]],
+  ['sec_5fper_5fleap_5fyear_20',['SEC_PER_LEAP_YEAR',['../group__time__constants.html#ga900f62b95967dd1652d22793d62a9e3b',1,'time_shield']]],
+  ['sec_5fper_5fmin_21',['SEC_PER_MIN',['../group__time__constants.html#gad359ffaa102c6ffda16f14672091184c',1,'time_shield']]],
+  ['sec_5fper_5fyear_22',['SEC_PER_YEAR',['../group__time__constants.html#ga2b67c7af7ba4c1638bae4f2ecb86c0b0',1,'time_shield']]],
+  ['stratum_23',['stratum',['../structtime__shield_1_1NtpClient_1_1ntp__packet.html#ad8b1305d97b6924b4f43e68db233cd81',1,'time_shield::NtpClient::ntp_packet']]]
 ];

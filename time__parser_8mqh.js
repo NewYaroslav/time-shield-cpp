@@ -1,6 +1,5 @@
 var time__parser_8mqh =
 [
-    [ "__TIME_SHIELD_TIME_PARSER_MQH__", "time__parser_8mqh.html#a0b62fc9e128460baa0a027536f7eb3c8", null ],
     [ "time_shield::fts", "group__time__parsing.html#gaa0156690d95ce901bfd28d04e521cb2b", null ],
     [ "time_shield::get_month_number", "group__time__parsing.html#gac7f0b3a5d18f64f39a00bd7be162ba17", null ],
     [ "time_shield::get_month_number", "group__time__parsing.html#ga486f058ffcd8c903fc613f426e18a5e6", null ],

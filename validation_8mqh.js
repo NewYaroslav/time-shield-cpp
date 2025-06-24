@@ -1,6 +1,5 @@
 var validation_8mqh =
 [
-    [ "__TIME_SHIELD_VALIDATION_MQH__", "validation_8mqh.html#ad06d3a0b75c59357784195b21e58063c", null ],
     [ "time_shield::check_leap_year", "group__time__validation.html#gad4b8ac012407d765d149fc5b0be8b4a9", null ],
     [ "time_shield::check_leap_year_ts", "group__time__validation.html#ga43da8dd61e14b485bf6bb491278241f8", null ],
     [ "time_shield::is_day_off", "group__time__validation.html#gac26f9a68b2235ea4af9e8a66ad51c8dc", null ],

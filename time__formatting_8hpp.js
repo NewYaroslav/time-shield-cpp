@@ -1,6 +1,5 @@
 var time__formatting_8hpp =
 [
-    [ "_TIME_SHIELD_TIME_FORMATTING_HPP_INCLUDED", "time__formatting_8hpp.html#a1d41946ed1ee13aa639bac2c6574a42d", null ],
     [ "time_shield::process_format_impl", "group__time__formatting.html#ga4d804fd113939339058f7940cd4c0b80", null ],
     [ "time_shield::to_human_readable", "group__time__formatting.html#ga9d28f8d6f987ba844902415fbec3951e", null ],
     [ "time_shield::to_human_readable_ms", "group__time__formatting.html#gaca9ab1f562f92431e598b36e988c2fa9", null ],

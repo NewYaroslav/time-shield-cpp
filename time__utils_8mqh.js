@@ -1,6 +1,5 @@
 var time__utils_8mqh =
 [
-    [ "__TIME_SHIELD_TIME_UTILS_MQH__", "time__utils_8mqh.html#a80e0ff94f52f1249c40bbb2f13e43c95", null ],
     [ "time_shield::ftimestamp", "group__time__utils.html#ga4c21fdc0252aa07037e4325dccad9222", null ],
     [ "time_shield::fts", "group__time__utils.html#gad6e2af7c1ddd04c8f8f170c329b4e492", null ],
     [ "time_shield::microseconds", "group__time__utils.html#ga2171fd068ca657997d72c30b5af8e8fb", null ],

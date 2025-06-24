@@ -1,6 +1,5 @@
 var time__utils_8hpp =
 [
-    [ "_TIME_SHIELD_TIME_UTILS_HPP_INCLUDED", "time__utils_8hpp.html#a130699196b38457fd0afb1a51c898255", null ],
     [ "time_shield::ftimestamp", "group__time__utils.html#ga4c21fdc0252aa07037e4325dccad9222", null ],
     [ "time_shield::fts", "group__time__utils.html#gad6e2af7c1ddd04c8f8f170c329b4e492", null ],
     [ "time_shield::get_cpu_time", "group__time__utils.html#ga728309531b205ec0ffcdee304db2bcbd", null ],

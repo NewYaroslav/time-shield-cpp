@@ -28,7 +28,6 @@ var NAVTREE =
     [ "Introduction", "index.html#intro_sec", null ],
     [ "Why Time Shield?", "index.html#motivation_sec", null ],
     [ "Features", "index.html#features_sec", null ],
-    [ "Example", "index.html#usage_sec", null ],
     [ "Examples", "index.html#examples_sec", null ],
     [ "Installation", "index.html#install_sec", null ],
     [ "Repository", "index.html#repo_sec", null ],
@@ -58,8 +57,7 @@ var NAVTREE =
       [ "File List", "files.html", "files_dup" ],
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
-        [ "Functions", "globals_func.html", null ],
-        [ "Macros", "globals_defs.html", null ]
+        [ "Functions", "globals_func.html", null ]
       ] ]
     ] ]
   ] ]
@@ -68,10 +66,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "TimeShield_8mqh.html",
-"group__time__conversions.html#ga28888443bcc8cbe47c78f7cbd63093ab",
-"group__time__conversions.html#gaa72662446623f64d78d37558417ba025",
-"group__time__enums.html#gga81dfe20e6515b855c625bd9c7aea58e6aceec3adb53b941d4225acea1a380403e",
-"group__time__utils.html#ga0733c0a65906f5e5f4265d0dd5e5358e"
+"group__time__conversions.html#ga21eab50c6efb34ab1e5953772c4cb980",
+"group__time__conversions.html#gaa0c07f2382a154356759cc60da54d2a0",
+"group__time__enums.html#gga81dfe20e6515b855c625bd9c7aea58e6a4ff17c3d5d81826da9439478a0bbf5fb",
+"group__time__types.html#ga391046d8662dee26a659793b8c0daf6a"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

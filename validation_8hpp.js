@@ -1,6 +1,5 @@
 var validation_8hpp =
 [
-    [ "_TIME_SHIELD_VALIDATION_HPP_INCLUDED", "validation_8hpp.html#ac054a336f263baeb044de91d24fcdf65", null ],
     [ "time_shield::check_leap_year", "group__time__validation.html#ga30ea193ecbc9c3493b9bac8df01d82ba", null ],
     [ "time_shield::check_leap_year_ts", "group__time__validation.html#gac6498174d5a46f29615d696c3a659380", null ],
     [ "time_shield::is_day_off", "group__time__validation.html#ga003ae6e5486b23cfe47a3ba795250978", null ],

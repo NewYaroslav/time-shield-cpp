@@ -1,6 +1,5 @@
 var time__formatting_8mqh =
 [
-    [ "__TIME_SHIELD_TIME_FORMATTING_MQH__", "time__formatting_8mqh.html#a282af9d7211bedd73faf0ebe065dcc54", null ],
     [ "time_shield::pad_int", "group__time__formatting.html#gaf59471e03315a3af0033f2d816ad3320", null ],
     [ "time_shield::process_format_impl", "group__time__formatting.html#ga7628b1cb7b3cfad10ae6c8a673504eb1", null ],
     [ "time_shield::to_human_readable", "group__time__formatting.html#ga9c3b567d4309ef41bee267c65a4751a2", null ],

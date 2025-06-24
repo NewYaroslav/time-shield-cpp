@@ -1,7 +1,13 @@
 var searchData=
 [
-  ['oadate_5ft_0',['oadate_t',['../group__time__types.html#gaab97b453fa3ad4ad8a752b00019968d6',1,'time_shield']]],
-  ['oct_1',['OCT',['../group__time__enums.html#ggac2ffd79e06ab94cf1bb50fec432c68a8a2b0de39322461f72c9dee8f2ecb425b9',1,'time_shield']]],
-  ['ole_5fepoch_2',['OLE_EPOCH',['../group__time__constants.html#ga61d50bb5fe7666932965fc43ff9ed245',1,'time_shield']]],
-  ['operator_3d_3',['operator=',['../classtime__shield_1_1WsaGuard.html#a2f1a85687d24a3011d541fb3c4992f98',1,'time_shield::WsaGuard']]]
+  ['pad_5fint_0',['pad_int',['../group__time__formatting.html#gaf59471e03315a3af0033f2d816ad3320',1,'time_shield']]],
+  ['parse_5fiso8601_1',['parse_iso8601',['../group__time__parsing.html#gaf70532fba4720cdaa1e3ee67dfba0c41',1,'time_shield::parse_iso8601(const std::string &amp;input, DateTimeStruct &amp;dt, TimeZoneStruct &amp;tz)'],['../group__time__parsing.html#ga55e40e10101293f4e93a36f10164a228',1,'time_shield::parse_iso8601(const string &amp;input_str, DateTimeStruct &amp;dt, TimeZoneStruct &amp;tz)']]],
+  ['parse_5fpacket_2',['parse_packet',['../classtime__shield_1_1NtpClient.html#a70a734657bc5d4d016aed8f066192a81',1,'time_shield::NtpClient']]],
+  ['parse_5ftime_5fzone_3',['parse_time_zone',['../group__time__parsing.html#ga380e128c27922bf4db53c4dfba93b189',1,'time_shield::parse_time_zone(const std::string &amp;tz_str, TimeZoneStruct &amp;tz)'],['../group__time__parsing.html#ga4275a88c5419f0c32d456fe1f471b52e',1,'time_shield::parse_time_zone(const string &amp;tz_str, TimeZoneStruct &amp;tz)']]],
+  ['parse_5ftz_4',['parse_tz',['../group__time__parsing.html#ga6720fde5b41ea5e1ebdfd312f8a86371',1,'time_shield::parse_tz(const std::string &amp;tz_str, TimeZoneStruct &amp;tz)'],['../group__time__parsing.html#gabbfb5b21ecd330755407086de759112f',1,'time_shield::parse_tz(const string &amp;tz_str, TimeZoneStruct &amp;tz)']]],
+  ['parsing_5',['Time Parsing',['../group__time__parsing.html',1,'']]],
+  ['poll_6',['poll',['../structtime__shield_1_1NtpClient_1_1ntp__packet.html#a96b3120ace764baf58b560056eab9f76',1,'time_shield::NtpClient::ntp_packet']]],
+  ['precision_7',['precision',['../structtime__shield_1_1NtpClient_1_1ntp__packet.html#adbb3beedf8335990311491df607d1d20',1,'time_shield::NtpClient::ntp_packet']]],
+  ['previous_5fday_5fstart_8',['previous_day_start',['../group__time__conversions.html#gafd137f1a936a01ba3c499a76eed9f959',1,'time_shield::previous_day_start(ts_t ts=time_shield::ts(), T days=1) noexcept'],['../group__time__conversions.html#ga77e844e90da1db06d85a3e4afb3a55f2',1,'time_shield::previous_day_start(long ts, int days=1)']]],
+  ['process_5fformat_5fimpl_9',['process_format_impl',['../group__time__formatting.html#ga4d804fd113939339058f7940cd4c0b80',1,'time_shield::process_format_impl(char last_char, size_t repeat_count, ts_t ts, tz_t utc_offset, const DateTimeStruct &amp;dt, std::string &amp;result)'],['../group__time__formatting.html#ga7628b1cb7b3cfad10ae6c8a673504eb1',1,'time_shield::process_format_impl(const char last_char, int repeat_count, long ts, int utc_offset, const DateTimeStruct &amp;dt, string &amp;result)']]]
 ];

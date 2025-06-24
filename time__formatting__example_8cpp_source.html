@@ -119,7 +119,8 @@ $(function(){initNavTree('time__formatting__example_8cpp_source.html',''); initR
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#if defined(_WIN32)</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;<a class="code" href="time__formatting_8hpp.html">time_shield/time_formatting.hpp</a>&gt;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keywordtype">int</span> <a class="code hl_function" href="time__formatting__example_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
+<div class="foldopen" id="foldopen00013" data-start="{" data-end="}">
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="time__formatting__example_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">   13</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="time__formatting__example_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacetime__shield.html">time_shield</a>;</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">auto</span> <a class="code hl_function" href="group__time__utils.html#ga11b0b830fdc6c5505db1cd2683457d0e">now</a> = std::chrono::system_clock::now();</div>
@@ -141,13 +142,12 @@ $(function(){initNavTree('time__formatting__example_8cpp_source.html',''); initR
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    std::cin.get();</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>}</div>
+</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#else</span></div>
-<div class="foldopen" id="foldopen00036" data-start="{" data-end="}">
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="time__formatting__example_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">   36</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="time__formatting__example_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keywordtype">int</span> <a class="code hl_function" href="time__formatting__example_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;time_formatting.hpp requires Windows.&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>}</div>
-</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="agroup__time__formatting_html_ga1481063d4a73a5de0746416e139da3f1"><div class="ttname"><a href="group__time__formatting.html#ga1481063d4a73a5de0746416e139da3f1">time_shield::to_string</a></div><div class="ttdeci">const std::string to_string(const std::string &amp;format_str, T timestamp, tz_t utc_offset=0)</div><div class="ttdoc">Convert timestamp to string with custom format.</div><div class="ttdef"><b>Definition</b> <a href="time__formatting_8hpp_source.html#l00378">time_formatting.hpp:378</a></div></div>
 <div class="ttc" id="agroup__time__formatting_html_ga3cdfdf48a6ca67d40499b29e365d5001"><div class="ttname"><a href="group__time__formatting.html#ga3cdfdf48a6ca67d40499b29e365d5001">time_shield::to_iso8601_ms</a></div><div class="ttdeci">const std::string to_iso8601_ms(ts_ms_t ts_ms)</div><div class="ttdoc">Converts a timestamp in milliseconds to an ISO8601 string.</div><div class="ttdef"><b>Definition</b> <a href="time__formatting_8hpp_source.html#l00627">time_formatting.hpp:627</a></div></div>
@@ -162,7 +162,7 @@ $(function(){initNavTree('time__formatting__example_8cpp_source.html',''); initR
 <div class="ttc" id="agroup__time__utils_html_ga11b0b830fdc6c5505db1cd2683457d0e"><div class="ttname"><a href="group__time__utils.html#ga11b0b830fdc6c5505db1cd2683457d0e">time_shield::now</a></div><div class="ttdeci">const ts_ms_t now() noexcept</div><div class="ttdoc">Get the current UTC timestamp in milliseconds.</div><div class="ttdef"><b>Definition</b> <a href="time__utils_8hpp_source.html#l00171">time_utils.hpp:171</a></div></div>
 <div class="ttc" id="anamespacetime__shield_html"><div class="ttname"><a href="namespacetime__shield.html">time_shield</a></div><div class="ttdoc">Main namespace for the Time Shield library.</div></div>
 <div class="ttc" id="atime__formatting_8hpp_html"><div class="ttname"><a href="time__formatting_8hpp.html">time_formatting.hpp</a></div><div class="ttdoc">Header file for time formatting utilities.</div></div>
-<div class="ttc" id="atime__formatting__example_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="time__formatting__example_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition</b> <a href="#l00036">time_formatting_example.cpp:36</a></div></div>
+<div class="ttc" id="atime__formatting__example_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="time__formatting__example_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition</b> <a href="#l00013">time_formatting_example.cpp:13</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -1,6 +1,5 @@
 var constants_8hpp =
 [
-    [ "_TIME_SHIELD_CONSTANTS_HPP_INCLUDED", "constants_8hpp.html#aa273cea31f743e1fc61fbdd18cf2f7d2", null ],
     [ "time_shield::AVG_DAYS_PER_YEAR", "group__time__constants.html#ga24075d386d517252e371f0fa915b768d", null ],
     [ "time_shield::AVG_SEC_PER_YEAR", "group__time__constants.html#ga917a14b2c8ee5cb4f9978fec639b8fd6", null ],
     [ "time_shield::DAYS_PER_4_YEARS", "group__time__constants.html#ga1836ebdab1bd3df6fdeae0cd09f69756", null ],

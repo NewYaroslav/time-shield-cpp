@@ -1,6 +1,5 @@
 var types_8hpp =
 [
-    [ "_TIME_SHIELD_TYPES_HPP_INCLUDED", "types_8hpp.html#ab867b7414a01757031c8e06247a6b828", null ],
     [ "time_shield::fts_t", "group__time__types.html#ga922ce1d0bc31869e531512c233b7633f", null ],
     [ "time_shield::jd_t", "group__time__types.html#gad6b7a13bb33749e9f503f913d445a6e7", null ],
     [ "time_shield::jdn_t", "group__time__types.html#ga9f2039b057978a2b41d1a4b2418158a6", null ],

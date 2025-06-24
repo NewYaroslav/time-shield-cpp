@@ -1,4 +1,15 @@
 var searchData=
 [
-  ['key_20features_3a_0',['Key Features:',['../group__time__constants.html#autotoc_md0',1,'Key Features:'],['../group__time__parsing.html#autotoc_md2',1,'Key Features:'],['../group__time__validation.html#autotoc_md6',1,'Key Features:'],['../group__time__constants.html#autotoc_md8',1,'Key Features:'],['../group__time__enums.html#autotoc_md10',1,'Key Features:'],['../group__time__utils.html#autotoc_md14',1,'Key Features:'],['../group__time__conversions.html#autotoc_md16',1,'Key Features:'],['../group__time__formatting.html#autotoc_md18',1,'Key Features:'],['../group__mql5__time__enums.html#autotoc_md24',1,'Key Features:'],['../group__mql5__time__conversions.html#autotoc_md28',1,'Key Features:'],['../group__mql5__time__formatting.html#autotoc_md30',1,'Key Features:']]]
+  ['last_5fday_5fof_5fmonth_0',['last_day_of_month',['../group__time__conversions.html#ga8e368ac83d084673018afcdcab568a27',1,'time_shield::last_day_of_month(ts_t ts=time_shield::ts())'],['../group__time__conversions.html#ga3bb12ee673b12e991d293384a281fd61',1,'time_shield::last_day_of_month(long ts)']]],
+  ['last_5fquarter_1',['LAST_QUARTER',['../group__time__enums.html#gga5fa51beb76e014adfffcd028fe1804acabbc64be78b01604edf18005eb126443f',1,'time_shield']]],
+  ['last_5fsunday_5fmonth_5fday_2',['last_sunday_month_day',['../group__time__conversions.html#ga79073edc849606840c88a3ae377121b1',1,'time_shield::last_sunday_month_day(T2 year, T3 month)'],['../group__time__conversions.html#gae4b608ce3dc80d44f98f13245fe23b85',1,'time_shield::last_sunday_month_day(long year, int month)']]],
+  ['last_5fsunday_5fof_5fmonth_3',['last_sunday_of_month',['../group__time__conversions.html#gaaf8134e7f6f9c5216c3d71ece8ebadbc',1,'time_shield::last_sunday_of_month(ts_t ts=time_shield::ts())'],['../group__time__conversions.html#ga1a0033bc1c337cb3838e866996321c71',1,'time_shield::last_sunday_of_month(long ts)']]],
+  ['leap_5fyear_4',['leap_year',['../group__time__validation.html#ga63b8e152c0a93c2a06ce84ba9e28145a',1,'time_shield::leap_year(T year) noexcept'],['../group__time__validation.html#gacb2fb6bd5fb218e0bbde17d9870e8afb',1,'time_shield::leap_year(const long year)']]],
+  ['leap_5fyear_5fper_5f100_5fyear_5',['LEAP_YEAR_PER_100_YEAR',['../group__time__constants.html#ga0cf2f64e27728a988f7391d1cff27325',1,'time_shield']]],
+  ['leap_5fyear_5fper_5f400_5fyear_6',['LEAP_YEAR_PER_400_YEAR',['../group__time__constants.html#ga2ea9411366a3595637a7b9a5a2e31147',1,'time_shield']]],
+  ['leap_5fyear_5fts_7',['leap_year_ts',['../group__time__validation.html#ga8e0d80a09f42577e88f9bc294da403d1',1,'time_shield::leap_year_ts(ts_t ts)'],['../group__time__validation.html#ga046472fb8c315f13a3b30649a26241ce',1,'time_shield::leap_year_ts(const long ts)']]],
+  ['li_5fvn_5fmode_8',['li_vn_mode',['../structtime__shield_1_1NtpClient_1_1ntp__packet.html#a1a526934c19f568e8d73858ae8f95a13',1,'time_shield::NtpClient::ntp_packet']]],
+  ['library_9',['Time Shield Library',['../index.html',1,'']]],
+  ['library_20initialization_10',['Library Initialization',['../group__lib__initialization.html',1,'Library Initialization'],['../group__mql5__initialization.html',1,'Library Initialization']]],
+  ['license_11',['License',['../index.html#license_sec',1,'']]]
 ];

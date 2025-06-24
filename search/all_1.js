@@ -1,10 +1,21 @@
 var searchData=
 [
-  ['american_5fmonth_5fday_0',['AMERICAN_MONTH_DAY',['../group__time__enums.html#gga81dfe20e6515b855c625bd9c7aea58e6a42a233dbd3c0648d4d6fd0df26af40d4',1,'time_shield']]],
-  ['american_5ftime_1',['AMERICAN_TIME',['../group__time__enums.html#gga81dfe20e6515b855c625bd9c7aea58e6ade31895b4ac2a7ac53273cf6ad8050a5',1,'time_shield']]],
-  ['api_2',['MQL5 TimeShield API',['../group__mql5.html',1,'']]],
-  ['apr_3',['APR',['../group__time__enums.html#ggac2ffd79e06ab94cf1bb50fec432c68a8ad3768e2a19435e8e723f135215b827fb',1,'time_shield']]],
-  ['aug_4',['AUG',['../group__time__enums.html#ggac2ffd79e06ab94cf1bb50fec432c68a8a939f4fa15cc31f9b2ec0fc54fed08595',1,'time_shield']]],
-  ['avg_5fdays_5fper_5fyear_5',['AVG_DAYS_PER_YEAR',['../group__time__constants.html#ga24075d386d517252e371f0fa915b768d',1,'time_shield']]],
-  ['avg_5fsec_5fper_5fyear_6',['AVG_SEC_PER_YEAR',['../group__time__constants.html#ga917a14b2c8ee5cb4f9978fec639b8fd6',1,'time_shield']]]
+  ['categories_0',['Type Categories',['../group__time__types.html#autotoc_md4',1,'']]],
+  ['cest_1',['CEST',['../group__time__enums.html#ggad8cb858fb6cedcf76c4f0630d56e042ba58331bcf5a90a0aa39a31e5e352651f7',1,'time_shield']]],
+  ['cet_2',['CET',['../group__time__enums.html#ggad8cb858fb6cedcf76c4f0630d56e042bae7eeb64ed11ca4512bf69c49cb3d6726',1,'time_shield']]],
+  ['cet_5fto_5fgmt_3',['cet_to_gmt',['../group__time__conversions__time__zone__conversions.html#gae3bc7446e716571e6cab5a76b94892ec',1,'time_shield::cet_to_gmt(ts_t cet)'],['../group__time__conversions.html#gab510347fe16134c9b63a223c85528493',1,'time_shield::cet_to_gmt(const datetime cet)']]],
+  ['check_5fleap_5fyear_4',['check_leap_year',['../group__time__validation.html#ga30ea193ecbc9c3493b9bac8df01d82ba',1,'time_shield::check_leap_year(T year) noexcept'],['../group__time__validation.html#gad4b8ac012407d765d149fc5b0be8b4a9',1,'time_shield::check_leap_year(const long year)']]],
+  ['check_5fleap_5fyear_5fts_5',['check_leap_year_ts',['../group__time__validation.html#gac6498174d5a46f29615d696c3a659380',1,'time_shield::check_leap_year_ts(ts_t ts)'],['../group__time__validation.html#ga43da8dd61e14b485bf6bb491278241f8',1,'time_shield::check_leap_year_ts(const long ts)']]],
+  ['client_6',['NTP Client',['../group__ntp.html',1,'']]],
+  ['config_2ehpp_7',['config.hpp',['../config_8hpp.html',1,'']]],
+  ['constants_8',['Time Constants',['../group__time__constants.html',1,'']]],
+  ['constants_2ehpp_9',['constants.hpp',['../constants_8hpp.html',1,'']]],
+  ['constants_2emqh_10',['constants.mqh',['../constants_8mqh.html',1,'']]],
+  ['conversion_20helpers_11',['Time zone conversion helpers',['../group__time__conversions__time__zone__conversions.html',1,'']]],
+  ['conversions_12',['Conversions',['../group__time__conversions.html',1,'Time Conversions'],['../group__mql5__time__conversions.html',1,'Time Conversions'],['../group__time__zone__conversions.html',1,'Time Zone Conversions']]],
+  ['conversions_13',['conversions',['../group__time__structures__time__conversions.html',1,'Time structure conversions'],['../group__mql5__time__structures__time__conversions.html',1,'Time structure conversions']]],
+  ['create_5fdate_5fstruct_14',['create_date_struct',['../group__time__structures.html#ga2ea065cf0bd4d934cb3c64ae54975448',1,'time_shield::create_date_struct(int64_t year, int32_t mon=1, int32_t day=1)'],['../group__time__structures.html#gaa556c97bfce724e9739a5fb57ae7a9ef',1,'time_shield::create_date_struct(const long year, const int mon=1, const int day=1)']]],
+  ['create_5fdate_5ftime_5fstruct_15',['create_date_time_struct',['../group__time__structures.html#gab6cf08da5ef726f11d460ad3e45f6800',1,'time_shield::create_date_time_struct(int64_t year, int mon=1, int day=1, int hour=0, int min=0, int sec=0, int ms=0)'],['../group__time__structures.html#ga0c596486a334547054b4e8ac71e4b3e4',1,'time_shield::create_date_time_struct(const long year, const int mon=1, const int day=1, const int hour=0, const int min=0, const int sec=0, const int ms=0)']]],
+  ['create_5ftime_5fstruct_16',['create_time_struct',['../group__time__structures.html#ga31f445e3e85cba85035f71b35de12e25',1,'time_shield::create_time_struct(int16_t hour, int16_t min, int16_t sec=0, int16_t ms=0)'],['../group__time__structures.html#ga13b01721128561fc611a2044ff5b7b0c',1,'time_shield::create_time_struct(const int hour, const int min, const int sec=0, const int ms=0)']]],
+  ['create_5ftime_5fzone_5fstruct_17',['create_time_zone_struct',['../group__time__structures.html#gae83e4d4791a1f6ce69657a3868b00504',1,'time_shield']]]
 ];

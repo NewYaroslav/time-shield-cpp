@@ -39,6 +39,10 @@ void OnStart() {
     int mon = time_shield::get_month_number("March");
     Print("Month number for March: ", mon);
 
+    int sod = time_shield::sec_of_day("15:30:10");
+    Print("sec_of_day('15:30:10'): ", sod);
+    Print("sec_of_day('8:20'): ", time_shield::sec_of_day("8:20"));
+
     datetime direct = (datetime)time_shield::ts("2024-01-01T00:00:00Z");
     Print("ts() shortcut: ", direct);
 }

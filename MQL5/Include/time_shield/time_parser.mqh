@@ -236,11 +236,59 @@ namespace time_shield {
     /// \details Returns 0.0 if parsing fails.
     /// \param str The ISO8601 string.
     /// \return Floating-point timestamp or 0.0 on error.
-    double fts(const string &str)
+   double fts(const string &str)
+   {
+      double v=0.0;
+      str_to_fts(str,v);
+      return v;
+   }
+
+    //--------------------------------------------------------------------------
+
+    /// \brief Convert string with time of day to second of day.
+    ///
+    /// Supports formats:
+    /// - HH:MM:SS
+    /// - HH:MM
+    /// - HH
+    /// \param str Time in string format
+    /// \return Second of the day if conversion succeeded, or SEC_PER_DAY if it failed.
+    int sec_of_day(const string str)
     {
-       double v=0.0;
-       str_to_fts(str,v);
-       return v;
+       uint _hour = 0, _minute = 0, _second = 0;
+
+       string result[];
+       const ushort u_sep = StringGetCharacter(":", 0);
+       int k = StringSplit(str, u_sep, result);
+       if (k == 0)
+       {
+          ArrayFree(result);
+          return SEC_PER_DAY;
+       }
+       switch(k)
+       {
+          case 1:
+             _hour = (uint)StringToInteger(result[0]);
+             break;
+          case 2:
+             _hour = (uint)StringToInteger(result[0]);
+             _minute = (uint)StringToInteger(result[1]);
+             break;
+          case 3:
+             _hour = (uint)StringToInteger(result[0]);
+             _minute = (uint)StringToInteger(result[1]);
+             _second = (uint)StringToInteger(result[2]);
+             break;
+       }
+       if (_hour >= HOURS_PER_DAY ||
+           _minute >= MIN_PER_HOUR ||
+           _second >= SEC_PER_MIN)
+       {
+          ArrayFree(result);
+          return SEC_PER_DAY;
+       }
+       ArrayFree(result);
+       return sec_of_day((int)_hour,(int)_minute,(int)_second);
     }
 
     /// \}

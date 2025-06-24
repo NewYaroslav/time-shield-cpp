@@ -112,7 +112,7 @@ namespace time_shield {
 //------------------------------------------------------------------------------
 
     /// \brief Parse a date and time string in ISO8601 format.
-    /// \param input The input string in ISO8601 format.
+    /// \param input_str The input string in ISO8601 format.
     /// \param dt The DateTimeStruct to be filled with parsed values.
     /// \param tz The TimeZoneStruct to be filled with parsed time zone.
     /// \return True if parsing succeeds and the date and time values are valid, false otherwise.

@@ -312,7 +312,7 @@ double sec_to_fhour(long sec) {
     }
 
     /// \brief Alias for to_date_time_ms.
-    /// \copydoc to_date_time_ms
+    /// \copydoc to_date_time_ms(long)
     DateTimeStruct to_dt_ms(long ts_ms) { return to_date_time_ms(ts_ms); }
 
     /// \brief Convert a DateTimeStruct to timestamp.
@@ -337,11 +337,11 @@ double sec_to_fhour(long sec) {
     }
 
     /// \brief Alias for dt_to_timestamp.
-    /// \copydoc dt_to_timestamp
+    /// \copydoc dt_to_timestamp(const DateTimeStruct &)
     long to_timestamp(const DateTimeStruct &dt) { return dt_to_timestamp(dt); }
 
     /// \brief Alias for dt_to_timestamp taking MqlDateTime.
-    /// \copydoc dt_to_timestamp
+    /// \copydoc dt_to_timestamp(const MqlDateTime &)
     long to_timestamp(const MqlDateTime &dt) { return dt_to_timestamp(dt); }
 
     /// \brief Convert date and time values to a timestamp.
@@ -364,7 +364,7 @@ double sec_to_fhour(long sec) {
     }
 
     /// \brief Alias for to_timestamp with explicit date fields.
-    /// \copydoc to_timestamp
+    /// \copydoc to_timestamp(long, int, int, int, int, int)
     long to_ts(long year, int mon, int day, int hour=0, int min=0, int sec=0) {
        return to_timestamp(year, mon, day, hour, min, sec);
     }
@@ -383,13 +383,13 @@ double sec_to_fhour(long sec) {
     }
 
     /// \brief Alias for to_timestamp_ms.
-    /// \copydoc to_timestamp_ms
+    /// \copydoc to_timestamp_ms(long, int, int, int, int, int, int)
     long to_ts_ms(long year, int mon, int day, int hour=0, int min=0, int sec=0, int ms=0) {
        return to_timestamp_ms(year, mon, day, hour, min, sec, ms);
     }
 
     /// \brief Alias for to_timestamp_ms.
-    /// \copydoc to_timestamp_ms
+    /// \copydoc to_timestamp_ms(long, int, int, int, int, int, int)
     long ts_ms(long year, int mon, int day, int hour=0, int min=0, int sec=0, int ms=0) {
        return to_timestamp_ms(year, mon, day, hour, min, sec, ms);
     }
@@ -409,11 +409,11 @@ double sec_to_fhour(long sec) {
     }
 
     /// \brief Alias for dt_to_timestamp_ms.
-    /// \copydoc dt_to_timestamp_ms
+    /// \copydoc dt_to_timestamp_ms(const DateTimeStruct &)
     long to_timestamp_ms(const DateTimeStruct &dt) { return dt_to_timestamp_ms(dt); }
 
     /// \brief Alias for dt_to_timestamp_ms.
-    /// \copydoc dt_to_timestamp_ms
+    /// \copydoc dt_to_timestamp_ms(const MqlDateTime &)
     long to_timestamp_ms(const MqlDateTime &dt) { return dt_to_timestamp_ms(dt); }
 
     /// \brief Convert a DateTimeStruct to floating-point timestamp.
@@ -431,11 +431,11 @@ double sec_to_fhour(long sec) {
     }
 
     /// \brief Alias for dt_to_ftimestamp.
-    /// \copydoc dt_to_ftimestamp
+    /// \copydoc dt_to_ftimestamp(const DateTimeStruct &)
     double to_ftimestamp(const DateTimeStruct &dt) { return dt_to_ftimestamp(dt); }
 
     /// \brief Alias for dt_to_ftimestamp.
-    /// \copydoc dt_to_ftimestamp
+    /// \copydoc dt_to_ftimestamp(const MqlDateTime &)
     double to_ftimestamp(const MqlDateTime &dt) { return dt_to_ftimestamp(dt); }
 
     //----------------------------------------------------------------------
@@ -1113,19 +1113,19 @@ double sec_to_fhour(long sec) {
     }
 
     /// \brief Alias for get_unix_day_ms.
-    /// \copydoc get_unix_day_ms
+    /// \copydoc get_unix_day_ms(long)
     long unix_day_ms(long ts_ms) { return get_unix_day_ms(ts_ms); }
 
     /// \brief Alias for get_unix_day_ms.
-    /// \copydoc get_unix_day_ms
+    /// \copydoc get_unix_day_ms(long)
     long get_unixday_ms(long ts_ms) { return get_unix_day_ms(ts_ms); }
 
     /// \brief Alias for get_unix_day_ms.
-    /// \copydoc get_unix_day_ms
+    /// \copydoc get_unix_day_ms(long)
     long unixday_ms(long ts_ms) { return get_unix_day_ms(ts_ms); }
 
     /// \brief Alias for get_unix_day_ms.
-    /// \copydoc get_unix_day_ms
+    /// \copydoc get_unix_day_ms(long)
     long uday_ms(long ts_ms) { return get_unix_day_ms(ts_ms); }
 
     /// \brief Convert UNIX day to timestamp in seconds.
@@ -1136,19 +1136,19 @@ double sec_to_fhour(long sec) {
     }
 
     /// \brief Alias for unix_day_to_timestamp.
-    /// \copydoc unix_day_to_timestamp
+    /// \copydoc unix_day_to_timestamp(long)
     long unix_day_to_ts(long uday) { return unix_day_to_timestamp(uday); }
 
     /// \brief Alias for unix_day_to_timestamp.
-    /// \copydoc unix_day_to_timestamp
+    /// \copydoc unix_day_to_timestamp(long)
     long unixday_to_ts(long uday) { return unix_day_to_timestamp(uday); }
 
     /// \brief Alias for unix_day_to_timestamp.
-    /// \copydoc unix_day_to_timestamp
+    /// \copydoc unix_day_to_timestamp(long)
     long uday_to_ts(long uday) { return unix_day_to_timestamp(uday); }
 
     /// \brief Alias for unix_day_to_timestamp.
-    /// \copydoc unix_day_to_timestamp
+    /// \copydoc unix_day_to_timestamp(long)
     long start_of_day_from_unix_day(long uday) { return unix_day_to_timestamp(uday); }
 
     /// \brief Convert UNIX day to timestamp in milliseconds.
@@ -1159,19 +1159,19 @@ double sec_to_fhour(long sec) {
     }
 
     /// \brief Alias for unix_day_to_timestamp_ms.
-    /// \copydoc unix_day_to_timestamp_ms
+    /// \copydoc unix_day_to_timestamp_ms(long)
     long unix_day_to_ts_ms(long uday) { return unix_day_to_timestamp_ms(uday); }
 
     /// \brief Alias for unix_day_to_timestamp_ms.
-    /// \copydoc unix_day_to_timestamp_ms
+    /// \copydoc unix_day_to_timestamp_ms(long)
     long unixday_to_ts_ms(long uday) { return unix_day_to_timestamp_ms(uday); }
 
     /// \brief Alias for unix_day_to_timestamp_ms.
-    /// \copydoc unix_day_to_timestamp_ms
+    /// \copydoc unix_day_to_timestamp_ms(long)
     long uday_to_ts_ms(long uday) { return unix_day_to_timestamp_ms(uday); }
 
     /// \brief Alias for unix_day_to_timestamp_ms.
-    /// \copydoc unix_day_to_timestamp_ms
+    /// \copydoc unix_day_to_timestamp_ms(long)
     long start_of_day_from_unix_day_ms(long uday) { return unix_day_to_timestamp_ms(uday); }
 
     /// \brief Get end of day timestamp from UNIX day.
@@ -1211,23 +1211,23 @@ double sec_to_fhour(long sec) {
     }
 
     /// \brief Alias for start_of_next_day_from_unix_day.
-    /// \copydoc start_of_next_day_from_unix_day
+    /// \copydoc start_of_next_day_from_unix_day(long)
     long next_day_unix_day(long uday) { return start_of_next_day_from_unix_day(uday); }
 
     /// \brief Alias for start_of_next_day_from_unix_day.
-    /// \copydoc start_of_next_day_from_unix_day
+    /// \copydoc start_of_next_day_from_unix_day(long)
     long next_day_unixday(long uday) { return start_of_next_day_from_unix_day(uday); }
 
     /// \brief Alias for start_of_next_day_from_unix_day_ms.
-    /// \copydoc start_of_next_day_from_unix_day_ms
+    /// \copydoc start_of_next_day_from_unix_day_ms(long)
     long next_day_unix_day_ms(long uday) { return start_of_next_day_from_unix_day_ms(uday); }
 
     /// \brief Alias for start_of_next_day_from_unix_day_ms.
-    /// \copydoc start_of_next_day_from_unix_day_ms
+    /// \copydoc start_of_next_day_from_unix_day_ms(long)
     long next_day_unixday_ms(long uday) { return start_of_next_day_from_unix_day_ms(uday); }
 
     /// \brief Alias for start_of_next_day_from_unix_day.
-    /// \copydoc start_of_next_day_from_unix_day
+    /// \copydoc start_of_next_day_from_unix_day(long)
     long next_day_from_unix_day(long uday) { return start_of_next_day_from_unix_day(uday); }
 
     /// \brief Get UNIX minute from timestamp.

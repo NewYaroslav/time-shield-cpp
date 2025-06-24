@@ -71,7 +71,7 @@ namespace time_shield {
     }
 
     /// \brief Alias for ts().
-    /// \copydoc ts
+    /// \copydoc ts()
     long timestamp() { return ts(); }
 
     /// \brief Get the current UTC timestamp in floating-point seconds.
@@ -81,7 +81,7 @@ namespace time_shield {
     }
 
     /// \brief Alias for fts().
-    /// \copydoc fts
+    /// \copydoc fts()
     double ftimestamp() { return fts(); }
 
     /// \brief Get the current UTC timestamp in milliseconds.
@@ -91,11 +91,11 @@ namespace time_shield {
     }
 
     /// \brief Alias for ts_ms().
-    /// \copydoc ts_ms
+    /// \copydoc ts_ms()
     long timestamp_ms() { return ts_ms(); }
 
     /// \brief Alias for ts_ms().
-    /// \copydoc ts_ms
+    /// \copydoc ts_ms()
     long now() { return ts_ms(); }
 
     /// \brief Get the current UTC timestamp in microseconds.

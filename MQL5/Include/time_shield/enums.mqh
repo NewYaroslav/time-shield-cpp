@@ -19,21 +19,7 @@
 
 namespace time_shield {
 
-    /// \defgroup time_enums Time Enumerations
-    /// \brief Enumerations for time-related concepts.
-    ///
-    /// This group contains various enums that represent time-related concepts such as
-    /// weekdays, months, time zones, and formatting options.
-    ///
-    /// ### Key Features:
-    /// - Defines enumerations for consistent handling of weekdays, months, and other time units.
-    /// - Provides utility functions for converting enum values to string representations.
-    ///
-    /// ### Example Usage:
-    /// \code
-    /// Weekday weekday = MON;
-    /// Print(time_shield::to_str(weekday, FormatType::FULL_NAME)); // "Monday"
-    /// \endcode
+    /// \ingroup mql5_time_enums
     /// \{
 
     /// Enumeration of the format options for representing a weekday or month.
@@ -53,13 +39,13 @@ namespace time_shield {
         FRI,        ///< Friday
         SAT         ///< Saturday
     };
-
+    
+    /// \fn string to_weekday_str(Weekday value, FormatType format = UPPERCASE_NAME)
     /// \brief Converts a Weekday enum value to a string.
-    ///
     /// \param value The Weekday enum value to convert.
     /// \param format The format to use for the string representation (default is UPPERCASE_NAME).
     /// \return A string with the representation of the day.
-    string to_str(Weekday value, FormatType format = UPPERCASE_NAME) {
+    string to_weekday_str(Weekday value, FormatType format = UPPERCASE_NAME) {
         static const string uppercase_names[] = {
             "SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"
         };
@@ -97,12 +83,12 @@ namespace time_shield {
         DEC         ///< December
     };
 
+    /// \fn string to_month_str(Month value, FormatType format = UPPERCASE_NAME)
     /// \brief Converts a Month enum value to a string.
-    ///
     /// \param value The Month enum value to convert.
     /// \param format The format to use for the string representation (default is UPPERCASE_NAME).
     /// \return A string with the representation of the month.
-    string to_str(Month value, FormatType format = UPPERCASE_NAME) {
+    string to_month_str(Month value, FormatType format = UPPERCASE_NAME) {
         static const string uppercase_names[] = {
             "",
             "JAN", "FEB", "MAR", "APR", "MAY", "JUN",
@@ -130,7 +116,6 @@ namespace time_shield {
         return "";
     }
 
-
     /// Enumeration of the time zones.
     enum TimeZone {
         GMT,    ///< Greenwich Mean Time
@@ -144,12 +129,12 @@ namespace time_shield {
         UNKNOWN ///< Unknown Time Zone
     };
 
+    /// \fn string to_timezone_str(TimeZone value, FormatType format = UPPERCASE_NAME)
     /// \brief Converts a TimeZone enum value to a string.
-    ///
     /// \param value The TimeZone enum value to convert.
     /// \param format The format to use for the string representation (default is UPPERCASE_NAME).
     /// \return A string with the representation of the time zone.
-    string to_str(TimeZone value, FormatType format = UPPERCASE_NAME) {
+    string to_timezone_str(TimeZone value, FormatType format = UPPERCASE_NAME) {
         static const string uppercase_names[] = {
             "GMT", "UTC", "EET", "CET", "WET", "EEST", "CEST", "WEST", "UNKNOWN"
         };
@@ -172,7 +157,6 @@ namespace time_shield {
         }
         return "";
     }
-
 
     /// Enumeration of the moon phases.
     enum MoonPhase {
@@ -198,8 +182,20 @@ namespace time_shield {
         AMERICAN_TIME,        ///< American time format (e.g., "12:30 PM")
         EUROPEAN_TIME         ///< European time format (e.g., "12:30")
     };
-
+    
     /// \}
+    
+    string to_str(Weekday value, FormatType format = UPPERCASE_NAME) {
+        return to_weekday_str(value, format);
+    }
+    
+    string to_str(Month value, FormatType format = UPPERCASE_NAME) {
+        return to_month_str(value, format);
+    }
+    
+    string to_str(TimeZone value, FormatType format = UPPERCASE_NAME) {
+        return to_timezone_str(value, format);
+    }
 
 }; // namespace time_shield
 

@@ -22,7 +22,7 @@
 
 namespace time_shield {
 
-    /// \ingroup time_structures
+    /// \ingroup mql5_time_structures
     /// \brief Structure to represent a time zone offset in MQL5.
     struct TimeZoneStruct {
        int  hour;        ///< Hour component of the offset (0-23)
@@ -30,16 +30,17 @@ namespace time_shield {
        bool is_positive; ///< True if the offset is positive, false if negative
     };
 
-    /// \ingroup time_structures
+    /// \fn TimeZoneStruct create_time_zone_struct(int  hour, int  min, bool is_positive = true)
+    /// \ingroup mql5_time_structures
     /// \brief Creates a `TimeZoneStruct` instance.
     /// \param hour The hour component of the offset.
     /// \param min The minute component of the offset.
     /// \param is_positive True if the offset is positive, false if negative.
     /// \return A `TimeZoneStruct` instance with the provided components.
     TimeZoneStruct create_time_zone_struct(
-            const int  hour,
-            const int  min,
-            const bool is_positive = true) {
+            int  hour,
+            int  min,
+            bool is_positive = true) {
        TimeZoneStruct result;
        result.hour        = hour;
        result.min         = min;
@@ -49,11 +50,12 @@ namespace time_shield {
 
     //----------------------------------------------------------------------
 
-    /// \ingroup time_structures_time_conversions
+    /// \fn TimeZoneStruct to_time_zone_struct(int offset)
+    /// \ingroup mql5_time_structures_time_conversions
     /// \brief Converts an integer offset to a `TimeZoneStruct`.
     /// \param offset The integer offset in seconds to convert.
     /// \return A `TimeZoneStruct` represented by the given offset.
-    TimeZoneStruct to_time_zone_struct(const int offset) {
+    TimeZoneStruct to_time_zone_struct(int offset) {
        int abs_val      = (int)MathAbs(offset);
        int hour         = abs_val / (int)SEC_PER_HOUR;
        int min          = abs_val % (int)SEC_PER_MIN;
@@ -61,16 +63,16 @@ namespace time_shield {
        return create_time_zone_struct(hour, min, is_positive);
     }
 
-    /// \ingroup time_structures_time_conversions
-    /// \brief Alias for `to_time_zone_struct`.
-    /// \copydoc to_time_zone_struct
+    /// \copybrief to_time_zone_struct(const int)
+    /// \see to_time_zone_struct
     TimeZoneStruct to_tz(const int offset) {
        return to_time_zone_struct(offset);
     }
 
     //----------------------------------------------------------------------
 
-    /// \ingroup time_structures_time_formatting
+    /// \fn string time_zone_struct_to_string(const TimeZoneStruct &tz)
+    /// \ingroup mql5_time_structures_time_formatting
     /// \brief Converts a `TimeZoneStruct` to a string representation.
     /// \param tz The `TimeZoneStruct` to convert.
     /// \return A string representation like "+03:00" or "-05:30".
@@ -86,15 +88,19 @@ namespace time_shield {
        return result;
     }
 
-    /// \ingroup time_structures_time_formatting
-    /// \brief Alias for `time_zone_struct_to_string`.
+    /// \fn string time_zone_struct_to_string(const TimeZoneStruct &tz)
+    /// \ingroup mql5_time_structures_time_conversions
+    /// \brief Alias for \ref time_zone_struct_to_string.
+    /// \details This function is a simple wrapper around \ref time_zone_struct_to_string.
     /// \copydoc time_zone_struct_to_string
     string to_string(const TimeZoneStruct &tz) {
        return time_zone_struct_to_string(tz);
     }
 
-    /// \ingroup time_structures_time_formatting
-    /// \brief Alias for `time_zone_struct_to_string`.
+    /// \fn string time_zone_struct_to_string(const TimeZoneStruct &tz)
+    /// \ingroup mql5_time_structures_time_conversions
+    /// \brief Alias for \ref time_zone_struct_to_string.
+    /// \details This function is a simple wrapper around \ref time_zone_struct_to_string.
     /// \copydoc time_zone_struct_to_string
     string to_str(const TimeZoneStruct &tz) {
        return time_zone_struct_to_string(tz);
@@ -102,7 +108,8 @@ namespace time_shield {
 
     //----------------------------------------------------------------------
 
-    /// \ingroup time_structures_time_conversions
+    /// \fn string int time_zone_struct_to_offset(const TimeZoneStruct &tz)
+    /// \ingroup mql5_time_structures_time_conversions
     /// \brief Converts a `TimeZoneStruct` to a single integer offset.
     /// \param tz The `TimeZoneStruct` to convert.
     /// \return An integer representing the offset in seconds.
@@ -111,15 +118,19 @@ namespace time_shield {
        return sign * (tz.hour * (int)SEC_PER_HOUR + tz.min * (int)SEC_PER_MIN);
     }
 
-    /// \ingroup time_structures_time_conversions
-    /// \brief Alias for `time_zone_struct_to_offset`.
+    /// \fn int tz_to_offset(const TimeZoneStruct &tz)
+    /// \ingroup mql5_time_structures_time_conversions
+    /// \brief Alias for \ref time_zone_struct_to_offset.
+    /// \details This function is a simple wrapper around \ref time_zone_struct_to_offset.
     /// \copydoc time_zone_struct_to_offset
     int tz_to_offset(const TimeZoneStruct &tz) {
        return time_zone_struct_to_offset(tz);
     }
 
-    /// \ingroup time_structures_time_conversions
-    /// \brief Alias for `time_zone_struct_to_offset`.
+    /// \fn int tz_to_offset(const TimeZoneStruct &tz)
+    /// \ingroup mql5_time_structures_time_conversions
+    /// \brief Alias for \ref time_zone_struct_to_offset.
+    /// \details This function is a simple wrapper around \ref time_zone_struct_to_offset.
     /// \copydoc time_zone_struct_to_offset
     int to_offset(const TimeZoneStruct &tz) {
        return time_zone_struct_to_offset(tz);

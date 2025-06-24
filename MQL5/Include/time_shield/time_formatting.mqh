@@ -332,7 +332,7 @@ namespace time_shield {
     }
 
     /// \brief Alias for \ref to_string_ms.
-    /// \copydoc to_string_ms
+    /// \copydoc to_string_ms(const string &, long, int)
     string to_str_ms(const string &format_str, long timestamp_ms, int utc_offset=0) {
        return to_string_ms(format_str, timestamp_ms, utc_offset);
     }

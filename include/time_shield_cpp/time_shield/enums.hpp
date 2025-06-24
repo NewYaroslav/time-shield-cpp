@@ -3,6 +3,7 @@
 #define _TIME_SHIELD_ENUMS_HPP_INCLUDED
 
 /// \file enums.hpp
+/// \ingroup time_enums
 /// \brief Header file with enumerations for weekdays, months, and other time-related categories.
 ///
 /// This file contains enum definitions for representing various time-related concepts.
@@ -12,31 +13,15 @@
 
 namespace time_shield {
 
-/// \defgroup time_enums Time Enumerations
-/// \brief Enumerations for time-related concepts.
-///
-/// This group contains various enums that represent time-related concepts such as
-/// weekdays, months, time zones, and formatting options.
-///
-/// ### Key Features:
-/// - Defines enumerations for consistent handling of weekdays, months, and other time units.
-/// - Provides utility functions for converting enum values to string representations.
-///
-/// ### Example Usage:
-/// ```cpp
-/// auto weekday = time_shield::Weekday::MON;
-/// std::cout << time_shield::to_cstr(weekday, time_shield::FormatType::FULL_NAME); // "Monday"
-/// ```
-///
-/// \{
-
+    /// \ingroup time_enums
     /// Enumeration of the format options for representing a weekday or month.
     enum FormatType {
         UPPERCASE_NAME = 0, ///< Uppercase short name
         SHORT_NAME,         ///< Short name
         FULL_NAME,          ///< Full name
     };
-
+    
+    /// \ingroup time_enums
     /// Enumeration of the days of the week.
     enum Weekday {
         SUN = 0,    ///< Sunday
@@ -48,6 +33,7 @@ namespace time_shield {
         SAT         ///< Saturday
     };
 
+    /// \ingroup time_enums
     /// \brief Converts a Weekday enum value to a string.
     ///
     /// \param value The Weekday enum value to convert.
@@ -74,6 +60,7 @@ namespace time_shield {
         };
     }
 
+    /// \ingroup time_enums
     /// \brief Converts a Weekday enum value to a string.
     ///
     /// \param value The Weekday enum value to convert.
@@ -100,6 +87,7 @@ namespace time_shield {
         };
     }
 
+    /// \ingroup time_enums
     /// Enumeration of the months of the year.
     enum Month {
         JAN = 1,    ///< January
@@ -116,6 +104,7 @@ namespace time_shield {
         DEC         ///< December
     };
 
+    /// \ingroup time_enums
     /// \brief Converts a Month enum value to a string.
     ///
     /// \param value The Month enum value to convert.
@@ -148,6 +137,7 @@ namespace time_shield {
         };
     }
 
+    /// \ingroup time_enums
     /// \brief Converts a Month enum value to a string.
     ///
     /// \param value The Month enum value to convert.
@@ -180,6 +170,7 @@ namespace time_shield {
         };
     }
 
+    /// \ingroup time_enums
     /// Enumeration of the time zones.
     enum TimeZone {
         GMT,    ///< Greenwich Mean Time
@@ -193,6 +184,7 @@ namespace time_shield {
         UNKNOWN ///< Unknown Time Zone
     };
 
+    /// \ingroup time_enums
     /// \brief Converts a TimeZone enum value to a string.
     ///
     /// \param value The TimeZone enum value to convert.
@@ -221,6 +213,7 @@ namespace time_shield {
         }
     }
 
+    /// \ingroup time_enums
     /// \brief Converts a TimeZone enum value to a string.
     ///
     /// \param value The TimeZone enum value to convert.
@@ -249,6 +242,7 @@ namespace time_shield {
         }
     }
 
+    /// \ingroup time_enums
     /// Enumeration of the moon phases.
     enum MoonPhase {
         WAXING_CRESCENT, ///< Waxing Crescent Moon
@@ -261,6 +255,7 @@ namespace time_shield {
         NEW_MOON         ///< New Moon
     };
 
+    /// \ingroup time_enums
     /// Enumeration of time format types.
     enum TimeFormatType {
         ISO8601_WITH_TZ,      ///< ISO8601 format with time zone (e.g., "2024-06-06T12:30:45+03:00")
@@ -273,8 +268,6 @@ namespace time_shield {
         AMERICAN_TIME,        ///< American time format (e.g., "12:30 PM")
         EUROPEAN_TIME,        ///< European time format (e.g., "12:30")
     };
-
-/// \}
 
 }; // namespace time_shield
 

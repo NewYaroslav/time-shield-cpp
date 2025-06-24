@@ -4,16 +4,16 @@
 
 /// \file time_zone_conversions.hpp
 /// \brief Helpers for converting CET/EET timestamps to GMT.
+/// \ingroup time_zone_conversions
 
 #include "date_time_struct.hpp"
 #include "time_conversions.hpp"
 
 namespace time_shield {
 
-    /// \ingroup time_zone_conversions
+    /// \ingroup time_conversions_time_zone_conversions
     /// \{
 
-    /// \ingroup time_conversions_time_zone_conversions
     /// \brief Convert Central European Time to Greenwich Mean Time.
     /// \param cet Timestamp in seconds in CET.
     /// \return Timestamp in seconds in GMT.
@@ -86,7 +86,6 @@ namespace time_shield {
         return cet - SEC_PER_HOUR;
     }
 
-    /// \ingroup time_conversions_time_zone_conversions
     /// \brief Convert Eastern European Time to Greenwich Mean Time.
     /// \param eet Timestamp in seconds in EET.
     /// \return Timestamp in seconds in GMT.

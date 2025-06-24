@@ -3,26 +3,25 @@
 #define _TIME_SHIELD_INITIALIZATION_HPP_INCLUDED
 
 /// \file initialization.hpp
-/// \brief Library initialization helpers.
+/// \ingroup lib_initialization
+/// \brief Initialization helpers for the Time Shield library.
 ///
-/// Call ::initialize_library() once before using other functions.
+/// This file defines the ::time_shield::init() function, which should be called once
+/// before using any other Time Shield features that rely on internal time resolution.
 
 #include "time_utils.hpp"
 
 namespace time_shield {
 
-/// \defgroup time_initialization Library Initialization
-/// \brief Functions used to initialize the Time Shield library.
-/// \{
-
-/// \brief Initialize the Time Shield library.
-///
-/// This function performs any required setup steps.
-inline void initialize_library() {
-    microseconds();
-}
-
-/// \}
+    /// \ingroup lib_initialization
+    /// \brief Initializes the Time Shield library.
+    ///
+    /// This function performs required setup for internal components,
+    /// such as triggering lazy initialization used by ::time_shield::now_realtime_us().
+    /// Call it once at the beginning of your program before using other parts of the library.
+    inline void init() {
+        now_realtime_us();
+    }
 
 }; // namespace time_shield
 

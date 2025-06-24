@@ -1,5 +1,20 @@
 /*!
-\defgroup time_enums Time Enumerations
+\defgroup mql5 MQL5 TimeShield API
+\brief Components of the Time Shield library adapted for MetaTrader 5.
+
+This group includes all functions, structures, and utilities that are part of the MQL5-compatible version
+of the Time Shield library.
+
+### Example Usage:
+```cpp
+#include <TimeShield.mqh>
+time_shield::DateStruct d = time_shield::create_date_struct(2025, 6, 21);
+```
+*/
+
+/*!
+\defgroup mql5_time_enums Time Enumerations
+\ingroup mql5
 \brief Enumerations for time-related concepts.
 
 This group contains various enums that represent time-related concepts such as
@@ -11,23 +26,25 @@ weekdays, months, time zones, and formatting options.
 
 ### Example Usage:
 ```cpp
-auto weekday = time_shield::Weekday::MON;
-std::cout << time_shield::to_cstr(weekday, time_shield::FormatType::FULL_NAME); // "Monday"
+time_shield::Weekday weekday = time_shield::MON;
+Print(time_shield::to_str(weekday, time_shield::FULL_NAME)); // "Monday"
 ```
 */
 
 /*!
-\defgroup lib_initialization Library Initialization
-\ingroup cpp
-\brief Functions used to initialize the Time Shield library.
+\defgroup mql5_initialization Library Initialization
+\ingroup mql5
+\brief Functions for initializing the Time Shield library in MQL5.
 
-This group includes functions that perform setup procedures required before using
-any time-related utilities provided by the Time Shield library. Call ::time_shield::init()
-early in the application lifecycle to ensure that internal components are initialized properly.
+This group contains functions required to set up the Time Shield library before use.
+Call ::time_shield::init() once at the beginning of \c OnStart to trigger internal
+lazy initialization mechanisms such as those used by ::time_shield::microseconds().
+It ensures that all components relying on time resolution are properly initialized before use.
 */
 
 /*!
-\defgroup time_structures Time Structures
+\defgroup mql5_time_structures Time Structures
+\ingroup mql5
 \brief Structures for representing and working with time and date components.
 
 This group includes various structures used for representing time, date, and date-time combinations,
@@ -49,37 +66,8 @@ auto tz = time_shield::to_time_zone_struct(3600);             // +01:00
 */
 
 /*!
-\defgroup time_utils Time Utilities
-\brief A collection of utility functions for working with timestamps and time components.
-
-This module provides functions for obtaining the current timestamps in various formats
-(e.g., seconds, milliseconds, microseconds, floating-point seconds) and extracting
-sub-second components such as nanoseconds, microseconds, and milliseconds.
-
-### Key Features:
-- Obtain current UTC timestamps in seconds, milliseconds, and microseconds.
-- Support for floating-point and integer timestamp formats.
-- Extract nanoseconds, microseconds, and milliseconds from the current second.
-
-### Usage Examples:
-- Get the current timestamp in seconds:
-  \code{.cpp}
-  time_shield::ts_t current_time = time_shield::ts();
-  \endcode
-
-- Get the millisecond part of the current second:
-  \code{.cpp}
-  int ms = time_shield::ms_of_sec();
-  \endcode
-
-- Get the current timestamp in milliseconds:
-  \code{.cpp}
-  time_shield::ts_ms_t current_time_ms = time_shield::ts_ms();
-  \endcode
-*/
-
-/*!
-\defgroup time_conversions Time Conversions
+\defgroup mql5_time_conversions Time Conversions
+\ingroup mql5
 \brief A comprehensive set of functions and utilities for working with timestamps and time-related data.
 
 This module provides functionalities to convert, manipulate, and analyze timestamps
@@ -111,7 +99,8 @@ for working with date-time structures, UNIX days, and various time units (hours,
 */
 
 /*!
-\defgroup time_formatting Time Formatting
+\defgroup mql5_time_formatting Time Formatting
+\ingroup mql5
 \brief A comprehensive set of functions for converting timestamps to formatted strings.
 
 This module provides utilities for formatting timestamps into human-readable strings,
@@ -142,59 +131,13 @@ custom formats, ISO8601, and other standardized formats.
 */
 
 /*!
-\defgroup time_zone_conversions Time Zone Conversions
-\ingroup time_conversions
-\brief Helpers for converting regional time zones to GMT.
-
-These functions convert Central and Eastern European Time to Greenwich
-Mean Time. Daylight saving time rules before and after 2002 are taken
-into account, so conversions are accurate for legacy timestamps as well.
-
-### Example Usage:
-```cpp
-ts_t cet_ts = time_shield::to_ts(2024, Month::JUN, 21, 12, 0, 0);
-ts_t gmt_ts = time_shield::cet_to_gmt(cet_ts);
-```
+\defgroup mql5_time_structures_time_conversions Time structure conversions
+\ingroup mql5_time_structures
+\ingroup mql5_time_conversions
 */
 
 /*!
-\defgroup ntp NTP Client
-\brief Facilities for retrieving time using the Network Time Protocol.
-
-This module contains a minimal client capable of querying remote NTP
-servers to measure the offset between local and network time. It uses
-WinSock via the `WsaGuard` helper and therefore works only on Windows.
-
-### Features:
-- Query NTP servers and obtain the time offset.
-- Retrieve corrected UTC time in microseconds and milliseconds.
-- Automatic WinSock initialization through `WsaGuard`.
-- Requires network connectivity.
-
-### Example Usage:
-```cpp
-time_shield::NtpClient client;
-if (client.query()) {
-    int64_t offset = client.get_offset_us();
-    int64_t utc_ms = client.get_utc_time_ms();
-}
-```
-*/
-
-/*!
-\defgroup time_conversions_time_zone_conversions Time zone conversion helpers
-\ingroup time_zone_conversions
-\ingroup time_conversions
-*/
-
-/*!
-\defgroup time_structures_time_conversions Time structure conversions
-\ingroup time_structures
-\ingroup time_conversions
-*/
-
-/*!
-\defgroup time_structures_time_formatting Time structure formatting
-\ingroup time_structures
-\ingroup time_formatting
+\defgroup mql5_time_structures_time_formatting Time structure formatting
+\ingroup mql5_time_structures
+\ingroup mql5_time_formatting
 */

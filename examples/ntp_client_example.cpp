@@ -11,9 +11,12 @@
 #include <ctime>
 #if defined(_WIN32)
 #   include <time_shield/ntp_client.hpp>
+#   include <time_shield/initialization.hpp>
 
 int main() {
     using namespace time_shield;
+    
+    init();
 
     NtpClient client; // uses pool.ntp.org by default
 

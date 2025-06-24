@@ -9,6 +9,6 @@ var searchData=
   ['leap_5fyear_5fper_5f400_5fyear_6',['LEAP_YEAR_PER_400_YEAR',['../group__time__constants.html#ga2ea9411366a3595637a7b9a5a2e31147',1,'time_shield']]],
   ['leap_5fyear_5fts_7',['leap_year_ts',['../group__time__validation.html#ga8e0d80a09f42577e88f9bc294da403d1',1,'time_shield::leap_year_ts(ts_t ts)'],['../group__time__validation.html#ga046472fb8c315f13a3b30649a26241ce',1,'time_shield::leap_year_ts(const long ts)']]],
   ['library_8',['Time Shield Library',['../index.html',1,'']]],
-  ['library_20initialization_9',['Library Initialization',['../group__time__initialization.html',1,'Library Initialization'],['../group__mql5__initialization.html',1,'Library Initialization']]],
+  ['library_20initialization_9',['Library Initialization',['../group__lib__initialization.html',1,'Library Initialization'],['../group__mql5__initialization.html',1,'Library Initialization']]],
   ['license_10',['License',['../index.html#license_sec',1,'']]]
 ];

@@ -36,7 +36,7 @@ var searchData=
   ['sec_5fto_5fms_5fimpl_33',['sec_to_ms_impl',['../group__time__conversions.html#ga5327f3d1f658bac255ce6541efef1fcf',1,'time_shield::sec_to_ms_impl(T t, std::true_type tag) noexcept'],['../group__time__conversions.html#ga7956f1222326f09958726290320d74eb',1,'time_shield::sec_to_ms_impl(T t, std::false_type tag) noexcept']]],
   ['sep_34',['SEP',['../group__time__enums.html#ggac2ffd79e06ab94cf1bb50fec432c68a8a0f643a474d371b9e8dc5d168f8d3a68f',1,'time_shield']]],
   ['shield_20library_35',['Time Shield Library',['../index.html',1,'']]],
-  ['short_5fname_36',['SHORT_NAME',['../group__time__enums.html#gga97004b8781e8dbb9b46201b0a5280b81a38a1849c37306ba0e0a6e8a86a15e8d5',1,'time_shield']]],
+  ['short_5fname_36',['SHORT_NAME',['../group__mql5__time__enums.html#gga97004b8781e8dbb9b46201b0a5280b81a38a1849c37306ba0e0a6e8a86a15e8d5',1,'time_shield']]],
   ['start_5fday_5fsec_37',['start_day_sec',['../group__time__conversions.html#ga5fbfb3565c6e5b3dd47bc845a348ed6f',1,'time_shield']]],
   ['start_5fof_5fday_38',['start_of_day',['../group__time__conversions.html#gaddd57ca04957e0a9012f3191d29fbd78',1,'time_shield::start_of_day(ts_t ts=time_shield::ts()) noexcept'],['../group__time__conversions.html#ga4da7201bd8412f2066f2f66b1b762677',1,'time_shield::start_of_day(long ts)']]],
   ['start_5fof_5fday_5ffrom_5funix_5fday_39',['start_of_day_from_unix_day',['../group__time__conversions.html#gadaa395b18a90333d6a1321f50e94c4b2',1,'time_shield::start_of_day_from_unix_day(uday_t unix_day) noexcept'],['../group__time__conversions.html#ga91a7c2ee4285a5b1a8e920af9fbb54ed',1,'time_shield::start_of_day_from_unix_day(long uday)']]],
@@ -66,7 +66,7 @@ var searchData=
   ['structure_20conversions_63',['structure conversions',['../group__time__structures__time__conversions.html',1,'Time structure conversions'],['../group__mql5__time__structures__time__conversions.html',1,'Time structure conversions']]],
   ['structure_20formatting_64',['structure formatting',['../group__time__structures__time__formatting.html',1,'Time structure formatting'],['../group__mql5__time__structures__time__formatting.html',1,'Time structure formatting']]],
   ['structures_65',['Structures',['../group__time__structures.html',1,'Time Structures'],['../group__mql5__time__structures.html',1,'Time Structures']]],
-  ['structures_3a_66',['Structures:',['../group__time__structures.html#autotoc_md14',1,'Included Structures:'],['../group__mql5__time__structures.html#autotoc_md28',1,'Included Structures:']]],
+  ['structures_3a_66',['Structures:',['../group__time__structures.html#autotoc_md12',1,'Included Structures:'],['../group__mql5__time__structures.html#autotoc_md26',1,'Included Structures:']]],
   ['success_67',['success',['../classtime__shield_1_1WsaGuard.html#aa2744a80dd498c86daf4b0cb073d7ab5',1,'time_shield::WsaGuard']]],
   ['sun_68',['SUN',['../group__time__enums.html#ggadf684443100352064316f6134bbe44f8a435b4a7299946a56caaeba3190113f57',1,'time_shield']]]
 ];

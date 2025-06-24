@@ -2,7 +2,6 @@ var group__time__conversions =
 [
     [ "Time Zone Conversions", "group__time__zone__conversions.html", "group__time__zone__conversions" ],
     [ "Time structure conversions", "group__time__structures__time__conversions.html", "group__time__structures__time__conversions" ],
-    [ "Time zone conversion helpers", "group__time__conversions__time__zone__conversions.html", "group__time__conversions__time__zone__conversions" ],
     [ "time_shield::cet_to_gmt", "group__time__conversions.html#gab510347fe16134c9b63a223c85528493", null ],
     [ "time_shield::day_end", "group__time__conversions.html#gae6ac7e6afdbcc6a25975b33ce3f5bfa3", null ],
     [ "time_shield::day_end", "group__time__conversions.html#ga2c6ad7694430a3dd803c1e0edb70e344", null ],

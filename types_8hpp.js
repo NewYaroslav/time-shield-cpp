@@ -9,7 +9,7 @@ var types_8hpp =
     [ "time_shield::ts_ms_t", "group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad", null ],
     [ "time_shield::ts_t", "group__time__types.html#ga183c70b9c541a395d47690a82cdad282", null ],
     [ "time_shield::ts_us_t", "group__time__types.html#gaa09dd8f85dd996be93d7250acea4f638", null ],
-    [ "time_shield::tz_t", "group__time__types.html#ga3d041d3fb61cf004bcead7999f592e94", null ],
+    [ "time_shield::tz_t", "group__time__types.html#ga467db13fb99208bd078b5abff59866fb", null ],
     [ "time_shield::uday_t", "group__time__types.html#ga63a3e5f64aa9c168fc51dc05a7014f37", null ],
     [ "time_shield::unixday_t", "group__time__types.html#ga391046d8662dee26a659793b8c0daf6a", null ],
     [ "time_shield::year_t", "group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9", null ]

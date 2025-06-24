@@ -1,15 +1,15 @@
 var enums_8mqh =
 [
     [ "__TIME_SHIELD_ENUMS_MQH__", "enums_8mqh.html#a9b9b69b9cf373f5755ea57bbe48ddbd7", null ],
-    [ "time_shield::FormatType", "group__time__enums.html#ga97004b8781e8dbb9b46201b0a5280b81", [
-      [ "time_shield::UPPERCASE_NAME", "group__time__enums.html#gga97004b8781e8dbb9b46201b0a5280b81af8205b66c3e2d00b8c0d631ab195b1ac", null ],
-      [ "time_shield::SHORT_NAME", "group__time__enums.html#gga97004b8781e8dbb9b46201b0a5280b81a38a1849c37306ba0e0a6e8a86a15e8d5", null ],
-      [ "time_shield::FULL_NAME", "group__time__enums.html#gga97004b8781e8dbb9b46201b0a5280b81aae475a448bb4c12398f6583fba1f9820", null ],
-      [ "time_shield::UPPERCASE_NAME", "group__time__enums.html#gga97004b8781e8dbb9b46201b0a5280b81af8205b66c3e2d00b8c0d631ab195b1ac", null ],
-      [ "time_shield::SHORT_NAME", "group__time__enums.html#gga97004b8781e8dbb9b46201b0a5280b81a38a1849c37306ba0e0a6e8a86a15e8d5", null ],
-      [ "time_shield::FULL_NAME", "group__time__enums.html#gga97004b8781e8dbb9b46201b0a5280b81aae475a448bb4c12398f6583fba1f9820", null ]
+    [ "time_shield::FormatType", "group__mql5__time__enums.html#ga97004b8781e8dbb9b46201b0a5280b81", [
+      [ "time_shield::UPPERCASE_NAME", "group__mql5__time__enums.html#gga97004b8781e8dbb9b46201b0a5280b81af8205b66c3e2d00b8c0d631ab195b1ac", null ],
+      [ "time_shield::SHORT_NAME", "group__mql5__time__enums.html#gga97004b8781e8dbb9b46201b0a5280b81a38a1849c37306ba0e0a6e8a86a15e8d5", null ],
+      [ "time_shield::FULL_NAME", "group__mql5__time__enums.html#gga97004b8781e8dbb9b46201b0a5280b81aae475a448bb4c12398f6583fba1f9820", null ],
+      [ "time_shield::UPPERCASE_NAME", "group__mql5__time__enums.html#gga97004b8781e8dbb9b46201b0a5280b81af8205b66c3e2d00b8c0d631ab195b1ac", null ],
+      [ "time_shield::SHORT_NAME", "group__mql5__time__enums.html#gga97004b8781e8dbb9b46201b0a5280b81a38a1849c37306ba0e0a6e8a86a15e8d5", null ],
+      [ "time_shield::FULL_NAME", "group__mql5__time__enums.html#gga97004b8781e8dbb9b46201b0a5280b81aae475a448bb4c12398f6583fba1f9820", null ]
     ] ],
-    [ "time_shield::Month", "group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8", [
+    [ "time_shield::Month", "group__mql5__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8", [
       [ "time_shield::JAN", "group__time__enums.html#ggac2ffd79e06ab94cf1bb50fec432c68a8adc464480c1df7794618298c3cfe74a98", null ],
       [ "time_shield::FEB", "group__time__enums.html#ggac2ffd79e06ab94cf1bb50fec432c68a8a35fe19e9dc1b61a76bdeef0e4f177017", null ],
       [ "time_shield::MAR", "group__time__enums.html#ggac2ffd79e06ab94cf1bb50fec432c68a8a7f7c027c9c86860578361ac0fc93aa5f", null ],
@@ -35,7 +35,7 @@ var enums_8mqh =
       [ "time_shield::NOV", "group__time__enums.html#ggac2ffd79e06ab94cf1bb50fec432c68a8a5e3a6e5c23188b146d1b63ed3aa51d37", null ],
       [ "time_shield::DEC", "group__time__enums.html#ggac2ffd79e06ab94cf1bb50fec432c68a8aac2438c280003c2656406a18f0211491", null ]
     ] ],
-    [ "time_shield::MoonPhase", "group__time__enums.html#ga5fa51beb76e014adfffcd028fe1804ac", [
+    [ "time_shield::MoonPhase", "group__mql5__time__enums.html#ga5fa51beb76e014adfffcd028fe1804ac", [
       [ "time_shield::WAXING_CRESCENT", "group__time__enums.html#gga5fa51beb76e014adfffcd028fe1804aca8247a97af878bb94a2527a99f1d4050f", null ],
       [ "time_shield::FIRST_QUARTER", "group__time__enums.html#gga5fa51beb76e014adfffcd028fe1804aca44f6ae61dc2e43df007f846b8ea4acf9", null ],
       [ "time_shield::WAXING_GIBBOUS", "group__time__enums.html#gga5fa51beb76e014adfffcd028fe1804aca449c2a5ff9a66e5c1d3a60781b991cd6", null ],
@@ -53,7 +53,7 @@ var enums_8mqh =
       [ "time_shield::WANING_CRESCENT", "group__time__enums.html#gga5fa51beb76e014adfffcd028fe1804aca6992b99da7c5e8f31ff4d7563e510c11", null ],
       [ "time_shield::NEW_MOON", "group__time__enums.html#gga5fa51beb76e014adfffcd028fe1804aca2cb677eb7b38cba5d4e07595313cc99a", null ]
     ] ],
-    [ "time_shield::TimeFormatType", "group__time__enums.html#ga81dfe20e6515b855c625bd9c7aea58e6", [
+    [ "time_shield::TimeFormatType", "group__mql5__time__enums.html#ga81dfe20e6515b855c625bd9c7aea58e6", [
       [ "time_shield::ISO8601_WITH_TZ", "group__time__enums.html#gga81dfe20e6515b855c625bd9c7aea58e6a4ff17c3d5d81826da9439478a0bbf5fb", null ],
       [ "time_shield::ISO8601_NO_TZ", "group__time__enums.html#gga81dfe20e6515b855c625bd9c7aea58e6a277f00aa177ee8df19291e95198592fa", null ],
       [ "time_shield::MQL5_FULL", "group__time__enums.html#gga81dfe20e6515b855c625bd9c7aea58e6a670aabad0c8306d9321757a8cbff07f8", null ],
@@ -73,7 +73,7 @@ var enums_8mqh =
       [ "time_shield::AMERICAN_TIME", "group__time__enums.html#gga81dfe20e6515b855c625bd9c7aea58e6ade31895b4ac2a7ac53273cf6ad8050a5", null ],
       [ "time_shield::EUROPEAN_TIME", "group__time__enums.html#gga81dfe20e6515b855c625bd9c7aea58e6a2556ff1bc58098178bdfc25effbeaf4b", null ]
     ] ],
-    [ "time_shield::TimeZone", "group__time__enums.html#gad8cb858fb6cedcf76c4f0630d56e042b", [
+    [ "time_shield::TimeZone", "group__mql5__time__enums.html#gad8cb858fb6cedcf76c4f0630d56e042b", [
       [ "time_shield::GMT", "group__time__enums.html#ggad8cb858fb6cedcf76c4f0630d56e042bacce69cd6d90a968533a24acb0a5d3a72", null ],
       [ "time_shield::UTC", "group__time__enums.html#ggad8cb858fb6cedcf76c4f0630d56e042babba774a48b6685a9417e93da1f64d7e3", null ],
       [ "time_shield::EET", "group__time__enums.html#ggad8cb858fb6cedcf76c4f0630d56e042ba4ca89c10722784d45be4b036a4230cd6", null ],
@@ -93,7 +93,7 @@ var enums_8mqh =
       [ "time_shield::WEST", "group__time__enums.html#ggad8cb858fb6cedcf76c4f0630d56e042ba62b4f1dddfbf15eed8ca9771b9cbfe31", null ],
       [ "time_shield::UNKNOWN", "group__time__enums.html#ggad8cb858fb6cedcf76c4f0630d56e042baaf1aac3774bda46f8b9677cc4d51e20e", null ]
     ] ],
-    [ "time_shield::Weekday", "group__time__enums.html#gadf684443100352064316f6134bbe44f8", [
+    [ "time_shield::Weekday", "group__mql5__time__enums.html#gadf684443100352064316f6134bbe44f8", [
       [ "time_shield::SUN", "group__time__enums.html#ggadf684443100352064316f6134bbe44f8a435b4a7299946a56caaeba3190113f57", null ],
       [ "time_shield::MON", "group__time__enums.html#ggadf684443100352064316f6134bbe44f8a5b11118a7636fdc29afca49294441398", null ],
       [ "time_shield::TUE", "group__time__enums.html#ggadf684443100352064316f6134bbe44f8a19a027920ddff936a997c61cb1f00619", null ],
@@ -109,7 +109,10 @@ var enums_8mqh =
       [ "time_shield::FRI", "group__time__enums.html#ggadf684443100352064316f6134bbe44f8a74be2ada11289d5b8c69d0e5f83291b5", null ],
       [ "time_shield::SAT", "group__time__enums.html#ggadf684443100352064316f6134bbe44f8ae2bf2f0672007a58be8af305dc0f4d60", null ]
     ] ],
+    [ "time_shield::to_month_str", "group__mql5__time__enums.html#gafaa2032af5e9fb692abcaabeb612a9ae", null ],
     [ "time_shield::to_str", "group__time__enums.html#gab554fa3d85259dd230ca2e83cbb2621e", null ],
     [ "time_shield::to_str", "group__time__enums.html#ga938c3354424036afbfd596acaa76f805", null ],
-    [ "time_shield::to_str", "group__time__enums.html#ga29763e675c720ecce12688dea1d6fee0", null ]
+    [ "time_shield::to_str", "group__time__enums.html#ga29763e675c720ecce12688dea1d6fee0", null ],
+    [ "time_shield::to_timezone_str", "group__mql5__time__enums.html#ga0a9e93b0c79f433302117e7232faf337", null ],
+    [ "time_shield::to_weekday_str", "group__mql5__time__enums.html#gab4576f0bb32541e7e259e3fd1b3e26bb", null ]
 ];

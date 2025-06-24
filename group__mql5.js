@@ -2,7 +2,7 @@ var group__mql5 =
 [
     [ "Library Initialization", "group__mql5__initialization.html", null ],
     [ "Time Conversions", "group__mql5__time__conversions.html", "group__mql5__time__conversions" ],
-    [ "Time Enumerations", "group__mql5__time__enums.html", null ],
+    [ "Time Enumerations", "group__mql5__time__enums.html", "group__mql5__time__enums" ],
     [ "Time Formatting", "group__mql5__time__formatting.html", "group__mql5__time__formatting" ],
     [ "Time Structures", "group__mql5__time__structures.html", "group__mql5__time__structures" ],
     [ "time_shield.mqh", "time__shield_8mqh.html", null ],

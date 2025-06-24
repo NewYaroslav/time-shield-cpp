@@ -117,7 +117,9 @@ var menudata={children:[
 {text:"File Members",url:"globals.html",children:[
 {text:"All",url:"globals.html",children:[
 {text:"_",url:"globals.html#index__5F"},
+{text:"m",url:"globals.html#index_m"},
 {text:"t",url:"globals.html#index_t"}]},
+{text:"Functions",url:"globals_func.html"},
 {text:"Macros",url:"globals_defs.html",children:[
 {text:"_",url:"globals_defs.html#index__5F"},
 {text:"t",url:"globals_defs.html#index_t"}]}]}]}]}

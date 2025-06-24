@@ -109,7 +109,8 @@ $(function(){initNavTree('group__time__zone__conversions.html',''); initResizabl
 
 <div class="header">
   <div class="summary">
-<a href="#groups">Topics</a>  </div>
+<a href="#groups">Topics</a> &#124;
+<a href="#files">Files</a>  </div>
   <div class="headertitle"><div class="title">Time Zone Conversions<div class="ingroups"><a class="el" href="group__time__conversions.html">Time Conversions</a></div></div></div>
 </div><!--header-->
 <div class="contents">
@@ -121,11 +122,17 @@ $(function(){initNavTree('group__time__zone__conversions.html',''); initResizabl
 Topics</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__time__conversions__time__zone__conversions.html">Time zone conversion helpers</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="time__zone__conversions_8hpp.html">time_zone_conversions.hpp</a></td></tr>
+<tr class="memdesc:time__zone__conversions_8hpp"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helpers for converting CET/EET timestamps to GMT. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Helpers for converting regional time zones to GMT. </p>
 <p>These functions convert Central and Eastern European Time to Greenwich Mean Time. Daylight saving time rules before and after 2002 are taken into account, so conversions are accurate for legacy timestamps as well.</p>
-<h3><a class="anchor" id="autotoc_md22"></a>
+<h3><a class="anchor" id="autotoc_md20"></a>
 Example Usage:</h3>
 <div class="fragment"><div class="line">ts_t cet_ts = <a class="code hl_function" href="group__time__conversions.html#ga5efcc46cc96ba400832647939b620280">time_shield::to_ts</a>(2024, Month::JUN, 21, 12, 0, 0);</div>
 <div class="line">ts_t gmt_ts = <a class="code hl_function" href="group__time__conversions__time__zone__conversions.html#gae3bc7446e716571e6cab5a76b94892ec">time_shield::cet_to_gmt</a>(cet_ts);</div>

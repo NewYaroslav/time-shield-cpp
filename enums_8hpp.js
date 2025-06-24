@@ -2,12 +2,12 @@ var enums_8hpp =
 [
     [ "_TIME_SHIELD_ENUMS_HPP_INCLUDED", "enums_8hpp.html#afe2f410c2219004f13c480004e2b182f", null ],
     [ "time_shield::FormatType", "group__time__enums.html#ga97004b8781e8dbb9b46201b0a5280b81", [
-      [ "time_shield::UPPERCASE_NAME", "group__time__enums.html#gga97004b8781e8dbb9b46201b0a5280b81af8205b66c3e2d00b8c0d631ab195b1ac", null ],
-      [ "time_shield::SHORT_NAME", "group__time__enums.html#gga97004b8781e8dbb9b46201b0a5280b81a38a1849c37306ba0e0a6e8a86a15e8d5", null ],
-      [ "time_shield::FULL_NAME", "group__time__enums.html#gga97004b8781e8dbb9b46201b0a5280b81aae475a448bb4c12398f6583fba1f9820", null ],
-      [ "time_shield::UPPERCASE_NAME", "group__time__enums.html#gga97004b8781e8dbb9b46201b0a5280b81af8205b66c3e2d00b8c0d631ab195b1ac", null ],
-      [ "time_shield::SHORT_NAME", "group__time__enums.html#gga97004b8781e8dbb9b46201b0a5280b81a38a1849c37306ba0e0a6e8a86a15e8d5", null ],
-      [ "time_shield::FULL_NAME", "group__time__enums.html#gga97004b8781e8dbb9b46201b0a5280b81aae475a448bb4c12398f6583fba1f9820", null ]
+      [ "time_shield::UPPERCASE_NAME", "group__mql5__time__enums.html#gga97004b8781e8dbb9b46201b0a5280b81af8205b66c3e2d00b8c0d631ab195b1ac", null ],
+      [ "time_shield::SHORT_NAME", "group__mql5__time__enums.html#gga97004b8781e8dbb9b46201b0a5280b81a38a1849c37306ba0e0a6e8a86a15e8d5", null ],
+      [ "time_shield::FULL_NAME", "group__mql5__time__enums.html#gga97004b8781e8dbb9b46201b0a5280b81aae475a448bb4c12398f6583fba1f9820", null ],
+      [ "time_shield::UPPERCASE_NAME", "group__mql5__time__enums.html#gga97004b8781e8dbb9b46201b0a5280b81af8205b66c3e2d00b8c0d631ab195b1ac", null ],
+      [ "time_shield::SHORT_NAME", "group__mql5__time__enums.html#gga97004b8781e8dbb9b46201b0a5280b81a38a1849c37306ba0e0a6e8a86a15e8d5", null ],
+      [ "time_shield::FULL_NAME", "group__mql5__time__enums.html#gga97004b8781e8dbb9b46201b0a5280b81aae475a448bb4c12398f6583fba1f9820", null ]
     ] ],
     [ "time_shield::Month", "group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8", [
       [ "time_shield::JAN", "group__time__enums.html#ggac2ffd79e06ab94cf1bb50fec432c68a8adc464480c1df7794618298c3cfe74a98", null ],

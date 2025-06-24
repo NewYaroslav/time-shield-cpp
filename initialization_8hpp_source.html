@@ -115,24 +115,22 @@ $(function(){initNavTree('initialization_8hpp_source.html',''); initResizable(tr
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#ifndef _TIME_SHIELD_INITIALIZATION_HPP_INCLUDED</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="initialization_8hpp.html#a44848012546aa98a3e7011f8e33f7242">    3</a></span><span class="preprocessor">#define _TIME_SHIELD_INITIALIZATION_HPP_INCLUDED</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="time__utils_8hpp.html">time_utils.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacetime__shield.html">time_shield</a> {</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span></div>
-<div class="foldopen" id="foldopen00021" data-start="{" data-end="}">
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="group__time__initialization.html#ga85b12efd997cf090aa4a9a0b12b72d5c">   21</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="group__time__initialization.html#ga85b12efd997cf090aa4a9a0b12b72d5c">initialize_library</a>() {</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <a class="code hl_function" href="group__time__utils.html#ga2171fd068ca657997d72c30b5af8e8fb">microseconds</a>();</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>}</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="time__utils_8hpp.html">time_utils.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacetime__shield.html">time_shield</a> {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span></div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="}">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="group__lib__initialization.html#gacd9321e53ba96f121ed56ff0a9497182">   22</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="group__lib__initialization.html#gacd9321e53ba96f121ed56ff0a9497182">init</a>() {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <a class="code hl_function" href="group__time__utils.html#ga1aab54866cecab960bce9d55beea71ae">now_realtime_us</a>();</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    }</div>
 </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>}; <span class="comment">// namespace time_shield</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#endif </span><span class="comment">// _TIME_SHIELD_INITIALIZATION_HPP_INCLUDED</span></div>
-<div class="ttc" id="agroup__time__initialization_html_ga85b12efd997cf090aa4a9a0b12b72d5c"><div class="ttname"><a href="group__time__initialization.html#ga85b12efd997cf090aa4a9a0b12b72d5c">time_shield::initialize_library</a></div><div class="ttdeci">void initialize_library()</div><div class="ttdoc">Initialize the Time Shield library.</div><div class="ttdef"><b>Definition</b> <a href="#l00021">initialization.hpp:21</a></div></div>
-<div class="ttc" id="agroup__time__utils_html_ga2171fd068ca657997d72c30b5af8e8fb"><div class="ttname"><a href="group__time__utils.html#ga2171fd068ca657997d72c30b5af8e8fb">time_shield::microseconds</a></div><div class="ttdeci">long microseconds()</div><div class="ttdoc">Get the number of microseconds since the UNIX epoch.</div><div class="ttdef"><b>Definition</b> <a href="time__utils_8mqh_source.html#l00032">time_utils.mqh:32</a></div></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}; <span class="comment">// namespace time_shield</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#endif </span><span class="comment">// _TIME_SHIELD_INITIALIZATION_HPP_INCLUDED</span></div>
+<div class="ttc" id="agroup__lib__initialization_html_gacd9321e53ba96f121ed56ff0a9497182"><div class="ttname"><a href="group__lib__initialization.html#gacd9321e53ba96f121ed56ff0a9497182">time_shield::init</a></div><div class="ttdeci">void init()</div><div class="ttdoc">Initializes the Time Shield library.</div><div class="ttdef"><b>Definition</b> <a href="#l00022">initialization.hpp:22</a></div></div>
+<div class="ttc" id="agroup__time__utils_html_ga1aab54866cecab960bce9d55beea71ae"><div class="ttname"><a href="group__time__utils.html#ga1aab54866cecab960bce9d55beea71ae">time_shield::now_realtime_us</a></div><div class="ttdeci">int64_t now_realtime_us()</div><div class="ttdoc">Get current real time in microseconds using a hybrid method.</div><div class="ttdef"><b>Definition</b> <a href="time__utils_8hpp_source.html#l00055">time_utils.hpp:55</a></div></div>
 <div class="ttc" id="anamespacetime__shield_html"><div class="ttname"><a href="namespacetime__shield.html">time_shield</a></div><div class="ttdoc">Main namespace for the Time Shield library.</div></div>
 <div class="ttc" id="atime__utils_8hpp_html"><div class="ttname"><a href="time__utils_8hpp.html">time_utils.hpp</a></div><div class="ttdoc">Header file with time-related utility functions.</div></div>
 </div><!-- fragment --></div><!-- contents -->

@@ -125,8 +125,6 @@ Topics</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__time__structures__time__conversions.html">Time structure conversions</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__time__conversions__time__zone__conversions.html">Time zone conversion helpers</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -1726,7 +1724,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga663b004f3658e633bde73e38d6ff6bcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the timestamp of the end of the period.  <br /></td></tr>
 <tr class="separator:ga663b004f3658e633bde73e38d6ff6bcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga19821253642f96e9d01a6ce21ee09bb4" id="r_ga19821253642f96e9d01a6ce21ee09bb4"><td class="memTemplParams" colspan="2">template&lt;class T = TimeZoneStruct&gt; </td></tr>
-<tr class="memitem:ga19821253642f96e9d01a6ce21ee09bb4"><td class="memTemplItemLeft" align="right" valign="top">const T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga19821253642f96e9d01a6ce21ee09bb4">time_shield::to_time_zone</a> (<a class="el" href="group__time__types.html#ga3d041d3fb61cf004bcead7999f592e94">tz_t</a> offset)</td></tr>
+<tr class="memitem:ga19821253642f96e9d01a6ce21ee09bb4"><td class="memTemplItemLeft" align="right" valign="top">const T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga19821253642f96e9d01a6ce21ee09bb4">time_shield::to_time_zone</a> (<a class="el" href="group__time__types.html#ga467db13fb99208bd078b5abff59866fb">tz_t</a> offset)</td></tr>
 <tr class="memdesc:ga19821253642f96e9d01a6ce21ee09bb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts an integer to a time zone structure.  <br /></td></tr>
 <tr class="separator:ga19821253642f96e9d01a6ce21ee09bb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -1734,7 +1732,7 @@ Functions</h2></td></tr>
 <p>Utility functions for converting between time units. </p>
 <p>A comprehensive set of functions and utilities for working with timestamps and time-related data.</p>
 <p>This module provides functionalities to convert, manipulate, and analyze timestamps in seconds, milliseconds, and floating-point formats. It also includes utilities for working with date-time structures, UNIX days, and various time units (hours, minutes, seconds, etc.).</p>
-<h3><a class="anchor" id="autotoc_md18"></a>
+<h3><a class="anchor" id="autotoc_md16"></a>
 Key Features:</h3>
 <ul>
 <li>Convert timestamps between seconds, milliseconds, and floating-point seconds.</li>
@@ -1743,7 +1741,7 @@ Key Features:</h3>
 <li>Calculate the start and end of various time intervals (e.g., days, hours, months, years).</li>
 <li>Analyze time data (e.g., day of the week, day of the year, days in a month or year).</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md19"></a>
+<h3><a class="anchor" id="autotoc_md17"></a>
 Usage Examples:</h3>
 <ul>
 <li>Obtain the millisecond component of a timestamp: <div class="fragment"><div class="line"><span class="keyword">auto</span> ms = <a class="code hl_function" href="group__time__utils.html#gae799b7ae8a36ae788cbc832789542628">time_shield::ms_of_sec</a>(123.456);</div>
@@ -2081,7 +2079,7 @@ template&lt;class T = int&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8" title="Enumeration of the days of the week.">Weekday</a> (SUN=0, MON=1, ... SAT=6).    </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8">Weekday</a> (SUN=0, MON=1, ... SAT=6).    </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l00604">604</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
 
@@ -2110,7 +2108,7 @@ template&lt;class T = int&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8" title="Enumeration of the days of the week.">Weekday</a> (SUN=0, MON=1, ... SAT=6).    </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8">Weekday</a> (SUN=0, MON=1, ... SAT=6).    </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l00612">612</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
 
@@ -2179,7 +2177,7 @@ template&lt;class T1 = Weekday, class T2, typename std::enable_if&lt; std::is_cl
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8" title="Enumeration of the days of the week.">Weekday</a> (SUN = 0, MON = 1, ... SAT = 6).    </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8">Weekday</a> (SUN = 0, MON = 1, ... SAT = 6).    </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l00623">623</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
 
@@ -2213,9 +2211,9 @@ template&lt;class T1 = Weekday, class T2, typename std::enable_if&lt; std::is_cl
 <p>Get the day of the week.   </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T1</td><td>Return type (default: <a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8" title="Enumeration of the days of the week.">Weekday</a>). </td></tr>
+    <tr><td class="paramname">T1</td><td>Return type (default: <a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8">Weekday</a>). </td></tr>
     <tr><td class="paramname">T2</td><td>Year type. </td></tr>
-    <tr><td class="paramname">T3</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8" title="Enumeration of the months of the year.">Month</a> type. </td></tr>
+    <tr><td class="paramname">T3</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a> type. </td></tr>
     <tr><td class="paramname">T4</td><td>Day type. </td></tr>
   </table>
   </dd>
@@ -2223,7 +2221,7 @@ template&lt;class T1 = Weekday, class T2, typename std::enable_if&lt; std::is_cl
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">year</td><td>Year. </td></tr>
-    <tr><td class="paramname">month</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8" title="Enumeration of the months of the year.">Month</a>. </td></tr>
+    <tr><td class="paramname">month</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a>. </td></tr>
     <tr><td class="paramname">day</td><td>Day. </td></tr>
   </table>
   </dd>
@@ -2267,7 +2265,7 @@ template&lt;class T = Weekday, class U, typename std::enable_if&lt; std::is_inte
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8" title="Enumeration of the days of the week.">Weekday</a> (SUN = 0, MON = 1, ... SAT = 6).    </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8">Weekday</a> (SUN = 0, MON = 1, ... SAT = 6).    </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversion__aliases_8hpp_source.html#l01814">1814</a> of file <a class="el" href="time__conversion__aliases_8hpp_source.html">time_conversion_aliases.hpp</a>.</p>
 
@@ -2311,9 +2309,9 @@ template&lt;class T1 = Weekday&gt; </div>
 <p>Get the day of the week.   </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T1</td><td>Return type (default: <a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8" title="Enumeration of the days of the week.">Weekday</a>). </td></tr>
+    <tr><td class="paramname">T1</td><td>Return type (default: <a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8">Weekday</a>). </td></tr>
     <tr><td class="paramname">T2</td><td>Year type. </td></tr>
-    <tr><td class="paramname">T3</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8" title="Enumeration of the months of the year.">Month</a> type. </td></tr>
+    <tr><td class="paramname">T3</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a> type. </td></tr>
     <tr><td class="paramname">T4</td><td>Day type. </td></tr>
   </table>
   </dd>
@@ -2321,7 +2319,7 @@ template&lt;class T1 = Weekday&gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">year</td><td>Year. </td></tr>
-    <tr><td class="paramname">month</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8" title="Enumeration of the months of the year.">Month</a>. </td></tr>
+    <tr><td class="paramname">month</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a>. </td></tr>
     <tr><td class="paramname">day</td><td>Day. </td></tr>
   </table>
   </dd>
@@ -2370,9 +2368,9 @@ template&lt;class T1 = Weekday&gt; </div>
 <p>Get the day of the week.   </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T1</td><td>Return type (default: <a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8" title="Enumeration of the days of the week.">Weekday</a>). </td></tr>
+    <tr><td class="paramname">T1</td><td>Return type (default: <a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8">Weekday</a>). </td></tr>
     <tr><td class="paramname">T2</td><td>Year type. </td></tr>
-    <tr><td class="paramname">T3</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8" title="Enumeration of the months of the year.">Month</a> type. </td></tr>
+    <tr><td class="paramname">T3</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a> type. </td></tr>
     <tr><td class="paramname">T4</td><td>Day type. </td></tr>
   </table>
   </dd>
@@ -2380,7 +2378,7 @@ template&lt;class T1 = Weekday&gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">year</td><td>Year. </td></tr>
-    <tr><td class="paramname">month</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8" title="Enumeration of the months of the year.">Month</a>. </td></tr>
+    <tr><td class="paramname">month</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a>. </td></tr>
     <tr><td class="paramname">day</td><td>Day. </td></tr>
   </table>
   </dd>
@@ -2419,12 +2417,12 @@ template&lt;class T1 = Weekday&gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">year</td><td>Year value. </td></tr>
-    <tr><td class="paramname">month</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8" title="Enumeration of the months of the year.">Month</a> value. </td></tr>
+    <tr><td class="paramname">month</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a> value. </td></tr>
     <tr><td class="paramname">day</td><td>Day of the month. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8" title="Enumeration of the days of the week.">Weekday</a> (SUN=0, MON=1, ... SAT=6). </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8">Weekday</a> (SUN=0, MON=1, ... SAT=6). </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l00568">568</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
 
@@ -2467,9 +2465,9 @@ template&lt;class T1 = Weekday, class T2 = year_t, class T3 = int, class T4 = in
 <p>Get the day of the week. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T1</td><td>Return type (default: <a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8" title="Enumeration of the days of the week.">Weekday</a>). </td></tr>
+    <tr><td class="paramname">T1</td><td>Return type (default: <a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8">Weekday</a>). </td></tr>
     <tr><td class="paramname">T2</td><td>Year type. </td></tr>
-    <tr><td class="paramname">T3</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8" title="Enumeration of the months of the year.">Month</a> type. </td></tr>
+    <tr><td class="paramname">T3</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a> type. </td></tr>
     <tr><td class="paramname">T4</td><td>Day type. </td></tr>
   </table>
   </dd>
@@ -2477,7 +2475,7 @@ template&lt;class T1 = Weekday, class T2 = year_t, class T3 = int, class T4 = in
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">year</td><td>Year. </td></tr>
-    <tr><td class="paramname">month</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8" title="Enumeration of the months of the year.">Month</a>. </td></tr>
+    <tr><td class="paramname">month</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a>. </td></tr>
     <tr><td class="paramname">day</td><td>Day. </td></tr>
   </table>
   </dd>
@@ -2511,7 +2509,7 @@ template&lt;class T1 = Weekday, class T2 = year_t, class T3 = int, class T4 = in
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8" title="Enumeration of the days of the week.">Weekday</a> (SUN=0, MON=1, ... SAT=6).    </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8">Weekday</a> (SUN=0, MON=1, ... SAT=6).    </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l00600">600</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
 
@@ -2540,7 +2538,7 @@ template&lt;class T1 = Weekday, class T2 = year_t, class T3 = int, class T4 = in
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8" title="Enumeration of the days of the week.">Weekday</a> (SUN=0, MON=1, ... SAT=6).    </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8">Weekday</a> (SUN=0, MON=1, ... SAT=6).    </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l00608">608</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
 
@@ -2609,7 +2607,7 @@ template&lt;class T1 = Weekday, class T2, typename std::enable_if&lt; std::is_cl
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8" title="Enumeration of the days of the week.">Weekday</a> (SUN = 0, MON = 1, ... SAT = 6).    </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8">Weekday</a> (SUN = 0, MON = 1, ... SAT = 6).    </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l00634">634</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
 
@@ -2648,7 +2646,7 @@ template&lt;class T = Weekday&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8" title="Enumeration of the days of the week.">Weekday</a> (SUN = 0, MON = 1, ... SAT = 6).    </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8">Weekday</a> (SUN = 0, MON = 1, ... SAT = 6).    </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversion__aliases_8hpp_source.html#l01844">1844</a> of file <a class="el" href="time__conversion__aliases_8hpp_source.html">time_conversion_aliases.hpp</a>.</p>
 
@@ -3071,7 +3069,7 @@ template&lt;class T = int&gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">year</td><td>Year value. </td></tr>
-    <tr><td class="paramname">month</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8" title="Enumeration of the months of the year.">Month</a> value. </td></tr>
+    <tr><td class="paramname">month</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a> value. </td></tr>
   </table>
   </dd>
 </dl>
@@ -3114,7 +3112,7 @@ template&lt;class T1 = int, class T2 = year_t, class T3 = int&gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">year</td><td>Year as an integer. </td></tr>
-    <tr><td class="paramname">month</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8" title="Enumeration of the months of the year.">Month</a> as an integer. </td></tr>
+    <tr><td class="paramname">month</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a> as an integer. </td></tr>
   </table>
   </dd>
 </dl>
@@ -3382,9 +3380,9 @@ template&lt;class T1 = Weekday&gt; </div>
 <p>Get the day of the week.   </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T1</td><td>Return type (default: <a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8" title="Enumeration of the days of the week.">Weekday</a>). </td></tr>
+    <tr><td class="paramname">T1</td><td>Return type (default: <a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8">Weekday</a>). </td></tr>
     <tr><td class="paramname">T2</td><td>Year type. </td></tr>
-    <tr><td class="paramname">T3</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8" title="Enumeration of the months of the year.">Month</a> type. </td></tr>
+    <tr><td class="paramname">T3</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a> type. </td></tr>
     <tr><td class="paramname">T4</td><td>Day type. </td></tr>
   </table>
   </dd>
@@ -3392,7 +3390,7 @@ template&lt;class T1 = Weekday&gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">year</td><td>Year. </td></tr>
-    <tr><td class="paramname">month</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8" title="Enumeration of the months of the year.">Month</a>. </td></tr>
+    <tr><td class="paramname">month</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a>. </td></tr>
     <tr><td class="paramname">day</td><td>Day. </td></tr>
   </table>
   </dd>
@@ -3441,9 +3439,9 @@ template&lt;class T1 = Weekday&gt; </div>
 <p>Get the day of the week.   </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T1</td><td>Return type (default: <a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8" title="Enumeration of the days of the week.">Weekday</a>). </td></tr>
+    <tr><td class="paramname">T1</td><td>Return type (default: <a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8">Weekday</a>). </td></tr>
     <tr><td class="paramname">T2</td><td>Year type. </td></tr>
-    <tr><td class="paramname">T3</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8" title="Enumeration of the months of the year.">Month</a> type. </td></tr>
+    <tr><td class="paramname">T3</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a> type. </td></tr>
     <tr><td class="paramname">T4</td><td>Day type. </td></tr>
   </table>
   </dd>
@@ -3451,7 +3449,7 @@ template&lt;class T1 = Weekday&gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">year</td><td>Year. </td></tr>
-    <tr><td class="paramname">month</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8" title="Enumeration of the months of the year.">Month</a>. </td></tr>
+    <tr><td class="paramname">month</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a>. </td></tr>
     <tr><td class="paramname">day</td><td>Day. </td></tr>
   </table>
   </dd>
@@ -3535,7 +3533,7 @@ template&lt;class T = Weekday, class U, typename std::enable_if&lt; std::is_inte
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8" title="Enumeration of the days of the week.">Weekday</a> (SUN = 0, MON = 1, ... SAT = 6).    </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8">Weekday</a> (SUN = 0, MON = 1, ... SAT = 6).    </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversion__aliases_8hpp_source.html#l01821">1821</a> of file <a class="el" href="time__conversion__aliases_8hpp_source.html">time_conversion_aliases.hpp</a>.</p>
 
@@ -4012,7 +4010,7 @@ template&lt;class T = ts_t&gt; </div>
 <p>Converts a number of days since the UNIX epoch (January 1, 1970) to the corresponding timestamp in seconds at the end of the specified day (23:59:59).</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Type for representing timestamps in seconds.">ts_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Unix timestamp in seconds since 1970‑01‑01T00:00:00Z.">ts_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -4085,7 +4083,7 @@ template&lt;class T = ts_ms_t&gt; </div>
 <p>Converts a number of days since the UNIX epoch (January 1, 1970) to the corresponding timestamp in milliseconds at the end of the specified day (23:59:59.999).</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Type for representing timestamps in milliseconds.">ts_ms_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Unix timestamp in milliseconds since epoch.">ts_ms_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -4910,7 +4908,7 @@ template&lt;class T = year_t&gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">year</td><td>Year </td></tr>
-    <tr><td class="paramname">month</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8" title="Enumeration of the months of the year.">Month</a> (1 = January, 12 = December) </td></tr>
+    <tr><td class="paramname">month</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a> (1 = January, 12 = December) </td></tr>
   </table>
   </dd>
 </dl>
@@ -4955,7 +4953,7 @@ template&lt;class T1 = int, class T2 = year_t, class T3 = int&gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">year</td><td>Year </td></tr>
-    <tr><td class="paramname">month</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8" title="Enumeration of the months of the year.">Month</a> (1 = January, 12 = December) </td></tr>
+    <tr><td class="paramname">month</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a> (1 = January, 12 = December) </td></tr>
   </table>
   </dd>
 </dl>
@@ -5399,7 +5397,7 @@ template&lt;class T1 = int, class T2 = year_t, class T3 = int&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Type for representing timestamps in milliseconds.">ts_ms_t</a> Timestamp in milliseconds. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Unix timestamp in milliseconds since epoch.">ts_ms_t</a> Timestamp in milliseconds. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8hpp_source.html#l00110">110</a> of file <a class="el" href="time__conversions_8hpp_source.html">time_conversions.hpp</a>.</p>
 
@@ -5559,7 +5557,7 @@ template&lt;class T1 = year_t, class T2 = int, class T3 = int&gt; </div>
 <p>This function converts a given date and time to a floating-point timestamp, which is the number of seconds (with fractional milliseconds) since the Unix epoch (January 1, 1970).</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T1</td><td>The type of the year parameter (default is <a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9" title="Type for representing years as integers.">year_t</a>). </td></tr>
+    <tr><td class="paramname">T1</td><td>The type of the year parameter (default is <a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9" title="Year as an integer (e.g., 2024).">year_t</a>). </td></tr>
     <tr><td class="paramname">T2</td><td>The type of the month, day, hour, minute, and second parameters (default is int). </td></tr>
     <tr><td class="paramname">T3</td><td>The type of the millisecond parameter (default is int). </td></tr>
   </table>
@@ -5744,7 +5742,7 @@ template&lt;class T1 = year_t, class T2 = int, class T3 = int&gt; </div>
 <p>This function converts a given date and time to a floating-point timestamp, which is the number of seconds (with fractional milliseconds) since the Unix epoch (January 1, 1970).</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T1</td><td>The type of the year parameter (default is <a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9" title="Type for representing years as integers.">year_t</a>). </td></tr>
+    <tr><td class="paramname">T1</td><td>The type of the year parameter (default is <a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9" title="Year as an integer (e.g., 2024).">year_t</a>). </td></tr>
     <tr><td class="paramname">T2</td><td>The type of the month, day, hour, minute, and second parameters (default is int). </td></tr>
     <tr><td class="paramname">T3</td><td>The type of the millisecond parameter (default is int). </td></tr>
   </table>
@@ -6023,7 +6021,7 @@ template&lt;class T = Weekday, class U, typename std::enable_if&lt; std::is_inte
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8" title="Enumeration of the days of the week.">Weekday</a> (SUN = 0, MON = 1, ... SAT = 6).    </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8">Weekday</a> (SUN = 0, MON = 1, ... SAT = 6).    </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversion__aliases_8hpp_source.html#l01828">1828</a> of file <a class="el" href="time__conversion__aliases_8hpp_source.html">time_conversion_aliases.hpp</a>.</p>
 
@@ -7434,7 +7432,7 @@ template&lt;class T = uday_t&gt; </div>
 <p>This function returns the number of days elapsed since the UNIX epoch.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga391046d8662dee26a659793b8c0daf6a" title="Alias for Unix day type (uday_t).">unixday_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga391046d8662dee26a659793b8c0daf6a" title="Alias for Unix day count type.">unixday_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -7507,7 +7505,7 @@ template&lt;class T = uday_t&gt; </div>
 <p>This function returns the number of days elapsed since the UNIX epoch, given a timestamp in milliseconds.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga391046d8662dee26a659793b8c0daf6a" title="Alias for Unix day type (uday_t).">unixday_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga391046d8662dee26a659793b8c0daf6a" title="Alias for Unix day count type.">unixday_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -7652,7 +7650,7 @@ template&lt;class T = year_t&gt; </div>
 <p>Converts a UNIX timestamp to a year. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The type of the year (default is <a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9" title="Type for representing years as integers.">year_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The type of the year (default is <a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9" title="Year as an integer (e.g., 2024).">year_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -7688,7 +7686,7 @@ template&lt;class T = year_t&gt; </div>
 <p>This function returns the number of days elapsed since the UNIX epoch.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga391046d8662dee26a659793b8c0daf6a" title="Alias for Unix day type (uday_t).">unixday_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga391046d8662dee26a659793b8c0daf6a" title="Alias for Unix day count type.">unixday_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -7734,7 +7732,7 @@ template&lt;class T = uday_t&gt; </div>
 <p>This function returns the number of days elapsed since the UNIX epoch.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga391046d8662dee26a659793b8c0daf6a" title="Alias for Unix day type (uday_t).">unixday_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga391046d8662dee26a659793b8c0daf6a" title="Alias for Unix day count type.">unixday_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -7767,20 +7765,13 @@ template&lt;class T = uday_t&gt; </div>
 
 <p>Alias for get_unix_day_ms. </p>
 <p>Get UNIX day from milliseconds timestamp.   </p>
-<p>This function returns the number of days elapsed since the UNIX epoch, given a timestamp in milliseconds.</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga391046d8662dee26a659793b8c0daf6a" title="Alias for Unix day type (uday_t).">unixday_t</a>). </td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">t_ms</td><td>Timestamp in milliseconds (default is current timestamp in milliseconds). </td></tr>
+    <tr><td class="paramname">ts_ms</td><td>Timestamp in milliseconds. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Number of days since the UNIX epoch.    </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of days since UNIX epoch.    </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l01121">1121</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
 
@@ -7816,7 +7807,7 @@ template&lt;class T = uday_t&gt; </div>
 <p>This function returns the number of days elapsed since the UNIX epoch, given a timestamp in milliseconds.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga391046d8662dee26a659793b8c0daf6a" title="Alias for Unix day type (uday_t).">unixday_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga391046d8662dee26a659793b8c0daf6a" title="Alias for Unix day count type.">unixday_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -7860,9 +7851,9 @@ template&lt;class T = uday_t&gt; </div>
 <p>Get the day of the week.   </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T1</td><td>Return type (default: <a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8" title="Enumeration of the days of the week.">Weekday</a>). </td></tr>
+    <tr><td class="paramname">T1</td><td>Return type (default: <a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8">Weekday</a>). </td></tr>
     <tr><td class="paramname">T2</td><td>Year type. </td></tr>
-    <tr><td class="paramname">T3</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8" title="Enumeration of the months of the year.">Month</a> type. </td></tr>
+    <tr><td class="paramname">T3</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a> type. </td></tr>
     <tr><td class="paramname">T4</td><td>Day type. </td></tr>
   </table>
   </dd>
@@ -7870,7 +7861,7 @@ template&lt;class T = uday_t&gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">year</td><td>Year. </td></tr>
-    <tr><td class="paramname">month</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8" title="Enumeration of the months of the year.">Month</a>. </td></tr>
+    <tr><td class="paramname">month</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a>. </td></tr>
     <tr><td class="paramname">day</td><td>Day. </td></tr>
   </table>
   </dd>
@@ -7919,9 +7910,9 @@ template&lt;class T1 = Weekday&gt; </div>
 <p>Get the day of the week.   </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T1</td><td>Return type (default: <a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8" title="Enumeration of the days of the week.">Weekday</a>). </td></tr>
+    <tr><td class="paramname">T1</td><td>Return type (default: <a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8">Weekday</a>). </td></tr>
     <tr><td class="paramname">T2</td><td>Year type. </td></tr>
-    <tr><td class="paramname">T3</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8" title="Enumeration of the months of the year.">Month</a> type. </td></tr>
+    <tr><td class="paramname">T3</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a> type. </td></tr>
     <tr><td class="paramname">T4</td><td>Day type. </td></tr>
   </table>
   </dd>
@@ -7929,7 +7920,7 @@ template&lt;class T1 = Weekday&gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">year</td><td>Year. </td></tr>
-    <tr><td class="paramname">month</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8" title="Enumeration of the months of the year.">Month</a>. </td></tr>
+    <tr><td class="paramname">month</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a>. </td></tr>
     <tr><td class="paramname">day</td><td>Day. </td></tr>
   </table>
   </dd>
@@ -7978,9 +7969,9 @@ template&lt;class T1 = Weekday&gt; </div>
 <p>Get the day of the week.   </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T1</td><td>Return type (default: <a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8" title="Enumeration of the days of the week.">Weekday</a>). </td></tr>
+    <tr><td class="paramname">T1</td><td>Return type (default: <a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8">Weekday</a>). </td></tr>
     <tr><td class="paramname">T2</td><td>Year type. </td></tr>
-    <tr><td class="paramname">T3</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8" title="Enumeration of the months of the year.">Month</a> type. </td></tr>
+    <tr><td class="paramname">T3</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a> type. </td></tr>
     <tr><td class="paramname">T4</td><td>Day type. </td></tr>
   </table>
   </dd>
@@ -7988,7 +7979,7 @@ template&lt;class T1 = Weekday&gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">year</td><td>Year. </td></tr>
-    <tr><td class="paramname">month</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8" title="Enumeration of the months of the year.">Month</a>. </td></tr>
+    <tr><td class="paramname">month</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a>. </td></tr>
     <tr><td class="paramname">day</td><td>Day. </td></tr>
   </table>
   </dd>
@@ -8021,7 +8012,7 @@ template&lt;class T1 = Weekday&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8" title="Enumeration of the days of the week.">Weekday</a> (SUN=0, MON=1, ... SAT=6). </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8">Weekday</a> (SUN=0, MON=1, ... SAT=6). </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l00587">587</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
 
@@ -8049,7 +8040,7 @@ template&lt;class T1 = Weekday&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8" title="Enumeration of the days of the week.">Weekday</a> (SUN=0, MON=1, ... SAT=6). </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8">Weekday</a> (SUN=0, MON=1, ... SAT=6). </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l00594">594</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
 
@@ -8116,7 +8107,7 @@ template&lt;class T1 = Weekday, class T2&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8" title="Enumeration of the days of the week.">Weekday</a> (SUN=0, MON=1, ... SAT=6). </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8">Weekday</a> (SUN=0, MON=1, ... SAT=6). </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l00617">617</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
 
@@ -8154,7 +8145,7 @@ template&lt;class T = Weekday&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8" title="Enumeration of the days of the week.">Weekday</a> (SUN = 0, MON = 1, ... SAT = 6). </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8">Weekday</a> (SUN = 0, MON = 1, ... SAT = 6). </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8hpp_source.html#l01603">1603</a> of file <a class="el" href="time__conversions_8hpp_source.html">time_conversions.hpp</a>.</p>
 
@@ -8182,7 +8173,7 @@ template&lt;class T = Weekday&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8" title="Enumeration of the days of the week.">Weekday</a> (SUN=0, MON=1, ... SAT=6). </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8">Weekday</a> (SUN=0, MON=1, ... SAT=6). </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l00628">628</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
 
@@ -8220,7 +8211,7 @@ template&lt;class T = Weekday&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8" title="Enumeration of the days of the week.">Weekday</a> (SUN = 0, MON = 1, ... SAT = 6). </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8">Weekday</a> (SUN = 0, MON = 1, ... SAT = 6). </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8hpp_source.html#l01613">1613</a> of file <a class="el" href="time__conversions_8hpp_source.html">time_conversions.hpp</a>.</p>
 
@@ -8283,7 +8274,7 @@ template&lt;class T = year_t&gt; </div>
 <p>This function returns the year of the specified timestamp in seconds since the Unix epoch.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9" title="Type for representing years as integers.">year_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9" title="Year as an integer (e.g., 2024).">year_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -8356,7 +8347,7 @@ template&lt;class T = year_t&gt; </div>
 <p>This function returns the year of the specified timestamp in milliseconds since the Unix epoch.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9" title="Type for representing years as integers.">year_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9" title="Year as an integer (e.g., 2024).">year_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -8929,7 +8920,7 @@ template&lt;class T = int&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f" title="Type for representing timestamps as floating-point numbers (e.g., fractional seconds).">fts_t</a> Timestamp in floating-point seconds. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f" title="Floating-point timestamp (fractional seconds since epoch).">fts_t</a> Timestamp in floating-point seconds. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8hpp_source.html#l00386">386</a> of file <a class="el" href="time__conversions_8hpp_source.html">time_conversions.hpp</a>.</p>
 
@@ -8991,7 +8982,7 @@ template&lt;class T1 = ts_ms_t, class T2&gt; </div>
 <p>Converts a timestamp from hours to milliseconds. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T1</td><td>The type of the output timestamp (default is <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Type for representing timestamps in milliseconds.">ts_ms_t</a>). </td></tr>
+    <tr><td class="paramname">T1</td><td>The type of the output timestamp (default is <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Unix timestamp in milliseconds since epoch.">ts_ms_t</a>). </td></tr>
     <tr><td class="paramname">T2</td><td>The type of the input timestamp. </td></tr>
   </table>
   </dd>
@@ -9051,7 +9042,7 @@ template&lt;class T&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Type for representing timestamps in milliseconds.">ts_ms_t</a> Timestamp in milliseconds. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Unix timestamp in milliseconds since epoch.">ts_ms_t</a> Timestamp in milliseconds. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8hpp_source.html#l00286">286</a> of file <a class="el" href="time__conversions_8hpp_source.html">time_conversions.hpp</a>.</p>
 
@@ -9100,7 +9091,7 @@ template&lt;class T&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Type for representing timestamps in milliseconds.">ts_ms_t</a> Timestamp in milliseconds. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Unix timestamp in milliseconds since epoch.">ts_ms_t</a> Timestamp in milliseconds. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8hpp_source.html#l00276">276</a> of file <a class="el" href="time__conversions_8hpp_source.html">time_conversions.hpp</a>.</p>
 
@@ -9162,7 +9153,7 @@ template&lt;class T1 = ts_t, class T2&gt; </div>
 <p>Converts a timestamp from hours to seconds. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T1</td><td>The type of the output timestamp (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Type for representing timestamps in seconds.">ts_t</a>). </td></tr>
+    <tr><td class="paramname">T1</td><td>The type of the output timestamp (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Unix timestamp in seconds since 1970‑01‑01T00:00:00Z.">ts_t</a>). </td></tr>
     <tr><td class="paramname">T2</td><td>The type of the input timestamp. </td></tr>
   </table>
   </dd>
@@ -9222,7 +9213,7 @@ template&lt;class T&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Type for representing timestamps in seconds.">ts_t</a> Timestamp in seconds. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Unix timestamp in seconds since 1970‑01‑01T00:00:00Z.">ts_t</a> Timestamp in seconds. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8hpp_source.html#l00344">344</a> of file <a class="el" href="time__conversions_8hpp_source.html">time_conversions.hpp</a>.</p>
 
@@ -9271,7 +9262,7 @@ template&lt;class T&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Type for representing timestamps in seconds.">ts_t</a> Timestamp in seconds. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Unix timestamp in seconds since 1970‑01‑01T00:00:00Z.">ts_t</a> Timestamp in seconds. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8hpp_source.html#l00334">334</a> of file <a class="el" href="time__conversions_8hpp_source.html">time_conversions.hpp</a>.</p>
 
@@ -9368,7 +9359,7 @@ template&lt;class T&gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">year</td><td>Year value. </td></tr>
-    <tr><td class="paramname">month</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8" title="Enumeration of the months of the year.">Month</a> value. </td></tr>
+    <tr><td class="paramname">month</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a> value. </td></tr>
   </table>
   </dd>
 </dl>
@@ -9412,7 +9403,7 @@ template&lt;class T1 = int, class T2 = year_t, class T3 = int&gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">year</td><td>Year </td></tr>
-    <tr><td class="paramname">month</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8" title="Enumeration of the months of the year.">Month</a> (1 = January, 12 = December) </td></tr>
+    <tr><td class="paramname">month</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a> (1 = January, 12 = December) </td></tr>
   </table>
   </dd>
 </dl>
@@ -9780,7 +9771,7 @@ template&lt;class T = int&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f" title="Type for representing timestamps as floating-point numbers (e.g., fractional seconds).">fts_t</a> Timestamp in floating-point seconds. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f" title="Floating-point timestamp (fractional seconds since epoch).">fts_t</a> Timestamp in floating-point seconds. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8hpp_source.html#l00252">252</a> of file <a class="el" href="time__conversions_8hpp_source.html">time_conversions.hpp</a>.</p>
 
@@ -9842,7 +9833,7 @@ template&lt;class T1 = ts_ms_t, class T2&gt; </div>
 <p>Converts a timestamp from minutes to milliseconds. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T1</td><td>The type of the output timestamp (default is <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Type for representing timestamps in milliseconds.">ts_ms_t</a>). </td></tr>
+    <tr><td class="paramname">T1</td><td>The type of the output timestamp (default is <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Unix timestamp in milliseconds since epoch.">ts_ms_t</a>). </td></tr>
     <tr><td class="paramname">T2</td><td>The type of the input timestamp. </td></tr>
   </table>
   </dd>
@@ -9902,7 +9893,7 @@ template&lt;class T&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Type for representing timestamps in milliseconds.">ts_ms_t</a> Timestamp in milliseconds. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Unix timestamp in milliseconds since epoch.">ts_ms_t</a> Timestamp in milliseconds. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8hpp_source.html#l00153">153</a> of file <a class="el" href="time__conversions_8hpp_source.html">time_conversions.hpp</a>.</p>
 
@@ -9951,7 +9942,7 @@ template&lt;class T&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Type for representing timestamps in milliseconds.">ts_ms_t</a> Timestamp in milliseconds. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Unix timestamp in milliseconds since epoch.">ts_ms_t</a> Timestamp in milliseconds. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8hpp_source.html#l00143">143</a> of file <a class="el" href="time__conversions_8hpp_source.html">time_conversions.hpp</a>.</p>
 
@@ -10013,7 +10004,7 @@ template&lt;class T1 = ts_t, class T2&gt; </div>
 <p>Converts a timestamp from minutes to seconds. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T1</td><td>The type of the output timestamp (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Type for representing timestamps in seconds.">ts_t</a>). </td></tr>
+    <tr><td class="paramname">T1</td><td>The type of the output timestamp (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Unix timestamp in seconds since 1970‑01‑01T00:00:00Z.">ts_t</a>). </td></tr>
     <tr><td class="paramname">T2</td><td>The type of the input timestamp. </td></tr>
   </table>
   </dd>
@@ -10073,7 +10064,7 @@ template&lt;class T&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Type for representing timestamps in seconds.">ts_t</a> Timestamp in seconds. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Unix timestamp in seconds since 1970‑01‑01T00:00:00Z.">ts_t</a> Timestamp in seconds. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8hpp_source.html#l00210">210</a> of file <a class="el" href="time__conversions_8hpp_source.html">time_conversions.hpp</a>.</p>
 
@@ -10122,7 +10113,7 @@ template&lt;class T&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Type for representing timestamps in seconds.">ts_t</a> Timestamp in seconds. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Unix timestamp in seconds since 1970‑01‑01T00:00:00Z.">ts_t</a> Timestamp in seconds. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8hpp_source.html#l00200">200</a> of file <a class="el" href="time__conversions_8hpp_source.html">time_conversions.hpp</a>.</p>
 
@@ -10218,7 +10209,7 @@ template&lt;class T&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8" title="Enumeration of the months of the year.">Month</a> of the year. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a> of the year. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l00742">742</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
 
@@ -10257,7 +10248,7 @@ template&lt;class T = Month&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8" title="Enumeration of the months of the year.">Month</a> of the year. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a> of the year. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8hpp_source.html#l01294">1294</a> of file <a class="el" href="time__conversions_8hpp_source.html">time_conversions.hpp</a>.</p>
 
@@ -10463,7 +10454,7 @@ template&lt;class T = ts_ms_t&gt; </div>
 <p>Converts a timestamp from milliseconds to floating-point seconds. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The type of the input timestamp (default is <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Type for representing timestamps in milliseconds.">ts_ms_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The type of the input timestamp (default is <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Unix timestamp in milliseconds since epoch.">ts_ms_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -10473,7 +10464,7 @@ template&lt;class T = ts_ms_t&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f" title="Type for representing timestamps as floating-point numbers (e.g., fractional seconds).">fts_t</a> Timestamp in floating-point seconds. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f" title="Floating-point timestamp (fractional seconds since epoch).">fts_t</a> Timestamp in floating-point seconds. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8hpp_source.html#l00129">129</a> of file <a class="el" href="time__conversions_8hpp_source.html">time_conversions.hpp</a>.</p>
 
@@ -10536,7 +10527,7 @@ template&lt;class T1 = int, class T2 = ts_ms_t&gt; </div>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T1</td><td>The type of the output timestamp (default is int). </td></tr>
-    <tr><td class="paramname">T2</td><td>The type of the input timestamp (default is <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Type for representing timestamps in milliseconds.">ts_ms_t</a>). </td></tr>
+    <tr><td class="paramname">T2</td><td>The type of the input timestamp (default is <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Unix timestamp in milliseconds since epoch.">ts_ms_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -10609,7 +10600,7 @@ template&lt;class T1 = int, class T2 = ts_ms_t&gt; </div>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T1</td><td>The type of the output timestamp (default is int). </td></tr>
-    <tr><td class="paramname">T2</td><td>The type of the input timestamp (default is <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Type for representing timestamps in milliseconds.">ts_ms_t</a>). </td></tr>
+    <tr><td class="paramname">T2</td><td>The type of the input timestamp (default is <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Unix timestamp in milliseconds since epoch.">ts_ms_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -10681,8 +10672,8 @@ template&lt;class T1 = ts_t, class T2 = ts_ms_t&gt; </div>
 <p>Converts a timestamp from milliseconds to seconds. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T1</td><td>The type of the output timestamp (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Type for representing timestamps in seconds.">ts_t</a>). </td></tr>
-    <tr><td class="paramname">T2</td><td>The type of the input timestamp (default is <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Type for representing timestamps in milliseconds.">ts_ms_t</a>). </td></tr>
+    <tr><td class="paramname">T1</td><td>The type of the output timestamp (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Unix timestamp in seconds since 1970‑01‑01T00:00:00Z.">ts_t</a>). </td></tr>
+    <tr><td class="paramname">T2</td><td>The type of the input timestamp (default is <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Unix timestamp in milliseconds since epoch.">ts_ms_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -10791,21 +10782,14 @@ template&lt;class T = int&gt; </div>
 </div><div class="memdoc">
 
 <p>Alias for start_of_next_day_from_unix_day. </p>
-<p>Converts a UNIX day to a timestamp representing the start of the next day in seconds.   </p>
-<p>Converts a number of days since the UNIX epoch (January 1, 1970) to the corresponding timestamp in seconds at the start of the next day (00:00:00).</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Type for representing timestamps in seconds.">ts_t</a>). </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Get start of next day timestamp from UNIX day.   </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">unix_day</td><td>The number of days since the UNIX epoch. </td></tr>
+    <tr><td class="paramname">uday</td><td>UNIX day value. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The timestamp in seconds representing the beginning of the next UNIX day.    </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Timestamp at start of next day in seconds.    </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l01231">1231</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
 
@@ -10841,7 +10825,7 @@ template&lt;class T = ts_t&gt; </div>
 <p>Converts a number of days since the UNIX epoch (January 1, 1970) to the corresponding timestamp in seconds at the start of the next day (00:00:00).</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Type for representing timestamps in seconds.">ts_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Unix timestamp in seconds since 1970‑01‑01T00:00:00Z.">ts_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -10887,7 +10871,7 @@ template&lt;class T = ts_ms_t&gt; </div>
 <p>Converts a number of days since the UNIX epoch (January 1, 1970) to the corresponding timestamp in milliseconds at the start of the next day (00:00:00.000).</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Type for representing timestamps in milliseconds.">ts_ms_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Unix timestamp in milliseconds since epoch.">ts_ms_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -11156,21 +11140,14 @@ template&lt;class T = int&gt; </div>
 </div><div class="memdoc">
 
 <p>Alias for start_of_next_day_from_unix_day. </p>
-<p>Converts a UNIX day to a timestamp representing the start of the next day in seconds.   </p>
-<p>Converts a number of days since the UNIX epoch (January 1, 1970) to the corresponding timestamp in seconds at the start of the next day (00:00:00).</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Type for representing timestamps in seconds.">ts_t</a>). </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Get start of next day timestamp from UNIX day.   </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">unix_day</td><td>The number of days since the UNIX epoch. </td></tr>
+    <tr><td class="paramname">uday</td><td>UNIX day value. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The timestamp in seconds representing the beginning of the next UNIX day.    </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Timestamp at start of next day in seconds.    </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l01215">1215</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
 
@@ -11206,7 +11183,7 @@ template&lt;class T = ts_t&gt; </div>
 <p>Converts a number of days since the UNIX epoch (January 1, 1970) to the corresponding timestamp in seconds at the start of the next day (00:00:00).</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Type for representing timestamps in seconds.">ts_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Unix timestamp in seconds since 1970‑01‑01T00:00:00Z.">ts_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -11238,21 +11215,14 @@ template&lt;class T = ts_t&gt; </div>
 </div><div class="memdoc">
 
 <p>Alias for start_of_next_day_from_unix_day_ms. </p>
-<p>Converts a UNIX day to a timestamp representing the start of the next day in milliseconds.   </p>
-<p>Converts a number of days since the UNIX epoch (January 1, 1970) to the corresponding timestamp in milliseconds at the start of the next day (00:00:00.000).</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Type for representing timestamps in milliseconds.">ts_ms_t</a>). </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Get start of next day timestamp in ms from UNIX day.   </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">unix_day</td><td>The number of days since the UNIX epoch. </td></tr>
+    <tr><td class="paramname">uday</td><td>UNIX day value. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The timestamp in milliseconds representing the beginning of the next UNIX day.    </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Timestamp at start of next day in milliseconds.    </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l01223">1223</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
 
@@ -11288,7 +11258,7 @@ template&lt;class T = ts_ms_t&gt; </div>
 <p>Converts a number of days since the UNIX epoch (January 1, 1970) to the corresponding timestamp in milliseconds at the start of the next day (00:00:00.000).</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Type for representing timestamps in milliseconds.">ts_ms_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Unix timestamp in milliseconds since epoch.">ts_ms_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -11320,21 +11290,14 @@ template&lt;class T = ts_ms_t&gt; </div>
 </div><div class="memdoc">
 
 <p>Alias for start_of_next_day_from_unix_day. </p>
-<p>Converts a UNIX day to a timestamp representing the start of the next day in seconds.   </p>
-<p>Converts a number of days since the UNIX epoch (January 1, 1970) to the corresponding timestamp in seconds at the start of the next day (00:00:00).</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Type for representing timestamps in seconds.">ts_t</a>). </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Get start of next day timestamp from UNIX day.   </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">unix_day</td><td>The number of days since the UNIX epoch. </td></tr>
+    <tr><td class="paramname">uday</td><td>UNIX day value. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The timestamp in seconds representing the beginning of the next UNIX day.    </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Timestamp at start of next day in seconds.    </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l01219">1219</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
 
@@ -11370,7 +11333,7 @@ template&lt;class T = ts_t&gt; </div>
 <p>Converts a number of days since the UNIX epoch (January 1, 1970) to the corresponding timestamp in seconds at the start of the next day (00:00:00).</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Type for representing timestamps in seconds.">ts_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Unix timestamp in seconds since 1970‑01‑01T00:00:00Z.">ts_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -11402,21 +11365,14 @@ template&lt;class T = ts_t&gt; </div>
 </div><div class="memdoc">
 
 <p>Alias for start_of_next_day_from_unix_day_ms. </p>
-<p>Converts a UNIX day to a timestamp representing the start of the next day in milliseconds.   </p>
-<p>Converts a number of days since the UNIX epoch (January 1, 1970) to the corresponding timestamp in milliseconds at the start of the next day (00:00:00.000).</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Type for representing timestamps in milliseconds.">ts_ms_t</a>). </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Get start of next day timestamp in ms from UNIX day.   </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">unix_day</td><td>The number of days since the UNIX epoch. </td></tr>
+    <tr><td class="paramname">uday</td><td>UNIX day value. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The timestamp in milliseconds representing the beginning of the next UNIX day.    </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Timestamp at start of next day in milliseconds.    </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l01227">1227</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
 
@@ -11452,7 +11408,7 @@ template&lt;class T = ts_ms_t&gt; </div>
 <p>Converts a number of days since the UNIX epoch (January 1, 1970) to the corresponding timestamp in milliseconds at the start of the next day (00:00:00.000).</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Type for representing timestamps in milliseconds.">ts_ms_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Unix timestamp in milliseconds since epoch.">ts_ms_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -11593,7 +11549,7 @@ template&lt;class T = int&gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">year</td><td>Year value. </td></tr>
-    <tr><td class="paramname">month</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8" title="Enumeration of the months of the year.">Month</a> value. </td></tr>
+    <tr><td class="paramname">month</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a> value. </td></tr>
   </table>
   </dd>
 </dl>
@@ -11637,7 +11593,7 @@ template&lt;class T1 = int, class T2 = year_t, class T3 = int&gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">year</td><td>Year as an integer. </td></tr>
-    <tr><td class="paramname">month</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8" title="Enumeration of the months of the year.">Month</a> as an integer. </td></tr>
+    <tr><td class="paramname">month</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a> as an integer. </td></tr>
   </table>
   </dd>
 </dl>
@@ -12424,7 +12380,7 @@ template&lt;class T = ts_t&gt; </div>
 <p>Converts a timestamp from seconds to floating-point hours. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The type of the input timestamp (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Type for representing timestamps in seconds.">ts_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The type of the input timestamp (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Unix timestamp in seconds since 1970‑01‑01T00:00:00Z.">ts_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -12496,7 +12452,7 @@ template&lt;class T = ts_t&gt; </div>
 <p>Converts a timestamp from seconds to floating-point minutes. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The type of the input timestamp (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Type for representing timestamps in seconds.">ts_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The type of the input timestamp (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Unix timestamp in seconds since 1970‑01‑01T00:00:00Z.">ts_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -12569,7 +12525,7 @@ template&lt;class T1 = int, class T2 = ts_t&gt; </div>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T1</td><td>The type of the output timestamp (default is int). </td></tr>
-    <tr><td class="paramname">T2</td><td>The type of the input timestamp (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Type for representing timestamps in seconds.">ts_t</a>). </td></tr>
+    <tr><td class="paramname">T2</td><td>The type of the input timestamp (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Unix timestamp in seconds since 1970‑01‑01T00:00:00Z.">ts_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -12642,7 +12598,7 @@ template&lt;class T1 = int, class T2 = ts_t&gt; </div>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T1</td><td>The type of the output timestamp (default is int). </td></tr>
-    <tr><td class="paramname">T2</td><td>The type of the input timestamp (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Type for representing timestamps in seconds.">ts_t</a>). </td></tr>
+    <tr><td class="paramname">T2</td><td>The type of the input timestamp (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Unix timestamp in seconds since 1970‑01‑01T00:00:00Z.">ts_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -12714,7 +12670,7 @@ template&lt;class T1 = ts_ms_t, class T2&gt; </div>
 <p>Converts a timestamp from seconds to milliseconds. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T1</td><td>The type of the output timestamp (default is <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Type for representing timestamps in milliseconds.">ts_ms_t</a>). </td></tr>
+    <tr><td class="paramname">T1</td><td>The type of the output timestamp (default is <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Unix timestamp in milliseconds since epoch.">ts_ms_t</a>). </td></tr>
     <tr><td class="paramname">T2</td><td>The type of the input timestamp. </td></tr>
   </table>
   </dd>
@@ -12774,7 +12730,7 @@ template&lt;class T&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Type for representing timestamps in milliseconds.">ts_ms_t</a> Timestamp in milliseconds. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Unix timestamp in milliseconds since epoch.">ts_ms_t</a> Timestamp in milliseconds. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8hpp_source.html#l00080">80</a> of file <a class="el" href="time__conversions_8hpp_source.html">time_conversions.hpp</a>.</p>
 
@@ -12823,7 +12779,7 @@ template&lt;class T&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Type for representing timestamps in milliseconds.">ts_ms_t</a> Timestamp in milliseconds. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Unix timestamp in milliseconds since epoch.">ts_ms_t</a> Timestamp in milliseconds. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8hpp_source.html#l00070">70</a> of file <a class="el" href="time__conversions_8hpp_source.html">time_conversions.hpp</a>.</p>
 
@@ -12948,21 +12904,14 @@ template&lt;class T&gt; </div>
 </div><div class="memdoc">
 
 <p>Alias for unix_day_to_timestamp. </p>
-<p>Converts a UNIX day to a timestamp in seconds.   </p>
-<p>Converts a number of days since the UNIX epoch (January 1, 1970) to the corresponding timestamp in seconds at the start of the specified day.</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Type for representing timestamps in seconds.">ts_t</a>). </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Convert UNIX day to timestamp in seconds.   </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">unix_day</td><td>Number of days since the UNIX epoch. </td></tr>
+    <tr><td class="paramname">uday</td><td>UNIX day value. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The timestamp in seconds representing the beginning of the specified UNIX day.    </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Timestamp at start of the day.    </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l01152">1152</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
 
@@ -12998,7 +12947,7 @@ template&lt;class T = ts_t&gt; </div>
 <p>Converts a number of days since the UNIX epoch (January 1, 1970) to the corresponding timestamp in seconds at the start of the specified day.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Type for representing timestamps in seconds.">ts_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Unix timestamp in seconds since 1970‑01‑01T00:00:00Z.">ts_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -13030,21 +12979,14 @@ template&lt;class T = ts_t&gt; </div>
 </div><div class="memdoc">
 
 <p>Alias for unix_day_to_timestamp_ms. </p>
-<p>Converts a UNIX day to a timestamp in milliseconds.   </p>
-<p>Converts a number of days since the UNIX epoch (January 1, 1970) to the corresponding timestamp in milliseconds at the start of the specified day.</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Type for representing timestamps in seconds.">ts_t</a>). </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Convert UNIX day to timestamp in milliseconds.   </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">unix_day</td><td>Number of days since the UNIX epoch. </td></tr>
+    <tr><td class="paramname">uday</td><td>UNIX day value. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The timestamp in milliseconds representing the beginning of the specified UNIX day.    </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Timestamp at start of the day in milliseconds.    </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l01175">1175</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
 
@@ -13080,7 +13022,7 @@ template&lt;class T = ts_t&gt; </div>
 <p>Converts a number of days since the UNIX epoch (January 1, 1970) to the corresponding timestamp in milliseconds at the start of the specified day.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Type for representing timestamps in seconds.">ts_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Unix timestamp in seconds since 1970‑01‑01T00:00:00Z.">ts_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -13683,7 +13625,7 @@ template&lt;class T = ts_ms_t&gt; </div>
 <p>Converts a number of days since the UNIX epoch (January 1, 1970) to the corresponding timestamp in seconds at the start of the next day (00:00:00).</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Type for representing timestamps in seconds.">ts_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Unix timestamp in seconds since 1970‑01‑01T00:00:00Z.">ts_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -13756,7 +13698,7 @@ template&lt;class T = ts_ms_t&gt; </div>
 <p>Converts a number of days since the UNIX epoch (January 1, 1970) to the corresponding timestamp in milliseconds at the start of the next day (00:00:00.000).</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Type for representing timestamps in milliseconds.">ts_ms_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Unix timestamp in milliseconds since epoch.">ts_ms_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -15605,20 +15547,14 @@ template&lt;class T1, class T2 = ts_t&gt; </div>
 </div><div class="memdoc">
 
 <p>Alias for to_date_time_ms. </p>
-<p>Converts a timestamp in milliseconds to a date-time structure with milliseconds.   </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The type of the date-time structure to return. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Convert a timestamp in milliseconds to <a class="el" href="structtime__shield_1_1DateTimeStruct.html" title="Structure to represent date and time.">DateTimeStruct</a>.   </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ts</td><td>The timestamp in milliseconds to convert. </td></tr>
+    <tr><td class="paramname">ts_ms</td><td>Timestamp in milliseconds since UNIX epoch. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>T A date-time structure with the corresponding date and time components.    </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Filled <a class="el" href="structtime__shield_1_1DateTimeStruct.html" title="Structure to represent date and time.">DateTimeStruct</a> with millisecond part.    </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l00316">316</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
 
@@ -15769,27 +15705,14 @@ template&lt;class T&gt; </div>
 </div><div class="memdoc">
 
 <p>Alias for dt_to_ftimestamp. </p>
-<p>Converts a date-time structure to a floating-point timestamp.   </p>
-<p>This function converts a given date and time structure to a floating-point timestamp, which is the number of seconds (with fractional milliseconds) since the Unix epoch (January 1, 1970).</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The type of the date-time structure. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Convert a <a class="el" href="structtime__shield_1_1DateTimeStruct.html" title="Structure to represent date and time.">DateTimeStruct</a> to floating-point timestamp.   </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">date_time</td><td>The date-time structure containing year, month, day, hour, minute, second, and millisecond fields. </td></tr>
+    <tr><td class="paramname">dt</td><td>Structure with date and time fields. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Floating-point timestamp representing the given date and time. </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">std::invalid_argument</td><td>if the date-time combination is invalid.    </td></tr>
-  </table>
-  </dd>
-</dl>
+<dl class="section return"><dt>Returns</dt><dd>Floating-point timestamp.    </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l00435">435</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
 
@@ -15811,27 +15734,14 @@ template&lt;class T&gt; </div>
 </div><div class="memdoc">
 
 <p>Alias for dt_to_ftimestamp. </p>
-<p>Converts a date-time structure to a floating-point timestamp.   </p>
-<p>This function converts a given date and time structure to a floating-point timestamp, which is the number of seconds (with fractional milliseconds) since the Unix epoch (January 1, 1970).</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The type of the date-time structure. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Convert an MqlDateTime structure to floating-point timestamp.   </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">date_time</td><td>The date-time structure containing year, month, day, hour, minute, second, and millisecond fields. </td></tr>
+    <tr><td class="paramname">dt</td><td>Standard MqlDateTime structure. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Floating-point timestamp representing the given date and time. </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">std::invalid_argument</td><td>if the date-time combination is invalid.    </td></tr>
-  </table>
-  </dd>
-</dl>
+<dl class="section return"><dt>Returns</dt><dd>Floating-point timestamp.    </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l00439">439</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
 
@@ -15991,7 +15901,7 @@ template&lt;class T1 = year_t, class T2 = int, class T3 = int&gt; </div>
 <p>This function converts a given date and time to a floating-point timestamp, which is the number of seconds (with fractional milliseconds) since the Unix epoch (January 1, 1970).</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T1</td><td>The type of the year parameter (default is <a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9" title="Type for representing years as integers.">year_t</a>). </td></tr>
+    <tr><td class="paramname">T1</td><td>The type of the year parameter (default is <a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9" title="Year as an integer (e.g., 2024).">year_t</a>). </td></tr>
     <tr><td class="paramname">T2</td><td>The type of the month, day, hour, minute, and second parameters (default is int). </td></tr>
     <tr><td class="paramname">T3</td><td>The type of the millisecond parameter (default is int). </td></tr>
   </table>
@@ -16175,7 +16085,7 @@ template&lt;class T1 = year_t, class T2 = int, class T3 = int&gt; </div>
 <p>This function converts a given date and time to a floating-point timestamp, which is the number of seconds (with fractional milliseconds) since the Unix epoch (January 1, 1970).</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T1</td><td>The type of the year parameter (default is <a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9" title="Type for representing years as integers.">year_t</a>). </td></tr>
+    <tr><td class="paramname">T1</td><td>The type of the year parameter (default is <a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9" title="Year as an integer (e.g., 2024).">year_t</a>). </td></tr>
     <tr><td class="paramname">T2</td><td>The type of the month, day, hour, minute, and second parameters (default is int). </td></tr>
     <tr><td class="paramname">T3</td><td>The type of the millisecond parameter (default is int). </td></tr>
   </table>
@@ -16277,7 +16187,7 @@ template&lt;class T = TimeZoneStruct&gt; </div>
         <tr>
           <td class="memname">const T time_shield::to_time_zone </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__time__types.html#ga3d041d3fb61cf004bcead7999f592e94">tz_t</a></td>          <td class="paramname"><span class="paramname"><em>offset</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#ga467db13fb99208bd078b5abff59866fb">tz_t</a></td>          <td class="paramname"><span class="paramname"><em>offset</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -16324,27 +16234,14 @@ template&lt;class T = TimeZoneStruct&gt; </div>
 </div><div class="memdoc">
 
 <p>Alias for dt_to_timestamp. </p>
-<p>Converts a date-time structure to a timestamp.   </p>
-<p>This function converts a given date and time to a timestamp, which is the number of seconds since the Unix epoch (January 1, 1970).</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The type of the date-time structure. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Convert a <a class="el" href="structtime__shield_1_1DateTimeStruct.html" title="Structure to represent date and time.">DateTimeStruct</a> to timestamp.   </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">date_time</td><td>The date-time structure. </td></tr>
+    <tr><td class="paramname">dt</td><td>Structure with date and time fields. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Timestamp representing the given date and time. </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">std::invalid_argument</td><td>if the date-time combination is invalid.    </td></tr>
-  </table>
-  </dd>
-</dl>
+<dl class="section return"><dt>Returns</dt><dd>Timestamp in seconds.    </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l00341">341</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
 
@@ -16366,27 +16263,14 @@ template&lt;class T = TimeZoneStruct&gt; </div>
 </div><div class="memdoc">
 
 <p>Alias for dt_to_timestamp taking MqlDateTime. </p>
-<p>Converts a date-time structure to a timestamp.   </p>
-<p>This function converts a given date and time to a timestamp, which is the number of seconds since the Unix epoch (January 1, 1970).</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The type of the date-time structure. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Convert an MqlDateTime structure to timestamp.   </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">date_time</td><td>The date-time structure. </td></tr>
+    <tr><td class="paramname">dt</td><td>Standard MqlDateTime structure. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Timestamp representing the given date and time. </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">std::invalid_argument</td><td>if the date-time combination is invalid.    </td></tr>
-  </table>
-  </dd>
-</dl>
+<dl class="section return"><dt>Returns</dt><dd>Timestamp in seconds.    </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l00345">345</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
 
@@ -16531,7 +16415,7 @@ template&lt;class T&gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">year</td><td>Year value. </td></tr>
-    <tr><td class="paramname">mon</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8" title="Enumeration of the months of the year.">Month</a> value. </td></tr>
+    <tr><td class="paramname">mon</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a> value. </td></tr>
     <tr><td class="paramname">day</td><td>Day value. </td></tr>
     <tr><td class="paramname">hour</td><td>Hour value. </td></tr>
     <tr><td class="paramname">min</td><td>Minute value. </td></tr>
@@ -16661,27 +16545,14 @@ template&lt;class T1 = year_t, class T2 = int&gt; </div>
 </div><div class="memdoc">
 
 <p>Alias for dt_to_timestamp_ms. </p>
-<p>Converts a date-time structure to a timestamp in milliseconds.   </p>
-<p>This function converts a given date-time structure to a timestamp in milliseconds, which is the number of milliseconds since the Unix epoch (January 1, 1970).</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The type of the date-time structure. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Convert a <a class="el" href="structtime__shield_1_1DateTimeStruct.html" title="Structure to represent date and time.">DateTimeStruct</a> to a timestamp in milliseconds.   </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">date_time</td><td>The date-time structure. </td></tr>
+    <tr><td class="paramname">dt</td><td>Structure with date and time fields. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Timestamp in milliseconds representing the given date and time. </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">std::invalid_argument</td><td>if the date-time combination is invalid.    </td></tr>
-  </table>
-  </dd>
-</dl>
+<dl class="section return"><dt>Returns</dt><dd>Timestamp in milliseconds.    </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l00413">413</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
 
@@ -16703,27 +16574,14 @@ template&lt;class T1 = year_t, class T2 = int&gt; </div>
 </div><div class="memdoc">
 
 <p>Alias for dt_to_timestamp_ms. </p>
-<p>Converts a date-time structure to a timestamp in milliseconds.   </p>
-<p>This function converts a given date-time structure to a timestamp in milliseconds, which is the number of milliseconds since the Unix epoch (January 1, 1970).</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The type of the date-time structure. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Convert an MqlDateTime structure to a timestamp in milliseconds.   </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">date_time</td><td>The date-time structure. </td></tr>
+    <tr><td class="paramname">dt</td><td>Standard MqlDateTime structure. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Timestamp in milliseconds representing the given date and time. </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">std::invalid_argument</td><td>if the date-time combination is invalid.    </td></tr>
-  </table>
-  </dd>
-</dl>
+<dl class="section return"><dt>Returns</dt><dd>Timestamp in milliseconds.    </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l00417">417</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
 
@@ -16867,7 +16725,7 @@ template&lt;class T&gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">year</td><td>Year value. </td></tr>
-    <tr><td class="paramname">mon</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8" title="Enumeration of the months of the year.">Month</a> value. </td></tr>
+    <tr><td class="paramname">mon</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a> value. </td></tr>
     <tr><td class="paramname">day</td><td>Day value. </td></tr>
     <tr><td class="paramname">hour</td><td>Hour value. </td></tr>
     <tr><td class="paramname">min</td><td>Minute value. </td></tr>
@@ -17105,28 +16963,19 @@ template&lt;class T&gt; </div>
 </div><div class="memdoc">
 
 <p>Alias for to_timestamp with explicit date fields. </p>
-<p>Alias for dt_to_timestamp function.   </p>
-<p>Converts a date-time structure to a timestamp.   </p>
-<p>This function converts a given date and time to a timestamp, which is the number of seconds since the Unix epoch (January 1, 1970).</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The type of the date-time structure. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Convert date and time values to a timestamp.   </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">date_time</td><td>The date-time structure. </td></tr>
+    <tr><td class="paramname">year</td><td>Year value. </td></tr>
+    <tr><td class="paramname">mon</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a> value. </td></tr>
+    <tr><td class="paramname">day</td><td>Day value. </td></tr>
+    <tr><td class="paramname">hour</td><td>Hour value. </td></tr>
+    <tr><td class="paramname">min</td><td>Minute value. </td></tr>
+    <tr><td class="paramname">sec</td><td>Second value. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Timestamp representing the given date and time. </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">std::invalid_argument</td><td>if the date-time combination is invalid.       </td></tr>
-  </table>
-  </dd>
-</dl>
+<dl class="section return"><dt>Returns</dt><dd>Timestamp in seconds.    </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l00368">368</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
 
@@ -17527,28 +17376,20 @@ template&lt;class T&gt; </div>
 </div><div class="memdoc">
 
 <p>Alias for to_timestamp_ms. </p>
-<p>Alias for dt_to_timestamp_ms function.   </p>
-<p>Converts a date-time structure to a timestamp in milliseconds.   </p>
-<p>This function converts a given date-time structure to a timestamp in milliseconds, which is the number of milliseconds since the Unix epoch (January 1, 1970).</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The type of the date-time structure. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Convert date and time values to a timestamp in milliseconds.   </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">date_time</td><td>The date-time structure. </td></tr>
+    <tr><td class="paramname">year</td><td>Year value. </td></tr>
+    <tr><td class="paramname">mon</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a> value. </td></tr>
+    <tr><td class="paramname">day</td><td>Day value. </td></tr>
+    <tr><td class="paramname">hour</td><td>Hour value. </td></tr>
+    <tr><td class="paramname">min</td><td>Minute value. </td></tr>
+    <tr><td class="paramname">sec</td><td>Second value. </td></tr>
+    <tr><td class="paramname">ms</td><td>Millisecond value. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Timestamp in milliseconds representing the given date and time. </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">std::invalid_argument</td><td>if the date-time combination is invalid.       </td></tr>
-  </table>
-  </dd>
-</dl>
+<dl class="section return"><dt>Returns</dt><dd>Timestamp in milliseconds.    </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l00387">387</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
 
@@ -18061,7 +17902,7 @@ template&lt;class T = int64_t&gt; </div>
 <p>Converts a UNIX timestamp to a year.   </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The type of the year (default is <a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9" title="Type for representing years as integers.">year_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The type of the year (default is <a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9" title="Year as an integer (e.g., 2024).">year_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -18106,7 +17947,7 @@ template&lt;class T = year_t&gt; </div>
 <p>Converts a UNIX timestamp to a year.   </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The type of the year (default is <a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9" title="Type for representing years as integers.">year_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The type of the year (default is <a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9" title="Year as an integer (e.g., 2024).">year_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -18142,7 +17983,7 @@ template&lt;class T = year_t&gt; </div>
 <p>This function returns the year of the specified timestamp in seconds since the Unix epoch.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9" title="Type for representing years as integers.">year_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9" title="Year as an integer (e.g., 2024).">year_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -18188,7 +18029,7 @@ template&lt;class T = year_t&gt; </div>
 <p>This function returns the year of the specified timestamp in seconds since the Unix epoch.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9" title="Type for representing years as integers.">year_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9" title="Year as an integer (e.g., 2024).">year_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -18224,7 +18065,7 @@ template&lt;class T = year_t&gt; </div>
 <p>This function returns the year of the specified timestamp in milliseconds since the Unix epoch.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9" title="Type for representing years as integers.">year_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9" title="Year as an integer (e.g., 2024).">year_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -18270,7 +18111,7 @@ template&lt;class T = year_t&gt; </div>
 <p>This function returns the year of the specified timestamp in milliseconds since the Unix epoch.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9" title="Type for representing years as integers.">year_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9" title="Year as an integer (e.g., 2024).">year_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -18821,28 +18662,20 @@ template&lt;class T&gt; </div>
 </div><div class="memdoc">
 
 <p>Alias for to_timestamp_ms. </p>
-<p>Alias for dt_to_timestamp_ms function.   </p>
-<p>Converts a date-time structure to a timestamp in milliseconds.   </p>
-<p>This function converts a given date-time structure to a timestamp in milliseconds, which is the number of milliseconds since the Unix epoch (January 1, 1970).</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The type of the date-time structure. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Convert date and time values to a timestamp in milliseconds.   </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">date_time</td><td>The date-time structure. </td></tr>
+    <tr><td class="paramname">year</td><td>Year value. </td></tr>
+    <tr><td class="paramname">mon</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a> value. </td></tr>
+    <tr><td class="paramname">day</td><td>Day value. </td></tr>
+    <tr><td class="paramname">hour</td><td>Hour value. </td></tr>
+    <tr><td class="paramname">min</td><td>Minute value. </td></tr>
+    <tr><td class="paramname">sec</td><td>Second value. </td></tr>
+    <tr><td class="paramname">ms</td><td>Millisecond value. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Timestamp in milliseconds representing the given date and time. </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">std::invalid_argument</td><td>if the date-time combination is invalid.       </td></tr>
-  </table>
-  </dd>
-</dl>
+<dl class="section return"><dt>Returns</dt><dd>Timestamp in milliseconds.    </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l00393">393</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
 
@@ -19238,7 +19071,7 @@ template&lt;class T&gt; </div>
 <p>This function returns the number of days elapsed since the UNIX epoch.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga391046d8662dee26a659793b8c0daf6a" title="Alias for Unix day type (uday_t).">unixday_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga391046d8662dee26a659793b8c0daf6a" title="Alias for Unix day count type.">unixday_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -19284,7 +19117,7 @@ template&lt;class T = uday_t&gt; </div>
 <p>This function returns the number of days elapsed since the UNIX epoch.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga391046d8662dee26a659793b8c0daf6a" title="Alias for Unix day type (uday_t).">unixday_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga391046d8662dee26a659793b8c0daf6a" title="Alias for Unix day count type.">unixday_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -19317,20 +19150,13 @@ template&lt;class T = uday_t&gt; </div>
 
 <p>Alias for get_unix_day_ms. </p>
 <p>Get UNIX day from milliseconds timestamp.   </p>
-<p>This function returns the number of days elapsed since the UNIX epoch, given a timestamp in milliseconds.</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga391046d8662dee26a659793b8c0daf6a" title="Alias for Unix day type (uday_t).">unixday_t</a>). </td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">t_ms</td><td>Timestamp in milliseconds (default is current timestamp in milliseconds). </td></tr>
+    <tr><td class="paramname">ts_ms</td><td>Timestamp in milliseconds. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Number of days since the UNIX epoch.    </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of days since UNIX epoch.    </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l01129">1129</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
 
@@ -19366,7 +19192,7 @@ template&lt;class T = uday_t&gt; </div>
 <p>This function returns the number of days elapsed since the UNIX epoch, given a timestamp in milliseconds.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga391046d8662dee26a659793b8c0daf6a" title="Alias for Unix day type (uday_t).">unixday_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga391046d8662dee26a659793b8c0daf6a" title="Alias for Unix day count type.">unixday_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -19398,21 +19224,14 @@ template&lt;class T = uday_t&gt; </div>
 </div><div class="memdoc">
 
 <p>Alias for unix_day_to_timestamp. </p>
-<p>Converts a UNIX day to a timestamp in seconds.   </p>
-<p>Converts a number of days since the UNIX epoch (January 1, 1970) to the corresponding timestamp in seconds at the start of the specified day.</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Type for representing timestamps in seconds.">ts_t</a>). </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Convert UNIX day to timestamp in seconds.   </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">unix_day</td><td>Number of days since the UNIX epoch. </td></tr>
+    <tr><td class="paramname">uday</td><td>UNIX day value. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The timestamp in seconds representing the beginning of the specified UNIX day.    </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Timestamp at start of the day.    </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l01148">1148</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
 
@@ -19448,7 +19267,7 @@ template&lt;class T = ts_t&gt; </div>
 <p>Converts a number of days since the UNIX epoch (January 1, 1970) to the corresponding timestamp in seconds at the start of the specified day.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Type for representing timestamps in seconds.">ts_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Unix timestamp in seconds since 1970‑01‑01T00:00:00Z.">ts_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -19480,21 +19299,14 @@ template&lt;class T = ts_t&gt; </div>
 </div><div class="memdoc">
 
 <p>Alias for unix_day_to_timestamp_ms. </p>
-<p>Converts a UNIX day to a timestamp in milliseconds.   </p>
-<p>Converts a number of days since the UNIX epoch (January 1, 1970) to the corresponding timestamp in milliseconds at the start of the specified day.</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Type for representing timestamps in seconds.">ts_t</a>). </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Convert UNIX day to timestamp in milliseconds.   </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">unix_day</td><td>Number of days since the UNIX epoch. </td></tr>
+    <tr><td class="paramname">uday</td><td>UNIX day value. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The timestamp in milliseconds representing the beginning of the specified UNIX day.    </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Timestamp at start of the day in milliseconds.    </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l01171">1171</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
 
@@ -19530,7 +19342,7 @@ template&lt;class T = ts_t&gt; </div>
 <p>Converts a number of days since the UNIX epoch (January 1, 1970) to the corresponding timestamp in milliseconds at the start of the specified day.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Type for representing timestamps in seconds.">ts_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Unix timestamp in seconds since 1970‑01‑01T00:00:00Z.">ts_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -19648,7 +19460,7 @@ template&lt;class T = int64_t&gt; </div>
 <p>This function returns the number of days elapsed since the UNIX epoch.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga391046d8662dee26a659793b8c0daf6a" title="Alias for Unix day type (uday_t).">unixday_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga391046d8662dee26a659793b8c0daf6a" title="Alias for Unix day count type.">unixday_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -19694,7 +19506,7 @@ template&lt;class T = uday_t&gt; </div>
 <p>This function returns the number of days elapsed since the UNIX epoch.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga391046d8662dee26a659793b8c0daf6a" title="Alias for Unix day type (uday_t).">unixday_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga391046d8662dee26a659793b8c0daf6a" title="Alias for Unix day count type.">unixday_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -19727,20 +19539,13 @@ template&lt;class T = uday_t&gt; </div>
 
 <p>Alias for get_unix_day_ms. </p>
 <p>Get UNIX day from milliseconds timestamp.   </p>
-<p>This function returns the number of days elapsed since the UNIX epoch, given a timestamp in milliseconds.</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga391046d8662dee26a659793b8c0daf6a" title="Alias for Unix day type (uday_t).">unixday_t</a>). </td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">t_ms</td><td>Timestamp in milliseconds (default is current timestamp in milliseconds). </td></tr>
+    <tr><td class="paramname">ts_ms</td><td>Timestamp in milliseconds. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Number of days since the UNIX epoch.    </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of days since UNIX epoch.    </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l01117">1117</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
 
@@ -19776,7 +19581,7 @@ template&lt;class T = uday_t&gt; </div>
 <p>This function returns the number of days elapsed since the UNIX epoch, given a timestamp in milliseconds.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga391046d8662dee26a659793b8c0daf6a" title="Alias for Unix day type (uday_t).">unixday_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga391046d8662dee26a659793b8c0daf6a" title="Alias for Unix day count type.">unixday_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -19849,7 +19654,7 @@ template&lt;class T = ts_t&gt; </div>
 <p>Converts a number of days since the UNIX epoch (January 1, 1970) to the corresponding timestamp in seconds at the start of the specified day.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Type for representing timestamps in seconds.">ts_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Unix timestamp in seconds since 1970‑01‑01T00:00:00Z.">ts_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -19922,7 +19727,7 @@ template&lt;class T = ts_t&gt; </div>
 <p>Converts a number of days since the UNIX epoch (January 1, 1970) to the corresponding timestamp in milliseconds at the start of the specified day.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Type for representing timestamps in seconds.">ts_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Unix timestamp in seconds since 1970‑01‑01T00:00:00Z.">ts_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -19954,21 +19759,14 @@ template&lt;class T = ts_t&gt; </div>
 </div><div class="memdoc">
 
 <p>Alias for unix_day_to_timestamp. </p>
-<p>Converts a UNIX day to a timestamp in seconds.   </p>
-<p>Converts a number of days since the UNIX epoch (January 1, 1970) to the corresponding timestamp in seconds at the start of the specified day.</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Type for representing timestamps in seconds.">ts_t</a>). </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Convert UNIX day to timestamp in seconds.   </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">unix_day</td><td>Number of days since the UNIX epoch. </td></tr>
+    <tr><td class="paramname">uday</td><td>UNIX day value. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The timestamp in seconds representing the beginning of the specified UNIX day.    </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Timestamp at start of the day.    </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l01140">1140</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
 
@@ -20004,7 +19802,7 @@ template&lt;class T = ts_t&gt; </div>
 <p>Converts a number of days since the UNIX epoch (January 1, 1970) to the corresponding timestamp in seconds at the start of the specified day.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Type for representing timestamps in seconds.">ts_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Unix timestamp in seconds since 1970‑01‑01T00:00:00Z.">ts_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -20036,21 +19834,14 @@ template&lt;class T = ts_t&gt; </div>
 </div><div class="memdoc">
 
 <p>Alias for unix_day_to_timestamp_ms. </p>
-<p>Converts a UNIX day to a timestamp in milliseconds.   </p>
-<p>Converts a number of days since the UNIX epoch (January 1, 1970) to the corresponding timestamp in milliseconds at the start of the specified day.</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Type for representing timestamps in seconds.">ts_t</a>). </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Convert UNIX day to timestamp in milliseconds.   </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">unix_day</td><td>Number of days since the UNIX epoch. </td></tr>
+    <tr><td class="paramname">uday</td><td>UNIX day value. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The timestamp in milliseconds representing the beginning of the specified UNIX day.    </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Timestamp at start of the day in milliseconds.    </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l01163">1163</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
 
@@ -20086,7 +19877,7 @@ template&lt;class T = ts_t&gt; </div>
 <p>Converts a number of days since the UNIX epoch (January 1, 1970) to the corresponding timestamp in milliseconds at the start of the specified day.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Type for representing timestamps in seconds.">ts_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Unix timestamp in seconds since 1970‑01‑01T00:00:00Z.">ts_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -20203,7 +19994,7 @@ template&lt;class T = int64_t&gt; </div>
 <p>Converts a UNIX timestamp to a year.   </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The type of the year (default is <a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9" title="Type for representing years as integers.">year_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The type of the year (default is <a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9" title="Year as an integer (e.g., 2024).">year_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -20248,7 +20039,7 @@ template&lt;class T = year_t&gt; </div>
 <p>Converts a UNIX timestamp to a year.   </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The type of the year (default is <a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9" title="Type for representing years as integers.">year_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The type of the year (default is <a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9" title="Year as an integer (e.g., 2024).">year_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -20284,7 +20075,7 @@ template&lt;class T = year_t&gt; </div>
 <p>This function returns the number of days elapsed since the UNIX epoch.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga391046d8662dee26a659793b8c0daf6a" title="Alias for Unix day type (uday_t).">unixday_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga391046d8662dee26a659793b8c0daf6a" title="Alias for Unix day count type.">unixday_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -20330,7 +20121,7 @@ template&lt;class T = uday_t&gt; </div>
 <p>This function returns the number of days elapsed since the UNIX epoch.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga391046d8662dee26a659793b8c0daf6a" title="Alias for Unix day type (uday_t).">unixday_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga391046d8662dee26a659793b8c0daf6a" title="Alias for Unix day count type.">unixday_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -20363,20 +20154,13 @@ template&lt;class T = uday_t&gt; </div>
 
 <p>Alias for get_unix_day_ms. </p>
 <p>Get UNIX day from milliseconds timestamp.   </p>
-<p>This function returns the number of days elapsed since the UNIX epoch, given a timestamp in milliseconds.</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga391046d8662dee26a659793b8c0daf6a" title="Alias for Unix day type (uday_t).">unixday_t</a>). </td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">t_ms</td><td>Timestamp in milliseconds (default is current timestamp in milliseconds). </td></tr>
+    <tr><td class="paramname">ts_ms</td><td>Timestamp in milliseconds. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Number of days since the UNIX epoch.    </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of days since UNIX epoch.    </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l01125">1125</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
 
@@ -20412,7 +20196,7 @@ template&lt;class T = uday_t&gt; </div>
 <p>This function returns the number of days elapsed since the UNIX epoch, given a timestamp in milliseconds.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga391046d8662dee26a659793b8c0daf6a" title="Alias for Unix day type (uday_t).">unixday_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga391046d8662dee26a659793b8c0daf6a" title="Alias for Unix day count type.">unixday_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -20444,21 +20228,14 @@ template&lt;class T = uday_t&gt; </div>
 </div><div class="memdoc">
 
 <p>Alias for unix_day_to_timestamp. </p>
-<p>Converts a UNIX day to a timestamp in seconds.   </p>
-<p>Converts a number of days since the UNIX epoch (January 1, 1970) to the corresponding timestamp in seconds at the start of the specified day.</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Type for representing timestamps in seconds.">ts_t</a>). </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Convert UNIX day to timestamp in seconds.   </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">unix_day</td><td>Number of days since the UNIX epoch. </td></tr>
+    <tr><td class="paramname">uday</td><td>UNIX day value. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The timestamp in seconds representing the beginning of the specified UNIX day.    </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Timestamp at start of the day.    </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l01144">1144</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
 
@@ -20494,7 +20271,7 @@ template&lt;class T = ts_t&gt; </div>
 <p>Converts a number of days since the UNIX epoch (January 1, 1970) to the corresponding timestamp in seconds at the start of the specified day.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Type for representing timestamps in seconds.">ts_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Unix timestamp in seconds since 1970‑01‑01T00:00:00Z.">ts_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -20526,21 +20303,14 @@ template&lt;class T = ts_t&gt; </div>
 </div><div class="memdoc">
 
 <p>Alias for unix_day_to_timestamp_ms. </p>
-<p>Converts a UNIX day to a timestamp in milliseconds.   </p>
-<p>Converts a number of days since the UNIX epoch (January 1, 1970) to the corresponding timestamp in milliseconds at the start of the specified day.</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Type for representing timestamps in seconds.">ts_t</a>). </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Convert UNIX day to timestamp in milliseconds.   </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">unix_day</td><td>Number of days since the UNIX epoch. </td></tr>
+    <tr><td class="paramname">uday</td><td>UNIX day value. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The timestamp in milliseconds representing the beginning of the specified UNIX day.    </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Timestamp at start of the day in milliseconds.    </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l01167">1167</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
 
@@ -20576,7 +20346,7 @@ template&lt;class T = ts_t&gt; </div>
 <p>Converts a number of days since the UNIX epoch (January 1, 1970) to the corresponding timestamp in milliseconds at the start of the specified day.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Type for representing timestamps in seconds.">ts_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Unix timestamp in seconds since 1970‑01‑01T00:00:00Z.">ts_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -20770,9 +20540,9 @@ template&lt;class T1 = Weekday&gt; </div>
 <p>Get the day of the week.   </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T1</td><td>Return type (default: <a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8" title="Enumeration of the days of the week.">Weekday</a>). </td></tr>
+    <tr><td class="paramname">T1</td><td>Return type (default: <a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8">Weekday</a>). </td></tr>
     <tr><td class="paramname">T2</td><td>Year type. </td></tr>
-    <tr><td class="paramname">T3</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8" title="Enumeration of the months of the year.">Month</a> type. </td></tr>
+    <tr><td class="paramname">T3</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a> type. </td></tr>
     <tr><td class="paramname">T4</td><td>Day type. </td></tr>
   </table>
   </dd>
@@ -20780,7 +20550,7 @@ template&lt;class T1 = Weekday&gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">year</td><td>Year. </td></tr>
-    <tr><td class="paramname">month</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8" title="Enumeration of the months of the year.">Month</a>. </td></tr>
+    <tr><td class="paramname">month</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a>. </td></tr>
     <tr><td class="paramname">day</td><td>Day. </td></tr>
   </table>
   </dd>
@@ -20829,9 +20599,9 @@ template&lt;class T1 = Weekday&gt; </div>
 <p>Get the day of the week.   </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T1</td><td>Return type (default: <a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8" title="Enumeration of the days of the week.">Weekday</a>). </td></tr>
+    <tr><td class="paramname">T1</td><td>Return type (default: <a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8">Weekday</a>). </td></tr>
     <tr><td class="paramname">T2</td><td>Year type. </td></tr>
-    <tr><td class="paramname">T3</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8" title="Enumeration of the months of the year.">Month</a> type. </td></tr>
+    <tr><td class="paramname">T3</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a> type. </td></tr>
     <tr><td class="paramname">T4</td><td>Day type. </td></tr>
   </table>
   </dd>
@@ -20839,7 +20609,7 @@ template&lt;class T1 = Weekday&gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">year</td><td>Year. </td></tr>
-    <tr><td class="paramname">month</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8" title="Enumeration of the months of the year.">Month</a>. </td></tr>
+    <tr><td class="paramname">month</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a>. </td></tr>
     <tr><td class="paramname">day</td><td>Day. </td></tr>
   </table>
   </dd>
@@ -20923,7 +20693,7 @@ template&lt;class T = Weekday, class U, typename std::enable_if&lt; std::is_inte
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8" title="Enumeration of the days of the week.">Weekday</a> (SUN = 0, MON = 1, ... SAT = 6).    </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8">Weekday</a> (SUN = 0, MON = 1, ... SAT = 6).    </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversion__aliases_8hpp_source.html#l01835">1835</a> of file <a class="el" href="time__conversion__aliases_8hpp_source.html">time_conversion_aliases.hpp</a>.</p>
 
@@ -20949,7 +20719,7 @@ template&lt;class T = Weekday, class U, typename std::enable_if&lt; std::is_inte
 <p>This function returns the year of the specified timestamp in seconds since the Unix epoch.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9" title="Type for representing years as integers.">year_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9" title="Year as an integer (e.g., 2024).">year_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -20995,7 +20765,7 @@ template&lt;class T = year_t&gt; </div>
 <p>This function returns the year of the specified timestamp in seconds since the Unix epoch.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9" title="Type for representing years as integers.">year_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9" title="Year as an integer (e.g., 2024).">year_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -21437,7 +21207,7 @@ template&lt;class T = year_t&gt; </div>
 <p>This function returns the year of the specified timestamp in milliseconds since the Unix epoch.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9" title="Type for representing years as integers.">year_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9" title="Year as an integer (e.g., 2024).">year_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -21483,7 +21253,7 @@ template&lt;class T = year_t&gt; </div>
 <p>This function returns the year of the specified timestamp in milliseconds since the Unix epoch.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9" title="Type for representing years as integers.">year_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9" title="Year as an integer (e.g., 2024).">year_t</a>). </td></tr>
   </table>
   </dd>
 </dl>

@@ -109,6 +109,7 @@ $(function(){initNavTree('group__mql5.html',''); initResizable(true); });
 
 <div class="header">
   <div class="summary">
+<a href="#groups">Topics</a> &#124;
 <a href="#files">Files</a>  </div>
   <div class="headertitle"><div class="title">MQL5 TimeShield API</div></div>
 </div><!--header-->
@@ -117,6 +118,24 @@ $(function(){initNavTree('group__mql5.html',''); initResizable(true); });
 <p>Components of the Time Shield library adapted for MetaTrader 5.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
+Topics</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mql5__initialization.html">Library Initialization</a></td></tr>
+<tr class="memdesc:group__mql5__initialization"><td class="mdescLeft">&#160;</td><td class="mdescRight">Functions for initializing the Time Shield library in MQL5. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mql5__time__conversions.html">Time Conversions</a></td></tr>
+<tr class="memdesc:group__mql5__time__conversions"><td class="mdescLeft">&#160;</td><td class="mdescRight">A comprehensive set of functions and utilities for working with timestamps and time-related data. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mql5__time__enums.html">Time Enumerations</a></td></tr>
+<tr class="memdesc:group__mql5__time__enums"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumerations for time-related concepts. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mql5__time__formatting.html">Time Formatting</a></td></tr>
+<tr class="memdesc:group__mql5__time__formatting"><td class="mdescLeft">&#160;</td><td class="mdescRight">A comprehensive set of functions for converting timestamps to formatted strings. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mql5__time__structures.html">Time Structures</a></td></tr>
+<tr class="memdesc:group__mql5__time__structures"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structures for representing and working with time and date components. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="time__shield_8mqh.html">time_shield.mqh</a></td></tr>
@@ -170,6 +189,11 @@ Files</h2></td></tr>
 <div class="ttc" id="aTimeShield_8mqh_html"><div class="ttname"><a href="TimeShield_8mqh.html">TimeShield.mqh</a></div><div class="ttdoc">MQL5-style facade header for the Time Shield library.</div></div>
 <div class="ttc" id="agroup__time__structures_html_ga2ea065cf0bd4d934cb3c64ae54975448"><div class="ttname"><a href="group__time__structures.html#ga2ea065cf0bd4d934cb3c64ae54975448">time_shield::create_date_struct</a></div><div class="ttdeci">const DateStruct create_date_struct(int64_t year, int32_t mon=1, int32_t day=1)</div><div class="ttdoc">Creates a DateStruct instance.</div><div class="ttdef"><b>Definition</b> <a href="date__struct_8hpp_source.html#l00026">date_struct.hpp:26</a></div></div>
 <div class="ttc" id="astructtime__shield_1_1DateStruct_html"><div class="ttname"><a href="structtime__shield_1_1DateStruct.html">time_shield::DateStruct</a></div><div class="ttdoc">Structure to represent a date.</div><div class="ttdef"><b>Definition</b> <a href="date__struct_8hpp_source.html#l00014">date_struct.hpp:14</a></div></div>
+</div><!-- fragment --><p>This group includes all functions, structures, and utilities that are part of the MQL5-compatible version of the Time Shield library.</p>
+<h3><a class="anchor" id="autotoc_md25"></a>
+Example Usage:</h3>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="TimeShield_8mqh.html">TimeShield.mqh</a>&gt;</span></div>
+<div class="line"><a class="code hl_struct" href="structtime__shield_1_1DateStruct.html">time_shield::DateStruct</a> d = <a class="code hl_function" href="group__time__structures.html#ga2ea065cf0bd4d934cb3c64ae54975448">time_shield::create_date_struct</a>(2025, 6, 21);</div>
 </div><!-- fragment --> </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

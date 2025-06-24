@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['included_20structures_3a_0',['Included Structures:',['../group__time__structures.html#autotoc_md14',1,'']]],
+  ['included_20structures_3a_0',['Included Structures:',['../group__time__structures.html#autotoc_md14',1,'Included Structures:'],['../group__mql5__time__structures.html#autotoc_md28',1,'Included Structures:']]],
   ['init_1',['init',['../group__time__initialization.html#gacd9321e53ba96f121ed56ff0a9497182',1,'time_shield']]],
-  ['initialization_2',['Library Initialization',['../group__time__initialization.html',1,'']]],
+  ['initialization_2',['Initialization',['../group__time__initialization.html',1,'Library Initialization'],['../group__mql5__initialization.html',1,'Library Initialization']]],
   ['initialization_2ehpp_3',['initialization.hpp',['../initialization_8hpp.html',1,'']]],
   ['initialization_2emqh_4',['initialization.mqh',['../initialization_8mqh.html',1,'']]],
   ['initialize_5flibrary_5',['initialize_library',['../group__time__initialization.html#ga85b12efd997cf090aa4a9a0b12b72d5c',1,'time_shield']]],

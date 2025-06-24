@@ -27,7 +27,9 @@ portable, and suitable for scenarios like logging, serialization, MQL5 usage, an
 - ISO8601 string parsing
 - Utilities for time manipulation and conversion
 
-\section usage_sec Example
+\section examples_sec Examples
+
+Here is a simple demonstration:
 
 \code{.cpp}
 #include <time_shield.hpp>
@@ -51,9 +53,7 @@ int main() {
 }
 \endcode
 
-\section examples_sec Examples
-
-Located in the `examples/` folder:
+Additional example files are located in the `examples/` folder:
 
 - `time_utils_example.cpp` — get timestamps and parts
 - `time_formatting_example.cpp` — to_string, ISO8601, MQL5

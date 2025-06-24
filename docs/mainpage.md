@@ -4,17 +4,30 @@
 
 \section intro_sec Introduction
 
-The Time Shield Library is a comprehensive C++ library designed for time manipulation, formatting, and conversion. This library aims to provide a robust and flexible set of tools for handling various time-related tasks with ease.
+The Time Shield Library is a comprehensive C++ library designed for time manipulation, formatting, and conversion.
+It was built for practical and engineering tasks, especially in constrained or performance-critical environments.
+
+\section motivation_sec Why Time Shield?
+
+Unlike `std::chrono` or more academic libraries like `HowardHinnant/date`, Time Shield is designed to be simple,
+portable, and suitable for scenarios like logging, serialization, MQL5 usage, and date/time formatting.
+
+- Uses simple types (`int64_t`, `double`) like `ts_t`, `fts_t` for timestamps — easy to serialize and store.
+- Supports multiple time representations: Unix, floating-point seconds, ms/us precision, OLE Automation, Julian dates.
+- Includes utilities for rounding, ISO8601 formatting/parsing, time parts, and boundary calculations.
+- Header-only and cross-platform; most modules require only STL and `<cstdint>`.
+- MQL5-compatible — does not use exceptions, STL containers, or dynamic memory.
+- Modules requiring platform-specific APIs (like `NtpClient`) are isolated and optional.
 
 \section features_sec Features
 
 - Validation of dates and times
-- Time and date formatting
-- Time zone calculations
-- Conversion between different time representations
-- Utilities for time manipulation
+- Time and date formatting (standard and custom)
+- Time zone conversion functions
+- ISO8601 string parsing
+- Utilities for time manipulation and conversion
 
-\section usage_sec Usage
+\section usage_sec Example
 
 \code{.cpp}
 #include <time_shield.hpp>
@@ -38,9 +51,42 @@ int main() {
 }
 \endcode
 
+\section examples_sec Examples
+
+Located in the `examples/` folder:
+
+- `time_utils_example.cpp` — get timestamps and parts
+- `time_formatting_example.cpp` — to_string, ISO8601, MQL5
+- `time_parser_example.cpp` — parse ISO8601
+- `time_conversions_example.cpp` — convert between formats
+- `time_zone_conversions_example.cpp` — CET/EET ↔ GMT
+- `ntp_client_example.cpp` — NTP sync (Windows-only)
+
 \section install_sec Installation
 
-To use the Time Shield Library in your project, include the header file `time_shield.hpp` in your source code. Ensure that your project is set up to compile with standards from C++11 to C++17.
+Time Shield is a header-only library. To use it in your C++ project:
+
+- Add the `include/time_shield_cpp` folder to your project's include paths.
+- Include the main header:
+
+\code{.cpp}
+#include <time_shield.hpp>
+\endcode
+
+No additional build steps or external dependencies are required.
+
+For MQL5/MetaTrader:
+
+- Run `install_mql5.bat` to copy the necessary `.mqh` files to your MQL5 include directory.
+- Include the main file in your MQL5 script:
+
+\code{.mq5}
+#include <TimeShield.mqh>
+\endcode
+
+To build the C++ examples:
+
+- Run `build-examples.bat` to compile example programs with MSVC or your preferred toolchain.
 
 \section repo_sec Repository
 

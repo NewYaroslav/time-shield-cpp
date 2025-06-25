@@ -17,10 +17,10 @@ var time__formatting_8mqh =
     [ "time_shield::to_mql5_date_time", "group__time__formatting.html#gab655e0d6296e5da26b8e9df10ca1b466", null ],
     [ "time_shield::to_mql5_full", "group__time__formatting.html#gac46cda162e18597cf979e1172026bf5b", null ],
     [ "time_shield::to_mql5_time", "group__time__formatting.html#ga3f779668745961549aa1dc4ab7de9013", null ],
-    [ "time_shield::to_str", "group__time__formatting.html#gac73d7385384e46a5f1267ac132c63106", null ],
-    [ "time_shield::to_str_ms", "group__time__formatting.html#ga08d9a356e402f16f9ea6d1a0b7370b53", null ],
-    [ "time_shield::to_string", "group__time__formatting.html#gac0d4e818715f31c78cfda262cc93a1f8", null ],
-    [ "time_shield::to_string_ms", "group__time__formatting.html#gafd0f5f37fe1eb38cbd5036228f5dbcb4", null ],
+    [ "time_shield::to_str", "group__time__formatting.html#ga20825817f95638d4f5260db875827f1f", null ],
+    [ "time_shield::to_str_ms", "group__time__formatting.html#gabeb72f9b980cca8e38d715b0b0022f2d", null ],
+    [ "time_shield::to_string", "group__time__formatting.html#ga6dfef44f34ec75d33b5dc3a7eea85194", null ],
+    [ "time_shield::to_string_ms", "group__time__formatting.html#ga893267d9be1a3e2e54ad5cf3fa2dd49b", null ],
     [ "time_shield::to_windows_filename", "group__time__formatting.html#ga4b19daf28e595d15e2f5cd89fa73c9b3", null ],
     [ "time_shield::to_windows_filename_ms", "group__time__formatting.html#ga15d8678933e11fe032dc96f1958cead9", null ]
 ];

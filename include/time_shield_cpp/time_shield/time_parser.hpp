@@ -61,7 +61,7 @@ namespace time_shield {
     /// \return The month number corresponding to the given name.
     /// \throw std::invalid_argument if the month name is invalid.
     template<class T = Month>
-    const T get_month_number(const std::string& month) {
+    T get_month_number(const std::string& month) {
         if (month.empty()) throw std::invalid_argument("Invalid month name");
 
         std::string month_copy = month;
@@ -90,7 +90,7 @@ namespace time_shield {
     /// \brief Alias for get_month_number function.
     /// \copydoc get_month_number
     template<class T = Month>
-    const T month_of_year(const std::string& month) {
+    T month_of_year(const std::string& month) {
         return get_month_number(month);
     }
 
@@ -102,7 +102,7 @@ namespace time_shield {
     /// \param value The reference to store the month number if found.
     /// \return True if the month name is valid, false otherwise.
     template<class T = Month>
-    const bool try_get_month_number(const std::string& month, T& value) {
+    bool try_get_month_number(const std::string& month, T& value) {
         if (month.empty()) return false;
 
         std::string month_copy = month;
@@ -132,14 +132,14 @@ namespace time_shield {
     /// \brief Alias for try_get_month_number function.
     /// \copydoc try_get_month_number
     template<class T = Month>
-    const bool get_month_number(const std::string& month, T& value) {
+    bool get_month_number(const std::string& month, T& value) {
         return try_get_month_number(month, value);
     }
 
     /// \brief Alias for try_get_month_number function.
     /// \copydoc try_get_month_number
     template<class T = Month>
-    const bool month_of_year(const std::string& month, T& value) {
+    bool month_of_year(const std::string& month, T& value) {
         return try_get_month_number(month, value);
     }
 
@@ -151,7 +151,7 @@ namespace time_shield {
     /// \param tz_str The time zone string.
     /// \param tz The TimeZoneStruct to be filled.
     /// \return True if the parsing is successful and the time zone is valid, false otherwise.
-    const bool parse_time_zone(const std::string& tz_str, TimeZoneStruct &tz) {
+    bool parse_time_zone(const std::string& tz_str, TimeZoneStruct &tz) {
         if (tz_str.empty()) {
             tz.hour = 0;
             tz.min = 0;
@@ -172,7 +172,7 @@ namespace time_shield {
 
     /// \brief Alias for parse_time_zone function.
     /// \copydoc parse_time_zone
-    inline const bool parse_tz(const std::string& tz_str, TimeZoneStruct &tz) {
+    inline bool parse_tz(const std::string& tz_str, TimeZoneStruct &tz) {
         return parse_time_zone(tz_str, tz);
     }
 
@@ -185,7 +185,7 @@ namespace time_shield {
     /// \param dt The DateTimeStruct to be filled with the parsed date and time values.
     /// \param tz The TimeZoneStruct to be filled with the parsed time zone values.
     /// \return True if the parsing is successful and the date and time values are valid, false otherwise.
-    const bool parse_iso8601(
+    bool parse_iso8601(
             const std::string& input,
             DateTimeStruct &dt,
             TimeZoneStruct &tz) {
@@ -230,7 +230,7 @@ namespace time_shield {
     /// \param str The ISO8601 string.
     /// \param ts The timestamp to be filled.
     /// \return True if the parsing and conversion are successful, false otherwise.
-    inline const bool str_to_ts(const std::string &str, ts_t& ts) {
+    inline bool str_to_ts(const std::string &str, ts_t& ts) {
         DateTimeStruct dt;
         TimeZoneStruct tz;
         if (!parse_iso8601(str, dt, tz)) return false;
@@ -246,7 +246,7 @@ namespace time_shield {
     /// \param str The ISO8601 string.
     /// \param ts The millisecond timestamp to be filled.
     /// \return True if the parsing and conversion are successful, false otherwise.
-    inline const bool str_to_ts_ms(const std::string &str, ts_ms_t& ts) {
+    inline bool str_to_ts_ms(const std::string &str, ts_ms_t& ts) {
         DateTimeStruct dt;
         TimeZoneStruct tz;
         if (!parse_iso8601(str, dt, tz)) return false;
@@ -262,7 +262,7 @@ namespace time_shield {
     /// \param str The ISO8601 string.
     /// \param ts The floating-point timestamp to be filled.
     /// \return True if the parsing and conversion are successful, false otherwise.
-    inline const bool str_to_fts(const std::string &str, fts_t& ts) {
+    inline bool str_to_fts(const std::string &str, fts_t& ts) {
         DateTimeStruct dt;
         TimeZoneStruct tz;
         if (!parse_iso8601(str, dt, tz)) return false;
@@ -278,7 +278,7 @@ namespace time_shield {
     /// If parsing fails, it returns 0.
     /// \param str The ISO8601 string.
     /// \return The timestamp value. Returns 0 if parsing fails.
-    inline const ts_t ts(const std::string& str) {
+    inline ts_t ts(const std::string& str) {
         ts_t ts = 0;
         str_to_ts(str, ts);
         return ts;
@@ -289,7 +289,7 @@ namespace time_shield {
     /// If parsing fails, it returns 0.
     /// \param str The ISO8601 string.
     /// \return The parsed millisecond timestamp, or 0 if parsing fails.
-    inline const ts_ms_t ts_ms(const std::string& str) {
+    inline ts_ms_t ts_ms(const std::string& str) {
         ts_ms_t ts = 0;
         str_to_ts_ms(str, ts);
         return ts;
@@ -300,7 +300,7 @@ namespace time_shield {
     /// If the parsing fails, it returns 0.
     /// \param str The ISO8601 string.
     /// \return The floating-point timestamp if successful, 0 otherwise.
-    inline const fts_t fts(const std::string& str) {
+    inline fts_t fts(const std::string& str) {
         fts_t ts = 0;
         str_to_fts(str, ts);
         return ts;
@@ -320,26 +320,41 @@ namespace time_shield {
     /// \param sec Parsed seconds of day on success.
     /// \return True on successful parsing.
     template<class T = int>
-    inline const bool sec_of_day(const std::string& str, T& sec) {
+    inline bool sec_of_day(const std::string& str, T& sec) {
         if (str.empty()) return false;
 
-        int hour = 0, minute = 0, second = 0;
-        std::istringstream ss(str);
-        std::string part;
+        const char* p = str.c_str();
+        int parts[3] = {0, 0, 0}; // hour, minute, second
         int idx = 0;
-        while (std::getline(ss, part, ':') && idx < 3) {
-            if (part.empty()) return false;
-            int val = std::stoi(part);
-            if (idx == 0) hour = val;
-            else if (idx == 1) minute = val;
-            else second = val;
-            ++idx;
-        }
-        if (idx == 0) return false;
-        if (hour < 0 || hour >= 24 || minute < 0 || minute >= 60 || second < 0 || second >= 60)
-            return false;
 
-        sec = static_cast<T>(sec_of_day(hour, minute, second));
+        while (*p && idx < 3) {
+            // Parse integer
+            int value = 0;
+            bool has_digit = false;
+
+            while (*p >= '0' && *p <= '9') {
+                has_digit = true;
+                value = value * 10 + (*p - '0');
+                ++p;
+            }
+
+            if (!has_digit) return false;
+            parts[idx++] = value;
+
+            // Expect colon or end
+            if (*p == ':') {
+                ++p;
+            } else if (*p == '\0') {
+                break;
+            } else {
+                return false; // unexpected character
+            }
+        }
+
+        if (idx == 0) return false;
+        if (!is_valid_time(parts[0], parts[1], parts[2])) return false;
+
+        sec = static_cast<T>(sec_of_day(parts[0], parts[1], parts[2]));
         return true;
     }
 
@@ -354,7 +369,7 @@ namespace time_shield {
     /// \param str Time of day as string.
     /// \return Parsed seconds of day or SEC_PER_DAY if parsing fails.
     template<class T = int>
-    inline const T sec_of_day(const std::string& str) {
+    inline T sec_of_day(const std::string& str) {
         T value{};
         if (sec_of_day(str, value))
             return value;
@@ -367,7 +382,7 @@ namespace time_shield {
     /// If parsing fails, it returns 0.
     /// \param str The ISO8601 C-style string.
     /// \return The timestamp value. Returns 0 if parsing fails.
-    inline const ts_t ts(const char *str) {
+    inline ts_t ts(const char *str) {
         ts_t ts = 0;
         str_to_ts(str, ts);
         return ts;
@@ -378,7 +393,7 @@ namespace time_shield {
     /// If parsing fails, it returns 0.
     /// \param str The ISO8601 C-style string.
     /// \return The parsed millisecond timestamp, or 0 if parsing fails.
-    inline const ts_ms_t ts_ms(const char *str) {
+    inline ts_ms_t ts_ms(const char *str) {
         ts_ms_t ts = 0;
         str_to_ts_ms(str, ts);
         return ts;
@@ -389,7 +404,7 @@ namespace time_shield {
     /// If the parsing fails, it returns 0.
     /// \param str The ISO8601 C-style string.
     /// \return The floating-point timestamp if successful, 0 otherwise.
-    inline const fts_t fts(const char *str) {
+    inline fts_t fts(const char *str) {
         fts_t ts = 0;
         str_to_fts(str, ts);
         return ts;

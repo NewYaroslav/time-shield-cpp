@@ -235,7 +235,7 @@ namespace time_shield {
    /// \param timestamp  Timestamp in seconds.
    /// \param utc_offset UTC offset in seconds (default 0).
    /// \return Formatted string according to \p format_str.
-   string to_string(const string &format_str, long timestamp, int utc_offset=0) {
+   string to_string(string format_str, long timestamp, int utc_offset=0) {
        string result="";
        if(StringLen(format_str)==0) return result;
        DateTimeStruct dt = to_date_time(timestamp);
@@ -278,7 +278,7 @@ namespace time_shield {
 
     /// \brief Alias for \ref to_string.
     /// \copydoc to_string
-    string to_str(const string &format_str, long timestamp, int utc_offset=0) {
+    string to_str(string format_str, long timestamp, int utc_offset=0) {
        return to_string(format_str, timestamp, utc_offset);
     }
 
@@ -290,7 +290,7 @@ namespace time_shield {
     /// \param timestamp_ms Timestamp in milliseconds.
     /// \param utc_offset UTC offset in seconds (default 0).
     /// \return Formatted string according to \p format_str.
-    string to_string_ms(const string &format_str, long timestamp_ms, int utc_offset=0) {
+    string to_string_ms(string format_str, long timestamp_ms, int utc_offset=0) {
        string result="";
        if(StringLen(format_str)==0) return result;
        DateTimeStruct dt = to_date_time_ms(timestamp_ms);
@@ -333,7 +333,7 @@ namespace time_shield {
 
     /// \brief Alias for \ref to_string_ms.
     /// \copydoc to_string_ms(const string &, long, int)
-    string to_str_ms(const string &format_str, long timestamp_ms, int utc_offset=0) {
+    string to_str_ms(string format_str, long timestamp_ms, int utc_offset=0) {
        return to_string_ms(format_str, timestamp_ms, utc_offset);
     }
 

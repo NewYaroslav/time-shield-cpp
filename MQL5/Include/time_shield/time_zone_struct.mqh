@@ -63,9 +63,9 @@ namespace time_shield {
        return create_time_zone_struct(hour, min, is_positive);
     }
 
-    /// \copybrief to_time_zone_struct(const int)
+    /// \copybrief to_time_zone_struct(int)
     /// \see to_time_zone_struct
-    TimeZoneStruct to_tz(const int offset) {
+    TimeZoneStruct to_tz(int offset) {
        return to_time_zone_struct(offset);
     }
 

@@ -36,8 +36,7 @@ namespace time_shield {
     /// \brief Get the month number by name.
     /// \param month The name of the month as a string.
     /// \return The month number corresponding to the given name, or 0 on error.
-    int get_month_number(const string &month)
-    {
+    int get_month_number(string month) {
        if(StringLen(month)==0)
           return 0;
        string month_copy = month;
@@ -60,7 +59,7 @@ namespace time_shield {
 
     /// \brief Alias for get_month_number function.
     /// \copydoc get_month_number
-    int month_of_year(const string &month) { return get_month_number(month); }
+    int month_of_year(string month) { return get_month_number(month); }
 
 //------------------------------------------------------------------------------
 
@@ -68,8 +67,7 @@ namespace time_shield {
     /// \param month The name of the month as a string.
     /// \param value Reference to store the month number if found.
     /// \return True if the month name is valid, false otherwise.
-    bool try_get_month_number(const string &month, int &value)
-    {
+    bool try_get_month_number(string month, int &value) {
        int res = get_month_number(month);
        if(res==0)
           return false;
@@ -79,11 +77,11 @@ namespace time_shield {
 
     /// \brief Alias for try_get_month_number function.
     /// \copydoc try_get_month_number
-    bool get_month_number(const string &month, int &value) { return try_get_month_number(month,value); }
+    bool get_month_number(string month, int &value) { return try_get_month_number(month,value); }
 
     /// \brief Alias for try_get_month_number function.
     /// \copydoc try_get_month_number
-    bool month_of_year(const string &month, int &value) { return try_get_month_number(month,value); }
+    bool month_of_year(string month, int &value) { return try_get_month_number(month,value); }
 
 //------------------------------------------------------------------------------
 
@@ -93,7 +91,7 @@ namespace time_shield {
     /// \param tz_str The time zone string.
     /// \param tz The TimeZoneStruct to be filled.
     /// \return True if the parsing is successful and the time zone is valid, false otherwise.
-    bool parse_time_zone(const string &tz_str, TimeZoneStruct &tz)
+    bool parse_time_zone(string tz_str, TimeZoneStruct &tz)
     {
        if(StringLen(tz_str)==0 || tz_str=="Z")
        {
@@ -107,7 +105,7 @@ namespace time_shield {
 
     /// \brief Alias for parse_time_zone function.
     /// \copydoc parse_time_zone
-    bool parse_tz(const string &tz_str, TimeZoneStruct &tz) { return parse_time_zone(tz_str, tz); }
+    bool parse_tz(string tz_str, TimeZoneStruct &tz) { return parse_time_zone(tz_str, tz); }
 
 //------------------------------------------------------------------------------
 
@@ -116,7 +114,7 @@ namespace time_shield {
     /// \param dt The DateTimeStruct to be filled with parsed values.
     /// \param tz The TimeZoneStruct to be filled with parsed time zone.
     /// \return True if parsing succeeds and the date and time values are valid, false otherwise.
-    bool parse_iso8601(const string &input_str, DateTimeStruct &dt, TimeZoneStruct &tz) {
+    bool parse_iso8601(string input_str, DateTimeStruct &dt, TimeZoneStruct &tz) {
        dt = create_date_time_struct(0);
        tz = create_time_zone_struct(0,0);
 
@@ -178,8 +176,7 @@ namespace time_shield {
     /// \param str The ISO8601 string.
     /// \param ts The timestamp to be filled.
     /// \return True if the parsing and conversion are successful, false otherwise.
-    bool str_to_ts(const string &str, long &ts)
-    {
+    bool str_to_ts(string str, long &ts) {
        DateTimeStruct dt; TimeZoneStruct tz;
        if(!parse_iso8601(str, dt, tz)) return false;
        ts = to_timestamp(dt) + to_offset(tz);
@@ -190,8 +187,7 @@ namespace time_shield {
     /// \param str The ISO8601 string.
     /// \param ts The millisecond timestamp to be filled.
     /// \return True if the parsing and conversion are successful, false otherwise.
-    bool str_to_ts_ms(const string &str, long &ts)
-    {
+    bool str_to_ts_ms(string str, long &ts) {
        DateTimeStruct dt; TimeZoneStruct tz;
        if(!parse_iso8601(str, dt, tz)) return false;
        ts = to_timestamp_ms(dt) + sec_to_ms(to_offset(tz));
@@ -202,8 +198,7 @@ namespace time_shield {
     /// \param str The ISO8601 string.
     /// \param ts The floating-point timestamp to be filled.
     /// \return True if the parsing and conversion are successful, false otherwise.
-    bool str_to_fts(const string &str, double &ts)
-    {
+    bool str_to_fts(string str, double &ts) {
        DateTimeStruct dt; TimeZoneStruct tz;
        if(!parse_iso8601(str, dt, tz)) return false;
        ts = to_ftimestamp(dt) + (double)to_offset(tz);
@@ -214,8 +209,7 @@ namespace time_shield {
     /// \details Returns 0 if parsing fails.
     /// \param str The ISO8601 string.
     /// \return Timestamp value or 0 on error.
-    long ts(const string &str)
-    {
+    long ts(string str) {
        long v=0;
        str_to_ts(str,v);
        return v;
@@ -225,8 +219,7 @@ namespace time_shield {
     /// \details Returns 0 if parsing fails.
     /// \param str The ISO8601 string.
     /// \return Millisecond timestamp value or 0 on error.
-    long ts_ms(const string &str)
-    {
+    long ts_ms(string str) {
        long v=0;
        str_to_ts_ms(str,v);
        return v;
@@ -236,12 +229,11 @@ namespace time_shield {
     /// \details Returns 0.0 if parsing fails.
     /// \param str The ISO8601 string.
     /// \return Floating-point timestamp or 0.0 on error.
-   double fts(const string &str)
-   {
-      double v=0.0;
-      str_to_fts(str,v);
-      return v;
-   }
+    double fts(string str) {
+        double v=0.0;
+        str_to_fts(str,v);
+        return v;
+    }
 
     //--------------------------------------------------------------------------
 
@@ -253,42 +245,22 @@ namespace time_shield {
     /// - HH
     /// \param str Time in string format
     /// \return Second of the day if conversion succeeded, or SEC_PER_DAY if it failed.
-    int sec_of_day(const string str)
-    {
-       uint _hour = 0, _minute = 0, _second = 0;
+    int sec_of_day(string str) {
+        string result[];
+        const int k = StringSplit(str, ':', result);
 
-       string result[];
-       const ushort u_sep = StringGetCharacter(":", 0);
-       int k = StringSplit(str, u_sep, result);
-       if (k == 0)
-       {
-          ArrayFree(result);
-          return SEC_PER_DAY;
-       }
-       switch(k)
-       {
-          case 1:
-             _hour = (uint)StringToInteger(result[0]);
-             break;
-          case 2:
-             _hour = (uint)StringToInteger(result[0]);
-             _minute = (uint)StringToInteger(result[1]);
-             break;
-          case 3:
-             _hour = (uint)StringToInteger(result[0]);
-             _minute = (uint)StringToInteger(result[1]);
-             _second = (uint)StringToInteger(result[2]);
-             break;
-       }
-       if (_hour >= HOURS_PER_DAY ||
-           _minute >= MIN_PER_HOUR ||
-           _second >= SEC_PER_MIN)
-       {
-          ArrayFree(result);
-          return SEC_PER_DAY;
-       }
-       ArrayFree(result);
-       return sec_of_day((int)_hour,(int)_minute,(int)_second);
+        if (k < 1 || k > 3)
+            return (int)SEC_PER_DAY;
+
+        int h = 0, m = 0, s = 0;
+
+        h = (int)StringToInteger(result[0]);
+        if (k > 1) m = (int)StringToInteger(result[1]);
+        if (k > 2) s = (int)StringToInteger(result[2]);
+
+        if (!is_valid_time(h, m, s)) return (int)SEC_PER_DAY;
+
+        return sec_of_day(h, m, s);
     }
 
     /// \}

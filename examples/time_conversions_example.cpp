@@ -36,6 +36,9 @@ int main() {
     std::cout << "to_dt_ms: " << dt.year << '-' << dt.mon << '-' << dt.day << ' '
               << dt.hour << ':' << dt.min << ':' << dt.sec << '.' << dt.ms << '\n';
 
+    ts_t back_to_ts = dt_to_timestamp(dt);
+    std::cout << "dt_to_timestamp: " << back_to_ts << '\n';
+    
     std::cout << "start_of_day: " << start_of_day(ts_val) << '\n';
     std::cout << "end_of_day_ms: " << end_of_day_ms(ts_ms_val) << '\n';
     std::cout << "next_day_ms: " << next_day_ms(ts_ms_val) << '\n';

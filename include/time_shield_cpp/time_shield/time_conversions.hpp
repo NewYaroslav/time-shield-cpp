@@ -496,7 +496,7 @@ namespace time_shield {
         date_time.year = y - 1;
         const bool is_leap_year = is_leap_year_date(date_time.year);
         secs = is_leap_year ? SEC_PER_LEAP_YEAR - secs : SEC_PER_YEAR - secs;
-        const int days = secs / SEC_PER_DAY;
+        const int days = static_cast<int>(secs / SEC_PER_DAY);
 
         constexpr int JAN_AND_FEB_DAY_LEAP_YEAR = 60 - 1;
         constexpr int TABLE_MONTH_OF_YEAR[] = {
@@ -538,11 +538,11 @@ namespace time_shield {
             date_time.mon = TABLE_MONTH_OF_YEAR[days];
         }
 
-        ts_t day_secs = secs % SEC_PER_DAY;
-        date_time.hour = day_secs / SEC_PER_HOUR;
-        ts_t min_secs = day_secs - date_time.hour * SEC_PER_HOUR;
-        date_time.min = min_secs / SEC_PER_MIN;
-        date_time.sec = min_secs - date_time.min * SEC_PER_MIN;
+        ts_t day_secs = static_cast<ts_t>(secs % SEC_PER_DAY);
+        date_time.hour = static_cast<decltype(date_time.hour)>(day_secs / SEC_PER_HOUR);
+        ts_t min_secs = static_cast<ts_t>(day_secs - date_time.hour * SEC_PER_HOUR);
+        date_time.min = static_cast<decltype(date_time.min)>(min_secs / SEC_PER_MIN);
+        date_time.sec = static_cast<decltype(date_time.sec)>(min_secs - date_time.min * SEC_PER_MIN);
 #       ifdef TIME_SHIELD_CPP17
         if TIME_SHIELD_IF_CONSTEXPR (std::is_floating_point<T2>::value) {
             date_time.ms = static_cast<int>(std::round(std::fmod(static_cast<double>(ts), static_cast<double>(MS_PER_SEC))));
@@ -1168,7 +1168,7 @@ namespace time_shield {
                 case 0: return year_start_ts;
                 case 1: return year_start_ts + SEC_PER_YEAR;
                 case 2: return year_start_ts + SEC_PER_YEAR_X2;
-                default: return year_start_ts + SEC_PER_YEAR_V2;
+                default: break;
             };
             return year_start_ts + SEC_PER_YEAR_V2;
         }
@@ -1278,8 +1278,8 @@ namespace time_shield {
     /// \param ts Timestamp.
     /// \return Day of the year.
     template<class T = int>
-    inline const T day_of_year(ts_t ts = time_shield::ts()) {
-        return ((ts - start_of_year(ts)) / SEC_PER_DAY) + 1;
+    inline T day_of_year(ts_t ts = time_shield::ts()) {
+        return  static_cast<T>(((ts - start_of_year(ts)) / SEC_PER_DAY) + 1);
     }
 
 //------------------------------------------------------------------------------

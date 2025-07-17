@@ -17,14 +17,14 @@ namespace time_shield {
     /// \brief Alias for get_unix_year function.
     /// \copydoc get_unix_year
     template<class T = year_t>
-    constexpr const T unix_year(ts_t ts) noexcept {
+    constexpr T unix_year(ts_t ts) noexcept {
         return get_unix_year<T>(ts);
     }
 
     /// \brief Alias for get_unix_year function.
     /// \copydoc get_unix_year
     template<class T = year_t>
-    constexpr const T to_unix_year(ts_t ts) noexcept {
+    constexpr T to_unix_year(ts_t ts) noexcept {
         return get_unix_year<T>(ts);
     }
 
@@ -101,28 +101,28 @@ namespace time_shield {
     /// \brief Alias for unix_day_to_timestamp function.
     /// \copydoc unix_day_to_timestamp
     template<class T = ts_t>
-    constexpr const T unix_day_to_ts(uday_t unix_day) noexcept {
+    constexpr T unix_day_to_ts(uday_t unix_day) noexcept {
         return unix_day_to_timestamp(unix_day);
     }
 
     /// \brief Alias for unix_day_to_timestamp function.
     /// \copydoc unix_day_to_timestamp
     template<class T = ts_t>
-    constexpr const T unixday_to_ts(uday_t unix_day) noexcept {
+    constexpr T unixday_to_ts(uday_t unix_day) noexcept {
         return unix_day_to_timestamp(unix_day);
     }
 
     /// \brief Alias for unix_day_to_timestamp function.
     /// \copydoc unix_day_to_timestamp
     template<class T = ts_t>
-    constexpr const T uday_to_ts(uday_t unix_day) noexcept {
+    constexpr T uday_to_ts(uday_t unix_day) noexcept {
         return unix_day_to_timestamp(unix_day);
     }
 
     /// \brief Alias for unix_day_to_timestamp function.
     /// \copydoc unix_day_to_timestamp
     template<class T = ts_t>
-    constexpr const T start_of_day_from_unix_day(uday_t unix_day) noexcept {
+    constexpr T start_of_day_from_unix_day(uday_t unix_day) noexcept {
         return unix_day_to_timestamp(unix_day);
     }
     
@@ -131,28 +131,28 @@ namespace time_shield {
     /// \brief Alias for unix_day_to_timestamp_ms function.
     /// \copydoc unix_day_to_timestamp_ms
     template<class T = ts_t>
-    constexpr const T unix_day_to_ts_ms(uday_t unix_day) noexcept {
+    constexpr T unix_day_to_ts_ms(uday_t unix_day) noexcept {
         return unix_day_to_timestamp_ms(unix_day);
     }
 
     /// \brief Alias for unix_day_to_timestamp_ms function.
     /// \copydoc unix_day_to_timestamp_ms
     template<class T = ts_t>
-    constexpr const T unixday_to_ts_ms(uday_t unix_day) noexcept {
+    constexpr T unixday_to_ts_ms(uday_t unix_day) noexcept {
         return unix_day_to_timestamp_ms(unix_day);
     }
 
     /// \brief Alias for unix_day_to_timestamp_ms function.
     /// \copydoc unix_day_to_timestamp_ms
     template<class T = ts_t>
-    constexpr const T uday_to_ts_ms(uday_t unix_day) noexcept {
+    constexpr T uday_to_ts_ms(uday_t unix_day) noexcept {
         return unix_day_to_timestamp_ms(unix_day);
     }
 
     /// \brief Alias for unix_day_to_timestamp_ms function.
     /// \copydoc unix_day_to_timestamp_ms
     template<class T = ts_t>
-    constexpr const T start_of_day_from_unix_day_ms(uday_t unix_day) noexcept {
+    constexpr T start_of_day_from_unix_day_ms(uday_t unix_day) noexcept {
         return unix_day_to_timestamp_ms(unix_day);
     }
     
@@ -161,21 +161,21 @@ namespace time_shield {
     /// \brief Alias for start_of_next_day_from_unix_day function.
     /// \copydoc start_of_next_day_from_unix_day
     template<class T = ts_t>
-    constexpr const T next_day_from_unix_day(uday_t unix_day) noexcept {
+    constexpr T next_day_from_unix_day(uday_t unix_day) noexcept {
         return start_of_next_day_from_unix_day(unix_day);
     }
 
     /// \brief Alias for start_of_next_day_from_unix_day function.
     /// \copydoc start_of_next_day_from_unix_day
     template<class T = ts_t>
-    constexpr const T next_day_unix_day(uday_t unix_day) noexcept {
+    constexpr T next_day_unix_day(uday_t unix_day) noexcept {
         return start_of_next_day_from_unix_day(unix_day);
     }
 
     /// \brief Alias for start_of_next_day_from_unix_day function.
     /// \copydoc start_of_next_day_from_unix_day
     template<class T = ts_t>
-    constexpr const T next_day_unixday(uday_t unix_day) noexcept {
+    constexpr T next_day_unixday(uday_t unix_day) noexcept {
         return start_of_next_day_from_unix_day(unix_day);
     }
     
@@ -184,21 +184,21 @@ namespace time_shield {
     /// \brief Alias for start_of_next_day_from_unix_day_ms function.
     /// \copydoc start_of_next_day_from_unix_day_ms
     template<class T = ts_ms_t>
-    constexpr const T next_day_from_unix_day_ms(uday_t unix_day) noexcept {
+    constexpr T next_day_from_unix_day_ms(uday_t unix_day) noexcept {
         return start_of_next_day_from_unix_day_ms(unix_day);
     }
 
     /// \brief Alias for start_of_next_day_from_unix_day_ms function.
     /// \copydoc start_of_next_day_from_unix_day_ms
     template<class T = ts_ms_t>
-    constexpr const T next_day_unix_day_ms(uday_t unix_day) noexcept {
+    constexpr T next_day_unix_day_ms(uday_t unix_day) noexcept {
         return start_of_next_day_from_unix_day_ms(unix_day);
     }
 
     /// \brief Alias for start_of_next_day_from_unix_day_ms function.
     /// \copydoc start_of_next_day_from_unix_day_ms
     template<class T = ts_ms_t>
-    constexpr const T next_day_unixday_ms(uday_t unix_day) noexcept {
+    constexpr T next_day_unixday_ms(uday_t unix_day) noexcept {
         return start_of_next_day_from_unix_day_ms(unix_day);
     }
     
@@ -207,21 +207,21 @@ namespace time_shield {
     /// \brief Alias for get_unix_min function.
     /// \copydoc get_unix_min
     template<class T = int64_t>
-    constexpr const T unix_min(ts_t ts = ts()) {
+    constexpr T unix_min(ts_t ts = ts()) {
         return get_unix_min(ts);
     }
 
     /// \brief Alias for get_unix_min function.
     /// \copydoc get_unix_min
     template<class T = int64_t>
-    constexpr const T to_unix_min(ts_t ts = ts()) {
+    constexpr T to_unix_min(ts_t ts = ts()) {
         return get_unix_min(ts);
     }
 
     /// \brief Alias for get_unix_min function.
     /// \copydoc get_unix_min
     template<class T = int64_t>
-    constexpr const T umin(ts_t ts = ts()) {
+    constexpr T umin(ts_t ts = ts()) {
         return get_unix_min(ts);
     }
     
@@ -230,7 +230,7 @@ namespace time_shield {
     /// \brief Alias for hour24_to_12 function.
     /// \copydoc hour24_to_12
     template<class T = int>
-    TIME_SHIELD_CONSTEXPR inline const T h24_to_h12(T hour) noexcept {
+    TIME_SHIELD_CONSTEXPR inline T h24_to_h12(T hour) noexcept {
         return hour24_to_12(hour);
     }
     
@@ -688,7 +688,7 @@ namespace time_shield {
     /// \brief Alias for dt_to_timestamp function.
     /// \copydoc dt_to_timestamp
     template<class T>
-    TIME_SHIELD_CONSTEXPR inline const ts_t to_timestamp(
+    TIME_SHIELD_CONSTEXPR inline ts_t to_timestamp(
             const T& date_time) {
         return dt_to_timestamp(date_time);
     }
@@ -697,7 +697,7 @@ namespace time_shield {
     /// \brief Alias for dt_to_timestamp function.
     /// \copydoc dt_to_timestamp
     template<class T>
-    TIME_SHIELD_CONSTEXPR inline const ts_t to_ts(
+    TIME_SHIELD_CONSTEXPR inline ts_t to_ts(
             const T& date_time) {
         return dt_to_timestamp(date_time);
     }
@@ -706,7 +706,7 @@ namespace time_shield {
     /// \brief Alias for dt_to_timestamp function.
     /// \copydoc dt_to_timestamp
     template<class T>
-    TIME_SHIELD_CONSTEXPR inline const ts_t ts(
+    TIME_SHIELD_CONSTEXPR inline ts_t ts(
             const T& date_time) {
         return dt_to_timestamp(date_time);
     }
@@ -715,7 +715,7 @@ namespace time_shield {
     /// \brief Alias for dt_to_timestamp function.
     /// \copydoc dt_to_timestamp
     template<class T>
-    TIME_SHIELD_CONSTEXPR inline const ts_t timestamp(
+    TIME_SHIELD_CONSTEXPR inline ts_t timestamp(
             const T& date_time) {
         return dt_to_timestamp(date_time);
     }
@@ -1247,7 +1247,7 @@ namespace time_shield {
     /// \brief Alias for dt_to_timestamp_ms function.
     /// \copydoc dt_to_timestamp_ms
     template<class T>
-    TIME_SHIELD_CONSTEXPR inline const ts_t to_timestamp_ms(
+    TIME_SHIELD_CONSTEXPR inline ts_t to_timestamp_ms(
             const T& date_time) {
         return dt_to_timestamp_ms(date_time);
     }
@@ -1256,7 +1256,7 @@ namespace time_shield {
     /// \brief Alias for dt_to_timestamp_ms function.
     /// \copydoc dt_to_timestamp_ms
     template<class T>
-    TIME_SHIELD_CONSTEXPR inline const ts_t to_ts_ms(
+    TIME_SHIELD_CONSTEXPR inline ts_t to_ts_ms(
             const T& date_time) {
         return dt_to_timestamp_ms(date_time);
     }
@@ -1265,7 +1265,7 @@ namespace time_shield {
     /// \brief Alias for dt_to_timestamp_ms function.
     /// \copydoc dt_to_timestamp_ms
     template<class T>
-    TIME_SHIELD_CONSTEXPR inline const ts_t ts_ms(
+    TIME_SHIELD_CONSTEXPR inline ts_t ts_ms(
             const T& date_time) {
         return dt_to_timestamp_ms(date_time);
     }
@@ -1274,7 +1274,7 @@ namespace time_shield {
     /// \brief Alias for dt_to_timestamp_ms function.
     /// \copydoc dt_to_timestamp_ms
     template<class T>
-    TIME_SHIELD_CONSTEXPR inline const ts_t timestamp_ms(
+    TIME_SHIELD_CONSTEXPR inline ts_t timestamp_ms(
             const T& date_time) {
         return dt_to_timestamp_ms(date_time);
     }
@@ -1283,28 +1283,28 @@ namespace time_shield {
 
     /// \brief Alias for tm_to_timestamp_ms function.
     /// \copydoc tm_to_timestamp_ms
-    TIME_SHIELD_CONSTEXPR inline const ts_t to_timestamp_ms(
+    TIME_SHIELD_CONSTEXPR inline ts_t to_timestamp_ms(
             const std::tm *timeinfo) {
         return tm_to_timestamp_ms(timeinfo);
     }
 
     /// \brief Alias for tm_to_timestamp_ms function.
     /// \copydoc tm_to_timestamp_ms
-    TIME_SHIELD_CONSTEXPR inline const ts_t to_ts_ms(
+    TIME_SHIELD_CONSTEXPR inline ts_t to_ts_ms(
             const std::tm *timeinfo) {
         return tm_to_timestamp_ms(timeinfo);
     }
 
     /// \brief Alias for tm_to_timestamp_ms function.
     /// \copydoc tm_to_timestamp_ms
-    TIME_SHIELD_CONSTEXPR inline const ts_t ts_ms(
+    TIME_SHIELD_CONSTEXPR inline ts_t ts_ms(
             const std::tm *timeinfo) {
         return tm_to_timestamp_ms(timeinfo);
     }
 
     /// \brief Alias for tm_to_timestamp_ms function.
     /// \copydoc tm_to_timestamp_ms
-    TIME_SHIELD_CONSTEXPR inline const ts_t timestamp_ms(
+    TIME_SHIELD_CONSTEXPR inline ts_t timestamp_ms(
             const std::tm *timeinfo) {
         return tm_to_timestamp_ms(timeinfo);
     }
@@ -1452,14 +1452,14 @@ namespace time_shield {
     /// \brief Alias for get_days_difference function.
     /// \copydoc get_days_difference
     template<class T = int>
-    constexpr const T get_days(ts_t start, ts_t stop) noexcept {
+    constexpr T get_days(ts_t start, ts_t stop) noexcept {
         return get_days_difference(start, stop);
     }
 
     /// \brief Alias for get_days_difference function.
     /// \copydoc get_days_difference
     template<class T = int>
-    constexpr const T days(ts_t start, ts_t stop) noexcept {
+    constexpr T days(ts_t start, ts_t stop) noexcept {
         return get_days_difference(start, stop);
     }
 
@@ -1468,14 +1468,14 @@ namespace time_shield {
     /// \brief Alias for get_year function.
     /// \copydoc get_year
     template<class T = year_t>
-    TIME_SHIELD_CONSTEXPR inline const T year(ts_t ts = ts()) {
+    TIME_SHIELD_CONSTEXPR inline T year(ts_t ts = ts()) {
         return get_year(ts);
     }
 
     /// \brief Alias for get_year function.
     /// \copydoc get_year
     template<class T = year_t>
-    TIME_SHIELD_CONSTEXPR inline const T to_year(ts_t ts = ts()) {
+    TIME_SHIELD_CONSTEXPR inline T to_year(ts_t ts = ts()) {
         return get_year(ts);
     }
 
@@ -1484,14 +1484,14 @@ namespace time_shield {
     /// \brief Alias for get_year_ms function.
     /// \copydoc get_year_ms
     template<class T = year_t>
-    TIME_SHIELD_CONSTEXPR inline const T year_ms(ts_ms_t ts_ms = ts_ms()) {
+    TIME_SHIELD_CONSTEXPR inline T year_ms(ts_ms_t ts_ms = ts_ms()) {
         return get_year_ms(ts_ms);
     }
 
     /// \brief Alias for get_year_ms function.
     /// \copydoc get_year_ms
     template<class T = year_t>
-    TIME_SHIELD_CONSTEXPR inline const T to_year_ms(ts_ms_t ts_ms = ts_ms()) {
+    TIME_SHIELD_CONSTEXPR inline T to_year_ms(ts_ms_t ts_ms = ts_ms()) {
         return get_year_ms(ts_ms);
     }
     
@@ -1499,13 +1499,13 @@ namespace time_shield {
 
     /// \brief Alias for start_of_year function.
     /// \copydoc start_of_year
-    TIME_SHIELD_CONSTEXPR inline const ts_t year_start(ts_t ts = time_shield::ts()) {
+    TIME_SHIELD_CONSTEXPR inline ts_t year_start(ts_t ts = time_shield::ts()) {
         return start_of_year(ts);
     }
 
     /// \brief Alias for start_of_year function.
     /// \copydoc start_of_year
-    TIME_SHIELD_CONSTEXPR inline const ts_t year_begin(ts_t ts = time_shield::ts()) {
+    TIME_SHIELD_CONSTEXPR inline ts_t year_begin(ts_t ts = time_shield::ts()) {
         return start_of_year(ts);
     }
     
@@ -1513,13 +1513,13 @@ namespace time_shield {
 
     /// \brief Alias for start_of_year_ms function.
     /// \copydoc start_of_year_ms
-    TIME_SHIELD_CONSTEXPR inline const ts_t year_start_ms(ts_t ts_ms = time_shield::ts_ms()) {
+    TIME_SHIELD_CONSTEXPR inline ts_t year_start_ms(ts_t ts_ms = time_shield::ts_ms()) {
         return start_of_year_ms(ts_ms);
     }
 
     /// \brief Alias for start_of_year_ms function.
     /// \copydoc start_of_year_ms
-    TIME_SHIELD_CONSTEXPR inline const ts_t year_begin_ms(ts_t ts_ms = time_shield::ts_ms()) {
+    TIME_SHIELD_CONSTEXPR inline ts_t year_begin_ms(ts_t ts_ms = time_shield::ts_ms()) {
         return start_of_year_ms(ts_ms);
     }
     
@@ -1528,14 +1528,14 @@ namespace time_shield {
     /// \brief Alias for start_of_year_date function.
     /// \copydoc start_of_year_date
     template<class T = year_t>
-    TIME_SHIELD_CONSTEXPR inline const ts_t year_start_date(T year) {
+    TIME_SHIELD_CONSTEXPR inline ts_t year_start_date(T year) {
         return start_of_year_date(year);
     }
 
     /// \brief Alias for start_of_year_date function.
     /// \copydoc start_of_year_date
     template<class T = year_t>
-    TIME_SHIELD_CONSTEXPR inline const ts_t year_begin_date(T year) {
+    TIME_SHIELD_CONSTEXPR inline ts_t year_begin_date(T year) {
         return start_of_year_date(year);
     }
 
@@ -1544,14 +1544,14 @@ namespace time_shield {
     /// \brief Alias for start_of_year_date_ms function.
     /// \copydoc start_of_year_date_ms
     template<class T = year_t>
-    TIME_SHIELD_CONSTEXPR inline const ts_ms_t year_start_date_ms(T year) {
+    TIME_SHIELD_CONSTEXPR inline ts_ms_t year_start_date_ms(T year) {
         return start_of_year_date_ms(year);
     }
 
     /// \brief Alias for start_of_year_date_ms function.
     /// \copydoc start_of_year_date_ms
     template<class T = year_t>
-    TIME_SHIELD_CONSTEXPR inline const ts_ms_t year_begin_date_ms(T year) {
+    TIME_SHIELD_CONSTEXPR inline ts_ms_t year_begin_date_ms(T year) {
         return start_of_year_date_ms(year);
     }
     
@@ -1559,7 +1559,7 @@ namespace time_shield {
 
     /// \brief Alias for end_of_year function.
     /// \copydoc end_of_year
-    TIME_SHIELD_CONSTEXPR inline const ts_t year_end(ts_t ts = time_shield::ts()) {
+    TIME_SHIELD_CONSTEXPR inline ts_t year_end(ts_t ts = time_shield::ts()) {
         return end_of_year(ts);
     }
     
@@ -1567,7 +1567,7 @@ namespace time_shield {
 
     /// \brief Alias for end_of_year_ms function.
     /// \copydoc end_of_year_ms
-    TIME_SHIELD_CONSTEXPR inline const ts_ms_t year_end_ms(ts_ms_t ts_ms = time_shield::ts_ms()) {
+    TIME_SHIELD_CONSTEXPR inline ts_ms_t year_end_ms(ts_ms_t ts_ms = time_shield::ts_ms()) {
         return end_of_year_ms(ts_ms);
     }
 
@@ -1578,7 +1578,7 @@ namespace time_shield {
     /// \param month Month as an integer.
     /// \return The number of days in the given month and year.
     template<class T1 = int, class T2 = year_t, class T3 = int>
-    constexpr const T1 days_in_month(T2 year, T3 month) noexcept {
+    constexpr T1 days_in_month(T2 year, T3 month) noexcept {
         return num_days_in_month(year, month);
     }
     
@@ -1587,14 +1587,14 @@ namespace time_shield {
     /// \brief Alias for num_days_in_month_ts function.
     /// \copydoc num_days_in_month_ts
     template<class T1 = int>
-    constexpr const T1 num_days_in_month(ts_t ts = time_shield::ts()) noexcept {
+    constexpr T1 num_days_in_month(ts_t ts = time_shield::ts()) noexcept {
         return num_days_in_month_ts(ts);
     }
 
     /// \brief Alias for num_days_in_month_ts function.
     /// \copydoc num_days_in_month_ts
     template<class T1 = int>
-    constexpr const T1 days_in_month(ts_t ts = time_shield::ts()) noexcept {
+    constexpr T1 days_in_month(ts_t ts = time_shield::ts()) noexcept {
         return num_days_in_month_ts(ts);
     }
     
@@ -1603,7 +1603,7 @@ namespace time_shield {
     /// \brief Alias for num_days_in_year function.
     /// \copydoc num_days_in_year
     template<class T1 = int, class T2 = year_t>
-    constexpr const T1 days_in_year(T2 year) noexcept {
+    constexpr T1 days_in_year(T2 year) noexcept {
         return num_days_in_year(year);
     }
     
@@ -1612,7 +1612,7 @@ namespace time_shield {
     /// \brief Alias for num_days_in_year_ts function.
     /// \copydoc num_days_in_year_ts
     template<class T = int>
-    constexpr const T days_in_year_ts(ts_t ts = time_shield::ts()) {
+    constexpr T days_in_year_ts(ts_t ts = time_shield::ts()) {
         return num_days_in_year_ts(ts);
     }
     
@@ -1620,7 +1620,7 @@ namespace time_shield {
 
     /// \brief Alias for start_of_day function.
     /// \copydoc start_of_day
-    constexpr const ts_t day_start(ts_t ts = time_shield::ts()) noexcept {
+    constexpr ts_t day_start(ts_t ts = time_shield::ts()) noexcept {
         return start_of_day(ts);
     }
     
@@ -1629,7 +1629,7 @@ namespace time_shield {
     /// \brief Alias for start_of_prev_day function.
     /// \copydoc start_of_prev_day
     template<class T = int>
-    constexpr const ts_t previous_day_start(ts_t ts = time_shield::ts(), T days = 1) noexcept {
+    constexpr ts_t previous_day_start(ts_t ts = time_shield::ts(), T days = 1) noexcept {
         return start_of_prev_day(ts, days);
     }
     
@@ -1637,13 +1637,13 @@ namespace time_shield {
     
     /// \brief Alias for start_of_day_sec function.
     /// \copydoc start_of_day_sec
-    constexpr const ts_t day_start_sec(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
+    constexpr ts_t day_start_sec(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
         return start_of_day(ms_to_sec(ts_ms));
     }
     
     /// \brief Alias for start_of_day_sec function.
     /// \copydoc start_of_day_sec
-    constexpr const ts_t start_day_sec(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
+    constexpr ts_t start_day_sec(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
         return start_of_day(ms_to_sec(ts_ms));
     }
 
@@ -1651,7 +1651,7 @@ namespace time_shield {
     
     /// \brief Alias for start_of_day_ms function.
     /// \copydoc start_of_day_ms
-    constexpr const ts_ms_t day_start_ms(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
+    constexpr ts_ms_t day_start_ms(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
         return start_of_day_ms(ts_ms);
     }
     
@@ -1660,7 +1660,7 @@ namespace time_shield {
     /// \brief Alias for start_of_next_day function.
     /// \copydoc start_of_next_day
     template<class T = int>
-    constexpr const ts_t next_day_start(ts_t ts, T days = 1) noexcept {
+    constexpr ts_t next_day_start(ts_t ts, T days = 1) noexcept {
         return start_of_next_day(ts, days);
     }
     
@@ -1669,7 +1669,7 @@ namespace time_shield {
     /// \brief Alias for start_of_next_day_ms function.
     /// \copydoc start_of_next_day_ms
     template<class T = int>
-    constexpr const ts_ms_t next_day_start_ms(ts_ms_t ts_ms, T days = 1) noexcept {
+    constexpr ts_ms_t next_day_start_ms(ts_ms_t ts_ms, T days = 1) noexcept {
         return start_of_next_day_ms(ts_ms, days);
     }
     
@@ -1677,7 +1677,7 @@ namespace time_shield {
 
     /// \brief Alias for end_of_day function.
     /// \copydoc end_of_day
-    constexpr const ts_t day_end(const ts_t& ts = time_shield::ts()) noexcept {
+    constexpr ts_t day_end(ts_t ts = time_shield::ts()) noexcept {
         return end_of_day(ts);
     }
     
@@ -1685,7 +1685,7 @@ namespace time_shield {
 
     /// \brief Alias for end_of_day_sec function.
     /// \copydoc end_of_day_sec
-    constexpr const ts_t day_end_sec(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
+    constexpr ts_t day_end_sec(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
         return end_of_day_sec(ts_ms);
     }
     
@@ -1693,7 +1693,7 @@ namespace time_shield {
 
     /// \brief Alias for end_of_day_ms function.
     /// \copydoc end_of_day_ms
-    constexpr const ts_ms_t day_end_ms(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
+    constexpr ts_ms_t day_end_ms(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
         return end_of_day_ms(ts_ms);
     }
     
@@ -1702,56 +1702,56 @@ namespace time_shield {
     /// \brief Alias for day_of_week_date
     /// \copydoc day_of_week_date
     template<class T1 = Weekday>
-    constexpr const T1 day_of_week(year_t year, int month, int day) {
+    constexpr T1 day_of_week(year_t year, int month, int day) {
         return day_of_week_date<T1>(year, month, day);
     }
 
     /// \brief Alias for day_of_week_date
     /// \copydoc day_of_week_date
     template<class T1 = Weekday>
-    constexpr const T1 day_of_week(year_t year, Month month, int day) {
+    constexpr T1 day_of_week(year_t year, Month month, int day) {
         return day_of_week_date<T1>(year, static_cast<int>(month), day);
     }
 
     /// \brief Alias for day_of_week_date
     /// \copydoc day_of_week_date
     template<class T1 = Weekday>
-    constexpr const T1 get_weekday(year_t year, int month, int day) {
+    constexpr T1 get_weekday(year_t year, int month, int day) {
         return day_of_week_date<T1>(year, month, day);
     }
 
     /// \brief Alias for day_of_week_date
     /// \copydoc day_of_week_date
     template<class T1 = Weekday>
-    constexpr const T1 get_weekday(year_t year, Month month, int day) {
+    constexpr T1 get_weekday(year_t year, Month month, int day) {
         return day_of_week_date<T1>(year, static_cast<int>(month), day);
     }
 
     /// \brief Alias for day_of_week_date
     /// \copydoc day_of_week_date
     template<class T1 = Weekday>
-    constexpr const T1 weekday(year_t year, int month, int day) {
+    constexpr T1 weekday(year_t year, int month, int day) {
         return day_of_week_date<T1>(year, month, day);
     }
 
     /// \brief Alias for day_of_week_date
     /// \copydoc day_of_week_date
     template<class T1 = Weekday>
-    constexpr const T1 weekday(year_t year, Month month, int day) {
+    constexpr T1 weekday(year_t year, Month month, int day) {
         return day_of_week_date<T1>(year, static_cast<int>(month), day);
     }
 
     /// \brief Alias for day_of_week_date
     /// \copydoc day_of_week_date
     template<class T1 = Weekday>
-    constexpr const T1 dow(year_t year, int month, int day) {
+    constexpr T1 dow(year_t year, int month, int day) {
         return day_of_week_date<T1>(year, month, day);
     }
 
     /// \brief Alias for day_of_week_date
     /// \copydoc day_of_week_date
     template<class T1 = Weekday>
-    constexpr const T1 dow(year_t year, Month month, int day) {
+    constexpr T1 dow(year_t year, Month month, int day) {
         return day_of_week_date<T1>(year, static_cast<int>(month), day);
     }
     
@@ -1811,28 +1811,28 @@ namespace time_shield {
     /// \brief Alias for get_weekday_from_ts
     /// \copydoc get_weekday_from_ts
     template<class T = Weekday, class U, typename std::enable_if<std::is_integral<U>::value, int>::type = 0>
-    constexpr const T day_of_week(U ts) noexcept {
+    constexpr T day_of_week(U ts) noexcept {
         return get_weekday_from_ts<T>(ts);
     }
 
     /// \brief Alias for get_weekday_from_ts
     /// \copydoc get_weekday_from_ts
     template<class T = Weekday, class U, typename std::enable_if<std::is_integral<U>::value, int>::type = 0>
-    constexpr const T dow_ts(U ts) noexcept {
+    constexpr T dow_ts(U ts) noexcept {
         return get_weekday_from_ts<T>(ts);
     }
 
     /// \brief Alias for get_weekday_from_ts
     /// \copydoc get_weekday_from_ts
     template<class T = Weekday, class U, typename std::enable_if<std::is_integral<U>::value, int>::type = 0>
-    constexpr const T get_dow_from_ts(U ts) noexcept {
+    constexpr T get_dow_from_ts(U ts) noexcept {
         return get_weekday_from_ts<T>(ts);
     }
 
     /// \brief Alias for get_weekday_from_ts
     /// \copydoc get_weekday_from_ts
     template<class T = Weekday, class U, typename std::enable_if<std::is_integral<U>::value, int>::type = 0>
-    constexpr const T weekday_of_ts(U ts) noexcept {
+    constexpr T weekday_of_ts(U ts) noexcept {
         return get_weekday_from_ts<T>(ts);
     }
     
@@ -1841,7 +1841,7 @@ namespace time_shield {
     /// \brief Alias for get_weekday_from_ts_ms function.
     /// \copydoc get_weekday_from_ts_ms
     template<class T = Weekday>
-    constexpr const T day_of_week_ms(ts_ms_t ts_ms) {
+    constexpr T day_of_week_ms(ts_ms_t ts_ms) {
         return get_weekday_from_ts_ms(ts_ms);
     }
     
@@ -1849,7 +1849,7 @@ namespace time_shield {
 
     /// \brief Alias for start_of_month function.
     /// \copydoc start_of_month
-    TIME_SHIELD_CONSTEXPR inline const ts_t month_begin(ts_t ts = time_shield::ts()) {
+    TIME_SHIELD_CONSTEXPR inline ts_t month_begin(ts_t ts = time_shield::ts()) {
         return start_of_month(ts);
     }
     
@@ -1857,7 +1857,7 @@ namespace time_shield {
 
     /// \brief Alias for end_of_month function.
     /// \copydoc end_of_month
-    TIME_SHIELD_CONSTEXPR inline const ts_t last_day_of_month(ts_t ts = time_shield::ts()) {
+    TIME_SHIELD_CONSTEXPR inline ts_t last_day_of_month(ts_t ts = time_shield::ts()) {
         return end_of_month(ts);
     }
     
@@ -1865,7 +1865,7 @@ namespace time_shield {
 
     /// \brief Alias for last_sunday_of_month function.
     /// \copydoc last_sunday_of_month
-    TIME_SHIELD_CONSTEXPR inline const ts_t final_sunday_of_month(ts_t ts = time_shield::ts()) {
+    TIME_SHIELD_CONSTEXPR inline ts_t final_sunday_of_month(ts_t ts = time_shield::ts()) {
         return last_sunday_of_month(ts);
     }
     
@@ -1874,7 +1874,7 @@ namespace time_shield {
     /// \brief Alias for last_sunday_month_day function.
     /// \copydoc last_sunday_month_day
     template<class T1 = int, class T2 = year_t, class T3 = int>
-    TIME_SHIELD_CONSTEXPR inline const T1 final_sunday_month_day(T2 year, T3 month) {
+    TIME_SHIELD_CONSTEXPR inline T1 final_sunday_month_day(T2 year, T3 month) {
         return last_sunday_month_day(year, month);
     }
 
@@ -1882,7 +1882,7 @@ namespace time_shield {
 
     /// \brief Alias for start_of_hour function.
     /// \copydoc start_of_hour
-    constexpr const ts_t hour_begin(ts_t ts = time_shield::ts()) noexcept {
+    constexpr ts_t hour_begin(ts_t ts = time_shield::ts()) noexcept {
         return start_of_hour(ts);
     }
 
@@ -1890,7 +1890,7 @@ namespace time_shield {
 
     /// \brief Alias for start_of_hour_sec function.
     /// \copydoc start_of_hour_sec
-    constexpr const ts_t hour_begin_sec(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
+    constexpr ts_t hour_begin_sec(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
         return start_of_hour_sec(ts_ms);
     }
     
@@ -1898,7 +1898,7 @@ namespace time_shield {
 
     /// \brief Alias for start_of_hour_ms function.
     /// \copydoc start_of_hour_ms
-    constexpr const ts_ms_t hour_begin_ms(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
+    constexpr ts_ms_t hour_begin_ms(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
         return start_of_hour_ms(ts_ms);
     }
 
@@ -1906,7 +1906,7 @@ namespace time_shield {
 
     /// \brief Alias for end_of_hour function.
     /// \copydoc end_of_hour
-    constexpr const ts_t finish_of_hour(ts_t ts = time_shield::ts()) noexcept {
+    constexpr ts_t finish_of_hour(ts_t ts = time_shield::ts()) noexcept {
         return end_of_hour(ts);
     }
     
@@ -1914,7 +1914,7 @@ namespace time_shield {
 
     /// \brief Alias for end_of_hour_sec function.
     /// \copydoc end_of_hour_sec
-    constexpr const ts_t finish_of_hour_sec(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
+    constexpr ts_t finish_of_hour_sec(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
         return end_of_hour_sec(ts_ms);
     }
     
@@ -1922,7 +1922,7 @@ namespace time_shield {
 
     /// \brief Alias for end_of_hour_ms function.
     /// \copydoc end_of_hour_ms
-    constexpr const ts_ms_t finish_of_hour_ms(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
+    constexpr ts_ms_t finish_of_hour_ms(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
         return end_of_hour_ms(ts_ms);
     }
     
@@ -1931,7 +1931,7 @@ namespace time_shield {
     /// \brief Alias for hour_of_day function.
     /// \copydoc hour_of_day
     template<class T = int>
-    constexpr const T hour_in_day(ts_t ts = time_shield::ts()) noexcept {
+    constexpr T hour_in_day(ts_t ts = time_shield::ts()) noexcept {
         return hour_of_day(ts);
     }
     
@@ -1939,7 +1939,7 @@ namespace time_shield {
 
     /// \brief Alias for start_of_week function.
     /// \copydoc start_of_week
-    constexpr const ts_t week_begin(ts_t ts = time_shield::ts()) {
+    constexpr ts_t week_begin(ts_t ts = time_shield::ts()) {
         return start_of_week(ts);
     }
     
@@ -1947,7 +1947,7 @@ namespace time_shield {
 
     /// \brief Alias for end_of_week function.
     /// \copydoc end_of_week
-    constexpr const ts_t finish_of_week(ts_t ts = time_shield::ts()) {
+    constexpr ts_t finish_of_week(ts_t ts = time_shield::ts()) {
         return end_of_week(ts);
     }
     
@@ -1955,7 +1955,7 @@ namespace time_shield {
 
     /// \brief Alias for start_of_saturday function.
     /// \copydoc start_of_saturday
-    constexpr const ts_t saturday_begin(ts_t ts = time_shield::ts()) {
+    constexpr ts_t saturday_begin(ts_t ts = time_shield::ts()) {
         return start_of_saturday(ts);
     }
     
@@ -1963,7 +1963,7 @@ namespace time_shield {
 
     /// \brief Alias for start_of_min function.
     /// \copydoc start_of_min
-    constexpr const ts_t min_begin(ts_t ts = time_shield::ts()) noexcept {
+    constexpr ts_t min_begin(ts_t ts = time_shield::ts()) noexcept {
         return start_of_min(ts);
     }
     
@@ -1971,7 +1971,7 @@ namespace time_shield {
 
     /// \brief Alias for end_of_min function.
     /// \copydoc end_of_min
-    constexpr const ts_t finish_of_min(ts_t ts = time_shield::ts()) noexcept {
+    constexpr ts_t finish_of_min(ts_t ts = time_shield::ts()) noexcept {
         return end_of_min(ts);
     }
     

@@ -20,6 +20,7 @@
 #include <array>
 #include <stdexcept>
 #include <sstream>
+#include <cctype>
 
 namespace time_shield {
 
@@ -68,7 +69,7 @@ namespace time_shield {
         std::transform(month_copy.begin(), month_copy.end(), month_copy.begin(), [](char &ch) {
             return std::use_facet<std::ctype<char>>(std::locale()).tolower(ch);
         });
-        month_copy[0] = toupper(month_copy[0]);
+        month_copy[0] = static_cast<char>(std::toupper(month_copy[0]));
 
         static const std::array<std::string, 12> short_names = {
             "Jan", "Feb", "Mar", "Apr", "May", "Jun",
@@ -109,7 +110,7 @@ namespace time_shield {
         std::transform(month_copy.begin(), month_copy.end(), month_copy.begin(), [](char &ch) {
             return std::use_facet<std::ctype<char>>(std::locale()).tolower(ch);
         });
-        month_copy[0] = toupper(month_copy[0]);
+        month_copy[0] = static_cast<char>(std::toupper(month_copy[0]));
 
         static const std::array<std::string, MONTHS_PER_YEAR> short_names = {
             "Jan", "Feb", "Mar", "Apr", "May", "Jun",

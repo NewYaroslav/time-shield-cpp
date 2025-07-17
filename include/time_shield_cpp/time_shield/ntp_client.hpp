@@ -24,9 +24,6 @@
 #include <functional>
 #include <chrono>
 
-#include <winsock2.h>
-#include <ws2tcpip.h>
-
 namespace time_shield {
 
     /// \ingroup ntp
@@ -137,7 +134,6 @@ namespace time_shield {
         /// \brief Returns current UTC time as time_t (seconds since Unix epoch).
         /// \return UTC time in seconds.
         time_t get_utc_time() const noexcept {
-            const int64_t utc_us = get_utc_time_us();
             return static_cast<time_t>(get_utc_time_us() / 1000000);
         }
         

@@ -1,4 +1,3 @@
-
 #pragma once
 #ifndef _TIME_SHIELD_WSA_GUARD_HPP_INCLUDED
 #define _TIME_SHIELD_WSA_GUARD_HPP_INCLUDED
@@ -8,6 +7,7 @@
 /// \ingroup ntp
 
 #include <winsock2.h>  // Must be included before windows.h
+#include <ws2tcpip.h>
 #include <windows.h>   // (optional, but safe if later needed)
 #include <mutex>
 #include <string>

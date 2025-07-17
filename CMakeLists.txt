@@ -3,6 +3,14 @@
 cmake_minimum_required(VERSION 3.18)
 project(time_shield LANGUAGES CXX)
 
+if(MINGW OR CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+    set(COMMON_WARN_FLAGS -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow)
+endif()
+
+if(MSVC)
+    set(COMMON_WARN_FLAGS /W4 /wd4996)
+endif()
+
 if(NOT DEFINED CMAKE_CXX_STANDARD)
     set(CMAKE_CXX_STANDARD 11)
 endif()
@@ -32,6 +40,11 @@ foreach(example_src ${EXAMPLES_SOURCES})
     add_executable(${example_name} ${example_src})
 
     target_include_directories(${example_name} PRIVATE ${PROJECT_INCLUDE_DIRS})
+    
+    if(COMMON_WARN_FLAGS)
+        target_compile_options(${example_name} PRIVATE ${COMMON_WARN_FLAGS})
+    endif()
+
     target_link_directories(${example_name} PRIVATE ${PROJECT_LIBRARY_DIRS})
     target_compile_definitions(${example_name} PRIVATE ${PROJECT_DEFINES})
     target_link_libraries(${example_name} PRIVATE ${PROJECT_LIBS})

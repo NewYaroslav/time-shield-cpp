@@ -17,7 +17,7 @@ namespace time_shield {
     /// \brief Convert Central European Time to Greenwich Mean Time.
     /// \param cet Timestamp in seconds in CET.
     /// \return Timestamp in seconds in GMT.
-    inline const ts_t cet_to_gmt(ts_t cet) {
+    inline ts_t cet_to_gmt(ts_t cet) {
         DateTimeStruct dt = to_date_time(cet);
         int max_days = num_days_in_month(dt.year, dt.mon);
         const int OLD_START_SUMMER_HOUR = 2;
@@ -25,9 +25,10 @@ namespace time_shield {
         const int NEW_SUMMER_HOUR       = 1;
 
         if(dt.year < 2002) {
-            if(dt.mon > MAR && dt.mon < OCT)
+            if(dt.mon > MAR && dt.mon < OCT) {
                 return cet - SEC_PER_HOUR * 2;
-            else if(dt.mon == MAR) {
+            } else 
+            if(dt.mon == MAR) {
                 for(int d = max_days; d >= dt.day; --d) {
                     if(day_of_week_date(dt.year, MAR, d) == SUN) {
                         if(d == dt.day) {
@@ -54,9 +55,10 @@ namespace time_shield {
             }
             return cet - SEC_PER_HOUR;
         } else {
-            if(dt.mon > MAR && dt.mon < OCT)
+            if(dt.mon > MAR && dt.mon < OCT) {
                 return cet - SEC_PER_HOUR * 2;
-            else if(dt.mon == MAR) {
+            } else 
+            if(dt.mon == MAR) {
                 for(int d = max_days; d >= dt.day; --d) {
                     if(day_of_week_date(dt.year, MAR, d) == SUN) {
                         if(d == dt.day) {
@@ -68,7 +70,8 @@ namespace time_shield {
                     }
                 }
                 return cet - SEC_PER_HOUR * 2;
-            } else if(dt.mon == OCT) {
+            } else 
+            if(dt.mon == OCT) {
                 for(int d = max_days; d >= dt.day; --d) {
                     if(day_of_week_date(dt.year, OCT, d) == SUN) {
                         if(d == dt.day) {
@@ -79,9 +82,7 @@ namespace time_shield {
                         return cet - SEC_PER_HOUR * 2;
                     }
                 }
-                return cet - SEC_PER_HOUR;
             }
-            return cet - SEC_PER_HOUR;
         }
         return cet - SEC_PER_HOUR;
     }
@@ -89,7 +90,7 @@ namespace time_shield {
     /// \brief Convert Eastern European Time to Greenwich Mean Time.
     /// \param eet Timestamp in seconds in EET.
     /// \return Timestamp in seconds in GMT.
-    inline const ts_t eet_to_gmt(ts_t eet) {
+    inline ts_t eet_to_gmt(ts_t eet) {
         return cet_to_gmt(eet - SEC_PER_HOUR);
     }
 

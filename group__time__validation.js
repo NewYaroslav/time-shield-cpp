@@ -1,7 +1,7 @@
 var group__time__validation =
 [
     [ "time_shield::check_leap_year", "group__time__validation.html#gad4b8ac012407d765d149fc5b0be8b4a9", null ],
-    [ "time_shield::check_leap_year", "group__time__validation.html#ga30ea193ecbc9c3493b9bac8df01d82ba", null ],
+    [ "time_shield::check_leap_year", "group__time__validation.html#ga0d94fbfb5290a1ae3bc863d47c34ba22", null ],
     [ "time_shield::check_leap_year_ts", "group__time__validation.html#ga43da8dd61e14b485bf6bb491278241f8", null ],
     [ "time_shield::check_leap_year_ts", "group__time__validation.html#gac6498174d5a46f29615d696c3a659380", null ],
     [ "time_shield::is_day_off", "group__time__validation.html#gac26f9a68b2235ea4af9e8a66ad51c8dc", null ],
@@ -11,7 +11,7 @@ var group__time__validation =
     [ "time_shield::is_leap_year", "group__time__validation.html#ga52c309a83aceae69c0eff7a02b1d85af", null ],
     [ "time_shield::is_leap_year", "group__time__validation.html#ga17ef47bc687b55e4a41cc3e4c0945b3c", null ],
     [ "time_shield::is_leap_year_date", "group__time__validation.html#ga4722461b3bc3383e31034fee1f26661a", null ],
-    [ "time_shield::is_leap_year_date", "group__time__validation.html#ga1562a82bbc509e4a09b4fa873c37b2f1", null ],
+    [ "time_shield::is_leap_year_date", "group__time__validation.html#gac170040e738cb4b6558850563eb277f9", null ],
     [ "time_shield::is_leap_year_ts", "group__time__validation.html#ga09ae4966aaf523cae74da3e38b4c9c1b", null ],
     [ "time_shield::is_leap_year_ts", "group__time__validation.html#gadcc64f7880b3c4a67d60ddc9998352ae", null ],
     [ "time_shield::is_valid_date", "group__time__validation.html#gaafc111e7a019345f58b1b2f406280c74", null ],
@@ -35,7 +35,7 @@ var group__time__validation =
     [ "time_shield::is_weekend_unix_day", "group__time__validation.html#ga7e3a73ee4d9231e402b4056250c258ce", null ],
     [ "time_shield::is_weekend_unix_day", "group__time__validation.html#gaa5c72c3a49ed1baaa84ce5f0f50e6fb1", null ],
     [ "time_shield::leap_year", "group__time__validation.html#gacb2fb6bd5fb218e0bbde17d9870e8afb", null ],
-    [ "time_shield::leap_year", "group__time__validation.html#ga63b8e152c0a93c2a06ce84ba9e28145a", null ],
+    [ "time_shield::leap_year", "group__time__validation.html#gaff561037cb91433512da3922c2666022", null ],
     [ "time_shield::leap_year_ts", "group__time__validation.html#ga046472fb8c315f13a3b30649a26241ce", null ],
     [ "time_shield::leap_year_ts", "group__time__validation.html#ga8e0d80a09f42577e88f9bc294da403d1", null ]
 ];

@@ -51,21 +51,21 @@ namespace time_shield {
     /// \param year Year to check.
     /// \return true if the year is a leap year, false otherwise.
     template<class T = year_t>
-    constexpr const bool is_leap_year_date(T year) noexcept {
+    constexpr bool is_leap_year_date(T year) noexcept {
         return ((year & 3) == 0 && ((year % 25) != 0 || (year & 15) == 0));
     }
 
     /// \brief Alias for is_leap_year_date function.
     /// \copydoc is_leap_year_date
     template<class T = year_t>
-    constexpr const bool check_leap_year(T year) noexcept {
+    constexpr bool check_leap_year(T year) noexcept {
         return is_leap_year_date(year);
     }
 
     /// \brief Alias for is_leap_year_date function.
     /// \copydoc is_leap_year_date
     template<class T = year_t>
-    constexpr const bool leap_year(T year) noexcept {
+    constexpr bool leap_year(T year) noexcept {
         return is_leap_year_date(year);
     }
 

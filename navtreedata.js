@@ -66,8 +66,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "TimeShield_8mqh.html",
-"group__time__conversions.html#ga21eab50c6efb34ab1e5953772c4cb980",
-"group__time__conversions.html#gaa0c07f2382a154356759cc60da54d2a0",
+"group__time__conversions.html#ga2513ac450f3fc7a7c8ddbd92f9a834ac",
+"group__time__conversions.html#gaa09257560026abfa603a44693432738c",
 "group__time__enums.html#gga81dfe20e6515b855c625bd9c7aea58e6a4ff17c3d5d81826da9439478a0bbf5fb",
 "group__time__structures__time__formatting.html#gad5f9a170d6b3f3330f7a71819490c25f"
 ];

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['last_5fday_5fof_5fmonth_0',['last_day_of_month',['../group__time__conversions.html#ga8e368ac83d084673018afcdcab568a27',1,'time_shield::last_day_of_month(ts_t ts=time_shield::ts())'],['../group__time__conversions.html#ga3bb12ee673b12e991d293384a281fd61',1,'time_shield::last_day_of_month(long ts)']]],
+  ['last_5fday_5fof_5fmonth_0',['last_day_of_month',['../group__time__conversions.html#ga874c97d5a4d4918f03d9f8a244bde783',1,'time_shield::last_day_of_month(ts_t ts=time_shield::ts())'],['../group__time__conversions.html#ga3bb12ee673b12e991d293384a281fd61',1,'time_shield::last_day_of_month(long ts)']]],
   ['last_5fquarter_1',['LAST_QUARTER',['../group__time__enums.html#gga5fa51beb76e014adfffcd028fe1804acabbc64be78b01604edf18005eb126443f',1,'time_shield']]],
   ['last_5fsunday_5fmonth_5fday_2',['last_sunday_month_day',['../group__time__conversions.html#ga79073edc849606840c88a3ae377121b1',1,'time_shield::last_sunday_month_day(T2 year, T3 month)'],['../group__time__conversions.html#gae4b608ce3dc80d44f98f13245fe23b85',1,'time_shield::last_sunday_month_day(long year, int month)']]],
   ['last_5fsunday_5fof_5fmonth_3',['last_sunday_of_month',['../group__time__conversions.html#gaaf8134e7f6f9c5216c3d71ece8ebadbc',1,'time_shield::last_sunday_of_month(ts_t ts=time_shield::ts())'],['../group__time__conversions.html#ga1a0033bc1c337cb3838e866996321c71',1,'time_shield::last_sunday_of_month(long ts)']]],

@@ -2,7 +2,7 @@ var time__conversions_8hpp =
 [
     [ "time_shield::day_of_month", "group__time__conversions.html#gacb717b6c6f9d40ada5ab05e0cfd1c01d", null ],
     [ "time_shield::day_of_week_date", "group__time__conversions.html#ga83670dd6ee5ee28a9b5eacef9656b81e", null ],
-    [ "time_shield::day_of_year", "group__time__conversions.html#gaf61245fcf581bd6c4693ffa5b270574e", null ],
+    [ "time_shield::day_of_year", "group__time__conversions.html#ga66b499223d2a8fb979d100a50518a79e", null ],
     [ "time_shield::dt_to_ftimestamp", "group__time__conversions.html#ga0227287106fb5050e2c9b5bafd45dcb1", null ],
     [ "time_shield::dt_to_timestamp", "group__time__conversions.html#ga8b018d3036649afa8ea784c347e15f3e", null ],
     [ "time_shield::dt_to_timestamp_ms", "group__time__conversions.html#gaceea58b31e5097df20bd267f098c2a0c", null ],

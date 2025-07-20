@@ -32,7 +32,7 @@ namespace time_shield {
     /// \ingroup time_utils
     /// \brief Get the current timespec.
     /// \return struct timespec The current timespec.
-    inline const struct timespec get_timespec_impl() noexcept {
+    inline struct timespec get_timespec_impl() noexcept {
         // https://en.cppreference.com/w/c/chrono/timespec_get
         struct timespec ts;
 #       if defined(CLOCK_REALTIME)
@@ -93,7 +93,7 @@ namespace time_shield {
     /// \tparam T Type of the returned value (default is int).
     /// \return T Nanosecond part of the current second.
     template<class T = int>
-    inline const T ns_of_sec() noexcept {
+    inline T ns_of_sec() noexcept {
         const struct timespec ts = get_timespec_impl();
         return static_cast<T>(ts.tv_nsec);
     }
@@ -103,7 +103,7 @@ namespace time_shield {
     /// \tparam T Type of the returned value (default is int).
     /// \return T Microsecond part of the current second.
     template<class T = int>
-    const T us_of_sec() noexcept {
+    T us_of_sec() noexcept {
         const struct timespec ts = get_timespec_impl();
         return ts.tv_nsec / NS_PER_US;
     }
@@ -113,14 +113,14 @@ namespace time_shield {
     /// \tparam T Type of the returned value (default is int).
     /// \return T Millisecond part of the current second.
     template<class T = int>
-    const T ms_of_sec() noexcept {
+    T ms_of_sec() noexcept {
         const struct timespec ts = get_timespec_impl();
         return ts.tv_nsec / NS_PER_MS;
     }
 
     /// \brief Get the current UTC timestamp in seconds.
     /// \return ts_t Current UTC timestamp in seconds.
-    inline const ts_t ts() noexcept {
+    inline ts_t ts() noexcept {
         const struct timespec ts = get_timespec_impl();
         return ts.tv_sec;
     }
@@ -128,7 +128,7 @@ namespace time_shield {
     /// \ingroup time_utils
     /// \brief Get the current UTC timestamp in seconds.
     /// \return ts_t Current UTC timestamp in seconds.
-    inline const ts_t timestamp() noexcept {
+    inline ts_t timestamp() noexcept {
         const struct timespec ts = get_timespec_impl();
         return ts.tv_sec;
     }
@@ -136,7 +136,7 @@ namespace time_shield {
     /// \ingroup time_utils
     /// \brief Get the current UTC timestamp in floating-point seconds.
     /// \return fts_t Current UTC timestamp in floating-point seconds.
-    inline const fts_t fts() noexcept {
+    inline fts_t fts() noexcept {
         const struct timespec ts = get_timespec_impl();
         return ts.tv_sec + static_cast<fts_t>(ts.tv_nsec) / static_cast<fts_t>(NS_PER_SEC);
     }
@@ -144,7 +144,7 @@ namespace time_shield {
     /// \ingroup time_utils
     /// \brief Get the current UTC timestamp in floating-point seconds.
     /// \return fts_t Current UTC timestamp in floating-point seconds.
-    inline const fts_t ftimestamp() noexcept {
+    inline fts_t ftimestamp() noexcept {
         const struct timespec ts = get_timespec_impl();
         return ts.tv_sec + static_cast<fts_t>(ts.tv_nsec) / static_cast<fts_t>(NS_PER_SEC);
     }
@@ -152,7 +152,7 @@ namespace time_shield {
     /// \ingroup time_utils
     /// \brief Get the current UTC timestamp in milliseconds.
     /// \return ts_ms_t Current UTC timestamp in milliseconds.
-    inline const ts_ms_t ts_ms() noexcept {
+    inline ts_ms_t ts_ms() noexcept {
         const struct timespec ts = get_timespec_impl();
         return MS_PER_SEC * ts.tv_sec + ts.tv_nsec / NS_PER_MS;
     }
@@ -160,7 +160,7 @@ namespace time_shield {
     /// \ingroup time_utils
     /// \brief Get the current UTC timestamp in milliseconds.
     /// \return ts_ms_t Current UTC timestamp in milliseconds.
-    inline const ts_ms_t timestamp_ms() noexcept {
+    inline ts_ms_t timestamp_ms() noexcept {
         const struct timespec ts = get_timespec_impl();
         return MS_PER_SEC * ts.tv_sec + ts.tv_nsec / NS_PER_MS;
     }
@@ -168,7 +168,7 @@ namespace time_shield {
     /// \ingroup time_utils
     /// \brief Get the current UTC timestamp in milliseconds.
     /// \return ts_ms_t Current UTC timestamp in milliseconds.
-    inline const ts_ms_t now() noexcept {
+    inline ts_ms_t now() noexcept {
         const struct timespec ts = get_timespec_impl();
         return MS_PER_SEC * ts.tv_sec + ts.tv_nsec / NS_PER_MS;
     }
@@ -176,7 +176,7 @@ namespace time_shield {
     /// \ingroup time_utils
     /// \brief Get the current UTC timestamp in microseconds.
     /// \return ts_us_t Current UTC timestamp in microseconds.
-    inline const ts_us_t ts_us() noexcept {
+    inline ts_us_t ts_us() noexcept {
         const struct timespec ts = get_timespec_impl();
         return US_PER_SEC * ts.tv_sec + ts.tv_nsec / NS_PER_US;
     }
@@ -184,7 +184,7 @@ namespace time_shield {
     /// \ingroup time_utils
     /// \brief Get the current UTC timestamp in microseconds.
     /// \return ts_us_t Current UTC timestamp in microseconds.
-    inline const ts_us_t timestamp_us() noexcept {
+    inline ts_us_t timestamp_us() noexcept {
         const struct timespec ts = get_timespec_impl();
         return US_PER_SEC * ts.tv_sec + ts.tv_nsec / NS_PER_US;
     }

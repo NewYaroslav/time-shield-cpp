@@ -36,6 +36,43 @@ namespace time_shield {
     ///
     /// \{
 
+    // Common millisecond durations
+    const long MS_1   = 1;   ///< 1 millisecond
+    const long MS_5   = 5;   ///< 5 milliseconds
+    const long MS_10  = 10;  ///< 10 milliseconds
+    const long MS_50  = 50;  ///< 50 milliseconds
+    const long MS_100 = 100; ///< 100 milliseconds
+    const long MS_250 = 250; ///< 250 milliseconds
+    const long MS_500 = 500; ///< 500 milliseconds
+    const long MS_750 = 750; ///< 750 milliseconds
+
+    // Common second durations
+    const long SEC_1  = 1;   ///< 1 second
+    const long SEC_2  = 2;   ///< 2 seconds
+    const long SEC_3  = 3;   ///< 3 seconds
+    const long SEC_5  = 5;   ///< 5 seconds
+    const long SEC_10 = 10;  ///< 10 seconds
+    const long SEC_15 = 15;  ///< 15 seconds
+    const long SEC_30 = 30;  ///< 30 seconds
+
+    // Common minute durations
+    const long MIN_1  = 1;   ///< 1 minute
+    const long MIN_2  = 2;   ///< 2 minutes
+    const long MIN_5  = 5;   ///< 5 minutes
+    const long MIN_10 = 10;  ///< 10 minutes
+    const long MIN_15 = 15;  ///< 15 minutes
+    const long MIN_30 = 30;  ///< 30 minutes
+
+    // Common hour durations
+    const long HOUR_1  = 1;   ///< 1 hour
+    const long HOUR_2  = 2;   ///< 2 hours
+    const long HOUR_3  = 3;   ///< 3 hours
+    const long HOUR_4  = 4;   ///< 4 hours
+    const long HOUR_5  = 5;   ///< 5 hours
+    const long HOUR_8  = 8;   ///< 8 hours
+    const long HOUR_12 = 12;  ///< 12 hours
+    const long HOUR_24 = 24;  ///< 24 hours
+
     // Nanoseconds and microseconds
     const long NS_PER_US     = 1000;         ///< Nanoseconds per microsecond
     const long NS_PER_MS     = 1000000;      ///< Nanoseconds per millisecond

@@ -29,6 +29,43 @@ namespace time_shield {
 ///
 /// \{
 
+    // Common millisecond durations
+    constexpr int64_t MS_1   = 1;   ///< 1 millisecond
+    constexpr int64_t MS_5   = 5;   ///< 5 milliseconds
+    constexpr int64_t MS_10  = 10;  ///< 10 milliseconds
+    constexpr int64_t MS_50  = 50;  ///< 50 milliseconds
+    constexpr int64_t MS_100 = 100; ///< 100 milliseconds
+    constexpr int64_t MS_250 = 250; ///< 250 milliseconds
+    constexpr int64_t MS_500 = 500; ///< 500 milliseconds
+    constexpr int64_t MS_750 = 750; ///< 750 milliseconds
+
+    // Common second durations
+    constexpr int64_t SEC_1  = 1;   ///< 1 second
+    constexpr int64_t SEC_2  = 2;   ///< 2 seconds
+    constexpr int64_t SEC_3  = 3;   ///< 3 seconds
+    constexpr int64_t SEC_5  = 5;   ///< 5 seconds
+    constexpr int64_t SEC_10 = 10;  ///< 10 seconds
+    constexpr int64_t SEC_15 = 15;  ///< 15 seconds
+    constexpr int64_t SEC_30 = 30;  ///< 30 seconds
+
+    // Common minute durations
+    constexpr int64_t MIN_1  = 1;   ///< 1 minute
+    constexpr int64_t MIN_2  = 2;   ///< 2 minutes
+    constexpr int64_t MIN_5  = 5;   ///< 5 minutes
+    constexpr int64_t MIN_10 = 10;  ///< 10 minutes
+    constexpr int64_t MIN_15 = 15;  ///< 15 minutes
+    constexpr int64_t MIN_30 = 30;  ///< 30 minutes
+
+    // Common hour durations
+    constexpr int64_t HOUR_1  = 1;   ///< 1 hour
+    constexpr int64_t HOUR_2  = 2;   ///< 2 hours
+    constexpr int64_t HOUR_3  = 3;   ///< 3 hours
+    constexpr int64_t HOUR_4  = 4;   ///< 4 hours
+    constexpr int64_t HOUR_5  = 5;   ///< 5 hours
+    constexpr int64_t HOUR_8  = 8;   ///< 8 hours
+    constexpr int64_t HOUR_12 = 12;  ///< 12 hours
+    constexpr int64_t HOUR_24 = 24;  ///< 24 hours
+
     // Nanoseconds and microseconds
     constexpr int64_t NS_PER_US     = 1000;         ///< Nanoseconds per microsecond
     constexpr int64_t NS_PER_MS     = 1000000;      ///< Nanoseconds per millisecond

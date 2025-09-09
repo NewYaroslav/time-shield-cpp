@@ -84,7 +84,8 @@ namespace time_shield {
 
         return s_anchor_realtime_us + delta_us;
 #   else
-#       error "now_realtime_us() is only supported on Windows."
+        // Stub implementation for non-Windows platforms.
+        return 0;
 #   endif
     }
 

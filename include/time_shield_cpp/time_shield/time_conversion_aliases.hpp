@@ -207,21 +207,21 @@ namespace time_shield {
     /// \brief Alias for get_unix_min function.
     /// \copydoc get_unix_min
     template<class T = int64_t>
-    constexpr T unix_min(ts_t ts = ts()) {
+    constexpr T unix_min(ts_t ts = time_shield::ts()) {
         return get_unix_min(ts);
     }
 
     /// \brief Alias for get_unix_min function.
     /// \copydoc get_unix_min
     template<class T = int64_t>
-    constexpr T to_unix_min(ts_t ts = ts()) {
+    constexpr T to_unix_min(ts_t ts = time_shield::ts()) {
         return get_unix_min(ts);
     }
 
     /// \brief Alias for get_unix_min function.
     /// \copydoc get_unix_min
     template<class T = int64_t>
-    constexpr T umin(ts_t ts = ts()) {
+    constexpr T umin(ts_t ts = time_shield::ts()) {
         return get_unix_min(ts);
     }
     
@@ -1468,14 +1468,14 @@ namespace time_shield {
     /// \brief Alias for get_year function.
     /// \copydoc get_year
     template<class T = year_t>
-    TIME_SHIELD_CONSTEXPR inline T year(ts_t ts = ts()) {
+    TIME_SHIELD_CONSTEXPR inline T year(ts_t ts = time_shield::ts()) {
         return get_year(ts);
     }
 
     /// \brief Alias for get_year function.
     /// \copydoc get_year
     template<class T = year_t>
-    TIME_SHIELD_CONSTEXPR inline T to_year(ts_t ts = ts()) {
+    TIME_SHIELD_CONSTEXPR inline T to_year(ts_t ts = time_shield::ts()) {
         return get_year(ts);
     }
 
@@ -1484,14 +1484,14 @@ namespace time_shield {
     /// \brief Alias for get_year_ms function.
     /// \copydoc get_year_ms
     template<class T = year_t>
-    TIME_SHIELD_CONSTEXPR inline T year_ms(ts_ms_t ts_ms = ts_ms()) {
+    TIME_SHIELD_CONSTEXPR inline T year_ms(ts_ms_t ts_ms = time_shield::ts_ms()) {
         return get_year_ms(ts_ms);
     }
 
     /// \brief Alias for get_year_ms function.
     /// \copydoc get_year_ms
     template<class T = year_t>
-    TIME_SHIELD_CONSTEXPR inline T to_year_ms(ts_ms_t ts_ms = ts_ms()) {
+    TIME_SHIELD_CONSTEXPR inline T to_year_ms(ts_ms_t ts_ms = time_shield::ts_ms()) {
         return get_year_ms(ts_ms);
     }
     

@@ -12,6 +12,7 @@
 #include "validation.hpp"
 #include "time_utils.hpp"
 #include "time_zone_struct.hpp"
+#include "date_time_struct.hpp"
 #include <cmath>
 #include <ctime>
 #include <stdexcept>
@@ -971,7 +972,7 @@ namespace time_shield {
     /// \param ts Timestamp in seconds (default is current timestamp).
     /// \return Number of minutes since the UNIX epoch.
     template<class T = int64_t>
-    constexpr T get_unix_min(ts_t ts = ts()) {
+    constexpr T get_unix_min(ts_t ts = time_shield::ts()) {
         return ts / SEC_PER_MIN;
     }
 
@@ -985,7 +986,7 @@ namespace time_shield {
     /// \param ts Timestamp in seconds (default is current timestamp).
     /// \return Second of the day.
     template<class T = int>
-    constexpr T sec_of_day(ts_t ts = ts()) noexcept {
+    constexpr T sec_of_day(ts_t ts = time_shield::ts()) noexcept {
         return ts % SEC_PER_DAY;
     }
 
@@ -1027,7 +1028,7 @@ namespace time_shield {
     /// \param ts Timestamp in seconds (default is current timestamp).
     /// \return Second of the minute.
     template<class T = int>
-    constexpr T sec_of_min(ts_t ts = ts()) {
+    constexpr T sec_of_min(ts_t ts = time_shield::ts()) {
         return (ts % SEC_PER_MIN);
     }
 
@@ -1039,7 +1040,7 @@ namespace time_shield {
     /// \param ts Timestamp in seconds (default is current timestamp).
     /// \return Second of the hour.
     template<class T = int>
-    constexpr T sec_of_hour(ts_t ts = ts()) {
+    constexpr T sec_of_hour(ts_t ts = time_shield::ts()) {
         return (ts % SEC_PER_HOUR);
     }
 
@@ -1053,7 +1054,7 @@ namespace time_shield {
     /// \param ts Timestamp in seconds (default is current timestamp).
     /// \return Year of the specified timestamp.
     template<class T = year_t>
-    TIME_SHIELD_CONSTEXPR inline T get_year(ts_t ts = ts()) {
+    TIME_SHIELD_CONSTEXPR inline T get_year(ts_t ts = time_shield::ts()) {
         return get_unix_year(ts) + UNIX_EPOCH;
     }
 
@@ -1067,7 +1068,7 @@ namespace time_shield {
     /// \param ts_ms Timestamp in milliseconds (default is current timestamp).
     /// \return Year of the specified timestamp.
     template<class T = year_t>
-    TIME_SHIELD_CONSTEXPR inline T get_year_ms(ts_ms_t ts_ms = ts_ms()) {
+    TIME_SHIELD_CONSTEXPR inline T get_year_ms(ts_ms_t ts_ms = time_shield::ts_ms()) {
         return get_year(ms_to_sec(ts_ms));
     }
 
@@ -1265,7 +1266,7 @@ namespace time_shield {
     /// \param ts_ms Timestamp in milliseconds.
     /// \return End-of-year timestamp in milliseconds.
     template<class T = year_t>
-    TIME_SHIELD_CONSTEXPR inline ts_ms_t end_of_year_ms(ts_ms_t ts_ms = ts_ms()) {
+    TIME_SHIELD_CONSTEXPR inline ts_ms_t end_of_year_ms(ts_ms_t ts_ms = time_shield::ts_ms()) {
         return sec_to_ms(end_of_year(ms_to_sec(ts_ms)));
     }
 

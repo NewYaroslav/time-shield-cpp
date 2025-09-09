@@ -7,6 +7,8 @@
 ///
 /// This file contains the definition of the DateTimeStruct structure and a function to create DateTimeStruct instances.
 
+#include <cstdint>
+
 namespace time_shield {
 
     /// \ingroup time_structures

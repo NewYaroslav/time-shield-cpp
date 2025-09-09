@@ -56,13 +56,10 @@ endif()
 
 option(TIME_SHIELD_CPP_BUILD_EXAMPLES "Build examples" ${is_top_level})
 option(TIME_SHIELD_CPP_BUILD_TESTS "Build tests" ${is_top_level})
-
-if(MINGW OR CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
-    set(COMMON_WARN_FLAGS -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow)
-endif()
-
 if(MSVC)
     set(COMMON_WARN_FLAGS /W4 /wd4996)
+else()
+    set(COMMON_WARN_FLAGS -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow)
 endif()
 
 file(GLOB_RECURSE PROJECT_HEADERS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} include/*.hpp)

@@ -12,6 +12,7 @@
 #include "validation.hpp"
 #include "time_utils.hpp"
 #include "time_zone_struct.hpp"
+#include "date_time_struct.hpp"
 #include <cmath>
 #include <ctime>
 #include <stdexcept>

@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  linux:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        std: [11, 17]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure
+        run: cmake -S . -B build -DTIME_SHIELD_CPP_BUILD_TESTS=ON -DCMAKE_CXX_STANDARD=${{ matrix.std }}
+      - name: Build
+        run: cmake --build build
+      - name: Test
+        run: ctest --test-dir build
+
+  windows:
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        std: [11, 17]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure
+        run: cmake -S . -B build -DTIME_SHIELD_CPP_BUILD_TESTS=ON -DCMAKE_CXX_STANDARD=${{ matrix.std }}
+      - name: Build
+        run: cmake --build build --config Release
+      - name: Test
+        run: ctest --test-dir build -C Release
+
+  macos:
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        std: [11, 17]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure
+        run: cmake -S . -B build -DTIME_SHIELD_CPP_BUILD_TESTS=ON -DCMAKE_CXX_STANDARD=${{ matrix.std }}
+      - name: Build
+        run: cmake --build build
+      - name: Test
+        run: ctest --test-dir build

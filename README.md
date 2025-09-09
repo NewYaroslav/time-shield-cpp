@@ -56,11 +56,16 @@ more academic solutions like `HowardHinnant/date`, the library:
 
 ## Installation and Setup
 
-The library comes as headers. Add `include/time_shield_cpp` to your project and
-include the main file:
+The library is header-only and can be consumed with CMake:
 
-```cpp
-#include <time_shield.hpp>
+```cmake
+cmake_minimum_required(VERSION 3.18)
+project(app LANGUAGES CXX)
+
+find_package(TimeShield CONFIG REQUIRED)
+
+add_executable(app main.cpp)
+target_link_libraries(app PRIVATE time_shield::time_shield)
 ```
 
 Examples can be built with the provided scripts:

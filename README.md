@@ -63,8 +63,13 @@ include the main file:
 #include <time_shield.hpp>
 ```
 
-Examples can be built with the `build-examples.bat` script. Use
-`install_mql5.bat` to install the MQL5 files.
+Examples can be built with the provided scripts:
+
+- `build-examples.bat` for Windows;
+- `build_examples.sh` for Linux/macOS;
+- `build-cb.bat` to generate a Code::Blocks project.
+
+Use `install_mql5.bat` to install the MQL5 files.
 
 ## Usage Examples
 

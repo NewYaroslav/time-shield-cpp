@@ -79,6 +79,23 @@ Examples can be built with the provided scripts:
 
 Use `install_mql5.bat` to install the MQL5 files.
 
+## Submodule / add_subdirectory
+
+To vendor the library, add it as a Git submodule:
+
+```sh
+git submodule add https://github.com/NewYaroslav/time-shield-cpp external/time-shield-cpp
+```
+
+Then include it in your project with CMake:
+
+```cmake
+add_subdirectory(external/time-shield-cpp)
+
+add_executable(app main.cpp)
+target_link_libraries(app PRIVATE time_shield::time_shield)
+```
+
 ## Usage Examples
 
 Below are small examples from different sections of the library.

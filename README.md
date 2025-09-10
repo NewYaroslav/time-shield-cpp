@@ -156,8 +156,7 @@ Below are small examples from different sections of the library.
 ### Getting and converting time
 
 ```cpp
-#include <time_shield/time_utils.hpp>
-#include <time_shield/time_conversions.hpp>
+#include <time_shield.hpp>
 
 using namespace time_shield;
 
@@ -169,7 +168,7 @@ int ms_part = ms_of_sec(now_f);  // millisecond part
 ### Date formatting
 
 ```cpp
-#include <time_shield/time_formatting.hpp>
+#include <time_shield.hpp>
 
 std::string iso = to_iso8601(now);          // 2024-06-21T12:00:00
 std::string custom = to_string("%Y-%m-%d %H:%M:%S", now);
@@ -180,7 +179,7 @@ std::string filename = to_windows_filename(now);
 ### ISO8601 parsing
 
 ```cpp
-#include <time_shield/time_parser.hpp>
+#include <time_shield.hpp>
 
 DateTimeStruct dt;
 TimeZoneStruct tz;
@@ -192,7 +191,7 @@ if (parse_iso8601("2024-11-25T14:30:00+01:00", dt, tz)) {
 ### Time zone conversion
 
 ```cpp
-#include <time_shield/time_zone_conversions.hpp>
+#include <time_shield.hpp>
 
 ts_t cet = to_ts(2024, Month::JUN, 21, 12, 0, 0);
 ts_t gmt = cet_to_gmt(cet);
@@ -201,7 +200,7 @@ ts_t gmt = cet_to_gmt(cet);
 ### NTP client (Windows)
 
 ```cpp
-#include <time_shield/ntp_client.hpp>
+#include <time_shield.hpp>
 
 NtpClient client;
 if (client.query()) {

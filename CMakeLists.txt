@@ -14,15 +14,16 @@ target_compile_features(time_shield INTERFACE cxx_std_11)
 target_include_directories(
     time_shield
     INTERFACE
-        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/time_shield_cpp>
-        $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}/time_shield_cpp>
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+        $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
 )
 
 include(GNUInstallDirs)
 include(CMakePackageConfigHelpers)
 
 install(TARGETS time_shield EXPORT TimeShieldTargets)
-install(DIRECTORY include/time_shield_cpp DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+install(DIRECTORY include/time_shield DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+install(FILES include/time_shield.hpp DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 install(
     EXPORT TimeShieldTargets
     FILE TimeShieldTargets.cmake

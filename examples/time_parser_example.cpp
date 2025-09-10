@@ -7,9 +7,7 @@
 #include <iostream>
 
 #if defined(_WIN32)
-#include <time_shield/time_parser.hpp>
-#include <time_shield/time_zone_struct.hpp>
-#include <time_shield/date_time_struct.hpp>
+#include <time_shield.hpp>
 
 int main() {
     using namespace time_shield;

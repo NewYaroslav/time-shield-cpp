@@ -8,9 +8,7 @@
 
 /// \def _WIN32
 #if defined(_WIN32)
-#include <time_shield/types.hpp>
-#include <time_shield/constants.hpp>
-#include <time_shield/time_utils.hpp>
+#include <time_shield.hpp>
 
 int main() {
     using namespace time_shield;

@@ -8,7 +8,7 @@
 #include <chrono>
 
 #if defined(_WIN32)
-#include <time_shield/time_formatting.hpp>
+#include <time_shield.hpp>
 
 int main() {
     using namespace time_shield;

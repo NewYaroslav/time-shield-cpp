@@ -31,10 +31,6 @@
 /// \brief Alias for the namespace time_shield.
 namespace tsh = time_shield;
 
-/// \namespace tshield
-/// \brief Alias for the namespace time_shield.
-namespace tshield = time_shield;
-
 /// \namespace time_shield
 /// \brief Main namespace for the Time Shield library.
 ///

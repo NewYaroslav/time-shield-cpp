@@ -10,8 +10,7 @@
 #include <chrono>
 #include <ctime>
 #if defined(_WIN32)
-#   include <time_shield/ntp_client.hpp>
-#   include <time_shield/initialization.hpp>
+#   include <time_shield.hpp>
 
 int main() {
     using namespace time_shield;

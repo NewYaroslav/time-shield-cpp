@@ -16,15 +16,15 @@
 #include <time.h>       // For clock(), times(), etc.
 #include <mutex>        // For std::once_flag
 
-#if defined(_WIN32)
-    #include <Windows.h>
-#elif defined(__unix__) || defined(__APPLE__)
-    #include <unistd.h>
-    #include <sys/resource.h>
-    #include <sys/times.h>
-    #include <time.h>
+#if TIME_SHIELD_PLATFORM_WINDOWS
+#   include <Windows.h>
+#elif TIME_SHIELD_PLATFORM_UNIX
+#   include <unistd.h>
+#   include <sys/resource.h>
+#   include <sys/times.h>
+#   include <time.h>
 #else
-    #error "Unsupported platform for get_cpu_time()"
+#   error "Unsupported platform for get_cpu_time()"
 #endif
 
 namespace time_shield {
@@ -53,7 +53,7 @@ namespace time_shield {
     /// \return Current UTC timestamp in microseconds.
     /// \note Windows only. Not available on Unix-like systems.
     inline int64_t now_realtime_us() {
-#   if defined(_WIN32)
+#   if TIME_SHIELD_PLATFORM_WINDOWS
         static std::once_flag init_flag;
         static int64_t s_perf_freq = 0;
         static int64_t s_anchor_perf = 0;
@@ -196,7 +196,7 @@ namespace time_shield {
     /// \note This function attempts multiple fallback methods depending on platform capabilities.
     /// \see https://habr.com/ru/articles/282301/ — original implementation idea
     inline double get_cpu_time() noexcept {
-#   if defined(_WIN32)
+#   if TIME_SHIELD_PLATFORM_WINDOWS
         FILETIME create_time{}, exit_time{}, kernel_time{}, user_time{};
         if (GetProcessTimes(GetCurrentProcess(), &create_time, &exit_time, &kernel_time, &user_time)) {
             ULARGE_INTEGER li{};
@@ -204,7 +204,7 @@ namespace time_shield {
             li.HighPart = user_time.dwHighDateTime;
             return static_cast<double>(li.QuadPart) / 10000000.0;
         }
-#   elif   defined(__unix__) || defined(__unix) || defined(unix) || (defined(__APPLE__) && defined(__MACH__))
+#   elif   TIME_SHIELD_PLATFORM_UNIX
         // AIX, BSD, Cygwin, HP-UX, Linux, OSX, and Solaris
 #       if defined(_POSIX_TIMERS) && (_POSIX_TIMERS > 0)
             clockid_t id = (clockid_t)-1;

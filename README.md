@@ -54,6 +54,21 @@ more academic solutions like `HowardHinnant/date`, the library:
   library in MetaTrader.
 - Compatible with `C++11`–`C++17`.
 
+
+## Configuration
+
+Compile-time flags in `time_shield/config.hpp` control optional parts of the
+library and report platform capabilities:
+
+- `TIME_SHIELD_PLATFORM_WINDOWS` / `TIME_SHIELD_PLATFORM_UNIX` — detected
+  target platform.
+- `TIME_SHIELD_HAS_WINSOCK` — set when WinSock APIs are available.
+- `TIME_SHIELD_ENABLE_NTP_CLIENT` — enables the optional `NtpClient` module
+  (defaults to `1` on Windows).
+
+All public headers place their declarations inside the `time_shield` namespace.
+Use `time_shield::` or `using namespace time_shield;` to access the API.
+
 > Some functions depend on WinAPI and work only on Windows (for example,
 > `NtpClient` or obtaining realtime via `QueryPerformanceCounter`).
 

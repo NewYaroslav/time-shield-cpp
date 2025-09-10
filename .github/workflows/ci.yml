@@ -48,3 +48,15 @@ jobs:
         run: cmake --build build
       - name: Test
         run: ctest --test-dir build
+
+  vcpkg-install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: lukka/action-setup-vcpkg@v1
+      - name: Validate port
+        run: vcpkg install time-shield-cpp --overlay-ports=vcpkg-overlay/ports
+      - name: Configure consumer project
+        run: cmake -B build -S . -DCMAKE_TOOLCHAIN_FILE=${VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake
+      - name: Build consumer project
+        run: cmake --build build

@@ -39,6 +39,16 @@ the target platform and toggling optional modules:
 
 All public symbols are declared inside the `time_shield` namespace.
 
+\section invariants_sec API Invariants
+
+- `ts_t` represents Unix time in seconds as a signed 64-bit integer with
+  microsecond precision available through conversions.
+- `fts_t` stores time as double precision seconds; conversions maintain
+  microsecond accuracy.
+- ISO8601 parsing assumes the proleptic Gregorian calendar without leap seconds.
+- Functions avoid throwing exceptions and use no dynamic memory internally;
+  utilities returning `std::string` rely on the caller for allocations.
+
 \section examples_sec Examples
 
 Here is a simple demonstration:
@@ -75,30 +85,76 @@ Additional example files are located in the `examples/` folder:
 - `ntp_client_example.cpp` — NTP sync (Windows-only)
 
 \section install_sec Installation
+\subsection install_pkg Install and `find_package`
 
-Time Shield is a header-only library. To use it in your C++ project:
+After installing the library (e.g., via `cmake --install`), locate it with
+`find_package`:
 
-- Add the `include/time_shield_cpp` folder to your project's include paths.
-- Include the main header:
+\code{.cmake}
+cmake_minimum_required(VERSION 3.18)
+project(app LANGUAGES CXX)
 
-\code{.cpp}
-#include <time_shield.hpp>
+find_package(TimeShield CONFIG REQUIRED)
+
+add_executable(app main.cpp)
+target_link_libraries(app PRIVATE time_shield::time_shield)
 \endcode
 
-No additional build steps or external dependencies are required.
+\subsection install_submodule Git submodule with `add_subdirectory`
 
-For MQL5/MetaTrader:
+Vendor the library as a submodule:
 
-- Run `install_mql5.bat` to copy the necessary `.mqh` files to your MQL5 include directory.
-- Include the main file in your MQL5 script:
-
-\code{.mq5}
-#include <TimeShield.mqh>
+\code{.sh}
+git submodule add https://github.com/NewYaroslav/time-shield-cpp external/time-shield-cpp
 \endcode
 
-To build the C++ examples:
+Then include it:
 
-- Run `build-examples.bat` to compile example programs with MSVC or your preferred toolchain.
+\code{.cmake}
+add_subdirectory(external/time-shield-cpp)
+
+add_executable(app main.cpp)
+target_link_libraries(app PRIVATE time_shield::time_shield)
+\endcode
+
+\subsection install_vcpkg vcpkg overlay
+
+Install via a local overlay port:
+
+\code{.sh}
+vcpkg install time-shield-cpp --overlay-ports=./vcpkg-overlay/ports
+\endcode
+
+Use the vcpkg toolchain when configuring CMake:
+
+\code{.sh}
+cmake -B build -S . -DCMAKE_TOOLCHAIN_FILE=/path/to/vcpkg/scripts/buildsystems/vcpkg.cmake
+\endcode
+
+The port is intended to be upstreamed to
+\ref https://github.com/microsoft/vcpkg "microsoft/vcpkg".
+
+For MQL5/MetaTrader, run `install_mql5.bat` to copy the `.mqh` files to your
+include directory.
+
+To build the C++ examples use the helper scripts:
+
+- `build-examples.bat` for Windows
+- `build_examples.sh` for Linux/macOS
+- `build-cb.bat` to generate a Code::Blocks project
+
+\section tested_sec Tested Platforms
+
+| Platform | Compilers   | C++ Standards |
+|----------|-------------|---------------|
+| Windows  | MSVC, ClangCL | 11, 14, 17 |
+| Linux    | GCC, Clang  | 11, 14, 17 |
+| macOS    | Apple Clang | 11, 14, 17 |
+
+\section docs_sec Online Documentation
+
+The latest generated API reference is available at
+\ref https://newyaroslav.github.io/time-shield-cpp/ "newyaroslav.github.io/time-shield-cpp".
 
 \section repo_sec Repository
 

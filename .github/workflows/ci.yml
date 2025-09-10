@@ -53,10 +53,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: lukka/setup-vcpkg@v1
+      - name: Install vcpkg
+        run: |
+          git clone https://github.com/microsoft/vcpkg.git
+          ./vcpkg/bootstrap-vcpkg.sh -disableMetrics
       - name: Validate port
-        run: vcpkg install time-shield-cpp --overlay-ports=vcpkg-overlay/ports
+        run: ./vcpkg/vcpkg install time-shield-cpp --overlay-ports=vcpkg-overlay/ports
       - name: Configure consumer project
-        run: cmake -B build -S . -DCMAKE_TOOLCHAIN_FILE=$VCPKG_ROOT/scripts/buildsystems/vcpkg.cmake
+        run: cmake -B build -S . -DCMAKE_TOOLCHAIN_FILE=./vcpkg/scripts/buildsystems/vcpkg.cmake
       - name: Build consumer project
         run: cmake --build build

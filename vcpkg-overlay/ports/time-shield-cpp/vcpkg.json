@@ -1,7 +1,11 @@
 {
   "name": "time-shield-cpp",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Header-only C++ library for time conversions, formatting, and utilities.",
   "homepage": "https://github.com/NewYaroslav/time-shield-cpp",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": [
+    "vcpkg-cmake",
+    "vcpkg-cmake-config"
+  ]
 }

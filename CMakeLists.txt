@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.18)
-project(TimeShield VERSION 0.1.0 LANGUAGES CXX)
+project(TimeShield VERSION 1.0.3 LANGUAGES CXX)
 
 if(NOT DEFINED CMAKE_CXX_STANDARD)
     set(CMAKE_CXX_STANDARD 11)

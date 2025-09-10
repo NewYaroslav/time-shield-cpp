@@ -22,8 +22,7 @@ include(GNUInstallDirs)
 include(CMakePackageConfigHelpers)
 
 install(TARGETS time_shield EXPORT TimeShieldTargets)
-install(DIRECTORY include/time_shield DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
-install(FILES include/time_shield.hpp DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+install(DIRECTORY include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 install(
     EXPORT TimeShieldTargets
     FILE TimeShieldTargets.cmake
@@ -40,7 +39,7 @@ configure_package_config_file(
 write_basic_package_version_file(
     ${CMAKE_CURRENT_BINARY_DIR}/TimeShieldConfigVersion.cmake
     VERSION ${PROJECT_VERSION}
-    COMPATIBILITY SameMajorVersion
+    COMPATIBILITY SameMinorVersion
 )
 
 install(FILES

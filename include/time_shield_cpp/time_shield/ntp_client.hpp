@@ -8,10 +8,12 @@
 /// This module provides a minimal client that can query a remote NTP server over UDP
 /// and calculate the offset between local system time and the NTP-reported time.
 ///
-/// Currently only Windows is supported (WinSock-based implementation).
+/// The feature is optional and controlled by `TIME_SHIELD_ENABLE_NTP_CLIENT`.
 /// \ingroup ntp
 
-#if defined(_WIN32)
+#include "config.hpp"
+
+#if TIME_SHIELD_ENABLE_NTP_CLIENT
 
 #include "ntp_client/wsa_guard.hpp"
 #include "time_utils.hpp"
@@ -209,18 +211,22 @@ namespace time_shield {
 
 } // namespace time_shield
 
-#else // !_WIN32
+#else // !TIME_SHIELD_ENABLE_NTP_CLIENT
 
-#   warning "NtpClient is only supported on Windows for now."
+#   warning "NtpClient is disabled or unsupported on this platform."
 
 namespace time_shield {
 
+    /// \brief Placeholder used when NTP client is disabled.
     class NtpClient {
-        static_assert(sizeof(void*) == 0, "time_shield::NtpClient is only supported on Windows.");
+    public:
+        NtpClient() {
+            static_assert(sizeof(void*) == 0, "time_shield::NtpClient is disabled by configuration.");
+        }
     };
 
-}
+} // namespace time_shield
 
-#endif // _WIN32
+#endif // TIME_SHIELD_ENABLE_NTP_CLIENT
 
 #endif // _TIME_SHIELD_NTP_CLIENT_HPP_INCLUDED

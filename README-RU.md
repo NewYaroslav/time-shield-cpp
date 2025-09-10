@@ -35,6 +35,16 @@
 - **Поддержка MQL5** — адаптированные заголовки в каталоге `MQL5` позволяют использовать библиотеку в MetaTrader.
 - Совместимость с `C++11` – `C++17`.
 
+## Конфигурация
+
+Компиляционные флаги в `time_shield/config.hpp` позволяют адаптировать библиотеку под платформу и отключать необязательные модули:
+
+- `TIME_SHIELD_PLATFORM_WINDOWS` / `TIME_SHIELD_PLATFORM_UNIX` — определение целевой платформы.
+- `TIME_SHIELD_HAS_WINSOCK` — наличие WinSock API.
+- `TIME_SHIELD_ENABLE_NTP_CLIENT` — включает модуль `NtpClient` (по умолчанию `1` на Windows).
+
+Все заголовки библиотеки используют пространство имён `time_shield`. Для доступа к API можно писать `time_shield::` или подключать `using namespace time_shield;`.
+
 > Часть функций зависит от WinAPI и будет работать только под Windows (например, `NtpClient` или получение realtime через `QueryPerformanceCounter`).
 
 ## Установка и настройка

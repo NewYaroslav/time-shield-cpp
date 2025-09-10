@@ -27,6 +27,18 @@ portable, and suitable for scenarios like logging, serialization, MQL5 usage, an
 - ISO8601 string parsing
 - Utilities for time manipulation and conversion
 
+\section config_sec Configuration
+
+Compile-time macros in `time_shield/config.hpp` allow adapting the library to
+the target platform and toggling optional modules:
+
+- `TIME_SHIELD_PLATFORM_WINDOWS` / `TIME_SHIELD_PLATFORM_UNIX` — platform
+  detection.
+- `TIME_SHIELD_HAS_WINSOCK` — WinSock availability.
+- `TIME_SHIELD_ENABLE_NTP_CLIENT` — builds the NTP client when set to `1`.
+
+All public symbols are declared inside the `time_shield` namespace.
+
 \section examples_sec Examples
 
 Here is a simple demonstration:

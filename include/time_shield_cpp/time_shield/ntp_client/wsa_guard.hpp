@@ -6,9 +6,15 @@
 /// \brief Singleton guard for WinSock initialization.
 /// \ingroup ntp
 
-#include <winsock2.h>  // Must be included before windows.h
-#include <ws2tcpip.h>
-#include <windows.h>   // (optional, but safe if later needed)
+#include "../config.hpp"
+
+#if TIME_SHIELD_HAS_WINSOCK
+#   include <winsock2.h>  // Must be included before windows.h
+#   include <ws2tcpip.h>
+#   include <windows.h>   // (optional, but safe if later needed)
+#else
+#   error "WsaGuard requires WinSock support"
+#endif
 #include <mutex>
 #include <string>
 
@@ -56,3 +62,4 @@ namespace time_shield {
 } // namespace time_shield
 
 #endif // _TIME_SHIELD_WSA_GUARD_HPP_INCLUDED
+

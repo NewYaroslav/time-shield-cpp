@@ -72,9 +72,23 @@ Use `time_shield::` or `using namespace time_shield;` to access the API.
 > Some functions depend on WinAPI and work only on Windows (for example,
 > `NtpClient` or obtaining realtime via `QueryPerformanceCounter`).
 
-## Installation and Setup
+## API Invariants
 
-The library is header-only and can be consumed with CMake:
+- `ts_t` stores Unix seconds in a signed 64-bit integer and provides
+  microsecond precision when converted to other types.
+- `fts_t` uses double precision floating seconds. Conversions between
+  representations preserve microsecond accuracy.
+- ISO8601 utilities assume the proleptic Gregorian calendar and do not account
+  for leap seconds.
+- Core functions avoid throwing exceptions and do not allocate dynamic memory;
+  helpers returning `std::string` rely on the caller to manage allocations.
+
+## Installation
+
+### Install and `find_package`
+
+After installing the library (e.g., with `cmake --install`), consume it in a
+project with CMake:
 
 ```cmake
 cmake_minimum_required(VERSION 3.18)
@@ -86,7 +100,24 @@ add_executable(app main.cpp)
 target_link_libraries(app PRIVATE time_shield::time_shield)
 ```
 
-### vcpkg
+### Git submodule with `add_subdirectory`
+
+Vendor the library as a submodule:
+
+```sh
+git submodule add https://github.com/NewYaroslav/time-shield-cpp external/time-shield-cpp
+```
+
+Then include it:
+
+```cmake
+add_subdirectory(external/time-shield-cpp)
+
+add_executable(app main.cpp)
+target_link_libraries(app PRIVATE time_shield::time_shield)
+```
+
+### vcpkg overlay
 
 Install via a local overlay port:
 
@@ -110,22 +141,13 @@ Examples can be built with the provided scripts:
 
 Use `install_mql5.bat` to install the MQL5 files.
 
-## Submodule / add_subdirectory
+## Tested Platforms
 
-To vendor the library, add it as a Git submodule:
-
-```sh
-git submodule add https://github.com/NewYaroslav/time-shield-cpp external/time-shield-cpp
-```
-
-Then include it in your project with CMake:
-
-```cmake
-add_subdirectory(external/time-shield-cpp)
-
-add_executable(app main.cpp)
-target_link_libraries(app PRIVATE time_shield::time_shield)
-```
+| Platform | Compilers           | C++ Standards |
+|----------|---------------------|---------------|
+| Windows  | MSVC, ClangCL       | 11, 14, 17    |
+| Linux    | GCC, Clang          | 11, 14, 17    |
+| macOS    | Apple Clang         | 11, 14, 17    |
 
 ## Usage Examples
 

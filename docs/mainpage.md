@@ -56,22 +56,23 @@ Here is a simple demonstration:
 \code{.cpp}
 #include <time_shield.hpp>
 
+namespace tsh = time_shield;
 namespace tshield = time_shield;
 
 int main() {
-    tshield::ts_t current_ts = tshield::timestamp();
-    tshield::ts_t future_ts = tshield::end_of_year(current_ts);
-    int days = tshield::get_days_difference(current_ts, future_ts);
+    tsh::ts_t current_ts = tsh::timestamp();
+    tsh::ts_t future_ts = tsh::end_of_year(current_ts);
+    int days = tsh::get_days_difference(current_ts, future_ts);
     std::cout << "Days until end of year: " << days << std::endl;
 
-    std::string formatted_time = tshield::to_iso8601_str(future_ts);
-    tshield::ts_ms_t ts_ms = 0;
-    if (!tshield::str_to_ts_ms(formatted_time, ts_ms)) {
+    std::string formatted_time = tsh::to_iso8601_str(future_ts);
+    tsh::ts_ms_t ts_ms = 0;
+    if (!tsh::str_to_ts_ms(formatted_time, ts_ms)) {
         std::cout << "Error occurred while parsing ISO8601 string" << std::endl;
         return -1;
     }
 
-    formatted_time = tshield::to_iso8601_utc_ms(ts_ms);
+    formatted_time = tsh::to_iso8601_utc_ms(ts_ms);
     std::cout << "Future time: " << formatted_time << std::endl;
     return 0;
 }

@@ -71,6 +71,22 @@ add_executable(app main.cpp)
 target_link_libraries(app PRIVATE time_shield::time_shield)
 ```
 
+### vcpkg
+
+Install via a local overlay port:
+
+```sh
+vcpkg install time-shield-cpp --overlay-ports=./vcpkg-overlay/ports
+```
+
+Use the vcpkg toolchain when configuring CMake:
+
+```sh
+cmake -B build -S . -DCMAKE_TOOLCHAIN_FILE=/path/to/vcpkg/scripts/buildsystems/vcpkg.cmake
+```
+
+The port is intended to be upstreamed to [microsoft/vcpkg](https://github.com/microsoft/vcpkg).
+
 Examples can be built with the provided scripts:
 
 - `build-examples.bat` for Windows;

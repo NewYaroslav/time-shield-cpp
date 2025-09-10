@@ -56,6 +56,9 @@ Here is a simple demonstration:
 \code{.cpp}
 #include <time_shield.hpp>
 
+namespace tsh = time_shield;
+namespace tshield = time_shield;
+
 int main() {
     tsh::ts_t current_ts = tsh::timestamp();
     tsh::ts_t future_ts = tsh::end_of_year(current_ts);

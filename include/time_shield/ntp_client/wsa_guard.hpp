@@ -9,9 +9,12 @@
 #include "../config.hpp"
 
 #if TIME_SHIELD_HAS_WINSOCK
+#   ifndef WIN32_LEAN_AND_MEAN
+#       define WIN32_LEAN_AND_MEAN
+#   endif
 #   include <winsock2.h>  // Must be included before windows.h
 #   include <ws2tcpip.h>
-#   include <windows.h>   // (optional, but safe if later needed)
+#   include <windows.h>   // Optional, but safe if later needed
 #else
 #   error "WsaGuard requires WinSock support"
 #endif

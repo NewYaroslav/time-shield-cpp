@@ -7,7 +7,8 @@
 #include <iostream>
 
 #if defined(_WIN32)
-#include <time_shield.hpp>
+#include <time_shield/time_zone_conversions.hpp>
+#include <time_shield/time_formatting.hpp>
 
 int main() {
     using namespace time_shield;

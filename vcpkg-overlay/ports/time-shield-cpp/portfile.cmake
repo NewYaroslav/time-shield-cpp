@@ -7,12 +7,16 @@ vcpkg_from_github(
 
 vcpkg_cmake_configure(
     SOURCE_PATH ${SOURCE_PATH}
+    OPTIONS
+        -DTIME_SHIELD_CPP_BUILD_EXAMPLES=OFF
+        -DTIME_SHIELD_CPP_BUILD_TESTS=OFF
 )
 
 vcpkg_cmake_install()
 
 vcpkg_cmake_config_fixup(
     PACKAGE_NAME TimeShield
+    CONFIG_PATH lib/cmake/TimeShield
 )
 
 file(INSTALL ${SOURCE_PATH}/LICENSE DESTINATION ${CURRENT_PACKAGES_DIR}/share/${PORT} RENAME LICENSE)

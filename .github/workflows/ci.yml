@@ -53,7 +53,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: microsoft/setup-vcpkg@v1
+      - uses: vcpkg/setup-vcpkg@v1
       - name: Validate port
         run: vcpkg install time-shield-cpp --overlay-ports=vcpkg-overlay/ports
       - name: Configure consumer project

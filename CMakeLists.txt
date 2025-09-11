@@ -21,7 +21,8 @@ target_include_directories(
 include(GNUInstallDirs)
 include(CMakePackageConfigHelpers)
 
-install(TARGETS time_shield EXPORT TimeShieldTargets)
+install(TARGETS time_shield EXPORT TimeShieldTargets
+    INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 install(DIRECTORY include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 install(
     EXPORT TimeShieldTargets

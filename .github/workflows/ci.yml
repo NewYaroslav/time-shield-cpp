@@ -18,8 +18,14 @@ jobs:
         run: cmake -S . -B build -DTIME_SHIELD_CPP_BUILD_TESTS=ON -DCMAKE_CXX_STANDARD=${{ matrix.std }}
       - name: Build
         run: cmake --build build
+      - name: Install
+        run: cmake --install build --prefix install
       - name: Test
         run: ctest --test-dir build
+      - name: Configure consumer project
+        run: cmake -S tests/install_consumer -B build-consumer -DCMAKE_PREFIX_PATH=${{ github.workspace }}/install -DCMAKE_CXX_STANDARD=${{ matrix.std }}
+      - name: Build consumer project
+        run: cmake --build build-consumer
 
   windows:
     runs-on: windows-latest
@@ -32,8 +38,14 @@ jobs:
         run: cmake -S . -B build -DTIME_SHIELD_CPP_BUILD_TESTS=ON -DCMAKE_CXX_STANDARD=${{ matrix.std }}
       - name: Build
         run: cmake --build build --config Release
+      - name: Install
+        run: cmake --install build --prefix install --config Release
       - name: Test
         run: ctest --test-dir build -C Release
+      - name: Configure consumer project
+        run: cmake -S tests/install_consumer -B build-consumer -DCMAKE_PREFIX_PATH="${{ github.workspace }}/install" -DCMAKE_CXX_STANDARD=${{ matrix.std }}
+      - name: Build consumer project
+        run: cmake --build build-consumer --config Release
 
   macos:
     runs-on: macos-latest
@@ -46,8 +58,14 @@ jobs:
         run: cmake -S . -B build -DTIME_SHIELD_CPP_BUILD_TESTS=ON -DCMAKE_CXX_STANDARD=${{ matrix.std }}
       - name: Build
         run: cmake --build build
+      - name: Install
+        run: cmake --install build --prefix install
       - name: Test
         run: ctest --test-dir build
+      - name: Configure consumer project
+        run: cmake -S tests/install_consumer -B build-consumer -DCMAKE_PREFIX_PATH=${{ github.workspace }}/install -DCMAKE_CXX_STANDARD=${{ matrix.std }}
+      - name: Build consumer project
+        run: cmake --build build-consumer
 
   vcpkg-install:
     runs-on: ubuntu-latest

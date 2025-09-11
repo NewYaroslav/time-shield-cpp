@@ -94,6 +94,48 @@ namespace time_shield {
         return cet_to_gmt(eet - SEC_PER_HOUR);
     }
 
+    /// \brief Convert Greenwich Mean Time to Central European Time.
+    /// \param gmt Timestamp in seconds in GMT.
+    /// \return Timestamp in seconds in CET.
+    inline ts_t gmt_to_cet(ts_t gmt) {
+        DateTimeStruct dt = to_date_time(gmt);
+        const int SWITCH_HOUR = 1;
+
+        if(dt.mon > MAR && dt.mon < OCT) {
+            return gmt + SEC_PER_HOUR * 2;
+        } else if(dt.mon == MAR) {
+            int last = last_sunday_month_day(dt.year, MAR);
+            if(dt.day > last) {
+                return gmt + SEC_PER_HOUR * 2;
+            } else if(dt.day < last) {
+                return gmt + SEC_PER_HOUR;
+            } else {
+                if(dt.hour >= SWITCH_HOUR)
+                    return gmt + SEC_PER_HOUR * 2;
+                return gmt + SEC_PER_HOUR;
+            }
+        } else if(dt.mon == OCT) {
+            int last = last_sunday_month_day(dt.year, OCT);
+            if(dt.day > last) {
+                return gmt + SEC_PER_HOUR;
+            } else if(dt.day < last) {
+                return gmt + SEC_PER_HOUR * 2;
+            } else {
+                if(dt.hour >= SWITCH_HOUR)
+                    return gmt + SEC_PER_HOUR;
+                return gmt + SEC_PER_HOUR * 2;
+            }
+        }
+        return gmt + SEC_PER_HOUR;
+    }
+
+    /// \brief Convert Greenwich Mean Time to Eastern European Time.
+    /// \param gmt Timestamp in seconds in GMT.
+    /// \return Timestamp in seconds in EET.
+    inline ts_t gmt_to_eet(ts_t gmt) {
+        return gmt_to_cet(gmt) + SEC_PER_HOUR;
+    }
+
     /// \}
 
 } // namespace time_shield

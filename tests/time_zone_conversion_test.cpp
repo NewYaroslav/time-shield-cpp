@@ -35,5 +35,25 @@ int main() {
     ts_t gmt_eet_summer = eet_to_gmt(eet_summer);
     assert(gmt_eet_summer == to_timestamp(2023, 7, 1, 9, 0, 0));
 
+    for(int year : {2021, 2022, 2023, 2024}) {
+        int day = last_sunday_month_day(year, OCT);
+
+        ts_t cet_end_before = to_timestamp(year, int(OCT), day, 1, 30, 0);
+        ts_t gmt_end_before = cet_to_gmt(cet_end_before);
+        assert(gmt_end_before == to_timestamp(year, int(OCT), day - 1, 23, 30, 0));
+
+        ts_t cet_end_after = to_timestamp(year, int(OCT), day, 3, 30, 0);
+        ts_t gmt_end_after = cet_to_gmt(cet_end_after);
+        assert(gmt_end_after == to_timestamp(year, int(OCT), day, 2, 30, 0));
+
+        ts_t eet_end_before = to_timestamp(year, int(OCT), day, 2, 30, 0);
+        ts_t gmt_eet_end_before = eet_to_gmt(eet_end_before);
+        assert(gmt_eet_end_before == to_timestamp(year, int(OCT), day - 1, 23, 30, 0));
+
+        ts_t eet_end_after = to_timestamp(year, int(OCT), day, 4, 30, 0);
+        ts_t gmt_eet_end_after = eet_to_gmt(eet_end_after);
+        assert(gmt_eet_end_after == to_timestamp(year, int(OCT), day, 2, 30, 0));
+    }
+
     return 0;
 }

@@ -91,7 +91,7 @@ After installing the library (e.g., with `cmake --install`), consume it in a
 project with CMake:
 
 ```cmake
-cmake_minimum_required(VERSION 3.18)
+cmake_minimum_required(VERSION 3.15)
 project(app LANGUAGES CXX)
 
 find_package(TimeShield CONFIG REQUIRED)

@@ -83,6 +83,13 @@ Use `time_shield::` or `using namespace time_shield;` to access the API.
 - Core functions avoid throwing exceptions and do not allocate dynamic memory;
   helpers returning `std::string` rely on the caller to manage allocations.
 
+## Versioning
+
+Time Shield follows [Semantic Versioning](https://semver.org). Patch releases
+contain only backward-compatible fixes. Minor versions add
+backward-compatible features. Major versions may include breaking changes. The
+public API comprises headers under `include/time_shield`.
+
 ## Installation
 
 ### Install and `find_package`

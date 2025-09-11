@@ -24,7 +24,9 @@
 #include "time_shield/time_zone_conversions.hpp"   ///< Functions for converting between time zones.
 #include "time_shield/time_formatting.hpp"         ///< Functions for formatting time in various standard formats.
 #include "time_shield/time_parser.hpp"             ///< Functions for parsing time in various standard formats.
-#include "time_shield/ntp_client.hpp"              ///< NTP client for time offset queries.
+#if TIME_SHIELD_ENABLE_NTP_CLIENT
+#   include "time_shield/ntp_client.hpp"              ///< NTP client for time offset queries.
+#endif
 #include "time_shield/initialization.hpp"          ///< Library initialization helpers.
 
 /// \namespace tsh

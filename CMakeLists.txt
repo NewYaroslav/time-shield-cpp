@@ -21,9 +21,26 @@ target_include_directories(
 include(GNUInstallDirs)
 include(CMakePackageConfigHelpers)
 
+if(WIN32)
+    set(TIME_SHIELD_ENABLE_NTP_CLIENT_DEFAULT ON)
+else()
+    set(TIME_SHIELD_ENABLE_NTP_CLIENT_DEFAULT OFF)
+endif()
+option(TIME_SHIELD_ENABLE_NTP_CLIENT "Enable NTP client" ${TIME_SHIELD_ENABLE_NTP_CLIENT_DEFAULT})
+
+target_compile_definitions(
+    time_shield
+    INTERFACE
+        TIME_SHIELD_ENABLE_NTP_CLIENT=$<BOOL:${TIME_SHIELD_ENABLE_NTP_CLIENT}>
+)
+
 install(TARGETS time_shield EXPORT TimeShieldTargets
     INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
-install(DIRECTORY include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+if(TIME_SHIELD_ENABLE_NTP_CLIENT)
+    install(DIRECTORY include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+else()
+    install(DIRECTORY include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR} PATTERN "ntp_client*" EXCLUDE)
+endif()
 install(
     EXPORT TimeShieldTargets
     FILE TimeShieldTargets.cmake

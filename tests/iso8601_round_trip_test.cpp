@@ -27,8 +27,26 @@ int main() {
     ts_ms_t parsed_ms = ts_ms(str_ms);
     assert(parsed_ms == base_ms);
 
+    std::string str_ms_z = to_iso8601_utc_ms(base_ms);
+    ts_ms_t parsed_ms_z = ts_ms(str_ms_z);
+    assert(parsed_ms_z == base_ms);
+
+    std::string str_ms_pos = to_iso8601_ms(base_ms - sec_to_ms(SEC_PER_HOUR), SEC_PER_HOUR);
+    ts_ms_t parsed_ms_pos = ts_ms(str_ms_pos);
+    assert(parsed_ms_pos == base_ms);
+
+    std::string str_ms_neg = to_iso8601_ms(base_ms - sec_to_ms(offset_neg), offset_neg);
+    ts_ms_t parsed_ms_neg = ts_ms(str_ms_neg);
+    assert(parsed_ms_neg != base_ms);
+
     ts_ms_t parsed_fail = 0;
     bool is_ok = str_to_ts_ms("2024-03-20T12:34:56.789123Z", parsed_fail);
+    assert(!is_ok);
+
+    is_ok = str_to_ts_ms("2024-03-20T12:34:56.789123+01:00", parsed_fail);
+    assert(!is_ok);
+
+    is_ok = str_to_ts_ms("2024-03-20T12:34:56.789123-05:30", parsed_fail);
     assert(!is_ok);
 
     return 0;

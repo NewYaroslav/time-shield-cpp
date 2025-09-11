@@ -25,5 +25,11 @@ int main() {
     is_valid = str_to_ts_ms("2024-03-20T12:34:56.789123Z", ms_parsed);
     assert(!is_valid);
 
+    is_valid = str_to_ts_ms("2024-3-20T12:34:56Z", ms_parsed);
+    assert(!is_valid);
+
+    is_valid = str_to_ts_ms("2024-03-2T12:34:56Z", ms_parsed);
+    assert(!is_valid);
+
     return 0;
 }

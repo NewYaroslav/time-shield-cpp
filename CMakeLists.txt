@@ -49,6 +49,9 @@ install(FILES
     DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/TimeShield
 )
 
+configure_file(cmake/time-shield.pc.in ${CMAKE_CURRENT_BINARY_DIR}/time-shield.pc @ONLY)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/time-shield.pc DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig)
+
 if(CMAKE_SOURCE_DIR STREQUAL PROJECT_SOURCE_DIR)
     set(is_top_level ON)
 else()

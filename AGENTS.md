@@ -29,8 +29,6 @@
   - The method computes a value before returning it.
   - Without `get_`, the method name could be misleading.
 
-# Agent Instructions
-
 ## Commit Messages
 
 - Use Conventional Commits format: `type(scope): summary`.
@@ -41,4 +39,3 @@
 
 - Keep diffs minimal and focused.
 - Do not refactor or apply style changes beyond the lines you directly touch.
-

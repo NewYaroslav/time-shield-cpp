@@ -17,9 +17,13 @@ int main() {
     ts_t may_start = ts("2023-05-01T00:00:00Z");
     assert(apr_end + 1 == may_start);
 
+    ts_t dec_start = ts("2023-12-31T00:00:00Z");
     ts_t dec_end = ts("2023-12-31T23:59:59Z");
     ts_t jan_start = ts("2024-01-01T00:00:00Z");
+    ts_t jan_end = ts("2024-01-01T23:59:59Z");
     assert(dec_end + 1 == jan_start);
+    assert(dec_start + SEC_PER_DAY == jan_start);
+    assert(dec_end + SEC_PER_DAY == jan_end);
 
     ts_t start_day = ts("2020-01-01T00:00:00Z");
     ts_t end_day = ts("2020-01-01T23:59:59Z");

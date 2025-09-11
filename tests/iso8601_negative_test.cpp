@@ -12,6 +12,12 @@ int main() {
     is_valid = str_to_ts("2023-02-30T00:00:00Z", parsed);
     assert(!is_valid);
 
+    is_valid = str_to_ts("2023-02-29T00:00:00Z", parsed);
+    assert(!is_valid);
+
+    is_valid = str_to_ts("2023-04-31T00:00:00Z", parsed);
+    assert(!is_valid);
+
     is_valid = str_to_ts("2023-01-01T24:00:00Z", parsed);
     assert(!is_valid);
 

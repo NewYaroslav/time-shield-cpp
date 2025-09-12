@@ -190,7 +190,7 @@ std::string filename = to_windows_filename(now);
 
 DateTimeStruct dt;
 TimeZoneStruct tz;
-if (parse_iso8601("2024-11-25T14:30:00+01:00", dt, tz)) {
+if (parse_iso8601("2024-11-25T14:30:00-05:30", dt, tz)) {
     ts_t ts_val = to_timestamp(dt) + to_offset(tz);
 }
 ```

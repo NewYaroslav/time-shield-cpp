@@ -45,7 +45,7 @@ namespace time_shield {
     inline TimeZoneStruct to_time_zone_struct(tz_t offset) {
         int abs_val = std::abs(offset);
         int hour = abs_val / SEC_PER_HOUR;
-        int min = abs_val % SEC_PER_MIN;
+        int min = (abs_val % SEC_PER_HOUR) / SEC_PER_MIN;
         bool is_positive = (offset >= 0);
         return TimeZoneStruct{hour, min, is_positive};
     }

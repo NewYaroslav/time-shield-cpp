@@ -12,7 +12,7 @@
 int main() {
     using namespace time_shield;
 
-    const std::string iso = "2024-11-25T14:30:00+01:00";
+    const std::string iso = "2024-11-25T14:30:00-05:30";
 
     DateTimeStruct dt;
     TimeZoneStruct tz;

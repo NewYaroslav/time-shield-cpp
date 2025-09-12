@@ -20,7 +20,7 @@ int main() {
     const tz_t offset_neg = -(5 * SEC_PER_HOUR + 30 * SEC_PER_MIN);
     std::string str_neg = to_iso8601(base_ts - offset_neg, offset_neg);
     ts_t parsed_neg = ts(str_neg);
-    assert(parsed_neg != base_ts);
+    assert(parsed_neg == base_ts);
 
     const ts_ms_t base_ms = ts_ms(2024, 3, 20, 12, 34, 56, 789);
     std::string str_ms = to_iso8601_ms(base_ms);
@@ -37,7 +37,7 @@ int main() {
 
     std::string str_ms_neg = to_iso8601_ms(base_ms - sec_to_ms(offset_neg), offset_neg);
     ts_ms_t parsed_ms_neg = ts_ms(str_ms_neg);
-    assert(parsed_ms_neg != base_ms);
+    assert(parsed_ms_neg == base_ms);
 
     ts_ms_t parsed_fail = 0;
     bool is_ok = str_to_ts_ms("2024-03-20T12:34:56.789123Z", parsed_fail);

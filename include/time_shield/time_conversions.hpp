@@ -1863,7 +1863,7 @@ namespace time_shield {
         T tz;
         int abs_val = std::abs(offset);
         tz.hour = abs_val / SEC_PER_HOUR;
-        tz.min = abs_val % SEC_PER_MIN;
+        tz.min = (abs_val % SEC_PER_HOUR) / SEC_PER_MIN;
         tz.is_positive = (offset >= 0);
         return tz;
     }

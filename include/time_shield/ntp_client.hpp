@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 #pragma once
 #ifndef _TIME_SHIELD_NTP_CLIENT_HPP_INCLUDED
 #define _TIME_SHIELD_NTP_CLIENT_HPP_INCLUDED

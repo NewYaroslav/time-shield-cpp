@@ -1,0 +1,26 @@
+var time__formatting_8mqh =
+[
+    [ "time_shield::pad_int", "group__time__formatting.html#gaf59471e03315a3af0033f2d816ad3320", null ],
+    [ "time_shield::process_format_impl", "group__time__formatting.html#ga7628b1cb7b3cfad10ae6c8a673504eb1", null ],
+    [ "time_shield::to_human_readable", "group__time__formatting.html#ga9c3b567d4309ef41bee267c65a4751a2", null ],
+    [ "time_shield::to_human_readable_ms", "group__time__formatting.html#ga25caff850939d355e489d12ce70e7745", null ],
+    [ "time_shield::to_iso8601", "group__time__formatting.html#ga821f4a2c390abfb751be9381ad81584b", null ],
+    [ "time_shield::to_iso8601", "group__time__formatting.html#ga9c90398e2ff3a12ae328ddf428185e35", null ],
+    [ "time_shield::to_iso8601_date", "group__time__formatting.html#ga9ef358f940e7adf6a5e05cb3e4452079", null ],
+    [ "time_shield::to_iso8601_ms", "group__time__formatting.html#gae227f168aec16663c03ffdb9a0f5f0f6", null ],
+    [ "time_shield::to_iso8601_ms", "group__time__formatting.html#ga2d18e7d2765be9c41fe42be5f0c88d52", null ],
+    [ "time_shield::to_iso8601_time", "group__time__formatting.html#gaf8674acb14f88511ec0ac3a74fae963f", null ],
+    [ "time_shield::to_iso8601_time_ms", "group__time__formatting.html#ga7fccdd480a0425b2401f0a97efbd2b74", null ],
+    [ "time_shield::to_iso8601_utc", "group__time__formatting.html#gad63a0af8e1dc7cbb1e435762631cd521", null ],
+    [ "time_shield::to_iso8601_utc_ms", "group__time__formatting.html#ga1e06e79fcecc8addeda72827a4723346", null ],
+    [ "time_shield::to_mql5_date", "group__time__formatting.html#ga4318e6729150368e8e5139e66f9d7d57", null ],
+    [ "time_shield::to_mql5_date_time", "group__time__formatting.html#gab655e0d6296e5da26b8e9df10ca1b466", null ],
+    [ "time_shield::to_mql5_full", "group__time__formatting.html#gac46cda162e18597cf979e1172026bf5b", null ],
+    [ "time_shield::to_mql5_time", "group__time__formatting.html#ga3f779668745961549aa1dc4ab7de9013", null ],
+    [ "time_shield::to_str", "group__time__formatting.html#ga20825817f95638d4f5260db875827f1f", null ],
+    [ "time_shield::to_str_ms", "group__time__formatting.html#gabeb72f9b980cca8e38d715b0b0022f2d", null ],
+    [ "time_shield::to_string", "group__time__formatting.html#ga6dfef44f34ec75d33b5dc3a7eea85194", null ],
+    [ "time_shield::to_string_ms", "group__time__formatting.html#ga893267d9be1a3e2e54ad5cf3fa2dd49b", null ],
+    [ "time_shield::to_windows_filename", "group__time__formatting.html#ga4b19daf28e595d15e2f5cd89fa73c9b3", null ],
+    [ "time_shield::to_windows_filename_ms", "group__time__formatting.html#ga15d8678933e11fe032dc96f1958cead9", null ]
+];

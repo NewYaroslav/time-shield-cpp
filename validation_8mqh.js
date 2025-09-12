@@ -1,0 +1,25 @@
+var validation_8mqh =
+[
+    [ "time_shield::check_leap_year", "group__time__validation.html#gad4b8ac012407d765d149fc5b0be8b4a9", null ],
+    [ "time_shield::check_leap_year_ts", "group__time__validation.html#ga43da8dd61e14b485bf6bb491278241f8", null ],
+    [ "time_shield::is_day_off", "group__time__validation.html#gac26f9a68b2235ea4af9e8a66ad51c8dc", null ],
+    [ "time_shield::is_day_off_unix_day", "group__time__validation.html#ga0fd18b51b9fc61d69dba8839bc712692", null ],
+    [ "time_shield::is_leap_year", "group__time__validation.html#ga52c309a83aceae69c0eff7a02b1d85af", null ],
+    [ "time_shield::is_leap_year_date", "group__time__validation.html#ga4722461b3bc3383e31034fee1f26661a", null ],
+    [ "time_shield::is_leap_year_ts", "group__time__validation.html#ga09ae4966aaf523cae74da3e38b4c9c1b", null ],
+    [ "time_shield::is_valid_date", "group__time__validation.html#gaafc111e7a019345f58b1b2f406280c74", null ],
+    [ "time_shield::is_valid_date", "group__time__validation.html#ga489ca45204d124475e3b75feaafde989", null ],
+    [ "time_shield::is_valid_date_time", "group__time__validation.html#ga7b815e7305f653b4ac6889e1b0844525", null ],
+    [ "time_shield::is_valid_date_time", "group__time__validation.html#ga2fa801a79099e19bfb3b63826e74725f", null ],
+    [ "time_shield::is_valid_time", "group__time__validation.html#ga6a813273aad8d0d51e79f50baed871e0", null ],
+    [ "time_shield::is_valid_time", "group__time__validation.html#ga64784df41d487d4b0d034d2673a98a20", null ],
+    [ "time_shield::is_valid_time_zone", "group__time__validation.html#gac99895ae37b5e56d696f729ba572738e", null ],
+    [ "time_shield::is_valid_time_zone", "group__time__validation.html#gaf8c4b5b1ab26d726dcd519e691322a3e", null ],
+    [ "time_shield::is_valid_time_zone_offset", "group__time__validation.html#gab662f8999e5b26d2c8b62857fe7b8127", null ],
+    [ "time_shield::is_valid_tz", "group__time__validation.html#gaa18c5078b9efe84b9a2967fa46ac30d3", null ],
+    [ "time_shield::is_valid_tz", "group__time__validation.html#gabe39bef568ef66116c0a3ed01fc0585a", null ],
+    [ "time_shield::is_weekend", "group__time__validation.html#gaf82358c65d7f022d14d34819a6df82a7", null ],
+    [ "time_shield::is_weekend_unix_day", "group__time__validation.html#ga7e3a73ee4d9231e402b4056250c258ce", null ],
+    [ "time_shield::leap_year", "group__time__validation.html#gacb2fb6bd5fb218e0bbde17d9870e8afb", null ],
+    [ "time_shield::leap_year_ts", "group__time__validation.html#ga046472fb8c315f13a3b30649a26241ce", null ]
+];

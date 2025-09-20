@@ -2,7 +2,7 @@ vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO NewYaroslav/time-shield-cpp
     REF v1.0.4
-    SHA512 1d2dd177f3047f1d585fbfa9aeb7083f55c4174ca4c0431dd063ccc45abf46ef8ba2bdd1ea3e671131eccdf0e65b03d6386bbd597cf1e957f92fda6630d45784
+    SHA512 424641fe6a18d4bc67262041790084e80b21a9fc907db0b63eed8a9e71f5103ebe8eb71bebdcb542969032b3e6e01184ec803c19414759baa828df2454f16a21
     HEAD_REF stable
 )
 

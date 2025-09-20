@@ -40,7 +40,7 @@ namespace time_shield {
     /// \param value The Weekday enum value to convert.
     /// \param format The format to use for the string representation (default is UPPERCASE_NAME).
     /// \return A const char* pointing to the string representation of the day.
-    const char* to_cstr(Weekday value, FormatType format = UPPERCASE_NAME) {
+    inline const char* to_cstr(Weekday value, FormatType format = UPPERCASE_NAME) {
         static const char* const uppercase_names[] = {
             "SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"
         };
@@ -67,7 +67,7 @@ namespace time_shield {
     /// \param value The Weekday enum value to convert.
     /// \param format The format to use for the string representation (default is UPPERCASE_NAME).
     /// \return A const std::string& pointing to the string representation of the day.
-    const std::string& to_str(Weekday value, FormatType format = UPPERCASE_NAME) {
+    inline const std::string& to_str(Weekday value, FormatType format = UPPERCASE_NAME) {
         static const std::array<std::string, 7> uppercase_names = {
             "SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"
         };
@@ -111,7 +111,7 @@ namespace time_shield {
     /// \param value The Month enum value to convert.
     /// \param format The format to use for the string representation (default is UPPERCASE_NAME).
     /// \return A const char* pointing to the string representation of the month.
-    const char* to_cstr(Month value, FormatType format = UPPERCASE_NAME) {
+    inline const char* to_cstr(Month value, FormatType format = UPPERCASE_NAME) {
         static const char* const uppercase_names[] = {
             "",
             "JAN", "FEB", "MAR", "APR", "MAY", "JUN",
@@ -144,7 +144,7 @@ namespace time_shield {
     /// \param value The Month enum value to convert.
     /// \param format The format to use for the string representation (default is UPPERCASE_NAME).
     /// \return A const std::string& pointing to the string representation of the month.
-    const std::string& to_str(Month value, FormatType format = UPPERCASE_NAME) {
+    inline const std::string& to_str(Month value, FormatType format = UPPERCASE_NAME) {
         static const std::array<std::string, 13> uppercase_names = {
             "",
             "JAN", "FEB", "MAR", "APR", "MAY", "JUN",
@@ -191,7 +191,7 @@ namespace time_shield {
     /// \param value The TimeZone enum value to convert.
     /// \param format The format to use for the string representation (default is UPPERCASE_NAME).
     /// \return A const char* pointing to the string representation of the time zone.
-    const char* to_cstr(TimeZone value, FormatType format = UPPERCASE_NAME) {
+    inline const char* to_cstr(TimeZone value, FormatType format = UPPERCASE_NAME) {
         static const char* const uppercase_names[] = {
             "GMT", "UTC", "EET", "CET", "WET", "EEST", "CEST", "WEST", "UNKNOWN"
         };
@@ -220,7 +220,7 @@ namespace time_shield {
     /// \param value The TimeZone enum value to convert.
     /// \param format The format to use for the string representation (default is UPPERCASE_NAME).
     /// \return A const std::string& pointing to the string representation of the time zone.
-    const std::string& to_str(TimeZone value, FormatType format = UPPERCASE_NAME) {
+    inline const std::string& to_str(TimeZone value, FormatType format = UPPERCASE_NAME) {
         static const std::array<std::string, 9> uppercase_names = {
             "GMT", "UTC", "EET", "CET", "WET", "EEST", "CEST", "WEST", "UNKNOWN"
         };

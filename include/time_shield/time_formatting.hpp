@@ -748,7 +748,7 @@ namespace time_shield {
     /// \brief Converts a timestamp in seconds to a human-readable format.
     /// \param ts The timestamp in seconds.
     /// \return A string in the format "YYYY-MM-DD HH:MM:SS".
-    std::string to_human_readable(ts_t ts) {
+    inline std::string to_human_readable(ts_t ts) {
         DateTimeStruct dt = to_date_time_ms<DateTimeStruct>(ts);
         char buffer[32] = {0};
         snprintf(buffer, sizeof(buffer), "%lld-%.2d-%.2d %.2d:%.2d:%.2d", dt.year, dt.mon, dt.day, dt.hour, dt.min, dt.sec);
@@ -758,7 +758,7 @@ namespace time_shield {
     /// \brief Converts a timestamp in milliseconds to a human-readable format.
     /// \param ts The timestamp in milliseconds.
     /// \return A string in the format "YYYY-MM-DD HH:MM:SS.SSS".
-    std::string to_human_readable_ms(ts_ms_t ts) {
+    inline std::string to_human_readable_ms(ts_ms_t ts) {
         DateTimeStruct dt = to_date_time_ms<DateTimeStruct>(ts);
         char buffer[32] = {0};
         snprintf(buffer, sizeof(buffer), "%lld-%.2d-%.2d %.2d:%.2d:%.2d.%.3d", dt.year, dt.mon, dt.day, dt.hour, dt.min, dt.sec, dt.ms);

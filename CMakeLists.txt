@@ -115,4 +115,6 @@ if(TIME_SHIELD_CPP_BUILD_TESTS)
         endif()
         add_test(NAME ${test_name} COMMAND ${test_name})
     endforeach()
+
+    add_subdirectory(tests/odr_mwe)
 endif()

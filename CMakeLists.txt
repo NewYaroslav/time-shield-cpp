@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.15)
-project(TimeShield VERSION 1.0.3 LANGUAGES CXX)
+project(TimeShield VERSION 1.0.4 LANGUAGES CXX)
 
 if(NOT DEFINED CMAKE_CXX_STANDARD)
     set(CMAKE_CXX_STANDARD 11)
@@ -115,4 +115,6 @@ if(TIME_SHIELD_CPP_BUILD_TESTS)
         endif()
         add_test(NAME ${test_name} COMMAND ${test_name})
     endforeach()
+
+    add_subdirectory(tests/odr)
 endif()

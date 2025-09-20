@@ -80,7 +80,7 @@ namespace time_shield {
     /// \tparam T The type of the year parameter (default is year_t).
     /// \param ts Timestamp in seconds since the Unix epoch.
     /// \return Returns true if the year is a leap year.
-    TIME_SHIELD_CONSTEXPR bool is_leap_year_ts(ts_t ts) {
+    TIME_SHIELD_CONSTEXPR inline bool is_leap_year_ts(ts_t ts) {
         // 9223372029693630000 - значение на момент 292277024400 от 2000 года
         // Такое значение приводит к неправильному вычислению умножения n_400_years * SEC_PER_400_YEARS
         // Поэтому пришлось снизить до 9223371890843040000
@@ -112,19 +112,19 @@ namespace time_shield {
 
     /// \brief Alias for is_leap_year_ts function.
     /// \copydoc is_leap_year_ts
-    TIME_SHIELD_CONSTEXPR bool leap_year_ts(ts_t ts) {
+    TIME_SHIELD_CONSTEXPR inline bool leap_year_ts(ts_t ts) {
         return is_leap_year_ts(ts);
     }
 
     /// \brief Alias for is_leap_year_ts function.
     /// \copydoc is_leap_year_ts
-    TIME_SHIELD_CONSTEXPR bool check_leap_year_ts(ts_t ts) {
+    TIME_SHIELD_CONSTEXPR inline bool check_leap_year_ts(ts_t ts) {
         return is_leap_year_ts(ts);
     }
 
     /// \brief Alias for is_leap_year_ts function.
     /// \copydoc is_leap_year_ts
-    TIME_SHIELD_CONSTEXPR bool is_leap_year(ts_t ts) {
+    TIME_SHIELD_CONSTEXPR inline bool is_leap_year(ts_t ts) {
         return is_leap_year_ts(ts);
     }
 

@@ -153,7 +153,7 @@ namespace time_shield {
     /// \param tz_str The time zone string.
     /// \param tz The TimeZoneStruct to be filled.
     /// \return True if the parsing is successful and the time zone is valid, false otherwise.
-    bool parse_time_zone(const std::string& tz_str, TimeZoneStruct &tz) {
+    inline bool parse_time_zone(const std::string& tz_str, TimeZoneStruct &tz) {
         if (tz_str.empty()) {
             tz.hour = 0;
             tz.min = 0;
@@ -187,7 +187,7 @@ namespace time_shield {
     /// \param dt The DateTimeStruct to be filled with the parsed date and time values.
     /// \param tz The TimeZoneStruct to be filled with the parsed time zone values.
     /// \return True if the parsing is successful and the date and time values are valid, false otherwise.
-    bool parse_iso8601(
+    inline bool parse_iso8601(
             const std::string& input,
             DateTimeStruct &dt,
             TimeZoneStruct &tz) {

@@ -42,7 +42,7 @@ namespace time_shield {
         /// \brief Queries the NTP server and updates the local offset.
         /// \return true if successful.
         bool query() {
-            s_last_error_code = 0;
+            last_error_code_slot() = 0;
             if (!WsaGuard::instance().success()) {
                 m_is_success = false;
                 throw std::runtime_error("WSAStartup failed with error: " + std::to_string(WsaGuard::instance().ret_code()));
@@ -64,7 +64,7 @@ namespace time_shield {
             hints.ai_protocol = IPPROTO_UDP;
 
             if (getaddrinfo(m_host.c_str(), nullptr, &hints, &res) != 0 || !res) {
-                s_last_error_code = WSAGetLastError();
+                last_error_code_slot() = WSAGetLastError();
                 closesocket(sock);
                 m_is_success = false;
                 return false;
@@ -81,7 +81,7 @@ namespace time_shield {
             setsockopt(sock, SOL_SOCKET, SO_RCVTIMEO, reinterpret_cast<const char*>(&timeout_ms), sizeof(timeout_ms));
             if (sendto(sock, reinterpret_cast<const char*>(&pkt), sizeof(pkt), 0,
                        reinterpret_cast<sockaddr*>(&addr), sizeof(addr)) < 0) {
-                s_last_error_code = WSAGetLastError();
+                last_error_code_slot() = WSAGetLastError();
                 closesocket(sock);
                 m_is_success = false;
                 return false;
@@ -91,7 +91,7 @@ namespace time_shield {
             int from_len = sizeof(from);
             if (recvfrom(sock, reinterpret_cast<char*>(&pkt), sizeof(pkt), 0,
                          reinterpret_cast<sockaddr*>(&from), &from_len) < 0) {
-                s_last_error_code = WSAGetLastError();
+                last_error_code_slot() = WSAGetLastError();
                 closesocket(sock);
                 m_is_success = false;
                 return false;
@@ -142,7 +142,7 @@ namespace time_shield {
         
         /// \brief Returns last WinSock error code (if any).
         int get_last_error_code() const noexcept {
-            return s_last_error_code;
+            return last_error_code_slot();
         }
         
     private:
@@ -175,7 +175,10 @@ namespace time_shield {
         int                      m_port = 123;
         std::atomic<int64_t>     m_offset_us{0};
         std::atomic<bool>        m_is_success{false};
-        static thread_local int  s_last_error_code;
+        static int& last_error_code_slot() noexcept {
+            static thread_local int value = 0;
+            return value;
+        }
 
         /// \brief Converts local time to NTP timestamp format.
         void fill_packet(ntp_packet& pkt) const {
@@ -208,8 +211,6 @@ namespace time_shield {
         }
     };
     
-    thread_local int NtpClient::s_last_error_code = 0;
-
 } // namespace time_shield
 
 #else // !TIME_SHIELD_ENABLE_NTP_CLIENT

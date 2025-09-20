@@ -2,6 +2,9 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v1.0.4] - 2025-09-20
+- fix ODR violations in headers
+
 ## [v1.0.3] - 2025-09-10
 - Added pkg-config template and vcpkg overlay port.
 - Added optional NTP client install toggle and configuration flags.

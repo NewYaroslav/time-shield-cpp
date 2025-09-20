@@ -112,6 +112,7 @@ $(function(){initNavTree('classtime__shield_1_1NtpClient.html',''); initResizabl
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="classtime__shield_1_1NtpClient-members.html">List of all members</a>  </div>
@@ -168,6 +169,11 @@ Private Member Functions</h2></td></tr>
 <tr class="memdesc:a70a734657bc5d4d016aed8f066192a81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses response and calculates offset.  <br /></td></tr>
 <tr class="separator:a70a734657bc5d4d016aed8f066192a81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:ad1cd8e7ce5d82bfbd482502951d0fac7" id="r_ad1cd8e7ce5d82bfbd482502951d0fac7"><td class="memItemLeft" align="right" valign="top">static int &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1cd8e7ce5d82bfbd482502951d0fac7">last_error_code_slot</a> () noexcept</td></tr>
+<tr class="separator:ad1cd8e7ce5d82bfbd482502951d0fac7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:aeb9800a2df9e1ad7bdec2911e77299ce" id="r_aeb9800a2df9e1ad7bdec2911e77299ce"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeb9800a2df9e1ad7bdec2911e77299ce">m_host</a></td></tr>
@@ -184,8 +190,6 @@ Static Private Attributes</h2></td></tr>
 <tr class="memitem:a7ec2a265c8761f3bb9faa9a252ec99b1" id="r_a7ec2a265c8761f3bb9faa9a252ec99b1"><td class="memItemLeft" align="right" valign="top">static constexpr int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ec2a265c8761f3bb9faa9a252ec99b1">NTP_TIMESTAMP_DELTA</a> = 2208988800ll</td></tr>
 <tr class="memdesc:a7ec2a265c8761f3bb9faa9a252ec99b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Seconds between 1900 and 1970 epochs.  <br /></td></tr>
 <tr class="separator:a7ec2a265c8761f3bb9faa9a252ec99b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc9168de1a8b77cdf4fb7d2f9776b439" id="r_afc9168de1a8b77cdf4fb7d2f9776b439"><td class="memItemLeft" align="right" valign="top">static thread_local int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afc9168de1a8b77cdf4fb7d2f9776b439">s_last_error_code</a> = 0</td></tr>
-<tr class="separator:afc9168de1a8b77cdf4fb7d2f9776b439"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Simple Windows-only NTP client for measuring time offset. </p>
@@ -249,7 +253,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ntp__client_8hpp_source.html#l00224">224</a> of file <a class="el" href="ntp__client_8hpp_source.html">ntp_client.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__client_8hpp_source.html#l00225">225</a> of file <a class="el" href="ntp__client_8hpp_source.html">ntp_client.hpp</a>.</p>
 
 </div>
 </div>
@@ -279,7 +283,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Converts local time to NTP timestamp format. </p>
 
-<p class="definition">Definition at line <a class="el" href="ntp__client_8hpp_source.html#l00181">181</a> of file <a class="el" href="ntp__client_8hpp_source.html">ntp_client.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__client_8hpp_source.html#l00184">184</a> of file <a class="el" href="ntp__client_8hpp_source.html">ntp_client.hpp</a>.</p>
 
 </div>
 </div>
@@ -431,6 +435,33 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ad1cd8e7ce5d82bfbd482502951d0fac7" name="ad1cd8e7ce5d82bfbd482502951d0fac7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1cd8e7ce5d82bfbd482502951d0fac7">&#9670;&#160;</a></span>last_error_code_slot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int &amp; time_shield::NtpClient::last_error_code_slot </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel private">private</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ntp__client_8hpp_source.html#l00178">178</a> of file <a class="el" href="ntp__client_8hpp_source.html">ntp_client.hpp</a>.</p>
+
+</div>
+</div>
 <a id="a70a734657bc5d4d016aed8f066192a81" name="a70a734657bc5d4d016aed8f066192a81"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a70a734657bc5d4d016aed8f066192a81">&#9670;&#160;</a></span>parse_packet()</h2>
 
@@ -460,7 +491,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Parses response and calculates offset. </p>
 
-<p class="definition">Definition at line <a class="el" href="ntp__client_8hpp_source.html#l00194">194</a> of file <a class="el" href="ntp__client_8hpp_source.html">ntp_client.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__client_8hpp_source.html#l00197">197</a> of file <a class="el" href="ntp__client_8hpp_source.html">ntp_client.hpp</a>.</p>
 
 </div>
 </div>
@@ -644,30 +675,6 @@ Static Private Attributes</h2></td></tr>
 <p>Seconds between 1900 and 1970 epochs. </p>
 
 <p class="definition">Definition at line <a class="el" href="ntp__client_8hpp_source.html#l00149">149</a> of file <a class="el" href="ntp__client_8hpp_source.html">ntp_client.hpp</a>.</p>
-
-</div>
-</div>
-<a id="afc9168de1a8b77cdf4fb7d2f9776b439" name="afc9168de1a8b77cdf4fb7d2f9776b439"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afc9168de1a8b77cdf4fb7d2f9776b439">&#9670;&#160;</a></span>s_last_error_code</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">thread_local int time_shield::NtpClient::s_last_error_code = 0</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="ntp__client_8hpp_source.html#l00178">178</a> of file <a class="el" href="ntp__client_8hpp_source.html">ntp_client.hpp</a>.</p>
 
 </div>
 </div>

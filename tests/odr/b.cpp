@@ -24,7 +24,10 @@ int helper() {
     const auto readable = to_human_readable(1704155045);
     const auto readable_ms = to_human_readable_ms(1704155045123);
 
-    return accumulate_sizes(tz_string, readable, readable_ms) +
-           static_cast<int>(month_name.size() + zone_name.size() + std::char_traits<char>::length(weekday_name)) +
-           dt.day + tz.min;
+    const auto result = accumulate_sizes(tz_string, readable, readable_ms) +
+                        static_cast<int>(month_name.size() + zone_name.size() +
+                                         std::char_traits<char>::length(weekday_name)) +
+                        dt.day + tz.min;
+    static_cast<void>(result);
+    return 0;
 }

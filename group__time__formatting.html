@@ -282,13 +282,13 @@ Key Features:</h3>
 Usage Examples:</h3>
 <ul>
 <li>Format a timestamp to a custom string: <div class="fragment"><div class="line">std::string formatted = <a class="code hl_function" href="#ga1481063d4a73a5de0746416e139da3f1">time_shield::to_string</a>(<span class="stringliteral">&quot;%H:%M:%S&quot;</span>, 1698249600);</div>
-<div class="ttc" id="agroup__time__formatting_html_ga1481063d4a73a5de0746416e139da3f1"><div class="ttname"><a href="#ga1481063d4a73a5de0746416e139da3f1">time_shield::to_string</a></div><div class="ttdeci">const std::string to_string(const std::string &amp;format_str, T timestamp, tz_t utc_offset=0)</div><div class="ttdoc">Convert timestamp to string with custom format.</div><div class="ttdef"><b>Definition</b> <a href="time__formatting_8hpp_source.html#l00379">time_formatting.hpp:379</a></div></div>
+<div class="ttc" id="agroup__time__formatting_html_ga1481063d4a73a5de0746416e139da3f1"><div class="ttname"><a href="#ga1481063d4a73a5de0746416e139da3f1">time_shield::to_string</a></div><div class="ttdeci">const std::string to_string(const std::string &amp;format_str, T timestamp, tz_t utc_offset=0)</div><div class="ttdoc">Convert timestamp to string with custom format.</div><div class="ttdef"><b>Definition</b> <a href="time__formatting_8hpp_source.html#l00397">time_formatting.hpp:397</a></div></div>
 </div><!-- fragment --></li>
 <li>Convert a timestamp to ISO8601 format: <div class="fragment"><div class="line">std::string iso8601 = <a class="code hl_function" href="#gabb0f16dfbea86ef687537fa8251722d8">time_shield::to_iso8601</a>(1698249600);</div>
-<div class="ttc" id="agroup__time__formatting_html_gabb0f16dfbea86ef687537fa8251722d8"><div class="ttname"><a href="#gabb0f16dfbea86ef687537fa8251722d8">time_shield::to_iso8601</a></div><div class="ttdeci">const std::string to_iso8601(T ts)</div><div class="ttdoc">Converts a timestamp to an ISO8601 string.</div><div class="ttdef"><b>Definition</b> <a href="time__formatting_8hpp_source.html#l00526">time_formatting.hpp:526</a></div></div>
+<div class="ttc" id="agroup__time__formatting_html_gabb0f16dfbea86ef687537fa8251722d8"><div class="ttname"><a href="#gabb0f16dfbea86ef687537fa8251722d8">time_shield::to_iso8601</a></div><div class="ttdeci">const std::string to_iso8601(T ts)</div><div class="ttdoc">Converts a timestamp to an ISO8601 string.</div><div class="ttdef"><b>Definition</b> <a href="time__formatting_8hpp_source.html#l00544">time_formatting.hpp:544</a></div></div>
 </div><!-- fragment --></li>
 <li>Generate a Windows-compatible filename: <div class="fragment"><div class="line">std::string filename = <a class="code hl_function" href="#ga4fe4ab8fc88358861f38d88aa1bcd96c">time_shield::to_windows_filename</a>(1698249600);</div>
-<div class="ttc" id="agroup__time__formatting_html_ga4fe4ab8fc88358861f38d88aa1bcd96c"><div class="ttname"><a href="#ga4fe4ab8fc88358861f38d88aa1bcd96c">time_shield::to_windows_filename</a></div><div class="ttdeci">const std::string to_windows_filename(ts_t ts)</div><div class="ttdoc">Converts a timestamp in seconds to a Windows-compatible filename format.</div><div class="ttdef"><b>Definition</b> <a href="time__formatting_8hpp_source.html#l00731">time_formatting.hpp:731</a></div></div>
+<div class="ttc" id="agroup__time__formatting_html_ga4fe4ab8fc88358861f38d88aa1bcd96c"><div class="ttname"><a href="#ga4fe4ab8fc88358861f38d88aa1bcd96c">time_shield::to_windows_filename</a></div><div class="ttdeci">const std::string to_windows_filename(ts_t ts)</div><div class="ttdoc">Converts a timestamp in seconds to a Windows-compatible filename format.</div><div class="ttdef"><b>Definition</b> <a href="time__formatting_8hpp_source.html#l00898">time_formatting.hpp:898</a></div></div>
 </div><!-- fragment --> </li>
 </ul>
 <h2 class="groupheader">Function Documentation</h2>
@@ -372,7 +372,7 @@ Usage Examples:</h3>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="time__formatting_8hpp_source.html#l00022">22</a> of file <a class="el" href="time__formatting_8hpp_source.html">time_formatting.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__formatting_8hpp_source.html#l00024">24</a> of file <a class="el" href="time__formatting_8hpp_source.html">time_formatting.hpp</a>.</p>
 
 </div>
 </div>
@@ -493,7 +493,7 @@ Usage Examples:</h3>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A string in the format "YYYY-MM-DD HH:MM:SS". </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__formatting_8hpp_source.html#l00751">751</a> of file <a class="el" href="time__formatting_8hpp_source.html">time_formatting.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__formatting_8hpp_source.html#l00937">937</a> of file <a class="el" href="time__formatting_8hpp_source.html">time_formatting.hpp</a>.</p>
 
 </div>
 </div>
@@ -557,7 +557,7 @@ Usage Examples:</h3>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A string in the format "YYYY-MM-DD HH:MM:SS.SSS". </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__formatting_8hpp_source.html#l00761">761</a> of file <a class="el" href="time__formatting_8hpp_source.html">time_formatting.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__formatting_8hpp_source.html#l00956">956</a> of file <a class="el" href="time__formatting_8hpp_source.html">time_formatting.hpp</a>.</p>
 
 </div>
 </div>
@@ -663,7 +663,7 @@ template&lt;class T = ts_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A string representing the timestamp in ISO8601 format. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__formatting_8hpp_source.html#l00526">526</a> of file <a class="el" href="time__formatting_8hpp_source.html">time_formatting.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__formatting_8hpp_source.html#l00544">544</a> of file <a class="el" href="time__formatting_8hpp_source.html">time_formatting.hpp</a>.</p>
 
 </div>
 </div>
@@ -713,7 +713,7 @@ template&lt;class T = ts_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A string representing the timestamp in ISO8601 format with timezone offset. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__formatting_8hpp_source.html#l00644">644</a> of file <a class="el" href="time__formatting_8hpp_source.html">time_formatting.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__formatting_8hpp_source.html#l00726">726</a> of file <a class="el" href="time__formatting_8hpp_source.html">time_formatting.hpp</a>.</p>
 
 </div>
 </div>
@@ -786,7 +786,7 @@ template&lt;class T = ts_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A string representing the date part of the timestamp in ISO8601 format. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__formatting_8hpp_source.html#l00545">545</a> of file <a class="el" href="time__formatting_8hpp_source.html">time_formatting.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__formatting_8hpp_source.html#l00582">582</a> of file <a class="el" href="time__formatting_8hpp_source.html">time_formatting.hpp</a>.</p>
 
 </div>
 </div>
@@ -884,7 +884,7 @@ template&lt;class T = ts_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A string representing the timestamp in ISO8601 format with milliseconds. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__formatting_8hpp_source.html#l00628">628</a> of file <a class="el" href="time__formatting_8hpp_source.html">time_formatting.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__formatting_8hpp_source.html#l00700">700</a> of file <a class="el" href="time__formatting_8hpp_source.html">time_formatting.hpp</a>.</p>
 
 </div>
 </div>
@@ -926,7 +926,7 @@ template&lt;class T = ts_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A string representing the timestamp in ISO8601 format with timezone offset and milliseconds. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__formatting_8hpp_source.html#l00671">671</a> of file <a class="el" href="time__formatting_8hpp_source.html">time_formatting.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__formatting_8hpp_source.html#l00799">799</a> of file <a class="el" href="time__formatting_8hpp_source.html">time_formatting.hpp</a>.</p>
 
 </div>
 </div>
@@ -999,7 +999,7 @@ template&lt;class T = ts_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A string representing the time part of the timestamp in ISO8601 format. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__formatting_8hpp_source.html#l00560">560</a> of file <a class="el" href="time__formatting_8hpp_source.html">time_formatting.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__formatting_8hpp_source.html#l00603">603</a> of file <a class="el" href="time__formatting_8hpp_source.html">time_formatting.hpp</a>.</p>
 
 </div>
 </div>
@@ -1072,7 +1072,7 @@ template&lt;class T = ts_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A string representing the time part of the timestamp in ISO8601 format with 'Z' indicating UTC. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__formatting_8hpp_source.html#l00579">579</a> of file <a class="el" href="time__formatting_8hpp_source.html">time_formatting.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__formatting_8hpp_source.html#l00622">622</a> of file <a class="el" href="time__formatting_8hpp_source.html">time_formatting.hpp</a>.</p>
 
 </div>
 </div>
@@ -1145,7 +1145,7 @@ template&lt;class T = ts_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A string representing the timestamp in ISO8601 UTC format. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__formatting_8hpp_source.html#l00598">598</a> of file <a class="el" href="time__formatting_8hpp_source.html">time_formatting.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__formatting_8hpp_source.html#l00641">641</a> of file <a class="el" href="time__formatting_8hpp_source.html">time_formatting.hpp</a>.</p>
 
 </div>
 </div>
@@ -1210,7 +1210,7 @@ template&lt;class T = ts_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A string representing the timestamp in ISO8601 UTC format with milliseconds. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__formatting_8hpp_source.html#l00615">615</a> of file <a class="el" href="time__formatting_8hpp_source.html">time_formatting.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__formatting_8hpp_source.html#l00677">677</a> of file <a class="el" href="time__formatting_8hpp_source.html">time_formatting.hpp</a>.</p>
 
 </div>
 </div>
@@ -1275,7 +1275,7 @@ template&lt;class T = ts_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A string representing the date part of the timestamp in MQL5 format. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__formatting_8hpp_source.html#l00708">708</a> of file <a class="el" href="time__formatting_8hpp_source.html">time_formatting.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__formatting_8hpp_source.html#l00869">869</a> of file <a class="el" href="time__formatting_8hpp_source.html">time_formatting.hpp</a>.</p>
 
 </div>
 </div>
@@ -1340,7 +1340,7 @@ template&lt;class T = ts_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A string representing the timestamp in MQL5 date and time format. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__formatting_8hpp_source.html#l00689">689</a> of file <a class="el" href="time__formatting_8hpp_source.html">time_formatting.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__formatting_8hpp_source.html#l00841">841</a> of file <a class="el" href="time__formatting_8hpp_source.html">time_formatting.hpp</a>.</p>
 
 </div>
 </div>
@@ -1408,7 +1408,7 @@ template&lt;class T = ts_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A string representing the timestamp in MQL5 date and time format.    </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__formatting_8hpp_source.html#l00698">698</a> of file <a class="el" href="time__formatting_8hpp_source.html">time_formatting.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__formatting_8hpp_source.html#l00859">859</a> of file <a class="el" href="time__formatting_8hpp_source.html">time_formatting.hpp</a>.</p>
 
 </div>
 </div>
@@ -1473,7 +1473,7 @@ template&lt;class T = ts_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A string representing the time part of the timestamp in MQL5 format. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__formatting_8hpp_source.html#l00721">721</a> of file <a class="el" href="time__formatting_8hpp_source.html">time_formatting.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__formatting_8hpp_source.html#l00888">888</a> of file <a class="el" href="time__formatting_8hpp_source.html">time_formatting.hpp</a>.</p>
 
 </div>
 </div>
@@ -1539,7 +1539,7 @@ template&lt;class T = ts_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns a string in the format specified by the user.    </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__formatting_8hpp_source.html#l00428">428</a> of file <a class="el" href="time__formatting_8hpp_source.html">time_formatting.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__formatting_8hpp_source.html#l00446">446</a> of file <a class="el" href="time__formatting_8hpp_source.html">time_formatting.hpp</a>.</p>
 
 </div>
 </div>
@@ -1661,7 +1661,7 @@ template&lt;class T = ts_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns a string in the format specified by the user.    </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__formatting_8hpp_source.html#l00511">511</a> of file <a class="el" href="time__formatting_8hpp_source.html">time_formatting.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__formatting_8hpp_source.html#l00529">529</a> of file <a class="el" href="time__formatting_8hpp_source.html">time_formatting.hpp</a>.</p>
 
 </div>
 </div>
@@ -1748,7 +1748,7 @@ template&lt;class T = ts_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns a string in the format specified by the user. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__formatting_8hpp_source.html#l00379">379</a> of file <a class="el" href="time__formatting_8hpp_source.html">time_formatting.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__formatting_8hpp_source.html#l00397">397</a> of file <a class="el" href="time__formatting_8hpp_source.html">time_formatting.hpp</a>.</p>
 
 </div>
 </div>
@@ -1845,7 +1845,7 @@ template&lt;class T = ts_ms_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns a string in the format specified by the user. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__formatting_8hpp_source.html#l00462">462</a> of file <a class="el" href="time__formatting_8hpp_source.html">time_formatting.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__formatting_8hpp_source.html#l00480">480</a> of file <a class="el" href="time__formatting_8hpp_source.html">time_formatting.hpp</a>.</p>
 
 </div>
 </div>
@@ -1949,7 +1949,7 @@ template&lt;class T = ts_ms_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A string in the format "YYYY-MM-DD_HH-MM-SS". </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__formatting_8hpp_source.html#l00731">731</a> of file <a class="el" href="time__formatting_8hpp_source.html">time_formatting.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__formatting_8hpp_source.html#l00898">898</a> of file <a class="el" href="time__formatting_8hpp_source.html">time_formatting.hpp</a>.</p>
 
 </div>
 </div>
@@ -2013,7 +2013,7 @@ template&lt;class T = ts_ms_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A string in the format "YYYY-MM-DD_HH-MM-SS-SSS". </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__formatting_8hpp_source.html#l00741">741</a> of file <a class="el" href="time__formatting_8hpp_source.html">time_formatting.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__formatting_8hpp_source.html#l00917">917</a> of file <a class="el" href="time__formatting_8hpp_source.html">time_formatting.hpp</a>.</p>
 
 </div>
 </div>

@@ -26,6 +26,7 @@ var searchData=
   ['time_5fzone_5fconversions_5fexample_2ecpp_23',['time_zone_conversions_example.cpp',['../time__zone__conversions__example_8cpp.html',1,'']]],
   ['time_5fzone_5fstruct_2ehpp_24',['time_zone_struct.hpp',['../time__zone__struct_8hpp.html',1,'']]],
   ['time_5fzone_5fstruct_2emqh_25',['time_zone_struct.mqh',['../time__zone__struct_8mqh.html',1,'']]],
-  ['timeshield_2emqh_26',['TimeShield.mqh',['../TimeShield_8mqh.html',1,'']]],
-  ['types_2ehpp_27',['types.hpp',['../types_8hpp.html',1,'']]]
+  ['timerscheduler_2ehpp_26',['TimerScheduler.hpp',['../TimerScheduler_8hpp.html',1,'']]],
+  ['timeshield_2emqh_27',['TimeShield.mqh',['../TimeShield_8mqh.html',1,'']]],
+  ['types_2ehpp_28',['types.hpp',['../types_8hpp.html',1,'']]]
 ];

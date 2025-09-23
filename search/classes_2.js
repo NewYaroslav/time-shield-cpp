@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['timestruct_0',['TimeStruct',['../structtime__shield_1_1TimeStruct.html',1,'time_shield']]],
-  ['timezonestruct_1',['TimeZoneStruct',['../structtime__shield_1_1TimeZoneStruct.html',1,'time_shield']]]
+  ['runningtimerscope_0',['RunningTimerScope',['../structtime__shield_1_1detail_1_1RunningTimerScope.html',1,'time_shield::detail']]]
 ];

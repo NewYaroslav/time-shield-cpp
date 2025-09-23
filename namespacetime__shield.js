@@ -1,8 +1,11 @@
 var namespacetime__shield =
 [
+    [ "detail", "namespacetime__shield_1_1detail.html", "namespacetime__shield_1_1detail" ],
     [ "DateStruct", "structtime__shield_1_1DateStruct.html", "structtime__shield_1_1DateStruct" ],
     [ "DateTimeStruct", "structtime__shield_1_1DateTimeStruct.html", "structtime__shield_1_1DateTimeStruct" ],
     [ "NtpClient", "classtime__shield_1_1NtpClient.html", "classtime__shield_1_1NtpClient" ],
+    [ "Timer", "classtime__shield_1_1Timer.html", "classtime__shield_1_1Timer" ],
+    [ "TimerScheduler", "classtime__shield_1_1TimerScheduler.html", "classtime__shield_1_1TimerScheduler" ],
     [ "TimeStruct", "structtime__shield_1_1TimeStruct.html", "structtime__shield_1_1TimeStruct" ],
     [ "TimeZoneStruct", "structtime__shield_1_1TimeZoneStruct.html", "structtime__shield_1_1TimeZoneStruct" ],
     [ "WsaGuard", "classtime__shield_1_1WsaGuard.html", "classtime__shield_1_1WsaGuard" ],
@@ -11,6 +14,7 @@ var namespacetime__shield =
     [ "jdn_t", "group__time__types.html#ga9f2039b057978a2b41d1a4b2418158a6", null ],
     [ "mjd_t", "group__time__types.html#gac2c43d72af642bbab55e7c68ca268237", null ],
     [ "oadate_t", "group__time__types.html#gaab97b453fa3ad4ad8a752b00019968d6", null ],
+    [ "timer_state_ptr", "namespacetime__shield.html#ac34b21257d863282622da52b643de3e9", null ],
     [ "ts_ms_t", "group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad", null ],
     [ "ts_t", "group__time__types.html#ga183c70b9c541a395d47690a82cdad282", null ],
     [ "ts_us_t", "group__time__types.html#gaa09dd8f85dd996be93d7250acea4f638", null ],

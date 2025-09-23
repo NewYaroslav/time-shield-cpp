@@ -58,7 +58,9 @@ var NAVTREE =
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", null ],
         [ "Functions", "functions_func.html", null ],
-        [ "Variables", "functions_vars.html", null ]
+        [ "Variables", "functions_vars.html", null ],
+        [ "Typedefs", "functions_type.html", null ],
+        [ "Related Symbols", "functions_rela.html", null ]
       ] ]
     ] ],
     [ "Files", "files.html", [
@@ -74,11 +76,11 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "TimeShield_8mqh.html",
-"group__time__conversions.html#ga16898a8e0db7fc14bcada1b47f7fe9ab",
-"group__time__conversions.html#ga92383c77cc7cc355c42e7a014b7374ee",
-"group__time__enums.html#gga5fa51beb76e014adfffcd028fe1804aca44f6ae61dc2e43df007f846b8ea4acf9",
-"group__time__structures.html#ga13b01721128561fc611a2044ff5b7b0c",
-"time__shield_8hpp.html"
+"group__time__constants.html#ga678bba3ba0b4250a83b34f1ae6fb3f6f",
+"group__time__conversions.html#ga5d59e6b2b58ffe02885afe5f9eabca58",
+"group__time__conversions.html#gae3a1018356ffde300841202ead61155c",
+"group__time__enums.html#ggadf684443100352064316f6134bbe44f8a19a027920ddff936a997c61cb1f00619",
+"namespacemembers_func_s.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

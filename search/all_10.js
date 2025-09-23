@@ -8,5 +8,7 @@ var searchData=
   ['repository_5',['Repository',['../index.html#repo_sec',1,'']]],
   ['ret_5fcode_6',['ret_code',['../classtime__shield_1_1WsaGuard.html#a4e86920a956f06115dac13f75a7bcc9d',1,'time_shield::WsaGuard']]],
   ['root_5fdelay_7',['root_delay',['../structtime__shield_1_1NtpClient_1_1ntp__packet.html#a91596e68d04ef84d1b8f47a0bf829c2d',1,'time_shield::NtpClient::ntp_packet']]],
-  ['root_5fdispersion_8',['root_dispersion',['../structtime__shield_1_1NtpClient_1_1ntp__packet.html#a6636a3b8048f1665e4f8a2d1290f8808',1,'time_shield::NtpClient::ntp_packet']]]
+  ['root_5fdispersion_8',['root_dispersion',['../structtime__shield_1_1NtpClient_1_1ntp__packet.html#a6636a3b8048f1665e4f8a2d1290f8808',1,'time_shield::NtpClient::ntp_packet']]],
+  ['run_9',['run',['../classtime__shield_1_1TimerScheduler.html#a38b9eea4bc001e3d8c83f47645d2ec62',1,'time_shield::TimerScheduler']]],
+  ['runningtimerscope_10',['RunningTimerScope',['../structtime__shield_1_1detail_1_1RunningTimerScope.html',1,'time_shield::detail::RunningTimerScope'],['../structtime__shield_1_1detail_1_1RunningTimerScope.html#a5fb24d1c5d9e86e75609047677980e79',1,'time_shield::detail::RunningTimerScope::RunningTimerScope()']]]
 ];

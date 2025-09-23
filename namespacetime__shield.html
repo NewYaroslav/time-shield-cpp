@@ -109,6 +109,7 @@ $(function(){initNavTree('namespacetime__shield.html',''); initResizable(true); 
 
 <div class="header">
   <div class="summary">
+<a href="#namespaces">Namespaces</a> &#124;
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
@@ -121,6 +122,11 @@ $(function(){initNavTree('namespacetime__shield.html',''); initResizable(true); 
 <p>Main namespace for the Time Shield library.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetime__shield_1_1detail.html">detail</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtime__shield_1_1DateStruct.html">DateStruct</a></td></tr>
@@ -131,6 +137,12 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtime__shield_1_1NtpClient.html">NtpClient</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple Windows-only NTP client for measuring time offset.  <a href="classtime__shield_1_1NtpClient.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtime__shield_1_1Timer.html">Timer</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtime__shield_1_1Timer.html" title="Timer that mimics the behavior of Qt timers.">Timer</a> that mimics the behavior of Qt timers.  <a href="classtime__shield_1_1Timer.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtime__shield_1_1TimerScheduler.html">TimerScheduler</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scheduler that manages timer execution.  <a href="classtime__shield_1_1TimerScheduler.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtime__shield_1_1TimeStruct.html">TimeStruct</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure to represent time.  <a href="structtime__shield_1_1TimeStruct.html#details">More...</a><br /></td></tr>
@@ -144,6 +156,8 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
+<tr class="memitem:ac34b21257d863282622da52b643de3e9" id="r_ac34b21257d863282622da52b643de3e9"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac34b21257d863282622da52b643de3e9">timer_state_ptr</a> = std::shared_ptr&lt;<a class="el" href="structtime__shield_1_1detail_1_1TimerState.html">detail::TimerState</a>&gt;</td></tr>
+<tr class="separator:ac34b21257d863282622da52b643de3e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab9f26871d6521b013bea4c65e6697ad9" id="r_gab9f26871d6521b013bea4c65e6697ad9"><td class="memItemLeft" align="right" valign="top">typedef int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9">year_t</a></td></tr>
 <tr class="memdesc:gab9f26871d6521b013bea4c65e6697ad9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Year as an integer (e.g., 2024).  <br /></td></tr>
 <tr class="separator:gab9f26871d6521b013bea4c65e6697ad9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2958,7 +2972,24 @@ Variables</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Main namespace for the Time Shield library. </p>
 <p>The <a class="el" href="namespacetime__shield.html" title="Main namespace for the Time Shield library.">time_shield</a> namespace contains all the core components and functions of the Time Shield library. It includes various utilities for working with time and dates, their formatting, conversion, and validation. </p>
-</div><h2 class="groupheader">Function Documentation</h2>
+</div><h2 class="groupheader">Typedef Documentation</h2>
+<a id="ac34b21257d863282622da52b643de3e9" name="ac34b21257d863282622da52b643de3e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac34b21257d863282622da52b643de3e9">&#9670;&#160;</a></span>timer_state_ptr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#ac34b21257d863282622da52b643de3e9">time_shield::timer_state_ptr</a> = std::shared_ptr&lt;<a class="el" href="structtime__shield_1_1detail_1_1TimerState.html">detail::TimerState</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TimerScheduler_8hpp_source.html#l00111">111</a> of file <a class="el" href="TimerScheduler_8hpp_source.html">TimerScheduler.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
 <a id="a452e1c1759f0e8547cb2b065d13f581a" name="a452e1c1759f0e8547cb2b065d13f581a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a452e1c1759f0e8547cb2b065d13f581a">&#9670;&#160;</a></span>to_tz()</h2>
 

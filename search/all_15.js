@@ -14,6 +14,7 @@ var searchData=
   ['wet_11',['WET',['../group__time__enums.html#ggad8cb858fb6cedcf76c4f0630d56e042ba9aacbaaeafc33c56dd9eb3d796b89141',1,'time_shield']]],
   ['why_20time_20shield_12',['Why Time Shield?',['../index.html#motivation_sec',1,'']]],
   ['with_20tt_20add_5fsubdirectory_20tt_13',['Git submodule with &lt;tt&gt;add_subdirectory&lt;/tt&gt;',['../index.html#install_submodule',1,'']]],
-  ['wsa_5fguard_2ehpp_14',['wsa_guard.hpp',['../wsa__guard_8hpp.html',1,'']]],
-  ['wsaguard_15',['WsaGuard',['../classtime__shield_1_1WsaGuard.html',1,'time_shield::WsaGuard'],['../classtime__shield_1_1WsaGuard.html#a8277447b8607ea3a56ab71c38f07552c',1,'time_shield::WsaGuard::WsaGuard()'],['../classtime__shield_1_1WsaGuard.html#afa474487259f824bee4e95d40ab7b7d5',1,'time_shield::WsaGuard::WsaGuard(const WsaGuard &amp;)=delete']]]
+  ['worker_5floop_14',['worker_loop',['../classtime__shield_1_1TimerScheduler.html#ac94c63485d748cb479248fa11edbe234',1,'time_shield::TimerScheduler']]],
+  ['wsa_5fguard_2ehpp_15',['wsa_guard.hpp',['../wsa__guard_8hpp.html',1,'']]],
+  ['wsaguard_16',['WsaGuard',['../classtime__shield_1_1WsaGuard.html',1,'time_shield::WsaGuard'],['../classtime__shield_1_1WsaGuard.html#a8277447b8607ea3a56ab71c38f07552c',1,'time_shield::WsaGuard::WsaGuard()'],['../classtime__shield_1_1WsaGuard.html#afa474487259f824bee4e95d40ab7b7d5',1,'time_shield::WsaGuard::WsaGuard(const WsaGuard &amp;)=delete']]]
 ];

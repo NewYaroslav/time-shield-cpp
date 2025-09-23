@@ -8,6 +8,7 @@ var annotated_dup =
         [ "ScheduledTimer", "structtime__shield_1_1detail_1_1ScheduledTimer.html", "structtime__shield_1_1detail_1_1ScheduledTimer" ],
         [ "TimerState", "structtime__shield_1_1detail_1_1TimerState.html", "structtime__shield_1_1detail_1_1TimerState" ]
       ] ],
+      [ "CpuTickTimer", "classtime__shield_1_1CpuTickTimer.html", "classtime__shield_1_1CpuTickTimer" ],
       [ "DateStruct", "structtime__shield_1_1DateStruct.html", "structtime__shield_1_1DateStruct" ],
       [ "DateTimeStruct", "structtime__shield_1_1DateTimeStruct.html", "structtime__shield_1_1DateTimeStruct" ],
       [ "NtpClient", "classtime__shield_1_1NtpClient.html", "classtime__shield_1_1NtpClient" ],

@@ -1,6 +1,7 @@
 var namespacetime__shield =
 [
     [ "detail", "namespacetime__shield_1_1detail.html", "namespacetime__shield_1_1detail" ],
+    [ "CpuTickTimer", "classtime__shield_1_1CpuTickTimer.html", "classtime__shield_1_1CpuTickTimer" ],
     [ "DateStruct", "structtime__shield_1_1DateStruct.html", "structtime__shield_1_1DateStruct" ],
     [ "DateTimeStruct", "structtime__shield_1_1DateTimeStruct.html", "structtime__shield_1_1DateTimeStruct" ],
     [ "NtpClient", "classtime__shield_1_1NtpClient.html", "classtime__shield_1_1NtpClient" ],

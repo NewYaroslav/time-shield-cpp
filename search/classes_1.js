@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['ntp_5fpacket_0',['ntp_packet',['../structtime__shield_1_1NtpClient_1_1ntp__packet.html',1,'time_shield::NtpClient']]],
-  ['ntpclient_1',['NtpClient',['../classtime__shield_1_1NtpClient.html',1,'time_shield']]]
+  ['datestruct_0',['DateStruct',['../structtime__shield_1_1DateStruct.html',1,'time_shield']]],
+  ['datetimestruct_1',['DateTimeStruct',['../structtime__shield_1_1DateTimeStruct.html',1,'time_shield']]],
+  ['duetimer_2',['DueTimer',['../structtime__shield_1_1detail_1_1DueTimer.html',1,'time_shield::detail']]]
 ];

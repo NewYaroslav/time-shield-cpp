@@ -44,6 +44,21 @@
 #endif
 #endif
 
+// Configure nodiscard attribute support while keeping compatibility with C++11 compilers
+#if defined(__has_cpp_attribute)
+#   if __has_cpp_attribute(nodiscard)
+#       define TIME_SHIELD_NODISCARD [[nodiscard]]
+#   else
+#       define TIME_SHIELD_NODISCARD
+#   endif
+#else
+#   if defined(TIME_SHIELD_CPP17)
+#       define TIME_SHIELD_NODISCARD [[nodiscard]]
+#   else
+#       define TIME_SHIELD_NODISCARD
+#   endif
+#endif
+
 /// \name Platform detection
 ///@{
 #if defined(_WIN32)

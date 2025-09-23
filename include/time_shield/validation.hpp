@@ -11,6 +11,7 @@
 #include "config.hpp"
 #include "types.hpp"
 #include "constants.hpp"
+#include "enums.hpp"
 #include "time_zone_struct.hpp"
 
 namespace time_shield {
@@ -340,6 +341,48 @@ namespace time_shield {
     template<class T = uday_t>
     TIME_SHIELD_CONSTEXPR inline bool is_weekend_unix_day(T unix_day) noexcept {
         return is_day_off_unix_day(unix_day);
+    }
+
+//------------------------------------------------------------------------------
+
+    /// \brief Check if a given timestamp corresponds to a workday (Monday to Friday).
+    /// \param ts Timestamp to check.
+    /// \return true if the day is a workday, false otherwise.
+    TIME_SHIELD_CONSTEXPR inline bool is_workday(ts_t ts) noexcept {
+        return !is_day_off(ts);
+    }
+
+    /// \brief Check if a given timestamp in milliseconds corresponds to a workday (Monday to Friday).
+    /// \param ts_ms Timestamp in milliseconds to check.
+    /// \return true if the day is a workday, false otherwise.
+    TIME_SHIELD_CONSTEXPR inline bool is_workday_ms(ts_ms_t ts_ms) noexcept {
+        return is_workday(static_cast<ts_t>(ts_ms / MS_PER_SEC));
+    }
+
+    /// \brief Check if a calendar date corresponds to a workday (Monday to Friday).
+    /// \param year Year component of the date.
+    /// \param month Month component of the date.
+    /// \param day Day component of the date.
+    /// \return true if the date is valid and a workday, false otherwise.
+    TIME_SHIELD_CONSTEXPR inline bool is_workday(year_t year, int month, int day) noexcept {
+        const auto y = static_cast<year_t>(year);
+        const auto m = static_cast<int>(month);
+        const auto d = static_cast<int>(day);
+        if (!is_valid_date(y, m, d)) {
+            return false;
+        }
+
+        const int64_t adj_y = static_cast<int64_t>(y) - (static_cast<int64_t>(m) <= 2 ? 1 : 0);
+        const int64_t adj_m = static_cast<int64_t>(m) <= 2
+                ? static_cast<int64_t>(m) + 9
+                : static_cast<int64_t>(m) - 3;
+        const int64_t era = (adj_y >= 0 ? adj_y : adj_y - 399) / 400;
+        const int64_t yoe = adj_y - era * 400;
+        const int64_t doy = (153 * adj_m + 2) / 5 + static_cast<int64_t>(d) - 1;
+        const int64_t doe = yoe * 365 + yoe / 4 - yoe / 100 + doy;
+        const uday_t unix_day = static_cast<uday_t>(era * 146097 + doe - 719468);
+
+        return !is_day_off_unix_day(unix_day);
     }
 
 /// \}

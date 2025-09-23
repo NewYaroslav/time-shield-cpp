@@ -10,11 +10,13 @@
 /// to functions like `ts`, `get_ts`, etc., which are defined via macros.
 /// This file should be included only at the end of `time_conversion.hpp`.
 
+#include <string>
+
 namespace time_shield {
-    
+
 /// \ingroup time_conversions
 /// \{
-    
+
     /// \brief Alias for get_unix_year function.
     /// \copydoc get_unix_year
     template<class T = year_t>
@@ -1975,7 +1977,27 @@ namespace time_shield {
     constexpr ts_t finish_of_min(ts_t ts = time_shield::ts()) noexcept {
         return end_of_min(ts);
     }
-    
+
+//------------------------------------------------------------------------------
+
+    /// \brief Alias for is_workday(ts_t).
+    /// \copydoc is_workday(ts_t)
+    TIME_SHIELD_CONSTEXPR inline bool workday(ts_t ts) noexcept {
+        return is_workday(ts);
+    }
+
+    /// \brief Alias for is_workday(ts_ms_t).
+    /// \copydoc is_workday(ts_ms_t)
+    TIME_SHIELD_CONSTEXPR inline bool workday_ms(ts_ms_t ts_ms) noexcept {
+        return is_workday_ms(ts_ms);
+    }
+
+    /// \brief Alias for is_workday(year_t, int, int).
+    /// \copydoc is_workday(year_t, int, int)
+    TIME_SHIELD_CONSTEXPR inline bool workday(year_t year, int month, int day) noexcept {
+        return is_workday(year, month, day);
+    }
+
 /// \}
 
 }; // namespace time_shield

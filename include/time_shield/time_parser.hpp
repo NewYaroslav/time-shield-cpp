@@ -259,6 +259,40 @@ namespace time_shield {
         return false;
     }
 
+    /// \brief Parse an ISO8601 string and check if it falls on a workday using second precision.
+    /// \param str ISO8601 formatted string.
+    /// \return true if parsing succeeds and the timestamp corresponds to a workday, false otherwise.
+    inline bool is_workday(const std::string& str) {
+        ts_t ts = 0;
+        if (!str_to_ts(str, ts)) {
+            return false;
+        }
+        return is_workday(ts);
+    }
+
+    /// \brief Parse an ISO8601 string and check if it falls on a workday using millisecond precision.
+    /// \param str ISO8601 formatted string.
+    /// \return true if parsing succeeds and the timestamp corresponds to a workday, false otherwise.
+    inline bool is_workday_ms(const std::string& str) {
+        ts_ms_t ts = 0;
+        if (!str_to_ts_ms(str, ts)) {
+            return false;
+        }
+        return is_workday_ms(ts);
+    }
+
+    /// \brief Alias for is_workday(const std::string&).
+    /// \copydoc is_workday(const std::string&)
+    inline bool workday(const std::string& str) {
+        return is_workday(str);
+    }
+
+    /// \brief Alias for is_workday_ms(const std::string&).
+    /// \copydoc is_workday_ms(const std::string&)
+    inline bool workday_ms(const std::string& str) {
+        return is_workday_ms(str);
+    }
+
     /// \brief Convert an ISO8601 string to a floating-point timestamp (fts_t).
     /// \details This function parses a string in ISO8601 format and converts it to a floating-point timestamp.
     /// \param str The ISO8601 string.

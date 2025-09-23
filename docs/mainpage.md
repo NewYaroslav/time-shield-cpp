@@ -21,7 +21,7 @@ portable, and suitable for scenarios like logging, serialization, MQL5 usage, an
 
 \section features_sec Features
 
-- Validation of dates and times
+- Validation of dates and times (including weekend and workday predicates)
 - Time and date formatting (standard and custom)
 - Time zone conversion functions
 - ISO8601 string parsing
@@ -83,6 +83,27 @@ Additional example files are located in the `examples/` folder:
 - `time_conversions_example.cpp` — convert between formats
 - `time_zone_conversions_example.cpp` — CET/EET ↔ GMT
 - `ntp_client_example.cpp` — NTP sync (Windows-only)
+
+\subsection workday_helpers Workday helpers
+
+Check whether a moment falls on a business day using timestamps, calendar components, or ISO8601 strings:
+
+\code{.cpp}
+#include <time_shield/validation.hpp>
+#include <time_shield/time_parser.hpp>
+
+using namespace time_shield;
+
+bool monday = is_workday(1710720000);                    // Unix seconds (2024-03-18)
+bool monday_ms = is_workday_ms("2024-03-18T09:00:00.250Z"); // ISO8601 with milliseconds
+bool from_date = is_workday(2024, 3, 18);                 // year, month, day components
+
+// Parsing failure or a weekend evaluates to false
+bool saturday = is_workday("2024-03-16T10:00:00Z");
+bool invalid = is_workday("not-a-date");
+\endcode
+
+The string overloads recognise the same ISO8601 formats handled by \ref time_shield::str_to_ts "str_to_ts" and \ref time_shield::str_to_ts_ms "str_to_ts_ms".
 
 \section install_sec Installation
 \subsection install_pkg Install and `find_package`

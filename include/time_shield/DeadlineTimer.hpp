@@ -101,7 +101,7 @@ namespace time_shield {
                 safe_duration = duration(1);
             }
 
-            const time_point max_time = time_point::max();
+            const time_point max_time = (time_point::max)();
             const duration max_offset = max_time - now;
             if (safe_duration >= max_offset) {
                 start(max_time);
@@ -130,7 +130,7 @@ namespace time_shield {
         /// \brief Marks the timer as running forever (no timeout).
         void set_forever() noexcept {
             m_is_running = true;
-            m_deadline = time_point::max();
+            m_deadline = (time_point::max)();
         }
 
         /// \brief Checks whether the timer currently tracks a deadline.
@@ -140,7 +140,7 @@ namespace time_shield {
 
         /// \brief Checks whether the timer is configured for an infinite timeout.
         TIME_SHIELD_NODISCARD bool is_forever() const noexcept {
-            return m_is_running && m_deadline == time_point::max();
+            return m_is_running && m_deadline == (time_point::max)();
         }
 
         /// \brief Returns stored deadline.
@@ -213,7 +213,7 @@ namespace time_shield {
 
             const time_point now = clock::now();
             const time_point base = m_deadline > now ? m_deadline : now;
-            const duration max_offset = time_point::max() - base;
+            const duration max_offset = (time_point::max)() - base;
             const duration safe_offset = extend_by < max_offset ? extend_by : max_offset;
             m_deadline = base + safe_offset;
         }

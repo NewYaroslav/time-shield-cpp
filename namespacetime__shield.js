@@ -4,6 +4,8 @@ var namespacetime__shield =
     [ "CpuTickTimer", "classtime__shield_1_1CpuTickTimer.html", "classtime__shield_1_1CpuTickTimer" ],
     [ "DateStruct", "structtime__shield_1_1DateStruct.html", "structtime__shield_1_1DateStruct" ],
     [ "DateTimeStruct", "structtime__shield_1_1DateTimeStruct.html", "structtime__shield_1_1DateTimeStruct" ],
+    [ "DeadlineTimer", "classtime__shield_1_1DeadlineTimer.html", "classtime__shield_1_1DeadlineTimer" ],
+    [ "ElapsedTimer", "classtime__shield_1_1ElapsedTimer.html", "classtime__shield_1_1ElapsedTimer" ],
     [ "NtpClient", "classtime__shield_1_1NtpClient.html", "classtime__shield_1_1NtpClient" ],
     [ "Timer", "classtime__shield_1_1Timer.html", "classtime__shield_1_1Timer" ],
     [ "TimerScheduler", "classtime__shield_1_1TimerScheduler.html", "classtime__shield_1_1TimerScheduler" ],

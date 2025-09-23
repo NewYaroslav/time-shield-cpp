@@ -6,6 +6,8 @@ var dir_07c7b06f5dd7d1513dc7d4081673a960 =
     [ "CpuTickTimer.hpp", "CpuTickTimer_8hpp.html", null ],
     [ "date_struct.hpp", "date__struct_8hpp.html", "date__struct_8hpp" ],
     [ "date_time_struct.hpp", "date__time__struct_8hpp.html", "date__time__struct_8hpp" ],
+    [ "DeadlineTimer.hpp", "DeadlineTimer_8hpp.html", "DeadlineTimer_8hpp" ],
+    [ "ElapsedTimer.hpp", "ElapsedTimer_8hpp.html", "ElapsedTimer_8hpp" ],
     [ "enums.hpp", "enums_8hpp.html", "enums_8hpp" ],
     [ "initialization.hpp", "initialization_8hpp.html", "initialization_8hpp" ],
     [ "ntp_client.hpp", "ntp__client_8hpp.html", "ntp__client_8hpp" ],

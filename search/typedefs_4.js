@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['oadate_5ft_0',['oadate_t',['../group__time__types.html#gaab97b453fa3ad4ad8a752b00019968d6',1,'time_shield']]]
+  ['mjd_5ft_0',['mjd_t',['../group__time__types.html#gac2c43d72af642bbab55e7c68ca268237',1,'time_shield']]]
 ];

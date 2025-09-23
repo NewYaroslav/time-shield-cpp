@@ -8,7 +8,7 @@ var searchData=
   ['check_5fleap_5fyear_5',['check_leap_year',['../group__time__validation.html#ga0d94fbfb5290a1ae3bc863d47c34ba22',1,'time_shield::check_leap_year(T year) noexcept'],['../group__time__validation.html#gad4b8ac012407d765d149fc5b0be8b4a9',1,'time_shield::check_leap_year(const long year)']]],
   ['check_5fleap_5fyear_5fts_6',['check_leap_year_ts',['../group__time__validation.html#gac6498174d5a46f29615d696c3a659380',1,'time_shield::check_leap_year_ts(ts_t ts)'],['../group__time__validation.html#ga43da8dd61e14b485bf6bb491278241f8',1,'time_shield::check_leap_year_ts(const long ts)']]],
   ['client_7',['NTP Client',['../group__ntp.html',1,'']]],
-  ['clock_8',['clock',['../classtime__shield_1_1TimerScheduler.html#a2eea7b5a46bd1f746d4a5738937f67fc',1,'time_shield::TimerScheduler']]],
+  ['clock_8',['clock',['../classtime__shield_1_1DeadlineTimer.html#a7288ec914c48e188e336eaf0d2e80a9d',1,'time_shield::DeadlineTimer::clock'],['../classtime__shield_1_1ElapsedTimer.html#aaf8b7fc287c455778b8a5da9cec38ba7',1,'time_shield::ElapsedTimer::clock'],['../classtime__shield_1_1TimerScheduler.html#a2eea7b5a46bd1f746d4a5738937f67fc',1,'time_shield::TimerScheduler::clock']]],
   ['collect_5fdue_5ftimers_5flocked_9',['collect_due_timers_locked',['../classtime__shield_1_1TimerScheduler.html#a7fc6f0da6c61b1e81a08a6f61a120d9e',1,'time_shield::TimerScheduler']]],
   ['config_2ehpp_10',['config.hpp',['../config_8hpp.html',1,'']]],
   ['configuration_11',['Configuration',['../index.html#config_sec',1,'']]],

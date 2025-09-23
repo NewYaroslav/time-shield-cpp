@@ -177,6 +177,15 @@ Functions</h2></td></tr>
 <tr class="memitem:gaa5c72c3a49ed1baaa84ce5f0f50e6fb1"><td class="memTemplItemLeft" align="right" valign="top">TIME_SHIELD_CONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#gaa5c72c3a49ed1baaa84ce5f0f50e6fb1">time_shield::is_weekend_unix_day</a> (T <a class="el" href="group__time__conversions.html#ga0aa3eab8489bde9d3004e15461f8b925">unix_day</a>) noexcept</td></tr>
 <tr class="memdesc:gaa5c72c3a49ed1baaa84ce5f0f50e6fb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for is_day_off_unix_day function.  <br /></td></tr>
 <tr class="separator:gaa5c72c3a49ed1baaa84ce5f0f50e6fb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacb28cefd10710814ccd99811df035b49" id="r_gacb28cefd10710814ccd99811df035b49"><td class="memItemLeft" align="right" valign="top">TIME_SHIELD_CONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gacb28cefd10710814ccd99811df035b49">time_shield::is_workday</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>) noexcept</td></tr>
+<tr class="memdesc:gacb28cefd10710814ccd99811df035b49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a given timestamp corresponds to a workday (Monday to Friday).  <br /></td></tr>
+<tr class="separator:gacb28cefd10710814ccd99811df035b49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad1e4530905aee51b52c08de8723e199d" id="r_gad1e4530905aee51b52c08de8723e199d"><td class="memItemLeft" align="right" valign="top">TIME_SHIELD_CONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad1e4530905aee51b52c08de8723e199d">time_shield::is_workday_ms</a> (<a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> <a class="el" href="group__time__conversions.html#gaa27649ad45def1a5f4ce3a62d11b33af">ts_ms</a>) noexcept</td></tr>
+<tr class="memdesc:gad1e4530905aee51b52c08de8723e199d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a given timestamp in milliseconds corresponds to a workday (Monday to Friday).  <br /></td></tr>
+<tr class="separator:gad1e4530905aee51b52c08de8723e199d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga95b2cb2966f9e00c1d9eeb96c09d9c6d" id="r_ga95b2cb2966f9e00c1d9eeb96c09d9c6d"><td class="memItemLeft" align="right" valign="top">TIME_SHIELD_CONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga95b2cb2966f9e00c1d9eeb96c09d9c6d">time_shield::is_workday</a> (<a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9">year_t</a> <a class="el" href="group__time__conversions.html#gadd68b9e632d1b5a43c18b116bbf105a4">year</a>, int month, int day) noexcept</td></tr>
+<tr class="memdesc:ga95b2cb2966f9e00c1d9eeb96c09d9c6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a calendar date corresponds to a workday (Monday to Friday).  <br /></td></tr>
+<tr class="separator:ga95b2cb2966f9e00c1d9eeb96c09d9c6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga4722461b3bc3383e31034fee1f26661a" id="r_ga4722461b3bc3383e31034fee1f26661a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4722461b3bc3383e31034fee1f26661a">time_shield::is_leap_year_date</a> (const long <a class="el" href="group__time__conversions.html#gadd68b9e632d1b5a43c18b116bbf105a4">year</a>)</td></tr>
 <tr class="memdesc:ga4722461b3bc3383e31034fee1f26661a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the given year is a leap year.  <br /></td></tr>
 <tr class="separator:ga4722461b3bc3383e31034fee1f26661a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -243,6 +252,24 @@ Functions</h2></td></tr>
 <tr class="memitem:ga7e3a73ee4d9231e402b4056250c258ce" id="r_ga7e3a73ee4d9231e402b4056250c258ce"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7e3a73ee4d9231e402b4056250c258ce">time_shield::is_weekend_unix_day</a> (const long <a class="el" href="group__time__conversions.html#ga0aa3eab8489bde9d3004e15461f8b925">unix_day</a>)</td></tr>
 <tr class="memdesc:ga7e3a73ee4d9231e402b4056250c258ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for is_day_off_unix_day.  <br /></td></tr>
 <tr class="separator:ga7e3a73ee4d9231e402b4056250c258ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2bc5f9071a8fd1c03ac210729df3f4bf" id="r_ga2bc5f9071a8fd1c03ac210729df3f4bf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2bc5f9071a8fd1c03ac210729df3f4bf">time_shield::is_workday</a> (const long <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>)</td></tr>
+<tr class="memdesc:ga2bc5f9071a8fd1c03ac210729df3f4bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the timestamp corresponds to a workday.  <br /></td></tr>
+<tr class="separator:ga2bc5f9071a8fd1c03ac210729df3f4bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga25bccc3258b3c201d40f8fc5cde77bc6" id="r_ga25bccc3258b3c201d40f8fc5cde77bc6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga25bccc3258b3c201d40f8fc5cde77bc6">time_shield::workday</a> (const long <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>)</td></tr>
+<tr class="memdesc:ga25bccc3258b3c201d40f8fc5cde77bc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for is_workday.  <br /></td></tr>
+<tr class="separator:ga25bccc3258b3c201d40f8fc5cde77bc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga632589b3cd140be0d91a3351574e508e" id="r_ga632589b3cd140be0d91a3351574e508e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga632589b3cd140be0d91a3351574e508e">time_shield::is_workday_ms</a> (const long <a class="el" href="group__time__conversions.html#gaa27649ad45def1a5f4ce3a62d11b33af">ts_ms</a>)</td></tr>
+<tr class="memdesc:ga632589b3cd140be0d91a3351574e508e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the millisecond timestamp corresponds to a workday.  <br /></td></tr>
+<tr class="separator:ga632589b3cd140be0d91a3351574e508e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga09f10b92a08a9aff2598bf8b4d11baf9" id="r_ga09f10b92a08a9aff2598bf8b4d11baf9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga09f10b92a08a9aff2598bf8b4d11baf9">time_shield::workday_ms</a> (const long <a class="el" href="group__time__conversions.html#gaa27649ad45def1a5f4ce3a62d11b33af">ts_ms</a>)</td></tr>
+<tr class="memdesc:ga09f10b92a08a9aff2598bf8b4d11baf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for is_workday_ms.  <br /></td></tr>
+<tr class="separator:ga09f10b92a08a9aff2598bf8b4d11baf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6f9d5510b7faaff50e167a18aebe7b97" id="r_ga6f9d5510b7faaff50e167a18aebe7b97"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6f9d5510b7faaff50e167a18aebe7b97">time_shield::is_workday</a> (const long <a class="el" href="group__time__conversions.html#gadd68b9e632d1b5a43c18b116bbf105a4">year</a>, const int month, const int day)</td></tr>
+<tr class="memdesc:ga6f9d5510b7faaff50e167a18aebe7b97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the provided date represents a workday.  <br /></td></tr>
+<tr class="separator:ga6f9d5510b7faaff50e167a18aebe7b97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab8d01844574ac4f56ed6025aec72cba4" id="r_gab8d01844574ac4f56ed6025aec72cba4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab8d01844574ac4f56ed6025aec72cba4">time_shield::workday</a> (const long <a class="el" href="group__time__conversions.html#gadd68b9e632d1b5a43c18b116bbf105a4">year</a>, const int month, const int day)</td></tr>
+<tr class="memdesc:gab8d01844574ac4f56ed6025aec72cba4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for is_workday.  <br /></td></tr>
+<tr class="separator:gab8d01844574ac4f56ed6025aec72cba4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>A comprehensive set of functions for validating dates, times, leap years, and time zones. </p>
@@ -261,14 +288,14 @@ Key Features:</h3>
 Usage Examples:</h3>
 <ul>
 <li>Check if a year is a leap year: <div class="fragment"><div class="line"><span class="keywordtype">bool</span> is_leap = <a class="code hl_function" href="#gac170040e738cb4b6558850563eb277f9">time_shield::is_leap_year_date</a>(2024);</div>
-<div class="ttc" id="agroup__time__validation_html_gac170040e738cb4b6558850563eb277f9"><div class="ttname"><a href="#gac170040e738cb4b6558850563eb277f9">time_shield::is_leap_year_date</a></div><div class="ttdeci">constexpr bool is_leap_year_date(T year) noexcept</div><div class="ttdoc">Checks if the given year is a leap year.</div><div class="ttdef"><b>Definition</b> <a href="validation_8hpp_source.html#l00055">validation.hpp:55</a></div></div>
+<div class="ttc" id="agroup__time__validation_html_gac170040e738cb4b6558850563eb277f9"><div class="ttname"><a href="#gac170040e738cb4b6558850563eb277f9">time_shield::is_leap_year_date</a></div><div class="ttdeci">constexpr bool is_leap_year_date(T year) noexcept</div><div class="ttdoc">Checks if the given year is a leap year.</div><div class="ttdef"><b>Definition</b> <a href="validation_8hpp_source.html#l00056">validation.hpp:56</a></div></div>
 </div><!-- fragment --></li>
 <li>Validate a specific date: <div class="fragment"><div class="line"><span class="keywordtype">bool</span> is_valid = <a class="code hl_function" href="#ga40e4000e13a71634b368b27dc849d847">time_shield::is_valid_date</a>(2024, 2, 29);</div>
-<div class="ttc" id="agroup__time__validation_html_ga40e4000e13a71634b368b27dc849d847"><div class="ttname"><a href="#ga40e4000e13a71634b368b27dc849d847">time_shield::is_valid_date</a></div><div class="ttdeci">TIME_SHIELD_CONSTEXPR bool is_valid_date(T1 year, T2 month, T2 day) noexcept</div><div class="ttdoc">Checks the correctness of the specified date.</div><div class="ttdef"><b>Definition</b> <a href="validation_8hpp_source.html#l00229">validation.hpp:229</a></div></div>
+<div class="ttc" id="agroup__time__validation_html_ga40e4000e13a71634b368b27dc849d847"><div class="ttname"><a href="#ga40e4000e13a71634b368b27dc849d847">time_shield::is_valid_date</a></div><div class="ttdeci">TIME_SHIELD_CONSTEXPR bool is_valid_date(T1 year, T2 month, T2 day) noexcept</div><div class="ttdoc">Checks the correctness of the specified date.</div><div class="ttdef"><b>Definition</b> <a href="validation_8hpp_source.html#l00230">validation.hpp:230</a></div></div>
 </div><!-- fragment --></li>
 <li>Check if a timestamp falls on a weekend: <div class="fragment"><div class="line"><span class="keywordtype">bool</span> <a class="code hl_function" href="#ga4df5c8c2b2f21187ee739aaed6c65afc">is_weekend</a> = <a class="code hl_function" href="#ga003ae6e5486b23cfe47a3ba795250978">time_shield::is_day_off</a>(1698249600); <span class="comment">// Saturday, Oct 26, 2024</span></div>
-<div class="ttc" id="agroup__time__validation_html_ga003ae6e5486b23cfe47a3ba795250978"><div class="ttname"><a href="#ga003ae6e5486b23cfe47a3ba795250978">time_shield::is_day_off</a></div><div class="ttdeci">TIME_SHIELD_CONSTEXPR bool is_day_off(ts_t ts) noexcept</div><div class="ttdoc">Check if a given timestamp corresponds to a weekend day (Saturday or Sunday).</div><div class="ttdef"><b>Definition</b> <a href="validation_8hpp_source.html#l00314">validation.hpp:314</a></div></div>
-<div class="ttc" id="agroup__time__validation_html_ga4df5c8c2b2f21187ee739aaed6c65afc"><div class="ttname"><a href="#ga4df5c8c2b2f21187ee739aaed6c65afc">time_shield::is_weekend</a></div><div class="ttdeci">TIME_SHIELD_CONSTEXPR bool is_weekend(ts_t ts) noexcept</div><div class="ttdoc">Alias for is_day_off function.</div><div class="ttdef"><b>Definition</b> <a href="validation_8hpp_source.html#l00321">validation.hpp:321</a></div></div>
+<div class="ttc" id="agroup__time__validation_html_ga003ae6e5486b23cfe47a3ba795250978"><div class="ttname"><a href="#ga003ae6e5486b23cfe47a3ba795250978">time_shield::is_day_off</a></div><div class="ttdeci">TIME_SHIELD_CONSTEXPR bool is_day_off(ts_t ts) noexcept</div><div class="ttdoc">Check if a given timestamp corresponds to a weekend day (Saturday or Sunday).</div><div class="ttdef"><b>Definition</b> <a href="validation_8hpp_source.html#l00315">validation.hpp:315</a></div></div>
+<div class="ttc" id="agroup__time__validation_html_ga4df5c8c2b2f21187ee739aaed6c65afc"><div class="ttname"><a href="#ga4df5c8c2b2f21187ee739aaed6c65afc">time_shield::is_weekend</a></div><div class="ttdeci">TIME_SHIELD_CONSTEXPR bool is_weekend(ts_t ts) noexcept</div><div class="ttdoc">Alias for is_day_off function.</div><div class="ttdef"><b>Definition</b> <a href="validation_8hpp_source.html#l00322">validation.hpp:322</a></div></div>
 </div><!-- fragment --> </li>
 </ul>
 <h2 class="groupheader">Function Documentation</h2>
@@ -348,7 +375,7 @@ template&lt;class T = year_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the year is a leap year, false otherwise.    </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="validation_8hpp_source.html#l00062">62</a> of file <a class="el" href="validation_8hpp_source.html">validation.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="validation_8hpp_source.html#l00063">63</a> of file <a class="el" href="validation_8hpp_source.html">validation.hpp</a>.</p>
 
 </div>
 </div>
@@ -428,7 +455,7 @@ template&lt;class T = year_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns true if the year is a leap year.    </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="validation_8hpp_source.html#l00121">121</a> of file <a class="el" href="validation_8hpp_source.html">validation.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="validation_8hpp_source.html#l00122">122</a> of file <a class="el" href="validation_8hpp_source.html">validation.hpp</a>.</p>
 
 </div>
 </div>
@@ -493,7 +520,7 @@ template&lt;class T = year_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the day is a weekend day, false otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="validation_8hpp_source.html#l00314">314</a> of file <a class="el" href="validation_8hpp_source.html">validation.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="validation_8hpp_source.html#l00315">315</a> of file <a class="el" href="validation_8hpp_source.html">validation.hpp</a>.</p>
 
 </div>
 </div>
@@ -559,7 +586,7 @@ template&lt;class T = uday_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the day is a weekend day, false otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="validation_8hpp_source.html#l00333">333</a> of file <a class="el" href="validation_8hpp_source.html">validation.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="validation_8hpp_source.html#l00334">334</a> of file <a class="el" href="validation_8hpp_source.html">validation.hpp</a>.</p>
 
 </div>
 </div>
@@ -639,7 +666,7 @@ template&lt;class T = uday_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns true if the year is a leap year.    </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="validation_8hpp_source.html#l00127">127</a> of file <a class="el" href="validation_8hpp_source.html">validation.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="validation_8hpp_source.html#l00128">128</a> of file <a class="el" href="validation_8hpp_source.html">validation.hpp</a>.</p>
 
 </div>
 </div>
@@ -711,7 +738,7 @@ template&lt;class T = year_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the year is a leap year, false otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="validation_8hpp_source.html#l00055">55</a> of file <a class="el" href="validation_8hpp_source.html">validation.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="validation_8hpp_source.html#l00056">56</a> of file <a class="el" href="validation_8hpp_source.html">validation.hpp</a>.</p>
 
 </div>
 </div>
@@ -782,7 +809,7 @@ template&lt;class T = year_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns true if the year is a leap year. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="validation_8hpp_source.html#l00083">83</a> of file <a class="el" href="validation_8hpp_source.html">validation.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="validation_8hpp_source.html#l00084">84</a> of file <a class="el" href="validation_8hpp_source.html">validation.hpp</a>.</p>
 
 </div>
 </div>
@@ -905,7 +932,7 @@ template&lt;class T1 = year_t, class T2 = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the date is valid, false otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="validation_8hpp_source.html#l00229">229</a> of file <a class="el" href="validation_8hpp_source.html">validation.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="validation_8hpp_source.html#l00230">230</a> of file <a class="el" href="validation_8hpp_source.html">validation.hpp</a>.</p>
 
 </div>
 </div>
@@ -1077,7 +1104,7 @@ template&lt;class T1 = year_t, class T2 = int, class T3 = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the date and time are valid, false otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="validation_8hpp_source.html#l00280">280</a> of file <a class="el" href="validation_8hpp_source.html">validation.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="validation_8hpp_source.html#l00281">281</a> of file <a class="el" href="validation_8hpp_source.html">validation.hpp</a>.</p>
 
 </div>
 </div>
@@ -1212,7 +1239,7 @@ template&lt;class T1 = int, class T2 = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the time is valid, false otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="validation_8hpp_source.html#l00198">198</a> of file <a class="el" href="validation_8hpp_source.html">validation.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="validation_8hpp_source.html#l00199">199</a> of file <a class="el" href="validation_8hpp_source.html">validation.hpp</a>.</p>
 
 </div>
 </div>
@@ -1329,7 +1356,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if the time zone is valid, false otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="validation_8hpp_source.html#l00139">139</a> of file <a class="el" href="validation_8hpp_source.html">validation.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="validation_8hpp_source.html#l00140">140</a> of file <a class="el" href="validation_8hpp_source.html">validation.hpp</a>.</p>
 
 </div>
 </div>
@@ -1482,7 +1509,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if the time zone is valid, false otherwise.    </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="validation_8hpp_source.html#l00150">150</a> of file <a class="el" href="validation_8hpp_source.html">validation.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="validation_8hpp_source.html#l00151">151</a> of file <a class="el" href="validation_8hpp_source.html">validation.hpp</a>.</p>
 
 </div>
 </div>
@@ -1550,7 +1577,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the day is a weekend day, false otherwise.    </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="validation_8hpp_source.html#l00321">321</a> of file <a class="el" href="validation_8hpp_source.html">validation.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="validation_8hpp_source.html#l00322">322</a> of file <a class="el" href="validation_8hpp_source.html">validation.hpp</a>.</p>
 
 </div>
 </div>
@@ -1618,7 +1645,221 @@ template&lt;class T = uday_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the day is a weekend day, false otherwise.    </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="validation_8hpp_source.html#l00341">341</a> of file <a class="el" href="validation_8hpp_source.html">validation.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="validation_8hpp_source.html#l00342">342</a> of file <a class="el" href="validation_8hpp_source.html">validation.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga2bc5f9071a8fd1c03ac210729df3f4bf" name="ga2bc5f9071a8fd1c03ac210729df3f4bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2bc5f9071a8fd1c03ac210729df3f4bf">&#9670;&#160;</a></span>is_workday() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool time_shield::is_workday </td>
+          <td>(</td>
+          <td class="paramtype">const long</td>          <td class="paramname"><span class="paramname"><em>ts</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if the timestamp corresponds to a workday. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ts</td><td>Timestamp in seconds. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true when the date is Monday through Friday. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="validation_8mqh_source.html#l00252">252</a> of file <a class="el" href="validation_8mqh_source.html">validation.mqh</a>.</p>
+
+</div>
+</div>
+<a id="ga6f9d5510b7faaff50e167a18aebe7b97" name="ga6f9d5510b7faaff50e167a18aebe7b97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6f9d5510b7faaff50e167a18aebe7b97">&#9670;&#160;</a></span>is_workday() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool time_shield::is_workday </td>
+          <td>(</td>
+          <td class="paramtype">const long</td>          <td class="paramname"><span class="paramname"><em>year</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int</td>          <td class="paramname"><span class="paramname"><em>month</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int</td>          <td class="paramname"><span class="paramname"><em>day</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if the provided date represents a workday. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">year</td><td>Year component. </td></tr>
+    <tr><td class="paramname">month</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a> component. </td></tr>
+    <tr><td class="paramname">day</td><td>Day component. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true when the date is valid and is Monday through Friday. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="validation_8mqh_source.html#l00280">280</a> of file <a class="el" href="validation_8mqh_source.html">validation.mqh</a>.</p>
+
+</div>
+</div>
+<a id="gacb28cefd10710814ccd99811df035b49" name="gacb28cefd10710814ccd99811df035b49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacb28cefd10710814ccd99811df035b49">&#9670;&#160;</a></span>is_workday() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TIME_SHIELD_CONSTEXPR bool time_shield::is_workday </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a></td>          <td class="paramname"><span class="paramname"><em>ts</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if a given timestamp corresponds to a workday (Monday to Friday). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ts</td><td>Timestamp to check. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the day is a workday, false otherwise. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="validation_8hpp_source.html#l00351">351</a> of file <a class="el" href="validation_8hpp_source.html">validation.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga95b2cb2966f9e00c1d9eeb96c09d9c6d" name="ga95b2cb2966f9e00c1d9eeb96c09d9c6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga95b2cb2966f9e00c1d9eeb96c09d9c6d">&#9670;&#160;</a></span>is_workday() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TIME_SHIELD_CONSTEXPR bool time_shield::is_workday </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9">year_t</a></td>          <td class="paramname"><span class="paramname"><em>year</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>month</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>day</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if a calendar date corresponds to a workday (Monday to Friday). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">year</td><td>Year component of the date. </td></tr>
+    <tr><td class="paramname">month</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a> component of the date. </td></tr>
+    <tr><td class="paramname">day</td><td>Day component of the date. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the date is valid and a workday, false otherwise. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="validation_8hpp_source.html#l00367">367</a> of file <a class="el" href="validation_8hpp_source.html">validation.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga632589b3cd140be0d91a3351574e508e" name="ga632589b3cd140be0d91a3351574e508e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga632589b3cd140be0d91a3351574e508e">&#9670;&#160;</a></span>is_workday_ms() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool time_shield::is_workday_ms </td>
+          <td>(</td>
+          <td class="paramtype">const long</td>          <td class="paramname"><span class="paramname"><em>ts_ms</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if the millisecond timestamp corresponds to a workday. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ts_ms</td><td>Timestamp in milliseconds. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true when the date is Monday through Friday. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="validation_8mqh_source.html#l00265">265</a> of file <a class="el" href="validation_8mqh_source.html">validation.mqh</a>.</p>
+
+</div>
+</div>
+<a id="gad1e4530905aee51b52c08de8723e199d" name="gad1e4530905aee51b52c08de8723e199d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad1e4530905aee51b52c08de8723e199d">&#9670;&#160;</a></span>is_workday_ms() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TIME_SHIELD_CONSTEXPR bool time_shield::is_workday_ms </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a></td>          <td class="paramname"><span class="paramname"><em>ts_ms</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if a given timestamp in milliseconds corresponds to a workday (Monday to Friday). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ts_ms</td><td>Timestamp in milliseconds to check. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the day is a workday, false otherwise. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="validation_8hpp_source.html#l00358">358</a> of file <a class="el" href="validation_8hpp_source.html">validation.hpp</a>.</p>
 
 </div>
 </div>
@@ -1698,7 +1939,7 @@ template&lt;class T = year_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the year is a leap year, false otherwise.    </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="validation_8hpp_source.html#l00069">69</a> of file <a class="el" href="validation_8hpp_source.html">validation.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="validation_8hpp_source.html#l00070">70</a> of file <a class="el" href="validation_8hpp_source.html">validation.hpp</a>.</p>
 
 </div>
 </div>
@@ -1778,7 +2019,105 @@ template&lt;class T = year_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns true if the year is a leap year.    </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="validation_8hpp_source.html#l00115">115</a> of file <a class="el" href="validation_8hpp_source.html">validation.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="validation_8hpp_source.html#l00116">116</a> of file <a class="el" href="validation_8hpp_source.html">validation.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga25bccc3258b3c201d40f8fc5cde77bc6" name="ga25bccc3258b3c201d40f8fc5cde77bc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga25bccc3258b3c201d40f8fc5cde77bc6">&#9670;&#160;</a></span>workday() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool time_shield::workday </td>
+          <td>(</td>
+          <td class="paramtype">const long</td>          <td class="paramname"><span class="paramname"><em>ts</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Alias for is_workday. </p>
+<p>Check if the timestamp corresponds to a workday.   </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ts</td><td>Timestamp in seconds. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true when the date is Monday through Friday.    </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="validation_8mqh_source.html#l00258">258</a> of file <a class="el" href="validation_8mqh_source.html">validation.mqh</a>.</p>
+
+</div>
+</div>
+<a id="gab8d01844574ac4f56ed6025aec72cba4" name="gab8d01844574ac4f56ed6025aec72cba4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab8d01844574ac4f56ed6025aec72cba4">&#9670;&#160;</a></span>workday() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool time_shield::workday </td>
+          <td>(</td>
+          <td class="paramtype">const long</td>          <td class="paramname"><span class="paramname"><em>year</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int</td>          <td class="paramname"><span class="paramname"><em>month</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int</td>          <td class="paramname"><span class="paramname"><em>day</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Alias for is_workday. </p>
+<p>Check if the provided date represents a workday.   </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">year</td><td>Year component. </td></tr>
+    <tr><td class="paramname">month</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a> component. </td></tr>
+    <tr><td class="paramname">day</td><td>Day component. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true when the date is valid and is Monday through Friday.    </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="validation_8mqh_source.html#l00297">297</a> of file <a class="el" href="validation_8mqh_source.html">validation.mqh</a>.</p>
+
+</div>
+</div>
+<a id="ga09f10b92a08a9aff2598bf8b4d11baf9" name="ga09f10b92a08a9aff2598bf8b4d11baf9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga09f10b92a08a9aff2598bf8b4d11baf9">&#9670;&#160;</a></span>workday_ms()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool time_shield::workday_ms </td>
+          <td>(</td>
+          <td class="paramtype">const long</td>          <td class="paramname"><span class="paramname"><em>ts_ms</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Alias for is_workday_ms. </p>
+<p>Check if the millisecond timestamp corresponds to a workday.   </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ts_ms</td><td>Timestamp in milliseconds. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true when the date is Monday through Friday.    </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="validation_8mqh_source.html#l00271">271</a> of file <a class="el" href="validation_8mqh_source.html">validation.mqh</a>.</p>
 
 </div>
 </div>

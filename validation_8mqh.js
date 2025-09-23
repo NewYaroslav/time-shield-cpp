@@ -20,6 +20,12 @@ var validation_8mqh =
     [ "time_shield::is_valid_tz", "group__time__validation.html#gabe39bef568ef66116c0a3ed01fc0585a", null ],
     [ "time_shield::is_weekend", "group__time__validation.html#gaf82358c65d7f022d14d34819a6df82a7", null ],
     [ "time_shield::is_weekend_unix_day", "group__time__validation.html#ga7e3a73ee4d9231e402b4056250c258ce", null ],
+    [ "time_shield::is_workday", "group__time__validation.html#ga2bc5f9071a8fd1c03ac210729df3f4bf", null ],
+    [ "time_shield::is_workday", "group__time__validation.html#ga6f9d5510b7faaff50e167a18aebe7b97", null ],
+    [ "time_shield::is_workday_ms", "group__time__validation.html#ga632589b3cd140be0d91a3351574e508e", null ],
     [ "time_shield::leap_year", "group__time__validation.html#gacb2fb6bd5fb218e0bbde17d9870e8afb", null ],
-    [ "time_shield::leap_year_ts", "group__time__validation.html#ga046472fb8c315f13a3b30649a26241ce", null ]
+    [ "time_shield::leap_year_ts", "group__time__validation.html#ga046472fb8c315f13a3b30649a26241ce", null ],
+    [ "time_shield::workday", "group__time__validation.html#ga25bccc3258b3c201d40f8fc5cde77bc6", null ],
+    [ "time_shield::workday", "group__time__validation.html#gab8d01844574ac4f56ed6025aec72cba4", null ],
+    [ "time_shield::workday_ms", "group__time__validation.html#ga09f10b92a08a9aff2598bf8b4d11baf9", null ]
 ];

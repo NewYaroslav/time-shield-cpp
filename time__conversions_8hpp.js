@@ -1,5 +1,6 @@
 var time__conversions_8hpp =
 [
+    [ "time_shield::date_to_unix_day", "group__time__conversions.html#ga41e7701cd4b5c73aa96c547a1e4b03a3", null ],
     [ "time_shield::day_of_month", "group__time__conversions.html#ga08af694e8d0d7dc501bcb8b127703ee2", null ],
     [ "time_shield::day_of_week_date", "group__time__conversions.html#gac419ca8103403bc0036c656c270b147f", null ],
     [ "time_shield::day_of_year", "group__time__conversions.html#ga66b499223d2a8fb979d100a50518a79e", null ],

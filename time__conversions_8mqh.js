@@ -1,5 +1,6 @@
 var time__conversions_8mqh =
 [
+    [ "time_shield::date_to_unix_day", "group__time__conversions.html#gad66661265c1484878c71b7002db8b894", null ],
     [ "time_shield::day_end", "group__time__conversions.html#ga2c6ad7694430a3dd803c1e0edb70e344", null ],
     [ "time_shield::day_end_ms", "group__time__conversions.html#gae9d9a526bea3c946c0f11d250385d99d", null ],
     [ "time_shield::day_end_sec", "group__time__conversions.html#ga4119177f111612fd1b068dc37c6c2e7f", null ],

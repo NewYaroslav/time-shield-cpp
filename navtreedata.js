@@ -30,7 +30,9 @@ var NAVTREE =
     [ "Features", "index.html#features_sec", null ],
     [ "Configuration", "index.html#config_sec", null ],
     [ "API Invariants", "index.html#invariants_sec", null ],
-    [ "Examples", "index.html#examples_sec", null ],
+    [ "Examples", "index.html#examples_sec", [
+      [ "Workday helpers", "index.html#workday_helpers", null ]
+    ] ],
     [ "Installation", "index.html#install_sec", [
       [ "Install and find_package", "index.html#install_pkg", null ],
       [ "Git submodule with add_subdirectory", "index.html#install_submodule", null ],
@@ -77,10 +79,10 @@ var NAVTREEINDEX =
 [
 "CpuTickTimer_8hpp.html",
 "group__time__constants.html#ga23ee3762e197dc597ab093291eb216c2",
-"group__time__conversions.html#ga54442ebba26c24efd77a25b40fa0a1c9",
-"group__time__conversions.html#gad8fdbf64d4cefc5b91d0c9508189e538",
-"group__time__enums.html#ggad8cb858fb6cedcf76c4f0630d56e042baaf1aac3774bda46f8b9677cc4d51e20e",
-"initialization_8hpp.html"
+"group__time__conversions.html#ga534901699df1c9260170a397b02a85db",
+"group__time__conversions.html#gad709a8e50f00df8547bb6c9d7ec9ac1f",
+"group__time__enums.html#ggad8cb858fb6cedcf76c4f0630d56e042ba9aacbaaeafc33c56dd9eb3d796b89141",
+"group__time__validation.html#gad1e4530905aee51b52c08de8723e199d"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

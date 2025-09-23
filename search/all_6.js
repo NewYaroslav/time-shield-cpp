@@ -1,7 +1,7 @@
 var searchData=
 [
   ['h24_5fto_5fh12_0',['h24_to_h12',['../group__time__conversions.html#gae93a83db54314b941d0c03df22f91d8e',1,'time_shield::h24_to_h12(T hour) noexcept'],['../group__time__conversions.html#ga9cb6f7e082f0f30efbf874a7b4d0ca23',1,'time_shield::h24_to_h12(int hour)']]],
-  ['helpers_1',['Time zone conversion helpers',['../group__time__conversions__time__zone__conversions.html',1,'']]],
+  ['helpers_1',['helpers',['../group__time__conversions__time__zone__conversions.html',1,'Time zone conversion helpers'],['../index.html#workday_helpers',1,'Workday helpers']]],
   ['hour_2',['hour',['../structtime__shield_1_1DateTimeStruct.html#a38c26152cf943d43929348466ea1db75',1,'time_shield::DateTimeStruct::hour'],['../structtime__shield_1_1TimeStruct.html#a692bac8100db9b338841461a38092a0f',1,'time_shield::TimeStruct::hour'],['../structtime__shield_1_1TimeZoneStruct.html#a83b023980ce397878cb2c742bb9dc8b7',1,'time_shield::TimeZoneStruct::hour'],['../structtime__shield_1_1TimeStruct.html#af73103a8b5d29c54de39cfe93e5e6f37',1,'time_shield::TimeStruct::hour']]],
   ['hour24_5fto_5f12_3',['hour24_to_12',['../group__time__conversions.html#ga53f18540f9b647f72cda445eec9d9222',1,'time_shield::hour24_to_12(T hour) noexcept'],['../group__time__conversions.html#gae67ccd67a48eb47433b979623f10c025',1,'time_shield::hour24_to_12(int hour)']]],
   ['hour_5f1_4',['HOUR_1',['../group__time__constants.html#gac9f85fe93dbcf3ee7c27e78d100bb4ac',1,'time_shield']]],

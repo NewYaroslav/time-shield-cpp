@@ -194,6 +194,34 @@ namespace time_shield {
        return true;
     }
 
+    /// \brief Parse ISO8601 string and check for workday using second precision.
+    /// \param str ISO8601 formatted string.
+    /// \return true when parsed timestamp is Monday through Friday.
+    bool is_workday(string str) {
+       long ts = 0;
+       if(!str_to_ts(str, ts))
+          return false;
+       return is_workday(ts);
+    }
+
+    /// \brief Alias for is_workday.
+    /// \copydoc is_workday(string)
+    bool workday(string str) { return is_workday(str); }
+
+    /// \brief Parse ISO8601 string and check for workday using millisecond precision.
+    /// \param str ISO8601 formatted string.
+    /// \return true when parsed timestamp is Monday through Friday.
+    bool is_workday_ms(string str) {
+       long ts = 0;
+       if(!str_to_ts_ms(str, ts))
+          return false;
+       return is_workday_ms(ts);
+    }
+
+    /// \brief Alias for is_workday_ms.
+    /// \copydoc is_workday_ms(string)
+    bool workday_ms(string str) { return is_workday_ms(str); }
+
     /// \brief Convert an ISO8601 string to a floating-point timestamp (fts_t).
     /// \param str The ISO8601 string.
     /// \param ts The floating-point timestamp to be filled.

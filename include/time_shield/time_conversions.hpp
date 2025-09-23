@@ -838,6 +838,34 @@ namespace time_shield {
 
 //------------------------------------------------------------------------------
 
+    /// \brief Convert a calendar date to UNIX day count.
+    ///
+    /// Calculates the number of days since the UNIX epoch (January 1, 1970)
+    /// for the provided calendar date components.
+    ///
+    /// \tparam Year Type of the year component.
+    /// \tparam Month Type of the month component.
+    /// \tparam Day Type of the day component.
+    /// \param year Year component of the date.
+    /// \param month Month component of the date.
+    /// \param day Day component of the date.
+    /// \return Number of days since the UNIX epoch.
+    template<class Year, class Month, class Day>
+    TIME_SHIELD_CONSTEXPR inline uday_t date_to_unix_day(
+            Year year,
+            Month month,
+            Day day) noexcept {
+        const int64_t y = static_cast<int64_t>(year) - (static_cast<int64_t>(month) <= 2 ? 1 : 0);
+        const int64_t m = static_cast<int64_t>(month) <= 2
+                ? static_cast<int64_t>(month) + 9
+                : static_cast<int64_t>(month) - 3;
+        const int64_t era = (y >= 0 ? y : y - 399) / 400;
+        const int64_t yoe = y - era * 400;
+        const int64_t doy = (153 * m + 2) / 5 + static_cast<int64_t>(day) - 1;
+        const int64_t doe = yoe * 365 + yoe / 4 - yoe / 100 + doy;
+        return static_cast<uday_t>(era * 146097 + doe - 719468);
+    }
+
     /// \brief Get UNIX day.
     ///
     /// This function returns the number of days elapsed since the UNIX epoch.

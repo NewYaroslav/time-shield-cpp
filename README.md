@@ -41,7 +41,7 @@ more academic solutions like `HowardHinnant/date`, the library:
 
 ## Features
 
-- **Date validation**—checks dates for leap years and weekends.
+- **Date validation**—checks dates for leap years, weekends, and workdays (including ISO8601 strings).
 - **Time formatting**—converts timestamps to strings with standard or custom
   templates.
 - **Conversions**—translates between second, millisecond and floating time
@@ -194,6 +194,22 @@ if (parse_iso8601("2024-11-25T14:30:00-05:30", dt, tz)) {
     ts_t ts_val = to_timestamp(dt) + to_offset(tz);
 }
 ```
+
+### Checking workdays
+
+```cpp
+#include <time_shield/validation.hpp>
+#include <time_shield/time_parser.hpp>
+
+using namespace time_shield;
+
+bool monday = is_workday(1710720000);                    // seconds timestamp
+bool monday_ms = is_workday_ms("2024-03-18T09:00:00.500Z"); // ISO8601 with milliseconds
+bool from_date = is_workday(2024, 3, 18);                 // year, month, day components
+bool from_str = is_workday("2024-03-18T09:00:00Z");     // ISO8601 string
+```
+
+The string helpers accept the same ISO8601 formats as `str_to_ts` / `str_to_ts_ms` and evaluate to `false` when parsing fails or the date falls on a weekend.
 
 ### Time zone conversion
 

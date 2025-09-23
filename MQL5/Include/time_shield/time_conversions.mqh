@@ -1066,6 +1066,21 @@ double sec_to_fhour(long sec) {
     // UNIX day and minute helpers
     //----------------------------------------------------------------------
 
+    /// \brief Convert calendar date to UNIX day.
+    /// \param year Year component.
+    /// \param month Month component.
+    /// \param day Day component.
+    /// \return Number of days since UNIX epoch.
+    long date_to_unix_day(const long year, const int month, const int day) {
+       const long adj_y = year - (month <= 2 ? 1 : 0);
+       const long adj_m = month <= 2 ? month + 9 : month - 3;
+       const long era = (adj_y >= 0 ? adj_y : adj_y - 399) / 400;
+       const long yoe = adj_y - era * 400;
+       const long doy = (153 * adj_m + 2) / 5 + day - 1;
+       const long doe = yoe * 365 + yoe / 4 - yoe / 100 + doy;
+       return era * 146097 + doe - 719468;
+    }
+
     /// \brief Get UNIX day from timestamp.
     /// \param ts Timestamp in seconds.
     /// \return Number of days since UNIX epoch.

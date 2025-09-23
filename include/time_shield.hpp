@@ -30,6 +30,8 @@
 #endif
 #include "time_shield/initialization.hpp"          ///< Library initialization helpers.
 #include "time_shield/TimerScheduler.hpp"          ///< Timer scheduler utilities.
+#include "time_shield/DeadlineTimer.hpp"           ///< Monotonic deadline timer helper.
+#include "time_shield/ElapsedTimer.hpp"            ///< Monotonic elapsed time measurement helper.
 
 /// \namespace tsh
 /// \brief Alias for the namespace time_shield.

@@ -16,8 +16,15 @@ int main() {
     std::atomic<int> single_counter{0};
     single_timer.set_single_shot(true);
     single_timer.set_callback([&single_counter]() { single_counter.fetch_add(1); });
-    single_timer.start(std::chrono::milliseconds(0));
-    scheduler.process();
+    const auto start_time = std::chrono::steady_clock::now();
+    single_timer.start(std::chrono::seconds(1));
+    while (single_counter.load() == 0) {
+        scheduler.process();
+        std::this_thread::sleep_for(std::chrono::milliseconds(10));
+    }
+    const auto elapsed = std::chrono::steady_clock::now() - start_time;
+    assert(elapsed >= std::chrono::milliseconds(900));
+    assert(elapsed < std::chrono::seconds(2));
     assert(single_counter.load() == 1);
     assert(!single_timer.is_active());
 

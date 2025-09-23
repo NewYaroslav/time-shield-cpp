@@ -29,6 +29,7 @@
 #   include "time_shield/ntp_client.hpp"              ///< NTP client for time offset queries.
 #endif
 #include "time_shield/initialization.hpp"          ///< Library initialization helpers.
+#include "time_shield/TimerScheduler.hpp"          ///< Timer scheduler utilities.
 
 /// \namespace tsh
 /// \brief Alias for the namespace time_shield.

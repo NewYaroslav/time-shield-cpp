@@ -43,14 +43,20 @@ int main() {
     }
     assert(repeating_counter.load() >= 3);
 
-    // Worker thread driven timer.
+    // Worker thread driven timer with stop_and_wait().
     Timer worker_timer(scheduler);
     std::atomic<int> worker_counter{0};
     worker_timer.set_single_shot(true);
-    worker_timer.set_callback([&worker_counter]() { worker_counter.fetch_add(1); });
+    worker_timer.set_callback([&worker_counter]() {
+        worker_counter.fetch_add(1);
+        std::this_thread::sleep_for(std::chrono::milliseconds(20));
+    });
     scheduler.run();
     worker_timer.start(std::chrono::milliseconds(10));
-    std::this_thread::sleep_for(std::chrono::milliseconds(50));
+    for (int i = 0; i < 50 && !worker_timer.is_running(); ++i) {
+        std::this_thread::sleep_for(std::chrono::milliseconds(1));
+    }
+    worker_timer.stop_and_wait();
     scheduler.stop();
     assert(worker_counter.load() == 1);
 

@@ -7,11 +7,16 @@
 /// \brief Timer scheduler that provides Qt-like timer functionality.
 ///
 /// TimerScheduler manages timers that can be processed either by a dedicated
-/// worker thread or manually via process/update calls.
+/// worker thread or manually via process/update calls. Timers are rescheduled
+/// using fixed-rate semantics, meaning the next activation time is based on the
+/// previously scheduled fire time. Cancelled timers are removed lazily from the
+/// internal queue, which can temporarily increase the queue size under frequent
+/// start/stop cycles.
 
 #include "config.hpp"
 
 #include <atomic>
+#include <cassert>
 #include <chrono>
 #include <condition_variable>
 #include <cstddef>
@@ -37,14 +42,15 @@ namespace time_shield {
 
         /// \brief Internal state shared between Timer and TimerScheduler.
         struct TimerState {
-            TimerScheduler*                      m_scheduler = nullptr;
-            TimerCallback                        m_callback;
-            std::chrono::milliseconds            m_interval{0};
-            std::atomic<bool>                    m_is_single_shot{false};
-            std::atomic<bool>                    m_is_active{false};
-            std::atomic<bool>                    m_is_running{false};
-            std::size_t                          m_id{0};
-            std::atomic<std::uint64_t>           m_generation{0};
+            TimerScheduler*            m_scheduler = nullptr;
+            std::mutex                 m_callback_mutex;
+            TimerCallback              m_callback;
+            std::atomic<std::int64_t>  m_interval_ms{0};
+            std::atomic<bool>          m_is_single_shot{false};
+            std::atomic<bool>          m_is_active{false};
+            std::atomic<bool>          m_is_running{false};
+            std::size_t                m_id{0};
+            std::atomic<std::uint64_t> m_generation{0};
         };
 
         /// \brief Data stored in the priority queue of scheduled timers.
@@ -100,7 +106,9 @@ namespace time_shield {
         /// \brief Starts a dedicated worker thread that processes timers.
         ///
         /// This method is non-blocking. It spawns a background thread that
-        /// waits for timers to fire and executes their callbacks.
+        /// waits for timers to fire and executes their callbacks. While the
+        /// worker thread is active, manual processing via process() or update()
+        /// must not be used.
         void run();
 
         /// \brief Requests the worker thread to stop and waits for it to exit.
@@ -109,6 +117,8 @@ namespace time_shield {
         /// \brief Processes all timers that are ready to fire at the moment of the call.
         ///
         /// The method is non-blocking: it does not wait for future timers.
+        /// It must not be called while the worker thread started by run() is
+        /// active.
         void process();
 
         /// \brief Alias for process() for compatibility with update-based loops.
@@ -151,6 +161,9 @@ namespace time_shield {
         Timer& operator=(Timer&&) = delete;
 
         /// \brief Sets the interval used by the timer.
+        ///
+        /// Negative durations are clamped to zero. An interval of zero means
+        /// the timer is rescheduled immediately after firing.
         template<class Rep, class Period>
         void set_interval(std::chrono::duration<Rep, Period> interval) noexcept;
 
@@ -165,7 +178,16 @@ namespace time_shield {
         void start(std::chrono::duration<Rep, Period> interval);
 
         /// \brief Stops the timer.
+        ///
+        /// The operation is non-blocking: the method does not wait for a
+        /// running callback to finish. Use stop_and_wait() to synchronously
+        /// wait for completion.
         void stop();
+
+        /// \brief Stops the timer and waits until an active callback finishes.
+        ///
+        /// Must not be called from inside the timer callback itself.
+        void stop_and_wait();
 
         /// \brief Sets whether the timer should fire only once.
         void set_single_shot(bool is_single_shot) noexcept;
@@ -183,6 +205,8 @@ namespace time_shield {
         void set_callback(Callback callback);
 
         /// \brief Creates a single-shot timer that invokes the callback once.
+        ///
+        /// The helper keeps the timer alive until the callback finishes.
         template<class Rep, class Period>
         static void single_shot(TimerScheduler& scheduler,
                                 std::chrono::duration<Rep, Period> interval,
@@ -235,14 +259,13 @@ namespace time_shield {
         lock.lock();
         m_is_worker_running = false;
         m_stop_requested = false;
-        lock.unlock();
-        m_thread = std::thread();
     }
 
     inline void TimerScheduler::process() {
         std::vector<detail::DueTimer> due;
         {
             std::lock_guard<std::mutex> lock(m_mutex);
+            assert(!m_is_worker_running && "process() must not be called while the worker thread is active");
             const auto now = clock::now();
             collect_due_timers_locked(due, now);
         }
@@ -358,15 +381,20 @@ namespace time_shield {
                 continue;
             }
 
-            state->m_is_running.store(true, std::memory_order_relaxed);
+            state->m_is_running.store(true, std::memory_order_release);
             due.push_back(detail::DueTimer{item.m_fire_time, item.m_generation, std::move(state)});
         }
     }
 
     inline void TimerScheduler::execute_due_timers(std::vector<detail::DueTimer>& due) {
         for (auto& timer : due) {
-            if (timer.m_state && timer.m_state->m_callback) {
-                timer.m_state->m_callback();
+            detail::TimerCallback callback;
+            if (timer.m_state) {
+                std::lock_guard<std::mutex> callback_lock(timer.m_state->m_callback_mutex);
+                callback = timer.m_state->m_callback;
+            }
+            if (callback) {
+                callback();
             }
             finalize_timer(timer);
         }
@@ -379,7 +407,7 @@ namespace time_shield {
         }
 
         std::unique_lock<std::mutex> lock(m_mutex);
-        state->m_is_running.store(false, std::memory_order_relaxed);
+        state->m_is_running.store(false, std::memory_order_release);
         if (!state->m_is_active.load(std::memory_order_relaxed)) {
             return;
         }
@@ -394,7 +422,8 @@ namespace time_shield {
             return;
         }
 
-        const auto next_fire_time = due_timer.m_fire_time + state->m_interval;
+        const auto interval_ms = state->m_interval_ms.load(std::memory_order_relaxed);
+        const auto next_fire_time = due_timer.m_fire_time + std::chrono::milliseconds(interval_ms);
         const auto next_generation = state->m_generation.fetch_add(1, std::memory_order_relaxed) + 1;
         m_queue.push(detail::ScheduledTimer{next_fire_time, state->m_id, next_generation});
         m_cv.notify_all();
@@ -413,20 +442,21 @@ namespace time_shield {
 
     template<class Rep, class Period>
     void Timer::set_interval(std::chrono::duration<Rep, Period> interval) noexcept {
-        const auto converted = std::chrono::duration_cast<std::chrono::milliseconds>(interval);
-        if (converted.count() < 0) {
-            m_state->m_interval = std::chrono::milliseconds(0);
-        } else {
-            m_state->m_interval = converted;
+        auto milliseconds = std::chrono::duration_cast<std::chrono::milliseconds>(interval).count();
+        if (milliseconds < 0) {
+            milliseconds = 0;
         }
+        m_state->m_interval_ms.store(milliseconds, std::memory_order_relaxed);
     }
 
     inline std::chrono::milliseconds Timer::interval() const noexcept {
-        return m_state->m_interval;
+        const auto milliseconds = m_state->m_interval_ms.load(std::memory_order_relaxed);
+        return std::chrono::milliseconds(milliseconds);
     }
 
     inline void Timer::start() {
-        const auto delay = TimerScheduler::clock::now() + m_state->m_interval;
+        const auto milliseconds = m_state->m_interval_ms.load(std::memory_order_relaxed);
+        const auto delay = TimerScheduler::clock::now() + std::chrono::milliseconds(milliseconds);
         m_scheduler.start_timer(m_state, delay);
     }
 
@@ -438,6 +468,13 @@ namespace time_shield {
 
     inline void Timer::stop() {
         m_scheduler.stop_timer(m_state);
+    }
+
+    inline void Timer::stop_and_wait() {
+        m_scheduler.stop_timer(m_state);
+        while (m_state->m_is_running.load(std::memory_order_acquire)) {
+            std::this_thread::yield();
+        }
     }
 
     inline void Timer::set_single_shot(bool is_single_shot) noexcept {
@@ -457,6 +494,7 @@ namespace time_shield {
     }
 
     inline void Timer::set_callback(Callback callback) {
+        std::lock_guard<std::mutex> lock(m_state->m_callback_mutex);
         m_state->m_callback = std::move(callback);
     }
 
@@ -466,13 +504,11 @@ namespace time_shield {
                             Callback callback) {
         auto timer = std::shared_ptr<Timer>(new Timer(scheduler));
         timer->set_single_shot(true);
-        std::shared_ptr<Callback> callback_holder(new Callback(std::move(callback)));
+        auto callback_holder = std::make_shared<Callback>(std::move(callback));
         timer->set_callback([timer, callback_holder]() mutable {
             if (*callback_holder) {
                 (*callback_holder)();
             }
-            timer->stop();
-            timer.reset();
         });
         timer->start(interval);
     }

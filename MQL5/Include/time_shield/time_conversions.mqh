@@ -826,6 +826,112 @@ double sec_to_fhour(long sec) {
     /// \copydoc num_days_in_month_ts
     int days_in_month(long ts) { return num_days_in_month_ts(ts); }
 
+    //----------------------------------------------------------------------
+    // Workday boundary helpers
+    //----------------------------------------------------------------------
+
+    int first_workday_day(long year, int month) {
+       int days = num_days_in_month(year, month);
+       if(days <= 0) return 0;
+       for(int day = 1; day <= days; ++day) {
+          if(is_workday(year, month, day)) return day;
+       }
+       return 0;
+    }
+
+    int last_workday_day(long year, int month) {
+       int days = num_days_in_month(year, month);
+       if(days <= 0) return 0;
+       for(int day = days; day >= 1; --day) {
+          if(is_workday(year, month, day)) return day;
+       }
+       return 0;
+    }
+
+    int count_workdays_in_month(long year, int month) {
+       int days = num_days_in_month(year, month);
+       if(days <= 0) return 0;
+       int total = 0;
+       for(int day = 1; day <= days; ++day) {
+          if(is_workday(year, month, day)) ++total;
+       }
+       return total;
+    }
+
+    int workday_index_in_month(long year, int month, int day) {
+       if(!is_workday(year, month, day)) return 0;
+       int days = num_days_in_month(year, month);
+       if(days <= 0) return 0;
+       int index = 0;
+       for(int current = 1; current <= days; ++current) {
+          if(is_workday(year, month, current)) {
+             ++index;
+             if(current == day) return index;
+          }
+       }
+       return 0;
+    }
+
+    //----------------------------------------------------------------------
+    // Workday boundary predicates
+    //----------------------------------------------------------------------
+
+    bool is_first_workday_of_month(long year, int month, int day) {
+       return is_workday(year, month, day) && first_workday_day(year, month) == day;
+    }
+
+    bool is_within_first_workdays_of_month(long year, int month, int day, int count) {
+       if(count <= 0) return false;
+       int total = count_workdays_in_month(year, month);
+       if(count > total) return false;
+       int index = workday_index_in_month(year, month, day);
+       return index > 0 && index <= count;
+    }
+
+    bool is_last_workday_of_month(long year, int month, int day) {
+       return is_workday(year, month, day) && last_workday_day(year, month) == day;
+    }
+
+    bool is_within_last_workdays_of_month(long year, int month, int day, int count) {
+       if(count <= 0) return false;
+       int total = count_workdays_in_month(year, month);
+       if(count > total) return false;
+       int index = workday_index_in_month(year, month, day);
+       return index > 0 && index >= (total - count + 1);
+    }
+
+    bool is_first_workday_of_month(const long ts) {
+       return is_first_workday_of_month(get_year(ts), (int)month_of_year(ts), day_of_month(ts));
+    }
+
+    bool is_within_first_workdays_of_month(const long ts, int count) {
+       return is_within_first_workdays_of_month(get_year(ts), (int)month_of_year(ts), day_of_month(ts), count);
+    }
+
+    bool is_last_workday_of_month(const long ts) {
+       return is_last_workday_of_month(get_year(ts), (int)month_of_year(ts), day_of_month(ts));
+    }
+
+    bool is_within_last_workdays_of_month(const long ts, int count) {
+       return is_within_last_workdays_of_month(get_year(ts), (int)month_of_year(ts), day_of_month(ts), count);
+    }
+
+    bool is_first_workday_of_month_ms(const long ts_ms) {
+       return is_first_workday_of_month(ms_to_sec(ts_ms));
+    }
+
+    bool is_within_first_workdays_of_month_ms(const long ts_ms, int count) {
+       return is_within_first_workdays_of_month(ms_to_sec(ts_ms), count);
+    }
+
+    bool is_last_workday_of_month_ms(const long ts_ms) {
+       return is_last_workday_of_month(ms_to_sec(ts_ms));
+    }
+
+    bool is_within_last_workdays_of_month_ms(const long ts_ms, int count) {
+       return is_within_last_workdays_of_month(ms_to_sec(ts_ms), count);
+    }
+
     /// \brief Get number of days in a year.
     /// \param year Year value.
     /// \return Days in the year.

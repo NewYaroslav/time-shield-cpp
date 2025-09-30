@@ -222,6 +222,90 @@ namespace time_shield {
     /// \copydoc is_workday_ms(string)
     bool workday_ms(string str) { return is_workday_ms(str); }
 
+    /// \brief Parse ISO8601 string and check for the first workday of the month using second precision.
+    /// \param str ISO8601 formatted string.
+    /// \return true when the parsed timestamp is the first workday of its month.
+    bool is_first_workday_of_month(string str) {
+       long ts = 0;
+       if(!str_to_ts(str, ts))
+          return false;
+       return is_first_workday_of_month(ts);
+    }
+
+    /// \brief Parse ISO8601 string and check for the first workday of the month using millisecond precision.
+    /// \param str ISO8601 formatted string.
+    /// \return true when the parsed timestamp is the first workday of its month.
+    bool is_first_workday_of_month_ms(string str) {
+       long ts = 0;
+       if(!str_to_ts_ms(str, ts))
+          return false;
+       return is_first_workday_of_month_ms(ts);
+    }
+
+    /// \brief Parse ISO8601 string and check if it falls within the first N workdays of the month using second precision.
+    /// \param str ISO8601 formatted string.
+    /// \param count Number of leading workdays to test.
+    /// \return true when the parsed timestamp is within the requested range.
+    bool is_within_first_workdays_of_month(string str, int count) {
+       long ts = 0;
+       if(!str_to_ts(str, ts))
+          return false;
+       return is_within_first_workdays_of_month(ts, count);
+    }
+
+    /// \brief Parse ISO8601 string and check if it falls within the first N workdays of the month using millisecond precision.
+    /// \param str ISO8601 formatted string.
+    /// \param count Number of leading workdays to test.
+    /// \return true when the parsed timestamp is within the requested range.
+    bool is_within_first_workdays_of_month_ms(string str, int count) {
+       long ts = 0;
+       if(!str_to_ts_ms(str, ts))
+          return false;
+       return is_within_first_workdays_of_month_ms(ts, count);
+    }
+
+    /// \brief Parse ISO8601 string and check for the last workday of the month using second precision.
+    /// \param str ISO8601 formatted string.
+    /// \return true when the parsed timestamp is the last workday of its month.
+    bool is_last_workday_of_month(string str) {
+       long ts = 0;
+       if(!str_to_ts(str, ts))
+          return false;
+       return is_last_workday_of_month(ts);
+    }
+
+    /// \brief Parse ISO8601 string and check for the last workday of the month using millisecond precision.
+    /// \param str ISO8601 formatted string.
+    /// \return true when the parsed timestamp is the last workday of its month.
+    bool is_last_workday_of_month_ms(string str) {
+       long ts = 0;
+       if(!str_to_ts_ms(str, ts))
+          return false;
+       return is_last_workday_of_month_ms(ts);
+    }
+
+    /// \brief Parse ISO8601 string and check if it falls within the last N workdays of the month using second precision.
+    /// \param str ISO8601 formatted string.
+    /// \param count Number of trailing workdays to test.
+    /// \return true when the parsed timestamp is within the requested range.
+    bool is_within_last_workdays_of_month(string str, int count) {
+       long ts = 0;
+       if(!str_to_ts(str, ts))
+          return false;
+       return is_within_last_workdays_of_month(ts, count);
+    }
+
+    /// \brief Parse ISO8601 string and check if it falls within the last N workdays of the month using millisecond precision.
+    /// \param str ISO8601 formatted string.
+    /// \param count Number of trailing workdays to test.
+    /// \return true when the parsed timestamp is within the requested range.
+    bool is_within_last_workdays_of_month_ms(string str, int count) {
+       long ts = 0;
+       if(!str_to_ts_ms(str, ts))
+          return false;
+       return is_within_last_workdays_of_month_ms(ts, count);
+    }
+
     /// \brief Convert an ISO8601 string to a floating-point timestamp (fts_t).
     /// \param str The ISO8601 string.
     /// \param ts The floating-point timestamp to be filled.

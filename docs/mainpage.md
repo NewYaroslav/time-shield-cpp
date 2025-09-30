@@ -103,6 +103,21 @@ bool saturday = is_workday("2024-03-16T10:00:00Z");
 bool invalid = is_workday("not-a-date");
 \endcode
 
+Locate the first and last trading days for a month and constrain schedules to the opening or closing workdays:
+
+\code{.cpp}
+using namespace time_shield;
+
+ts_t june28 = to_timestamp(2024, 6, 28);
+bool is_last = is_last_workday_of_month(june28);                 // true (Friday before a weekend)
+bool in_last_two = is_within_last_workdays_of_month(june28, 2);  // true for the final two workdays
+bool in_first_two = is_within_first_workdays_of_month(june28, 2);// false, trailing end of month
+
+bool first_from_str = is_first_workday_of_month("2024-09-02T09:00:00Z");
+bool window_from_str = is_within_first_workdays_of_month_ms(
+    "2024-09-03T09:00:00.250Z", 2);
+\endcode
+
 The string overloads recognise the same ISO8601 formats handled by \ref time_shield::str_to_ts "str_to_ts" and \ref time_shield::str_to_ts_ms "str_to_ts_ms".
 
 \section install_sec Installation

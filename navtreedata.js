@@ -79,11 +79,11 @@ var NAVTREEINDEX =
 [
 "CpuTickTimer_8hpp.html",
 "classtime__shield_1_1TimerScheduler.html#a6a5c056fa5f5a4ad905ac9c4a684e392",
-"group__time__conversions.html#ga0488891231e9a9368cc8fa4075b36f01",
-"group__time__conversions.html#ga847e5faa3ebe0a1ab699ff52076c9359",
-"group__time__conversions.html#gafe7d94c0faf514ea035cb36975c63d55",
-"group__time__formatting.html#gaff38dd66a70833ed8d7b446a657a756d",
-"structtime__shield_1_1NtpClient_1_1ntp__packet.html"
+"group__time__conversions.html#ga03e3572af8e802213ec3c2dd67e79a05",
+"group__time__conversions.html#ga75daec8feedfc81adf6d9992e44fe53e",
+"group__time__conversions.html#gaf1eca4382dbf770b3414804c00f400e5",
+"group__time__formatting.html#ga4a6b63c0e43287ec4ca4df414dd7cd1d",
+"namespacemembers_func_y.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

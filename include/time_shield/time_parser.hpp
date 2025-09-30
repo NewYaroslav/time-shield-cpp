@@ -293,6 +293,98 @@ namespace time_shield {
         return is_workday_ms(str);
     }
 
+    /// \brief Parse an ISO8601 string and check if it is the first workday of its month.
+    /// \param str ISO8601 formatted string.
+    /// \return true if parsing succeeds and the timestamp corresponds to the first workday of the month, false otherwise.
+    inline bool is_first_workday_of_month(const std::string& str) {
+        ts_t ts = 0;
+        if (!str_to_ts(str, ts)) {
+            return false;
+        }
+        return is_first_workday_of_month(ts);
+    }
+
+    /// \brief Parse an ISO8601 string and check if it is the first workday of its month (millisecond precision).
+    /// \param str ISO8601 formatted string.
+    /// \return true if parsing succeeds and the timestamp corresponds to the first workday of the month, false otherwise.
+    inline bool is_first_workday_of_month_ms(const std::string& str) {
+        ts_ms_t ts = 0;
+        if (!str_to_ts_ms(str, ts)) {
+            return false;
+        }
+        return is_first_workday_of_month_ms(ts);
+    }
+
+    /// \brief Parse an ISO8601 string and check if it falls within the first N workdays of its month.
+    /// \param str ISO8601 formatted string.
+    /// \param count Number of leading workdays to test against.
+    /// \return true if parsing succeeds and the timestamp corresponds to a workday ranked within the first N positions, false otherwise.
+    inline bool is_within_first_workdays_of_month(const std::string& str, int count) {
+        ts_t ts = 0;
+        if (!str_to_ts(str, ts)) {
+            return false;
+        }
+        return is_within_first_workdays_of_month(ts, count);
+    }
+
+    /// \brief Parse an ISO8601 string and check if it falls within the first N workdays of its month (millisecond precision).
+    /// \param str ISO8601 formatted string.
+    /// \param count Number of leading workdays to test against.
+    /// \return true if parsing succeeds and the timestamp corresponds to a workday ranked within the first N positions, false otherwise.
+    inline bool is_within_first_workdays_of_month_ms(const std::string& str, int count) {
+        ts_ms_t ts = 0;
+        if (!str_to_ts_ms(str, ts)) {
+            return false;
+        }
+        return is_within_first_workdays_of_month_ms(ts, count);
+    }
+
+    /// \brief Parse an ISO8601 string and check if it is the last workday of its month.
+    /// \param str ISO8601 formatted string.
+    /// \return true if parsing succeeds and the timestamp corresponds to the last workday of the month, false otherwise.
+    inline bool is_last_workday_of_month(const std::string& str) {
+        ts_t ts = 0;
+        if (!str_to_ts(str, ts)) {
+            return false;
+        }
+        return is_last_workday_of_month(ts);
+    }
+
+    /// \brief Parse an ISO8601 string and check if it is the last workday of its month (millisecond precision).
+    /// \param str ISO8601 formatted string.
+    /// \return true if parsing succeeds and the timestamp corresponds to the last workday of the month, false otherwise.
+    inline bool is_last_workday_of_month_ms(const std::string& str) {
+        ts_ms_t ts = 0;
+        if (!str_to_ts_ms(str, ts)) {
+            return false;
+        }
+        return is_last_workday_of_month_ms(ts);
+    }
+
+    /// \brief Parse an ISO8601 string and check if it falls within the last N workdays of its month.
+    /// \param str ISO8601 formatted string.
+    /// \param count Number of trailing workdays to test against.
+    /// \return true if parsing succeeds and the timestamp corresponds to a workday ranked within the final N positions, false otherwise.
+    inline bool is_within_last_workdays_of_month(const std::string& str, int count) {
+        ts_t ts = 0;
+        if (!str_to_ts(str, ts)) {
+            return false;
+        }
+        return is_within_last_workdays_of_month(ts, count);
+    }
+
+    /// \brief Parse an ISO8601 string and check if it falls within the last N workdays of its month (millisecond precision).
+    /// \param str ISO8601 formatted string.
+    /// \param count Number of trailing workdays to test against.
+    /// \return true if parsing succeeds and the timestamp corresponds to a workday ranked within the final N positions, false otherwise.
+    inline bool is_within_last_workdays_of_month_ms(const std::string& str, int count) {
+        ts_ms_t ts = 0;
+        if (!str_to_ts_ms(str, ts)) {
+            return false;
+        }
+        return is_within_last_workdays_of_month_ms(ts, count);
+    }
+
     /// \brief Convert an ISO8601 string to a floating-point timestamp (fts_t).
     /// \details This function parses a string in ISO8601 format and converts it to a floating-point timestamp.
     /// \param str The ISO8601 string.

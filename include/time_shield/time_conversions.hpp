@@ -1417,6 +1417,235 @@ namespace time_shield {
 
 //------------------------------------------------------------------------------
 
+    /// \brief Compute the calendar day number of the first workday in a month.
+    /// \param year Year component of the month to analyse.
+    /// \param month Month component (1-12).
+    /// \return Day of month for the first workday, or 0 when the month has no workdays.
+    TIME_SHIELD_CONSTEXPR inline int first_workday_day(year_t year, int month) noexcept {
+        const int days = num_days_in_month(year, month);
+        if (days <= 0) {
+            return 0;
+        }
+        for (int day = 1; day <= days; ++day) {
+            if (is_workday(year, month, day)) {
+                return day;
+            }
+        }
+        return 0;
+    }
+
+    /// \brief Compute the calendar day number of the last workday in a month.
+    /// \param year Year component of the month to analyse.
+    /// \param month Month component (1-12).
+    /// \return Day of month for the last workday, or 0 when the month has no workdays.
+    TIME_SHIELD_CONSTEXPR inline int last_workday_day(year_t year, int month) noexcept {
+        const int days = num_days_in_month(year, month);
+        if (days <= 0) {
+            return 0;
+        }
+        for (int day = days; day >= 1; --day) {
+            if (is_workday(year, month, day)) {
+                return day;
+            }
+        }
+        return 0;
+    }
+
+    /// \brief Count the number of workdays contained within a month.
+    /// \param year Year component of the month to analyse.
+    /// \param month Month component (1-12).
+    /// \return Total workdays in the given month.
+    TIME_SHIELD_CONSTEXPR inline int count_workdays_in_month(year_t year, int month) noexcept {
+        const int days = num_days_in_month(year, month);
+        if (days <= 0) {
+            return 0;
+        }
+        int total = 0;
+        for (int day = 1; day <= days; ++day) {
+            if (is_workday(year, month, day)) {
+                ++total;
+            }
+        }
+        return total;
+    }
+
+    /// \brief Determine the 1-based index of a workday within its month.
+    /// \param year Year component of the date to analyse.
+    /// \param month Month component (1-12).
+    /// \param day Day component of the workday.
+    /// \return 1-based index for the workday or 0 if the date is not a workday.
+    TIME_SHIELD_CONSTEXPR inline int workday_index_in_month(year_t year, int month, int day) noexcept {
+        if (!is_workday(year, month, day)) {
+            return 0;
+        }
+        const int days = num_days_in_month(year, month);
+        if (days <= 0) {
+            return 0;
+        }
+        int index = 0;
+        for (int current = 1; current <= days; ++current) {
+            if (is_workday(year, month, current)) {
+                ++index;
+                if (current == day) {
+                    return index;
+                }
+            }
+        }
+        return 0;
+    }
+
+//------------------------------------------------------------------------------
+
+    /// \brief Check whether a date is the first workday of its month.
+    /// \param year Year component of the date.
+    /// \param month Month component of the date.
+    /// \param day Day component of the date.
+    /// \return true if the date is a valid workday and the first workday of the month, false otherwise.
+    TIME_SHIELD_CONSTEXPR inline bool is_first_workday_of_month(year_t year, int month, int day) noexcept {
+        return is_workday(year, month, day) && first_workday_day(year, month) == day;
+    }
+
+//------------------------------------------------------------------------------
+
+    /// \brief Check whether a date is within the first N workdays of its month.
+    /// \param year Year component of the date.
+    /// \param month Month component of the date.
+    /// \param day Day component of the date.
+    /// \param count Number of leading workdays to test against.
+    /// \return true if the workday rank is within the requested range, false otherwise.
+    TIME_SHIELD_CONSTEXPR inline bool is_within_first_workdays_of_month(year_t year, int month, int day, int count) noexcept {
+        if (count <= 0) {
+            return false;
+        }
+        const int total = count_workdays_in_month(year, month);
+        if (count > total) {
+            return false;
+        }
+        const int index = workday_index_in_month(year, month, day);
+        return index > 0 && index <= count;
+    }
+
+//------------------------------------------------------------------------------
+
+    /// \brief Check whether a date is the last workday of its month.
+    /// \param year Year component of the date.
+    /// \param month Month component of the date.
+    /// \param day Day component of the date.
+    /// \return true if the date is a valid workday and the last workday of the month, false otherwise.
+    TIME_SHIELD_CONSTEXPR inline bool is_last_workday_of_month(year_t year, int month, int day) noexcept {
+        return is_workday(year, month, day) && last_workday_day(year, month) == day;
+    }
+
+//------------------------------------------------------------------------------
+
+    /// \brief Check whether a date is within the last N workdays of its month.
+    /// \param year Year component of the date.
+    /// \param month Month component of the date.
+    /// \param day Day component of the date.
+    /// \param count Number of trailing workdays to test against.
+    /// \return true if the workday rank from the end is within the requested range, false otherwise.
+    TIME_SHIELD_CONSTEXPR inline bool is_within_last_workdays_of_month(year_t year, int month, int day, int count) noexcept {
+        if (count <= 0) {
+            return false;
+        }
+        const int total = count_workdays_in_month(year, month);
+        if (count > total) {
+            return false;
+        }
+        const int index = workday_index_in_month(year, month, day);
+        return index > 0 && index >= (total - count + 1);
+    }
+
+//------------------------------------------------------------------------------
+
+    /// \brief Check whether a timestamp in seconds falls on the first workday of its month.
+    /// \param ts Timestamp in seconds.
+    /// \return true if the timestamp corresponds to the first workday of the month, false otherwise.
+    TIME_SHIELD_CONSTEXPR inline bool is_first_workday_of_month(ts_t ts) noexcept {
+        const year_t year = get_year(ts);
+        const int month = month_of_year(ts);
+        const int day = day_of_month(ts);
+        return is_first_workday_of_month(year, month, day);
+    }
+
+//------------------------------------------------------------------------------
+
+    /// \brief Check whether a timestamp in seconds falls within the first N workdays of its month.
+    /// \param ts Timestamp in seconds.
+    /// \param count Number of leading workdays to test against.
+    /// \return true if the timestamp corresponds to a workday ranked within the first N positions, false otherwise.
+    TIME_SHIELD_CONSTEXPR inline bool is_within_first_workdays_of_month(ts_t ts, int count) noexcept {
+        const year_t year = get_year(ts);
+        const int month = month_of_year(ts);
+        const int day = day_of_month(ts);
+        return is_within_first_workdays_of_month(year, month, day, count);
+    }
+
+//------------------------------------------------------------------------------
+
+    /// \brief Check whether a timestamp in seconds falls on the last workday of its month.
+    /// \param ts Timestamp in seconds.
+    /// \return true if the timestamp corresponds to the last workday of the month, false otherwise.
+    TIME_SHIELD_CONSTEXPR inline bool is_last_workday_of_month(ts_t ts) noexcept {
+        const year_t year = get_year(ts);
+        const int month = month_of_year(ts);
+        const int day = day_of_month(ts);
+        return is_last_workday_of_month(year, month, day);
+    }
+
+//------------------------------------------------------------------------------
+
+    /// \brief Check whether a timestamp in seconds falls within the last N workdays of its month.
+    /// \param ts Timestamp in seconds.
+    /// \param count Number of trailing workdays to test against.
+    /// \return true if the timestamp corresponds to a workday ranked within the final N positions, false otherwise.
+    TIME_SHIELD_CONSTEXPR inline bool is_within_last_workdays_of_month(ts_t ts, int count) noexcept {
+        const year_t year = get_year(ts);
+        const int month = month_of_year(ts);
+        const int day = day_of_month(ts);
+        return is_within_last_workdays_of_month(year, month, day, count);
+    }
+
+//------------------------------------------------------------------------------
+
+    /// \brief Check whether a timestamp in milliseconds falls on the first workday of its month.
+    /// \param ts_ms Timestamp in milliseconds.
+    /// \return true if the timestamp corresponds to the first workday of the month, false otherwise.
+    TIME_SHIELD_CONSTEXPR inline bool is_first_workday_of_month_ms(ts_ms_t ts_ms) noexcept {
+        return is_first_workday_of_month(ms_to_sec(ts_ms));
+    }
+
+//------------------------------------------------------------------------------
+
+    /// \brief Check whether a timestamp in milliseconds falls within the first N workdays of its month.
+    /// \param ts_ms Timestamp in milliseconds.
+    /// \param count Number of leading workdays to test against.
+    /// \return true if the timestamp corresponds to a workday ranked within the first N positions, false otherwise.
+    TIME_SHIELD_CONSTEXPR inline bool is_within_first_workdays_of_month_ms(ts_ms_t ts_ms, int count) noexcept {
+        return is_within_first_workdays_of_month(ms_to_sec(ts_ms), count);
+    }
+
+//------------------------------------------------------------------------------
+
+    /// \brief Check whether a timestamp in milliseconds falls on the last workday of its month.
+    /// \param ts_ms Timestamp in milliseconds.
+    /// \return true if the timestamp corresponds to the last workday of the month, false otherwise.
+    TIME_SHIELD_CONSTEXPR inline bool is_last_workday_of_month_ms(ts_ms_t ts_ms) noexcept {
+        return is_last_workday_of_month(ms_to_sec(ts_ms));
+    }
+
+//------------------------------------------------------------------------------
+
+    /// \brief Check whether a timestamp in milliseconds falls within the last N workdays of its month.
+    /// \param ts_ms Timestamp in milliseconds.
+    /// \param count Number of trailing workdays to test against.
+    /// \return true if the timestamp corresponds to a workday ranked within the final N positions, false otherwise.
+    TIME_SHIELD_CONSTEXPR inline bool is_within_last_workdays_of_month_ms(ts_ms_t ts_ms, int count) noexcept {
+        return is_within_last_workdays_of_month(ms_to_sec(ts_ms), count);
+    }
+
+//------------------------------------------------------------------------------
+
     /// \brief Get the number of days in a given year.
     ///
     /// This function calculates and returns the number of days in the specified year.

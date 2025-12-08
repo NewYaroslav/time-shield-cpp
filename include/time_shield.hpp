@@ -5,10 +5,12 @@
 
 /// \file time_shield.hpp
 /// \brief Main header file for the Time Shield library.
+/// \details
+/// Includes all public headers of the Time Shield library, so the entire API
+/// can be used via a single include directive.
 ///
-/// This header file includes all the components of the Time Shield library,
-/// making it easy to include the entire library in your projects with a single
-/// include directive.
+/// \note This header is intended for convenience. If you care about compile time,
+///       include only the specific headers you need.
 
 #include "time_shield/config.hpp"                  ///< Configuration settings for the Time Shield library.
 #include "time_shield/types.hpp"                   ///< Type definitions used throughout the library.
@@ -23,10 +25,11 @@
 #include "time_shield/time_conversions.hpp"        ///< Functions for converting between different time representations.
 #include "time_shield/time_conversion_aliases.hpp" ///< Convenient conversion aliases.
 #include "time_shield/time_zone_conversions.hpp"   ///< Functions for converting between time zones.
+#include "time_shield/time_zone_offset.hpp"        ///< UTC offset arithmetic helpers (UTC <-> local) and offset extraction.
 #include "time_shield/time_formatting.hpp"         ///< Functions for formatting time in various standard formats.
 #include "time_shield/time_parser.hpp"             ///< Functions for parsing time in various standard formats.
 #if TIME_SHIELD_ENABLE_NTP_CLIENT
-#   include "time_shield/ntp_client.hpp"              ///< NTP client for time offset queries.
+#   include "time_shield/ntp_client.hpp"           ///< NTP client for time offset queries.
 #endif
 #include "time_shield/initialization.hpp"          ///< Library initialization helpers.
 #include "time_shield/TimerScheduler.hpp"          ///< Timer scheduler utilities.
@@ -43,9 +46,15 @@ namespace tshield = time_shield;
 
 /// \namespace time_shield
 /// \brief Main namespace for the Time Shield library.
-///
-/// The time_shield namespace contains all the core components and functions of the Time Shield library.
-/// It includes various utilities for working with time and dates, their formatting, conversion, and validation.
+/// \details
+/// Contains all public types, constants, and functions of the library.
+/// The API provides:
+/// - time and date structures
+/// - parsing and formatting
+/// - conversions between representations (seconds/milliseconds, calendar fields, etc.)
+/// - timezone utilities (named zones, UTC offsets)
+/// - validation helpers
+/// - timers and scheduling utilities
 namespace time_shield {};
 
 #endif // _TIME_SHIELD_HPP_INCLUDED

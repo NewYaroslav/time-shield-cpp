@@ -9,6 +9,7 @@
 /// This file contains functions for converting between different time representations
 /// and performing various time-related calculations.
 
+#include "config.hpp"
 #include "enums.hpp"
 #include "validation.hpp"
 #include "time_utils.hpp"
@@ -1815,6 +1816,194 @@ namespace time_shield {
     /// \return Timestamp at the end of the day in milliseconds.
     constexpr ts_ms_t end_of_day_ms(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
         return ts_ms - (ts_ms % MS_PER_DAY) + MS_PER_DAY - 1;
+    }
+    
+//------------------------------------------------------------------------------
+
+    /// \brief Start of the first workday of a month (seconds).
+    /// \details Uses first_workday_day(year, month) to find the first workday day-of-month.
+    ///          The definition of "workday" depends on first_workday_day().
+    /// \note The returned timestamp is in the same calendar/time basis as to_timestamp().
+    /// \param year Year.
+    /// \param month Month index (expected 1..12).
+    /// \return Timestamp (seconds) at 00:00:00 of the first workday of the month.
+    ///         Returns ERROR_TIMESTAMP if the first workday cannot be determined.
+    TIME_SHIELD_CONSTEXPR inline ts_t start_of_first_workday_month(year_t year, int month) noexcept {
+        const int day = first_workday_day(year, month);
+        if (day <= 0) {
+            return ERROR_TIMESTAMP;
+        }
+        // to_timestamp(year, month, day) is expected to represent 00:00:00 of that date.
+        return to_timestamp(year, month, day);
+    }
+
+    /// \brief Start of the first workday of a month (milliseconds).
+    /// \param year Year.
+    /// \param month Month index (expected 1..12).
+    /// \return Timestamp (milliseconds) at 00:00:00.000 of the first workday.
+    ///         Returns ERROR_TIMESTAMP if the first workday cannot be determined.
+    TIME_SHIELD_CONSTEXPR inline ts_ms_t start_of_first_workday_month_ms(year_t year, int month) noexcept {
+        const int day = first_workday_day(year, month);
+        if (day <= 0) {
+            return ERROR_TIMESTAMP;
+        }
+        const ts_t day_start = to_timestamp(year, month, day);
+        return sec_to_ms(day_start);
+    }
+
+    /// \brief Start of the first workday of the month for the month containing \p ts (seconds).
+    /// \param ts Timestamp in seconds. Defaults to current time_shield::ts().
+    /// \return Timestamp at 00:00:00 of the first workday of that month.
+    ///         Returns ERROR_TIMESTAMP if the first workday cannot be determined.
+    TIME_SHIELD_CONSTEXPR inline ts_t start_of_first_workday_month(ts_t ts = time_shield::ts()) noexcept {
+        return start_of_first_workday_month(get_year(ts), month_of_year<int>(ts));
+    }
+
+    /// \brief Start of the first workday of the month for the month containing \p ts_ms (milliseconds).
+    /// \param ts_ms Timestamp in milliseconds. Defaults to current time_shield::ts_ms().
+    /// \return Timestamp at 00:00:00.000 of the first workday of that month.
+    ///         Returns ERROR_TIMESTAMP if the first workday cannot be determined.
+    TIME_SHIELD_CONSTEXPR inline ts_ms_t start_of_first_workday_month_ms(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
+        return start_of_first_workday_month_ms(get_year_ms(ts_ms), month_of_year<int>(ms_to_sec(ts_ms)));
+    }
+    
+//------------------------------------------------------------------------------
+
+    /// \brief End of the first workday of a month (seconds).
+    /// \param year Year.
+    /// \param month Month index (expected 1..12).
+    /// \return Timestamp (seconds) at 23:59:59 of the first workday.
+    ///         Returns ERROR_TIMESTAMP if the first workday cannot be determined.
+    TIME_SHIELD_CONSTEXPR inline ts_t end_of_first_workday_month(year_t year, int month) noexcept {
+        const int day = first_workday_day(year, month);
+        if (day <= 0) {
+            return ERROR_TIMESTAMP;
+        }
+        const ts_t day_start = to_timestamp(year, month, day);
+        return end_of_day(day_start);
+    }
+
+    /// \brief End of the first workday of a month (milliseconds).
+    /// \param year Year.
+    /// \param month Month index (expected 1..12).
+    /// \return Timestamp (milliseconds) at 23:59:59.999 of the first workday.
+    ///         Returns ERROR_TIMESTAMP if the first workday cannot be determined.
+    TIME_SHIELD_CONSTEXPR inline ts_ms_t end_of_first_workday_month_ms(year_t year, int month) noexcept {
+        const int day = first_workday_day(year, month);
+        if (day <= 0) {
+            return ERROR_TIMESTAMP;
+        }
+        const ts_t day_start = to_timestamp(year, month, day);
+        const ts_ms_t day_start_ms = sec_to_ms(day_start);
+        return end_of_day_ms(day_start_ms);
+    }
+
+    /// \brief End of the first workday of the month for the month containing \p ts (seconds).
+    /// \param ts Timestamp in seconds. Defaults to current time_shield::ts().
+    /// \return Timestamp at 23:59:59 of the first workday of that month.
+    ///         Returns ERROR_TIMESTAMP if the first workday cannot be determined.
+    TIME_SHIELD_CONSTEXPR inline ts_t end_of_first_workday_month(ts_t ts = time_shield::ts()) noexcept {
+        return end_of_first_workday_month(get_year(ts), month_of_year<int>(ts));
+    }
+
+    /// \brief End of the first workday of the month for the month containing \p ts_ms (milliseconds).
+    /// \param ts_ms Timestamp in milliseconds. Defaults to current time_shield::ts_ms().
+    /// \return Timestamp at 23:59:59.999 of the first workday of that month.
+    ///         Returns ERROR_TIMESTAMP if the first workday cannot be determined.
+    TIME_SHIELD_CONSTEXPR inline ts_ms_t end_of_first_workday_month_ms(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
+        return end_of_first_workday_month_ms(get_year_ms(ts_ms), month_of_year<int>(ms_to_sec(ts_ms)));
+    }
+    
+//------------------------------------------------------------------------------
+
+    /// \brief Start of the last workday of a month (seconds).
+    /// \param year Year.
+    /// \param month Month index (expected 1..12).
+    /// \return Timestamp (seconds) at 00:00:00 of the last workday of the month.
+    ///         Returns ERROR_TIMESTAMP if the last workday cannot be determined.
+    TIME_SHIELD_CONSTEXPR inline ts_t start_of_last_workday_month(year_t year, int month) noexcept {
+        const int day = last_workday_day(year, month);
+        if (day <= 0) {
+            return ERROR_TIMESTAMP;
+        }
+        return to_timestamp(year, month, day);
+    }
+
+    /// \brief Start of the last workday of a month (milliseconds).
+    /// \param year Year.
+    /// \param month Month index (expected 1..12).
+    /// \return Timestamp (milliseconds) at 00:00:00.000 of the last workday.
+    ///         Returns ERROR_TIMESTAMP if the last workday cannot be determined.
+    TIME_SHIELD_CONSTEXPR inline ts_ms_t start_of_last_workday_month_ms(year_t year, int month) noexcept {
+        const int day = last_workday_day(year, month);
+        if (day <= 0) {
+            return ERROR_TIMESTAMP;
+        }
+        const ts_t day_start = to_timestamp(year, month, day);
+        return sec_to_ms(day_start);
+    }
+
+    /// \brief Start of the last workday of the month for the month containing \p ts (seconds).
+    /// \param ts Timestamp in seconds. Defaults to current time_shield::ts().
+    /// \return Timestamp at 00:00:00 of the last workday of that month.
+    ///         Returns ERROR_TIMESTAMP if the last workday cannot be determined.
+    TIME_SHIELD_CONSTEXPR inline ts_t start_of_last_workday_month(ts_t ts = time_shield::ts()) noexcept {
+        return start_of_last_workday_month(get_year(ts), month_of_year<int>(ts));
+    }
+
+    /// \brief Start of the last workday of the month for the month containing \p ts_ms (milliseconds).
+    /// \param ts_ms Timestamp in milliseconds. Defaults to current time_shield::ts_ms().
+    /// \return Timestamp at 00:00:00.000 of the last workday of that month.
+    ///         Returns ERROR_TIMESTAMP if the last workday cannot be determined.
+    TIME_SHIELD_CONSTEXPR inline ts_ms_t start_of_last_workday_month_ms(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
+        return start_of_last_workday_month_ms(get_year_ms(ts_ms), month_of_year<int>(ms_to_sec(ts_ms)));
+    }
+    
+//------------------------------------------------------------------------------
+
+    /// \brief End of the last workday of a month (seconds).
+    /// \param year Year.
+    /// \param month Month index (expected 1..12).
+    /// \return Timestamp (seconds) at 23:59:59 of the last workday.
+    ///         Returns ERROR_TIMESTAMP if the last workday cannot be determined.
+    TIME_SHIELD_CONSTEXPR inline ts_t end_of_last_workday_month(year_t year, int month) noexcept {
+        const int day = last_workday_day(year, month);
+        if (day <= 0) {
+            return ERROR_TIMESTAMP;
+        }
+        const ts_t day_start = to_timestamp(year, month, day);
+        return end_of_day(day_start);
+    }
+
+    /// \brief End of the last workday of a month (milliseconds).
+    /// \param year Year.
+    /// \param month Month index (expected 1..12).
+    /// \return Timestamp (milliseconds) at 23:59:59.999 of the last workday.
+    ///         Returns ERROR_TIMESTAMP if the last workday cannot be determined.
+    TIME_SHIELD_CONSTEXPR inline ts_ms_t end_of_last_workday_month_ms(year_t year, int month) noexcept {
+        const int day = last_workday_day(year, month);
+        if (day <= 0) {
+            return ERROR_TIMESTAMP;
+        }
+        const ts_t day_start = to_timestamp(year, month, day);
+        const ts_ms_t day_start_ms = sec_to_ms(day_start);
+        return end_of_day_ms(day_start_ms);
+    }
+
+    /// \brief End of the last workday of the month for the month containing \p ts (seconds).
+    /// \param ts Timestamp in seconds. Defaults to current time_shield::ts().
+    /// \return Timestamp at 23:59:59 of the last workday of that month.
+    ///         Returns ERROR_TIMESTAMP if the last workday cannot be determined.
+    TIME_SHIELD_CONSTEXPR inline ts_t end_of_last_workday_month(ts_t ts = time_shield::ts()) noexcept {
+        return end_of_last_workday_month(get_year(ts), month_of_year<int>(ts));
+    }
+
+    /// \brief End of the last workday of the month for the month containing \p ts_ms (milliseconds).
+    /// \param ts_ms Timestamp in milliseconds. Defaults to current time_shield::ts_ms().
+    /// \return Timestamp at 23:59:59.999 of the last workday of that month.
+    ///         Returns ERROR_TIMESTAMP if the last workday cannot be determined.
+    TIME_SHIELD_CONSTEXPR inline ts_ms_t end_of_last_workday_month_ms(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
+        return end_of_last_workday_month_ms(get_year_ms(ts_ms), month_of_year<int>(ms_to_sec(ts_ms)));
     }
 
 //------------------------------------------------------------------------------

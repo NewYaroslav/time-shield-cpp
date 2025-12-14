@@ -306,6 +306,86 @@ namespace time_shield {
        return is_within_last_workdays_of_month_ms(ts, count);
     }
 
+    /// \brief Parse ISO8601 string and return start of the first workday of that month in seconds.
+    /// \param str ISO8601 formatted string.
+    /// \return Timestamp at 00:00:00 of the first workday or ERROR_TIMESTAMP on failure.
+    long start_of_first_workday_month(string str) {
+       long ts = 0;
+       if(!str_to_ts(str, ts))
+          return ERROR_TIMESTAMP;
+       return start_of_first_workday_month(ts);
+    }
+
+    /// \brief Parse ISO8601 string and return start of the first workday of that month in milliseconds.
+    /// \param str ISO8601 formatted string.
+    /// \return Timestamp at 00:00:00.000 of the first workday or ERROR_TIMESTAMP on failure.
+    long start_of_first_workday_month_ms(string str) {
+       long ts = 0;
+       if(!str_to_ts_ms(str, ts))
+          return ERROR_TIMESTAMP;
+       return start_of_first_workday_month_ms(ts);
+    }
+
+    /// \brief Parse ISO8601 string and return end of the first workday of that month in seconds.
+    /// \param str ISO8601 formatted string.
+    /// \return Timestamp at 23:59:59 of the first workday or ERROR_TIMESTAMP on failure.
+    long end_of_first_workday_month(string str) {
+       long ts = 0;
+       if(!str_to_ts(str, ts))
+          return ERROR_TIMESTAMP;
+       return end_of_first_workday_month(ts);
+    }
+
+    /// \brief Parse ISO8601 string and return end of the first workday of that month in milliseconds.
+    /// \param str ISO8601 formatted string.
+    /// \return Timestamp at 23:59:59.999 of the first workday or ERROR_TIMESTAMP on failure.
+    long end_of_first_workday_month_ms(string str) {
+       long ts = 0;
+       if(!str_to_ts_ms(str, ts))
+          return ERROR_TIMESTAMP;
+       return end_of_first_workday_month_ms(ts);
+    }
+
+    /// \brief Parse ISO8601 string and return start of the last workday of that month in seconds.
+    /// \param str ISO8601 formatted string.
+    /// \return Timestamp at 00:00:00 of the last workday or ERROR_TIMESTAMP on failure.
+    long start_of_last_workday_month(string str) {
+       long ts = 0;
+       if(!str_to_ts(str, ts))
+          return ERROR_TIMESTAMP;
+       return start_of_last_workday_month(ts);
+    }
+
+    /// \brief Parse ISO8601 string and return start of the last workday of that month in milliseconds.
+    /// \param str ISO8601 formatted string.
+    /// \return Timestamp at 00:00:00.000 of the last workday or ERROR_TIMESTAMP on failure.
+    long start_of_last_workday_month_ms(string str) {
+       long ts = 0;
+       if(!str_to_ts_ms(str, ts))
+          return ERROR_TIMESTAMP;
+       return start_of_last_workday_month_ms(ts);
+    }
+
+    /// \brief Parse ISO8601 string and return end of the last workday of that month in seconds.
+    /// \param str ISO8601 formatted string.
+    /// \return Timestamp at 23:59:59 of the last workday or ERROR_TIMESTAMP on failure.
+    long end_of_last_workday_month(string str) {
+       long ts = 0;
+       if(!str_to_ts(str, ts))
+          return ERROR_TIMESTAMP;
+       return end_of_last_workday_month(ts);
+    }
+
+    /// \brief Parse ISO8601 string and return end of the last workday of that month in milliseconds.
+    /// \param str ISO8601 formatted string.
+    /// \return Timestamp at 23:59:59.999 of the last workday or ERROR_TIMESTAMP on failure.
+    long end_of_last_workday_month_ms(string str) {
+       long ts = 0;
+       if(!str_to_ts_ms(str, ts))
+          return ERROR_TIMESTAMP;
+       return end_of_last_workday_month_ms(ts);
+    }
+
     /// \brief Convert an ISO8601 string to a floating-point timestamp (fts_t).
     /// \param str The ISO8601 string.
     /// \param ts The floating-point timestamp to be filled.

@@ -10,11 +10,12 @@
 /// It provides utilities for custom formatting based on user-defined patterns
 /// and for standard date-time string representations.
 
-#include <inttypes.h>
-
+#include "config.hpp"
 #include "date_time_struct.hpp"
 #include "time_zone_struct.hpp"
 #include "time_conversions.hpp"
+
+#include <inttypes.h>
 
 namespace time_shield {
 
@@ -58,8 +59,10 @@ namespace time_shield {
                 result += std::string(buffer);
                 break;
             }
-            // %h: Equivalent to %b
+
+            // fallthrough
         case 'b':
+            // %h: Equivalent to %b
             if (repeat_count > 1) break;
             result += to_str(static_cast<Month>(dt.mon), FormatType::SHORT_NAME);
             break;
@@ -230,8 +233,10 @@ namespace time_shield {
             if (repeat_count == 3) {
                 result += std::to_string(dt.ms);
                 break;
-            }
+            } 
             // to '%ss'
+
+            // fallthrough
         case 'S':
             if (repeat_count <= 2) {
                 char buffer[4] = {0};

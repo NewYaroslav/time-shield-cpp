@@ -154,7 +154,7 @@ namespace time_shield {
     constexpr int64_t MAX_YEAR          = 292277022000LL;   ///< Maximum representable year
     constexpr int64_t MIN_YEAR          = -2967369602200LL; ///< Minimum representable year
     constexpr int64_t ERROR_YEAR        = 9223372036854770000LL; ///< Error year value
-    constexpr int64_t MAX_TIMESTAMP     = 9223371890843040000LL; ///< Maximum timestamp value
+    constexpr int64_t MAX_TIMESTAMP     = 9223371891821347199LL; ///< Maximum timestamp value
     constexpr int64_t ERROR_TIMESTAMP   = 9223372036854770000LL; ///< Error timestamp value
     constexpr double MAX_OADATE         = (std::numeric_limits<double>::max)(); ///< Maximum OLE automation date
     constexpr double AVG_DAYS_PER_YEAR  = 365.25;   ///< Average days per year

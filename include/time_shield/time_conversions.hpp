@@ -60,7 +60,7 @@ namespace time_shield {
     /// \return T Millisecond part of the timestamp.
     template<class T = int>
     constexpr T ms_of_ts(ts_ms_t ts) noexcept {
-        return ts % MS_PER_SEC;
+        return static_cast<T>(ts % MS_PER_SEC);
     }
 
 #   ifndef TIME_SHIELD_CPP17
@@ -406,7 +406,7 @@ namespace time_shield {
     /// \param ts UNIX timestamp.
     /// \return T Year corresponding to the given timestamp.
     template<class T = year_t>
-    constexpr T get_unix_year(ts_t ts) noexcept {
+    constexpr T years_since_epoch(ts_t ts) noexcept {
         // 9223372029693630000 - значение на момент 292277024400 от 2000 года
         // Такое значение приводит к неправильному вычислению умножения n_400_years * SEC_PER_400_YEARS
         // Поэтому пришлось снизить до 9223371890843040000
@@ -469,21 +469,21 @@ namespace time_shield {
         constexpr int64_t BIAS_2000 = 946684800LL;
 
         int64_t y = MAX_YEAR;
-        uint64_t secs = -((ts - BIAS_2000) - BIAS_292277022000);
+        int64_t secs = -((static_cast<int64_t>(ts) - BIAS_2000) - BIAS_292277022000);
 
-        const uint64_t n_400_years = secs / SEC_PER_400_YEARS;
+        const int64_t n_400_years = secs / SEC_PER_400_YEARS;
         secs -= n_400_years * SEC_PER_400_YEARS;
-        y -= n_400_years * 400;
+        y -= n_400_years * 400LL;
 
-        const uint64_t n_100_years = secs / SEC_PER_100_YEARS;
+        const int64_t n_100_years = secs / SEC_PER_100_YEARS;
         secs -= n_100_years * SEC_PER_100_YEARS;
-        y -= n_100_years * 100;
+        y -= n_100_years * 100LL;
 
-        const uint64_t n_4_years = secs / SEC_PER_4_YEARS;
+        const int64_t n_4_years = secs / SEC_PER_4_YEARS;
         secs -= n_4_years * SEC_PER_4_YEARS;
-        y -= n_4_years * 4;
+        y -= n_4_years * 4LL;
 
-        const uint64_t n_1_years = secs / SEC_PER_YEAR;
+        const int64_t n_1_years = secs / SEC_PER_YEAR;
         secs -= n_1_years * SEC_PER_YEAR;
         y -= n_1_years;
 
@@ -621,19 +621,19 @@ namespace time_shield {
         }
 
         int64_t secs = 0;
-        uint64_t years = (static_cast<int64_t>(MAX_YEAR) - year);
+        int64_t years = (static_cast<int64_t>(MAX_YEAR) - year);
 
-        const int64_t n_400_years = years / 400;
+        const int64_t n_400_years = years / 400LL;
         secs += n_400_years * SEC_PER_400_YEARS;
-        years -= n_400_years * 400;
+        years -= n_400_years * 400LL;
 
-        const int64_t n_100_years = years / 100;
+        const int64_t n_100_years = years / 100LL;
         secs += n_100_years * SEC_PER_100_YEARS;
-        years -= n_100_years * 100;
+        years -= n_100_years * 100LL;
 
-        const int64_t n_4_years = years / 4;
+        const int64_t n_4_years = years / 4LL;
         secs += n_4_years * SEC_PER_4_YEARS;
-        years -= n_4_years * 4;
+        years -= n_4_years * 4LL;
 
         secs += years * SEC_PER_YEAR;
 
@@ -875,8 +875,20 @@ namespace time_shield {
     /// \param ts Timestamp in seconds (default is current timestamp).
     /// \return Number of days since the UNIX epoch.
     template<class T = uday_t>
-    constexpr T get_unix_day(ts_t ts = time_shield::ts()) noexcept {
+    constexpr T days_since_epoch(ts_t ts = time_shield::ts()) noexcept {
         return ts / SEC_PER_DAY;
+    }
+    
+    /// \brief Get UNIX day from milliseconds timestamp.
+    ///
+    /// This function returns the number of days elapsed since the UNIX epoch, given a timestamp in milliseconds.
+    ///
+    /// \tparam T The return type of the function (default is unixday_t).
+    /// \param t_ms Timestamp in milliseconds (default is current timestamp in milliseconds).
+    /// \return Number of days since the UNIX epoch.
+    template<class T = uday_t>
+    constexpr T days_since_epoch_ms(ts_ms_t t_ms = time_shield::ts_ms()) noexcept {
+        return days_since_epoch<T>(ms_to_sec<ts_t>(t_ms));
     }
 
 //------------------------------------------------------------------------------
@@ -890,22 +902,8 @@ namespace time_shield {
     /// \param stop The timestamp of the end of the period.
     /// \return The number of days between start and stop.
     template<class T = int>
-    constexpr T get_days_difference(ts_t start, ts_t stop) noexcept {
+    constexpr T days_between(ts_t start, ts_t stop) noexcept {
         return (stop - start) / SEC_PER_DAY;
-    }
-
-//------------------------------------------------------------------------------
-
-    /// \brief Get UNIX day from milliseconds timestamp.
-    ///
-    /// This function returns the number of days elapsed since the UNIX epoch, given a timestamp in milliseconds.
-    ///
-    /// \tparam T The return type of the function (default is unixday_t).
-    /// \param t_ms Timestamp in milliseconds (default is current timestamp in milliseconds).
-    /// \return Number of days since the UNIX epoch.
-    template<class T = uday_t>
-    constexpr T get_unix_day_ms(ts_ms_t t_ms = time_shield::ts_ms()) noexcept {
-        return get_unix_day(ms_to_sec(t_ms));
     }
 
 //------------------------------------------------------------------------------
@@ -919,12 +917,10 @@ namespace time_shield {
     /// \param unix_day Number of days since the UNIX epoch.
     /// \return The timestamp in seconds representing the beginning of the specified UNIX day.
     template<class T = ts_t>
-    constexpr T unix_day_to_timestamp(uday_t unix_day) noexcept {
+    constexpr T unix_day_to_ts(uday_t unix_day) noexcept {
         return unix_day * SEC_PER_DAY;
     }
 
-//------------------------------------------------------------------------------
-    
     /// \brief Converts a UNIX day to a timestamp in milliseconds.
     ///
     /// Converts a number of days since the UNIX epoch (January 1, 1970) to the corresponding timestamp
@@ -934,7 +930,7 @@ namespace time_shield {
     /// \param unix_day Number of days since the UNIX epoch.
     /// \return The timestamp in milliseconds representing the beginning of the specified UNIX day.
     template<class T = ts_t>
-    constexpr T unix_day_to_timestamp_ms(uday_t unix_day) noexcept {
+    constexpr T unix_day_to_ts_ms(uday_t unix_day) noexcept {
         return unix_day * MS_PER_DAY;
     }
 
@@ -1002,7 +998,7 @@ namespace time_shield {
     /// \param ts Timestamp in seconds (default is current timestamp).
     /// \return Number of minutes since the UNIX epoch.
     template<class T = int64_t>
-    constexpr T get_unix_min(ts_t ts = time_shield::ts()) {
+    constexpr T min_since_epoch(ts_t ts = time_shield::ts()) {
         return ts / SEC_PER_MIN;
     }
 
@@ -1029,7 +1025,7 @@ namespace time_shield {
     /// \return Second of the day.
     template<class T = int>
     constexpr T sec_of_day_ms(ts_ms_t ts_ms) noexcept {
-        return sec_of_day(ms_to_sec(ts_ms));
+        return sec_of_day(ms_to_sec<ts_t>(ts_ms));
     }
 
     /// \brief Get the second of the day.
@@ -1047,7 +1043,9 @@ namespace time_shield {
             T2 hour,
             T2 min,
             T2 sec) noexcept {
-        return hour * SEC_PER_HOUR + min * SEC_PER_MIN + sec;
+        return static_cast<T1>(hour) * static_cast<T1>(SEC_PER_HOUR) + 
+               static_cast<T1>(min)  * static_cast<T1>(SEC_PER_MIN)  + 
+               static_cast<T1>(sec);
     }
 
     /// \brief Get the second of the minute.
@@ -1084,8 +1082,8 @@ namespace time_shield {
     /// \param ts Timestamp in seconds (default is current timestamp).
     /// \return Year of the specified timestamp.
     template<class T = year_t>
-    TIME_SHIELD_CONSTEXPR inline T get_year(ts_t ts = time_shield::ts()) {
-        return get_unix_year(ts) + UNIX_EPOCH;
+    TIME_SHIELD_CONSTEXPR inline T year_of(ts_t ts = time_shield::ts()) {
+        return years_since_epoch<T>(ts) + static_cast<T>(UNIX_EPOCH);
     }
 
 //------------------------------------------------------------------------------
@@ -1098,8 +1096,8 @@ namespace time_shield {
     /// \param ts_ms Timestamp in milliseconds (default is current timestamp).
     /// \return Year of the specified timestamp.
     template<class T = year_t>
-    TIME_SHIELD_CONSTEXPR inline T get_year_ms(ts_ms_t ts_ms = time_shield::ts_ms()) {
-        return get_year(ms_to_sec(ts_ms));
+    TIME_SHIELD_CONSTEXPR inline T year_of_ms(ts_ms_t ts_ms = time_shield::ts_ms()) {
+        return year_of<T>(ms_to_sec<ts_t>(ts_ms));
     }
 
 //------------------------------------------------------------------------------
@@ -1175,7 +1173,7 @@ namespace time_shield {
     /// \param ts_ms Timestamp in milliseconds.
     /// \return Start of year timestamp in milliseconds.
     TIME_SHIELD_CONSTEXPR inline ts_ms_t start_of_year_ms(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
-        return sec_to_ms(start_of_year(ms_to_sec(ts_ms)));
+        return sec_to_ms(start_of_year(ms_to_sec<ts_t>(ts_ms)));
     }
 
 //------------------------------------------------------------------------------
@@ -1297,7 +1295,7 @@ namespace time_shield {
     /// \return End-of-year timestamp in milliseconds.
     template<class T = year_t>
     TIME_SHIELD_CONSTEXPR inline ts_ms_t end_of_year_ms(ts_ms_t ts_ms = time_shield::ts_ms()) {
-        return sec_to_ms(end_of_year(ms_to_sec(ts_ms)));
+        return sec_to_ms(end_of_year(ms_to_sec<ts_t>(ts_ms)));
     }
 
 //------------------------------------------------------------------------------
@@ -1339,7 +1337,7 @@ namespace time_shield {
             11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,
             12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,
         };
-        const size_t dy = day_of_year(ts);
+        const size_t dy = day_of_year<size_t>(ts);
         return static_cast<T>((is_leap_year(ts) && dy >= JAN_AND_FEB_DAY_LEAP_YEAR) ? TABLE_MONTH_OF_YEAR[dy - 1] : TABLE_MONTH_OF_YEAR[dy]);
     }
 
@@ -1370,7 +1368,7 @@ namespace time_shield {
             1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,
             1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,
         };
-        const size_t dy = day_of_year(ts);
+        const size_t dy = day_of_year<size_t>(ts);
         if(is_leap_year(ts)) {
             if(dy == JAN_AND_FEB_DAY_LEAP_YEAR) return TABLE_DAY_OF_YEAR[dy - 1] + 1;
             if(dy > JAN_AND_FEB_DAY_LEAP_YEAR) return TABLE_DAY_OF_YEAR[dy - 1];
@@ -1409,7 +1407,7 @@ namespace time_shield {
     template<class T1 = int>
     TIME_SHIELD_CONSTEXPR T1 num_days_in_month_ts(ts_t ts = time_shield::ts()) noexcept {
         constexpr T1 num_days[13] = {0,31,28,31,30,31,30,31,31,30,31,30,31};
-        const int month = month_of_year(ts);
+        const int month = month_of_year<int>(ts);
         if (month == FEB) {
             return is_leap_year(ts) ? 29 : 28;
         }
@@ -1563,10 +1561,7 @@ namespace time_shield {
     /// \param ts Timestamp in seconds.
     /// \return true if the timestamp corresponds to the first workday of the month, false otherwise.
     TIME_SHIELD_CONSTEXPR inline bool is_first_workday_of_month(ts_t ts) noexcept {
-        const year_t year = get_year(ts);
-        const int month = month_of_year(ts);
-        const int day = day_of_month(ts);
-        return is_first_workday_of_month(year, month, day);
+        return is_first_workday_of_month(year_of<year_t>(ts), month_of_year<int>(ts), day_of_month<int>(ts));
     }
 
 //------------------------------------------------------------------------------
@@ -1576,10 +1571,7 @@ namespace time_shield {
     /// \param count Number of leading workdays to test against.
     /// \return true if the timestamp corresponds to a workday ranked within the first N positions, false otherwise.
     TIME_SHIELD_CONSTEXPR inline bool is_within_first_workdays_of_month(ts_t ts, int count) noexcept {
-        const year_t year = get_year(ts);
-        const int month = month_of_year(ts);
-        const int day = day_of_month(ts);
-        return is_within_first_workdays_of_month(year, month, day, count);
+        return is_within_first_workdays_of_month(year_of<year_t>(ts), month_of_year<int>(ts), day_of_month<int>(ts), count);
     }
 
 //------------------------------------------------------------------------------
@@ -1588,10 +1580,7 @@ namespace time_shield {
     /// \param ts Timestamp in seconds.
     /// \return true if the timestamp corresponds to the last workday of the month, false otherwise.
     TIME_SHIELD_CONSTEXPR inline bool is_last_workday_of_month(ts_t ts) noexcept {
-        const year_t year = get_year(ts);
-        const int month = month_of_year(ts);
-        const int day = day_of_month(ts);
-        return is_last_workday_of_month(year, month, day);
+        return is_last_workday_of_month(year_of<year_t>(ts), month_of_year<int>(ts), day_of_month<int>(ts));
     }
 
 //------------------------------------------------------------------------------
@@ -1601,10 +1590,7 @@ namespace time_shield {
     /// \param count Number of trailing workdays to test against.
     /// \return true if the timestamp corresponds to a workday ranked within the final N positions, false otherwise.
     TIME_SHIELD_CONSTEXPR inline bool is_within_last_workdays_of_month(ts_t ts, int count) noexcept {
-        const year_t year = get_year(ts);
-        const int month = month_of_year(ts);
-        const int day = day_of_month(ts);
-        return is_within_last_workdays_of_month(year, month, day, count);
+        return is_within_last_workdays_of_month(year_of<year_t>(ts), month_of_year<int>(ts), day_of_month<int>(ts), count);
     }
 
 //------------------------------------------------------------------------------
@@ -1613,7 +1599,7 @@ namespace time_shield {
     /// \param ts_ms Timestamp in milliseconds.
     /// \return true if the timestamp corresponds to the first workday of the month, false otherwise.
     TIME_SHIELD_CONSTEXPR inline bool is_first_workday_of_month_ms(ts_ms_t ts_ms) noexcept {
-        return is_first_workday_of_month(ms_to_sec(ts_ms));
+        return is_first_workday_of_month(ms_to_sec<ts_t>(ts_ms));
     }
 
 //------------------------------------------------------------------------------
@@ -1623,7 +1609,7 @@ namespace time_shield {
     /// \param count Number of leading workdays to test against.
     /// \return true if the timestamp corresponds to a workday ranked within the first N positions, false otherwise.
     TIME_SHIELD_CONSTEXPR inline bool is_within_first_workdays_of_month_ms(ts_ms_t ts_ms, int count) noexcept {
-        return is_within_first_workdays_of_month(ms_to_sec(ts_ms), count);
+        return is_within_first_workdays_of_month(ms_to_sec<ts_t>(ts_ms), count);
     }
 
 //------------------------------------------------------------------------------
@@ -1632,7 +1618,7 @@ namespace time_shield {
     /// \param ts_ms Timestamp in milliseconds.
     /// \return true if the timestamp corresponds to the last workday of the month, false otherwise.
     TIME_SHIELD_CONSTEXPR inline bool is_last_workday_of_month_ms(ts_ms_t ts_ms) noexcept {
-        return is_last_workday_of_month(ms_to_sec(ts_ms));
+        return is_last_workday_of_month(ms_to_sec<ts_t>(ts_ms));
     }
 
 //------------------------------------------------------------------------------
@@ -1642,7 +1628,7 @@ namespace time_shield {
     /// \param count Number of trailing workdays to test against.
     /// \return true if the timestamp corresponds to a workday ranked within the final N positions, false otherwise.
     TIME_SHIELD_CONSTEXPR inline bool is_within_last_workdays_of_month_ms(ts_ms_t ts_ms, int count) noexcept {
-        return is_within_last_workdays_of_month(ms_to_sec(ts_ms), count);
+        return is_within_last_workdays_of_month(ms_to_sec<ts_t>(ts_ms), count);
     }
 
 //------------------------------------------------------------------------------
@@ -1710,7 +1696,7 @@ namespace time_shield {
     /// \param ts_ms Timestamp in milliseconds.
     /// \return Start of the day timestamp in seconds.
     constexpr ts_t start_of_day_sec(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
-        return start_of_day(ms_to_sec(ts_ms));
+        return start_of_day(ms_to_sec<ts_t>(ts_ms));
     }
 
 //------------------------------------------------------------------------------
@@ -1803,7 +1789,7 @@ namespace time_shield {
     /// \param ts_ms Timestamp in milliseconds.
     /// \return Timestamp at the end of the day in seconds.
     constexpr ts_t end_of_day_sec(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
-        return end_of_day(ms_to_sec(ts_ms));
+        return end_of_day(ms_to_sec<ts_t>(ts_ms));
     }
 
 //------------------------------------------------------------------------------
@@ -1856,7 +1842,7 @@ namespace time_shield {
     /// \return Timestamp at 00:00:00 of the first workday of that month.
     ///         Returns ERROR_TIMESTAMP if the first workday cannot be determined.
     TIME_SHIELD_CONSTEXPR inline ts_t start_of_first_workday_month(ts_t ts = time_shield::ts()) noexcept {
-        return start_of_first_workday_month(get_year(ts), month_of_year<int>(ts));
+        return start_of_first_workday_month(year_of<year_t>(ts), month_of_year<int>(ts));
     }
 
     /// \brief Start of the first workday of the month for the month containing \p ts_ms (milliseconds).
@@ -1864,7 +1850,7 @@ namespace time_shield {
     /// \return Timestamp at 00:00:00.000 of the first workday of that month.
     ///         Returns ERROR_TIMESTAMP if the first workday cannot be determined.
     TIME_SHIELD_CONSTEXPR inline ts_ms_t start_of_first_workday_month_ms(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
-        return start_of_first_workday_month_ms(get_year_ms(ts_ms), month_of_year<int>(ms_to_sec(ts_ms)));
+        return start_of_first_workday_month_ms(year_of_ms(ts_ms), month_of_year<int>(ms_to_sec<ts_t>(ts_ms)));
     }
     
 //------------------------------------------------------------------------------
@@ -1903,7 +1889,7 @@ namespace time_shield {
     /// \return Timestamp at 23:59:59 of the first workday of that month.
     ///         Returns ERROR_TIMESTAMP if the first workday cannot be determined.
     TIME_SHIELD_CONSTEXPR inline ts_t end_of_first_workday_month(ts_t ts = time_shield::ts()) noexcept {
-        return end_of_first_workday_month(get_year(ts), month_of_year<int>(ts));
+        return end_of_first_workday_month(year_of<year_t>(ts), month_of_year<int>(ts));
     }
 
     /// \brief End of the first workday of the month for the month containing \p ts_ms (milliseconds).
@@ -1911,7 +1897,7 @@ namespace time_shield {
     /// \return Timestamp at 23:59:59.999 of the first workday of that month.
     ///         Returns ERROR_TIMESTAMP if the first workday cannot be determined.
     TIME_SHIELD_CONSTEXPR inline ts_ms_t end_of_first_workday_month_ms(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
-        return end_of_first_workday_month_ms(get_year_ms(ts_ms), month_of_year<int>(ms_to_sec(ts_ms)));
+        return end_of_first_workday_month_ms(year_of_ms(ts_ms), month_of_year<int>(ms_to_sec<ts_t>(ts_ms)));
     }
     
 //------------------------------------------------------------------------------
@@ -1948,7 +1934,7 @@ namespace time_shield {
     /// \return Timestamp at 00:00:00 of the last workday of that month.
     ///         Returns ERROR_TIMESTAMP if the last workday cannot be determined.
     TIME_SHIELD_CONSTEXPR inline ts_t start_of_last_workday_month(ts_t ts = time_shield::ts()) noexcept {
-        return start_of_last_workday_month(get_year(ts), month_of_year<int>(ts));
+        return start_of_last_workday_month(year_of<year_t>(ts), month_of_year<int>(ts));
     }
 
     /// \brief Start of the last workday of the month for the month containing \p ts_ms (milliseconds).
@@ -1956,7 +1942,7 @@ namespace time_shield {
     /// \return Timestamp at 00:00:00.000 of the last workday of that month.
     ///         Returns ERROR_TIMESTAMP if the last workday cannot be determined.
     TIME_SHIELD_CONSTEXPR inline ts_ms_t start_of_last_workday_month_ms(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
-        return start_of_last_workday_month_ms(get_year_ms(ts_ms), month_of_year<int>(ms_to_sec(ts_ms)));
+        return start_of_last_workday_month_ms(year_of_ms(ts_ms), month_of_year<int>(ms_to_sec<ts_t>(ts_ms)));
     }
     
 //------------------------------------------------------------------------------
@@ -1995,7 +1981,7 @@ namespace time_shield {
     /// \return Timestamp at 23:59:59 of the last workday of that month.
     ///         Returns ERROR_TIMESTAMP if the last workday cannot be determined.
     TIME_SHIELD_CONSTEXPR inline ts_t end_of_last_workday_month(ts_t ts = time_shield::ts()) noexcept {
-        return end_of_last_workday_month(get_year(ts), month_of_year<int>(ts));
+        return end_of_last_workday_month(year_of<year_t>(ts), month_of_year<int>(ts));
     }
 
     /// \brief End of the last workday of the month for the month containing \p ts_ms (milliseconds).
@@ -2003,7 +1989,7 @@ namespace time_shield {
     /// \return Timestamp at 23:59:59.999 of the last workday of that month.
     ///         Returns ERROR_TIMESTAMP if the last workday cannot be determined.
     TIME_SHIELD_CONSTEXPR inline ts_ms_t end_of_last_workday_month_ms(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
-        return end_of_last_workday_month_ms(get_year_ms(ts_ms), month_of_year<int>(ms_to_sec(ts_ms)));
+        return end_of_last_workday_month_ms(year_of_ms(ts_ms), month_of_year<int>(ms_to_sec<ts_t>(ts_ms)));
     }
 
 //------------------------------------------------------------------------------
@@ -2059,7 +2045,7 @@ namespace time_shield {
     /// \return Weekday (SUN = 0, MON = 1, ... SAT = 6).
     template<class T = Weekday>
     constexpr T get_weekday_from_ts_ms(ts_ms_t ts_ms) {
-        return get_weekday_from_ts(ms_to_sec(ts_ms));
+        return get_weekday_from_ts(ms_to_sec<ts_t>(ts_ms));
     }
 
 //------------------------------------------------------------------------------
@@ -2137,7 +2123,7 @@ namespace time_shield {
     /// \param ts_ms Timestamp in milliseconds (default: current timestamp in milliseconds).
     /// \return Timestamp at the start of the hour in seconds.
     constexpr ts_t start_of_hour_sec(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
-        return start_of_hour(ms_to_sec(ts_ms));
+        return start_of_hour(ms_to_sec<ts_t>(ts_ms));
     }
 
 //------------------------------------------------------------------------------
@@ -2169,7 +2155,7 @@ namespace time_shield {
     /// \param ts_ms Timestamp in milliseconds (default: current timestamp in milliseconds).
     /// \return Timestamp at the end of the hour in seconds.
     constexpr ts_t end_of_hour_sec(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
-        return end_of_hour(ms_to_sec(ts_ms));
+        return end_of_hour(ms_to_sec<ts_t>(ts_ms));
     }
 
 //------------------------------------------------------------------------------
@@ -2307,11 +2293,15 @@ namespace time_shield {
     /// \details The function assumes that the type T has members `hour`, `min`, and `is_positive`.
     template<class T = TimeZoneStruct>
     inline T to_time_zone(tz_t offset) {
+        const int64_t off = static_cast<int64_t>(offset);
+        const int64_t abs_val = (off < 0) ? -off : off;
+
         T tz;
-        int abs_val = std::abs(offset);
-        tz.hour = abs_val / SEC_PER_HOUR;
-        tz.min = (abs_val % SEC_PER_HOUR) / SEC_PER_MIN;
-        tz.is_positive = (offset >= 0);
+        tz.hour = static_cast<decltype(tz.hour)>(abs_val / static_cast<int64_t>(SEC_PER_HOUR));
+        tz.min  = static_cast<decltype(tz.min)>(
+            (abs_val % static_cast<int64_t>(SEC_PER_HOUR)) / static_cast<int64_t>(SEC_PER_MIN)
+        );
+        tz.is_positive = (off >= 0);
         return tz;
     }
 

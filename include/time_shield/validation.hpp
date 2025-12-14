@@ -313,7 +313,10 @@ namespace time_shield {
     /// \param ts Timestamp to check (default: current timestamp).
     /// \return true if the day is a weekend day, false otherwise.
     TIME_SHIELD_CONSTEXPR inline bool is_day_off(ts_t ts) noexcept {
-        const int wd = ((ts / SEC_PER_DAY + THU) % DAYS_PER_WEEK);
+        const int64_t day = static_cast<int64_t>(ts) / static_cast<int64_t>(SEC_PER_DAY);
+        int64_t wd64 = (day + static_cast<int64_t>(THU)) % static_cast<int64_t>(DAYS_PER_WEEK);
+        if (wd64 < 0) wd64 += static_cast<int64_t>(DAYS_PER_WEEK); // for ts < 0
+        const int wd = static_cast<int>(wd64);
         return (wd == SUN || wd == SAT);
     }
 
@@ -332,7 +335,8 @@ namespace time_shield {
     /// \return true if the day is a weekend day, false otherwise.
     template<class T = uday_t>
     TIME_SHIELD_CONSTEXPR inline bool is_day_off_unix_day(T unix_day) noexcept {
-        const int wd = (unix_day + THU) % DAYS_PER_WEEK;
+        int64_t wd = (static_cast<int64_t>(unix_day) + THU) % DAYS_PER_WEEK;
+        wd += (wd < 0) ? DAYS_PER_WEEK : 0;
         return (wd == SUN || wd == SAT);
     }
 
@@ -387,6 +391,6 @@ namespace time_shield {
 
 /// \}
 
-}; // namespace time_shield
+} // namespace time_shield
 
 #endif // _TIME_SHIELD_VALIDATION_HPP_INCLUDED

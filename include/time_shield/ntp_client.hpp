@@ -19,6 +19,7 @@
 #include "ntp_client/wsa_guard.hpp"
 #include "time_utils.hpp"
 
+#include <stdexcept>
 #include <cstdint>
 #include <cstring>
 #include <string>
@@ -175,9 +176,30 @@ namespace time_shield {
         int                      m_port = 123;
         std::atomic<int64_t>     m_offset_us{0};
         std::atomic<bool>        m_is_success{false};
+
         static int& last_error_code_slot() noexcept {
             static thread_local int value = 0;
             return value;
+        }
+        
+        static bool get_now_us_u64(uint64_t& out) noexcept {
+            const int64_t v = time_shield::now_realtime_us();
+            if (v < 0) return false;
+            out = static_cast<uint64_t>(v);
+            return true;
+        }
+
+        static uint64_t ntp_frac_to_us(uint32_t frac_net) noexcept {
+            // NTP frac: unsigned 32-bit fraction of second with denominator 2^32.
+            const uint64_t frac = static_cast<uint64_t>(ntohl(frac_net));
+            return (frac * 1000000ULL) >> 32; // / 2^32
+        }
+
+        static bool ntp_ts_to_unix_us(uint32_t sec_net, uint32_t frac_net, uint64_t& out_us) noexcept {
+            const int64_t sec = static_cast<int64_t>(ntohl(sec_net)) - NTP_TIMESTAMP_DELTA;
+            if (sec < 0) return false; // время до 1970 — не ожидается, но защитимся
+            out_us = static_cast<uint64_t>(sec) * 1000000ULL + ntp_frac_to_us(frac_net);
+            return true;
         }
 
         /// \brief Converts local time to NTP timestamp format.
@@ -185,8 +207,14 @@ namespace time_shield {
             std::memset(&pkt, 0, sizeof(pkt));
             pkt.li_vn_mode = (0 << 6) | (3 << 3) | 3; // LI=0, VN=3, Mode=3 (client)
 
-            const uint64_t now_us = time_shield::now_realtime_us();
-            const uint64_t sec = now_us / 1000000 + NTP_TIMESTAMP_DELTA;
+            uint64_t now_us = 0;
+            if (!get_now_us_u64(now_us)) {
+                pkt.tx_ts_sec = 0;
+                pkt.tx_ts_frac = 0;
+                return;
+            }
+    
+            const uint64_t sec = now_us / 1000000 + static_cast<uint64_t>(NTP_TIMESTAMP_DELTA);
             const uint64_t frac = ((now_us % 1000000) * 0x100000000ULL) / 1000000;
 
             pkt.tx_ts_sec  = htonl(static_cast<uint32_t>(sec));
@@ -195,20 +223,25 @@ namespace time_shield {
 
         /// \brief Parses response and calculates offset.
         bool parse_packet(const ntp_packet& pkt, int64_t& result_offset_us) const {
-            const uint64_t arrival_us = time_shield::now_realtime_us();
+            uint64_t arrival_us = 0;
+            if (!get_now_us_u64(arrival_us)) return false;
 
-            const uint64_t originate_us = ((static_cast<uint64_t>(ntohl(pkt.orig_ts_sec)) - NTP_TIMESTAMP_DELTA) * 1000000) +
-                                           (static_cast<uint64_t>(ntohl(pkt.orig_ts_frac)) * 1000000 / 0xFFFFFFFFull);
-            const uint64_t receive_us = ((static_cast<uint64_t>(ntohl(pkt.recv_ts_sec)) - NTP_TIMESTAMP_DELTA) * 1000000) +
-                                         (static_cast<uint64_t>(ntohl(pkt.recv_ts_frac)) * 1000000 / 0xFFFFFFFFull);
-            const uint64_t transmit_us = ((static_cast<uint64_t>(ntohl(pkt.tx_ts_sec)) - NTP_TIMESTAMP_DELTA) * 1000000) +
-                                          (static_cast<uint64_t>(ntohl(pkt.tx_ts_frac)) * 1000000 / 0xFFFFFFFFull);
+            uint64_t originate_us = 0, receive_us = 0, transmit_us = 0;
 
-            // RFC 5905
-            result_offset_us = ((static_cast<int64_t>(receive_us) - static_cast<int64_t>(originate_us)) 
-                             + (static_cast<int64_t>(transmit_us) - static_cast<int64_t>(arrival_us))) / 2;
+            if (!ntp_ts_to_unix_us(pkt.orig_ts_sec, pkt.orig_ts_frac, originate_us)) return false;
+            if (!ntp_ts_to_unix_us(pkt.recv_ts_sec, pkt.recv_ts_frac, receive_us)) return false;
+            if (!ntp_ts_to_unix_us(pkt.tx_ts_sec,   pkt.tx_ts_frac,   transmit_us)) return false;
+
+            // RFC 5905: offset = ((t2 - t1) + (t3 - t4)) / 2
+            const int64_t t1 = static_cast<int64_t>(originate_us);
+            const int64_t t2 = static_cast<int64_t>(receive_us);
+            const int64_t t3 = static_cast<int64_t>(transmit_us);
+            const int64_t t4 = static_cast<int64_t>(arrival_us);
+
+            result_offset_us = ((t2 - t1) + (t3 - t4)) / 2;
             return true;
         }
+
     };
     
 } // namespace time_shield

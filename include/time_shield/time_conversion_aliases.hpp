@@ -17,18 +17,25 @@ namespace time_shield {
 /// \ingroup time_conversions
 /// \{
 
-    /// \brief Alias for get_unix_year function.
-    /// \copydoc get_unix_year
+    /// \brief Alias for years_since_epoch function.
+    /// \copydoc years_since_epoch
     template<class T = year_t>
     constexpr T unix_year(ts_t ts) noexcept {
-        return get_unix_year<T>(ts);
+        return years_since_epoch<T>(ts);
     }
 
-    /// \brief Alias for get_unix_year function.
-    /// \copydoc get_unix_year
+    /// \brief Alias for years_since_epoch function.
+    /// \copydoc years_since_epoch
     template<class T = year_t>
     constexpr T to_unix_year(ts_t ts) noexcept {
-        return get_unix_year<T>(ts);
+        return years_since_epoch<T>(ts);
+    }
+    
+    /// \brief Alias for years_since_epoch function.
+    /// \copydoc years_since_epoch
+    template<class T = year_t>
+    constexpr T get_unix_year(ts_t ts) noexcept {
+        return years_since_epoch<T>(ts);
     }
 
 //------------------------------------------------------------------------------
@@ -38,125 +45,139 @@ namespace time_shield {
     /// \copydoc get_unix_day
     template<class T = uday_t>
     constexpr T get_unixday(ts_t ts = time_shield::ts()) noexcept {
-        return get_unix_day<T>(ts);
+        return days_since_epoch<T>(ts);
     }
 
 
-    /// \brief Alias for get_unix_day function.
-    /// \copydoc get_unix_day
+    /// \brief Alias for days_since_epoch function.
+    /// \copydoc days_since_epoch
     template<class T = uday_t>
     constexpr T unix_day(ts_t ts = time_shield::ts()) noexcept {
-        return get_unix_day<T>(ts);
+        return days_since_epoch<T>(ts);
     }
 
 
-    /// \brief Alias for get_unix_day function.
-    /// \copydoc get_unix_day
+    /// \brief Alias for days_since_epoch function.
+    /// \copydoc days_since_epoch
     template<class T = uday_t>
     constexpr T unixday(ts_t ts = time_shield::ts()) noexcept {
-        return get_unix_day<T>(ts);
+        return days_since_epoch<T>(ts);
     }
 
 
-    /// \brief Alias for get_unix_day function.
-    /// \copydoc get_unix_day
+    /// \brief Alias for days_since_epoch function.
+    /// \copydoc days_since_epoch
     template<class T = uday_t>
     constexpr T uday(ts_t ts = time_shield::ts()) noexcept {
-        return get_unix_day<T>(ts);
+        return days_since_epoch<T>(ts);
+    }
+    
+    /// \brief Alias for days_since_epoch function.
+    /// \copydoc days_since_epoch
+    template<class T = uday_t>
+    constexpr T get_unix_day(ts_t ts = time_shield::ts()) noexcept {
+        return days_since_epoch<T>(ts);
     }
     
 //------------------------------------------------------------------------------
 
 
-    /// \brief Alias for get_unix_day_ms function.
-    /// \copydoc get_unix_day_ms
+    /// \brief Alias for days_since_epoch function.
+    /// \copydoc days_since_epoch
     template<class T = uday_t>
     constexpr T get_unixday_ms(ts_ms_t t_ms = time_shield::ts_ms()) noexcept {
-        return get_unix_day_ms<T>(t_ms);
+        return days_since_epoch<T>(t_ms);
     }
 
 
-    /// \brief Alias for get_unix_day_ms function.
-    /// \copydoc get_unix_day_ms
+    /// \brief Alias for days_since_epoch function.
+    /// \copydoc days_since_epoch
     template<class T = uday_t>
     constexpr T unix_day_ms(ts_ms_t t_ms = time_shield::ts_ms()) noexcept {
-        return get_unix_day_ms<T>(t_ms);
+        return days_since_epoch<T>(t_ms);
     }
 
 
-    /// \brief Alias for get_unix_day_ms function.
-    /// \copydoc get_unix_day_ms
+    /// \brief Alias for days_since_epoch function.
+    /// \copydoc days_since_epoch
     template<class T = uday_t>
     constexpr T unixday_ms(ts_ms_t t_ms = time_shield::ts_ms()) noexcept {
-        return get_unix_day_ms<T>(t_ms);
+        return days_since_epoch<T>(t_ms);
     }
 
 
-    /// \brief Alias for get_unix_day_ms function.
-    /// \copydoc get_unix_day_ms
+    /// \brief Alias for days_since_epoch function.
+    /// \copydoc days_since_epoch
     template<class T = uday_t>
     constexpr T uday_ms(ts_ms_t t_ms = time_shield::ts_ms()) noexcept {
-        return get_unix_day_ms<T>(t_ms);
+        return days_since_epoch<T>(t_ms);
+    }
+    
+    /// \brief Alias for days_since_epoch function.
+    /// \copydoc days_since_epoch
+    template<class T = uday_t>
+    constexpr T get_unix_day_ms(ts_ms_t t_ms = time_shield::ts_ms()) noexcept {
+        return days_since_epoch<T>(t_ms);
     }
     
 //------------------------------------------------------------------------------
 
-    /// \brief Alias for unix_day_to_timestamp function.
-    /// \copydoc unix_day_to_timestamp
+    /// \brief Alias for unix_day_to_ts function.
+    /// \copydoc unix_day_to_ts
     template<class T = ts_t>
-    constexpr T unix_day_to_ts(uday_t unix_day) noexcept {
-        return unix_day_to_timestamp(unix_day);
+    constexpr T unix_day_to_timestamp(uday_t unix_day) noexcept {
+        return unix_day_to_ts<T>(unix_day);
     }
 
-    /// \brief Alias for unix_day_to_timestamp function.
-    /// \copydoc unix_day_to_timestamp
+    /// \brief Alias for unix_day_to_ts function.
+    /// \copydoc unix_day_to_ts
     template<class T = ts_t>
     constexpr T unixday_to_ts(uday_t unix_day) noexcept {
-        return unix_day_to_timestamp(unix_day);
+        return unix_day_to_ts<T>(unix_day);
     }
 
-    /// \brief Alias for unix_day_to_timestamp function.
-    /// \copydoc unix_day_to_timestamp
+    /// \brief Alias for unix_day_to_ts function.
+    /// \copydoc unix_day_to_ts
     template<class T = ts_t>
     constexpr T uday_to_ts(uday_t unix_day) noexcept {
-        return unix_day_to_timestamp(unix_day);
+        return unix_day_to_ts<T>(unix_day);
     }
 
-    /// \brief Alias for unix_day_to_timestamp function.
-    /// \copydoc unix_day_to_timestamp
+    /// \brief Alias for unix_day_to_ts function.
+    /// \copydoc unix_day_to_ts
     template<class T = ts_t>
     constexpr T start_of_day_from_unix_day(uday_t unix_day) noexcept {
-        return unix_day_to_timestamp(unix_day);
+        return unix_day_to_ts<T>(unix_day);
     }
     
 //------------------------------------------------------------------------------
 
-    /// \brief Alias for unix_day_to_timestamp_ms function.
-    /// \copydoc unix_day_to_timestamp_ms
+    /// \brief Alias for unix_day_to_ts_ms function.
+    /// \copydoc unix_day_to_ts_ms
     template<class T = ts_t>
-    constexpr T unix_day_to_ts_ms(uday_t unix_day) noexcept {
-        return unix_day_to_timestamp_ms(unix_day);
+    constexpr T unix_day_to_timestamp_ms(uday_t unix_day) noexcept {
+        return unix_day_to_ts_ms(unix_day);
     }
 
-    /// \brief Alias for unix_day_to_timestamp_ms function.
-    /// \copydoc unix_day_to_timestamp_ms
+    /// \brief Alias for unix_day_to_ts_ms function.
+    /// \copydoc unix_day_to_ts_ms
     template<class T = ts_t>
     constexpr T unixday_to_ts_ms(uday_t unix_day) noexcept {
-        return unix_day_to_timestamp_ms(unix_day);
+        return unix_day_to_ts_ms(unix_day);
     }
 
-    /// \brief Alias for unix_day_to_timestamp_ms function.
-    /// \copydoc unix_day_to_timestamp_ms
+    /// \brief Alias for unix_day_to_ts_ms function.
+    /// \copydoc unix_day_to_ts_ms
     template<class T = ts_t>
     constexpr T uday_to_ts_ms(uday_t unix_day) noexcept {
-        return unix_day_to_timestamp_ms(unix_day);
+        return unix_day_to_ts_ms(unix_day);
     }
 
-    /// \brief Alias for unix_day_to_timestamp_ms function.
-    /// \copydoc unix_day_to_timestamp_ms
+    /// \brief Alias for unix_day_to_ts_ms function.
+    /// \copydoc unix_day_to_ts_ms
     template<class T = ts_t>
     constexpr T start_of_day_from_unix_day_ms(uday_t unix_day) noexcept {
-        return unix_day_to_timestamp_ms(unix_day);
+        return unix_day_to_ts_ms(unix_day);
     }
     
 //------------------------------------------------------------------------------
@@ -207,25 +228,39 @@ namespace time_shield {
     
 //------------------------------------------------------------------------------
 
-    /// \brief Alias for get_unix_min function.
-    /// \copydoc get_unix_min
+    /// \brief Alias for min_since_epoch function.
+    /// \copydoc min_since_epoch
+    template<class T = int64_t>
+    constexpr T minutes_since_epoch(ts_t ts = time_shield::ts()) {
+        return min_since_epoch<T>(ts);
+    }
+
+    /// \brief Alias for min_since_epoch function.
+    /// \copydoc min_since_epoch
     template<class T = int64_t>
     constexpr T unix_min(ts_t ts = time_shield::ts()) {
-        return get_unix_min(ts);
+        return min_since_epoch<T>(ts);
     }
 
-    /// \brief Alias for get_unix_min function.
-    /// \copydoc get_unix_min
+    /// \brief Alias for min_since_epoch function.
+    /// \copydoc min_since_epoch
     template<class T = int64_t>
     constexpr T to_unix_min(ts_t ts = time_shield::ts()) {
-        return get_unix_min(ts);
+        return min_since_epoch<T>(ts);
     }
 
-    /// \brief Alias for get_unix_min function.
-    /// \copydoc get_unix_min
+    /// \brief Alias for min_since_epoch function.
+    /// \copydoc min_since_epoch
     template<class T = int64_t>
     constexpr T umin(ts_t ts = time_shield::ts()) {
-        return get_unix_min(ts);
+        return min_since_epoch<T>(ts);
+    }
+    
+    /// \brief Alias for min_since_epoch function.
+    /// \copydoc min_since_epoch
+    template<class T = int64_t>
+    constexpr T get_unix_min(ts_t ts = time_shield::ts()) {
+        return min_since_epoch<T>(ts);
     }
     
 //------------------------------------------------------------------------------
@@ -727,43 +762,43 @@ namespace time_shield {
 
     /// \brief Alias for tm_to_timestamp
     /// \copydoc tm_to_timestamp
-    constexpr ts_t ts(const std::tm* timeinfo) {
+    TIME_SHIELD_CONSTEXPR inline ts_t ts(const std::tm* timeinfo) {
         return tm_to_timestamp(timeinfo);
     }
 
     /// \brief Alias for tm_to_timestamp
     /// \copydoc tm_to_timestamp
-    constexpr ts_t get_ts(const std::tm* timeinfo) {
+    TIME_SHIELD_CONSTEXPR inline ts_t get_ts(const std::tm* timeinfo) {
         return tm_to_timestamp(timeinfo);
     }
 
     /// \brief Alias for tm_to_timestamp
     /// \copydoc tm_to_timestamp
-    constexpr ts_t timestamp(const std::tm* timeinfo) {
+    TIME_SHIELD_CONSTEXPR inline ts_t timestamp(const std::tm* timeinfo) {
         return tm_to_timestamp(timeinfo);
     }
 
     /// \brief Alias for tm_to_timestamp
     /// \copydoc tm_to_timestamp
-    constexpr ts_t get_timestamp(const std::tm* timeinfo) {
+    TIME_SHIELD_CONSTEXPR inline ts_t get_timestamp(const std::tm* timeinfo) {
         return tm_to_timestamp(timeinfo);
     }
 
     /// \brief Alias for tm_to_timestamp
     /// \copydoc tm_to_timestamp
-    constexpr ts_t to_ts(const std::tm* timeinfo) {
+    TIME_SHIELD_CONSTEXPR inline ts_t to_ts(const std::tm* timeinfo) {
         return tm_to_timestamp(timeinfo);
     }
 
     /// \brief Alias for tm_to_timestamp
     /// \copydoc tm_to_timestamp
-    constexpr ts_t ts_from_tm(const std::tm* timeinfo) {
+    TIME_SHIELD_CONSTEXPR inline ts_t ts_from_tm(const std::tm* timeinfo) {
         return tm_to_timestamp(timeinfo);
     }
 
     /// \brief Alias for tm_to_timestamp
     /// \copydoc tm_to_timestamp
-    constexpr ts_t to_timestamp(const std::tm* timeinfo) {
+    TIME_SHIELD_CONSTEXPR inline ts_t to_timestamp(const std::tm* timeinfo) {
         return tm_to_timestamp(timeinfo);
     }
 
@@ -782,7 +817,7 @@ namespace time_shield {
     /// \return Timestamp in milliseconds representing the given date and time.
     /// \throws std::invalid_argument if the date-time combination is invalid.
     /// \see to_timestamp_ms
-    constexpr ts_ms_t ts_ms(year_t year, int month, int day) {
+    TIME_SHIELD_CONSTEXPR inline ts_ms_t ts_ms(year_t year, int month, int day) {
         return to_timestamp_ms(year, month, day);
     }
 
@@ -800,7 +835,7 @@ namespace time_shield {
     /// \return Timestamp in milliseconds representing the given date and time.
     /// \throws std::invalid_argument if the date-time combination is invalid.
     /// \see to_timestamp_ms
-    constexpr ts_ms_t ts_ms(year_t year, int month, int day, int hour) {
+    TIME_SHIELD_CONSTEXPR inline ts_ms_t ts_ms(year_t year, int month, int day, int hour) {
         return to_timestamp_ms(year, month, day, hour);
     }
 
@@ -819,7 +854,7 @@ namespace time_shield {
     /// \return Timestamp in milliseconds representing the given date and time.
     /// \throws std::invalid_argument if the date-time combination is invalid.
     /// \see to_timestamp_ms
-    constexpr ts_ms_t ts_ms(year_t year, int month, int day, int hour, int min) {
+    TIME_SHIELD_CONSTEXPR inline ts_ms_t ts_ms(year_t year, int month, int day, int hour, int min) {
         return to_timestamp_ms(year, month, day, hour, min);
     }
 
@@ -839,7 +874,7 @@ namespace time_shield {
     /// \return Timestamp in milliseconds representing the given date and time.
     /// \throws std::invalid_argument if the date-time combination is invalid.
     /// \see to_timestamp_ms
-    constexpr ts_ms_t ts_ms(year_t year, int month, int day, int hour, int min, int sec) {
+    TIME_SHIELD_CONSTEXPR inline ts_ms_t ts_ms(year_t year, int month, int day, int hour, int min, int sec) {
         return to_timestamp_ms(year, month, day, hour, min, sec);
     }
 
@@ -860,7 +895,7 @@ namespace time_shield {
     /// \return Timestamp in milliseconds representing the given date and time.
     /// \throws std::invalid_argument if the date-time combination is invalid.
     /// \see to_timestamp_ms
-    constexpr ts_ms_t ts_ms(year_t year, int month, int day, int hour, int min, int sec, int ms) {
+    TIME_SHIELD_CONSTEXPR inline ts_ms_t ts_ms(year_t year, int month, int day, int hour, int min, int sec, int ms) {
         return to_timestamp_ms(year, month, day, hour, min, sec, ms);
     }
 
@@ -877,7 +912,7 @@ namespace time_shield {
     /// \return Timestamp in milliseconds representing the given date and time.
     /// \throws std::invalid_argument if the date-time combination is invalid.
     /// \see to_timestamp_ms
-    constexpr ts_ms_t get_ts_ms(year_t year, int month, int day) {
+    TIME_SHIELD_CONSTEXPR inline ts_ms_t get_ts_ms(year_t year, int month, int day) {
         return to_timestamp_ms(year, month, day);
     }
 
@@ -895,7 +930,7 @@ namespace time_shield {
     /// \return Timestamp in milliseconds representing the given date and time.
     /// \throws std::invalid_argument if the date-time combination is invalid.
     /// \see to_timestamp_ms
-    constexpr ts_ms_t get_ts_ms(year_t year, int month, int day, int hour) {
+    TIME_SHIELD_CONSTEXPR inline ts_ms_t get_ts_ms(year_t year, int month, int day, int hour) {
         return to_timestamp_ms(year, month, day, hour);
     }
 
@@ -914,7 +949,7 @@ namespace time_shield {
     /// \return Timestamp in milliseconds representing the given date and time.
     /// \throws std::invalid_argument if the date-time combination is invalid.
     /// \see to_timestamp_ms
-    constexpr ts_ms_t get_ts_ms(year_t year, int month, int day, int hour, int min) {
+    TIME_SHIELD_CONSTEXPR inline ts_ms_t get_ts_ms(year_t year, int month, int day, int hour, int min) {
         return to_timestamp_ms(year, month, day, hour, min);
     }
 
@@ -934,7 +969,7 @@ namespace time_shield {
     /// \return Timestamp in milliseconds representing the given date and time.
     /// \throws std::invalid_argument if the date-time combination is invalid.
     /// \see to_timestamp_ms
-    constexpr ts_ms_t get_ts_ms(year_t year, int month, int day, int hour, int min, int sec) {
+    TIME_SHIELD_CONSTEXPR inline ts_ms_t get_ts_ms(year_t year, int month, int day, int hour, int min, int sec) {
         return to_timestamp_ms(year, month, day, hour, min, sec);
     }
 
@@ -955,7 +990,7 @@ namespace time_shield {
     /// \return Timestamp in milliseconds representing the given date and time.
     /// \throws std::invalid_argument if the date-time combination is invalid.
     /// \see to_timestamp_ms
-    constexpr ts_ms_t get_ts_ms(year_t year, int month, int day, int hour, int min, int sec, int ms) {
+    TIME_SHIELD_CONSTEXPR inline ts_ms_t get_ts_ms(year_t year, int month, int day, int hour, int min, int sec, int ms) {
         return to_timestamp_ms(year, month, day, hour, min, sec, ms);
     }
 
@@ -972,7 +1007,7 @@ namespace time_shield {
     /// \return Timestamp in milliseconds representing the given date and time.
     /// \throws std::invalid_argument if the date-time combination is invalid.
     /// \see to_timestamp_ms
-    constexpr ts_ms_t get_timestamp_ms(year_t year, int month, int day) {
+    TIME_SHIELD_CONSTEXPR inline ts_ms_t get_timestamp_ms(year_t year, int month, int day) {
         return to_timestamp_ms(year, month, day);
     }
 
@@ -990,7 +1025,7 @@ namespace time_shield {
     /// \return Timestamp in milliseconds representing the given date and time.
     /// \throws std::invalid_argument if the date-time combination is invalid.
     /// \see to_timestamp_ms
-    constexpr ts_ms_t get_timestamp_ms(year_t year, int month, int day, int hour) {
+    TIME_SHIELD_CONSTEXPR inline ts_ms_t get_timestamp_ms(year_t year, int month, int day, int hour) {
         return to_timestamp_ms(year, month, day, hour);
     }
 
@@ -1009,7 +1044,7 @@ namespace time_shield {
     /// \return Timestamp in milliseconds representing the given date and time.
     /// \throws std::invalid_argument if the date-time combination is invalid.
     /// \see to_timestamp_ms
-    constexpr ts_ms_t get_timestamp_ms(year_t year, int month, int day, int hour, int min) {
+    TIME_SHIELD_CONSTEXPR inline ts_ms_t get_timestamp_ms(year_t year, int month, int day, int hour, int min) {
         return to_timestamp_ms(year, month, day, hour, min);
     }
 
@@ -1029,7 +1064,7 @@ namespace time_shield {
     /// \return Timestamp in milliseconds representing the given date and time.
     /// \throws std::invalid_argument if the date-time combination is invalid.
     /// \see to_timestamp_ms
-    constexpr ts_ms_t get_timestamp_ms(year_t year, int month, int day, int hour, int min, int sec) {
+    TIME_SHIELD_CONSTEXPR inline ts_ms_t get_timestamp_ms(year_t year, int month, int day, int hour, int min, int sec) {
         return to_timestamp_ms(year, month, day, hour, min, sec);
     }
 
@@ -1050,7 +1085,7 @@ namespace time_shield {
     /// \return Timestamp in milliseconds representing the given date and time.
     /// \throws std::invalid_argument if the date-time combination is invalid.
     /// \see to_timestamp_ms
-    constexpr ts_ms_t get_timestamp_ms(year_t year, int month, int day, int hour, int min, int sec, int ms) {
+    TIME_SHIELD_CONSTEXPR inline ts_ms_t get_timestamp_ms(year_t year, int month, int day, int hour, int min, int sec, int ms) {
         return to_timestamp_ms(year, month, day, hour, min, sec, ms);
     }
 
@@ -1067,7 +1102,7 @@ namespace time_shield {
     /// \return Timestamp in milliseconds representing the given date and time.
     /// \throws std::invalid_argument if the date-time combination is invalid.
     /// \see to_timestamp_ms
-    constexpr ts_ms_t timestamp_ms(year_t year, int month, int day) {
+    TIME_SHIELD_CONSTEXPR inline ts_ms_t timestamp_ms(year_t year, int month, int day) {
         return to_timestamp_ms(year, month, day);
     }
 
@@ -1085,7 +1120,7 @@ namespace time_shield {
     /// \return Timestamp in milliseconds representing the given date and time.
     /// \throws std::invalid_argument if the date-time combination is invalid.
     /// \see to_timestamp_ms
-    constexpr ts_ms_t timestamp_ms(year_t year, int month, int day, int hour) {
+    TIME_SHIELD_CONSTEXPR inline ts_ms_t timestamp_ms(year_t year, int month, int day, int hour) {
         return to_timestamp_ms(year, month, day, hour);
     }
 
@@ -1104,7 +1139,7 @@ namespace time_shield {
     /// \return Timestamp in milliseconds representing the given date and time.
     /// \throws std::invalid_argument if the date-time combination is invalid.
     /// \see to_timestamp_ms
-    constexpr ts_ms_t timestamp_ms(year_t year, int month, int day, int hour, int min) {
+    TIME_SHIELD_CONSTEXPR inline ts_ms_t timestamp_ms(year_t year, int month, int day, int hour, int min) {
         return to_timestamp_ms(year, month, day, hour, min);
     }
 
@@ -1124,7 +1159,7 @@ namespace time_shield {
     /// \return Timestamp in milliseconds representing the given date and time.
     /// \throws std::invalid_argument if the date-time combination is invalid.
     /// \see to_timestamp_ms
-    constexpr ts_ms_t timestamp_ms(year_t year, int month, int day, int hour, int min, int sec) {
+    TIME_SHIELD_CONSTEXPR inline ts_ms_t timestamp_ms(year_t year, int month, int day, int hour, int min, int sec) {
         return to_timestamp_ms(year, month, day, hour, min, sec);
     }
 
@@ -1145,7 +1180,7 @@ namespace time_shield {
     /// \return Timestamp in milliseconds representing the given date and time.
     /// \throws std::invalid_argument if the date-time combination is invalid.
     /// \see to_timestamp_ms
-    constexpr ts_ms_t timestamp_ms(year_t year, int month, int day, int hour, int min, int sec, int ms) {
+    TIME_SHIELD_CONSTEXPR inline ts_ms_t timestamp_ms(year_t year, int month, int day, int hour, int min, int sec, int ms) {
         return to_timestamp_ms(year, month, day, hour, min, sec, ms);
     }
 
@@ -1162,7 +1197,7 @@ namespace time_shield {
     /// \return Timestamp in milliseconds representing the given date and time.
     /// \throws std::invalid_argument if the date-time combination is invalid.
     /// \see to_timestamp_ms
-    constexpr ts_ms_t to_ts_ms(year_t year, int month, int day) {
+    TIME_SHIELD_CONSTEXPR inline ts_ms_t to_ts_ms(year_t year, int month, int day) {
         return to_timestamp_ms(year, month, day);
     }
 
@@ -1180,7 +1215,7 @@ namespace time_shield {
     /// \return Timestamp in milliseconds representing the given date and time.
     /// \throws std::invalid_argument if the date-time combination is invalid.
     /// \see to_timestamp_ms
-    constexpr ts_ms_t to_ts_ms(year_t year, int month, int day, int hour) {
+    TIME_SHIELD_CONSTEXPR inline ts_ms_t to_ts_ms(year_t year, int month, int day, int hour) {
         return to_timestamp_ms(year, month, day, hour);
     }
 
@@ -1199,7 +1234,7 @@ namespace time_shield {
     /// \return Timestamp in milliseconds representing the given date and time.
     /// \throws std::invalid_argument if the date-time combination is invalid.
     /// \see to_timestamp_ms
-    constexpr ts_ms_t to_ts_ms(year_t year, int month, int day, int hour, int min) {
+    TIME_SHIELD_CONSTEXPR inline ts_ms_t to_ts_ms(year_t year, int month, int day, int hour, int min) {
         return to_timestamp_ms(year, month, day, hour, min);
     }
 
@@ -1219,7 +1254,7 @@ namespace time_shield {
     /// \return Timestamp in milliseconds representing the given date and time.
     /// \throws std::invalid_argument if the date-time combination is invalid.
     /// \see to_timestamp_ms
-    constexpr ts_ms_t to_ts_ms(year_t year, int month, int day, int hour, int min, int sec) {
+    TIME_SHIELD_CONSTEXPR inline ts_ms_t to_ts_ms(year_t year, int month, int day, int hour, int min, int sec) {
         return to_timestamp_ms(year, month, day, hour, min, sec);
     }
 
@@ -1240,7 +1275,7 @@ namespace time_shield {
     /// \return Timestamp in milliseconds representing the given date and time.
     /// \throws std::invalid_argument if the date-time combination is invalid.
     /// \see to_timestamp_ms
-    constexpr ts_ms_t to_ts_ms(year_t year, int month, int day, int hour, int min, int sec, int ms) {
+    TIME_SHIELD_CONSTEXPR inline ts_ms_t to_ts_ms(year_t year, int month, int day, int hour, int min, int sec, int ms) {
         return to_timestamp_ms(year, month, day, hour, min, sec, ms);
     }
 
@@ -1425,77 +1460,105 @@ namespace time_shield {
     /// \ingroup time_structures
     /// \brief Alias for tm_to_ftimestamp
     /// \copydoc tm_to_ftimestamp(const std::tm*)
-    constexpr fts_t to_ftimestamp(const std::tm* timeinfo) {
+    TIME_SHIELD_CONSTEXPR inline fts_t to_ftimestamp(const std::tm* timeinfo) {
         return tm_to_ftimestamp(timeinfo);
     }
 
     /// \ingroup time_structures
     /// \brief Alias for tm_to_ftimestamp
     /// \copydoc tm_to_ftimestamp(const std::tm*)
-    constexpr fts_t to_fts(const std::tm* timeinfo) {
+    TIME_SHIELD_CONSTEXPR inline fts_t to_fts(const std::tm* timeinfo) {
         return tm_to_ftimestamp(timeinfo);
     }
     
     /// \ingroup time_structures
     /// \brief Alias for tm_to_ftimestamp
     /// \copydoc tm_to_ftimestamp(const std::tm*)
-    constexpr fts_t fts(const std::tm* timeinfo) {
+    TIME_SHIELD_CONSTEXPR inline fts_t fts(const std::tm* timeinfo) {
         return tm_to_ftimestamp(timeinfo);
     }
 
     /// \ingroup time_structures
     /// \brief Alias for tm_to_ftimestamp
     /// \copydoc tm_to_ftimestamp(const std::tm*)
-    constexpr fts_t ftimestamp(const std::tm* timeinfo) {
+    TIME_SHIELD_CONSTEXPR inline fts_t ftimestamp(const std::tm* timeinfo) {
         return tm_to_ftimestamp(timeinfo);
     }
 
 //------------------------------------------------------------------------------
 
-    /// \brief Alias for get_days_difference function.
-    /// \copydoc get_days_difference
+    /// \brief Alias for days_between function.
+    /// \copydoc days_between
     template<class T = int>
     constexpr T get_days(ts_t start, ts_t stop) noexcept {
-        return get_days_difference(start, stop);
+        return days_between<T>(start, stop);
     }
 
-    /// \brief Alias for get_days_difference function.
-    /// \copydoc get_days_difference
+    /// \brief Alias for days_between function.
+    /// \copydoc days_between
     template<class T = int>
     constexpr T days(ts_t start, ts_t stop) noexcept {
-        return get_days_difference(start, stop);
+        return days_between<T>(start, stop);
+    }
+    
+    /// \brief Alias for days_between function.
+    /// \copydoc days_between
+    template<class T = int>
+    constexpr T get_days_difference(ts_t start, ts_t stop) noexcept {
+        return days_between<T>(start, stop);
+    }
+    
+    /// \brief Alias for days_between function.
+    /// \copydoc days_between
+    template<class T = int>
+    constexpr T diff_in_days(ts_t start, ts_t stop) noexcept {
+        return days_between<T>(start, stop);
     }
 
 //------------------------------------------------------------------------------
 
-    /// \brief Alias for get_year function.
-    /// \copydoc get_year
+    /// \brief Alias for year_of function.
+    /// \copydoc year_of
     template<class T = year_t>
     TIME_SHIELD_CONSTEXPR inline T year(ts_t ts = time_shield::ts()) {
-        return get_year(ts);
+        return year_of<T>(ts);
     }
 
-    /// \brief Alias for get_year function.
-    /// \copydoc get_year
+    /// \brief Alias for year_of function.
+    /// \copydoc year_of
     template<class T = year_t>
     TIME_SHIELD_CONSTEXPR inline T to_year(ts_t ts = time_shield::ts()) {
-        return get_year(ts);
+        return year_of<T>(ts);
+    }
+    
+    /// \brief Alias for year_of function.
+    /// \copydoc year_of
+    template<class T = year_t>
+    TIME_SHIELD_CONSTEXPR inline T get_year(ts_t ts = time_shield::ts()) {
+        return year_of<T>(ts);
     }
 
 //------------------------------------------------------------------------------
 
-    /// \brief Alias for get_year_ms function.
-    /// \copydoc get_year_ms
+    /// \brief Alias for year_of_ms function.
+    /// \copydoc year_of_ms
     template<class T = year_t>
     TIME_SHIELD_CONSTEXPR inline T year_ms(ts_ms_t ts_ms = time_shield::ts_ms()) {
-        return get_year_ms(ts_ms);
+        return year_of_ms<T>(ts_ms);
     }
 
-    /// \brief Alias for get_year_ms function.
-    /// \copydoc get_year_ms
+    /// \brief Alias for year_of_ms function.
+    /// \copydoc year_of_ms
     template<class T = year_t>
     TIME_SHIELD_CONSTEXPR inline T to_year_ms(ts_ms_t ts_ms = time_shield::ts_ms()) {
-        return get_year_ms(ts_ms);
+        return year_of_ms<T>(ts_ms);
+    }
+    
+    /// \brief Alias for year_of_ms function.
+    /// \copydoc year_of_ms
+    template<class T = year_t>
+    TIME_SHIELD_CONSTEXPR inline T get_year_ms(ts_ms_t ts_ms = time_shield::ts_ms()) {
+        return year_of_ms<T>(ts_ms);
     }
     
 //------------------------------------------------------------------------------

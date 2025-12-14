@@ -6,6 +6,7 @@
 /// \file time_zone_struct.hpp
 /// \brief Header for time zone structure and related functions.
 
+#include "config.hpp"
 #include "types.hpp"
 #include "constants.hpp"
 
@@ -44,12 +45,16 @@ namespace time_shield {
     /// \param offset The integer to convert.
     /// \return A TimeZoneStruct represented by the given integer.
     inline TimeZoneStruct to_time_zone_struct(tz_t offset) {
-        int abs_val = std::abs(offset);
-        int hour = abs_val / SEC_PER_HOUR;
-        int min = (abs_val % SEC_PER_HOUR) / SEC_PER_MIN;
-        bool is_positive = (offset >= 0);
-        return TimeZoneStruct{hour, min, is_positive};
+        const int64_t off = static_cast<int64_t>(offset);
+        const int64_t abs_val = (off < 0) ? -off : off;
+
+        const int hour = static_cast<int>(abs_val / static_cast<int64_t>(SEC_PER_HOUR));
+        const int min  = static_cast<int>((abs_val % static_cast<int64_t>(SEC_PER_HOUR)) /
+                                          static_cast<int64_t>(SEC_PER_MIN));
+
+        return TimeZoneStruct{hour, min, off >= 0};
     }
+
 
     /// \ingroup time_structures_time_conversions
     /// \brief Alias for to_time_zone_struct function.
@@ -86,24 +91,28 @@ namespace time_shield {
 //------------------------------------------------------------------------------
 
     /// \ingroup time_structures_time_conversions
-    /// \brief Converts a TimeZoneStruct to a single integer representation.
-    /// \param tz The TimeZoneStruct to convert.
-    /// \return An integer representing the TimeZoneStruct.
-    inline tz_t time_zone_struct_to_offset(const TimeZoneStruct& tz) {
-        return (tz.is_positive ? 1 : -1) * (tz.hour * SEC_PER_HOUR + tz.min * SEC_PER_MIN);
+    /// \brief Convert a TimeZoneStruct to a numeric UTC offset (seconds).
+    /// \param tz Time zone descriptor.
+    /// \return UTC offset in seconds (local = utc + offset).
+    TIME_SHIELD_CONSTEXPR inline tz_t time_zone_struct_to_offset(const TimeZoneStruct& tz) noexcept {
+        return tz.is_positive
+            ? static_cast<tz_t>( static_cast<tz_t>(tz.hour) * static_cast<tz_t>(SEC_PER_HOUR)
+                               + static_cast<tz_t>(tz.min)  * static_cast<tz_t>(SEC_PER_MIN) )
+            : static_cast<tz_t>(-( static_cast<tz_t>(tz.hour) * static_cast<tz_t>(SEC_PER_HOUR)
+                                 + static_cast<tz_t>(tz.min)  * static_cast<tz_t>(SEC_PER_MIN) ));
     }
 
     /// \ingroup time_structures_time_conversions
-    /// \brief Alias for time_zone_struct_to_offset function.
+    /// \brief Alias for time_zone_struct_to_offset.
     /// \copydoc time_zone_struct_to_offset
-    inline tz_t tz_to_offset(const TimeZoneStruct& tz) {
+    TIME_SHIELD_CONSTEXPR inline tz_t tz_to_offset(const TimeZoneStruct& tz) noexcept {
         return time_zone_struct_to_offset(tz);
     }
 
     /// \ingroup time_structures_time_conversions
-    /// \brief Alias for time_zone_struct_to_offset function.
+    /// \brief Alias for time_zone_struct_to_offset.
     /// \copydoc time_zone_struct_to_offset
-    inline tz_t to_offset(const TimeZoneStruct& tz) {
+    TIME_SHIELD_CONSTEXPR inline tz_t to_offset(const TimeZoneStruct& tz) noexcept {
         return time_zone_struct_to_offset(tz);
     }
 

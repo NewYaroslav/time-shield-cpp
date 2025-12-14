@@ -266,26 +266,23 @@ namespace time_shield {
                 return false;
             }
 
-            // Read up to 9 digits, but we only need first 3 for ms.
             int ms = 0;
             int digits = 0;
 
-            while (p < end && is_ascii_digit(*p) && digits < 9) {
-                if (digits < 3) {
-                    ms = ms * 10 + (*p - '0');
+            while (p < end && is_ascii_digit(*p)) {
+                if (digits >= 3) {
+                    return false;
                 }
+                ms = ms * 10 + (*p - '0');
                 ++digits;
                 ++p;
             }
 
-            // If there are more than 9 digits, that is not supported (keep strict).
-            if (p < end && is_ascii_digit(*p)) {
-                return false;
+            if (digits == 1) {
+                ms *= 100;
+            } else if (digits == 2) {
+                ms *= 10;
             }
-
-            // Scale if fewer than 3 digits.
-            if (digits == 1)      ms *= 100;
-            else if (digits == 2) ms *= 10;
 
             ms_out = ms;
             return true;
@@ -723,6 +720,7 @@ namespace time_shield {
 
         dt.sec = 0;
         dt.ms = 0;
+        bool has_seconds = false;
 
         // Optional :ss
         if (p < end && *p == ':') {
@@ -730,13 +728,14 @@ namespace time_shield {
             if (!detail::parse_2digits(p, end, dt.sec)) {
                 return false;
             }
+            has_seconds = true;
         }
 
         // Optional .fraction (allowed only if we had seconds in original regex,
         // but we accept it when seconds are present; for hh:mm (no seconds) we keep it strict).
         if (p < end && *p == '.') {
             // require seconds field to exist (avoid accepting YYYY-MM-DDThh:mm.xxx)
-            if (dt.sec == 0) {
+            if (!has_seconds) {
                 // Ambiguous: could be "hh:mm.fff" which is not in your original formats.
                 // Keep strict to preserve behavior.
                 return false;

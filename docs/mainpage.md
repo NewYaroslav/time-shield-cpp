@@ -120,6 +120,21 @@ bool window_from_str = is_within_first_workdays_of_month_ms(
 
 The string overloads recognise the same ISO8601 formats handled by \ref time_shield::str_to_ts "str_to_ts" and \ref time_shield::str_to_ts_ms "str_to_ts_ms".
 
+Locate the boundaries of the first and last workdays when preparing trading windows or settlement cutoffs:
+
+\code{.cpp}
+#include <time_shield/time_conversions.hpp>
+
+using namespace time_shield;
+
+ts_t first_open = start_of_first_workday_month(2024, Month::JUN);    // 2024-06-03T00:00:00Z
+ts_t first_close = end_of_first_workday_month(2024, 6);              // 2024-06-03T23:59:59Z
+ts_t last_open = start_of_last_workday_month(2024, 3);               // 2024-03-29T00:00:00Z
+ts_ms_t last_close_ms = end_of_last_workday_month_ms(2024, Month::MAR); // 2024-03-29T23:59:59.999Z
+\endcode
+
+These helpers follow the same semantics as \ref time_shield::start_of_day "start_of_day" and \ref time_shield::end_of_day "end_of_day", returning UTC timestamps. Invalid month inputs or months without workdays yield \ref time_shield::ERROR_TIMESTAMP "ERROR_TIMESTAMP" to simplify validation.
+
 \section install_sec Installation
 \subsection install_pkg Install and `find_package`
 

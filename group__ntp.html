@@ -130,7 +130,7 @@ Files</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtime__shield_1_1NtpClient.html">time_shield::NtpClient</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple Windows-only NTP client for measuring time offset.  <a href="classtime__shield_1_1NtpClient.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Windows implementation of the NTP client for measuring time offset.  <a href="classtime__shield_1_1NtpClient.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtime__shield_1_1WsaGuard.html">time_shield::WsaGuard</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Singleton guard for WinSock initialization.  <a href="classtime__shield_1_1WsaGuard.html#details">More...</a><br /></td></tr>
@@ -138,13 +138,13 @@ Classes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Facilities for retrieving time using the Network Time Protocol. </p>
-<p>This module contains a minimal client capable of querying remote NTP servers to measure the offset between local and network time. It uses WinSock via the <code>WsaGuard</code> helper and therefore works only on Windows.</p>
+<p>This module contains a minimal client capable of querying remote NTP servers to measure the offset between local and network time. It uses WinSock via the <code>WsaGuard</code> helper on Windows and POSIX sockets on Unix platforms.</p>
 <h3><a class="anchor" id="autotoc_md21"></a>
 Features:</h3>
 <ul>
 <li>Query NTP servers and obtain the time offset.</li>
 <li>Retrieve corrected UTC time in microseconds and milliseconds.</li>
-<li>Automatic WinSock initialization through <code>WsaGuard</code>.</li>
+<li>Automatic WinSock initialization through <code>WsaGuard</code> (Windows build).</li>
 <li>Requires network connectivity.</li>
 </ul>
 <h3><a class="anchor" id="autotoc_md22"></a>
@@ -154,10 +154,10 @@ Example Usage:</h3>
 <div class="line">    int64_t offset = client.<a class="code hl_function" href="classtime__shield_1_1NtpClient.html#a8e820854c8ee25115c65f9ffbe3da744">get_offset_us</a>();</div>
 <div class="line">    int64_t utc_ms = client.<a class="code hl_function" href="classtime__shield_1_1NtpClient.html#a9da229c83cd47d71c409e9aa389d37de">get_utc_time_ms</a>();</div>
 <div class="line">}</div>
-<div class="ttc" id="aclasstime__shield_1_1NtpClient_html"><div class="ttname"><a href="classtime__shield_1_1NtpClient.html">time_shield::NtpClient</a></div><div class="ttdoc">Simple Windows-only NTP client for measuring time offset.</div><div class="ttdef"><b>Definition</b> <a href="ntp__client_8hpp_source.html#l00035">ntp_client.hpp:35</a></div></div>
-<div class="ttc" id="aclasstime__shield_1_1NtpClient_html_a8e820854c8ee25115c65f9ffbe3da744"><div class="ttname"><a href="classtime__shield_1_1NtpClient.html#a8e820854c8ee25115c65f9ffbe3da744">time_shield::NtpClient::get_offset_us</a></div><div class="ttdeci">int64_t get_offset_us() const noexcept</div><div class="ttdoc">Returns the last measured offset in microseconds.</div><div class="ttdef"><b>Definition</b> <a href="ntp__client_8hpp_source.html#l00121">ntp_client.hpp:121</a></div></div>
-<div class="ttc" id="aclasstime__shield_1_1NtpClient_html_a9da229c83cd47d71c409e9aa389d37de"><div class="ttname"><a href="classtime__shield_1_1NtpClient.html#a9da229c83cd47d71c409e9aa389d37de">time_shield::NtpClient::get_utc_time_ms</a></div><div class="ttdeci">int64_t get_utc_time_ms() const noexcept</div><div class="ttdoc">Returns current UTC time in milliseconds based on last NTP offset.</div><div class="ttdef"><b>Definition</b> <a href="ntp__client_8hpp_source.html#l00134">ntp_client.hpp:134</a></div></div>
-<div class="ttc" id="aclasstime__shield_1_1NtpClient_html_aec57675f3cf62878d7fa628f9e512ab1"><div class="ttname"><a href="classtime__shield_1_1NtpClient.html#aec57675f3cf62878d7fa628f9e512ab1">time_shield::NtpClient::query</a></div><div class="ttdeci">bool query()</div><div class="ttdoc">Queries the NTP server and updates the local offset.</div><div class="ttdef"><b>Definition</b> <a href="ntp__client_8hpp_source.html#l00045">ntp_client.hpp:45</a></div></div>
+<div class="ttc" id="aclasstime__shield_1_1NtpClient_html"><div class="ttname"><a href="classtime__shield_1_1NtpClient.html">time_shield::NtpClient</a></div><div class="ttdoc">Windows implementation of the NTP client for measuring time offset.</div><div class="ttdef"><b>Definition</b> <a href="ntp__client_8hpp_source.html#l00038">ntp_client.hpp:38</a></div></div>
+<div class="ttc" id="aclasstime__shield_1_1NtpClient_html_a8e820854c8ee25115c65f9ffbe3da744"><div class="ttname"><a href="classtime__shield_1_1NtpClient.html#a8e820854c8ee25115c65f9ffbe3da744">time_shield::NtpClient::get_offset_us</a></div><div class="ttdeci">int64_t get_offset_us() const noexcept</div><div class="ttdoc">Returns the last measured offset in microseconds.</div><div class="ttdef"><b>Definition</b> <a href="ntp__client_8hpp_source.html#l00124">ntp_client.hpp:124</a></div></div>
+<div class="ttc" id="aclasstime__shield_1_1NtpClient_html_a9da229c83cd47d71c409e9aa389d37de"><div class="ttname"><a href="classtime__shield_1_1NtpClient.html#a9da229c83cd47d71c409e9aa389d37de">time_shield::NtpClient::get_utc_time_ms</a></div><div class="ttdeci">int64_t get_utc_time_ms() const noexcept</div><div class="ttdoc">Returns current UTC time in milliseconds based on last NTP offset.</div><div class="ttdef"><b>Definition</b> <a href="ntp__client_8hpp_source.html#l00137">ntp_client.hpp:137</a></div></div>
+<div class="ttc" id="aclasstime__shield_1_1NtpClient_html_aec57675f3cf62878d7fa628f9e512ab1"><div class="ttname"><a href="classtime__shield_1_1NtpClient.html#aec57675f3cf62878d7fa628f9e512ab1">time_shield::NtpClient::query</a></div><div class="ttdeci">bool query()</div><div class="ttdoc">Queries the NTP server and updates the local offset.</div><div class="ttdef"><b>Definition</b> <a href="ntp__client_8hpp_source.html#l00048">ntp_client.hpp:48</a></div></div>
 </div><!-- fragment --> </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

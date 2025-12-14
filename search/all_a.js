@@ -1,7 +1,7 @@
 var searchData=
 [
   ['last_5fday_5fof_5fmonth_0',['last_day_of_month',['../group__time__conversions.html#ga874c97d5a4d4918f03d9f8a244bde783',1,'time_shield::last_day_of_month(ts_t ts=time_shield::ts())'],['../group__time__conversions.html#ga3bb12ee673b12e991d293384a281fd61',1,'time_shield::last_day_of_month(long ts)']]],
-  ['last_5ferror_5fcode_5fslot_1',['last_error_code_slot',['../classtime__shield_1_1NtpClient.html#ad1cd8e7ce5d82bfbd482502951d0fac7',1,'time_shield::NtpClient']]],
+  ['last_5ferror_5fcode_5fslot_1',['last_error_code_slot',['../classtime__shield_1_1NtpClient.html#ad1cd8e7ce5d82bfbd482502951d0fac7',1,'time_shield::NtpClient::last_error_code_slot() noexcept'],['../classtime__shield_1_1NtpClient.html#ad1cd8e7ce5d82bfbd482502951d0fac7',1,'time_shield::NtpClient::last_error_code_slot() noexcept']]],
   ['last_5fquarter_2',['LAST_QUARTER',['../group__time__enums.html#gga5fa51beb76e014adfffcd028fe1804acabbc64be78b01604edf18005eb126443f',1,'time_shield']]],
   ['last_5fsample_5fticks_3',['last_sample_ticks',['../classtime__shield_1_1CpuTickTimer.html#a1992b7d86d0bc9854f4b4d6de3420fe9',1,'time_shield::CpuTickTimer']]],
   ['last_5fsunday_5fmonth_5fday_4',['last_sunday_month_day',['../group__time__conversions.html#ga303f4ae30aa80221e7f64336b5845f1b',1,'time_shield::last_sunday_month_day(T2 year, T3 month)'],['../group__time__conversions.html#gae4b608ce3dc80d44f98f13245fe23b85',1,'time_shield::last_sunday_month_day(long year, int month)']]],

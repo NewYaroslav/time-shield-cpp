@@ -98,6 +98,6 @@ var searchData=
   ['structures_95',['Structures',['../group__time__structures.html',1,'Time Structures'],['../group__mql5__time__structures.html',1,'Time Structures']]],
   ['structures_3a_96',['Structures:',['../group__time__structures.html#autotoc_md12',1,'Included Structures:'],['../group__mql5__time__structures.html#autotoc_md26',1,'Included Structures:']]],
   ['submodule_20with_20tt_20add_5fsubdirectory_20tt_97',['Git submodule with &lt;tt&gt;add_subdirectory&lt;/tt&gt;',['../index.html#install_submodule',1,'']]],
-  ['success_98',['success',['../classtime__shield_1_1NtpClient.html#a21ca9c846b63cc0af6f12c890772f608',1,'time_shield::NtpClient::success()'],['../classtime__shield_1_1WsaGuard.html#aa2744a80dd498c86daf4b0cb073d7ab5',1,'time_shield::WsaGuard::success()']]],
+  ['success_98',['success',['../classtime__shield_1_1NtpClient.html#a21ca9c846b63cc0af6f12c890772f608',1,'time_shield::NtpClient::success() const noexcept'],['../classtime__shield_1_1NtpClient.html#a21ca9c846b63cc0af6f12c890772f608',1,'time_shield::NtpClient::success() const noexcept'],['../classtime__shield_1_1WsaGuard.html#aa2744a80dd498c86daf4b0cb073d7ab5',1,'time_shield::WsaGuard::success()']]],
   ['sun_99',['SUN',['../group__time__enums.html#ggadf684443100352064316f6134bbe44f8a435b4a7299946a56caaeba3190113f57',1,'time_shield']]]
 ];

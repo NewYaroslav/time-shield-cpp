@@ -117,68 +117,70 @@ $(function(){initNavTree('ntp__client__example_8cpp_source.html',''); initResiza
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;iomanip&gt;</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;chrono&gt;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;ctime&gt;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#if defined(_WIN32)</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#   include &lt;<a class="code" href="initialization_8hpp.html">time_shield/initialization.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#   include &lt;<a class="code" href="ntp__client_8hpp.html">time_shield/ntp_client.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="foldopen" id="foldopen00016" data-start="{" data-end="}">
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="ntp__client__example_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">   16</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="ntp__client__example_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacetime__shield.html">time_shield</a>;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <a class="code hl_function" href="group__lib__initialization.html#gacd9321e53ba96f121ed56ff0a9497182">init</a>();</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <a class="code hl_class" href="classtime__shield_1_1NtpClient.html">NtpClient</a> client; <span class="comment">// uses pool.ntp.org by default</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Querying NTP server...&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">if</span> (!client.<a class="code hl_function" href="classtime__shield_1_1NtpClient.html#aec57675f3cf62878d7fa628f9e512ab1">query</a>()) {</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        std::cerr &lt;&lt; <span class="stringliteral">&quot;Failed to query NTP server. Error code: &quot;</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>                  &lt;&lt; client.<a class="code hl_function" href="classtime__shield_1_1NtpClient.html#aa7598538bea4f50a7e0d65a2ca3d5afb">get_last_error_code</a>() &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    }</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keyword">const</span> int64_t offset_us = client.<a class="code hl_function" href="classtime__shield_1_1NtpClient.html#a8e820854c8ee25115c65f9ffbe3da744">get_offset_us</a>();</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="comment">// Current local system time</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keyword">auto</span> <a class="code hl_function" href="group__time__utils.html#ga11b0b830fdc6c5505db1cd2683457d0e">now</a> = std::chrono::system_clock::now();</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">auto</span> now_time_t = std::chrono::system_clock::to_time_t(<a class="code hl_function" href="group__time__utils.html#ga11b0b830fdc6c5505db1cd2683457d0e">now</a>);</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Local time:    &quot;</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>              &lt;&lt; std::put_time(std::gmtime(&amp;now_time_t), <span class="stringliteral">&quot;%Y-%m-%d %H:%M:%S&quot;</span>)</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>              &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="comment">// Corrected time using the offset from the NTP server</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keyword">auto</span> corrected = std::chrono::system_clock::time_point(</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        std::chrono::microseconds(client.<a class="code hl_function" href="classtime__shield_1_1NtpClient.html#a7b72b7d569126425f9d67b1a010196fb">get_utc_time_us</a>()));</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keyword">auto</span> corrected_time_t = std::chrono::system_clock::to_time_t(corrected);</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Corrected time: &quot;</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>              &lt;&lt; std::put_time(std::gmtime(&amp;corrected_time_t), <span class="stringliteral">&quot;%Y-%m-%d %H:%M:%S&quot;</span>)</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>              &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Offset (us): &quot;</span> &lt;&lt; offset_us &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Press Enter to exit...&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    std::cin.get();</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>}</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;<a class="code" href="config_8hpp.html">time_shield/config.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#if TIME_SHIELD_ENABLE_NTP_CLIENT</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#   include &lt;<a class="code" href="initialization_8hpp.html">time_shield/initialization.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#   include &lt;<a class="code" href="ntp__client_8hpp.html">time_shield/ntp_client.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="foldopen" id="foldopen00017" data-start="{" data-end="}">
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="ntp__client__example_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">   17</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="ntp__client__example_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacetime__shield.html">time_shield</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <a class="code hl_function" href="group__lib__initialization.html#gacd9321e53ba96f121ed56ff0a9497182">init</a>();</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <a class="code hl_class" href="classtime__shield_1_1NtpClient.html">NtpClient</a> client; <span class="comment">// uses pool.ntp.org by default</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Querying NTP server...&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordflow">if</span> (!client.<a class="code hl_function" href="classtime__shield_1_1NtpClient.html#aec57675f3cf62878d7fa628f9e512ab1">query</a>()) {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        std::cerr &lt;&lt; <span class="stringliteral">&quot;Failed to query NTP server. Error code: &quot;</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                  &lt;&lt; client.<a class="code hl_function" href="classtime__shield_1_1NtpClient.html#aa7598538bea4f50a7e0d65a2ca3d5afb">get_last_error_code</a>() &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    }</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">const</span> int64_t offset_us = client.<a class="code hl_function" href="classtime__shield_1_1NtpClient.html#a8e820854c8ee25115c65f9ffbe3da744">get_offset_us</a>();</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="comment">// Current local system time</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">auto</span> <a class="code hl_function" href="group__time__utils.html#ga11b0b830fdc6c5505db1cd2683457d0e">now</a> = std::chrono::system_clock::now();</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">auto</span> now_time_t = std::chrono::system_clock::to_time_t(<a class="code hl_function" href="group__time__utils.html#ga11b0b830fdc6c5505db1cd2683457d0e">now</a>);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Local time:    &quot;</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>              &lt;&lt; std::put_time(std::gmtime(&amp;now_time_t), <span class="stringliteral">&quot;%Y-%m-%d %H:%M:%S&quot;</span>)</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>              &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="comment">// Corrected time using the offset from the NTP server</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">auto</span> corrected = std::chrono::system_clock::time_point(</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        std::chrono::microseconds(client.<a class="code hl_function" href="classtime__shield_1_1NtpClient.html#a7b72b7d569126425f9d67b1a010196fb">get_utc_time_us</a>()));</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keyword">auto</span> corrected_time_t = std::chrono::system_clock::to_time_t(corrected);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Corrected time: &quot;</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>              &lt;&lt; std::put_time(std::gmtime(&amp;corrected_time_t), <span class="stringliteral">&quot;%Y-%m-%d %H:%M:%S&quot;</span>)</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>              &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Offset (us): &quot;</span> &lt;&lt; offset_us &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Press Enter to exit...&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    std::cin.get();</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>}</div>
 </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="keywordtype">int</span> <a class="code hl_function" href="ntp__client__example_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;NtpClient is supported only on Windows.&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>}</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
-<div class="ttc" id="aclasstime__shield_1_1NtpClient_html"><div class="ttname"><a href="classtime__shield_1_1NtpClient.html">time_shield::NtpClient</a></div><div class="ttdoc">Simple Windows-only NTP client for measuring time offset.</div><div class="ttdef"><b>Definition</b> <a href="ntp__client_8hpp_source.html#l00035">ntp_client.hpp:35</a></div></div>
-<div class="ttc" id="aclasstime__shield_1_1NtpClient_html_a7b72b7d569126425f9d67b1a010196fb"><div class="ttname"><a href="classtime__shield_1_1NtpClient.html#a7b72b7d569126425f9d67b1a010196fb">time_shield::NtpClient::get_utc_time_us</a></div><div class="ttdeci">int64_t get_utc_time_us() const noexcept</div><div class="ttdoc">Returns current UTC time in microseconds based on last NTP offset.</div><div class="ttdef"><b>Definition</b> <a href="ntp__client_8hpp_source.html#l00127">ntp_client.hpp:127</a></div></div>
-<div class="ttc" id="aclasstime__shield_1_1NtpClient_html_a8e820854c8ee25115c65f9ffbe3da744"><div class="ttname"><a href="classtime__shield_1_1NtpClient.html#a8e820854c8ee25115c65f9ffbe3da744">time_shield::NtpClient::get_offset_us</a></div><div class="ttdeci">int64_t get_offset_us() const noexcept</div><div class="ttdoc">Returns the last measured offset in microseconds.</div><div class="ttdef"><b>Definition</b> <a href="ntp__client_8hpp_source.html#l00121">ntp_client.hpp:121</a></div></div>
-<div class="ttc" id="aclasstime__shield_1_1NtpClient_html_aa7598538bea4f50a7e0d65a2ca3d5afb"><div class="ttname"><a href="classtime__shield_1_1NtpClient.html#aa7598538bea4f50a7e0d65a2ca3d5afb">time_shield::NtpClient::get_last_error_code</a></div><div class="ttdeci">int get_last_error_code() const noexcept</div><div class="ttdoc">Returns last WinSock error code (if any).</div><div class="ttdef"><b>Definition</b> <a href="ntp__client_8hpp_source.html#l00145">ntp_client.hpp:145</a></div></div>
-<div class="ttc" id="aclasstime__shield_1_1NtpClient_html_aec57675f3cf62878d7fa628f9e512ab1"><div class="ttname"><a href="classtime__shield_1_1NtpClient.html#aec57675f3cf62878d7fa628f9e512ab1">time_shield::NtpClient::query</a></div><div class="ttdeci">bool query()</div><div class="ttdoc">Queries the NTP server and updates the local offset.</div><div class="ttdef"><b>Definition</b> <a href="ntp__client_8hpp_source.html#l00045">ntp_client.hpp:45</a></div></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keywordtype">int</span> <a class="code hl_function" href="ntp__client__example_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;NtpClient is disabled in this build.&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>}</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="ttc" id="aclasstime__shield_1_1NtpClient_html"><div class="ttname"><a href="classtime__shield_1_1NtpClient.html">time_shield::NtpClient</a></div><div class="ttdoc">Windows implementation of the NTP client for measuring time offset.</div><div class="ttdef"><b>Definition</b> <a href="ntp__client_8hpp_source.html#l00038">ntp_client.hpp:38</a></div></div>
+<div class="ttc" id="aclasstime__shield_1_1NtpClient_html_a7b72b7d569126425f9d67b1a010196fb"><div class="ttname"><a href="classtime__shield_1_1NtpClient.html#a7b72b7d569126425f9d67b1a010196fb">time_shield::NtpClient::get_utc_time_us</a></div><div class="ttdeci">int64_t get_utc_time_us() const noexcept</div><div class="ttdoc">Returns current UTC time in microseconds based on last NTP offset.</div><div class="ttdef"><b>Definition</b> <a href="ntp__client_8hpp_source.html#l00130">ntp_client.hpp:130</a></div></div>
+<div class="ttc" id="aclasstime__shield_1_1NtpClient_html_a8e820854c8ee25115c65f9ffbe3da744"><div class="ttname"><a href="classtime__shield_1_1NtpClient.html#a8e820854c8ee25115c65f9ffbe3da744">time_shield::NtpClient::get_offset_us</a></div><div class="ttdeci">int64_t get_offset_us() const noexcept</div><div class="ttdoc">Returns the last measured offset in microseconds.</div><div class="ttdef"><b>Definition</b> <a href="ntp__client_8hpp_source.html#l00124">ntp_client.hpp:124</a></div></div>
+<div class="ttc" id="aclasstime__shield_1_1NtpClient_html_aa7598538bea4f50a7e0d65a2ca3d5afb"><div class="ttname"><a href="classtime__shield_1_1NtpClient.html#aa7598538bea4f50a7e0d65a2ca3d5afb">time_shield::NtpClient::get_last_error_code</a></div><div class="ttdeci">int get_last_error_code() const noexcept</div><div class="ttdoc">Returns last WinSock error code (if any).</div><div class="ttdef"><b>Definition</b> <a href="ntp__client_8hpp_source.html#l00148">ntp_client.hpp:148</a></div></div>
+<div class="ttc" id="aclasstime__shield_1_1NtpClient_html_aec57675f3cf62878d7fa628f9e512ab1"><div class="ttname"><a href="classtime__shield_1_1NtpClient.html#aec57675f3cf62878d7fa628f9e512ab1">time_shield::NtpClient::query</a></div><div class="ttdeci">bool query()</div><div class="ttdoc">Queries the NTP server and updates the local offset.</div><div class="ttdef"><b>Definition</b> <a href="ntp__client_8hpp_source.html#l00048">ntp_client.hpp:48</a></div></div>
+<div class="ttc" id="aconfig_8hpp_html"><div class="ttname"><a href="config_8hpp.html">config.hpp</a></div><div class="ttdoc">Configuration macros for the library.</div></div>
 <div class="ttc" id="agroup__lib__initialization_html_gacd9321e53ba96f121ed56ff0a9497182"><div class="ttname"><a href="group__lib__initialization.html#gacd9321e53ba96f121ed56ff0a9497182">time_shield::init</a></div><div class="ttdeci">void init()</div><div class="ttdoc">Initializes the Time Shield library.</div><div class="ttdef"><b>Definition</b> <a href="initialization_8hpp_source.html#l00023">initialization.hpp:23</a></div></div>
-<div class="ttc" id="agroup__time__utils_html_ga11b0b830fdc6c5505db1cd2683457d0e"><div class="ttname"><a href="group__time__utils.html#ga11b0b830fdc6c5505db1cd2683457d0e">time_shield::now</a></div><div class="ttdeci">ts_ms_t now() noexcept</div><div class="ttdoc">Get the current UTC timestamp in milliseconds.</div><div class="ttdef"><b>Definition</b> <a href="time__utils_8hpp_source.html#l00189">time_utils.hpp:189</a></div></div>
+<div class="ttc" id="agroup__time__utils_html_ga11b0b830fdc6c5505db1cd2683457d0e"><div class="ttname"><a href="group__time__utils.html#ga11b0b830fdc6c5505db1cd2683457d0e">time_shield::now</a></div><div class="ttdeci">ts_ms_t now() noexcept</div><div class="ttdoc">Get the current UTC timestamp in milliseconds.</div><div class="ttdef"><b>Definition</b> <a href="time__utils_8hpp_source.html#l00221">time_utils.hpp:221</a></div></div>
 <div class="ttc" id="ainitialization_8hpp_html"><div class="ttname"><a href="initialization_8hpp.html">initialization.hpp</a></div><div class="ttdoc">Initialization helpers for the Time Shield library.</div></div>
 <div class="ttc" id="anamespacetime__shield_html"><div class="ttname"><a href="namespacetime__shield.html">time_shield</a></div><div class="ttdoc">Main namespace for the Time Shield library.</div></div>
 <div class="ttc" id="antp__client_8hpp_html"><div class="ttname"><a href="ntp__client_8hpp.html">ntp_client.hpp</a></div><div class="ttdoc">Simple NTP client for querying time offset from NTP servers.</div></div>
-<div class="ttc" id="antp__client__example_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="ntp__client__example_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition</b> <a href="#l00016">ntp_client_example.cpp:16</a></div></div>
+<div class="ttc" id="antp__client__example_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="ntp__client__example_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition</b> <a href="#l00017">ntp_client_example.cpp:17</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

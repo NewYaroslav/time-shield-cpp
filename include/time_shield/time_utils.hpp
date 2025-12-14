@@ -48,14 +48,15 @@ namespace time_shield {
     }
     
     /// \ingroup time_utils
-    /// \brief Get current real time in microseconds using a hybrid method.
+    /// \brief Get current real time in microseconds using a platform-specific method.
     ///
-    /// This function combines `QueryPerformanceCounter` (high-resolution monotonic clock)
-    /// with `GetSystemTimeAsFileTime` to compute an accurate, stable UTC timestamp.
-    /// The base time is initialized only once per process (lazy init).
+    /// On Windows this function combines `QueryPerformanceCounter`
+    /// (high-resolution monotonic clock) with `GetSystemTimeAsFileTime` to compute an accurate,
+    /// stable UTC timestamp. The base time is initialized only once per process (lazy init).
+    /// On Unix-like systems a realtime anchor is captured once and combined with a
+    /// high-resolution monotonic clock to compute stable timestamps.
     ///
     /// \return Current UTC timestamp in microseconds.
-    /// \note Windows only. Not available on Unix-like systems.
     inline int64_t now_realtime_us() {
 #       if TIME_SHIELD_PLATFORM_WINDOWS
         static std::once_flag init_flag;
@@ -102,7 +103,38 @@ namespace time_shield {
 
         return s_anchor_realtime_us + delta_us;
 #       else
-        return 0;
+        static std::once_flag init_flag;
+        static int64_t s_anchor_realtime_us = 0;
+        static int64_t s_anchor_mono_ns = 0;
+
+        std::call_once(init_flag, []() {
+            struct timespec realtime_ts{};
+            struct timespec mono_ts{};
+
+#           if defined(CLOCK_MONOTONIC_RAW)
+            clock_gettime(CLOCK_MONOTONIC_RAW, &mono_ts);
+#           else
+            clock_gettime(CLOCK_MONOTONIC, &mono_ts);
+#           endif
+            clock_gettime(CLOCK_REALTIME, &realtime_ts);
+
+            s_anchor_realtime_us = static_cast<int64_t>(realtime_ts.tv_sec) * 1000000LL
+                                 + realtime_ts.tv_nsec / 1000;
+            s_anchor_mono_ns = static_cast<int64_t>(mono_ts.tv_sec) * 1000000000LL
+                             + mono_ts.tv_nsec;
+        });
+
+        struct timespec mono_now_ts{};
+#       if defined(CLOCK_MONOTONIC_RAW)
+        clock_gettime(CLOCK_MONOTONIC_RAW, &mono_now_ts);
+#       else
+        clock_gettime(CLOCK_MONOTONIC, &mono_now_ts);
+#       endif
+
+        const int64_t mono_now_ns = static_cast<int64_t>(mono_now_ts.tv_sec) * 1000000000LL
+                                  + mono_now_ts.tv_nsec;
+        const int64_t delta_ns = mono_now_ns - s_anchor_mono_ns;
+        return s_anchor_realtime_us + delta_ns / 1000;
 #       endif
     }
 

@@ -87,7 +87,7 @@
 /// \name Optional features
 ///@{
 #ifndef TIME_SHIELD_ENABLE_NTP_CLIENT
-#   if TIME_SHIELD_HAS_WINSOCK
+#   if TIME_SHIELD_HAS_WINSOCK || TIME_SHIELD_PLATFORM_UNIX
 #       define TIME_SHIELD_ENABLE_NTP_CLIENT 1
 #   else
 #       define TIME_SHIELD_ENABLE_NTP_CLIENT 0

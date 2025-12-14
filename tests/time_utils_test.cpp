@@ -3,6 +3,8 @@
 
 #include <cassert>
 #include <cmath>
+#include <thread>
+#include <chrono>
 
 /// \brief Basic checks for time utility helpers.
 int main() {
@@ -24,6 +26,14 @@ int main() {
     ts_us_t u1 = ts_us();
     ts_us_t u2 = timestamp_us();
     assert(u2 >= u1 && u2 - u1 < US_PER_SEC);
+
+    const int64_t rt1 = now_realtime_us();
+    const int64_t rt2 = now_realtime_us();
+    assert(rt2 >= rt1);
+
+    std::this_thread::sleep_for(std::chrono::milliseconds(2));
+    const int64_t rt3 = now_realtime_us();
+    assert(rt3 >= rt2);
 
     CpuTickTimer timer{};
     double first_sample = timer.record_sample();

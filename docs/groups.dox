@@ -163,12 +163,13 @@ ts_t gmt_ts = time_shield::cet_to_gmt(cet_ts);
 
 This module contains a minimal client capable of querying remote NTP
 servers to measure the offset between local and network time. It uses
-WinSock via the `WsaGuard` helper and therefore works only on Windows.
+WinSock via the `WsaGuard` helper on Windows and POSIX sockets on Unix
+platforms.
 
 ### Features:
 - Query NTP servers and obtain the time offset.
 - Retrieve corrected UTC time in microseconds and milliseconds.
-- Automatic WinSock initialization through `WsaGuard`.
+- Automatic WinSock initialization through `WsaGuard` (Windows build).
 - Requires network connectivity.
 
 ### Example Usage:

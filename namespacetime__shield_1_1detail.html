@@ -112,7 +112,7 @@ $(function(){initNavTree('namespacetime__shield_1_1detail.html',''); initResizab
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">time_shield::detail Namespace Reference</div></div>
+  <div class="headertitle"><div class="title">time_shield::detail Namespace Reference<div class="ingroups"><a class="el" href="group__time__parsing.html">Time Parsing</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
@@ -142,6 +142,48 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a8457db4d57439e08761c4233512af39f" id="r_a8457db4d57439e08761c4233512af39f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8457db4d57439e08761c4233512af39f">trim_copy_ascii</a> (const std::string &amp;s)</td></tr>
+<tr class="memdesc:a8457db4d57439e08761c4233512af39f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trim ASCII whitespace from both ends.  <br /></td></tr>
+<tr class="separator:a8457db4d57439e08761c4233512af39f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ebc306d8cf35e7bd04192e453546848" id="r_a9ebc306d8cf35e7bd04192e453546848"><td class="memItemLeft" align="right" valign="top">std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9ebc306d8cf35e7bd04192e453546848">trim_view_ascii</a> (std::string_view v)</td></tr>
+<tr class="memdesc:a9ebc306d8cf35e7bd04192e453546848"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trim ASCII whitespace from both ends (string_view).  <br /></td></tr>
+<tr class="separator:a9ebc306d8cf35e7bd04192e453546848"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53651fd1b0b021a4314685e7ef988c1f" id="r_a53651fd1b0b021a4314685e7ef988c1f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a53651fd1b0b021a4314685e7ef988c1f">normalise_month_token_lower</a> (const std::string &amp;month, std::string &amp;output)</td></tr>
+<tr class="memdesc:a53651fd1b0b021a4314685e7ef988c1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalize month token to lower-case ASCII using current locale facet.  <br /></td></tr>
+<tr class="separator:a53651fd1b0b021a4314685e7ef988c1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1844457ef45fe59921b56ca62179423b" id="r_a1844457ef45fe59921b56ca62179423b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1844457ef45fe59921b56ca62179423b">normalise_month_token_lower</a> (std::string_view month, std::string &amp;output)</td></tr>
+<tr class="memdesc:a1844457ef45fe59921b56ca62179423b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalize month token to lower-case ASCII using current locale facet (string_view).  <br /></td></tr>
+<tr class="separator:a1844457ef45fe59921b56ca62179423b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac029cb3ca44207a7235acda196e3ad1b" id="r_ac029cb3ca44207a7235acda196e3ad1b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac029cb3ca44207a7235acda196e3ad1b">try_parse_month_index</a> (const std::string &amp;month, int &amp;value)</td></tr>
+<tr class="memdesc:ac029cb3ca44207a7235acda196e3ad1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try parse month name token into month index (1..12).  <br /></td></tr>
+<tr class="separator:ac029cb3ca44207a7235acda196e3ad1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b4dd2b6af8616b2cd581c275b38334b" id="r_a9b4dd2b6af8616b2cd581c275b38334b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b4dd2b6af8616b2cd581c275b38334b">try_parse_month_index</a> (std::string_view month, int &amp;value)</td></tr>
+<tr class="memdesc:a9b4dd2b6af8616b2cd581c275b38334b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try parse month name token into month index (1..12), string_view overload.  <br /></td></tr>
+<tr class="separator:a9b4dd2b6af8616b2cd581c275b38334b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec5a95b3874a3cd243821dd1c2c1f295" id="r_aec5a95b3874a3cd243821dd1c2c1f295"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aec5a95b3874a3cd243821dd1c2c1f295">parse_month_index</a> (const std::string &amp;month)</td></tr>
+<tr class="memdesc:aec5a95b3874a3cd243821dd1c2c1f295"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse month name token into month index (1..12).  <br /></td></tr>
+<tr class="separator:aec5a95b3874a3cd243821dd1c2c1f295"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6dee1c0e77efc5a9b190b31ba07ff2ed" id="r_a6dee1c0e77efc5a9b190b31ba07ff2ed"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6dee1c0e77efc5a9b190b31ba07ff2ed">parse_month_index</a> (std::string_view month)</td></tr>
+<tr class="memdesc:a6dee1c0e77efc5a9b190b31ba07ff2ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse month name token into month index (1..12), string_view overload.  <br /></td></tr>
+<tr class="separator:a6dee1c0e77efc5a9b190b31ba07ff2ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c4e74dd641a830641fdb33e3d225944" id="r_a4c4e74dd641a830641fdb33e3d225944"><td class="memItemLeft" align="right" valign="top">TIME_SHIELD_CONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4c4e74dd641a830641fdb33e3d225944">is_ascii_space</a> (char c) noexcept</td></tr>
+<tr class="memdesc:a4c4e74dd641a830641fdb33e3d225944"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether character is ASCII whitespace.  <br /></td></tr>
+<tr class="separator:a4c4e74dd641a830641fdb33e3d225944"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30bd76de8e4ab15d80d93032c4216245" id="r_a30bd76de8e4ab15d80d93032c4216245"><td class="memItemLeft" align="right" valign="top">TIME_SHIELD_CONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a30bd76de8e4ab15d80d93032c4216245">is_ascii_digit</a> (char c) noexcept</td></tr>
+<tr class="memdesc:a30bd76de8e4ab15d80d93032c4216245"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether character is ASCII digit.  <br /></td></tr>
+<tr class="separator:a30bd76de8e4ab15d80d93032c4216245"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8732a208af06d7af4e8b4e3a670800a1" id="r_a8732a208af06d7af4e8b4e3a670800a1"><td class="memItemLeft" align="right" valign="top">TIME_SHIELD_CONSTEXPR void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8732a208af06d7af4e8b4e3a670800a1">skip_spaces</a> (const char *&amp;p, const char *end) noexcept</td></tr>
+<tr class="memdesc:a8732a208af06d7af4e8b4e3a670800a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Skip ASCII whitespace.  <br /></td></tr>
+<tr class="separator:a8732a208af06d7af4e8b4e3a670800a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46444ff7df406058fc8e69c195281153" id="r_a46444ff7df406058fc8e69c195281153"><td class="memItemLeft" align="right" valign="top">TIME_SHIELD_CONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46444ff7df406058fc8e69c195281153">parse_2digits</a> (const char *&amp;p, const char *end, int &amp;out) noexcept</td></tr>
+<tr class="memdesc:a46444ff7df406058fc8e69c195281153"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse exactly 2 digits into int.  <br /></td></tr>
+<tr class="separator:a46444ff7df406058fc8e69c195281153"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c5b7bfd8e7562bfb88af4d1cd8850c7" id="r_a9c5b7bfd8e7562bfb88af4d1cd8850c7"><td class="memItemLeft" align="right" valign="top">TIME_SHIELD_CONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9c5b7bfd8e7562bfb88af4d1cd8850c7">parse_4digits_year</a> (const char *&amp;p, const char *end, <a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9">year_t</a> &amp;out) noexcept</td></tr>
+<tr class="memdesc:a9c5b7bfd8e7562bfb88af4d1cd8850c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse exactly 4 digits into <a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9" title="Year as an integer (e.g., 2024).">year_t</a> (via int).  <br /></td></tr>
+<tr class="separator:a9c5b7bfd8e7562bfb88af4d1cd8850c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26075423e41821bdd117a0a82ac63ad9" id="r_a26075423e41821bdd117a0a82ac63ad9"><td class="memItemLeft" align="right" valign="top">TIME_SHIELD_CONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a26075423e41821bdd117a0a82ac63ad9">parse_fraction_to_ms</a> (const char *&amp;p, const char *end, int &amp;ms_out) noexcept</td></tr>
+<tr class="memdesc:a26075423e41821bdd117a0a82ac63ad9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse fractional seconds (1..9 digits) and convert to milliseconds.  <br /></td></tr>
+<tr class="separator:a26075423e41821bdd117a0a82ac63ad9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e9f998322af0d986f490b7526d5345d" id="r_a5e9f998322af0d986f490b7526d5345d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structtime__shield_1_1detail_1_1TimerState.html">TimerState</a> *&amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e9f998322af0d986f490b7526d5345d">current_timer_state</a> ()</td></tr>
 <tr class="separator:a5e9f998322af0d986f490b7526d5345d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -203,6 +245,518 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="TimerScheduler_8hpp_source.html#l00057">57</a> of file <a class="el" href="TimerScheduler_8hpp_source.html">TimerScheduler.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a30bd76de8e4ab15d80d93032c4216245" name="a30bd76de8e4ab15d80d93032c4216245"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30bd76de8e4ab15d80d93032c4216245">&#9670;&#160;</a></span>is_ascii_digit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TIME_SHIELD_CONSTEXPR bool time_shield::detail::is_ascii_digit </td>
+          <td>(</td>
+          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>c</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check whether character is ASCII digit. </p>
+
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00218">218</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a4c4e74dd641a830641fdb33e3d225944" name="a4c4e74dd641a830641fdb33e3d225944"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c4e74dd641a830641fdb33e3d225944">&#9670;&#160;</a></span>is_ascii_space()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TIME_SHIELD_CONSTEXPR bool time_shield::detail::is_ascii_space </td>
+          <td>(</td>
+          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>c</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check whether character is ASCII whitespace. </p>
+
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00213">213</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a53651fd1b0b021a4314685e7ef988c1f" name="a53651fd1b0b021a4314685e7ef988c1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53651fd1b0b021a4314685e7ef988c1f">&#9670;&#160;</a></span>normalise_month_token_lower() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void time_shield::detail::normalise_month_token_lower </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>month</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>output</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Normalize month token to lower-case ASCII using current locale facet. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">month</td><td>Input token. </td></tr>
+    <tr><td class="paramname">output</td><td>Output lower-case token (overwritten). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00096">96</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a1844457ef45fe59921b56ca62179423b" name="a1844457ef45fe59921b56ca62179423b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1844457ef45fe59921b56ca62179423b">&#9670;&#160;</a></span>normalise_month_token_lower() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void time_shield::detail::normalise_month_token_lower </td>
+          <td>(</td>
+          <td class="paramtype">std::string_view</td>          <td class="paramname"><span class="paramname"><em>month</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>output</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Normalize month token to lower-case ASCII using current locale facet (string_view). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">month</td><td>Input token view. </td></tr>
+    <tr><td class="paramname">output</td><td>Output lower-case token (overwritten). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00109">109</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a46444ff7df406058fc8e69c195281153" name="a46444ff7df406058fc8e69c195281153"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46444ff7df406058fc8e69c195281153">&#9670;&#160;</a></span>parse_2digits()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TIME_SHIELD_CONSTEXPR bool time_shield::detail::parse_2digits </td>
+          <td>(</td>
+          <td class="paramtype">const char *&amp;</td>          <td class="paramname"><span class="paramname"><em>p</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>end</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;</td>          <td class="paramname"><span class="paramname"><em>out</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Parse exactly 2 digits into int. </p>
+<dl class="section return"><dt>Returns</dt><dd>true on success. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00231">231</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a9c5b7bfd8e7562bfb88af4d1cd8850c7" name="a9c5b7bfd8e7562bfb88af4d1cd8850c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c5b7bfd8e7562bfb88af4d1cd8850c7">&#9670;&#160;</a></span>parse_4digits_year()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TIME_SHIELD_CONSTEXPR bool time_shield::detail::parse_4digits_year </td>
+          <td>(</td>
+          <td class="paramtype">const char *&amp;</td>          <td class="paramname"><span class="paramname"><em>p</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>end</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9">year_t</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>out</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Parse exactly 4 digits into <a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9" title="Year as an integer (e.g., 2024).">year_t</a> (via int). </p>
+<dl class="section return"><dt>Returns</dt><dd>true on success. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00247">247</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a26075423e41821bdd117a0a82ac63ad9" name="a26075423e41821bdd117a0a82ac63ad9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26075423e41821bdd117a0a82ac63ad9">&#9670;&#160;</a></span>parse_fraction_to_ms()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TIME_SHIELD_CONSTEXPR bool time_shield::detail::parse_fraction_to_ms </td>
+          <td>(</td>
+          <td class="paramtype">const char *&amp;</td>          <td class="paramname"><span class="paramname"><em>p</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>end</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;</td>          <td class="paramname"><span class="paramname"><em>ms_out</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Parse fractional seconds (1..9 digits) and convert to milliseconds. </p>
+<p>Uses first 3 digits, scales if fewer. </p><dl class="section return"><dt>Returns</dt><dd>true on success. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00264">264</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aec5a95b3874a3cd243821dd1c2c1f295" name="aec5a95b3874a3cd243821dd1c2c1f295"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec5a95b3874a3cd243821dd1c2c1f295">&#9670;&#160;</a></span>parse_month_index() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int time_shield::detail::parse_month_index </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>month</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Parse month name token into month index (1..12). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">month</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a> token. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a> index [1..12]. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>if token is invalid. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00186">186</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a6dee1c0e77efc5a9b190b31ba07ff2ed" name="a6dee1c0e77efc5a9b190b31ba07ff2ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6dee1c0e77efc5a9b190b31ba07ff2ed">&#9670;&#160;</a></span>parse_month_index() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int time_shield::detail::parse_month_index </td>
+          <td>(</td>
+          <td class="paramtype">std::string_view</td>          <td class="paramname"><span class="paramname"><em>month</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Parse month name token into month index (1..12), string_view overload. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">month</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a> token view. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a> index [1..12]. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>if token is invalid. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00199">199</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a8732a208af06d7af4e8b4e3a670800a1" name="a8732a208af06d7af4e8b4e3a670800a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8732a208af06d7af4e8b4e3a670800a1">&#9670;&#160;</a></span>skip_spaces()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TIME_SHIELD_CONSTEXPR void time_shield::detail::skip_spaces </td>
+          <td>(</td>
+          <td class="paramtype">const char *&amp;</td>          <td class="paramname"><span class="paramname"><em>p</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>end</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Skip ASCII whitespace. </p>
+
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00223">223</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a8457db4d57439e08761c4233512af39f" name="a8457db4d57439e08761c4233512af39f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8457db4d57439e08761c4233512af39f">&#9670;&#160;</a></span>trim_copy_ascii()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string time_shield::detail::trim_copy_ascii </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>s</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Trim ASCII whitespace from both ends. </p>
+
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00074">74</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a9ebc306d8cf35e7bd04192e453546848" name="a9ebc306d8cf35e7bd04192e453546848"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ebc306d8cf35e7bd04192e453546848">&#9670;&#160;</a></span>trim_view_ascii()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string_view time_shield::detail::trim_view_ascii </td>
+          <td>(</td>
+          <td class="paramtype">std::string_view</td>          <td class="paramname"><span class="paramname"><em>v</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Trim ASCII whitespace from both ends (string_view). </p>
+
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00084">84</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ac029cb3ca44207a7235acda196e3ad1b" name="ac029cb3ca44207a7235acda196e3ad1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac029cb3ca44207a7235acda196e3ad1b">&#9670;&#160;</a></span>try_parse_month_index() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool time_shield::detail::try_parse_month_index </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>month</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Try parse month name token into month index (1..12). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">month</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a> token (e.g. "Jan", "January", case-insensitive). </td></tr>
+    <tr><td class="paramname">value</td><td>Output month index in range [1..12]. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if token matches a supported month name, false otherwise. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00124">124</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a9b4dd2b6af8616b2cd581c275b38334b" name="a9b4dd2b6af8616b2cd581c275b38334b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b4dd2b6af8616b2cd581c275b38334b">&#9670;&#160;</a></span>try_parse_month_index() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool time_shield::detail::try_parse_month_index </td>
+          <td>(</td>
+          <td class="paramtype">std::string_view</td>          <td class="paramname"><span class="paramname"><em>month</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Try parse month name token into month index (1..12), string_view overload. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">month</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a> token view (e.g. "Jan", "January", case-insensitive). </td></tr>
+    <tr><td class="paramname">value</td><td>Output month index in range [1..12]. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if token matches a supported month name, false otherwise. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00155">155</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>

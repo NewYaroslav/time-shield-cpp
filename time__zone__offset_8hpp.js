@@ -1,9 +1,5 @@
-var group__time__conversions__time__zone__conversions =
+var time__zone__offset_8hpp =
 [
-    [ "time_shield::cet_to_gmt", "group__time__conversions__time__zone__conversions.html#ga5974ceb721d677396c4297474832adad", null ],
-    [ "time_shield::eet_to_gmt", "group__time__conversions__time__zone__conversions.html#ga0947d55d6b45837a23aa01ba52c2d49c", null ],
-    [ "time_shield::gmt_to_cet", "group__time__conversions__time__zone__conversions.html#ga6d2d0a5326b64abe301a962ce6e42c9d", null ],
-    [ "time_shield::gmt_to_eet", "group__time__conversions__time__zone__conversions.html#ga0fdf7732ae50044e684ba0874fd52f0f", null ],
     [ "time_shield::to_local", "group__time__conversions__time__zone__conversions.html#ga654b2916254a1dd8c79287c98c3cc5fc", null ],
     [ "time_shield::to_local_ms", "group__time__conversions__time__zone__conversions.html#ga7dd24aa4cd88390a8857f637b3e7961f", null ],
     [ "time_shield::to_utc", "group__time__conversions__time__zone__conversions.html#ga4320de6e789fb8a19c3ab2c3bdc02570", null ],

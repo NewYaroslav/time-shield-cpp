@@ -10,6 +10,7 @@ All notable changes to this project will be documented in this file.
 - Expanded time parsing and workday/date conversion APIs: new month/workday inspectors, `unix_day_to_ts*` aliases, `days_since_epoch*`/`min_since_epoch`, and renamed year accessors to `years_since_epoch`/`year_of*`.
 - Added POSIX `NtpClient` implementation with Unix test coverage and refreshed NTP documentation.
 - Unified `now_realtime_us()` precision across Windows and Unix by combining realtime anchors with monotonic clocks.
+- Added MQL5 counterparts for recent workday boundary and ISO parsing helpers.
 
 ## [v1.0.4] - 2025-09-20
 - fix ODR violations in headers

@@ -1,6 +1,10 @@
 var group__time__parsing =
 [
     [ "time_shield::detail", "namespacetime__shield_1_1detail.html", null ],
+    [ "time_shield::end_of_first_workday_month", "group__time__parsing.html#gad4431cf9c377675f103fa518dd2a0e29", null ],
+    [ "time_shield::end_of_first_workday_month_ms", "group__time__parsing.html#ga7084d3272a262cdf306fda3a1464a92f", null ],
+    [ "time_shield::end_of_last_workday_month", "group__time__parsing.html#ga9c41d2fa0b26c0a8e82e3b2edaeeb904", null ],
+    [ "time_shield::end_of_last_workday_month_ms", "group__time__parsing.html#gadc0927a3f7bb178facc95e4cce377511", null ],
     [ "time_shield::fts", "group__time__parsing.html#ga39e225349b834af878355d06e4417f91", null ],
     [ "time_shield::fts", "group__time__parsing.html#ga3fb02bd3274dc0f6d2315524b6394209", null ],
     [ "time_shield::fts", "group__time__parsing.html#ga3fa5235b5adb234572e3880e126db25b", null ],
@@ -61,6 +65,10 @@ var group__time__parsing =
     [ "time_shield::sec_of_day", "group__time__parsing.html#gab6b780ff17e1f208ba48b508e6d6d4db", null ],
     [ "time_shield::sec_of_day", "group__time__parsing.html#ga7c4315a653bf2fe4a8a521279974781e", null ],
     [ "time_shield::sec_of_day", "group__time__parsing.html#ga7a93c6a51a52b543fc651ed46d856379", null ],
+    [ "time_shield::start_of_first_workday_month", "group__time__parsing.html#ga5f3fd3f8c45abcde45882d3f3dec0bde", null ],
+    [ "time_shield::start_of_first_workday_month_ms", "group__time__parsing.html#ga5333fe98177a9df40578bdbdbf8e1a67", null ],
+    [ "time_shield::start_of_last_workday_month", "group__time__parsing.html#ga74a5a7a7069e41c4f7480f6662c38e07", null ],
+    [ "time_shield::start_of_last_workday_month_ms", "group__time__parsing.html#ga7422ff789d37e7da22dfb4424ae57edd", null ],
     [ "time_shield::str_to_fts", "group__time__parsing.html#ga06f8f865865177bae5b1b289e03e9374", null ],
     [ "time_shield::str_to_fts", "group__time__parsing.html#gae2acf7da2c109a1f3082ae7087bef994", null ],
     [ "time_shield::str_to_fts", "group__time__parsing.html#ga741dc31dbe9f05c8d5eb530c92619bc8", null ],

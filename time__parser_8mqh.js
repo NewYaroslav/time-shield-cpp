@@ -1,5 +1,9 @@
 var time__parser_8mqh =
 [
+    [ "time_shield::end_of_first_workday_month", "group__time__parsing.html#gad4431cf9c377675f103fa518dd2a0e29", null ],
+    [ "time_shield::end_of_first_workday_month_ms", "group__time__parsing.html#ga7084d3272a262cdf306fda3a1464a92f", null ],
+    [ "time_shield::end_of_last_workday_month", "group__time__parsing.html#ga9c41d2fa0b26c0a8e82e3b2edaeeb904", null ],
+    [ "time_shield::end_of_last_workday_month_ms", "group__time__parsing.html#gadc0927a3f7bb178facc95e4cce377511", null ],
     [ "time_shield::fts", "group__time__parsing.html#gaab5d20fdcaaa16966851c8f2a5588fbd", null ],
     [ "time_shield::get_month_number", "group__time__parsing.html#ga98b37fd01abd4419a47242117c8bbaf5", null ],
     [ "time_shield::get_month_number", "group__time__parsing.html#gaa12be26393b8f69992e58c470fa27fdf", null ],
@@ -19,6 +23,10 @@ var time__parser_8mqh =
     [ "time_shield::parse_time_zone", "group__time__parsing.html#gaf37126208f8b6c5f58d640a852351da8", null ],
     [ "time_shield::parse_tz", "group__time__parsing.html#ga1b1186afcf8fc688c81d549afe4fd945", null ],
     [ "time_shield::sec_of_day", "group__time__parsing.html#ga7a93c6a51a52b543fc651ed46d856379", null ],
+    [ "time_shield::start_of_first_workday_month", "group__time__parsing.html#ga5f3fd3f8c45abcde45882d3f3dec0bde", null ],
+    [ "time_shield::start_of_first_workday_month_ms", "group__time__parsing.html#ga5333fe98177a9df40578bdbdbf8e1a67", null ],
+    [ "time_shield::start_of_last_workday_month", "group__time__parsing.html#ga74a5a7a7069e41c4f7480f6662c38e07", null ],
+    [ "time_shield::start_of_last_workday_month_ms", "group__time__parsing.html#ga7422ff789d37e7da22dfb4424ae57edd", null ],
     [ "time_shield::str_to_fts", "group__time__parsing.html#ga741dc31dbe9f05c8d5eb530c92619bc8", null ],
     [ "time_shield::str_to_ts", "group__time__parsing.html#ga2f88c064c66876e8282a89d35dd8526e", null ],
     [ "time_shield::str_to_ts_ms", "group__time__parsing.html#ga5b6f82f10163e9139152100c77080db6", null ],

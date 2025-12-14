@@ -211,6 +211,21 @@ bool from_str = is_workday("2024-03-18T09:00:00Z");     // ISO8601 string
 
 The string helpers accept the same ISO8601 formats as `str_to_ts` / `str_to_ts_ms` and evaluate to `false` when parsing fails or the date falls on a weekend.
 
+### Locating first and last workdays
+
+```cpp
+#include <time_shield/time_conversions.hpp>
+
+using namespace time_shield;
+
+ts_t first_open = start_of_first_workday_month(2024, 6);     // 2024-06-03T00:00:00Z
+ts_t first_close = end_of_first_workday_month(2024, Month::JUN);
+ts_t last_open = start_of_last_workday_month(2024, 3);        // 2024-03-29T00:00:00Z
+ts_ms_t last_close_ms = end_of_last_workday_month_ms(2024, Month::MAR);
+```
+
+The helpers reuse the `start_of_day` / `end_of_day` semantics and therefore return UTC timestamps. Invalid months or months without workdays produce `ERROR_TIMESTAMP` to simplify downstream validation.
+
 ### Time zone conversion
 
 ```cpp

@@ -14,5 +14,16 @@ int main() {
     assert(start_of_min(61) == 60);
     assert(end_of_min(60) == 119);
 
+    const ts_t first_workday_start = start_of_first_workday_month(2024, 6);
+    assert(first_workday_start == to_timestamp(2024, 6, 3));
+    assert(end_of_first_workday_month(2024, 6) == end_of_day(first_workday_start));
+
+    const ts_t last_workday_start = start_of_last_workday_month(2024, 3);
+    assert(last_workday_start == to_timestamp(2024, 3, 29));
+    assert(end_of_last_workday_month_ms(2024, 3) == end_of_day_ms(sec_to_ms(last_workday_start)));
+
+    assert(start_of_first_workday_month(2024, 13) == ERROR_TIMESTAMP);
+    assert(end_of_last_workday_month_ms(2024, 0) == ERROR_TIMESTAMP);
+
     return 0;
 }

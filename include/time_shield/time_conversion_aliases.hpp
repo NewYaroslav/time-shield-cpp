@@ -86,7 +86,7 @@ namespace time_shield {
     /// \copydoc days_since_epoch
     template<class T = uday_t>
     constexpr T get_unixday_ms(ts_ms_t t_ms = time_shield::ts_ms()) noexcept {
-        return days_since_epoch<T>(t_ms);
+        return days_since_epoch_ms<T>(t_ms);
     }
 
 
@@ -94,7 +94,7 @@ namespace time_shield {
     /// \copydoc days_since_epoch
     template<class T = uday_t>
     constexpr T unix_day_ms(ts_ms_t t_ms = time_shield::ts_ms()) noexcept {
-        return days_since_epoch<T>(t_ms);
+        return days_since_epoch_ms<T>(t_ms);
     }
 
 
@@ -102,7 +102,7 @@ namespace time_shield {
     /// \copydoc days_since_epoch
     template<class T = uday_t>
     constexpr T unixday_ms(ts_ms_t t_ms = time_shield::ts_ms()) noexcept {
-        return days_since_epoch<T>(t_ms);
+        return days_since_epoch_ms<T>(t_ms);
     }
 
 
@@ -110,14 +110,14 @@ namespace time_shield {
     /// \copydoc days_since_epoch
     template<class T = uday_t>
     constexpr T uday_ms(ts_ms_t t_ms = time_shield::ts_ms()) noexcept {
-        return days_since_epoch<T>(t_ms);
+        return days_since_epoch_ms<T>(t_ms);
     }
-    
+
     /// \brief Alias for days_since_epoch function.
     /// \copydoc days_since_epoch
     template<class T = uday_t>
     constexpr T get_unix_day_ms(ts_ms_t t_ms = time_shield::ts_ms()) noexcept {
-        return days_since_epoch<T>(t_ms);
+        return days_since_epoch_ms<T>(t_ms);
     }
     
 //------------------------------------------------------------------------------

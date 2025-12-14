@@ -21,11 +21,7 @@ target_include_directories(
 include(GNUInstallDirs)
 include(CMakePackageConfigHelpers)
 
-if(WIN32)
-    set(TIME_SHIELD_ENABLE_NTP_CLIENT_DEFAULT ON)
-else()
-    set(TIME_SHIELD_ENABLE_NTP_CLIENT_DEFAULT OFF)
-endif()
+set(TIME_SHIELD_ENABLE_NTP_CLIENT_DEFAULT ON)
 option(TIME_SHIELD_ENABLE_NTP_CLIENT "Enable NTP client" ${TIME_SHIELD_ENABLE_NTP_CLIENT_DEFAULT})
 
 target_compile_definitions(

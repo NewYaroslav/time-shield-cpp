@@ -82,7 +82,7 @@ Additional example files are located in the `examples/` folder:
 - `time_parser_example.cpp` — parse ISO8601
 - `time_conversions_example.cpp` — convert between formats
 - `time_zone_conversions_example.cpp` — CET/EET ↔ GMT
-- `ntp_client_example.cpp` — NTP sync (Windows-only)
+- `ntp_client_example.cpp` — NTP sync (sockets)
 
 \subsection workday_helpers Workday helpers
 

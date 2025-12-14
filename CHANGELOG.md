@@ -8,6 +8,8 @@ All notable changes to this project will be documented in this file.
 - Added workday boundary coverage and alias verification to `time_conversions_test`.
 - Introduced UTC offset helpers (`to_utc`/`to_local`, seconds and milliseconds) and TimeZoneStruct offset extraction.
 - Expanded time parsing and workday/date conversion APIs: new month/workday inspectors, `unix_day_to_ts*` aliases, `days_since_epoch*`/`min_since_epoch`, and renamed year accessors to `years_since_epoch`/`year_of*`.
+- Added POSIX `NtpClient` implementation with Unix test coverage and refreshed NTP documentation.
+- Unified `now_realtime_us()` precision across Windows and Unix by combining realtime anchors with monotonic clocks.
 
 ## [v1.0.4] - 2025-09-20
 - fix ODR violations in headers

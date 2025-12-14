@@ -9,7 +9,8 @@
 #include <iomanip>
 #include <chrono>
 #include <ctime>
-#if defined(_WIN32)
+#include <time_shield/config.hpp>
+#if TIME_SHIELD_ENABLE_NTP_CLIENT
 #   include <time_shield/initialization.hpp>
 #   include <time_shield/ntp_client.hpp>
 
@@ -53,7 +54,7 @@ int main() {
 
 #else
 int main() {
-    std::cout << "NtpClient is supported only on Windows." << std::endl;
+    std::cout << "NtpClient is disabled in this build." << std::endl;
     return 0;
 }
 #endif

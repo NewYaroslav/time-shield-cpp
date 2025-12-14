@@ -35,9 +35,9 @@ more academic solutions like `HowardHinnant/date`, the library:
   exceptions, STL containers or dynamic memory are required;
 - ships as **header-only**—a single include without build steps or external
   dependencies;
-- uses only **standard STL headers and system APIs**; modules that depend on
-  WinAPI (e.g., `NtpClient`) are isolated and do not hinder cross-platform
-  builds.
+- uses only **standard STL headers and system APIs**; platform-specific modules
+  (e.g., the socket-based `NtpClient`) are isolated and do not hinder
+  cross-platform builds.
 
 ## Features
 
@@ -49,7 +49,7 @@ more academic solutions like `HowardHinnant/date`, the library:
 - **Utilities**—fetches current timestamps, computes start/end of periods and
   works with fractions of a second.
 - **Time zone conversion**—functions for CET/EET to GMT.
-- **NTP client**—obtains accurate time over the network (Windows only).
+- **NTP client**—obtains accurate time over the network (Windows and Unix).
 - **MQL5 support**—adapted headers in the `MQL5` directory allow using the
   library in MetaTrader.
 - Compatible with `C++11`–`C++17`.
@@ -64,13 +64,13 @@ library and report platform capabilities:
   target platform.
 - `TIME_SHIELD_HAS_WINSOCK` — set when WinSock APIs are available.
 - `TIME_SHIELD_ENABLE_NTP_CLIENT` — enables the optional `NtpClient` module
-  (defaults to `1` on Windows).
+  (defaults to `1` on supported platforms).
 
 All public headers place their declarations inside the `time_shield` namespace.
 Use `time_shield::` or `using namespace time_shield;` to access the API.
 
-> Some functions depend on WinAPI and work only on Windows (for example,
-> `NtpClient` or obtaining realtime via `QueryPerformanceCounter`).
+> Some functions depend on platform APIs and may be limited (for example,
+> obtaining realtime via `QueryPerformanceCounter` on Windows).
 
 ## API Invariants
 

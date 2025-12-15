@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 
 ## [v1.0.5] - 2025-10-05
 - Added OA date conversions and astronomy helpers (JD/MJD/JDN, lunar phase/age) with docs and examples.
+- Added geocentric MoonPhase calculator with quarter timings, documentation, and tests.
+- Added continuous lunar phase sin/cos helpers, structured quarter instants with event windows, documentation, and tests.
 - Split `time_conversions.hpp` into modular headers while keeping the umbrella include, preserving APIs with compatibility aliases and refreshed docs.
 - Added short-form weekday and timestamp conversion aliases alongside new constexpr timezone offset helpers.
 - Expanded conversion coverage tests to exercise the renamed helpers and new wrappers across C++11/14/17 builds.

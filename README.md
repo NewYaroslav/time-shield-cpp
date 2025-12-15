@@ -256,6 +256,36 @@ mjd_t mjd = ts_to_mjd(1714608000);             // Modified Julian Date
 jdn_t jdn = gregorian_to_jdn(2, 5, 2024);      // Julian Day Number
 double phase = moon_phase(fts());              // lunar phase fraction [0..1)
 double age_days = moon_age_days(fts());        // approximate lunar age
+MoonPhaseSineCosine signal = moon_phase_sincos(fts()); // sin/cos of the phase angle (continuous)
+MoonQuarterInstants quarters = moon_quarters(fts());   // nearest quarter instants (Unix seconds, double)
+bool is_near_new = is_new_moon_window(fts());  // inside +/-12h new moon window
+```
+
+### Geocentric Moon phase calculator
+
+`MoonPhaseCalculator` (`time_shield::astronomy::MoonPhase`) exposes richer geocentric outputs (illumination, angular diameters, distance, phase angle), sin/cos for a continuous phase signal, quarter instants, and phase event windows. The current math is geocentric (Earth-centered) without topocentric corrections, so phase and illumination are “global” for a given moment. What varies locally:
+
+- local date/time (timezone conversion),
+- visual orientation of the lit part (inverted between hemispheres),
+- visibility/observability, which depends on atmosphere and altitude above the horizon.
+
+> Current math is geocentric (Sun/Moon positions relative to Earth’s center, without topocentric parallax). This means illumination and the phase angle are primarily “global” at a given instant for the Earth as a whole. Locally, what actually differs is:
+> - calendar date/time via timezone shifts,
+> - apparent orientation of the illuminated side (flipped between northern/southern hemispheres),
+> - visibility (e.g., first crescent) driven by atmosphere/horizon/altitude rather than the geocentric phase itself.
+
+```cpp
+#include <time_shield/MoonPhase.hpp>
+
+using namespace time_shield;
+
+MoonPhaseCalculator calculator{};
+const double ts = 1704067200.0; // 2024-01-01T00:00:00Z
+MoonPhaseResult res = calculator.compute(ts);
+MoonPhase::quarters_unix_s_t quarters = calculator.quarter_times_unix(ts); // Unix seconds (double)
+MoonQuarterInstants around = moon_quarters(ts);
+MoonPhaseSineCosine signal = moon_phase_sincos(ts);
+bool is_new = calculator.is_new_moon_window(ts); // +/-12h window by default
 ```
 
 ### Time zone conversion

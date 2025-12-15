@@ -22,6 +22,8 @@
 #include "time_zone_offset_conversions.hpp"
 #include "workday_conversions.hpp"
 
+#include "ole_automation_conversions.hpp"
+#include "astronomy_conversions.hpp"
 #include "time_conversion_aliases.hpp"
 
 #endif // _TIME_SHIELD_TIME_CONVERSIONS_HPP_INCLUDED

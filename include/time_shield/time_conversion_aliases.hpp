@@ -262,7 +262,26 @@ namespace time_shield {
     constexpr T get_unix_min(ts_t ts = time_shield::ts()) {
         return min_since_epoch<T>(ts);
     }
-    
+
+//------------------------------------------------------------------------------
+
+    /// \ingroup time_structures
+    /// \brief Alias for dt_to_timestamp.
+    /// \copydoc dt_to_timestamp
+    template<class T>
+    TIME_SHIELD_CONSTEXPR inline auto dt_to_ts(const T& date_time)
+            -> decltype(dt_to_timestamp(date_time)) {
+        return dt_to_timestamp(date_time);
+    }
+
+    /// \ingroup time_structures
+    /// \brief Alias for tm_to_timestamp.
+    /// \copydoc tm_to_timestamp
+    TIME_SHIELD_CONSTEXPR inline auto tm_to_ts(const std::tm* timeinfo)
+            -> decltype(tm_to_timestamp(timeinfo)) {
+        return tm_to_timestamp(timeinfo);
+    }
+
 //------------------------------------------------------------------------------
 
     /// \brief Alias for hour24_to_12 function.
@@ -290,6 +309,14 @@ namespace time_shield {
         return to_date_time(ts);
     }
 
+    /// \ingroup time_structures
+    /// \brief Alias for to_date_time function.
+    /// \copydoc to_date_time
+    inline auto to_dt(ts_t ts)
+            -> decltype(to_date_time(ts)) {
+        return to_date_time(ts);
+    }
+
 //------------------------------------------------------------------------------
 
     /// \ingroup time_structures
@@ -307,7 +334,15 @@ namespace time_shield {
     inline T to_dt_struct_ms(ts_ms_t ts) {
         return to_date_time_ms<T>(ts);
     }
-    
+
+    /// \ingroup time_structures
+    /// \brief Alias for to_date_time_ms function.
+    /// \copydoc to_date_time_ms
+    inline auto to_dt_ms(ts_ms_t ts_ms)
+            -> decltype(to_date_time_ms<DateTimeStruct>(ts_ms)) {
+        return to_date_time_ms<DateTimeStruct>(ts_ms);
+    }
+
 //------------------------------------------------------------------------------
 
 
@@ -1294,6 +1329,15 @@ namespace time_shield {
     /// \brief Alias for dt_to_timestamp_ms function.
     /// \copydoc dt_to_timestamp_ms
     template<class T>
+    TIME_SHIELD_CONSTEXPR inline auto dt_to_ts_ms(const T& date_time)
+            -> decltype(dt_to_timestamp_ms(date_time)) {
+        return dt_to_timestamp_ms(date_time);
+    }
+
+    /// \ingroup time_structures
+    /// \brief Alias for dt_to_timestamp_ms function.
+    /// \copydoc dt_to_timestamp_ms
+    template<class T>
     TIME_SHIELD_CONSTEXPR inline ts_t to_ts_ms(
             const T& date_time) {
         return dt_to_timestamp_ms(date_time);
@@ -1323,6 +1367,13 @@ namespace time_shield {
     /// \copydoc tm_to_timestamp_ms
     TIME_SHIELD_CONSTEXPR inline ts_t to_timestamp_ms(
             const std::tm *timeinfo) {
+        return tm_to_timestamp_ms(timeinfo);
+    }
+
+    /// \brief Alias for tm_to_timestamp_ms function.
+    /// \copydoc tm_to_timestamp_ms
+    TIME_SHIELD_CONSTEXPR inline auto tm_to_ts_ms(const std::tm *timeinfo)
+            -> decltype(tm_to_timestamp_ms(timeinfo)) {
         return tm_to_timestamp_ms(timeinfo);
     }
 
@@ -1435,6 +1486,15 @@ namespace time_shield {
     /// \brief Alias for dt_to_ftimestamp
     /// \copydoc dt_to_ftimestamp
     template<class T>
+    constexpr auto dt_to_fts(const T& date_time)
+            -> decltype(dt_to_ftimestamp(date_time)) {
+        return dt_to_ftimestamp(date_time);
+    }
+
+    /// \ingroup time_structures
+    /// \brief Alias for dt_to_ftimestamp
+    /// \copydoc dt_to_ftimestamp
+    template<class T>
     constexpr fts_t to_fts(const T& date_time) {
         return dt_to_ftimestamp(date_time);
     }
@@ -1461,6 +1521,14 @@ namespace time_shield {
     /// \brief Alias for tm_to_ftimestamp
     /// \copydoc tm_to_ftimestamp(const std::tm*)
     TIME_SHIELD_CONSTEXPR inline fts_t to_ftimestamp(const std::tm* timeinfo) {
+        return tm_to_ftimestamp(timeinfo);
+    }
+
+    /// \ingroup time_structures
+    /// \brief Alias for tm_to_ftimestamp
+    /// \copydoc tm_to_ftimestamp(const std::tm*)
+    TIME_SHIELD_CONSTEXPR inline auto tm_to_fts(const std::tm* timeinfo)
+            -> decltype(tm_to_ftimestamp(timeinfo)) {
         return tm_to_ftimestamp(timeinfo);
     }
 
@@ -1824,91 +1892,123 @@ namespace time_shield {
 //------------------------------------------------------------------------------
 
     /// \ingroup time_structures
-    /// \brief Alias for get_weekday_from_date
-    /// \copydoc get_weekday_from_date
+    /// \brief Alias for weekday_of_date
+    /// \copydoc weekday_of_date
+    template<class T1 = Weekday, class T2, typename std::enable_if<std::is_class<T2>::value, int>::type = 0>
+    TIME_SHIELD_CONSTEXPR inline T1 get_weekday_from_date(const T2& date) {
+        return weekday_of_date<T1>(date);
+    }
+
+    /// \ingroup time_structures
+    /// \brief Alias for weekday_of_date
+    /// \copydoc weekday_of_date
     template<class T1 = Weekday, class T2, typename std::enable_if<std::is_class<T2>::value, int>::type = 0>
     constexpr T1 get_dow(const T2& date) {
-        return get_weekday_from_date<T1>(date);
+        return weekday_of_date<T1>(date);
     }
 
     /// \ingroup time_structures
-    /// \brief Alias for get_weekday_from_date
-    /// \copydoc get_weekday_from_date
+    /// \brief Alias for weekday_of_date
+    /// \copydoc weekday_of_date
     template<class T1 = Weekday, class T2, typename std::enable_if<std::is_class<T2>::value, int>::type = 0>
     constexpr T1 dow_from_date(const T2& date) {
-        return get_weekday_from_date<T1>(date);
+        return weekday_of_date<T1>(date);
     }
 
     /// \ingroup time_structures
-    /// \brief Alias for get_weekday_from_date
-    /// \copydoc get_weekday_from_date
+    /// \brief Alias for weekday_of_date
+    /// \copydoc weekday_of_date
     template<class T1 = Weekday, class T2, typename std::enable_if<std::is_class<T2>::value, int>::type = 0>
     constexpr T1 weekday_of(const T2& date) {
-        return get_weekday_from_date<T1>(date);
+        return weekday_of_date<T1>(date);
     }
 
     /// \ingroup time_structures
-    /// \brief Alias for get_weekday_from_date
-    /// \copydoc get_weekday_from_date
+    /// \brief Alias for weekday_of_date
+    /// \copydoc weekday_of_date
     template<class T1 = Weekday, class T2, typename std::enable_if<std::is_class<T2>::value, int>::type = 0>
     constexpr T1 day_of_week_dt(const T2& date) {
-        return get_weekday_from_date<T1>(date);
+        return weekday_of_date<T1>(date);
     }
 
     /// \ingroup time_structures
-    /// \brief Alias for get_weekday_from_date
-    /// \copydoc get_weekday_from_date
+    /// \brief Alias for weekday_of_date
+    /// \copydoc weekday_of_date
     template<class T1 = Weekday, class T2, typename std::enable_if<std::is_class<T2>::value, int>::type = 0>
     constexpr T1 day_of_week(const T2& date) {
-        return get_weekday_from_date<T1>(date);
+        return weekday_of_date<T1>(date);
     }
 
     /// \ingroup time_structures
-    /// \brief Alias for get_weekday_from_date
-    /// \copydoc get_weekday_from_date
+    /// \brief Alias for weekday_of_date
+    /// \copydoc weekday_of_date
     template<class T1 = Weekday, class T2, typename std::enable_if<std::is_class<T2>::value, int>::type = 0>
     constexpr T1 dow(const T2& date) {
-        return get_weekday_from_date<T1>(date);
+        return weekday_of_date<T1>(date);
+    }
+
+    /// \ingroup time_structures
+    /// \brief Alias for weekday_of_date
+    /// \copydoc weekday_of_date
+    template<class T1 = Weekday, class T2, typename std::enable_if<std::is_class<T2>::value, int>::type = 0>
+    constexpr T1 wd(const T2& date) {
+        return weekday_of_date<T1>(date);
     }
     
 //------------------------------------------------------------------------------
 
 
-    /// \brief Alias for get_weekday_from_ts
-    /// \copydoc get_weekday_from_ts
+    /// \brief Alias for weekday_of_ts
+    /// \copydoc weekday_of_ts
     template<class T = Weekday, class U, typename std::enable_if<std::is_integral<U>::value, int>::type = 0>
     constexpr T day_of_week(U ts) noexcept {
-        return get_weekday_from_ts<T>(ts);
+        return weekday_of_ts<T>(ts);
     }
 
-    /// \brief Alias for get_weekday_from_ts
-    /// \copydoc get_weekday_from_ts
+    /// \brief Alias for weekday_of_ts
+    /// \copydoc weekday_of_ts
     template<class T = Weekday, class U, typename std::enable_if<std::is_integral<U>::value, int>::type = 0>
     constexpr T dow_ts(U ts) noexcept {
-        return get_weekday_from_ts<T>(ts);
+        return weekday_of_ts<T>(ts);
     }
 
-    /// \brief Alias for get_weekday_from_ts
-    /// \copydoc get_weekday_from_ts
+    /// \brief Alias for weekday_of_ts
+    /// \copydoc weekday_of_ts
     template<class T = Weekday, class U, typename std::enable_if<std::is_integral<U>::value, int>::type = 0>
     constexpr T get_dow_from_ts(U ts) noexcept {
-        return get_weekday_from_ts<T>(ts);
+        return weekday_of_ts<T>(ts);
     }
 
-    /// \brief Alias for get_weekday_from_ts
-    /// \copydoc get_weekday_from_ts
+    /// \brief Alias for weekday_of_ts
+    /// \copydoc weekday_of_ts
     template<class T = Weekday, class U, typename std::enable_if<std::is_integral<U>::value, int>::type = 0>
-    constexpr T weekday_of_ts(U ts) noexcept {
-        return get_weekday_from_ts<T>(ts);
+    constexpr T get_weekday_from_ts(U ts) noexcept {
+        return weekday_of_ts<T>(ts);
     }
-    
+
 //------------------------------------------------------------------------------
 
-    /// \brief Alias for get_weekday_from_ts_ms function.
-    /// \copydoc get_weekday_from_ts_ms
+    /// \brief Alias for weekday_of_ts
+    /// \copydoc weekday_of_ts
+    template<class T = Weekday, class U, typename std::enable_if<std::is_integral<U>::value, int>::type = 0>
+    constexpr T wd_ts(U ts) noexcept {
+        return weekday_of_ts<T>(ts);
+    }
+
+//------------------------------------------------------------------------------
+
+    /// \brief Alias for weekday_of_ts_ms function.
+    /// \copydoc weekday_of_ts_ms
     template<class T = Weekday>
     constexpr T day_of_week_ms(ts_ms_t ts_ms) {
-        return get_weekday_from_ts_ms(ts_ms);
+        return weekday_of_ts_ms<T>(ts_ms);
+    }
+
+    /// \brief Alias for weekday_of_ts_ms function.
+    /// \copydoc weekday_of_ts_ms
+    template<class T = Weekday>
+    constexpr T wd_ms(ts_ms_t ts_ms) {
+        return weekday_of_ts_ms<T>(ts_ms);
     }
     
 //------------------------------------------------------------------------------
@@ -2059,6 +2159,25 @@ namespace time_shield {
     /// \copydoc is_workday(year_t, int, int)
     TIME_SHIELD_CONSTEXPR inline bool workday(year_t year, int month, int day) noexcept {
         return is_workday(year, month, day);
+    }
+
+    /// \brief Alias for to_tz_offset.
+    /// \copydoc to_tz_offset
+    template<class T>
+    TIME_SHIELD_CONSTEXPR inline tz_t tz_offset(const T& tz) noexcept {
+        return to_tz_offset(tz);
+    }
+
+    /// \brief Alias for tz_offset_hm.
+    /// \copydoc tz_offset_hm
+    TIME_SHIELD_CONSTEXPR inline tz_t offset_hm(int hour, int min = 0) noexcept {
+        return tz_offset_hm(hour, min);
+    }
+
+    /// \brief Alias for is_valid_tz_offset.
+    /// \copydoc is_valid_tz_offset
+    TIME_SHIELD_CONSTEXPR inline bool valid_tz_offset(tz_t off) noexcept {
+        return is_valid_tz_offset(off);
     }
 
 /// \}

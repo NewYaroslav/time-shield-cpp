@@ -46,6 +46,7 @@ var menudata={children:[
 {text:"s",url:"namespacemembers_s.html#index_s"},
 {text:"t",url:"namespacemembers_t.html#index_t"},
 {text:"u",url:"namespacemembers_u.html#index_u"},
+{text:"v",url:"namespacemembers_v.html#index_v"},
 {text:"w",url:"namespacemembers_w.html#index_w"},
 {text:"y",url:"namespacemembers_y.html#index_y"}]},
 {text:"Functions",url:"namespacemembers_func.html",children:[
@@ -59,10 +60,12 @@ var menudata={children:[
 {text:"l",url:"namespacemembers_func_l.html#index_l"},
 {text:"m",url:"namespacemembers_func_m.html#index_m"},
 {text:"n",url:"namespacemembers_func_n.html#index_n"},
+{text:"o",url:"namespacemembers_func_o.html#index_o"},
 {text:"p",url:"namespacemembers_func_p.html#index_p"},
 {text:"s",url:"namespacemembers_func_s.html#index_s"},
 {text:"t",url:"namespacemembers_func_t.html#index_t"},
 {text:"u",url:"namespacemembers_func_u.html#index_u"},
+{text:"v",url:"namespacemembers_func_v.html#index_v"},
 {text:"w",url:"namespacemembers_func_w.html#index_w"},
 {text:"y",url:"namespacemembers_func_y.html#index_y"}]},
 {text:"Variables",url:"namespacemembers_vars.html",children:[

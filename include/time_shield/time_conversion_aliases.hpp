@@ -1647,13 +1647,13 @@ namespace time_shield {
 
     /// \brief Alias for start_of_year_ms function.
     /// \copydoc start_of_year_ms
-    TIME_SHIELD_CONSTEXPR inline ts_t year_start_ms(ts_t ts_ms = time_shield::ts_ms()) {
+    inline ts_ms_t year_start_ms(ts_ms_t ts_ms = time_shield::ts_ms()) {
         return start_of_year_ms(ts_ms);
     }
 
     /// \brief Alias for start_of_year_ms function.
     /// \copydoc start_of_year_ms
-    TIME_SHIELD_CONSTEXPR inline ts_t year_begin_ms(ts_t ts_ms = time_shield::ts_ms()) {
+    inline ts_ms_t year_begin_ms(ts_ms_t ts_ms = time_shield::ts_ms()) {
         return start_of_year_ms(ts_ms);
     }
     

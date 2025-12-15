@@ -125,6 +125,36 @@ mjd_t mjd = ts_to_mjd(1714608000);             // Modified Julian Date
 jdn_t jdn = gregorian_to_jdn(2, 5, 2024);      // Julian Day Number (целое значение)
 double phase = moon_phase(fts());              // фаза Луны [0..1)
 double age_days = moon_age_days(fts());        // примерный возраст Луны в днях
+MoonPhaseSineCosine signal = moon_phase_sincos(fts()); // sin/cos фазового угла без скачка в 0/1
+MoonQuarterInstants quarters = moon_quarters(fts());   // ближайшие четверти (Unix секунды в double)
+bool is_near_new = is_new_moon_window(fts());  // попадание в окно новолуния +/-12ч
+```
+
+### Геоцентрический калькулятор фаз Луны
+
+`MoonPhaseCalculator` (`time_shield::astronomy::MoonPhase`) выдаёт расширенный набор показателей (освещённость, угловые диаметры, расстояние, фазовый угол), sin/cos для непрерывного фазового сигнала, моменты четвертей и проверки «окон» вокруг фаз. Текущая математика геоцентрическая: положения Солнца/Луны рассчитываются без топоцентрических поправок. Поэтому освещённость и фазовый угол — «глобальные» в данный момент времени, а локально отличается:
+
+- дата/время из-за часового пояса,
+- ориентация освещённой части (в южном полушарии картинка отражена),
+- наблюдаемость (первый серп, высота над горизонтом, атмосфера).
+
+> Текущая математика — геоцентрическая (относительно центра Земли), без топоцентрических поправок/параллакса. Освещённость/фазовый угол глобальны для Земли как целого. По месту реально меняются:
+> - локальная дата/время (часовой пояс),
+> - ориентация освещённой части (в северном/южном полушарии «картинка» перевёрнута),
+> - видимость (первый серп/наблюдаемость) — уже про атмосферу/высоту над горизонтом и т.п.
+
+```cpp
+#include <time_shield/MoonPhase.hpp>
+
+using namespace time_shield;
+
+MoonPhaseCalculator calculator{};
+const double ts = 1704067200.0; // 2024-01-01T00:00:00Z
+MoonPhaseResult res = calculator.compute(ts);
+MoonPhase::quarters_unix_s_t quarters = calculator.quarter_times_unix(ts); // Unix секунды (double)
+MoonQuarterInstants around = moon_quarters(ts);
+MoonPhaseSineCosine signal = moon_phase_sincos(ts);
+bool is_new = calculator.is_new_moon_window(ts); // по умолчанию окно +/-12ч
 ```
 
 ### Конвертация часовых поясов

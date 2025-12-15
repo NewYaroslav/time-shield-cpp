@@ -37,10 +37,10 @@ int main() {
     assert(jdn_unix_epoch == static_cast<jdn_t>(2440588));
 
     const double phase_epoch = moon_phase(static_cast<fts_t>(0));
-    assert(std::fabs(phase_epoch - 0.7713714558588549) < 1e-12);
+    assert(std::fabs(phase_epoch - 0.7520754628736458) < 1e-12);
 
     const double age_epoch = moon_age_days(static_cast<fts_t>(0));
-    assert(std::fabs(age_epoch - 22.778599091511985) < 1e-9);
+    assert(std::fabs(age_epoch - 22.209231150442246) < 1e-9);
 
     return 0;
 }

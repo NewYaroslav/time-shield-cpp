@@ -24,6 +24,7 @@
 #include "time_shield/time_utils.hpp"              ///< Utility functions for time manipulation.
 #include "time_shield/time_conversions.hpp"        ///< Functions for converting between different time representations.
 #include "time_shield/time_conversion_aliases.hpp" ///< Convenient conversion aliases.
+#include "time_shield/MoonPhase.hpp"               ///< Geocentric lunar phase calculator.
 #include "time_shield/time_zone_conversions.hpp"   ///< Functions for converting between time zones.
 #include "time_shield/time_zone_offset.hpp"        ///< UTC offset arithmetic helpers (UTC <-> local) and offset extraction.
 #include "time_shield/time_formatting.hpp"         ///< Functions for formatting time in various standard formats.

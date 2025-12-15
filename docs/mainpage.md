@@ -26,7 +26,7 @@ portable, and suitable for scenarios like logging, serialization, MQL5 usage, an
 - Time zone conversion functions
 - ISO8601 string parsing
 - Utilities for time manipulation and conversion
-- OLE Automation date conversions and astronomy helpers (JD/MJD/JDN, lunar phase)
+- OLE Automation date conversions and astronomy helpers (JD/MJD/JDN, lunar phase, geocentric MoonPhase calculator)
 
 \section config_sec Configuration
 
@@ -103,6 +103,28 @@ jd_t jd = gregorian_to_jd(2, 5, 2024, 12, 0);         // Julian Date with time
 mjd_t mjd = ts_to_mjd(1714608000);                    // Modified Julian Date
 double phase = moon_phase(fts());                     // lunar phase [0..1)
 double age = moon_age_days(fts());                    // lunar age in days
+MoonPhaseSineCosine signal = moon_phase_sincos(fts()); // sin/cos of the phase angle
+MoonQuarterInstants quarters = moon_quarters(fts());   // nearest quarter instants (Unix seconds, double)
+bool near_new = is_new_moon_window(fts());             // +/-12h new moon window
+\endcode
+
+The `MoonPhaseCalculator` class (`time_shield::astronomy::MoonPhase`) builds on these helpers to return illumination, distances, phase angles, continuous sin/cos for the phase, quarter instants, and “event windows” around new/full/quarter phases. Calculations are geocentric (no observer latitude/longitude or parallax corrections). Phase and illumination are therefore global for a given moment; what changes locally are timezone-adjusted date/time, the apparent orientation of the lit part (flipped between hemispheres), and visibility, which depends on horizon/atmosphere.
+
+Basic class usage for bespoke calculations:
+
+\code{.cpp}
+#include <time_shield/MoonPhase.hpp>
+
+using namespace time_shield;
+
+MoonPhase calculator{};
+double ts = 1704067200.0; // 2024-01-01T00:00:00Z
+
+MoonPhaseResult res = calculator.compute(ts);               // illumination, distance, angles, sin/cos
+MoonPhase::quarters_unix_s_t quarters = calculator.quarter_times_unix(ts); // Unix seconds as double
+MoonQuarterInstants structured = calculator.quarter_instants_unix(ts);     // structured view
+bool near_new = calculator.is_new_moon_window(ts, 3600.0);  // +/-1h window around the event
+bool near_full = calculator.is_full_moon_window(ts, 3600.0);
 \endcode
 
 \subsection workday_helpers Workday helpers

@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['year_0',['year',['../group__time__conversions.html#gadd68b9e632d1b5a43c18b116bbf105a4',1,'time_shield::year(ts_t ts=time_shield::ts())'],['../group__time__conversions.html#ga18bcffc08bc6b7eed6001d219eaabc65',1,'time_shield::year(long ts)']]],
+  ['year_5fbegin_1',['year_begin',['../group__time__conversions.html#ga599131b0e2f66b908879067ea4d0298c',1,'time_shield::year_begin(ts_t ts=time_shield::ts())'],['../group__time__conversions.html#gadf44c60ccc8b1b558d94fdd912910563',1,'time_shield::year_begin(long ts)']]],
+  ['year_5fbegin_5fdate_2',['year_begin_date',['../group__time__conversions.html#ga43bd0971c4a0590cbe5fa0e918fe07be',1,'time_shield::year_begin_date(T year)'],['../group__time__conversions.html#gac579a023e206699bc2532a56ffb2fd18',1,'time_shield::year_begin_date(long year)']]],
+  ['year_5fbegin_5fdate_5fms_3',['year_begin_date_ms',['../group__time__conversions.html#ga1f23eaa139e4aa6e30e07d1a97be3c4b',1,'time_shield::year_begin_date_ms(T year)'],['../group__time__conversions.html#ga4418e11b17cb99875f90fcf67c45b862',1,'time_shield::year_begin_date_ms(long year)']]],
+  ['year_5fbegin_5fms_4',['year_begin_ms',['../group__time__conversions.html#gad5d727a0e9e6403ea445ba8720cb67e4',1,'time_shield::year_begin_ms(ts_ms_t ts_ms=time_shield::ts_ms())'],['../group__time__conversions.html#gaf20a81188124d0b0bf0b78047d6df6ab',1,'time_shield::year_begin_ms(long ts_ms)']]],
+  ['year_5fend_5',['year_end',['../group__time__conversions.html#gad996e9519898d4164d4aaa4144ba8b43',1,'time_shield']]],
+  ['year_5fend_5fms_6',['year_end_ms',['../group__time__conversions.html#ga92678846ee51ae86253740f341153cfd',1,'time_shield::year_end_ms(ts_ms_t ts_ms=time_shield::ts_ms())'],['../group__time__conversions.html#ga4216cd11ce2b5054d77d2a3b8db6485f',1,'time_shield::year_end_ms(long ts_ms)']]],
+  ['year_5ffrom_5funix_5fseconds_7',['year_from_unix_seconds',['../classtime__shield_1_1astronomy_1_1MoonPhase.html#ada6d22fcf95905617e00ab6402e40361',1,'time_shield::astronomy::MoonPhase']]],
+  ['year_5fms_8',['year_ms',['../group__time__conversions.html#gaf2cbc0da5ee10422816b21d7e2ed52a5',1,'time_shield::year_ms(ts_ms_t ts_ms=time_shield::ts_ms())'],['../group__time__conversions.html#ga670a00b6a55a3088b432246425357611',1,'time_shield::year_ms(long ts_ms)']]],
+  ['year_5fof_9',['year_of',['../group__time__conversions.html#gae79100051ffcecb99ee8051e76133fac',1,'time_shield']]],
+  ['year_5fof_5fms_10',['year_of_ms',['../group__time__conversions.html#gabff2c9a42262e1a98560be3a914db26f',1,'time_shield']]],
+  ['year_5fstart_11',['year_start',['../group__time__conversions.html#ga8b38d3c0876842f3c82ddeb4d606562a',1,'time_shield::year_start(ts_t ts=time_shield::ts())'],['../group__time__conversions.html#ga7a78b202e2c35f9d9a5dccf09450b75b',1,'time_shield::year_start(long ts)']]],
+  ['year_5fstart_5fdate_12',['year_start_date',['../group__time__conversions.html#ga85437b37794f694c3b5a2ea727aafbda',1,'time_shield::year_start_date(T year)'],['../group__time__conversions.html#ga9cf5c6f2be458bd4896cd5eb9fe58ad9',1,'time_shield::year_start_date(long year)']]],
+  ['year_5fstart_5fdate_5fms_13',['year_start_date_ms',['../group__time__conversions.html#ga4bdee764e25f1aeaad0ff452c92567fa',1,'time_shield::year_start_date_ms(T year)'],['../group__time__conversions.html#ga644cbce6a762ab0b0439df9573c008c2',1,'time_shield::year_start_date_ms(long year)']]],
+  ['year_5fstart_5fms_14',['year_start_ms',['../group__time__conversions.html#ga2224f769bd6d07137bb752de96ba76a3',1,'time_shield::year_start_ms(ts_ms_t ts_ms=time_shield::ts_ms())'],['../group__time__conversions.html#ga46d49cd485c11bc9e26bf80b213a56c1',1,'time_shield::year_start_ms(long ts_ms)']]],
+  ['years_5fsince_5fepoch_15',['years_since_epoch',['../group__time__conversions.html#ga2ceab003cb267446f1ce3249f0ff7d6e',1,'time_shield']]]
+];

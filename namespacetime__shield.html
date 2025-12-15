@@ -124,6 +124,8 @@ $(function(){initNavTree('namespacetime__shield.html',''); initResizable(true); 
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetime__shield_1_1astronomy.html">astronomy</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetime__shield_1_1detail.html">detail</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -143,6 +145,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtime__shield_1_1ElapsedTimer.html">ElapsedTimer</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper that measures elapsed monotonic time spans.  <a href="classtime__shield_1_1ElapsedTimer.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtime__shield_1_1MoonPhaseSineCosine.html">MoonPhaseSineCosine</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">sin/cos helper for the Moon phase angle.  <a href="structtime__shield_1_1MoonPhaseSineCosine.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtime__shield_1_1NtpClient.html">NtpClient</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Windows implementation of the NTP client for measuring time offset.  <a href="classtime__shield_1_1NtpClient.html#details">More...</a><br /></td></tr>
@@ -165,6 +170,9 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
+<tr class="memitem:a3c072257643f0594da544d5c2609f22a" id="r_a3c072257643f0594da544d5c2609f22a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3c072257643f0594da544d5c2609f22a">MoonPhaseCalculator</a> = <a class="el" href="classtime__shield_1_1astronomy_1_1MoonPhase.html">astronomy::MoonPhase</a></td></tr>
+<tr class="memdesc:a3c072257643f0594da544d5c2609f22a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience alias for the geocentric Moon phase calculator.  <br /></td></tr>
+<tr class="separator:a3c072257643f0594da544d5c2609f22a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac34b21257d863282622da52b643de3e9" id="r_ac34b21257d863282622da52b643de3e9"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac34b21257d863282622da52b643de3e9">timer_state_ptr</a> = std::shared_ptr&lt;<a class="el" href="structtime__shield_1_1detail_1_1TimerState.html">detail::TimerState</a>&gt;</td></tr>
 <tr class="separator:ac34b21257d863282622da52b643de3e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab9f26871d6521b013bea4c65e6697ad9" id="r_gab9f26871d6521b013bea4c65e6697ad9"><td class="memItemLeft" align="right" valign="top">typedef int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9">year_t</a></td></tr>
@@ -370,12 +378,39 @@ Functions</h2></td></tr>
 <tr class="memitem:ad6bc6f0425632d7502109ff81d43c458" id="r_ad6bc6f0425632d7502109ff81d43c458"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__time__types.html#ga9f2039b057978a2b41d1a4b2418158a6">jdn_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad6bc6f0425632d7502109ff81d43c458">gregorian_to_jdn</a> (uint32_t day, uint32_t month, uint32_t <a class="el" href="group__time__conversions.html#gadd68b9e632d1b5a43c18b116bbf105a4">year</a>) noexcept</td></tr>
 <tr class="memdesc:ad6bc6f0425632d7502109ff81d43c458"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert Gregorian date to Julian Day Number (JDN).  <br /></td></tr>
 <tr class="separator:ad6bc6f0425632d7502109ff81d43c458"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa663697cc8fd118697c5aa9752e16fc2" id="r_aa663697cc8fd118697c5aa9752e16fc2"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa663697cc8fd118697c5aa9752e16fc2">moon_phase_jd_approx</a> (<a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f">fts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>) noexcept</td></tr>
+<tr class="memdesc:aa663697cc8fd118697c5aa9752e16fc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get lunar phase in range [0..1) using a simple Julian Day approximation.  <br /></td></tr>
+<tr class="separator:aa663697cc8fd118697c5aa9752e16fc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e16c9860968265ac4340e050fab8419" id="r_a9e16c9860968265ac4340e050fab8419"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e16c9860968265ac4340e050fab8419">moon_phase</a> (<a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f">fts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>) noexcept</td></tr>
-<tr class="memdesc:a9e16c9860968265ac4340e050fab8419"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get lunar phase in range [0..1).  <br /></td></tr>
+<tr class="memdesc:a9e16c9860968265ac4340e050fab8419"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get lunar phase in range [0..1) using the geocentric <a class="el" href="group__time__enums.html#ga5fa51beb76e014adfffcd028fe1804ac">MoonPhase</a> calculator.  <br /></td></tr>
 <tr class="separator:a9e16c9860968265ac4340e050fab8419"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af529191e1c745e96ac1a43810b857717" id="r_af529191e1c745e96ac1a43810b857717"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structtime__shield_1_1MoonPhaseSineCosine.html">MoonPhaseSineCosine</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af529191e1c745e96ac1a43810b857717">moon_phase_sincos</a> (<a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f">fts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>) noexcept</td></tr>
+<tr class="memdesc:af529191e1c745e96ac1a43810b857717"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get sin/cos of the lunar phase angle (continuous signal without wrap-around).  <br /></td></tr>
+<tr class="separator:af529191e1c745e96ac1a43810b857717"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5e1c60504881cc7cac072c053670f84" id="r_ae5e1c60504881cc7cac072c053670f84"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae5e1c60504881cc7cac072c053670f84">moon_illumination</a> (<a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f">fts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>) noexcept</td></tr>
+<tr class="memdesc:ae5e1c60504881cc7cac072c053670f84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get illuminated fraction in range [0..1] using the geocentric <a class="el" href="group__time__enums.html#ga5fa51beb76e014adfffcd028fe1804ac">MoonPhase</a> calculator.  <br /></td></tr>
+<tr class="separator:ae5e1c60504881cc7cac072c053670f84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a374f7d5e59658c7877fc418b231557ab" id="r_a374f7d5e59658c7877fc418b231557ab"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a374f7d5e59658c7877fc418b231557ab">moon_age_days_jd_approx</a> (<a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f">fts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>) noexcept</td></tr>
+<tr class="memdesc:a374f7d5e59658c7877fc418b231557ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get lunar age in days (~0..29.53) using a simple Julian Day approximation.  <br /></td></tr>
+<tr class="separator:a374f7d5e59658c7877fc418b231557ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d4625d12243235c5993141097223af2" id="r_a5d4625d12243235c5993141097223af2"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5d4625d12243235c5993141097223af2">moon_age_days</a> (<a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f">fts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>) noexcept</td></tr>
 <tr class="memdesc:a5d4625d12243235c5993141097223af2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get lunar age in days (~0..29.53).  <br /></td></tr>
 <tr class="separator:a5d4625d12243235c5993141097223af2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1408f2ff13928bae471ede731de4679" id="r_ae1408f2ff13928bae471ede731de4679"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structtime__shield_1_1astronomy_1_1MoonQuarterInstants.html">astronomy::MoonQuarterInstants</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae1408f2ff13928bae471ede731de4679">moon_quarters</a> (<a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f">fts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>) noexcept</td></tr>
+<tr class="memdesc:ae1408f2ff13928bae471ede731de4679"><td class="mdescLeft">&#160;</td><td class="mdescRight">Quarter instants around the provided timestamp.  <br /></td></tr>
+<tr class="separator:ae1408f2ff13928bae471ede731de4679"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a378af76750f222c5af06747c9308c979" id="r_a378af76750f222c5af06747c9308c979"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a378af76750f222c5af06747c9308c979">is_new_moon_window</a> (<a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f">fts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>, double window_seconds=<a class="el" href="classtime__shield_1_1astronomy_1_1MoonPhase.html#ab0327bbd5a359bc046f92ed2b94bae54">astronomy::MoonPhase::kDefaultQuarterWindow_s</a>) noexcept</td></tr>
+<tr class="memdesc:a378af76750f222c5af06747c9308c979"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if timestamp falls into the new moon window (default \pm12h).  <br /></td></tr>
+<tr class="separator:a378af76750f222c5af06747c9308c979"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad1ca8624c57b97ca138ef7c33ab609a" id="r_aad1ca8624c57b97ca138ef7c33ab609a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad1ca8624c57b97ca138ef7c33ab609a">is_full_moon_window</a> (<a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f">fts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>, double window_seconds=<a class="el" href="classtime__shield_1_1astronomy_1_1MoonPhase.html#ab0327bbd5a359bc046f92ed2b94bae54">astronomy::MoonPhase::kDefaultQuarterWindow_s</a>) noexcept</td></tr>
+<tr class="memdesc:aad1ca8624c57b97ca138ef7c33ab609a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if timestamp falls into the full moon window (default \pm12h).  <br /></td></tr>
+<tr class="separator:aad1ca8624c57b97ca138ef7c33ab609a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea30d0440494f3d05a57b81cb998a63d" id="r_aea30d0440494f3d05a57b81cb998a63d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea30d0440494f3d05a57b81cb998a63d">is_first_quarter_window</a> (<a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f">fts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>, double window_seconds=<a class="el" href="classtime__shield_1_1astronomy_1_1MoonPhase.html#ab0327bbd5a359bc046f92ed2b94bae54">astronomy::MoonPhase::kDefaultQuarterWindow_s</a>) noexcept</td></tr>
+<tr class="memdesc:aea30d0440494f3d05a57b81cb998a63d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if timestamp falls into the first quarter window (default \pm12h).  <br /></td></tr>
+<tr class="separator:aea30d0440494f3d05a57b81cb998a63d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d34366ea6d2627700acacb8b0da9f24" id="r_a4d34366ea6d2627700acacb8b0da9f24"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4d34366ea6d2627700acacb8b0da9f24">is_last_quarter_window</a> (<a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f">fts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>, double window_seconds=<a class="el" href="classtime__shield_1_1astronomy_1_1MoonPhase.html#ab0327bbd5a359bc046f92ed2b94bae54">astronomy::MoonPhase::kDefaultQuarterWindow_s</a>) noexcept</td></tr>
+<tr class="memdesc:a4d34366ea6d2627700acacb8b0da9f24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if timestamp falls into the last quarter window (default \pm12h).  <br /></td></tr>
+<tr class="separator:a4d34366ea6d2627700acacb8b0da9f24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga2ea065cf0bd4d934cb3c64ae54975448" id="r_ga2ea065cf0bd4d934cb3c64ae54975448"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structtime__shield_1_1DateStruct.html">DateStruct</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__time__structures.html#ga2ea065cf0bd4d934cb3c64ae54975448">create_date_struct</a> (int64_t <a class="el" href="group__time__conversions.html#gadd68b9e632d1b5a43c18b116bbf105a4">year</a>, int32_t mon=1, int32_t day=1)</td></tr>
 <tr class="memdesc:ga2ea065cf0bd4d934cb3c64ae54975448"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="structtime__shield_1_1DateStruct.html" title="Structure to represent a date.">DateStruct</a> instance.  <br /></td></tr>
 <tr class="separator:ga2ea065cf0bd4d934cb3c64ae54975448"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -3598,6 +3633,24 @@ Variables</h2></td></tr>
 <li>timers and scheduling utilities </li>
 </ul>
 </div><h2 class="groupheader">Typedef Documentation</h2>
+<a id="a3c072257643f0594da544d5c2609f22a" name="a3c072257643f0594da544d5c2609f22a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c072257643f0594da544d5c2609f22a">&#9670;&#160;</a></span>MoonPhaseCalculator</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#a3c072257643f0594da544d5c2609f22a">time_shield::MoonPhaseCalculator</a> = <a class="el" href="classtime__shield_1_1astronomy_1_1MoonPhase.html">astronomy::MoonPhase</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convenience alias for the geocentric Moon phase calculator. </p>
+
+<p class="definition">Definition at line <a class="el" href="MoonPhase_8hpp_source.html#l00399">399</a> of file <a class="el" href="MoonPhase_8hpp_source.html">MoonPhase.hpp</a>.</p>
+
+</div>
+</div>
 <a id="ac34b21257d863282622da52b643de3e9" name="ac34b21257d863282622da52b643de3e9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac34b21257d863282622da52b643de3e9">&#9670;&#160;</a></span>timer_state_ptr</h2>
 
@@ -3647,7 +3700,7 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Julian Date value. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="astronomy__conversions_8hpp_source.html#l00027">27</a> of file <a class="el" href="astronomy__conversions_8hpp_source.html">astronomy_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="astronomy__conversions_8hpp_source.html#l00028">28</a> of file <a class="el" href="astronomy__conversions_8hpp_source.html">astronomy_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -3683,7 +3736,7 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Modified Julian Date value. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="astronomy__conversions_8hpp_source.html#l00090">90</a> of file <a class="el" href="astronomy__conversions_8hpp_source.html">astronomy_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="astronomy__conversions_8hpp_source.html#l00091">91</a> of file <a class="el" href="astronomy__conversions_8hpp_source.html">astronomy_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -3766,7 +3819,7 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Julian Date value. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="astronomy__conversions_8hpp_source.html#l00046">46</a> of file <a class="el" href="astronomy__conversions_8hpp_source.html">astronomy_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="astronomy__conversions_8hpp_source.html#l00047">47</a> of file <a class="el" href="astronomy__conversions_8hpp_source.html">astronomy_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -3837,7 +3890,7 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Julian Date value. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="astronomy__conversions_8hpp_source.html#l00069">69</a> of file <a class="el" href="astronomy__conversions_8hpp_source.html">astronomy_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="astronomy__conversions_8hpp_source.html#l00070">70</a> of file <a class="el" href="astronomy__conversions_8hpp_source.html">astronomy_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -3884,7 +3937,139 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Julian Day Number value. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="astronomy__conversions_8hpp_source.html#l00107">107</a> of file <a class="el" href="astronomy__conversions_8hpp_source.html">astronomy_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="astronomy__conversions_8hpp_source.html#l00108">108</a> of file <a class="el" href="astronomy__conversions_8hpp_source.html">astronomy_conversions.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aea30d0440494f3d05a57b81cb998a63d" name="aea30d0440494f3d05a57b81cb998a63d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea30d0440494f3d05a57b81cb998a63d">&#9670;&#160;</a></span>is_first_quarter_window()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool time_shield::is_first_quarter_window </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f">fts_t</a></td>          <td class="paramname"><span class="paramname"><em>ts</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>window_seconds</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classtime__shield_1_1astronomy_1_1MoonPhase.html#ab0327bbd5a359bc046f92ed2b94bae54">astronomy::MoonPhase::kDefaultQuarterWindow_s</a></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if timestamp falls into the first quarter window (default \pm12h). </p>
+
+<p class="definition">Definition at line <a class="el" href="astronomy__conversions_8hpp_source.html#l00209">209</a> of file <a class="el" href="astronomy__conversions_8hpp_source.html">astronomy_conversions.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aad1ca8624c57b97ca138ef7c33ab609a" name="aad1ca8624c57b97ca138ef7c33ab609a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad1ca8624c57b97ca138ef7c33ab609a">&#9670;&#160;</a></span>is_full_moon_window()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool time_shield::is_full_moon_window </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f">fts_t</a></td>          <td class="paramname"><span class="paramname"><em>ts</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>window_seconds</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classtime__shield_1_1astronomy_1_1MoonPhase.html#ab0327bbd5a359bc046f92ed2b94bae54">astronomy::MoonPhase::kDefaultQuarterWindow_s</a></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if timestamp falls into the full moon window (default \pm12h). </p>
+
+<p class="definition">Definition at line <a class="el" href="astronomy__conversions_8hpp_source.html#l00203">203</a> of file <a class="el" href="astronomy__conversions_8hpp_source.html">astronomy_conversions.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a4d34366ea6d2627700acacb8b0da9f24" name="a4d34366ea6d2627700acacb8b0da9f24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d34366ea6d2627700acacb8b0da9f24">&#9670;&#160;</a></span>is_last_quarter_window()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool time_shield::is_last_quarter_window </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f">fts_t</a></td>          <td class="paramname"><span class="paramname"><em>ts</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>window_seconds</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classtime__shield_1_1astronomy_1_1MoonPhase.html#ab0327bbd5a359bc046f92ed2b94bae54">astronomy::MoonPhase::kDefaultQuarterWindow_s</a></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if timestamp falls into the last quarter window (default \pm12h). </p>
+
+<p class="definition">Definition at line <a class="el" href="astronomy__conversions_8hpp_source.html#l00215">215</a> of file <a class="el" href="astronomy__conversions_8hpp_source.html">astronomy_conversions.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a378af76750f222c5af06747c9308c979" name="a378af76750f222c5af06747c9308c979"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a378af76750f222c5af06747c9308c979">&#9670;&#160;</a></span>is_new_moon_window()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool time_shield::is_new_moon_window </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f">fts_t</a></td>          <td class="paramname"><span class="paramname"><em>ts</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>window_seconds</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classtime__shield_1_1astronomy_1_1MoonPhase.html#ab0327bbd5a359bc046f92ed2b94bae54">astronomy::MoonPhase::kDefaultQuarterWindow_s</a></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if timestamp falls into the new moon window (default \pm12h). </p>
+
+<p class="definition">Definition at line <a class="el" href="astronomy__conversions_8hpp_source.html#l00197">197</a> of file <a class="el" href="astronomy__conversions_8hpp_source.html">astronomy_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -3920,7 +4105,79 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Approximate lunar age in days. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="astronomy__conversions_8hpp_source.html#l00135">135</a> of file <a class="el" href="astronomy__conversions_8hpp_source.html">astronomy_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="astronomy__conversions_8hpp_source.html#l00183">183</a> of file <a class="el" href="astronomy__conversions_8hpp_source.html">astronomy_conversions.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a374f7d5e59658c7877fc418b231557ab" name="a374f7d5e59658c7877fc418b231557ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a374f7d5e59658c7877fc418b231557ab">&#9670;&#160;</a></span>moon_age_days_jd_approx()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double time_shield::moon_age_days_jd_approx </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f">fts_t</a></td>          <td class="paramname"><span class="paramname"><em>ts</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get lunar age in days (~0..29.53) using a simple Julian Day approximation. </p>
+<p>This helper mirrors the legacy Julian Day based approximation and is less precise than the geocentric <a class="el" href="group__time__enums.html#ga5fa51beb76e014adfffcd028fe1804ac">MoonPhase</a> calculator. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ts</td><td>Unix timestamp in floating seconds since Unix epoch. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Approximate lunar age in days. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="astronomy__conversions_8hpp_source.html#l00176">176</a> of file <a class="el" href="astronomy__conversions_8hpp_source.html">astronomy_conversions.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ae5e1c60504881cc7cac072c053670f84" name="ae5e1c60504881cc7cac072c053670f84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5e1c60504881cc7cac072c053670f84">&#9670;&#160;</a></span>moon_illumination()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double time_shield::moon_illumination </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f">fts_t</a></td>          <td class="paramname"><span class="paramname"><em>ts</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get illuminated fraction in range [0..1] using the geocentric <a class="el" href="group__time__enums.html#ga5fa51beb76e014adfffcd028fe1804ac">MoonPhase</a> calculator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ts</td><td>Unix timestamp in floating seconds since Unix epoch. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Illuminated fraction of the Moon. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="astronomy__conversions_8hpp_source.html#l00166">166</a> of file <a class="el" href="astronomy__conversions_8hpp_source.html">astronomy_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -3947,8 +4204,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Get lunar phase in range [0..1). </p>
-<p>Based on the algorithm you referenced (archived link). </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Get lunar phase in range [0..1) using the geocentric <a class="el" href="group__time__enums.html#ga5fa51beb76e014adfffcd028fe1804ac">MoonPhase</a> calculator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ts</td><td>Unix timestamp in floating seconds since Unix epoch. </td></tr>
   </table>
@@ -3956,7 +4213,115 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Lunar phase fraction where 0 is new moon. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="astronomy__conversions_8hpp_source.html#l00125">125</a> of file <a class="el" href="astronomy__conversions_8hpp_source.html">astronomy_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="astronomy__conversions_8hpp_source.html#l00149">149</a> of file <a class="el" href="astronomy__conversions_8hpp_source.html">astronomy_conversions.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aa663697cc8fd118697c5aa9752e16fc2" name="aa663697cc8fd118697c5aa9752e16fc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa663697cc8fd118697c5aa9752e16fc2">&#9670;&#160;</a></span>moon_phase_jd_approx()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double time_shield::moon_phase_jd_approx </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f">fts_t</a></td>          <td class="paramname"><span class="paramname"><em>ts</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get lunar phase in range [0..1) using a simple Julian Day approximation. </p>
+<p>This helper mirrors the legacy Julian Day based approximation and is less precise than the geocentric <a class="el" href="group__time__enums.html#ga5fa51beb76e014adfffcd028fe1804ac">MoonPhase</a> calculator. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ts</td><td>Unix timestamp in floating seconds since Unix epoch. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Approximate lunar phase fraction where 0 is new moon. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="astronomy__conversions_8hpp_source.html#l00139">139</a> of file <a class="el" href="astronomy__conversions_8hpp_source.html">astronomy_conversions.hpp</a>.</p>
+
+</div>
+</div>
+<a id="af529191e1c745e96ac1a43810b857717" name="af529191e1c745e96ac1a43810b857717"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af529191e1c745e96ac1a43810b857717">&#9670;&#160;</a></span>moon_phase_sincos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structtime__shield_1_1MoonPhaseSineCosine.html">MoonPhaseSineCosine</a> time_shield::moon_phase_sincos </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f">fts_t</a></td>          <td class="paramname"><span class="paramname"><em>ts</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get sin/cos of the lunar phase angle (continuous signal without wrap-around). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ts</td><td>Unix timestamp in floating seconds since Unix epoch. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Structure containing sin/cos and the angle in radians. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="astronomy__conversions_8hpp_source.html#l00157">157</a> of file <a class="el" href="astronomy__conversions_8hpp_source.html">astronomy_conversions.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ae1408f2ff13928bae471ede731de4679" name="ae1408f2ff13928bae471ede731de4679"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1408f2ff13928bae471ede731de4679">&#9670;&#160;</a></span>moon_quarters()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structtime__shield_1_1astronomy_1_1MoonQuarterInstants.html">astronomy::MoonQuarterInstants</a> time_shield::moon_quarters </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f">fts_t</a></td>          <td class="paramname"><span class="paramname"><em>ts</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Quarter instants around the provided timestamp. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ts</td><td>Unix timestamp in floating seconds since Unix epoch. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Quarter windows around the timestamp (Unix seconds as double). </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="astronomy__conversions_8hpp_source.html#l00191">191</a> of file <a class="el" href="astronomy__conversions_8hpp_source.html">astronomy_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -4227,7 +4592,7 @@ template&lt;class T1, class T2, class T3&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Julian Date value. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="astronomy__conversions_8hpp_source.html#l00037">37</a> of file <a class="el" href="astronomy__conversions_8hpp_source.html">astronomy_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="astronomy__conversions_8hpp_source.html#l00038">38</a> of file <a class="el" href="astronomy__conversions_8hpp_source.html">astronomy_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -4263,7 +4628,7 @@ template&lt;class T1, class T2, class T3&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Modified Julian Date value. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="astronomy__conversions_8hpp_source.html#l00097">97</a> of file <a class="el" href="astronomy__conversions_8hpp_source.html">astronomy_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="astronomy__conversions_8hpp_source.html#l00098">98</a> of file <a class="el" href="astronomy__conversions_8hpp_source.html">astronomy_conversions.hpp</a>.</p>
 
 </div>
 </div>

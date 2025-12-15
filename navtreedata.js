@@ -80,12 +80,13 @@ var NAVTREEINDEX =
 [
 "CpuTickTimer_8hpp.html",
 "classtime__shield_1_1TimerScheduler.html#a1d5487e90e596e0680240856f4615de1",
-"group__time__constants.html#gadef11d04f88bcda35b0074f0e494d301",
-"group__time__conversions.html#ga657eef52f5d6da30902a342b2a21d375",
-"group__time__conversions.html#gae60c00596efadadaed955807565d42ab",
-"group__time__enums.html#ggadf684443100352064316f6134bbe44f8a435b4a7299946a56caaeba3190113f57",
-"group__time__structures__time__conversions.html#gaad6bb6b03e69f7ce86e589653db1ca2f",
-"structtime__shield_1_1TimeZoneStruct.html#abe789b40db8bbbc3046dee910ca7804b"
+"group__time__constants.html#ga16c924473d54fdb5c638cdbbc83b0c09",
+"group__time__conversions.html#ga49c945e3944787e8ef7f3e4261a8b52a",
+"group__time__conversions.html#gabf5c39ec27c9adb7d44a58a30649e823",
+"group__time__enums.html#ggac2ffd79e06ab94cf1bb50fec432c68a8a2b0de39322461f72c9dee8f2ecb425b9",
+"group__time__parsing.html#gafe5289fde64b7a72548b41a1c319d992",
+"namespacetime__shield.html#a4985f238ac29786aa0b8dd3e68f46199",
+"time__zone__conversions__example_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

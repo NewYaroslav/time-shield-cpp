@@ -99,5 +99,7 @@ var searchData=
   ['structures_3a_96',['Structures:',['../group__time__structures.html#autotoc_md12',1,'Included Structures:'],['../group__mql5__time__structures.html#autotoc_md26',1,'Included Structures:']]],
   ['submodule_20with_20tt_20add_5fsubdirectory_20tt_97',['Git submodule with &lt;tt&gt;add_subdirectory&lt;/tt&gt;',['../index.html#install_submodule',1,'']]],
   ['success_98',['success',['../classtime__shield_1_1NtpClient.html#a21ca9c846b63cc0af6f12c890772f608',1,'time_shield::NtpClient::success() const noexcept'],['../classtime__shield_1_1NtpClient.html#a21ca9c846b63cc0af6f12c890772f608',1,'time_shield::NtpClient::success() const noexcept'],['../classtime__shield_1_1WsaGuard.html#aa2744a80dd498c86daf4b0cb073d7ab5',1,'time_shield::WsaGuard::success()']]],
-  ['sun_99',['SUN',['../group__time__enums.html#ggadf684443100352064316f6134bbe44f8a435b4a7299946a56caaeba3190113f57',1,'time_shield']]]
+  ['sun_99',['SUN',['../group__time__enums.html#ggadf684443100352064316f6134bbe44f8a435b4a7299946a56caaeba3190113f57',1,'time_shield']]],
+  ['sun_5fdiameter_5fdeg_100',['sun_diameter_deg',['../structtime__shield_1_1astronomy_1_1MoonPhaseResult.html#aefe0063683948d45ee44e7a97746e4b6',1,'time_shield::astronomy::MoonPhaseResult']]],
+  ['sun_5fdistance_5fkm_101',['sun_distance_km',['../structtime__shield_1_1astronomy_1_1MoonPhaseResult.html#a152397a580e31c179e4a327a6e57d0dc',1,'time_shield::astronomy::MoonPhaseResult']]]
 ];

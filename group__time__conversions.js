@@ -3,6 +3,7 @@ var group__time__conversions =
     [ "Time Zone Conversions", "group__time__zone__conversions.html", "group__time__zone__conversions" ],
     [ "Time structure conversions", "group__time__structures__time__conversions.html", "group__time__structures__time__conversions" ],
     [ "astronomy_conversions.hpp", "astronomy__conversions_8hpp.html", null ],
+    [ "MoonPhase.hpp", "MoonPhase_8hpp.html", null ],
     [ "ole_automation_conversions.hpp", "ole__automation__conversions_8hpp.html", null ],
     [ "time_shield::cet_to_gmt", "group__time__conversions.html#gab510347fe16134c9b63a223c85528493", null ],
     [ "time_shield::count_workdays_in_month", "group__time__conversions.html#ga24ac9801120589a819da00dd69d752dc", null ],

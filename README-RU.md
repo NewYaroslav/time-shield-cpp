@@ -28,7 +28,8 @@
 
 - **Проверка дат** — валидация дат с учётом високосных лет и выходных.
 - **Форматирование времени** — преобразование таймстампов в строки по стандартным и пользовательским шаблонам.
-- **Конвертации** — перевод между секундными, миллисекундными и плавающими представлениями времени, структуры `DateTimeStruct` и временные зоны.
+- **Конвертации** — перевод между секундными, миллисекундными и плавающими представлениями времени, структуры `DateTimeStruct`, OLE Automation (Excel) и временные зоны.
+- **Астрономические утилиты** — расчёт Julian Date/MJD/JDN и оценка лунной фазы/возраста по Unix‑времени.
 - **Утилиты** — получение текущих меток времени, вычисления начала/конца периодов, работа с частями секунды.
 - **Преобразование часовых поясов** — функции для CET/EET в GMT.
 - **NTP‑клиент** — получение точного времени по сети (Windows и Unix).
@@ -94,6 +95,32 @@ TimeZoneStruct tz;
 if (parse_iso8601("2024-11-25T14:30:00-05:30", dt, tz)) {
     ts_t ts_val = to_timestamp(dt) + to_offset(tz);
 }
+```
+
+### Преобразование дат OLE Automation (OA)
+
+```cpp
+#include <time_shield/ole_automation_conversions.hpp>
+
+using namespace time_shield;
+
+oadate_t oa = ts_to_oadate(1714608000);                     // 2024-05-02 00:00:00Z
+ts_t ts_from_oa = oadate_to_ts(oa);                         // преобразование обратно в Unix-время
+oadate_t from_parts = to_oadate(2024, Month::MAY, 2, 12, 0); // 2024-05-02 12:00:00Z
+```
+
+### Джулианские даты и лунные вычисления
+
+```cpp
+#include <time_shield/astronomy_conversions.hpp>
+
+using namespace time_shield;
+
+jd_t jd = ts_to_jd(1714608000);               // Julian Date для переданного таймстампа
+mjd_t mjd = ts_to_mjd(1714608000);             // Modified Julian Date
+jdn_t jdn = gregorian_to_jdn(2, 5, 2024);      // Julian Day Number (целое значение)
+double phase = moon_phase(fts());              // фаза Луны [0..1)
+double age_days = moon_age_days(fts());        // примерный возраст Луны в днях
 ```
 
 ### Конвертация часовых поясов

@@ -45,7 +45,9 @@ more academic solutions like `HowardHinnant/date`, the library:
 - **Time formatting**—converts timestamps to strings with standard or custom
   templates.
 - **Conversions**—translates between second, millisecond and floating time
-  representations, `DateTimeStruct` and time zones.
+  representations, `DateTimeStruct`, OLE Automation dates and time zones.
+- **Astronomy utilities**—computes Julian Date/MJD/JDN values and estimates
+  lunar phase/age from Unix timestamps.
 - **Utilities**—fetches current timestamps, computes start/end of periods and
   works with fractions of a second.
 - **Time zone conversion**—functions for CET/EET to GMT.
@@ -225,6 +227,32 @@ ts_ms_t last_close_ms = end_of_last_workday_month_ms(2024, Month::MAR);
 ```
 
 The helpers reuse the `start_of_day` / `end_of_day` semantics and therefore return UTC timestamps. Invalid months or months without workdays produce `ERROR_TIMESTAMP` to simplify downstream validation.
+
+### OLE Automation (OA) date conversions
+
+```cpp
+#include <time_shield/ole_automation_conversions.hpp>
+
+using namespace time_shield;
+
+oadate_t oa = ts_to_oadate(1714608000);                     // 2024-05-02 00:00:00Z
+ts_t ts_from_oa = oadate_to_ts(oa);                         // round toward zero
+oadate_t from_parts = to_oadate(2024, Month::MAY, 2, 12, 0); // 2024-05-02 12:00:00Z
+```
+
+### Julian date and lunar helpers
+
+```cpp
+#include <time_shield/astronomy_conversions.hpp>
+
+using namespace time_shield;
+
+jd_t jd = ts_to_jd(1714608000);               // Julian Date for the timestamp
+mjd_t mjd = ts_to_mjd(1714608000);             // Modified Julian Date
+jdn_t jdn = gregorian_to_jdn(2, 5, 2024);      // Julian Day Number
+double phase = moon_phase(fts());              // lunar phase fraction [0..1)
+double age_days = moon_age_days(fts());        // approximate lunar age
+```
 
 ### Time zone conversion
 

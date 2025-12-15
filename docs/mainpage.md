@@ -26,6 +26,7 @@ portable, and suitable for scenarios like logging, serialization, MQL5 usage, an
 - Time zone conversion functions
 - ISO8601 string parsing
 - Utilities for time manipulation and conversion
+- OLE Automation date conversions and astronomy helpers (JD/MJD/JDN, lunar phase)
 
 \section config_sec Configuration
 
@@ -83,6 +84,26 @@ Additional example files are located in the `examples/` folder:
 - `time_conversions_example.cpp` — convert between formats
 - `time_zone_conversions_example.cpp` — CET/EET ↔ GMT
 - `ntp_client_example.cpp` — NTP sync (sockets)
+
+\subsection oa_and_astronomy OA date and astronomy helpers
+
+Convert between Unix timestamps and Excel/COM OA dates, or derive basic
+astronomical values from calendar inputs:
+
+\code{.cpp}
+#include <time_shield/ole_automation_conversions.hpp>
+#include <time_shield/astronomy_conversions.hpp>
+
+using namespace time_shield;
+
+oadate_t oa = ts_to_oadate(1714608000);               // OA date for 2024-05-02
+ts_t ts_from_oa = oadate_to_ts(oa);
+
+jd_t jd = gregorian_to_jd(2, 5, 2024, 12, 0);         // Julian Date with time
+mjd_t mjd = ts_to_mjd(1714608000);                    // Modified Julian Date
+double phase = moon_phase(fts());                     // lunar phase [0..1)
+double age = moon_age_days(fts());                    // lunar age in days
+\endcode
 
 \subsection workday_helpers Workday helpers
 

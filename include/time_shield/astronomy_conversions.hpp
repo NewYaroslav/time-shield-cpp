@@ -22,22 +22,27 @@
 namespace time_shield {
 
     /// \brief Convert Unix timestamp (floating seconds) to Julian Date (JD).
+    /// \param ts Unix timestamp in floating seconds since Unix epoch.
+    /// \return Julian Date value.
     inline jd_t fts_to_jd(fts_t ts) noexcept {
         // JD at Unix epoch:
         // 1970-01-01 00:00:00 UTC -> 2440587.5
         return static_cast<jd_t>(2440587.5)
              + static_cast<jd_t>(ts) / static_cast<jd_t>(SEC_PER_DAY);
     }
-    
+
     /// \brief Convert Unix timestamp (seconds) to Julian Date (JD).
+    /// \param ts Unix timestamp in seconds since Unix epoch.
+    /// \return Julian Date value.
     inline jd_t ts_to_jd(ts_t ts) noexcept {
         return fts_to_jd(static_cast<fts_t>(ts));
     }
-    
+
     /// \brief Convert Gregorian date (with optional fractional day) to Julian Date (JD).
     /// \param day Day of month (may include fractional part).
     /// \param month Month [1..12].
     /// \param year Full year (e.g. 2025).
+    /// \return Julian Date value.
     inline jd_t gregorian_to_jd(double day, int64_t month, int64_t year) noexcept {
         // Algorithm source (as per your original code): krutov.org Julianday
         if (month == 1 || month == 2) {
@@ -53,6 +58,14 @@ namespace time_shield {
     }
     
     /// \brief Convert Gregorian date/time components to Julian Date (JD).
+    /// \param day Day of month [1..31].
+    /// \param month Month [1..12].
+    /// \param year Full year (e.g. 2025).
+    /// \param hour Hour of day [0..23].
+    /// \param minute Minute of hour [0..59].
+    /// \param second Second of minute [0..59].
+    /// \param millisecond Millisecond of second [0..999].
+    /// \return Julian Date value.
     inline jd_t gregorian_to_jd(
         uint32_t day,
         uint32_t month,
@@ -72,17 +85,25 @@ namespace time_shield {
     }
     
     /// \brief Convert Unix timestamp (floating seconds) to Modified Julian Date (MJD).
+    /// \param ts Unix timestamp in floating seconds since Unix epoch.
+    /// \return Modified Julian Date value.
     inline mjd_t fts_to_mjd(fts_t ts) noexcept {
         return static_cast<mjd_t>(fts_to_jd(ts) - 2400000.5);
     }
-    
+
     /// \brief Convert Unix timestamp (seconds) to Modified Julian Date (MJD).
+    /// \param ts Unix timestamp in seconds since Unix epoch.
+    /// \return Modified Julian Date value.
     inline mjd_t ts_to_mjd(ts_t ts) noexcept {
         return static_cast<mjd_t>(fts_to_mjd(static_cast<fts_t>(ts)));
     }
-    
+
     /// \brief Convert Gregorian date to Julian Day Number (JDN).
     /// \details JDN is an integer day count (no fractional part).
+    /// \param day Day of month [1..31].
+    /// \param month Month [1..12].
+    /// \param year Full year (e.g. 2025).
+    /// \return Julian Day Number value.
     inline jdn_t gregorian_to_jdn(uint32_t day, uint32_t month, uint32_t year) noexcept {
         const uint64_t a = (14ULL - static_cast<uint64_t>(month)) / 12ULL;
         const uint64_t y = static_cast<uint64_t>(year) + 4800ULL - a;
@@ -96,17 +117,21 @@ namespace time_shield {
                            - 32045ULL;
         return static_cast<jdn_t>(jdn);
     }
-    
+
     /// \brief Get lunar phase in range [0..1).
     /// \details Based on the algorithm you referenced (archived link).
+    /// \param ts Unix timestamp in floating seconds since Unix epoch.
+    /// \return Lunar phase fraction where 0 is new moon.
     inline double moon_phase(fts_t ts) noexcept {
         double temp = (static_cast<double>(fts_to_jd(ts)) - 2451550.1) / 29.530588853;
         temp = temp - std::floor(temp);
         if (temp < 0.0) temp += 1.0;
         return temp;
     }
-    
+
     /// \brief Get lunar age in days (~0..29.53).
+    /// \param ts Unix timestamp in floating seconds since Unix epoch.
+    /// \return Approximate lunar age in days.
     inline double moon_age_days(fts_t ts) noexcept {
         return moon_phase(ts) * 29.53;
     }

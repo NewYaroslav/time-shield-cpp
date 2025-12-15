@@ -230,6 +230,8 @@ The helpers reuse the `start_of_day` / `end_of_day` semantics and therefore retu
 
 ### OLE Automation (OA) date conversions
 
+OA conversions are Excel/COM compatible (base date 1899-12-30), operate in UTC, and mirror the round-toward-zero semantics used by OA serials.
+
 ```cpp
 #include <time_shield/ole_automation_conversions.hpp>
 
@@ -241,6 +243,8 @@ oadate_t from_parts = to_oadate(2024, Month::MAY, 2, 12, 0); // 2024-05-02 12:00
 ```
 
 ### Julian date and lunar helpers
+
+The astronomy helpers provide lightweight analytics-oriented values (JD, MJD, JDN, phase, age) rather than high-precision ephemerides.
 
 ```cpp
 #include <time_shield/astronomy_conversions.hpp>

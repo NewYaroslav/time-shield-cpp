@@ -623,7 +623,7 @@ namespace time_shield {
     /// \brief Get the timestamp at the start of the year in milliseconds.
     /// \param ts_ms Timestamp in milliseconds.
     /// \return Timestamp at 00:00:00.000 of the first day of the year.
-    inline ts_ms_t start_of_year_ms(ts_ms_t ts_ms = time_shield::ts_ms()) {
+    TIME_SHIELD_CONSTEXPR inline ts_ms_t start_of_year_ms(ts_ms_t ts_ms = time_shield::ts_ms()) {
         return sec_to_ms(start_of_year(ms_to_sec<ts_t>(ts_ms)));
     }
 

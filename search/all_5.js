@@ -35,6 +35,8 @@ var searchData=
   ['gmt_32',['GMT',['../group__time__enums.html#ggad8cb858fb6cedcf76c4f0630d56e042bacce69cd6d90a968533a24acb0a5d3a72',1,'time_shield']]],
   ['gmt_5fto_5fcet_33',['gmt_to_cet',['../group__time__conversions__time__zone__conversions.html#ga6d2d0a5326b64abe301a962ce6e42c9d',1,'time_shield']]],
   ['gmt_5fto_5feet_34',['gmt_to_eet',['../group__time__conversions__time__zone__conversions.html#ga0fdf7732ae50044e684ba0874fd52f0f',1,'time_shield']]],
-  ['groups_2edox_35',['groups.dox',['../groups_8dox.html',1,'']]],
-  ['groups_5fmql5_2edox_36',['groups_mql5.dox',['../groups__mql5_8dox.html',1,'']]]
+  ['gregorian_5fto_5fjd_35',['gregorian_to_jd',['../namespacetime__shield.html#a0b348975140c881557b1951654630133',1,'time_shield::gregorian_to_jd(double day, int64_t month, int64_t year) noexcept'],['../namespacetime__shield.html#a3ed00cd6d83ae31dde3be4fd0417de7f',1,'time_shield::gregorian_to_jd(uint32_t day, uint32_t month, uint32_t year, uint32_t hour, uint32_t minute, uint32_t second=0, uint32_t millisecond=0) noexcept']]],
+  ['gregorian_5fto_5fjdn_36',['gregorian_to_jdn',['../namespacetime__shield.html#ad6bc6f0425632d7502109ff81d43c458',1,'time_shield']]],
+  ['groups_2edox_37',['groups.dox',['../groups_8dox.html',1,'']]],
+  ['groups_5fmql5_2edox_38',['groups_mql5.dox',['../groups__mql5_8dox.html',1,'']]]
 ];

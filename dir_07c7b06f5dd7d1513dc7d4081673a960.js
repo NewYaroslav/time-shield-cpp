@@ -1,6 +1,7 @@
 var dir_07c7b06f5dd7d1513dc7d4081673a960 =
 [
     [ "ntp_client", "dir_f5910b02c33f121c56d84798d1ea4304.html", "dir_f5910b02c33f121c56d84798d1ea4304" ],
+    [ "astronomy_conversions.hpp", "astronomy__conversions_8hpp.html", "astronomy__conversions_8hpp" ],
     [ "config.hpp", "config_8hpp.html", null ],
     [ "constants.hpp", "constants_8hpp.html", "constants_8hpp" ],
     [ "CpuTickTimer.hpp", "CpuTickTimer_8hpp.html", null ],
@@ -13,6 +14,7 @@ var dir_07c7b06f5dd7d1513dc7d4081673a960 =
     [ "enums.hpp", "enums_8hpp.html", "enums_8hpp" ],
     [ "initialization.hpp", "initialization_8hpp.html", "initialization_8hpp" ],
     [ "ntp_client.hpp", "ntp__client_8hpp.html", "ntp__client_8hpp" ],
+    [ "ole_automation_conversions.hpp", "ole__automation__conversions_8hpp.html", "ole__automation__conversions_8hpp" ],
     [ "time_conversion_aliases.hpp", "time__conversion__aliases_8hpp.html", "time__conversion__aliases_8hpp" ],
     [ "time_conversions.hpp", "time__conversions_8hpp.html", null ],
     [ "time_formatting.hpp", "time__formatting_8hpp.html", "time__formatting_8hpp" ],

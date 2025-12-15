@@ -1,16 +1,17 @@
 var NAVTREEINDEX0 =
 {
-"CpuTickTimer_8hpp.html":[14,0,2,0,3],
-"CpuTickTimer_8hpp_source.html":[14,0,2,0,3],
-"DeadlineTimer_8hpp.html":[14,0,2,0,8],
-"DeadlineTimer_8hpp_source.html":[14,0,2,0,8],
-"ElapsedTimer_8hpp.html":[14,0,2,0,9],
-"ElapsedTimer_8hpp_source.html":[14,0,2,0,9],
+"CpuTickTimer_8hpp.html":[14,0,2,0,4],
+"CpuTickTimer_8hpp_source.html":[14,0,2,0,4],
+"DeadlineTimer_8hpp.html":[14,0,2,0,9],
+"DeadlineTimer_8hpp_source.html":[14,0,2,0,9],
+"ElapsedTimer_8hpp.html":[14,0,2,0,10],
+"ElapsedTimer_8hpp_source.html":[14,0,2,0,10],
 "TimeShield_8mqh.html":[14,0,3,0,2],
 "TimeShield_8mqh_source.html":[14,0,3,0,2],
-"TimerScheduler_8hpp.html":[14,0,2,0,24],
-"TimerScheduler_8hpp_source.html":[14,0,2,0,24],
+"TimerScheduler_8hpp.html":[14,0,2,0,26],
+"TimerScheduler_8hpp_source.html":[14,0,2,0,26],
 "annotated.html":[13,0],
+"astronomy__conversions_8hpp.html":[11,4,2],
 "classes.html":[13,1],
 "classtime__shield_1_1CpuTickTimer.html":[11,10,0],
 "classtime__shield_1_1CpuTickTimer.html#a0476e2176ab4465f93fc71930ba74a2d":[11,10,0,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "classtime__shield_1_1TimerScheduler.html#a13e9b67f9d1267dbd8b3d4779a5dd34a":[13,0,0,8,16],
 "classtime__shield_1_1TimerScheduler.html#a1bf3131417d17b8da56591bdb6ac184c":[12,0,0,8,3],
 "classtime__shield_1_1TimerScheduler.html#a1bf3131417d17b8da56591bdb6ac184c":[13,0,0,8,3],
-"classtime__shield_1_1TimerScheduler.html#a1d5487e90e596e0680240856f4615de1":[12,0,0,8,23],
-"classtime__shield_1_1TimerScheduler.html#a1d5487e90e596e0680240856f4615de1":[13,0,0,8,23]
+"classtime__shield_1_1TimerScheduler.html#a1d5487e90e596e0680240856f4615de1":[12,0,0,8,23]
 };

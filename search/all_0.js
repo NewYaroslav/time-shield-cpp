@@ -12,8 +12,9 @@ var searchData=
   ['api_9',['MQL5 TimeShield API',['../group__mql5.html',1,'']]],
   ['api_20invariants_10',['API Invariants',['../index.html#invariants_sec',1,'']]],
   ['apr_11',['APR',['../group__time__enums.html#ggac2ffd79e06ab94cf1bb50fec432c68a8ad3768e2a19435e8e723f135215b827fb',1,'time_shield']]],
-  ['aug_12',['AUG',['../group__time__enums.html#ggac2ffd79e06ab94cf1bb50fec432c68a8a939f4fa15cc31f9b2ec0fc54fed08595',1,'time_shield']]],
-  ['average_5fticks_13',['average_ticks',['../classtime__shield_1_1CpuTickTimer.html#a0476e2176ab4465f93fc71930ba74a2d',1,'time_shield::CpuTickTimer']]],
-  ['avg_5fdays_5fper_5fyear_14',['AVG_DAYS_PER_YEAR',['../group__time__constants.html#ga24075d386d517252e371f0fa915b768d',1,'time_shield']]],
-  ['avg_5fsec_5fper_5fyear_15',['AVG_SEC_PER_YEAR',['../group__time__constants.html#ga917a14b2c8ee5cb4f9978fec639b8fd6',1,'time_shield']]]
+  ['astronomy_5fconversions_2ehpp_12',['astronomy_conversions.hpp',['../astronomy__conversions_8hpp.html',1,'']]],
+  ['aug_13',['AUG',['../group__time__enums.html#ggac2ffd79e06ab94cf1bb50fec432c68a8a939f4fa15cc31f9b2ec0fc54fed08595',1,'time_shield']]],
+  ['average_5fticks_14',['average_ticks',['../classtime__shield_1_1CpuTickTimer.html#a0476e2176ab4465f93fc71930ba74a2d',1,'time_shield::CpuTickTimer']]],
+  ['avg_5fdays_5fper_5fyear_15',['AVG_DAYS_PER_YEAR',['../group__time__constants.html#ga24075d386d517252e371f0fa915b768d',1,'time_shield']]],
+  ['avg_5fsec_5fper_5fyear_16',['AVG_SEC_PER_YEAR',['../group__time__constants.html#ga917a14b2c8ee5cb4f9978fec639b8fd6',1,'time_shield']]]
 ];

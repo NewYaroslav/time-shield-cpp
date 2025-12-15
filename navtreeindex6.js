@@ -106,9 +106,10 @@ var NAVTREEINDEX6 =
 "index.html#invariants_sec":[4],
 "index.html#license_sec":[10],
 "index.html#motivation_sec":[1],
+"index.html#oa_and_astronomy":[5,0],
 "index.html#repo_sec":[9],
 "index.html#tested_sec":[7],
-"index.html#workday_helpers":[5,0],
+"index.html#workday_helpers":[5,1],
 "initialization_8hpp.html":[11,0,0],
 "initialization_8mqh.html":[11,1,10],
 "namespacemembers.html":[12,1,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX6 =
 "structtime__shield_1_1TimeZoneStruct.html#a83b023980ce397878cb2c742bb9dc8b7":[11,8,5,0],
 "structtime__shield_1_1TimeZoneStruct.html#ab24fabc460ae071150d4317efc1ecbdb":[11,1,4,2,2],
 "structtime__shield_1_1TimeZoneStruct.html#ab24fabc460ae071150d4317efc1ecbdb":[11,8,5,2],
-"structtime__shield_1_1TimeZoneStruct.html#abe789b40db8bbbc3046dee910ca7804b":[11,1,4,2,1],
-"structtime__shield_1_1TimeZoneStruct.html#abe789b40db8bbbc3046dee910ca7804b":[11,8,5,1]
+"structtime__shield_1_1TimeZoneStruct.html#abe789b40db8bbbc3046dee910ca7804b":[11,1,4,2,1]
 };

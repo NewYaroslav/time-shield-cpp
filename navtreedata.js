@@ -31,6 +31,7 @@ var NAVTREE =
     [ "Configuration", "index.html#config_sec", null ],
     [ "API Invariants", "index.html#invariants_sec", null ],
     [ "Examples", "index.html#examples_sec", [
+      [ "OA date and astronomy helpers", "index.html#oa_and_astronomy", null ],
       [ "Workday helpers", "index.html#workday_helpers", null ]
     ] ],
     [ "Installation", "index.html#install_sec", [
@@ -84,7 +85,7 @@ var NAVTREEINDEX =
 "group__time__conversions.html#gae60c00596efadadaed955807565d42ab",
 "group__time__enums.html#ggadf684443100352064316f6134bbe44f8a435b4a7299946a56caaeba3190113f57",
 "group__time__structures__time__conversions.html#gaad6bb6b03e69f7ce86e589653db1ca2f",
-"structtime__shield_1_1detail_1_1DueTimer.html"
+"structtime__shield_1_1TimeZoneStruct.html#abe789b40db8bbbc3046dee910ca7804b"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

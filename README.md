@@ -46,6 +46,9 @@ more academic solutions like `HowardHinnant/date`, the library:
   templates.
 - **Conversions**—translates between second, millisecond and floating time
   representations, `DateTimeStruct`, OLE Automation dates and time zones.
+- **DateTime value type**—fixed-offset wrapper that stores UTC milliseconds,
+  parses/prints ISO8601, exposes local/UTC components, and provides arithmetic
+  helpers.
 - **ISO week dates**—conversion helpers, formatting, and parsing for ISO 8601
   week-numbering years.
 - **Astronomy utilities**—computes Julian Date/MJD/JDN values and estimates
@@ -197,6 +200,24 @@ TimeZoneStruct tz;
 if (parse_iso8601("2024-11-25T14:30:00-05:30", dt, tz)) {
     ts_t ts_val = to_timestamp(dt) + to_offset(tz);
 }
+```
+
+### DateTime value type
+
+`DateTime` stores UTC milliseconds plus an optional fixed offset for local
+component access and round-trip formatting.
+
+```cpp
+#include <time_shield.hpp>
+
+using namespace time_shield;
+
+DateTime dt = DateTime::parse_iso8601("2025-12-16T10:20:30.123+02:30");
+std::string local = dt.to_iso8601();        // preserves +02:30
+std::string utc = dt.to_iso8601_utc();      // prints Z
+DateTime tomorrow = dt.add_days(1).start_of_day();
+int hour_local = dt.hour();                 // local hour (offset applied)
+int hour_utc = dt.utc_hour();               // UTC hour
 ```
 
 ### Checking workdays

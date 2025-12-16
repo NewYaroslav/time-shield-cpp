@@ -702,6 +702,10 @@ namespace time_shield {
             }
         }
 
+        if (!is_valid_date(dt.year, dt.mon, dt.day)) {
+            return false;
+        }
+
         // Date-only?
         {
             const char* q = p;

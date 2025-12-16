@@ -128,6 +128,12 @@ Typedefs</h2></td></tr>
 <tr class="memitem:ga391046d8662dee26a659793b8c0daf6a" id="r_ga391046d8662dee26a659793b8c0daf6a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga391046d8662dee26a659793b8c0daf6a">time_shield::unixday_t</a> = <a class="el" href="#ga63a3e5f64aa9c168fc51dc05a7014f37">uday_t</a></td></tr>
 <tr class="memdesc:ga391046d8662dee26a659793b8c0daf6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for Unix day count type.  <br /></td></tr>
 <tr class="separator:ga391046d8662dee26a659793b8c0daf6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacb5a40be07fa50768db103565b4498fc" id="r_gacb5a40be07fa50768db103565b4498fc"><td class="memItemLeft" align="right" valign="top">typedef int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gacb5a40be07fa50768db103565b4498fc">time_shield::iso_week_t</a></td></tr>
+<tr class="memdesc:gacb5a40be07fa50768db103565b4498fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">ISO week number type (1-52/53).  <br /></td></tr>
+<tr class="separator:gacb5a40be07fa50768db103565b4498fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacd570fd6d032e2f1e01d4eaf83929e79" id="r_gacd570fd6d032e2f1e01d4eaf83929e79"><td class="memItemLeft" align="right" valign="top">typedef int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gacd570fd6d032e2f1e01d4eaf83929e79">time_shield::iso_weekday_t</a></td></tr>
+<tr class="memdesc:gacd570fd6d032e2f1e01d4eaf83929e79"><td class="mdescLeft">&#160;</td><td class="mdescRight">ISO weekday number type (1=Monday .. 7=Sunday).  <br /></td></tr>
+<tr class="separator:gacd570fd6d032e2f1e01d4eaf83929e79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga183c70b9c541a395d47690a82cdad282" id="r_ga183c70b9c541a395d47690a82cdad282"><td class="memItemLeft" align="right" valign="top">typedef int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga183c70b9c541a395d47690a82cdad282">time_shield::ts_t</a></td></tr>
 <tr class="memdesc:ga183c70b9c541a395d47690a82cdad282"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unix timestamp in seconds since 1970‑01‑01T00:00:00Z.  <br /></td></tr>
 <tr class="separator:ga183c70b9c541a395d47690a82cdad282"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -173,10 +179,10 @@ Example Usage</h3>
 <div class="line"><a class="code hl_typedef" href="#ga922ce1d0bc31869e531512c233b7633f">time_shield::fts_t</a> precise = 1700000000.123; <span class="comment">// Time with fractional seconds</span></div>
 <div class="line"><a class="code hl_typedef" href="#gad6b7a13bb33749e9f503f913d445a6e7">time_shield::jd_t</a> julian = 2459580.5;     <span class="comment">// Julian Date</span></div>
 <div class="line"><a class="code hl_typedef" href="#ga467db13fb99208bd078b5abff59866fb">time_shield::tz_t</a> offset = 180;           <span class="comment">// UTC+3 in minutes</span></div>
-<div class="ttc" id="agroup__time__types_html_ga183c70b9c541a395d47690a82cdad282"><div class="ttname"><a href="#ga183c70b9c541a395d47690a82cdad282">time_shield::ts_t</a></div><div class="ttdeci">int64_t ts_t</div><div class="ttdoc">Unix timestamp in seconds since 1970‑01‑01T00:00:00Z.</div><div class="ttdef"><b>Definition</b> <a href="types_8hpp_source.html#l00046">types.hpp:46</a></div></div>
-<div class="ttc" id="agroup__time__types_html_ga467db13fb99208bd078b5abff59866fb"><div class="ttname"><a href="#ga467db13fb99208bd078b5abff59866fb">time_shield::tz_t</a></div><div class="ttdeci">int32_t tz_t</div><div class="ttdoc">Time zone offset in minutes from UTC (e.g., +180 = UTC+3).</div><div class="ttdef"><b>Definition</b> <a href="types_8hpp_source.html#l00058">types.hpp:58</a></div></div>
-<div class="ttc" id="agroup__time__types_html_ga922ce1d0bc31869e531512c233b7633f"><div class="ttname"><a href="#ga922ce1d0bc31869e531512c233b7633f">time_shield::fts_t</a></div><div class="ttdeci">double fts_t</div><div class="ttdoc">Floating-point timestamp (fractional seconds since epoch).</div><div class="ttdef"><b>Definition</b> <a href="types_8hpp_source.html#l00049">types.hpp:49</a></div></div>
-<div class="ttc" id="agroup__time__types_html_gad6b7a13bb33749e9f503f913d445a6e7"><div class="ttname"><a href="#gad6b7a13bb33749e9f503f913d445a6e7">time_shield::jd_t</a></div><div class="ttdeci">double jd_t</div><div class="ttdoc">Julian Date (days since -4713‑11‑24T12:00:00Z).</div><div class="ttdef"><b>Definition</b> <a href="types_8hpp_source.html#l00053">types.hpp:53</a></div></div>
+<div class="ttc" id="agroup__time__types_html_ga183c70b9c541a395d47690a82cdad282"><div class="ttname"><a href="#ga183c70b9c541a395d47690a82cdad282">time_shield::ts_t</a></div><div class="ttdeci">int64_t ts_t</div><div class="ttdoc">Unix timestamp in seconds since 1970‑01‑01T00:00:00Z.</div><div class="ttdef"><b>Definition</b> <a href="types_8hpp_source.html#l00048">types.hpp:48</a></div></div>
+<div class="ttc" id="agroup__time__types_html_ga467db13fb99208bd078b5abff59866fb"><div class="ttname"><a href="#ga467db13fb99208bd078b5abff59866fb">time_shield::tz_t</a></div><div class="ttdeci">int32_t tz_t</div><div class="ttdoc">Time zone offset in minutes from UTC (e.g., +180 = UTC+3).</div><div class="ttdef"><b>Definition</b> <a href="types_8hpp_source.html#l00060">types.hpp:60</a></div></div>
+<div class="ttc" id="agroup__time__types_html_ga922ce1d0bc31869e531512c233b7633f"><div class="ttname"><a href="#ga922ce1d0bc31869e531512c233b7633f">time_shield::fts_t</a></div><div class="ttdeci">double fts_t</div><div class="ttdoc">Floating-point timestamp (fractional seconds since epoch).</div><div class="ttdef"><b>Definition</b> <a href="types_8hpp_source.html#l00051">types.hpp:51</a></div></div>
+<div class="ttc" id="agroup__time__types_html_gad6b7a13bb33749e9f503f913d445a6e7"><div class="ttname"><a href="#gad6b7a13bb33749e9f503f913d445a6e7">time_shield::jd_t</a></div><div class="ttdeci">double jd_t</div><div class="ttdoc">Julian Date (days since -4713‑11‑24T12:00:00Z).</div><div class="ttdef"><b>Definition</b> <a href="types_8hpp_source.html#l00055">types.hpp:55</a></div></div>
 <div class="ttc" id="agroup__time__utils_html_ga11b0b830fdc6c5505db1cd2683457d0e"><div class="ttname"><a href="group__time__utils.html#ga11b0b830fdc6c5505db1cd2683457d0e">time_shield::now</a></div><div class="ttdeci">ts_ms_t now() noexcept</div><div class="ttdoc">Get the current UTC timestamp in milliseconds.</div><div class="ttdef"><b>Definition</b> <a href="time__utils_8hpp_source.html#l00221">time_utils.hpp:221</a></div></div>
 </div><!-- fragment --> <h2 class="groupheader">Typedef Documentation</h2>
 <a id="ga922ce1d0bc31869e531512c233b7633f" name="ga922ce1d0bc31869e531512c233b7633f"></a>
@@ -193,7 +199,43 @@ Example Usage</h3>
 
 <p>Floating-point timestamp (fractional seconds since epoch). </p>
 
-<p class="definition">Definition at line <a class="el" href="types_8hpp_source.html#l00049">49</a> of file <a class="el" href="types_8hpp_source.html">types.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="types_8hpp_source.html#l00051">51</a> of file <a class="el" href="types_8hpp_source.html">types.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gacb5a40be07fa50768db103565b4498fc" name="gacb5a40be07fa50768db103565b4498fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacb5a40be07fa50768db103565b4498fc">&#9670;&#160;</a></span>iso_week_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef int32_t <a class="el" href="#gacb5a40be07fa50768db103565b4498fc">time_shield::iso_week_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ISO week number type (1-52/53). </p>
+
+<p class="definition">Definition at line <a class="el" href="types_8hpp_source.html#l00044">44</a> of file <a class="el" href="types_8hpp_source.html">types.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gacd570fd6d032e2f1e01d4eaf83929e79" name="gacd570fd6d032e2f1e01d4eaf83929e79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacd570fd6d032e2f1e01d4eaf83929e79">&#9670;&#160;</a></span>iso_weekday_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef int32_t <a class="el" href="#gacd570fd6d032e2f1e01d4eaf83929e79">time_shield::iso_weekday_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ISO weekday number type (1=Monday .. 7=Sunday). </p>
+
+<p class="definition">Definition at line <a class="el" href="types_8hpp_source.html#l00045">45</a> of file <a class="el" href="types_8hpp_source.html">types.hpp</a>.</p>
 
 </div>
 </div>
@@ -211,7 +253,7 @@ Example Usage</h3>
 
 <p>Julian Date (days since -4713‑11‑24T12:00:00Z). </p>
 
-<p class="definition">Definition at line <a class="el" href="types_8hpp_source.html#l00053">53</a> of file <a class="el" href="types_8hpp_source.html">types.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="types_8hpp_source.html#l00055">55</a> of file <a class="el" href="types_8hpp_source.html">types.hpp</a>.</p>
 
 </div>
 </div>
@@ -229,7 +271,7 @@ Example Usage</h3>
 
 <p>Julian Day Number (whole days since Julian epoch). </p>
 
-<p class="definition">Definition at line <a class="el" href="types_8hpp_source.html#l00055">55</a> of file <a class="el" href="types_8hpp_source.html">types.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="types_8hpp_source.html#l00057">57</a> of file <a class="el" href="types_8hpp_source.html">types.hpp</a>.</p>
 
 </div>
 </div>
@@ -247,7 +289,7 @@ Example Usage</h3>
 
 <p>Modified Julian Date (JD − 2400000.5). </p>
 
-<p class="definition">Definition at line <a class="el" href="types_8hpp_source.html#l00054">54</a> of file <a class="el" href="types_8hpp_source.html">types.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="types_8hpp_source.html#l00056">56</a> of file <a class="el" href="types_8hpp_source.html">types.hpp</a>.</p>
 
 </div>
 </div>
@@ -265,7 +307,7 @@ Example Usage</h3>
 
 <p>OLE Automation date (days since 1899‑12‑30, as <code>double</code>). </p>
 
-<p class="definition">Definition at line <a class="el" href="types_8hpp_source.html#l00052">52</a> of file <a class="el" href="types_8hpp_source.html">types.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="types_8hpp_source.html#l00054">54</a> of file <a class="el" href="types_8hpp_source.html">types.hpp</a>.</p>
 
 </div>
 </div>
@@ -283,7 +325,7 @@ Example Usage</h3>
 
 <p>Unix timestamp in milliseconds since epoch. </p>
 
-<p class="definition">Definition at line <a class="el" href="types_8hpp_source.html#l00047">47</a> of file <a class="el" href="types_8hpp_source.html">types.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="types_8hpp_source.html#l00049">49</a> of file <a class="el" href="types_8hpp_source.html">types.hpp</a>.</p>
 
 </div>
 </div>
@@ -301,7 +343,7 @@ Example Usage</h3>
 
 <p>Unix timestamp in seconds since 1970‑01‑01T00:00:00Z. </p>
 
-<p class="definition">Definition at line <a class="el" href="types_8hpp_source.html#l00046">46</a> of file <a class="el" href="types_8hpp_source.html">types.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="types_8hpp_source.html#l00048">48</a> of file <a class="el" href="types_8hpp_source.html">types.hpp</a>.</p>
 
 </div>
 </div>
@@ -319,7 +361,7 @@ Example Usage</h3>
 
 <p>Unix timestamp in microseconds since epoch. </p>
 
-<p class="definition">Definition at line <a class="el" href="types_8hpp_source.html#l00048">48</a> of file <a class="el" href="types_8hpp_source.html">types.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="types_8hpp_source.html#l00050">50</a> of file <a class="el" href="types_8hpp_source.html">types.hpp</a>.</p>
 
 </div>
 </div>
@@ -337,7 +379,7 @@ Example Usage</h3>
 
 <p>Time zone offset in minutes from UTC (e.g., +180 = UTC+3). </p>
 
-<p class="definition">Definition at line <a class="el" href="types_8hpp_source.html#l00058">58</a> of file <a class="el" href="types_8hpp_source.html">types.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="types_8hpp_source.html#l00060">60</a> of file <a class="el" href="types_8hpp_source.html">types.hpp</a>.</p>
 
 </div>
 </div>

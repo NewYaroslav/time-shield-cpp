@@ -20,6 +20,11 @@ var group__time__structures =
       [ "year", "structtime__shield_1_1DateTimeStruct.html#a6aaf7ee7664f6caeb970a0fe1dd503e5", null ],
       [ "year", "structtime__shield_1_1DateTimeStruct.html#a70c144b159ef73168083002b102001c0", null ]
     ] ],
+    [ "time_shield::IsoWeekDateStruct", "structtime__shield_1_1IsoWeekDateStruct.html", [
+      [ "week", "structtime__shield_1_1IsoWeekDateStruct.html#a67c4f2815dbf2169f5796ac75a492974", null ],
+      [ "weekday", "structtime__shield_1_1IsoWeekDateStruct.html#af57593d735d30cbf973dac5821221ee2", null ],
+      [ "year", "structtime__shield_1_1IsoWeekDateStruct.html#a059cf6c1334c96b392b809eb119679c2", null ]
+    ] ],
     [ "time_shield::TimeStruct", "structtime__shield_1_1TimeStruct.html", [
       [ "hour", "structtime__shield_1_1TimeStruct.html#a692bac8100db9b338841461a38092a0f", null ],
       [ "hour", "structtime__shield_1_1TimeStruct.html#af73103a8b5d29c54de39cfe93e5e6f37", null ],
@@ -39,6 +44,7 @@ var group__time__structures =
     [ "time_shield::create_date_struct", "group__time__structures.html#ga2ea065cf0bd4d934cb3c64ae54975448", null ],
     [ "time_shield::create_date_time_struct", "group__time__structures.html#ga0c596486a334547054b4e8ac71e4b3e4", null ],
     [ "time_shield::create_date_time_struct", "group__time__structures.html#gab6cf08da5ef726f11d460ad3e45f6800", null ],
+    [ "time_shield::create_iso_week_date_struct", "group__time__structures.html#ga9da8bcc317b82ac17d1768ba31eaece5", null ],
     [ "time_shield::create_time_struct", "group__time__structures.html#ga13b01721128561fc611a2044ff5b7b0c", null ],
     [ "time_shield::create_time_struct", "group__time__structures.html#ga31f445e3e85cba85035f71b35de12e25", null ],
     [ "time_shield::create_time_zone_struct", "group__time__structures.html#gae83e4d4791a1f6ce69657a3868b00504", null ],

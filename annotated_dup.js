@@ -18,6 +18,7 @@ var annotated_dup =
       [ "DateTimeStruct", "structtime__shield_1_1DateTimeStruct.html", "structtime__shield_1_1DateTimeStruct" ],
       [ "DeadlineTimer", "classtime__shield_1_1DeadlineTimer.html", "classtime__shield_1_1DeadlineTimer" ],
       [ "ElapsedTimer", "classtime__shield_1_1ElapsedTimer.html", "classtime__shield_1_1ElapsedTimer" ],
+      [ "IsoWeekDateStruct", "structtime__shield_1_1IsoWeekDateStruct.html", "structtime__shield_1_1IsoWeekDateStruct" ],
       [ "MoonPhaseSineCosine", "structtime__shield_1_1MoonPhaseSineCosine.html", "structtime__shield_1_1MoonPhaseSineCosine" ],
       [ "NtpClient", "classtime__shield_1_1NtpClient.html", "classtime__shield_1_1NtpClient" ],
       [ "Timer", "classtime__shield_1_1Timer.html", "classtime__shield_1_1Timer" ],

@@ -13,6 +13,8 @@ var dir_07c7b06f5dd7d1513dc7d4081673a960 =
     [ "ElapsedTimer.hpp", "ElapsedTimer_8hpp.html", "ElapsedTimer_8hpp" ],
     [ "enums.hpp", "enums_8hpp.html", "enums_8hpp" ],
     [ "initialization.hpp", "initialization_8hpp.html", "initialization_8hpp" ],
+    [ "iso_week_conversions.hpp", "iso__week__conversions_8hpp.html", "iso__week__conversions_8hpp" ],
+    [ "iso_week_struct.hpp", "iso__week__struct_8hpp.html", "iso__week__struct_8hpp" ],
     [ "MoonPhase.hpp", "MoonPhase_8hpp.html", "MoonPhase_8hpp" ],
     [ "ntp_client.hpp", "ntp__client_8hpp.html", "ntp__client_8hpp" ],
     [ "ole_automation_conversions.hpp", "ole__automation__conversions_8hpp.html", "ole__automation__conversions_8hpp" ],

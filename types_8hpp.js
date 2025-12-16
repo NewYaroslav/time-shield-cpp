@@ -1,6 +1,8 @@
 var types_8hpp =
 [
     [ "time_shield::fts_t", "group__time__types.html#ga922ce1d0bc31869e531512c233b7633f", null ],
+    [ "time_shield::iso_week_t", "group__time__types.html#gacb5a40be07fa50768db103565b4498fc", null ],
+    [ "time_shield::iso_weekday_t", "group__time__types.html#gacd570fd6d032e2f1e01d4eaf83929e79", null ],
     [ "time_shield::jd_t", "group__time__types.html#gad6b7a13bb33749e9f503f913d445a6e7", null ],
     [ "time_shield::jdn_t", "group__time__types.html#ga9f2039b057978a2b41d1a4b2418158a6", null ],
     [ "time_shield::mjd_t", "group__time__types.html#gac2c43d72af642bbab55e7c68ca268237", null ],

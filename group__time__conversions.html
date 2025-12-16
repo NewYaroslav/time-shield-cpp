@@ -837,6 +837,48 @@ Functions</h2></td></tr>
 <tr class="memitem:gaf14b19e6c7f040effc38ccad8f76b205"><td class="memTemplItemLeft" align="right" valign="top">TIME_SHIELD_CONSTEXPR T1&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#gaf14b19e6c7f040effc38ccad8f76b205">time_shield::weekday_from_date</a> (const T2 &amp;date)</td></tr>
 <tr class="memdesc:gaf14b19e6c7f040effc38ccad8f76b205"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for weekday_of_date.  <br /></td></tr>
 <tr class="separator:gaf14b19e6c7f040effc38ccad8f76b205"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9c5115f6efc1e18cb1908e8c49d69597" id="r_ga9c5115f6efc1e18cb1908e8c49d69597"><td class="memItemLeft" align="right" valign="top">TIME_SHIELD_CONSTEXPR int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9c5115f6efc1e18cb1908e8c49d69597">time_shield::iso_weekday_from_weekday</a> (<a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8">Weekday</a> <a class="el" href="#gaceafb0639e52115aff08ec242f81b5f5">weekday</a>) noexcept</td></tr>
+<tr class="memdesc:ga9c5115f6efc1e18cb1908e8c49d69597"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert <a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8">Weekday</a> enum to ISO weekday (Mon=1 .. Sun=7).  <br /></td></tr>
+<tr class="separator:ga9c5115f6efc1e18cb1908e8c49d69597"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6efcb5b5fb0f15bb8fc116fd0fe08f5b" id="r_ga6efcb5b5fb0f15bb8fc116fd0fe08f5b"><td class="memTemplParams" colspan="2">template&lt;class Y = year_t, class M = Month, class D = int&gt; </td></tr>
+<tr class="memitem:ga6efcb5b5fb0f15bb8fc116fd0fe08f5b"><td class="memTemplItemLeft" align="right" valign="top">TIME_SHIELD_CONSTEXPR int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga6efcb5b5fb0f15bb8fc116fd0fe08f5b">time_shield::iso_weekday_of_date</a> (Y <a class="el" href="#gadd68b9e632d1b5a43c18b116bbf105a4">year</a>, M month, D day)</td></tr>
+<tr class="memdesc:ga6efcb5b5fb0f15bb8fc116fd0fe08f5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get ISO weekday for a calendar date.  <br /></td></tr>
+<tr class="separator:ga6efcb5b5fb0f15bb8fc116fd0fe08f5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga533a859a0c5f8671387f5e8190686d23" id="r_ga533a859a0c5f8671387f5e8190686d23"><td class="memTemplParams" colspan="2">template&lt;class Y = year_t, class M = Month, class D = int&gt; </td></tr>
+<tr class="memitem:ga533a859a0c5f8671387f5e8190686d23"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structtime__shield_1_1IsoWeekDateStruct.html">IsoWeekDateStruct</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga533a859a0c5f8671387f5e8190686d23">time_shield::to_iso_week_date</a> (Y <a class="el" href="#gadd68b9e632d1b5a43c18b116bbf105a4">year</a>, M month, D day)</td></tr>
+<tr class="memdesc:ga533a859a0c5f8671387f5e8190686d23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert calendar date to ISO week date.  <br /></td></tr>
+<tr class="separator:ga533a859a0c5f8671387f5e8190686d23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa05375730d328b4966c0f8373e828bf1" id="r_gaa05375730d328b4966c0f8373e828bf1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structtime__shield_1_1IsoWeekDateStruct.html">IsoWeekDateStruct</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa05375730d328b4966c0f8373e828bf1">time_shield::to_iso_week_date</a> (const <a class="el" href="structtime__shield_1_1DateStruct.html">DateStruct</a> &amp;date)</td></tr>
+<tr class="memdesc:gaa05375730d328b4966c0f8373e828bf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert <a class="el" href="structtime__shield_1_1DateStruct.html" title="Structure to represent a date.">DateStruct</a> to ISO week date.  <br /></td></tr>
+<tr class="separator:gaa05375730d328b4966c0f8373e828bf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaefc9cdb64cb635522156bd66da618e31" id="r_gaefc9cdb64cb635522156bd66da618e31"><td class="memTemplParams" colspan="2">template&lt;class T = ts_t&gt; </td></tr>
+<tr class="memitem:gaefc9cdb64cb635522156bd66da618e31"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structtime__shield_1_1IsoWeekDateStruct.html">IsoWeekDateStruct</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#gaefc9cdb64cb635522156bd66da618e31">time_shield::to_iso_week_date</a> (T <a class="el" href="#ga4701e4f2553acb70bf28ada865531a03">ts</a>)</td></tr>
+<tr class="memdesc:gaefc9cdb64cb635522156bd66da618e31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert timestamp to ISO week date.  <br /></td></tr>
+<tr class="separator:gaefc9cdb64cb635522156bd66da618e31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga50cff0bd76c9859ae609596e86d54869" id="r_ga50cff0bd76c9859ae609596e86d54869"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga50cff0bd76c9859ae609596e86d54869">time_shield::iso_weeks_in_year</a> (<a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9">year_t</a> iso_year)</td></tr>
+<tr class="memdesc:ga50cff0bd76c9859ae609596e86d54869"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate number of ISO weeks in a year.  <br /></td></tr>
+<tr class="separator:ga50cff0bd76c9859ae609596e86d54869"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4859634869507e017461e29f5756618e" id="r_ga4859634869507e017461e29f5756618e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4859634869507e017461e29f5756618e">time_shield::is_valid_iso_week_date</a> (<a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9">year_t</a> iso_year, int week, int <a class="el" href="#gaceafb0639e52115aff08ec242f81b5f5">weekday</a>)</td></tr>
+<tr class="memdesc:ga4859634869507e017461e29f5756618e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validate ISO week date components.  <br /></td></tr>
+<tr class="separator:ga4859634869507e017461e29f5756618e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga57ffd42aa8dd5195fecdd9d1dc7db0da" id="r_ga57ffd42aa8dd5195fecdd9d1dc7db0da"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structtime__shield_1_1DateStruct.html">DateStruct</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga57ffd42aa8dd5195fecdd9d1dc7db0da">time_shield::iso_week_date_to_date</a> (const <a class="el" href="structtime__shield_1_1IsoWeekDateStruct.html">IsoWeekDateStruct</a> &amp;iso_date)</td></tr>
+<tr class="memdesc:ga57ffd42aa8dd5195fecdd9d1dc7db0da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert ISO week date to calendar date.  <br /></td></tr>
+<tr class="separator:ga57ffd42aa8dd5195fecdd9d1dc7db0da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga40b8907aa3e9925f1f01c0f090ce92d2" id="r_ga40b8907aa3e9925f1f01c0f090ce92d2"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga40b8907aa3e9925f1f01c0f090ce92d2">time_shield::format_iso_week_date</a> (const <a class="el" href="structtime__shield_1_1IsoWeekDateStruct.html">IsoWeekDateStruct</a> &amp;iso_date, bool extended=true, bool include_weekday=true)</td></tr>
+<tr class="memdesc:ga40b8907aa3e9925f1f01c0f090ce92d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Format ISO week date to string.  <br /></td></tr>
+<tr class="separator:ga40b8907aa3e9925f1f01c0f090ce92d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaad70da70b3a02c39c520a3d713accfa6" id="r_gaad70da70b3a02c39c520a3d713accfa6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaad70da70b3a02c39c520a3d713accfa6">time_shield::parse_iso_week_date</a> (const char *input, std::size_t length, <a class="el" href="structtime__shield_1_1IsoWeekDateStruct.html">IsoWeekDateStruct</a> &amp;iso_date) noexcept</td></tr>
+<tr class="memdesc:gaad70da70b3a02c39c520a3d713accfa6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse ISO week date string buffer.  <br /></td></tr>
+<tr class="separator:gaad70da70b3a02c39c520a3d713accfa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga205fe3418ab42441fc7643f5566310f1" id="r_ga205fe3418ab42441fc7643f5566310f1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga205fe3418ab42441fc7643f5566310f1">time_shield::parse_iso_week_date</a> (const std::string &amp;input, <a class="el" href="structtime__shield_1_1IsoWeekDateStruct.html">IsoWeekDateStruct</a> &amp;iso_date) noexcept</td></tr>
+<tr class="memdesc:ga205fe3418ab42441fc7643f5566310f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse ISO week date string.  <br /></td></tr>
+<tr class="separator:ga205fe3418ab42441fc7643f5566310f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac3acd01dc44f076fcedb38996865bed6" id="r_gac3acd01dc44f076fcedb38996865bed6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac3acd01dc44f076fcedb38996865bed6">time_shield::try_parse_iso_week_date</a> (const char *input, std::size_t length, <a class="el" href="structtime__shield_1_1IsoWeekDateStruct.html">IsoWeekDateStruct</a> &amp;iso_date) noexcept</td></tr>
+<tr class="memdesc:gac3acd01dc44f076fcedb38996865bed6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for parse_iso_week_date.  <br /></td></tr>
+<tr class="separator:gac3acd01dc44f076fcedb38996865bed6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac0933df3448162ee5f8424f9bea7b150" id="r_gac0933df3448162ee5f8424f9bea7b150"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac0933df3448162ee5f8424f9bea7b150">time_shield::try_parse_iso_week_date</a> (const std::string &amp;input, <a class="el" href="structtime__shield_1_1IsoWeekDateStruct.html">IsoWeekDateStruct</a> &amp;iso_date) noexcept</td></tr>
+<tr class="memdesc:gac0933df3448162ee5f8424f9bea7b150"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for parse_iso_week_date, std::string overload.  <br /></td></tr>
+<tr class="separator:gac0933df3448162ee5f8424f9bea7b150"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5a831e0a41bc6c2be9dc03df23d027db" id="r_ga5a831e0a41bc6c2be9dc03df23d027db"><td class="memTemplParams" colspan="2">template&lt;class T = year_t&gt; </td></tr>
 <tr class="memitem:ga5a831e0a41bc6c2be9dc03df23d027db"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga5a831e0a41bc6c2be9dc03df23d027db">time_shield::unix_year</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="#ga4701e4f2553acb70bf28ada865531a03">ts</a>) noexcept</td></tr>
 <tr class="memdesc:ga5a831e0a41bc6c2be9dc03df23d027db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for years_since_epoch function.  <br /></td></tr>
@@ -5911,6 +5953,53 @@ template&lt;class T1 = int, class T2 = year_t, class T3 = int&gt; </div>
 
 </div>
 </div>
+<a id="ga40b8907aa3e9925f1f01c0f090ce92d2" name="ga40b8907aa3e9925f1f01c0f090ce92d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga40b8907aa3e9925f1f01c0f090ce92d2">&#9670;&#160;</a></span>format_iso_week_date()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string time_shield::format_iso_week_date </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structtime__shield_1_1IsoWeekDateStruct.html">IsoWeekDateStruct</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>iso_date</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>extended</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>include_weekday</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Format ISO week date to string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">iso_date</td><td>ISO week date to format. </td></tr>
+    <tr><td class="paramname">extended</td><td>When true, uses extended format with separators ("YYYY-Www-D"). </td></tr>
+    <tr><td class="paramname">include_weekday</td><td>When false, omits weekday ("YYYY-Www"). <a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8">Weekday</a> defaults to Monday when omitted. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Formatted ISO week-date string. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="iso__week__conversions_8hpp_source.html#l00132">132</a> of file <a class="el" href="iso__week__conversions_8hpp_source.html">iso_week_conversions.hpp</a>.</p>
+
+</div>
+</div>
 <a id="gaf8b1c0eb0062ad43cc57b3feda5eac69" name="gaf8b1c0eb0062ad43cc57b3feda5eac69"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaf8b1c0eb0062ad43cc57b3feda5eac69">&#9670;&#160;</a></span>fsec_to_ms()</h2>
 
@@ -10097,6 +10186,53 @@ template&lt;class T&gt; </div>
 
 </div>
 </div>
+<a id="ga4859634869507e017461e29f5756618e" name="ga4859634869507e017461e29f5756618e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4859634869507e017461e29f5756618e">&#9670;&#160;</a></span>is_valid_iso_week_date()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool time_shield::is_valid_iso_week_date </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9">year_t</a></td>          <td class="paramname"><span class="paramname"><em>iso_year</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>week</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>weekday</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Validate ISO week date components. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">iso_year</td><td>ISO week-numbering year. </td></tr>
+    <tr><td class="paramname">week</td><td>ISO week number. </td></tr>
+    <tr><td class="paramname">weekday</td><td>ISO weekday (1-7). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if components form a valid ISO week date. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="iso__week__conversions_8hpp_source.html#l00101">101</a> of file <a class="el" href="iso__week__conversions_8hpp_source.html">iso_week_conversions.hpp</a>.</p>
+
+</div>
+</div>
 <a id="ga3f863e29b5cf3e9d27d810db9eff6f9d" name="ga3f863e29b5cf3e9d27d810db9eff6f9d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga3f863e29b5cf3e9d27d810db9eff6f9d">&#9670;&#160;</a></span>is_valid_tz_offset()</h2>
 
@@ -10546,6 +10682,169 @@ template&lt;class T&gt; </div>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="workday__conversions_8hpp_source.html#l00191">191</a> of file <a class="el" href="workday__conversions_8hpp_source.html">workday_conversions.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga57ffd42aa8dd5195fecdd9d1dc7db0da" name="ga57ffd42aa8dd5195fecdd9d1dc7db0da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga57ffd42aa8dd5195fecdd9d1dc7db0da">&#9670;&#160;</a></span>iso_week_date_to_date()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structtime__shield_1_1DateStruct.html">DateStruct</a> time_shield::iso_week_date_to_date </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structtime__shield_1_1IsoWeekDateStruct.html">IsoWeekDateStruct</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>iso_date</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert ISO week date to calendar date. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">iso_date</td><td>ISO week date structure. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Calendar date corresponding to the ISO week date. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>if the ISO week date is invalid. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="iso__week__conversions_8hpp_source.html#l00112">112</a> of file <a class="el" href="iso__week__conversions_8hpp_source.html">iso_week_conversions.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga9c5115f6efc1e18cb1908e8c49d69597" name="ga9c5115f6efc1e18cb1908e8c49d69597"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9c5115f6efc1e18cb1908e8c49d69597">&#9670;&#160;</a></span>iso_weekday_from_weekday()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TIME_SHIELD_CONSTEXPR int time_shield::iso_weekday_from_weekday </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8">Weekday</a></td>          <td class="paramname"><span class="paramname"><em>weekday</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert <a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8">Weekday</a> enum to ISO weekday (Mon=1 .. Sun=7). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">weekday</td><td><a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8">Weekday</a> enum value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ISO weekday number. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="iso__week__conversions_8hpp_source.html#l00035">35</a> of file <a class="el" href="iso__week__conversions_8hpp_source.html">iso_week_conversions.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga6efcb5b5fb0f15bb8fc116fd0fe08f5b" name="ga6efcb5b5fb0f15bb8fc116fd0fe08f5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6efcb5b5fb0f15bb8fc116fd0fe08f5b">&#9670;&#160;</a></span>iso_weekday_of_date()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Y = year_t, class M = Month, class D = int&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TIME_SHIELD_CONSTEXPR int time_shield::iso_weekday_of_date </td>
+          <td>(</td>
+          <td class="paramtype">Y</td>          <td class="paramname"><span class="paramname"><em>year</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">M</td>          <td class="paramname"><span class="paramname"><em>month</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">D</td>          <td class="paramname"><span class="paramname"><em>day</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get ISO weekday for a calendar date. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">year</td><td>Year component. </td></tr>
+    <tr><td class="paramname">month</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a> component. </td></tr>
+    <tr><td class="paramname">day</td><td>Day component. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ISO weekday number (1=Monday .. 7=Sunday). </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="iso__week__conversions_8hpp_source.html#l00045">45</a> of file <a class="el" href="iso__week__conversions_8hpp_source.html">iso_week_conversions.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga50cff0bd76c9859ae609596e86d54869" name="ga50cff0bd76c9859ae609596e86d54869"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga50cff0bd76c9859ae609596e86d54869">&#9670;&#160;</a></span>iso_weeks_in_year()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int time_shield::iso_weeks_in_year </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9">year_t</a></td>          <td class="paramname"><span class="paramname"><em>iso_year</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calculate number of ISO weeks in a year. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">iso_year</td><td>ISO week-numbering year. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>52 or 53 depending on the ISO year length. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="iso__week__conversions_8hpp_source.html#l00091">91</a> of file <a class="el" href="iso__week__conversions_8hpp_source.html">iso_week_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -12949,6 +13248,94 @@ template&lt;class T = int&gt; </div>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversion__aliases_8hpp_source.html#l02173">2173</a> of file <a class="el" href="time__conversion__aliases_8hpp_source.html">time_conversion_aliases.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gaad70da70b3a02c39c520a3d713accfa6" name="gaad70da70b3a02c39c520a3d713accfa6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaad70da70b3a02c39c520a3d713accfa6">&#9670;&#160;</a></span>parse_iso_week_date() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool time_shield::parse_iso_week_date </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>input</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t</td>          <td class="paramname"><span class="paramname"><em>length</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structtime__shield_1_1IsoWeekDateStruct.html">IsoWeekDateStruct</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>iso_date</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Parse ISO week date string buffer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>Pointer to character buffer (may be not null-terminated). </td></tr>
+    <tr><td class="paramname">length</td><td>Length of the buffer. </td></tr>
+    <tr><td class="paramname">iso_date</td><td>Output ISO week date structure. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if parsing succeeded and produced a valid ISO week date; otherwise false. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="iso__week__conversions_8hpp_source.html#l00155">155</a> of file <a class="el" href="iso__week__conversions_8hpp_source.html">iso_week_conversions.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga205fe3418ab42441fc7643f5566310f1" name="ga205fe3418ab42441fc7643f5566310f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga205fe3418ab42441fc7643f5566310f1">&#9670;&#160;</a></span>parse_iso_week_date() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool time_shield::parse_iso_week_date </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>input</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structtime__shield_1_1IsoWeekDateStruct.html">IsoWeekDateStruct</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>iso_date</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Parse ISO week date string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>Input string containing ISO week date. </td></tr>
+    <tr><td class="paramname">iso_date</td><td>Output ISO week date structure. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if parsing succeeded and produced a valid ISO week date; otherwise false. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="iso__week__conversions_8hpp_source.html#l00231">231</a> of file <a class="el" href="iso__week__conversions_8hpp_source.html">iso_week_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -16970,6 +17357,135 @@ template&lt;class T1 = year_t, class T2 = int, class T3 = int&gt; </div>
 
 </div>
 </div>
+<a id="gaa05375730d328b4966c0f8373e828bf1" name="gaa05375730d328b4966c0f8373e828bf1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa05375730d328b4966c0f8373e828bf1">&#9670;&#160;</a></span>to_iso_week_date() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structtime__shield_1_1IsoWeekDateStruct.html">IsoWeekDateStruct</a> time_shield::to_iso_week_date </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structtime__shield_1_1DateStruct.html">DateStruct</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>date</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert <a class="el" href="structtime__shield_1_1DateStruct.html" title="Structure to represent a date.">DateStruct</a> to ISO week date. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">date</td><td><a class="el" href="structtime__shield_1_1DateStruct.html" title="Structure to represent a date.">DateStruct</a> instance. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ISO week date representation. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="iso__week__conversions_8hpp_source.html#l00074">74</a> of file <a class="el" href="iso__week__conversions_8hpp_source.html">iso_week_conversions.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gaefc9cdb64cb635522156bd66da618e31" name="gaefc9cdb64cb635522156bd66da618e31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaefc9cdb64cb635522156bd66da618e31">&#9670;&#160;</a></span>to_iso_week_date() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T = ts_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structtime__shield_1_1IsoWeekDateStruct.html">IsoWeekDateStruct</a> time_shield::to_iso_week_date </td>
+          <td>(</td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>ts</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert timestamp to ISO week date. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Timestamp type. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ts</td><td>Timestamp in seconds. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ISO week date representation. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="iso__week__conversions_8hpp_source.html#l00083">83</a> of file <a class="el" href="iso__week__conversions_8hpp_source.html">iso_week_conversions.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga533a859a0c5f8671387f5e8190686d23" name="ga533a859a0c5f8671387f5e8190686d23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga533a859a0c5f8671387f5e8190686d23">&#9670;&#160;</a></span>to_iso_week_date() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Y = year_t, class M = Month, class D = int&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structtime__shield_1_1IsoWeekDateStruct.html">IsoWeekDateStruct</a> time_shield::to_iso_week_date </td>
+          <td>(</td>
+          <td class="paramtype">Y</td>          <td class="paramname"><span class="paramname"><em>year</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">M</td>          <td class="paramname"><span class="paramname"><em>month</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">D</td>          <td class="paramname"><span class="paramname"><em>day</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert calendar date to ISO week date. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">year</td><td>Year component. </td></tr>
+    <tr><td class="paramname">month</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a> component. </td></tr>
+    <tr><td class="paramname">day</td><td>Day component. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ISO week date representation. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="iso__week__conversions_8hpp_source.html#l00055">55</a> of file <a class="el" href="iso__week__conversions_8hpp_source.html">iso_week_conversions.hpp</a>.</p>
+
+</div>
+</div>
 <a id="gadd80bea4c67b14c2e8f04e6d4568658b" name="gadd80bea4c67b14c2e8f04e6d4568658b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gadd80bea4c67b14c2e8f04e6d4568658b">&#9670;&#160;</a></span>to_mql_dt()</h2>
 
@@ -18815,6 +19331,94 @@ template&lt;class T = year_t&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>Year of the specified timestamp.    </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversion__aliases_8hpp_source.html#l01621">1621</a> of file <a class="el" href="time__conversion__aliases_8hpp_source.html">time_conversion_aliases.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gac3acd01dc44f076fcedb38996865bed6" name="gac3acd01dc44f076fcedb38996865bed6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac3acd01dc44f076fcedb38996865bed6">&#9670;&#160;</a></span>try_parse_iso_week_date() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool time_shield::try_parse_iso_week_date </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>input</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t</td>          <td class="paramname"><span class="paramname"><em>length</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structtime__shield_1_1IsoWeekDateStruct.html">IsoWeekDateStruct</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>iso_date</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Alias for parse_iso_week_date. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>Pointer to character buffer (may be not null-terminated). </td></tr>
+    <tr><td class="paramname">length</td><td>Length of the buffer. </td></tr>
+    <tr><td class="paramname">iso_date</td><td>Output ISO week date structure. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if parsing succeeded and produced a valid ISO week date; otherwise false. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="iso__week__conversions_8hpp_source.html#l00240">240</a> of file <a class="el" href="iso__week__conversions_8hpp_source.html">iso_week_conversions.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gac0933df3448162ee5f8424f9bea7b150" name="gac0933df3448162ee5f8424f9bea7b150"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac0933df3448162ee5f8424f9bea7b150">&#9670;&#160;</a></span>try_parse_iso_week_date() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool time_shield::try_parse_iso_week_date </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>input</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structtime__shield_1_1IsoWeekDateStruct.html">IsoWeekDateStruct</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>iso_date</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Alias for parse_iso_week_date, std::string overload. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>Input string containing ISO week date. </td></tr>
+    <tr><td class="paramname">iso_date</td><td>Output ISO week date structure. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if parsing succeeded and produced a valid ISO week date; otherwise false. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="iso__week__conversions_8hpp_source.html#l00248">248</a> of file <a class="el" href="iso__week__conversions_8hpp_source.html">iso_week_conversions.hpp</a>.</p>
 
 </div>
 </div>

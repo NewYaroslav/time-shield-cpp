@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['quarters_5funix_5fs_5ft_0',['quarters_unix_s_t',['../classtime__shield_1_1astronomy_1_1MoonPhase.html#a9e5093e5d7e0f613eabae913f8c83c2a',1,'time_shield::astronomy::MoonPhase']]]
+  ['oadate_5ft_0',['oadate_t',['../group__time__types.html#gaab97b453fa3ad4ad8a752b00019968d6',1,'time_shield']]]
 ];

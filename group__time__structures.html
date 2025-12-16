@@ -134,6 +134,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtime__shield_1_1DateTimeStruct.html">time_shield::DateTimeStruct</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure to represent date and time.  <a href="structtime__shield_1_1DateTimeStruct.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtime__shield_1_1IsoWeekDateStruct.html">time_shield::IsoWeekDateStruct</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure to represent an ISO week date.  <a href="structtime__shield_1_1IsoWeekDateStruct.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtime__shield_1_1TimeStruct.html">time_shield::TimeStruct</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure to represent time.  <a href="structtime__shield_1_1TimeStruct.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -149,6 +152,9 @@ Functions</h2></td></tr>
 <tr class="memitem:gab6cf08da5ef726f11d460ad3e45f6800" id="r_gab6cf08da5ef726f11d460ad3e45f6800"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structtime__shield_1_1DateTimeStruct.html">DateTimeStruct</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab6cf08da5ef726f11d460ad3e45f6800">time_shield::create_date_time_struct</a> (int64_t <a class="el" href="group__time__conversions.html#gadd68b9e632d1b5a43c18b116bbf105a4">year</a>, int mon=1, int day=1, int hour=0, int min=0, int sec=0, int ms=0)</td></tr>
 <tr class="memdesc:gab6cf08da5ef726f11d460ad3e45f6800"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="structtime__shield_1_1DateTimeStruct.html" title="Structure to represent date and time.">DateTimeStruct</a> instance.  <br /></td></tr>
 <tr class="separator:gab6cf08da5ef726f11d460ad3e45f6800"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9da8bcc317b82ac17d1768ba31eaece5" id="r_ga9da8bcc317b82ac17d1768ba31eaece5"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structtime__shield_1_1IsoWeekDateStruct.html">IsoWeekDateStruct</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9da8bcc317b82ac17d1768ba31eaece5">time_shield::create_iso_week_date_struct</a> (int64_t <a class="el" href="group__time__conversions.html#gadd68b9e632d1b5a43c18b116bbf105a4">year</a>, int32_t week=1, int32_t <a class="el" href="group__time__conversions.html#gaceafb0639e52115aff08ec242f81b5f5">weekday</a>=1)</td></tr>
+<tr class="memdesc:ga9da8bcc317b82ac17d1768ba31eaece5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="structtime__shield_1_1IsoWeekDateStruct.html" title="Structure to represent an ISO week date.">IsoWeekDateStruct</a> instance.  <br /></td></tr>
+<tr class="separator:ga9da8bcc317b82ac17d1768ba31eaece5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga31f445e3e85cba85035f71b35de12e25" id="r_ga31f445e3e85cba85035f71b35de12e25"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structtime__shield_1_1TimeStruct.html">TimeStruct</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga31f445e3e85cba85035f71b35de12e25">time_shield::create_time_struct</a> (int16_t hour, int16_t min, int16_t sec=0, int16_t ms=0)</td></tr>
 <tr class="memdesc:ga31f445e3e85cba85035f71b35de12e25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="structtime__shield_1_1TimeStruct.html" title="Structure to represent time.">TimeStruct</a> instance.  <br /></td></tr>
 <tr class="separator:ga31f445e3e85cba85035f71b35de12e25"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -770,6 +776,53 @@ Example Usage:</h3>
 <dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="structtime__shield_1_1DateTimeStruct.html" title="Structure to represent date and time.">DateTimeStruct</a> instance with the provided date and time components. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="date__time__struct_8hpp_source.html#l00037">37</a> of file <a class="el" href="date__time__struct_8hpp_source.html">date_time_struct.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga9da8bcc317b82ac17d1768ba31eaece5" name="ga9da8bcc317b82ac17d1768ba31eaece5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9da8bcc317b82ac17d1768ba31eaece5">&#9670;&#160;</a></span>create_iso_week_date_struct()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structtime__shield_1_1IsoWeekDateStruct.html">IsoWeekDateStruct</a> time_shield::create_iso_week_date_struct </td>
+          <td>(</td>
+          <td class="paramtype">int64_t</td>          <td class="paramname"><span class="paramname"><em>year</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t</td>          <td class="paramname"><span class="paramname"><em>week</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t</td>          <td class="paramname"><span class="paramname"><em>weekday</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates an <a class="el" href="structtime__shield_1_1IsoWeekDateStruct.html" title="Structure to represent an ISO week date.">IsoWeekDateStruct</a> instance. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">year</td><td>ISO week-numbering year component. </td></tr>
+    <tr><td class="paramname">week</td><td>ISO week number component. </td></tr>
+    <tr><td class="paramname">weekday</td><td>ISO weekday component (1=Monday .. 7=Sunday). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="structtime__shield_1_1IsoWeekDateStruct.html" title="Structure to represent an ISO week date.">IsoWeekDateStruct</a> instance with the provided components. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="iso__week__struct_8hpp_source.html#l00029">29</a> of file <a class="el" href="iso__week__struct_8hpp_source.html">iso_week_struct.hpp</a>.</p>
 
 </div>
 </div>

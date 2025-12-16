@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 #pragma once
-#ifndef _TIME_SHIELD_DATE_TIME_CLASS_HPP_INCLUDED
-#define _TIME_SHIELD_DATE_TIME_CLASS_HPP_INCLUDED
+#ifndef _TIME_SHIELD_DATE_TIME_HPP_INCLUDED
+#define _TIME_SHIELD_DATE_TIME_HPP_INCLUDED
 
 /// \file DateTime.hpp
 /// \brief Value-type wrapper for timestamps with fixed UTC offset.
@@ -31,6 +31,8 @@
 namespace time_shield {
 
     /// \brief Represents a moment in time with optional fixed UTC offset.
+    ///
+    /// Equality and ordering compare the UTC instant only and ignore the stored offset.
     class DateTime {
     public:
         /// \brief Default constructor sets epoch with zero offset.
@@ -76,11 +78,65 @@ namespace time_shield {
             return DateTime(utc_ms, offset);
         }
 
+        /// \brief Try to build from calendar components interpreted in provided offset.
+        /// \param year Year component.
+        /// \param month Month component.
+        /// \param day Day component.
+        /// \param hour Hour component.
+        /// \param min Minute component.
+        /// \param sec Second component.
+        /// \param ms Millisecond component.
+        /// \param offset Fixed UTC offset in seconds.
+        /// \param out Output DateTime on success.
+        /// \return True when components form a valid date-time and offset.
+        static bool try_from_components(
+                year_t year,
+                int month,
+                int day,
+                int hour,
+                int min,
+                int sec,
+                int ms,
+                tz_t offset,
+                DateTime& out) noexcept {
+            if (!is_valid_date_time(year, month, day, hour, min, sec, ms)) {
+                return false;
+            }
+            const TimeZoneStruct tz = to_time_zone_struct(offset);
+            if (!is_valid_time_zone_offset(tz)) {
+                return false;
+            }
+            const ts_ms_t local_ms = to_timestamp_ms(year, month, day, hour, min, sec, ms);
+            out = DateTime(local_ms - offset_to_ms(offset), offset);
+            return true;
+        }
+
         /// \brief Build from DateTimeStruct interpreted in provided offset.
         static DateTime from_date_time_struct(const DateTimeStruct& local_dt, tz_t offset = 0) {
             const ts_ms_t local_ms = dt_to_timestamp_ms(local_dt);
             const ts_ms_t utc_ms = local_ms - offset_to_ms(offset);
             return DateTime(utc_ms, offset);
+        }
+
+        /// \brief Try to build from DateTimeStruct interpreted in provided offset.
+        /// \param local_dt Local date-time structure.
+        /// \param offset Fixed UTC offset in seconds.
+        /// \param out Output DateTime on success.
+        /// \return True when structure and offset are valid.
+        static bool try_from_date_time_struct(
+                const DateTimeStruct& local_dt,
+                tz_t offset,
+                DateTime& out) noexcept {
+            if (!is_valid_date_time(local_dt)) {
+                return false;
+            }
+            const TimeZoneStruct tz = to_time_zone_struct(offset);
+            if (!is_valid_time_zone_offset(tz)) {
+                return false;
+            }
+            const ts_ms_t local_ms = dt_to_timestamp_ms(local_dt);
+            out = DateTime(local_ms - offset_to_ms(offset), offset);
+            return true;
         }
 
         /// \brief Convert to date-time structure using stored offset.
@@ -363,6 +419,11 @@ namespace time_shield {
             return m_utc_ms >= other.m_utc_ms;
         }
 
+        /// \brief Check if local representations match including offset.
+        bool same_local(const DateTime& other) const noexcept {
+            return local_ms() == other.local_ms() && m_offset == other.m_offset;
+        }
+
         /// \brief Add milliseconds to UTC instant.
         DateTime add_ms(int64_t delta_ms) const noexcept {
             return DateTime(m_utc_ms + delta_ms, m_offset);
@@ -514,4 +575,4 @@ namespace time_shield {
 
 } // namespace time_shield
 
-#endif // _TIME_SHIELD_DATE_TIME_CLASS_HPP_INCLUDED
+#endif // _TIME_SHIELD_DATE_TIME_HPP_INCLUDED

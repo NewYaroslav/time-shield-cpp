@@ -294,8 +294,8 @@ Usage Examples:</h3>
 <div class="ttc" id="agroup__time__validation_html_ga40e4000e13a71634b368b27dc849d847"><div class="ttname"><a href="#ga40e4000e13a71634b368b27dc849d847">time_shield::is_valid_date</a></div><div class="ttdeci">TIME_SHIELD_CONSTEXPR bool is_valid_date(T1 year, T2 month, T2 day) noexcept</div><div class="ttdoc">Checks the correctness of the specified date.</div><div class="ttdef"><b>Definition</b> <a href="validation_8hpp_source.html#l00230">validation.hpp:230</a></div></div>
 </div><!-- fragment --></li>
 <li>Check if a timestamp falls on a weekend: <div class="fragment"><div class="line"><span class="keywordtype">bool</span> <a class="code hl_function" href="#ga4df5c8c2b2f21187ee739aaed6c65afc">is_weekend</a> = <a class="code hl_function" href="#ga003ae6e5486b23cfe47a3ba795250978">time_shield::is_day_off</a>(1698249600); <span class="comment">// Saturday, Oct 26, 2024</span></div>
-<div class="ttc" id="agroup__time__validation_html_ga003ae6e5486b23cfe47a3ba795250978"><div class="ttname"><a href="#ga003ae6e5486b23cfe47a3ba795250978">time_shield::is_day_off</a></div><div class="ttdeci">TIME_SHIELD_CONSTEXPR bool is_day_off(ts_t ts) noexcept</div><div class="ttdoc">Check if a given timestamp corresponds to a weekend day (Saturday or Sunday).</div><div class="ttdef"><b>Definition</b> <a href="validation_8hpp_source.html#l00315">validation.hpp:315</a></div></div>
-<div class="ttc" id="agroup__time__validation_html_ga4df5c8c2b2f21187ee739aaed6c65afc"><div class="ttname"><a href="#ga4df5c8c2b2f21187ee739aaed6c65afc">time_shield::is_weekend</a></div><div class="ttdeci">TIME_SHIELD_CONSTEXPR bool is_weekend(ts_t ts) noexcept</div><div class="ttdoc">Alias for is_day_off function.</div><div class="ttdef"><b>Definition</b> <a href="validation_8hpp_source.html#l00325">validation.hpp:325</a></div></div>
+<div class="ttc" id="agroup__time__validation_html_ga003ae6e5486b23cfe47a3ba795250978"><div class="ttname"><a href="#ga003ae6e5486b23cfe47a3ba795250978">time_shield::is_day_off</a></div><div class="ttdeci">TIME_SHIELD_CONSTEXPR bool is_day_off(ts_t ts) noexcept</div><div class="ttdoc">Check if a given timestamp corresponds to a weekend day (Saturday or Sunday).</div><div class="ttdef"><b>Definition</b> <a href="validation_8hpp_source.html#l00316">validation.hpp:316</a></div></div>
+<div class="ttc" id="agroup__time__validation_html_ga4df5c8c2b2f21187ee739aaed6c65afc"><div class="ttname"><a href="#ga4df5c8c2b2f21187ee739aaed6c65afc">time_shield::is_weekend</a></div><div class="ttdeci">TIME_SHIELD_CONSTEXPR bool is_weekend(ts_t ts) noexcept</div><div class="ttdoc">Alias for is_day_off function.</div><div class="ttdef"><b>Definition</b> <a href="validation_8hpp_source.html#l00326">validation.hpp:326</a></div></div>
 </div><!-- fragment --> </li>
 </ul>
 <h2 class="groupheader">Function Documentation</h2>
@@ -483,7 +483,7 @@ template&lt;class T = year_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the day is a weekend day, false otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="validation_8mqh_source.html#l00226">226</a> of file <a class="el" href="validation_8mqh_source.html">validation.mqh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="validation_8mqh_source.html#l00227">227</a> of file <a class="el" href="validation_8mqh_source.html">validation.mqh</a>.</p>
 
 </div>
 </div>
@@ -520,7 +520,7 @@ template&lt;class T = year_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the day is a weekend day, false otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="validation_8hpp_source.html#l00315">315</a> of file <a class="el" href="validation_8hpp_source.html">validation.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="validation_8hpp_source.html#l00316">316</a> of file <a class="el" href="validation_8hpp_source.html">validation.hpp</a>.</p>
 
 </div>
 </div>
@@ -548,7 +548,7 @@ template&lt;class T = year_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the day is a weekend day, false otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="validation_8mqh_source.html#l00238">238</a> of file <a class="el" href="validation_8mqh_source.html">validation.mqh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="validation_8mqh_source.html#l00239">239</a> of file <a class="el" href="validation_8mqh_source.html">validation.mqh</a>.</p>
 
 </div>
 </div>
@@ -586,7 +586,7 @@ template&lt;class T = uday_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the day is a weekend day, false otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="validation_8hpp_source.html#l00337">337</a> of file <a class="el" href="validation_8hpp_source.html">validation.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="validation_8hpp_source.html#l00338">338</a> of file <a class="el" href="validation_8hpp_source.html">validation.hpp</a>.</p>
 
 </div>
 </div>
@@ -837,7 +837,7 @@ template&lt;class T = year_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the date is valid, false otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="validation_8mqh_source.html#l00186">186</a> of file <a class="el" href="validation_8mqh_source.html">validation.mqh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="validation_8mqh_source.html#l00187">187</a> of file <a class="el" href="validation_8mqh_source.html">validation.mqh</a>.</p>
 
 </div>
 </div>
@@ -960,7 +960,7 @@ template&lt;class T1 = year_t, class T2 = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the date and time are valid, false otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="validation_8mqh_source.html#l00215">215</a> of file <a class="el" href="validation_8mqh_source.html">validation.mqh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="validation_8mqh_source.html#l00216">216</a> of file <a class="el" href="validation_8mqh_source.html">validation.mqh</a>.</p>
 
 </div>
 </div>
@@ -1023,7 +1023,7 @@ template&lt;class T1 = year_t, class T2 = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the date and time are valid, false otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="validation_8mqh_source.html#l00199">199</a> of file <a class="el" href="validation_8mqh_source.html">validation.mqh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="validation_8mqh_source.html#l00200">200</a> of file <a class="el" href="validation_8mqh_source.html">validation.mqh</a>.</p>
 
 </div>
 </div>
@@ -1104,7 +1104,7 @@ template&lt;class T1 = year_t, class T2 = int, class T3 = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the date and time are valid, false otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="validation_8hpp_source.html#l00281">281</a> of file <a class="el" href="validation_8hpp_source.html">validation.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="validation_8hpp_source.html#l00282">282</a> of file <a class="el" href="validation_8hpp_source.html">validation.hpp</a>.</p>
 
 </div>
 </div>
@@ -1539,7 +1539,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the day is a weekend day, false otherwise.    </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="validation_8mqh_source.html#l00233">233</a> of file <a class="el" href="validation_8mqh_source.html">validation.mqh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="validation_8mqh_source.html#l00234">234</a> of file <a class="el" href="validation_8mqh_source.html">validation.mqh</a>.</p>
 
 </div>
 </div>
@@ -1577,7 +1577,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the day is a weekend day, false otherwise.    </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="validation_8hpp_source.html#l00325">325</a> of file <a class="el" href="validation_8hpp_source.html">validation.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="validation_8hpp_source.html#l00326">326</a> of file <a class="el" href="validation_8hpp_source.html">validation.hpp</a>.</p>
 
 </div>
 </div>
@@ -1606,7 +1606,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the day is a weekend day, false otherwise.    </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="validation_8mqh_source.html#l00245">245</a> of file <a class="el" href="validation_8mqh_source.html">validation.mqh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="validation_8mqh_source.html#l00246">246</a> of file <a class="el" href="validation_8mqh_source.html">validation.mqh</a>.</p>
 
 </div>
 </div>
@@ -1645,7 +1645,7 @@ template&lt;class T = uday_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the day is a weekend day, false otherwise.    </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="validation_8hpp_source.html#l00346">346</a> of file <a class="el" href="validation_8hpp_source.html">validation.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="validation_8hpp_source.html#l00347">347</a> of file <a class="el" href="validation_8hpp_source.html">validation.hpp</a>.</p>
 
 </div>
 </div>
@@ -1673,7 +1673,7 @@ template&lt;class T = uday_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when the date is Monday through Friday. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="validation_8mqh_source.html#l00252">252</a> of file <a class="el" href="validation_8mqh_source.html">validation.mqh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="validation_8mqh_source.html#l00253">253</a> of file <a class="el" href="validation_8mqh_source.html">validation.mqh</a>.</p>
 
 </div>
 </div>
@@ -1712,7 +1712,7 @@ template&lt;class T = uday_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when the date is valid and is Monday through Friday. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="validation_8mqh_source.html#l00280">280</a> of file <a class="el" href="validation_8mqh_source.html">validation.mqh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="validation_8mqh_source.html#l00281">281</a> of file <a class="el" href="validation_8mqh_source.html">validation.mqh</a>.</p>
 
 </div>
 </div>
@@ -1748,7 +1748,7 @@ template&lt;class T = uday_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the day is a workday, false otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="validation_8hpp_source.html#l00355">355</a> of file <a class="el" href="validation_8hpp_source.html">validation.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="validation_8hpp_source.html#l00356">356</a> of file <a class="el" href="validation_8hpp_source.html">validation.hpp</a>.</p>
 
 </div>
 </div>
@@ -1795,7 +1795,7 @@ template&lt;class T = uday_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the date is valid and a workday, false otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="validation_8hpp_source.html#l00371">371</a> of file <a class="el" href="validation_8hpp_source.html">validation.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="validation_8hpp_source.html#l00372">372</a> of file <a class="el" href="validation_8hpp_source.html">validation.hpp</a>.</p>
 
 </div>
 </div>
@@ -1823,7 +1823,7 @@ template&lt;class T = uday_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when the date is Monday through Friday. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="validation_8mqh_source.html#l00265">265</a> of file <a class="el" href="validation_8mqh_source.html">validation.mqh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="validation_8mqh_source.html#l00266">266</a> of file <a class="el" href="validation_8mqh_source.html">validation.mqh</a>.</p>
 
 </div>
 </div>
@@ -1859,7 +1859,7 @@ template&lt;class T = uday_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the day is a workday, false otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="validation_8hpp_source.html#l00362">362</a> of file <a class="el" href="validation_8hpp_source.html">validation.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="validation_8hpp_source.html#l00363">363</a> of file <a class="el" href="validation_8hpp_source.html">validation.hpp</a>.</p>
 
 </div>
 </div>
@@ -2048,7 +2048,7 @@ template&lt;class T = year_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when the date is Monday through Friday.    </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="validation_8mqh_source.html#l00258">258</a> of file <a class="el" href="validation_8mqh_source.html">validation.mqh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="validation_8mqh_source.html#l00259">259</a> of file <a class="el" href="validation_8mqh_source.html">validation.mqh</a>.</p>
 
 </div>
 </div>
@@ -2088,7 +2088,7 @@ template&lt;class T = year_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when the date is valid and is Monday through Friday.    </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="validation_8mqh_source.html#l00297">297</a> of file <a class="el" href="validation_8mqh_source.html">validation.mqh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="validation_8mqh_source.html#l00298">298</a> of file <a class="el" href="validation_8mqh_source.html">validation.mqh</a>.</p>
 
 </div>
 </div>
@@ -2117,7 +2117,7 @@ template&lt;class T = year_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when the date is Monday through Friday.    </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="validation_8mqh_source.html#l00271">271</a> of file <a class="el" href="validation_8mqh_source.html">validation.mqh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="validation_8mqh_source.html#l00272">272</a> of file <a class="el" href="validation_8mqh_source.html">validation.mqh</a>.</p>
 
 </div>
 </div>

@@ -459,7 +459,7 @@ Usage Examples:</h3>
 <ul>
 <li>Parse an ISO8601 string and get a timestamp: <div class="fragment"><div class="line"><a class="code hl_typedef" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="code hl_function" href="group__time__utils.html#ga450be3ba3ddf294da4c9bc4cd01f8216">timestamp</a>;</div>
 <div class="line"><span class="keywordtype">bool</span> success = <a class="code hl_function" href="#gad29621998c077452dcc57a51f413b9ce">time_shield::str_to_ts</a>(<span class="stringliteral">&quot;2024-11-25T14:30:00Z&quot;</span>, <a class="code hl_function" href="group__time__utils.html#ga450be3ba3ddf294da4c9bc4cd01f8216">timestamp</a>);</div>
-<div class="ttc" id="agroup__time__parsing_html_gad29621998c077452dcc57a51f413b9ce"><div class="ttname"><a href="#gad29621998c077452dcc57a51f413b9ce">time_shield::str_to_ts</a></div><div class="ttdeci">bool str_to_ts(const std::string &amp;str, ts_t &amp;ts)</div><div class="ttdoc">Convert an ISO8601 string to a timestamp (ts_t).</div><div class="ttdef"><b>Definition</b> <a href="time__parser_8hpp_source.html#l00817">time_parser.hpp:817</a></div></div>
+<div class="ttc" id="agroup__time__parsing_html_gad29621998c077452dcc57a51f413b9ce"><div class="ttname"><a href="#gad29621998c077452dcc57a51f413b9ce">time_shield::str_to_ts</a></div><div class="ttdeci">bool str_to_ts(const std::string &amp;str, ts_t &amp;ts)</div><div class="ttdoc">Convert an ISO8601 string to a timestamp (ts_t).</div><div class="ttdef"><b>Definition</b> <a href="time__parser_8hpp_source.html#l00821">time_parser.hpp:821</a></div></div>
 <div class="ttc" id="agroup__time__types_html_ga183c70b9c541a395d47690a82cdad282"><div class="ttname"><a href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">time_shield::ts_t</a></div><div class="ttdeci">int64_t ts_t</div><div class="ttdoc">Unix timestamp in seconds since 1970‑01‑01T00:00:00Z.</div><div class="ttdef"><b>Definition</b> <a href="types_8hpp_source.html#l00048">types.hpp:48</a></div></div>
 <div class="ttc" id="agroup__time__utils_html_ga450be3ba3ddf294da4c9bc4cd01f8216"><div class="ttname"><a href="group__time__utils.html#ga450be3ba3ddf294da4c9bc4cd01f8216">time_shield::timestamp</a></div><div class="ttdeci">ts_t timestamp() noexcept</div><div class="ttdoc">Get the current UTC timestamp in seconds.</div><div class="ttdef"><b>Definition</b> <a href="time__utils_8hpp_source.html#l00181">time_utils.hpp:181</a></div></div>
 </div><!-- fragment --></li>
@@ -500,7 +500,7 @@ Usage Examples:</h3>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Timestamp at 23:59:59 of the first workday or ERROR_TIMESTAMP on failure. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00332">332</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00335">335</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
 
 </div>
 </div>
@@ -528,7 +528,7 @@ Usage Examples:</h3>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Timestamp at 23:59:59.999 of the first workday or ERROR_TIMESTAMP on failure. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00342">342</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00345">345</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
 
 </div>
 </div>
@@ -556,7 +556,7 @@ Usage Examples:</h3>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Timestamp at 23:59:59 of the last workday or ERROR_TIMESTAMP on failure. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00372">372</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00375">375</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
 
 </div>
 </div>
@@ -584,7 +584,7 @@ Usage Examples:</h3>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Timestamp at 23:59:59.999 of the last workday or ERROR_TIMESTAMP on failure. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00382">382</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00385">385</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
 
 </div>
 </div>
@@ -625,7 +625,7 @@ Usage Examples:</h3>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Timestamp in seconds (floating-point), or 0 if parsing fails. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l01070">1070</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l01074">1074</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -661,7 +661,7 @@ Usage Examples:</h3>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Timestamp in seconds (floating-point), or 0 if parsing fails. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l01059">1059</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l01063">1063</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -697,7 +697,7 @@ Usage Examples:</h3>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The floating-point timestamp if successful, 0 otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l01107">1107</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l01111">1111</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -725,7 +725,7 @@ Usage Examples:</h3>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Floating-point timestamp or 0.0 on error. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00424">424</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00427">427</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
 
 </div>
 </div>
@@ -1207,7 +1207,7 @@ template&lt;class T = Month&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if parsing succeeds and the timestamp corresponds to the first workday of the month, false otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00931">931</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00935">935</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -1235,7 +1235,7 @@ template&lt;class T = Month&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when the parsed timestamp is the first workday of its month. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00228">228</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00231">231</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
 
 </div>
 </div>
@@ -1271,7 +1271,7 @@ template&lt;class T = Month&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if parsing succeeds and the timestamp corresponds to the first workday of the month, false otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00940">940</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00944">944</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -1299,7 +1299,7 @@ template&lt;class T = Month&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when the parsed timestamp is the first workday of its month. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00238">238</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00241">241</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
 
 </div>
 </div>
@@ -1335,7 +1335,7 @@ template&lt;class T = Month&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if parsing succeeds and the timestamp corresponds to the last workday of the month, false otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00949">949</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00953">953</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -1363,7 +1363,7 @@ template&lt;class T = Month&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when the parsed timestamp is the last workday of its month. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00270">270</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00273">273</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
 
 </div>
 </div>
@@ -1399,7 +1399,7 @@ template&lt;class T = Month&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if parsing succeeds and the timestamp corresponds to the last workday of the month, false otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00958">958</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00962">962</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -1427,7 +1427,7 @@ template&lt;class T = Month&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when the parsed timestamp is the last workday of its month. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00280">280</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00283">283</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
 
 </div>
 </div>
@@ -1468,7 +1468,7 @@ template&lt;class T = Month&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if parsing succeeds and the timestamp corresponds to a workday ranked within the first N positions, false otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00968">968</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00972">972</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -1501,7 +1501,7 @@ template&lt;class T = Month&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when the parsed timestamp is within the requested range. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00249">249</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00252">252</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
 
 </div>
 </div>
@@ -1542,7 +1542,7 @@ template&lt;class T = Month&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if parsing succeeds and the timestamp corresponds to a workday ranked within the first N positions, false otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00978">978</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00982">982</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -1575,7 +1575,7 @@ template&lt;class T = Month&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when the parsed timestamp is within the requested range. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00260">260</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00263">263</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
 
 </div>
 </div>
@@ -1616,7 +1616,7 @@ template&lt;class T = Month&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if parsing succeeds and the timestamp corresponds to a workday ranked within the final N positions, false otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00988">988</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00992">992</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -1649,7 +1649,7 @@ template&lt;class T = Month&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when the parsed timestamp is within the requested range. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00291">291</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00294">294</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
 
 </div>
 </div>
@@ -1690,7 +1690,7 @@ template&lt;class T = Month&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if parsing succeeds and the timestamp corresponds to a workday ranked within the final N positions, false otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00998">998</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l01002">1002</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -1723,7 +1723,7 @@ template&lt;class T = Month&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when the parsed timestamp is within the requested range. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00302">302</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00305">305</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
 
 </div>
 </div>
@@ -1752,7 +1752,7 @@ template&lt;class T = Month&gt; </div>
 
 <p>Parse ISO8601 string and check if it falls on a workday (seconds precision). </p>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00903">903</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00907">907</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -1780,7 +1780,7 @@ template&lt;class T = Month&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when parsed timestamp is Monday through Friday. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00200">200</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00203">203</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
 
 </div>
 </div>
@@ -1809,7 +1809,7 @@ template&lt;class T = Month&gt; </div>
 
 <p>Parse ISO8601 string and check if it falls on a workday (milliseconds precision). </p>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00910">910</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00914">914</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -1837,7 +1837,7 @@ template&lt;class T = Month&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when parsed timestamp is Monday through Friday. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00214">214</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00217">217</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
 
 </div>
 </div>
@@ -2217,7 +2217,7 @@ template&lt;class T = Month&gt; </div>
 <p>Parse ISO8601 string into <a class="el" href="structtime__shield_1_1DateTimeStruct.html" title="Structure to represent date and time.">DateTimeStruct</a> and <a class="el" href="structtime__shield_1_1TimeZoneStruct.html" title="Structure to represent time zone information.">TimeZoneStruct</a>. </p>
 <p>Wrapper over <a class="el" href="#ga0be75a4aade82b22f6033e1235fb8308" title="Parse ISO8601 character buffer into DateTimeStruct and TimeZoneStruct.">parse_iso8601(const char*, std::size_t, DateTimeStruct&amp;, TimeZoneStruct&amp;)</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00805">805</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00809">809</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -2719,7 +2719,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Parsed seconds of day or SEC_PER_DAY if parsing fails. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l01176">1176</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l01180">1180</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -2773,7 +2773,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True on successful parsing. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l01127">1127</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l01131">1131</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -2806,7 +2806,7 @@ template&lt;class T = int&gt; </div>
 </li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00440">440</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00443">443</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
 
 </div>
 </div>
@@ -2834,7 +2834,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Timestamp at 00:00:00 of the first workday or ERROR_TIMESTAMP on failure. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00312">312</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00315">315</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
 
 </div>
 </div>
@@ -2862,7 +2862,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Timestamp at 00:00:00.000 of the first workday or ERROR_TIMESTAMP on failure. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00322">322</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00325">325</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
 
 </div>
 </div>
@@ -2890,7 +2890,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Timestamp at 00:00:00 of the last workday or ERROR_TIMESTAMP on failure. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00352">352</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00355">355</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
 
 </div>
 </div>
@@ -2918,7 +2918,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Timestamp at 00:00:00.000 of the last workday or ERROR_TIMESTAMP on failure. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00362">362</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00365">365</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
 
 </div>
 </div>
@@ -2965,7 +2965,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if parsing and conversion succeed, false otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00890">890</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00894">894</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -3006,7 +3006,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if parsing and conversion succeed, false otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00874">874</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00878">878</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -3039,7 +3039,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if the parsing and conversion are successful, false otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00393">393</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00396">396</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
 
 </div>
 </div>
@@ -3086,7 +3086,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if parsing succeeds, false otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00833">833</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00837">837</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -3127,7 +3127,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if parsing and conversion succeed, false otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00817">817</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00821">821</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -3160,7 +3160,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if the parsing and conversion are successful, false otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00179">179</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00182">182</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
 
 </div>
 </div>
@@ -3207,7 +3207,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if parsing and conversion succeed, false otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00862">862</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00866">866</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -3248,7 +3248,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if parsing and conversion succeed, false otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00846">846</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00850">850</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -3281,7 +3281,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if the parsing and conversion are successful, false otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00190">190</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00193">193</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
 
 </div>
 </div>
@@ -3742,7 +3742,7 @@ template&lt;class T = Month&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Timestamp in seconds, or 0 if parsing fails. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l01024">1024</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l01028">1028</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -3778,7 +3778,7 @@ template&lt;class T = Month&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Timestamp in seconds, or 0 if parsing fails. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l01012">1012</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l01016">1016</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -3814,7 +3814,7 @@ template&lt;class T = Month&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The timestamp value. Returns 0 if parsing fails. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l01085">1085</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l01089">1089</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -3842,7 +3842,7 @@ template&lt;class T = Month&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Timestamp value or 0 on error. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00404">404</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00407">407</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
 
 </div>
 </div>
@@ -3883,7 +3883,7 @@ template&lt;class T = Month&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Timestamp in milliseconds, or 0 if parsing fails. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l01047">1047</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l01051">1051</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -3919,7 +3919,7 @@ template&lt;class T = Month&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Timestamp in milliseconds, or 0 if parsing fails. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l01036">1036</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l01040">1040</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -3955,7 +3955,7 @@ template&lt;class T = Month&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The parsed millisecond timestamp, or 0 if parsing fails. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l01096">1096</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l01100">1100</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -3983,7 +3983,7 @@ template&lt;class T = Month&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Millisecond timestamp value or 0 on error. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00414">414</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00417">417</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
 
 </div>
 </div>
@@ -4013,7 +4013,7 @@ template&lt;class T = Month&gt; </div>
 <p>Alias for <a class="el" href="#ga7b5485ad9822b92142e46ea3e5cfa8a6" title="Parse ISO8601 string and check if it falls on a workday (seconds precision).">is_workday(const std::string&amp;)</a>. </p>
 <p>Parse ISO8601 string and check if it falls on a workday (seconds precision).   </p>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00918">918</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00922">922</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -4042,7 +4042,7 @@ template&lt;class T = Month&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when parsed timestamp is Monday through Friday.    </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00209">209</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00212">212</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
 
 </div>
 </div>
@@ -4072,7 +4072,7 @@ template&lt;class T = Month&gt; </div>
 <p>Alias for <a class="el" href="#gafc03d50dac6de386bac6e9a816819fc5" title="Parse ISO8601 string and check if it falls on a workday (milliseconds precision).">is_workday_ms(const std::string&amp;)</a>. </p>
 <p>Parse ISO8601 string and check if it falls on a workday (milliseconds precision).   </p>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00924">924</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00928">928</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -4101,7 +4101,7 @@ template&lt;class T = Month&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when parsed timestamp is Monday through Friday.    </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00223">223</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8mqh_source.html#l00226">226</a> of file <a class="el" href="time__parser_8mqh_source.html">time_parser.mqh</a>.</p>
 
 </div>
 </div>

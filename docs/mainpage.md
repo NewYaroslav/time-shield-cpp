@@ -26,6 +26,7 @@ portable, and suitable for scenarios like logging, serialization, MQL5 usage, an
 - Time zone conversion functions
 - ISO8601 string parsing
 - Utilities for time manipulation and conversion
+- ISO 8601 week-date helpers for conversion, formatting, and parsing
 - OLE Automation date conversions and astronomy helpers (JD/MJD/JDN, lunar phase, geocentric MoonPhase calculator)
 
 \section config_sec Configuration

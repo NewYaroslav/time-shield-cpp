@@ -41,6 +41,8 @@ namespace time_shield {
     typedef int64_t     year_t;     ///< Year as an integer (e.g., 2024).
     typedef int64_t     uday_t;     ///< Unix day count since 1970‑01‑01 (days since epoch).
     using unixday_t = uday_t;       ///< Alias for Unix day count type.
+    typedef int32_t     iso_week_t; ///< ISO week number type (1-52/53).
+    typedef int32_t     iso_weekday_t; ///< ISO weekday number type (1=Monday .. 7=Sunday).
 
     // --- Unix Timestamp Types ---
     typedef int64_t     ts_t;       ///< Unix timestamp in seconds since 1970‑01‑01T00:00:00Z.

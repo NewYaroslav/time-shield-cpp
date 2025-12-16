@@ -24,6 +24,8 @@ portable, and suitable for scenarios like logging, serialization, MQL5 usage, an
 - Validation of dates and times (including weekend and workday predicates)
 - Time and date formatting (standard and custom)
 - Time zone conversion functions
+- `DateTime` value type storing UTC milliseconds with a fixed offset for
+  ISO8601 round-trips, local/UTC components, arithmetic, and boundaries
 - ISO8601 string parsing
 - Utilities for time manipulation and conversion
 - ISO 8601 week-date helpers for conversion, formatting, and parsing
@@ -82,6 +84,7 @@ Additional example files are located in the `examples/` folder:
 - `time_utils_example.cpp` — get timestamps and parts
 - `time_formatting_example.cpp` — to_string, ISO8601, MQL5
 - `time_parser_example.cpp` — parse ISO8601
+- `date_time_example.cpp` — fixed-offset `DateTime` parsing, formatting, and arithmetic helpers
 - `time_conversions_example.cpp` — convert between formats
 - `time_zone_conversions_example.cpp` — CET/EET ↔ GMT
 - `ntp_client_example.cpp` — NTP sync (sockets)

@@ -3,6 +3,7 @@
 All notable changes to this project will be documented in this file.
 
 ## [v1.0.5] - 2025-10-05
+- Added a `DateTime` value type with fixed UTC offset storage, parsing, formatting, arithmetic helpers, and examples/tests.
 - Added OA date conversions and astronomy helpers (JD/MJD/JDN, lunar phase/age) with docs and examples.
 - Added ISO week-date conversions, formatting, and parsing utilities.
 - Added geocentric MoonPhase calculator with quarter timings, documentation, and tests.

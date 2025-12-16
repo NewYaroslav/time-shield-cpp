@@ -20,9 +20,11 @@
 #include "time_shield/date_struct.hpp"             ///< Structures representing date components.
 #include "time_shield/time_zone_struct.hpp"        ///< Structure representing a time zone.
 #include "time_shield/date_time_struct.hpp"        ///< Structure representing date and time components.
+#include "time_shield/iso_week_struct.hpp"         ///< Structure representing ISO week date components.
 #include "time_shield/validation.hpp"              ///< Functions for validation of time-related values.
 #include "time_shield/time_utils.hpp"              ///< Utility functions for time manipulation.
 #include "time_shield/time_conversions.hpp"        ///< Functions for converting between different time representations.
+#include "time_shield/iso_week_conversions.hpp"    ///< Functions for ISO week date conversions and formatting.
 #include "time_shield/time_conversion_aliases.hpp" ///< Convenient conversion aliases.
 #include "time_shield/MoonPhase.hpp"               ///< Geocentric lunar phase calculator.
 #include "time_shield/time_zone_conversions.hpp"   ///< Functions for converting between time zones.

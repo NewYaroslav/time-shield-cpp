@@ -45,5 +45,62 @@ int main() {
         assert(start.unix_ms() <= dt.unix_ms());
     }
 
+    {
+        DateTime parsed_z;
+        DateTime parsed_plus;
+        DateTime parsed_negative;
+        assert(DateTime::try_parse_iso8601("2024-01-02T03:04:05Z", parsed_z));
+        assert(DateTime::try_parse_iso8601("2024-01-02T03:04:05+00:00", parsed_plus));
+        assert(DateTime::try_parse_iso8601("2024-01-02T21:34:05-05:30", parsed_negative));
+        assert(parsed_z.unix_ms() == parsed_plus.unix_ms());
+        assert(parsed_z.utc_offset() == 0);
+        assert(parsed_negative.utc_offset() == -(5 * SEC_PER_HOUR + 30 * SEC_PER_MIN));
+    }
+
+    {
+        DateTime parsed;
+        assert(DateTime::try_parse_iso8601("2024-07-01T12:00:00-05:30", parsed));
+        const DateTime reparsed = DateTime::parse_iso8601(parsed.to_iso8601());
+        assert(parsed == reparsed);
+        assert(parsed.utc_offset() == reparsed.utc_offset());
+    }
+
+    {
+        DateTime parsed;
+        assert(DateTime::try_parse_iso8601("2024-02-29", parsed));
+        assert(parsed.hour() == 0);
+        assert(parsed.minute() == 0);
+        assert(parsed.second() == 0);
+    }
+
+    {
+        DateTime parsed;
+        assert(!DateTime::try_parse_iso8601("invalid-date", parsed));
+    }
+
+    {
+        DateTime result;
+        assert(DateTime::try_from_components(2024, 2, 29, 23, 59, 59, 999, 0, result));
+        assert(!DateTime::try_from_components(2023, 2, 29, 0, 0, 0, 0, 0, result));
+        assert(!DateTime::try_from_components(2024, 1, 1, 25, 0, 0, 0, 0, result));
+        assert(!DateTime::try_from_components(2024, 1, 1, 0, 0, 0, 0, 30 * SEC_PER_HOUR, result));
+    }
+
+    {
+        const DateTime iso_boundary = DateTime::from_components(2018, 12, 31);
+        const IsoWeekDateStruct iso = iso_boundary.iso_week_date();
+        const DateTime restored = DateTime::from_iso_week_date(iso);
+        assert(restored.year() == 2018);
+        assert(restored.month() == 12);
+        assert(restored.day() == 31);
+    }
+
+    {
+        const DateTime utc = DateTime::from_components(2025, 6, 1, 10, 0, 0, 0, 0);
+        const DateTime shifted = utc.with_offset(SEC_PER_HOUR);
+        assert(utc == shifted);
+        assert(!utc.same_local(shifted));
+    }
+
     return 0;
 }

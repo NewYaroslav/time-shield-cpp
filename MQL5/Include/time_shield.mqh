@@ -37,6 +37,9 @@
 // Structure representing date and time combinations
 #include <time_shield/date_time_struct.mqh>
 
+// Value-type wrapper for date-time with offset
+#include <time_shield/DateTime.mqh>
+
 // Functions for validation of time-related values
 #include <time_shield/validation.mqh>
 

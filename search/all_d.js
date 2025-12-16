@@ -7,7 +7,7 @@ var searchData=
   ['oadate_5fto_5fts_5fms_4',['oadate_to_ts_ms',['../namespacetime__shield.html#a7f4f563034ca1c4300866e243bf51657',1,'time_shield']]],
   ['oct_5',['OCT',['../group__time__enums.html#ggac2ffd79e06ab94cf1bb50fec432c68a8a2b0de39322461f72c9dee8f2ecb425b9',1,'time_shield']]],
   ['offset_5fhm_6',['offset_hm',['../group__time__conversions.html#ga561676ff8c54502f0d39a14fc2f0e967',1,'time_shield']]],
-  ['offset_5fto_5fms_7',['offset_to_ms',['../classtime__shield_1_1DateTime.html#ae460c774387fabfef8fbfd311a35cf32',1,'time_shield::DateTime']]],
+  ['offset_5fto_5fms_7',['offset_to_ms',['../classtime__shield_1_1DateTime.html#ae460c774387fabfef8fbfd311a35cf32',1,'time_shield::DateTime::offset_to_ms(tz_t offset) noexcept'],['../classtime__shield_1_1DateTime.html#a3f5f67bc4de238c7a72f84d28a20a397',1,'time_shield::DateTime::offset_to_ms(const int offset)']]],
   ['ole_5fautomation_5fconversions_2ehpp_8',['ole_automation_conversions.hpp',['../ole__automation__conversions_8hpp.html',1,'']]],
   ['ole_5fepoch_9',['OLE_EPOCH',['../group__time__constants.html#ga61d50bb5fe7666932965fc43ff9ed245',1,'time_shield']]],
   ['online_20documentation_10',['Online Documentation',['../index.html#docs_sec',1,'']]],

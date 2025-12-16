@@ -8,5 +8,5 @@ var searchData=
   ['last_5fworkday_5fday_5',['last_workday_day',['../group__time__conversions.html#ga3a09e69ea1b86fd9f7448c2f77d20e75',1,'time_shield::last_workday_day(year_t year, int month) noexcept'],['../group__time__conversions.html#gab92fa9b18a3db63a45016efd7ca78ba3',1,'time_shield::last_workday_day(long year, int month)']]],
   ['leap_5fyear_6',['leap_year',['../group__time__validation.html#gaff561037cb91433512da3922c2666022',1,'time_shield::leap_year(T year) noexcept'],['../group__time__validation.html#gacb2fb6bd5fb218e0bbde17d9870e8afb',1,'time_shield::leap_year(const long year)']]],
   ['leap_5fyear_5fts_7',['leap_year_ts',['../group__time__validation.html#ga8e0d80a09f42577e88f9bc294da403d1',1,'time_shield::leap_year_ts(ts_t ts)'],['../group__time__validation.html#ga046472fb8c315f13a3b30649a26241ce',1,'time_shield::leap_year_ts(const long ts)']]],
-  ['local_5fms_8',['local_ms',['../classtime__shield_1_1DateTime.html#ad3e832106dcd0a6c99546a03f3b85f57',1,'time_shield::DateTime']]]
+  ['local_5fms_8',['local_ms',['../classtime__shield_1_1DateTime.html#ad3e832106dcd0a6c99546a03f3b85f57',1,'time_shield::DateTime::local_ms() const noexcept'],['../classtime__shield_1_1DateTime.html#a3c79f11931bfc392b91c7c8f37727f71',1,'time_shield::DateTime::local_ms() const']]]
 ];

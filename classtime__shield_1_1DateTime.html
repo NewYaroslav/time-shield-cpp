@@ -231,6 +231,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:acd9f1d820805ce76a8bfb5bcb5d2759d" id="r_acd9f1d820805ce76a8bfb5bcb5d2759d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acd9f1d820805ce76a8bfb5bcb5d2759d">operator&gt;=</a> (const <a class="el" href="classtime__shield_1_1DateTime.html">DateTime</a> &amp;other) const noexcept</td></tr>
 <tr class="memdesc:acd9f1d820805ce76a8bfb5bcb5d2759d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Greater-than-or-equal comparison by UTC instant.  <br /></td></tr>
 <tr class="separator:acd9f1d820805ce76a8bfb5bcb5d2759d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37efaac085e60cc4e3457c06979423ea" id="r_a37efaac085e60cc4e3457c06979423ea"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a37efaac085e60cc4e3457c06979423ea">same_local</a> (const <a class="el" href="classtime__shield_1_1DateTime.html">DateTime</a> &amp;other) const noexcept</td></tr>
+<tr class="memdesc:a37efaac085e60cc4e3457c06979423ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if local representations match including offset.  <br /></td></tr>
+<tr class="separator:a37efaac085e60cc4e3457c06979423ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf831752250e96986a57d0bb069e436a" id="r_adf831752250e96986a57d0bb069e436a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtime__shield_1_1DateTime.html">DateTime</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf831752250e96986a57d0bb069e436a">add_ms</a> (int64_t delta_ms) const noexcept</td></tr>
 <tr class="memdesc:adf831752250e96986a57d0bb069e436a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add milliseconds to UTC instant.  <br /></td></tr>
 <tr class="separator:adf831752250e96986a57d0bb069e436a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -276,6 +279,24 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afd3ae5c2b4a50d3997b139bd152c0886" id="r_afd3ae5c2b4a50d3997b139bd152c0886"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtime__shield_1_1DateTime.html">DateTime</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd3ae5c2b4a50d3997b139bd152c0886">end_of_year</a> () const</td></tr>
 <tr class="memdesc:afd3ae5c2b4a50d3997b139bd152c0886"><td class="mdescLeft">&#160;</td><td class="mdescRight">End of local year.  <br /></td></tr>
 <tr class="separator:afd3ae5c2b4a50d3997b139bd152c0886"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34d7575efc9d9c186c823b24e058c15d" id="r_a34d7575efc9d9c186c823b24e058c15d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34d7575efc9d9c186c823b24e058c15d">DateTime</a> ()</td></tr>
+<tr class="memdesc:a34d7575efc9d9c186c823b24e058c15d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor initializes epoch with zero offset.  <br /></td></tr>
+<tr class="separator:a34d7575efc9d9c186c823b24e058c15d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e7414b1102916d944dcbb925b9da0ce" id="r_a5e7414b1102916d944dcbb925b9da0ce"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e7414b1102916d944dcbb925b9da0ce">to_iso8601</a> () const</td></tr>
+<tr class="memdesc:a5e7414b1102916d944dcbb925b9da0ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Format to ISO8601 string with stored offset.  <br /></td></tr>
+<tr class="separator:a5e7414b1102916d944dcbb925b9da0ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac421ac55a47c4c5595c916ab491d89b" id="r_aac421ac55a47c4c5595c916ab491d89b"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aac421ac55a47c4c5595c916ab491d89b">unix_ms</a> () const</td></tr>
+<tr class="memdesc:aac421ac55a47c4c5595c916ab491d89b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access UTC milliseconds.  <br /></td></tr>
+<tr class="separator:aac421ac55a47c4c5595c916ab491d89b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f99437629de8973972344d8dbbd9232" id="r_a4f99437629de8973972344d8dbbd9232"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4f99437629de8973972344d8dbbd9232">utc_offset</a> () const</td></tr>
+<tr class="memdesc:a4f99437629de8973972344d8dbbd9232"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access stored UTC offset.  <br /></td></tr>
+<tr class="separator:a4f99437629de8973972344d8dbbd9232"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2af9e20e29150d25cf1f44044a5169c" id="r_ae2af9e20e29150d25cf1f44044a5169c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtime__shield_1_1DateTime.html">DateTime</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae2af9e20e29150d25cf1f44044a5169c">with_offset</a> (const int new_offset) const</td></tr>
+<tr class="memdesc:ae2af9e20e29150d25cf1f44044a5169c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return copy with new offset preserving instant.  <br /></td></tr>
+<tr class="separator:ae2af9e20e29150d25cf1f44044a5169c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2dd2ae56f47dc618d26462360c5a6a3" id="r_af2dd2ae56f47dc618d26462360c5a6a3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtime__shield_1_1DateTime.html">DateTime</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af2dd2ae56f47dc618d26462360c5a6a3">to_utc</a> () const</td></tr>
+<tr class="memdesc:af2dd2ae56f47dc618d26462360c5a6a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return copy with zero offset.  <br /></td></tr>
+<tr class="separator:af2dd2ae56f47dc618d26462360c5a6a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -291,9 +312,15 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:aee1633adae52a5fcd712c7cdac8c8f78" id="r_aee1633adae52a5fcd712c7cdac8c8f78"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classtime__shield_1_1DateTime.html">DateTime</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aee1633adae52a5fcd712c7cdac8c8f78">from_components</a> (<a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9">year_t</a> <a class="el" href="#ac5acb39ad441605a0ee161e9a792d613">year</a>, int <a class="el" href="#a90200bb2798b586815927fbcc23a2e76">month</a>, int <a class="el" href="#a19ea75204d65ddda0e70b50b51d5c7e4">day</a>, int <a class="el" href="#a7b764ac3f60ecedeb234da7603d4259f">hour</a>=0, int min=0, int sec=0, int ms=0, <a class="el" href="group__time__types.html#ga467db13fb99208bd078b5abff59866fb">tz_t</a> offset=0)</td></tr>
 <tr class="memdesc:aee1633adae52a5fcd712c7cdac8c8f78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build from calendar components interpreted in provided offset.  <br /></td></tr>
 <tr class="separator:aee1633adae52a5fcd712c7cdac8c8f78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a221c469fd8b342cd61586fe2050b1ee9" id="r_a221c469fd8b342cd61586fe2050b1ee9"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a221c469fd8b342cd61586fe2050b1ee9">try_from_components</a> (<a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9">year_t</a> <a class="el" href="#ac5acb39ad441605a0ee161e9a792d613">year</a>, int <a class="el" href="#a90200bb2798b586815927fbcc23a2e76">month</a>, int <a class="el" href="#a19ea75204d65ddda0e70b50b51d5c7e4">day</a>, int <a class="el" href="#a7b764ac3f60ecedeb234da7603d4259f">hour</a>, int min, int sec, int ms, <a class="el" href="group__time__types.html#ga467db13fb99208bd078b5abff59866fb">tz_t</a> offset, <a class="el" href="classtime__shield_1_1DateTime.html">DateTime</a> &amp;out) noexcept</td></tr>
+<tr class="memdesc:a221c469fd8b342cd61586fe2050b1ee9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to build from calendar components interpreted in provided offset.  <br /></td></tr>
+<tr class="separator:a221c469fd8b342cd61586fe2050b1ee9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae1833ee655f3da11b073f69cc4851b0" id="r_aae1833ee655f3da11b073f69cc4851b0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classtime__shield_1_1DateTime.html">DateTime</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aae1833ee655f3da11b073f69cc4851b0">from_date_time_struct</a> (const <a class="el" href="structtime__shield_1_1DateTimeStruct.html">DateTimeStruct</a> &amp;local_dt, <a class="el" href="group__time__types.html#ga467db13fb99208bd078b5abff59866fb">tz_t</a> offset=0)</td></tr>
 <tr class="memdesc:aae1833ee655f3da11b073f69cc4851b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build from <a class="el" href="structtime__shield_1_1DateTimeStruct.html" title="Structure to represent date and time.">DateTimeStruct</a> interpreted in provided offset.  <br /></td></tr>
 <tr class="separator:aae1833ee655f3da11b073f69cc4851b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43fbfd932b8477f2806c778dd8575f59" id="r_a43fbfd932b8477f2806c778dd8575f59"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a43fbfd932b8477f2806c778dd8575f59">try_from_date_time_struct</a> (const <a class="el" href="structtime__shield_1_1DateTimeStruct.html">DateTimeStruct</a> &amp;local_dt, <a class="el" href="group__time__types.html#ga467db13fb99208bd078b5abff59866fb">tz_t</a> offset, <a class="el" href="classtime__shield_1_1DateTime.html">DateTime</a> &amp;out) noexcept</td></tr>
+<tr class="memdesc:a43fbfd932b8477f2806c778dd8575f59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to build from <a class="el" href="structtime__shield_1_1DateTimeStruct.html" title="Structure to represent date and time.">DateTimeStruct</a> interpreted in provided offset.  <br /></td></tr>
+<tr class="separator:a43fbfd932b8477f2806c778dd8575f59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a386686c00ddec7307861d03f97ca2038" id="r_a386686c00ddec7307861d03f97ca2038"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classtime__shield_1_1DateTime.html">DateTime</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a386686c00ddec7307861d03f97ca2038">from_iso_week_date</a> (const <a class="el" href="structtime__shield_1_1IsoWeekDateStruct.html">IsoWeekDateStruct</a> &amp;iso, int <a class="el" href="#a7b764ac3f60ecedeb234da7603d4259f">hour</a>=0, int min=0, int sec=0, int ms=0, <a class="el" href="group__time__types.html#ga467db13fb99208bd078b5abff59866fb">tz_t</a> offset=0)</td></tr>
 <tr class="memdesc:a386686c00ddec7307861d03f97ca2038"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build instance from ISO week date interpreted in provided offset.  <br /></td></tr>
 <tr class="separator:a386686c00ddec7307861d03f97ca2038"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -324,6 +351,21 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a1bb86a9861e6f1c4439de3f418e3cdee" id="r_a1bb86a9861e6f1c4439de3f418e3cdee"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1bb86a9861e6f1c4439de3f418e3cdee">try_parse_iso_week_date</a> (const char *str, <a class="el" href="structtime__shield_1_1IsoWeekDateStruct.html">IsoWeekDateStruct</a> &amp;iso) noexcept</td></tr>
 <tr class="memdesc:a1bb86a9861e6f1c4439de3f418e3cdee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to parse ISO week-date C-string.  <br /></td></tr>
 <tr class="separator:a1bb86a9861e6f1c4439de3f418e3cdee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3ce55cb793a48b3103907f523c7ca68" id="r_ab3ce55cb793a48b3103907f523c7ca68"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classtime__shield_1_1DateTime.html">DateTime</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab3ce55cb793a48b3103907f523c7ca68">from_unix_ms</a> (const long utc_ms, const int offset=0)</td></tr>
+<tr class="memdesc:ab3ce55cb793a48b3103907f523c7ca68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create instance from UTC milliseconds.  <br /></td></tr>
+<tr class="separator:ab3ce55cb793a48b3103907f523c7ca68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b6d004eccd52f4fb737e1aa518adb1c" id="r_a8b6d004eccd52f4fb737e1aa518adb1c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classtime__shield_1_1DateTime.html">DateTime</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b6d004eccd52f4fb737e1aa518adb1c">now_utc</a> (const int offset=0)</td></tr>
+<tr class="memdesc:a8b6d004eccd52f4fb737e1aa518adb1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct instance for current UTC time.  <br /></td></tr>
+<tr class="separator:a8b6d004eccd52f4fb737e1aa518adb1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63d10e50e82ac2ac76fe0f16a5ad29a6" id="r_a63d10e50e82ac2ac76fe0f16a5ad29a6"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a63d10e50e82ac2ac76fe0f16a5ad29a6">try_from_components</a> (const long <a class="el" href="#ac5acb39ad441605a0ee161e9a792d613">year</a>, const int <a class="el" href="#a90200bb2798b586815927fbcc23a2e76">month</a>, const int <a class="el" href="#a19ea75204d65ddda0e70b50b51d5c7e4">day</a>, const int <a class="el" href="#a7b764ac3f60ecedeb234da7603d4259f">hour</a>, const int min, const int sec, const int ms, const int offset, <a class="el" href="classtime__shield_1_1DateTime.html">DateTime</a> &amp;out)</td></tr>
+<tr class="memdesc:a63d10e50e82ac2ac76fe0f16a5ad29a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to build from calendar components interpreted in provided offset.  <br /></td></tr>
+<tr class="separator:a63d10e50e82ac2ac76fe0f16a5ad29a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b398f56fcad5636ec49eb50afc5e536" id="r_a5b398f56fcad5636ec49eb50afc5e536"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5b398f56fcad5636ec49eb50afc5e536">try_from_date_time_struct</a> (const <a class="el" href="structtime__shield_1_1DateTimeStruct.html">DateTimeStruct</a> &amp;local_dt, const int offset, <a class="el" href="classtime__shield_1_1DateTime.html">DateTime</a> &amp;out)</td></tr>
+<tr class="memdesc:a5b398f56fcad5636ec49eb50afc5e536"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to build from <a class="el" href="structtime__shield_1_1DateTimeStruct.html" title="Structure to represent date and time.">DateTimeStruct</a> interpreted in provided offset.  <br /></td></tr>
+<tr class="separator:a5b398f56fcad5636ec49eb50afc5e536"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af269bbdc2f76a49a1f607b54e44250a9" id="r_af269bbdc2f76a49a1f607b54e44250a9"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af269bbdc2f76a49a1f607b54e44250a9">try_parse_iso8601</a> (const string str, <a class="el" href="classtime__shield_1_1DateTime.html">DateTime</a> &amp;out)</td></tr>
+<tr class="memdesc:af269bbdc2f76a49a1f607b54e44250a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to parse ISO8601 string to <a class="el" href="classtime__shield_1_1DateTime.html" title="Represents a moment in time with optional fixed UTC offset.">DateTime</a>.  <br /></td></tr>
+<tr class="separator:af269bbdc2f76a49a1f607b54e44250a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -331,6 +373,10 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a24a37e049357e08fee8e54a63a8ef58c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3e832106dcd0a6c99546a03f3b85f57" id="r_ad3e832106dcd0a6c99546a03f3b85f57"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad3e832106dcd0a6c99546a03f3b85f57">local_ms</a> () const noexcept</td></tr>
 <tr class="separator:ad3e832106dcd0a6c99546a03f3b85f57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdb2d88989b767574d658462494588bb" id="r_afdb2d88989b767574d658462494588bb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afdb2d88989b767574d658462494588bb">DateTime</a> (const long utc_ms, const int offset)</td></tr>
+<tr class="separator:afdb2d88989b767574d658462494588bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c79f11931bfc392b91c7c8f37727f71" id="r_a3c79f11931bfc392b91c7c8f37727f71"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3c79f11931bfc392b91c7c8f37727f71">local_ms</a> () const</td></tr>
+<tr class="separator:a3c79f11931bfc392b91c7c8f37727f71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
 Static Private Member Functions</h2></td></tr>
@@ -340,6 +386,8 @@ Static Private Member Functions</h2></td></tr>
 <tr class="separator:ad1a527f2467daa9dfd74490257513cbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae460c774387fabfef8fbfd311a35cf32" id="r_ae460c774387fabfef8fbfd311a35cf32"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae460c774387fabfef8fbfd311a35cf32">offset_to_ms</a> (<a class="el" href="group__time__types.html#ga467db13fb99208bd078b5abff59866fb">tz_t</a> offset) noexcept</td></tr>
 <tr class="separator:ae460c774387fabfef8fbfd311a35cf32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f5f67bc4de238c7a72f84d28a20a397" id="r_a3f5f67bc4de238c7a72f84d28a20a397"><td class="memItemLeft" align="right" valign="top">static long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f5f67bc4de238c7a72f84d28a20a397">offset_to_ms</a> (const int offset)</td></tr>
+<tr class="separator:a3f5f67bc4de238c7a72f84d28a20a397"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -347,14 +395,20 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a2471df37f474a8cdcfcb6be962a1bf03"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7fb1fd2a512b6eab819d94d4478c1d20" id="r_a7fb1fd2a512b6eab819d94d4478c1d20"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__time__types.html#ga467db13fb99208bd078b5abff59866fb">tz_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7fb1fd2a512b6eab819d94d4478c1d20">m_offset</a></td></tr>
 <tr class="separator:a7fb1fd2a512b6eab819d94d4478c1d20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af600b97c3f63bfcb231e2cfc38fb0742" id="r_af600b97c3f63bfcb231e2cfc38fb0742"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af600b97c3f63bfcb231e2cfc38fb0742">m_utc_ms</a></td></tr>
+<tr class="separator:af600b97c3f63bfcb231e2cfc38fb0742"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c37d6e8b2e6ab0e70465e1986f4b095" id="r_a4c37d6e8b2e6ab0e70465e1986f4b095"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4c37d6e8b2e6ab0e70465e1986f4b095">m_offset</a></td></tr>
+<tr class="separator:a4c37d6e8b2e6ab0e70465e1986f4b095"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents a moment in time with optional fixed UTC offset. </p>
+<p>Represents a UTC timestamp with an optional fixed offset.</p>
+<p>Equality and ordering compare the UTC instant only and ignore the stored offset. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00034">34</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00036">36</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a8cd750295982f9a31453c8d2b3f00bb4" name="a8cd750295982f9a31453c8d2b3f00bb4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8cd750295982f9a31453c8d2b3f00bb4">&#9670;&#160;</a></span>DateTime() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cd750295982f9a31453c8d2b3f00bb4">&#9670;&#160;</a></span>DateTime() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -378,12 +432,12 @@ Private Attributes</h2></td></tr>
 
 <p>Default constructor sets epoch with zero offset. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00037">37</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00039">39</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
 <a id="a24a37e049357e08fee8e54a63a8ef58c" name="a24a37e049357e08fee8e54a63a8ef58c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a24a37e049357e08fee8e54a63a8ef58c">&#9670;&#160;</a></span>DateTime() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a24a37e049357e08fee8e54a63a8ef58c">&#9670;&#160;</a></span>DateTime() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -409,7 +463,67 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00499">499</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00560">560</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a34d7575efc9d9c186c823b24e058c15d" name="a34d7575efc9d9c186c823b24e058c15d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34d7575efc9d9c186c823b24e058c15d">&#9670;&#160;</a></span>DateTime() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">time_shield::DateTime::DateTime </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Default constructor initializes epoch with zero offset. </p>
+
+<p class="definition">Definition at line <a class="el" href="DateTime_8mqh_source.html#l00030">30</a> of file <a class="el" href="DateTime_8mqh_source.html">DateTime.mqh</a>.</p>
+
+</div>
+</div>
+<a id="afdb2d88989b767574d658462494588bb" name="afdb2d88989b767574d658462494588bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdb2d88989b767574d658462494588bb">&#9670;&#160;</a></span>DateTime() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">time_shield::DateTime::DateTime </td>
+          <td>(</td>
+          <td class="paramtype">const long</td>          <td class="paramname"><span class="paramname"><em>utc_ms</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int</td>          <td class="paramname"><span class="paramname"><em>offset</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="DateTime_8mqh_source.html#l00132">132</a> of file <a class="el" href="DateTime_8mqh_source.html">DateTime.mqh</a>.</p>
 
 </div>
 </div>
@@ -439,7 +553,7 @@ Private Attributes</h2></td></tr>
 
 <p>Add days to UTC instant. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00387">387</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00448">448</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -468,7 +582,7 @@ Private Attributes</h2></td></tr>
 
 <p>Add hours to UTC instant. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00382">382</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00443">443</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -497,7 +611,7 @@ Private Attributes</h2></td></tr>
 
 <p>Add minutes to UTC instant. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00377">377</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00438">438</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -526,7 +640,7 @@ Private Attributes</h2></td></tr>
 
 <p>Add milliseconds to UTC instant. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00367">367</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00428">428</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -555,7 +669,7 @@ Private Attributes</h2></td></tr>
 
 <p>Add seconds to UTC instant. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00372">372</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00433">433</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -584,7 +698,7 @@ Private Attributes</h2></td></tr>
 
 <p>Local date components. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00277">277</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00333">333</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -613,7 +727,7 @@ Private Attributes</h2></td></tr>
 
 <p>Local day component. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00252">252</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00308">308</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -642,7 +756,7 @@ Private Attributes</h2></td></tr>
 
 <p>Difference in milliseconds to another <a class="el" href="classtime__shield_1_1DateTime.html" title="Represents a moment in time with optional fixed UTC offset.">DateTime</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00392">392</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00453">453</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -671,7 +785,7 @@ Private Attributes</h2></td></tr>
 
 <p>Difference in seconds to another <a class="el" href="classtime__shield_1_1DateTime.html" title="Represents a moment in time with optional fixed UTC offset.">DateTime</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00397">397</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00458">458</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -700,7 +814,7 @@ Private Attributes</h2></td></tr>
 
 <p>End of local day. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00419">419</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00480">480</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -729,7 +843,7 @@ Private Attributes</h2></td></tr>
 
 <p>End of local month. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00440">440</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00501">501</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -758,7 +872,7 @@ Private Attributes</h2></td></tr>
 
 <p>End of local year. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00462">462</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00523">523</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -787,7 +901,7 @@ Private Attributes</h2></td></tr>
 
 <p>Format using C-string pattern. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00209">209</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00265">265</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -816,7 +930,7 @@ Private Attributes</h2></td></tr>
 
 <p>Format using custom pattern. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00197">197</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00253">253</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -845,7 +959,7 @@ Private Attributes</h2></td></tr>
 
 <p>Format using custom string_view pattern. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00203">203</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00259">259</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -908,7 +1022,7 @@ Private Attributes</h2></td></tr>
 
 <p>Build from calendar components interpreted in provided offset. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00065">65</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00067">67</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -941,7 +1055,7 @@ Private Attributes</h2></td></tr>
 
 <p>Build from <a class="el" href="structtime__shield_1_1DateTimeStruct.html" title="Structure to represent date and time.">DateTimeStruct</a> interpreted in provided offset. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00080">80</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00115">115</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -994,12 +1108,53 @@ Private Attributes</h2></td></tr>
 
 <p>Build instance from ISO week date interpreted in provided offset. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00097">97</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00153">153</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ab3ce55cb793a48b3103907f523c7ca68" name="ab3ce55cb793a48b3103907f523c7ca68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3ce55cb793a48b3103907f523c7ca68">&#9670;&#160;</a></span>from_unix_ms() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classtime__shield_1_1DateTime.html">DateTime</a> time_shield::DateTime::from_unix_ms </td>
+          <td>(</td>
+          <td class="paramtype">const long</td>          <td class="paramname"><span class="paramname"><em>utc_ms</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int</td>          <td class="paramname"><span class="paramname"><em>offset</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create instance from UTC milliseconds. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">utc_ms</td><td>Timestamp in milliseconds since the Unix epoch (UTC). </td></tr>
+    <tr><td class="paramname">offset</td><td>Fixed UTC offset in seconds. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Constructed <a class="el" href="classtime__shield_1_1DateTime.html" title="Represents a moment in time with optional fixed UTC offset.">DateTime</a>. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="DateTime_8mqh_source.html#l00036">36</a> of file <a class="el" href="DateTime_8mqh_source.html">DateTime.mqh</a>.</p>
 
 </div>
 </div>
 <a id="aceb3ad52729400f9c0c0627bb7204a23" name="aceb3ad52729400f9c0c0627bb7204a23"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aceb3ad52729400f9c0c0627bb7204a23">&#9670;&#160;</a></span>from_unix_ms()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aceb3ad52729400f9c0c0627bb7204a23">&#9670;&#160;</a></span>from_unix_ms() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1035,7 +1190,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Constructed <a class="el" href="classtime__shield_1_1DateTime.html" title="Represents a moment in time with optional fixed UTC offset.">DateTime</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00045">45</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00047">47</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -1076,7 +1231,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Constructed <a class="el" href="classtime__shield_1_1DateTime.html" title="Represents a moment in time with optional fixed UTC offset.">DateTime</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00053">53</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00055">55</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -1105,7 +1260,7 @@ Private Attributes</h2></td></tr>
 
 <p>Local hour component. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00257">257</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00313">313</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -1134,7 +1289,7 @@ Private Attributes</h2></td></tr>
 
 <p>Check if local date is a weekend. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00332">332</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00388">388</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -1163,7 +1318,7 @@ Private Attributes</h2></td></tr>
 
 <p>Check if local date is a workday. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00327">327</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00383">383</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -1192,7 +1347,7 @@ Private Attributes</h2></td></tr>
 
 <p>Local ISO week date. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00321">321</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00377">377</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -1221,12 +1376,39 @@ Private Attributes</h2></td></tr>
 
 <p>Local ISO weekday number (1..7). </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00315">315</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00371">371</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a3c79f11931bfc392b91c7c8f37727f71" name="a3c79f11931bfc392b91c7c8f37727f71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c79f11931bfc392b91c7c8f37727f71">&#9670;&#160;</a></span>local_ms() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long time_shield::DateTime::local_ms </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="DateTime_8mqh_source.html#l00136">136</a> of file <a class="el" href="DateTime_8mqh_source.html">DateTime.mqh</a>.</p>
 
 </div>
 </div>
 <a id="ad3e832106dcd0a6c99546a03f3b85f57" name="ad3e832106dcd0a6c99546a03f3b85f57"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad3e832106dcd0a6c99546a03f3b85f57">&#9670;&#160;</a></span>local_ms()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3e832106dcd0a6c99546a03f3b85f57">&#9670;&#160;</a></span>local_ms() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1248,7 +1430,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00507">507</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00568">568</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -1277,7 +1459,7 @@ Private Attributes</h2></td></tr>
 
 <p>Local millisecond component. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00272">272</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00328">328</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -1306,7 +1488,7 @@ Private Attributes</h2></td></tr>
 
 <p>Local minute component. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00262">262</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00318">318</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -1335,12 +1517,48 @@ Private Attributes</h2></td></tr>
 
 <p>Local month component. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00247">247</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00303">303</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a8b6d004eccd52f4fb737e1aa518adb1c" name="a8b6d004eccd52f4fb737e1aa518adb1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b6d004eccd52f4fb737e1aa518adb1c">&#9670;&#160;</a></span>now_utc() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classtime__shield_1_1DateTime.html">DateTime</a> time_shield::DateTime::now_utc </td>
+          <td>(</td>
+          <td class="paramtype">const int</td>          <td class="paramname"><span class="paramname"><em>offset</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct instance for current UTC time. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">offset</td><td>Fixed UTC offset in seconds. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classtime__shield_1_1DateTime.html" title="Represents a moment in time with optional fixed UTC offset.">DateTime</a> set to now. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="DateTime_8mqh_source.html#l00043">43</a> of file <a class="el" href="DateTime_8mqh_source.html">DateTime.mqh</a>.</p>
 
 </div>
 </div>
 <a id="a034ad8a3b8fc63b5eb7fad3b9fae3819" name="a034ad8a3b8fc63b5eb7fad3b9fae3819"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a034ad8a3b8fc63b5eb7fad3b9fae3819">&#9670;&#160;</a></span>now_utc()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a034ad8a3b8fc63b5eb7fad3b9fae3819">&#9670;&#160;</a></span>now_utc() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1371,12 +1589,39 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="classtime__shield_1_1DateTime.html" title="Represents a moment in time with optional fixed UTC offset.">DateTime</a> set to now. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00060">60</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00062">62</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a3f5f67bc4de238c7a72f84d28a20a397" name="a3f5f67bc4de238c7a72f84d28a20a397"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f5f67bc4de238c7a72f84d28a20a397">&#9670;&#160;</a></span>offset_to_ms() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static long time_shield::DateTime::offset_to_ms </td>
+          <td>(</td>
+          <td class="paramtype">const int</td>          <td class="paramname"><span class="paramname"><em>offset</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="DateTime_8mqh_source.html#l00134">134</a> of file <a class="el" href="DateTime_8mqh_source.html">DateTime.mqh</a>.</p>
 
 </div>
 </div>
 <a id="ae460c774387fabfef8fbfd311a35cf32" name="ae460c774387fabfef8fbfd311a35cf32"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae460c774387fabfef8fbfd311a35cf32">&#9670;&#160;</a></span>offset_to_ms()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae460c774387fabfef8fbfd311a35cf32">&#9670;&#160;</a></span>offset_to_ms() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1398,7 +1643,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00503">503</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00564">564</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -1427,7 +1672,7 @@ Private Attributes</h2></td></tr>
 
 <p>Compare inequality by UTC instant. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00342">342</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00398">398</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -1456,7 +1701,7 @@ Private Attributes</h2></td></tr>
 
 <p>Less-than comparison by UTC instant. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00347">347</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00403">403</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -1485,7 +1730,7 @@ Private Attributes</h2></td></tr>
 
 <p>Less-than-or-equal comparison by UTC instant. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00352">352</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00408">408</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -1514,7 +1759,7 @@ Private Attributes</h2></td></tr>
 
 <p>Compare equality by UTC instant. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00337">337</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00393">393</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -1543,7 +1788,7 @@ Private Attributes</h2></td></tr>
 
 <p>Greater-than comparison by UTC instant. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00357">357</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00413">413</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -1572,7 +1817,7 @@ Private Attributes</h2></td></tr>
 
 <p>Greater-than-or-equal comparison by UTC instant. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00362">362</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00418">418</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -1608,7 +1853,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Parsed <a class="el" href="classtime__shield_1_1DateTime.html" title="Represents a moment in time with optional fixed UTC offset.">DateTime</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00156">156</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00212">212</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -1644,7 +1889,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Parsed <a class="el" href="classtime__shield_1_1DateTime.html" title="Represents a moment in time with optional fixed UTC offset.">DateTime</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00140">140</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00196">196</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -1680,7 +1925,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Parsed <a class="el" href="classtime__shield_1_1DateTime.html" title="Represents a moment in time with optional fixed UTC offset.">DateTime</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00148">148</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00204">204</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -1711,7 +1956,36 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00491">491</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00552">552</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a37efaac085e60cc4e3457c06979423ea" name="a37efaac085e60cc4e3457c06979423ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37efaac085e60cc4e3457c06979423ea">&#9670;&#160;</a></span>same_local()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool time_shield::DateTime::same_local </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtime__shield_1_1DateTime.html">DateTime</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if local representations match including offset. </p>
+
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00423">423</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -1740,7 +2014,7 @@ Private Attributes</h2></td></tr>
 
 <p>Local second component. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00267">267</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00323">323</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -1769,7 +2043,7 @@ Private Attributes</h2></td></tr>
 
 <p>Start of local day. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00412">412</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00473">473</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -1798,7 +2072,7 @@ Private Attributes</h2></td></tr>
 
 <p>Start of local month. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00433">433</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00494">494</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -1827,7 +2101,7 @@ Private Attributes</h2></td></tr>
 
 <p>Start of local year. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00455">455</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00516">516</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -1856,7 +2130,7 @@ Private Attributes</h2></td></tr>
 
 <p>Local time-of-day components. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00283">283</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00339">339</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -1885,7 +2159,7 @@ Private Attributes</h2></td></tr>
 
 <p>Get timezone structure from offset. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00237">237</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00293">293</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -1914,7 +2188,7 @@ Private Attributes</h2></td></tr>
 
 <p>Convert to date-time structure using stored offset. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00087">87</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00143">143</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -1943,12 +2217,12 @@ Private Attributes</h2></td></tr>
 
 <p>Convert to UTC date-time structure. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00092">92</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00148">148</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
 <a id="a2b4f36d0d98393d81926e97a16265f3c" name="a2b4f36d0d98393d81926e97a16265f3c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b4f36d0d98393d81926e97a16265f3c">&#9670;&#160;</a></span>to_iso8601()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b4f36d0d98393d81926e97a16265f3c">&#9670;&#160;</a></span>to_iso8601() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1972,7 +2246,36 @@ Private Attributes</h2></td></tr>
 
 <p>Format to ISO8601 string with stored offset. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00187">187</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00243">243</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a5e7414b1102916d944dcbb925b9da0ce" name="a5e7414b1102916d944dcbb925b9da0ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e7414b1102916d944dcbb925b9da0ce">&#9670;&#160;</a></span>to_iso8601() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string time_shield::DateTime::to_iso8601 </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Format to ISO8601 string with stored offset. </p>
+
+<p class="definition">Definition at line <a class="el" href="DateTime_8mqh_source.html#l00117">117</a> of file <a class="el" href="DateTime_8mqh_source.html">DateTime.mqh</a>.</p>
 
 </div>
 </div>
@@ -2001,7 +2304,7 @@ Private Attributes</h2></td></tr>
 
 <p>Format to ISO8601 string in UTC. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00192">192</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00248">248</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -2030,12 +2333,41 @@ Private Attributes</h2></td></tr>
 
 <p>Format to MQL5 date-time string. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00217">217</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00273">273</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+
+</div>
+</div>
+<a id="af2dd2ae56f47dc618d26462360c5a6a3" name="af2dd2ae56f47dc618d26462360c5a6a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2dd2ae56f47dc618d26462360c5a6a3">&#9670;&#160;</a></span>to_utc() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtime__shield_1_1DateTime.html">DateTime</a> time_shield::DateTime::to_utc </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return copy with zero offset. </p>
+
+<p class="definition">Definition at line <a class="el" href="DateTime_8mqh_source.html#l00129">129</a> of file <a class="el" href="DateTime_8mqh_source.html">DateTime.mqh</a>.</p>
 
 </div>
 </div>
 <a id="af4a3c47336ef777fa41f58b1a1b2281b" name="af4a3c47336ef777fa41f58b1a1b2281b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af4a3c47336ef777fa41f58b1a1b2281b">&#9670;&#160;</a></span>to_utc()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af4a3c47336ef777fa41f58b1a1b2281b">&#9670;&#160;</a></span>to_utc() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2059,12 +2391,272 @@ Private Attributes</h2></td></tr>
 
 <p>Return copy with zero offset. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00407">407</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00468">468</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a63d10e50e82ac2ac76fe0f16a5ad29a6" name="a63d10e50e82ac2ac76fe0f16a5ad29a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63d10e50e82ac2ac76fe0f16a5ad29a6">&#9670;&#160;</a></span>try_from_components() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool time_shield::DateTime::try_from_components </td>
+          <td>(</td>
+          <td class="paramtype">const long</td>          <td class="paramname"><span class="paramname"><em>year</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int</td>          <td class="paramname"><span class="paramname"><em>month</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int</td>          <td class="paramname"><span class="paramname"><em>day</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int</td>          <td class="paramname"><span class="paramname"><em>hour</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int</td>          <td class="paramname"><span class="paramname"><em>min</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int</td>          <td class="paramname"><span class="paramname"><em>sec</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int</td>          <td class="paramname"><span class="paramname"><em>ms</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int</td>          <td class="paramname"><span class="paramname"><em>offset</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classtime__shield_1_1DateTime.html">DateTime</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>out</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Try to build from calendar components interpreted in provided offset. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">year</td><td>Year component. </td></tr>
+    <tr><td class="paramname">month</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a> component. </td></tr>
+    <tr><td class="paramname">day</td><td>Day component. </td></tr>
+    <tr><td class="paramname">hour</td><td>Hour component. </td></tr>
+    <tr><td class="paramname">min</td><td>Minute component. </td></tr>
+    <tr><td class="paramname">sec</td><td>Second component. </td></tr>
+    <tr><td class="paramname">ms</td><td>Millisecond component. </td></tr>
+    <tr><td class="paramname">offset</td><td>Fixed UTC offset in seconds. </td></tr>
+    <tr><td class="paramname">out</td><td>Output <a class="el" href="classtime__shield_1_1DateTime.html" title="Represents a moment in time with optional fixed UTC offset.">DateTime</a> on success. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True when components form a valid date-time and offset. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="DateTime_8mqh_source.html#l00058">58</a> of file <a class="el" href="DateTime_8mqh_source.html">DateTime.mqh</a>.</p>
+
+</div>
+</div>
+<a id="a221c469fd8b342cd61586fe2050b1ee9" name="a221c469fd8b342cd61586fe2050b1ee9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a221c469fd8b342cd61586fe2050b1ee9">&#9670;&#160;</a></span>try_from_components() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool time_shield::DateTime::try_from_components </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9">year_t</a></td>          <td class="paramname"><span class="paramname"><em>year</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>month</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>day</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>hour</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>min</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>sec</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>ms</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#ga467db13fb99208bd078b5abff59866fb">tz_t</a></td>          <td class="paramname"><span class="paramname"><em>offset</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classtime__shield_1_1DateTime.html">DateTime</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>out</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Try to build from calendar components interpreted in provided offset. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">year</td><td>Year component. </td></tr>
+    <tr><td class="paramname">month</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a> component. </td></tr>
+    <tr><td class="paramname">day</td><td>Day component. </td></tr>
+    <tr><td class="paramname">hour</td><td>Hour component. </td></tr>
+    <tr><td class="paramname">min</td><td>Minute component. </td></tr>
+    <tr><td class="paramname">sec</td><td>Second component. </td></tr>
+    <tr><td class="paramname">ms</td><td>Millisecond component. </td></tr>
+    <tr><td class="paramname">offset</td><td>Fixed UTC offset in seconds. </td></tr>
+    <tr><td class="paramname">out</td><td>Output <a class="el" href="classtime__shield_1_1DateTime.html" title="Represents a moment in time with optional fixed UTC offset.">DateTime</a> on success. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True when components form a valid date-time and offset. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00092">92</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a5b398f56fcad5636ec49eb50afc5e536" name="a5b398f56fcad5636ec49eb50afc5e536"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b398f56fcad5636ec49eb50afc5e536">&#9670;&#160;</a></span>try_from_date_time_struct() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool time_shield::DateTime::try_from_date_time_struct </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structtime__shield_1_1DateTimeStruct.html">DateTimeStruct</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>local_dt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int</td>          <td class="paramname"><span class="paramname"><em>offset</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classtime__shield_1_1DateTime.html">DateTime</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>out</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Try to build from <a class="el" href="structtime__shield_1_1DateTimeStruct.html" title="Structure to represent date and time.">DateTimeStruct</a> interpreted in provided offset. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">local_dt</td><td>Local date-time structure. </td></tr>
+    <tr><td class="paramname">offset</td><td>Fixed UTC offset in seconds. </td></tr>
+    <tr><td class="paramname">out</td><td>Output <a class="el" href="classtime__shield_1_1DateTime.html" title="Represents a moment in time with optional fixed UTC offset.">DateTime</a> on success. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True when structure and offset are valid. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="DateTime_8mqh_source.html#l00085">85</a> of file <a class="el" href="DateTime_8mqh_source.html">DateTime.mqh</a>.</p>
+
+</div>
+</div>
+<a id="a43fbfd932b8477f2806c778dd8575f59" name="a43fbfd932b8477f2806c778dd8575f59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43fbfd932b8477f2806c778dd8575f59">&#9670;&#160;</a></span>try_from_date_time_struct() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool time_shield::DateTime::try_from_date_time_struct </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structtime__shield_1_1DateTimeStruct.html">DateTimeStruct</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>local_dt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#ga467db13fb99208bd078b5abff59866fb">tz_t</a></td>          <td class="paramname"><span class="paramname"><em>offset</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classtime__shield_1_1DateTime.html">DateTime</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>out</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Try to build from <a class="el" href="structtime__shield_1_1DateTimeStruct.html" title="Structure to represent date and time.">DateTimeStruct</a> interpreted in provided offset. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">local_dt</td><td>Local date-time structure. </td></tr>
+    <tr><td class="paramname">offset</td><td>Fixed UTC offset in seconds. </td></tr>
+    <tr><td class="paramname">out</td><td>Output <a class="el" href="classtime__shield_1_1DateTime.html" title="Represents a moment in time with optional fixed UTC offset.">DateTime</a> on success. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True when structure and offset are valid. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00126">126</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
 <a id="ac650fb79d00de9c5184596ea5cb8dbd7" name="ac650fb79d00de9c5184596ea5cb8dbd7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac650fb79d00de9c5184596ea5cb8dbd7">&#9670;&#160;</a></span>try_parse_iso8601() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac650fb79d00de9c5184596ea5cb8dbd7">&#9670;&#160;</a></span>try_parse_iso8601() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2100,12 +2692,12 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True on success. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00130">130</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00186">186</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
 <a id="a2b3ef8fb5240432327812b1033925995" name="a2b3ef8fb5240432327812b1033925995"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b3ef8fb5240432327812b1033925995">&#9670;&#160;</a></span>try_parse_iso8601() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b3ef8fb5240432327812b1033925995">&#9670;&#160;</a></span>try_parse_iso8601() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2141,12 +2733,53 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True on success. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00112">112</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00168">168</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+
+</div>
+</div>
+<a id="af269bbdc2f76a49a1f607b54e44250a9" name="af269bbdc2f76a49a1f607b54e44250a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af269bbdc2f76a49a1f607b54e44250a9">&#9670;&#160;</a></span>try_parse_iso8601() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool time_shield::DateTime::try_parse_iso8601 </td>
+          <td>(</td>
+          <td class="paramtype">const string</td>          <td class="paramname"><span class="paramname"><em>str</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classtime__shield_1_1DateTime.html">DateTime</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>out</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Try to parse ISO8601 string to <a class="el" href="classtime__shield_1_1DateTime.html" title="Represents a moment in time with optional fixed UTC offset.">DateTime</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>Input ISO8601 string. </td></tr>
+    <tr><td class="paramname">out</td><td>Output <a class="el" href="classtime__shield_1_1DateTime.html" title="Represents a moment in time with optional fixed UTC offset.">DateTime</a> when parsing succeeds. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True on success. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="DateTime_8mqh_source.html#l00105">105</a> of file <a class="el" href="DateTime_8mqh_source.html">DateTime.mqh</a>.</p>
 
 </div>
 </div>
 <a id="a5a54459187a8b0faab2e0eddaa5dfb93" name="a5a54459187a8b0faab2e0eddaa5dfb93"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5a54459187a8b0faab2e0eddaa5dfb93">&#9670;&#160;</a></span>try_parse_iso8601() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a54459187a8b0faab2e0eddaa5dfb93">&#9670;&#160;</a></span>try_parse_iso8601() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2182,7 +2815,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True on success. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00121">121</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00177">177</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -2218,7 +2851,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00476">476</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00537">537</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -2251,7 +2884,7 @@ Private Attributes</h2></td></tr>
 
 <p>Try to parse ISO week-date C-string. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00179">179</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00235">235</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -2292,7 +2925,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True on success. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00167">167</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00223">223</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -2325,12 +2958,41 @@ Private Attributes</h2></td></tr>
 
 <p>Try to parse ISO week-date string_view. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00173">173</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00229">229</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aac421ac55a47c4c5595c916ab491d89b" name="aac421ac55a47c4c5595c916ab491d89b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac421ac55a47c4c5595c916ab491d89b">&#9670;&#160;</a></span>unix_ms() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long time_shield::DateTime::unix_ms </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Access UTC milliseconds. </p>
+
+<p class="definition">Definition at line <a class="el" href="DateTime_8mqh_source.html#l00120">120</a> of file <a class="el" href="DateTime_8mqh_source.html">DateTime.mqh</a>.</p>
 
 </div>
 </div>
 <a id="ad54768079cbe312160109bb76624cf59" name="ad54768079cbe312160109bb76624cf59"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad54768079cbe312160109bb76624cf59">&#9670;&#160;</a></span>unix_ms()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad54768079cbe312160109bb76624cf59">&#9670;&#160;</a></span>unix_ms() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2354,7 +3016,7 @@ Private Attributes</h2></td></tr>
 
 <p>Access UTC milliseconds. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00222">222</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00278">278</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -2383,7 +3045,7 @@ Private Attributes</h2></td></tr>
 
 <p>Access UTC seconds. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00227">227</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00283">283</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -2412,12 +3074,41 @@ Private Attributes</h2></td></tr>
 
 <p>UTC date components. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00293">293</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00349">349</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a4f99437629de8973972344d8dbbd9232" name="a4f99437629de8973972344d8dbbd9232"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f99437629de8973972344d8dbbd9232">&#9670;&#160;</a></span>utc_offset() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int time_shield::DateTime::utc_offset </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Access stored UTC offset. </p>
+
+<p class="definition">Definition at line <a class="el" href="DateTime_8mqh_source.html#l00123">123</a> of file <a class="el" href="DateTime_8mqh_source.html">DateTime.mqh</a>.</p>
 
 </div>
 </div>
 <a id="a178506f6f8a64d4a3dba1a939407b7e6" name="a178506f6f8a64d4a3dba1a939407b7e6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a178506f6f8a64d4a3dba1a939407b7e6">&#9670;&#160;</a></span>utc_offset()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a178506f6f8a64d4a3dba1a939407b7e6">&#9670;&#160;</a></span>utc_offset() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2441,7 +3132,7 @@ Private Attributes</h2></td></tr>
 
 <p>Access stored UTC offset. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00232">232</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00288">288</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -2470,7 +3161,7 @@ Private Attributes</h2></td></tr>
 
 <p>UTC time-of-day components. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00299">299</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00355">355</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -2499,12 +3190,41 @@ Private Attributes</h2></td></tr>
 
 <p>Local weekday. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00309">309</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00365">365</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ae2af9e20e29150d25cf1f44044a5169c" name="ae2af9e20e29150d25cf1f44044a5169c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2af9e20e29150d25cf1f44044a5169c">&#9670;&#160;</a></span>with_offset() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtime__shield_1_1DateTime.html">DateTime</a> time_shield::DateTime::with_offset </td>
+          <td>(</td>
+          <td class="paramtype">const int</td>          <td class="paramname"><span class="paramname"><em>new_offset</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return copy with new offset preserving instant. </p>
+
+<p class="definition">Definition at line <a class="el" href="DateTime_8mqh_source.html#l00126">126</a> of file <a class="el" href="DateTime_8mqh_source.html">DateTime.mqh</a>.</p>
 
 </div>
 </div>
 <a id="a6a03ae86958ea012e218da6d124d34cb" name="a6a03ae86958ea012e218da6d124d34cb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a03ae86958ea012e218da6d124d34cb">&#9670;&#160;</a></span>with_offset()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a03ae86958ea012e218da6d124d34cb">&#9670;&#160;</a></span>with_offset() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2528,7 +3248,7 @@ Private Attributes</h2></td></tr>
 
 <p>Return copy with new offset preserving instant. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00402">402</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00463">463</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
@@ -2557,13 +3277,13 @@ Private Attributes</h2></td></tr>
 
 <p>Local year component. </p>
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00242">242</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00298">298</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a id="a7fb1fd2a512b6eab819d94d4478c1d20" name="a7fb1fd2a512b6eab819d94d4478c1d20"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7fb1fd2a512b6eab819d94d4478c1d20">&#9670;&#160;</a></span>m_offset</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fb1fd2a512b6eab819d94d4478c1d20">&#9670;&#160;</a></span>m_offset <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2582,12 +3302,36 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00512">512</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00573">573</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a4c37d6e8b2e6ab0e70465e1986f4b095" name="a4c37d6e8b2e6ab0e70465e1986f4b095"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c37d6e8b2e6ab0e70465e1986f4b095">&#9670;&#160;</a></span>m_offset <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int time_shield::DateTime::m_offset</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="DateTime_8mqh_source.html#l00139">139</a> of file <a class="el" href="DateTime_8mqh_source.html">DateTime.mqh</a>.</p>
 
 </div>
 </div>
 <a id="a2471df37f474a8cdcfcb6be962a1bf03" name="a2471df37f474a8cdcfcb6be962a1bf03"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2471df37f474a8cdcfcb6be962a1bf03">&#9670;&#160;</a></span>m_utc_ms</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2471df37f474a8cdcfcb6be962a1bf03">&#9670;&#160;</a></span>m_utc_ms <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2606,12 +3350,37 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00511">511</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DateTime_8hpp_source.html#l00572">572</a> of file <a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<a id="af600b97c3f63bfcb231e2cfc38fb0742" name="af600b97c3f63bfcb231e2cfc38fb0742"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af600b97c3f63bfcb231e2cfc38fb0742">&#9670;&#160;</a></span>m_utc_ms <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long time_shield::DateTime::m_utc_ms</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="DateTime_8mqh_source.html#l00138">138</a> of file <a class="el" href="DateTime_8mqh_source.html">DateTime.mqh</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>include/time_shield/<a class="el" href="DateTime_8hpp_source.html">DateTime.hpp</a></li>
+<li>MQL5/Include/time_shield/<a class="el" href="DateTime_8mqh_source.html">DateTime.mqh</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

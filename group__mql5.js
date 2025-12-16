@@ -9,6 +9,7 @@ var group__mql5 =
     [ "constants.mqh", "constants_8mqh.html", null ],
     [ "date_struct.mqh", "date__struct_8mqh.html", null ],
     [ "date_time_struct.mqh", "date__time__struct_8mqh.html", null ],
+    [ "DateTime.mqh", "DateTime_8mqh.html", null ],
     [ "enums.mqh", "enums_8mqh.html", null ],
     [ "initialization.mqh", "initialization_8mqh.html", null ],
     [ "time_conversions.mqh", "time__conversions_8mqh.html", null ],

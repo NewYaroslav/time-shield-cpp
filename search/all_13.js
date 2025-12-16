@@ -14,7 +14,7 @@ var searchData=
   ['unix_5fday_5fto_5fts_5fms_11',['unix_day_to_ts_ms',['../group__time__conversions.html#gaec533d5bb3270f12bd2052c3bae95a6e',1,'time_shield::unix_day_to_ts_ms(uday_t unix_day) noexcept'],['../group__time__conversions.html#ga1f3a672ae1b48bed343157115dc4ffdb',1,'time_shield::unix_day_to_ts_ms(long uday)']]],
   ['unix_5fepoch_12',['UNIX_EPOCH',['../group__time__constants.html#gaac58f5745079905f99b9a15610a946f4',1,'time_shield']]],
   ['unix_5fmin_13',['unix_min',['../group__time__conversions.html#gab8bdd46d5c4491b04dc1276b3420be75',1,'time_shield::unix_min(ts_t ts=time_shield::ts())'],['../group__time__conversions.html#ga44246f79d0f5eb8e2b730413cc734a0a',1,'time_shield::unix_min(long ts)']]],
-  ['unix_5fms_14',['unix_ms',['../classtime__shield_1_1DateTime.html#ad54768079cbe312160109bb76624cf59',1,'time_shield::DateTime']]],
+  ['unix_5fms_14',['unix_ms',['../classtime__shield_1_1DateTime.html#ad54768079cbe312160109bb76624cf59',1,'time_shield::DateTime::unix_ms() const noexcept'],['../classtime__shield_1_1DateTime.html#aac421ac55a47c4c5595c916ab491d89b',1,'time_shield::DateTime::unix_ms() const']]],
   ['unix_5fs_15',['unix_s',['../classtime__shield_1_1DateTime.html#a48f7c684779ca78ab8c861e4fe9aca58',1,'time_shield::DateTime']]],
   ['unix_5ftime_5fconversions_2ehpp_16',['unix_time_conversions.hpp',['../unix__time__conversions_8hpp.html',1,'']]],
   ['unix_5fyear_17',['unix_year',['../group__time__conversions.html#ga5a831e0a41bc6c2be9dc03df23d027db',1,'time_shield::unix_year(ts_t ts) noexcept'],['../group__time__conversions.html#ga93a6c7e27ccce15344ca74b7808e9261',1,'time_shield::unix_year(long ts)']]],
@@ -33,7 +33,7 @@ var searchData=
   ['usage_3a_30',['Usage:',['../group__time__constants.html#autotoc_md1',1,'Example Usage:'],['../group__time__constants.html#autotoc_md9',1,'Example Usage:'],['../group__time__enums.html#autotoc_md11',1,'Example Usage:'],['../group__time__structures.html#autotoc_md13',1,'Example Usage:'],['../group__time__zone__conversions.html#autotoc_md20',1,'Example Usage:'],['../group__ntp.html#autotoc_md22',1,'Example Usage:'],['../group__mql5.html#autotoc_md23',1,'Example Usage:'],['../group__mql5__time__enums.html#autotoc_md25',1,'Example Usage:'],['../group__mql5__time__structures.html#autotoc_md27',1,'Example Usage:']]],
   ['utc_31',['UTC',['../group__time__enums.html#ggad8cb858fb6cedcf76c4f0630d56e042babba774a48b6685a9417e93da1f64d7e3',1,'time_shield']]],
   ['utc_5fdate_32',['utc_date',['../classtime__shield_1_1DateTime.html#aacdf87893100be402d05b2fb84081a6a',1,'time_shield::DateTime']]],
-  ['utc_5foffset_33',['utc_offset',['../classtime__shield_1_1DateTime.html#a178506f6f8a64d4a3dba1a939407b7e6',1,'time_shield::DateTime']]],
+  ['utc_5foffset_33',['utc_offset',['../classtime__shield_1_1DateTime.html#a178506f6f8a64d4a3dba1a939407b7e6',1,'time_shield::DateTime::utc_offset() const noexcept'],['../classtime__shield_1_1DateTime.html#a4f99437629de8973972344d8dbbd9232',1,'time_shield::DateTime::utc_offset() const']]],
   ['utc_5foffset_5fof_34',['utc_offset_of',['../group__time__conversions__time__zone__conversions.html#ga01cd52fc5e22dc7bb4805f164b70efa7',1,'time_shield']]],
   ['utc_5ftime_5fof_5fday_35',['utc_time_of_day',['../classtime__shield_1_1DateTime.html#a6ddb0d6e1b24cdac47e622b11942611f',1,'time_shield::DateTime']]],
   ['utilities_36',['Time Utilities',['../group__time__utils.html',1,'']]]

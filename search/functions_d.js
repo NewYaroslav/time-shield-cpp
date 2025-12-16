@@ -4,7 +4,7 @@ var searchData=
   ['oadate_5fto_5fts_1',['oadate_to_ts',['../namespacetime__shield.html#a1f01cb69303baeba82b26255c4d94964',1,'time_shield']]],
   ['oadate_5fto_5fts_5fms_2',['oadate_to_ts_ms',['../namespacetime__shield.html#a7f4f563034ca1c4300866e243bf51657',1,'time_shield']]],
   ['offset_5fhm_3',['offset_hm',['../group__time__conversions.html#ga561676ff8c54502f0d39a14fc2f0e967',1,'time_shield']]],
-  ['offset_5fto_5fms_4',['offset_to_ms',['../classtime__shield_1_1DateTime.html#ae460c774387fabfef8fbfd311a35cf32',1,'time_shield::DateTime']]],
+  ['offset_5fto_5fms_4',['offset_to_ms',['../classtime__shield_1_1DateTime.html#ae460c774387fabfef8fbfd311a35cf32',1,'time_shield::DateTime::offset_to_ms(tz_t offset) noexcept'],['../classtime__shield_1_1DateTime.html#a3f5f67bc4de238c7a72f84d28a20a397',1,'time_shield::DateTime::offset_to_ms(const int offset)']]],
   ['operator_21_3d_5',['operator!=',['../classtime__shield_1_1DateTime.html#a27d350cb74dbc17ad7eb6559135c1918',1,'time_shield::DateTime']]],
   ['operator_28_29_6',['operator()',['../structtime__shield_1_1detail_1_1ScheduledComparator.html#a42aa415d5fe0497cdb108d079d8430b4',1,'time_shield::detail::ScheduledComparator']]],
   ['operator_3c_7',['operator&lt;',['../classtime__shield_1_1DateTime.html#abfe52db36c778dd0414efb947776022d',1,'time_shield::DateTime']]],

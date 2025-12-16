@@ -142,7 +142,8 @@ namespace time_shield {
     /// \return T A date-time structure with the corresponding date and time components.
     template<class T>
     inline T to_date_time_ms(ts_ms_t ts) {
-        T date_time = to_date_time<T, ts_ms_t>(ms_to_sec<ts_ms_t, ts_ms_t>(ts));
+        const ts_t sec = ms_to_sec<ts_t, ts_ms_t>(ts);
+        T date_time = to_date_time<T, ts_t>(sec);
         date_time.ms = ms_of_ts(ts); // Extract and set the ms component
         return date_time;
     }

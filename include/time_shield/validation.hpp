@@ -234,6 +234,7 @@ namespace time_shield {
         if (day > 31 && year <= 31) {
             return is_valid_date((T1)day, month, (T2)year);
         }
+        if (year < MIN_YEAR) return false;
         if (year > MAX_YEAR) return false;
         if (month < 1 || month > 12) return false;
         if (day < 1 || day > 31) return false;

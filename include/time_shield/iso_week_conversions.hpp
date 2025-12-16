@@ -99,6 +99,8 @@ namespace time_shield {
     /// \param weekday ISO weekday (1-7).
     /// \return True if components form a valid ISO week date.
     inline bool is_valid_iso_week_date(year_t iso_year, int week, int weekday) {
+        if (iso_year < MIN_YEAR) return false;
+        if (iso_year > MAX_YEAR) return false;
         if (weekday < 1 || weekday > 7) return false;
         if (week < 1) return false;
         const int max_week = iso_weeks_in_year(iso_year);

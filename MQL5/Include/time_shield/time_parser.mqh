@@ -138,6 +138,9 @@ namespace time_shield {
        dt.mon =(int)StringToInteger(parts[1]);
        dt.day =(int)StringToInteger(parts[2]);
 
+       if(!is_valid_date(dt))
+          return false;
+
        if (StringLen(time_part)>0) {
           string tz_str = "";
           int zpos = StringFind(time_part,"Z");

@@ -158,6 +158,7 @@ namespace time_shield {
     bool is_valid_date(const long year, const int month, const int day) {
        if (day > 31 && year <= 31)
           return is_valid_date((long)day, month, (int)year);
+       if (year < MIN_YEAR) return false;
        if (year > MAX_YEAR) return false;
        if (month < 1 || month > 12) return false;
        if (day < 1 || day > 31) return false;

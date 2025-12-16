@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 #pragma once
-#ifndef TIME_SHIELD_DATE_TIME_HPP_INCLUDED
-#define TIME_SHIELD_DATE_TIME_HPP_INCLUDED
+#ifndef _TIME_SHIELD_DATE_TIME_HPP_INCLUDED
+#define _TIME_SHIELD_DATE_TIME_HPP_INCLUDED
 
 /// \file DateTime.hpp
 /// \brief Value-type wrapper for timestamps with fixed UTC offset.
@@ -575,4 +575,4 @@ namespace time_shield {
 
 } // namespace time_shield
 
-#endif // TIME_SHIELD_DATE_TIME_HPP_INCLUDED
+#endif // _TIME_SHIELD_DATE_TIME_HPP_INCLUDED

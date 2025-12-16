@@ -22,6 +22,7 @@
 #include "time_zone_struct.hpp"
 #include "validation.hpp"
 #include "time_conversions.hpp"
+#include "iso_week_conversions.hpp"
 
 #include <algorithm>
 #include <locale>
@@ -651,33 +652,54 @@ namespace time_shield {
         tz = create_time_zone_struct(0, 0);
         tz.is_positive = true;
 
-        // ---- Date: YYYY<sep>MM<sep>DD
-        if (!detail::parse_4digits_year(p, end, dt.year)) {
-            return false;
+        const char* const date_start = p;
+        const char* date_end = p;
+        while (date_end < end && *date_end != 'T' && *date_end != 't' && !detail::is_ascii_space(*date_end)) {
+            ++date_end;
         }
-        if (p >= end) {
-            return false;
-        }
-        const char sep1 = *p;
-        if (sep1 != '-' && sep1 != '/' && sep1 != '.') {
-            return false;
-        }
-        ++p;
 
-        if (!detail::parse_2digits(p, end, dt.mon)) {
-            return false;
+        bool parsed_iso_week_date = false;
+        if (date_end > date_start) {
+            IsoWeekDateStruct iso_date{};
+            if (parse_iso_week_date(std::string(date_start, static_cast<std::size_t>(date_end - date_start)), iso_date)) {
+                const DateStruct calendar_date = iso_week_date_to_date(iso_date);
+                dt.year = calendar_date.year;
+                dt.mon = calendar_date.mon;
+                dt.day = calendar_date.day;
+                p = date_end;
+                parsed_iso_week_date = true;
+            }
         }
-        if (p >= end) {
-            return false;
-        }
-        const char sep2 = *p;
-        if (sep2 != '-' && sep2 != '/' && sep2 != '.') {
-            return false;
-        }
-        ++p;
 
-        if (!detail::parse_2digits(p, end, dt.day)) {
-            return false;
+        if (!parsed_iso_week_date) {
+            // ---- Date: YYYY<sep>MM<sep>DD
+            if (!detail::parse_4digits_year(p, end, dt.year)) {
+                return false;
+            }
+            if (p >= end) {
+                return false;
+            }
+            const char sep1 = *p;
+            if (sep1 != '-' && sep1 != '/' && sep1 != '.') {
+                return false;
+            }
+            ++p;
+
+            if (!detail::parse_2digits(p, end, dt.mon)) {
+                return false;
+            }
+            if (p >= end) {
+                return false;
+            }
+            const char sep2 = *p;
+            if (sep2 != '-' && sep2 != '/' && sep2 != '.') {
+                return false;
+            }
+            ++p;
+
+            if (!detail::parse_2digits(p, end, dt.day)) {
+                return false;
+            }
         }
 
         // Date-only?

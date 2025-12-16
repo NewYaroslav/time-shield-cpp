@@ -1,5 +1,6 @@
 #include <time_shield/iso_week_conversions.hpp>
 #include <time_shield/time_conversions.hpp>
+#include <time_shield/time_parser.hpp>
 
 #include <cassert>
 #include <array>
@@ -78,6 +79,23 @@ int main() {
     assert(iso_again.year == round_trip_iso.year);
     assert(iso_again.week == round_trip_iso.week);
     assert(iso_again.weekday == round_trip_iso.weekday);
+
+    DateTimeStruct parsed_dt{};
+    TimeZoneStruct parsed_tz{};
+
+    assert(parse_iso8601("2025-W51-2", parsed_dt, parsed_tz));
+    assert(parsed_dt.year == 2025 && parsed_dt.mon == 12 && parsed_dt.day == 16);
+    assert(parsed_dt.hour == 0 && parsed_dt.min == 0 && parsed_dt.sec == 0 && parsed_dt.ms == 0);
+
+    assert(parse_iso8601("2025W512T10:15:30Z", parsed_dt, parsed_tz));
+    assert(parsed_dt.year == 2025 && parsed_dt.mon == 12 && parsed_dt.day == 16);
+    assert(parsed_dt.hour == 10 && parsed_dt.min == 15 && parsed_dt.sec == 30 && parsed_dt.ms == 0);
+    assert(parsed_tz.hour == 0 && parsed_tz.min == 0 && parsed_tz.is_positive);
+
+    assert(parse_iso8601("2025-W51T23:45:00-02:30", parsed_dt, parsed_tz));
+    assert(parsed_dt.year == 2025 && parsed_dt.mon == 12 && parsed_dt.day == 15);
+    assert(parsed_dt.hour == 23 && parsed_dt.min == 45 && parsed_dt.sec == 0);
+    assert(parsed_tz.hour == 2 && parsed_tz.min == 30 && !parsed_tz.is_positive);
 
     return 0;
 }

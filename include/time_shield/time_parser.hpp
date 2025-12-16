@@ -661,7 +661,7 @@ namespace time_shield {
         bool parsed_iso_week_date = false;
         if (date_end > date_start) {
             IsoWeekDateStruct iso_date{};
-            if (parse_iso_week_date(std::string(date_start, static_cast<std::size_t>(date_end - date_start)), iso_date)) {
+            if (parse_iso_week_date(date_start, static_cast<std::size_t>(date_end - date_start), iso_date)) {
                 const DateStruct calendar_date = iso_week_date_to_date(iso_date);
                 dt.year = calendar_date.year;
                 dt.mon = calendar_date.mon;

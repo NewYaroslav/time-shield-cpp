@@ -147,13 +147,20 @@ namespace time_shield {
         return std::string(buffer);
     }
 
-    /// \brief Parse ISO week date string.
-    /// \param input Input string containing ISO week date.
+    /// \brief Parse ISO week date string buffer.
+    /// \param input Pointer to character buffer (may be not null-terminated).
+    /// \param length Length of the buffer.
     /// \param iso_date Output ISO week date structure.
     /// \return True if parsing succeeded and produced a valid ISO week date; otherwise false.
-    inline bool parse_iso_week_date(const std::string& input, IsoWeekDateStruct& iso_date) noexcept {
-        const char* p = input.c_str();
-        const char* const end = p + input.size();
+    inline bool parse_iso_week_date(const char* input, std::size_t length, IsoWeekDateStruct& iso_date) noexcept {
+        if (input == nullptr) {
+            return false;
+        }
+
+        iso_date = create_iso_week_date_struct(0, 0, 0);
+
+        const char* p = input;
+        const char* const end = input + length;
 
         auto parse_signed_year = [&]() -> bool {
             bool negative = false;
@@ -217,6 +224,31 @@ namespace time_shield {
 
         if (p != end) return false;
         return is_valid_iso_week_date(iso_date.year, iso_date.week, iso_date.weekday);
+    }
+
+    /// \brief Parse ISO week date string.
+    /// \param input Input string containing ISO week date.
+    /// \param iso_date Output ISO week date structure.
+    /// \return True if parsing succeeded and produced a valid ISO week date; otherwise false.
+    inline bool parse_iso_week_date(const std::string& input, IsoWeekDateStruct& iso_date) noexcept {
+        return parse_iso_week_date(input.c_str(), input.size(), iso_date);
+    }
+
+    /// \brief Alias for parse_iso_week_date.
+    /// \param input Pointer to character buffer (may be not null-terminated).
+    /// \param length Length of the buffer.
+    /// \param iso_date Output ISO week date structure.
+    /// \return True if parsing succeeded and produced a valid ISO week date; otherwise false.
+    inline bool try_parse_iso_week_date(const char* input, std::size_t length, IsoWeekDateStruct& iso_date) noexcept {
+        return parse_iso_week_date(input, length, iso_date);
+    }
+
+    /// \brief Alias for parse_iso_week_date, std::string overload.
+    /// \param input Input string containing ISO week date.
+    /// \param iso_date Output ISO week date structure.
+    /// \return True if parsing succeeded and produced a valid ISO week date; otherwise false.
+    inline bool try_parse_iso_week_date(const std::string& input, IsoWeekDateStruct& iso_date) noexcept {
+        return parse_iso_week_date(input, iso_date);
     }
 
 /// \}

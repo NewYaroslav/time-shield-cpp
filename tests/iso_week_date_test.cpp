@@ -68,6 +68,10 @@ int main() {
     assert(parsed.weekday == 1);
     assert(format_iso_week_date(parsed, true, false) == "2025-W51");
 
+    const std::array<char, 10> iso_chars{{'2', '0', '2', '5', '-', 'W', '5', '1', '-', '2'}};
+    assert(parse_iso_week_date(iso_chars.data(), iso_chars.size(), parsed));
+    assert(parsed.year == 2025 && parsed.week == 51 && parsed.weekday == 2);
+
     assert(!parse_iso_week_date("2025-W00-1", parsed));
     assert(!parse_iso_week_date("2025-W54-1", parsed));
     assert(!parse_iso_week_date("2025-W51-0", parsed));

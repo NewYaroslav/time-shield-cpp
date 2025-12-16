@@ -46,6 +46,8 @@ more academic solutions like `HowardHinnant/date`, the library:
   templates.
 - **Conversions**—translates between second, millisecond and floating time
   representations, `DateTimeStruct`, OLE Automation dates and time zones.
+- **ISO week dates**—conversion helpers, formatting, and parsing for ISO 8601
+  week-numbering years.
 - **Astronomy utilities**—computes Julian Date/MJD/JDN values and estimates
   lunar phase/age from Unix timestamps.
 - **Utilities**—fetches current timestamps, computes start/end of periods and

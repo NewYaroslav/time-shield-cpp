@@ -41,7 +41,7 @@ namespace time_shield {
     /// \param month Month component.
     /// \param day Day component.
     /// \return ISO weekday number (1=Monday .. 7=Sunday).
-    template<class Y, class M, class D>
+    template<class Y = year_t, class M = Month, class D = int>
     TIME_SHIELD_CONSTEXPR inline int iso_weekday_of_date(Y year, M month, D day) {
         return iso_weekday_from_weekday(day_of_week_date<Weekday>(year, month, day));
     }
@@ -51,7 +51,7 @@ namespace time_shield {
     /// \param month Month component.
     /// \param day Day component.
     /// \return ISO week date representation.
-    template<class Y, class M, class D>
+    template<class Y = year_t, class M = Month, class D = int>
     inline IsoWeekDateStruct to_iso_week_date(Y year, M month, D day) {
         const int iso_weekday = iso_weekday_of_date(year, month, day);
         const uday_t unix_day = date_to_unix_day(year, month, day);

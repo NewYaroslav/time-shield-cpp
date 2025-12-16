@@ -9,6 +9,7 @@ var dir_07c7b06f5dd7d1513dc7d4081673a960 =
     [ "date_struct.hpp", "date__struct_8hpp.html", "date__struct_8hpp" ],
     [ "date_time_conversions.hpp", "date__time__conversions_8hpp.html", "date__time__conversions_8hpp" ],
     [ "date_time_struct.hpp", "date__time__struct_8hpp.html", "date__time__struct_8hpp" ],
+    [ "DateTime.hpp", "DateTime_8hpp.html", "DateTime_8hpp" ],
     [ "DeadlineTimer.hpp", "DeadlineTimer_8hpp.html", "DeadlineTimer_8hpp" ],
     [ "ElapsedTimer.hpp", "ElapsedTimer_8hpp.html", "ElapsedTimer_8hpp" ],
     [ "enums.hpp", "enums_8hpp.html", "enums_8hpp" ],

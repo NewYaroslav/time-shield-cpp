@@ -15,6 +15,7 @@ var annotated_dup =
       ] ],
       [ "CpuTickTimer", "classtime__shield_1_1CpuTickTimer.html", "classtime__shield_1_1CpuTickTimer" ],
       [ "DateStruct", "structtime__shield_1_1DateStruct.html", "structtime__shield_1_1DateStruct" ],
+      [ "DateTime", "classtime__shield_1_1DateTime.html", "classtime__shield_1_1DateTime" ],
       [ "DateTimeStruct", "structtime__shield_1_1DateTimeStruct.html", "structtime__shield_1_1DateTimeStruct" ],
       [ "DeadlineTimer", "classtime__shield_1_1DeadlineTimer.html", "classtime__shield_1_1DeadlineTimer" ],
       [ "ElapsedTimer", "classtime__shield_1_1ElapsedTimer.html", "classtime__shield_1_1ElapsedTimer" ],

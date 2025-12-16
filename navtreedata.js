@@ -60,7 +60,7 @@ var NAVTREE =
       [ "Class Index", "classes.html", null ],
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
-        [ "Functions", "functions_func.html", null ],
+        [ "Functions", "functions_func.html", "functions_func" ],
         [ "Variables", "functions_vars.html", null ],
         [ "Typedefs", "functions_type.html", null ],
         [ "Related Symbols", "functions_rela.html", null ]
@@ -79,14 +79,14 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "CpuTickTimer_8hpp.html",
-"classtime__shield_1_1TimerScheduler.html#a1d5487e90e596e0680240856f4615de1",
-"group__time__constants.html#ga16c924473d54fdb5c638cdbbc83b0c09",
-"group__time__conversions.html#ga4859634869507e017461e29f5756618e",
-"group__time__conversions.html#gab97444cacf2e94e6c6d2207a463a8932",
-"group__time__enums.html#gga81dfe20e6515b855c625bd9c7aea58e6ade31895b4ac2a7ac53273cf6ad8050a5",
-"group__time__parsing.html#gae23f03c33dc2e4c77d3d63f0bb6c7171",
-"namespacemembers_t.html",
-"time__parser_8hpp_source.html"
+"classtime__shield_1_1DeadlineTimer.html#ae7ae49770609bc34007d996bbcb6910d",
+"classtime__shield_1_1astronomy_1_1MoonPhase.html#a70fa6a64f283459165c67a92fd508265",
+"group__time__constants.html#gad69634ac8d96bd832ba8937638c1bddb",
+"group__time__conversions.html#ga61bb965a9c4d23ec37a7d4e9a837776b",
+"group__time__conversions.html#gadd68b9e632d1b5a43c18b116bbf105a4",
+"group__time__enums.html#ggad8cb858fb6cedcf76c4f0630d56e042babba774a48b6685a9417e93da1f64d7e3",
+"group__time__structures.html#gac636c3ce16aa7fe399f7aac1fa3719c7",
+"structtime__shield_1_1DateTimeStruct.html#ab813648acee62116ce68cb7572604358"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

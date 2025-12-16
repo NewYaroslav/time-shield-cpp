@@ -14,5 +14,6 @@ var searchData=
   ['li_5fvn_5fmode_11',['li_vn_mode',['../structtime__shield_1_1NtpClient_1_1ntp__packet.html#a1a526934c19f568e8d73858ae8f95a13',1,'time_shield::NtpClient::ntp_packet']]],
   ['library_12',['Time Shield Library',['../index.html',1,'']]],
   ['library_20initialization_13',['Library Initialization',['../group__lib__initialization.html',1,'Library Initialization'],['../group__mql5__initialization.html',1,'Library Initialization']]],
-  ['license_14',['License',['../index.html#license_sec',1,'']]]
+  ['license_14',['License',['../index.html#license_sec',1,'']]],
+  ['local_5fms_15',['local_ms',['../classtime__shield_1_1DateTime.html#ad3e832106dcd0a6c99546a03f3b85f57',1,'time_shield::DateTime']]]
 ];

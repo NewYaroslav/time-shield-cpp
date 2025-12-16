@@ -1,5 +1,6 @@
 var dir_d28a4824dc47e487b107a5db32ef43c4 =
 [
+    [ "date_time_example.cpp", "date__time__example_8cpp.html", "date__time__example_8cpp" ],
     [ "ntp_client_example.cpp", "ntp__client__example_8cpp.html", "ntp__client__example_8cpp" ],
     [ "time_conversions_example.cpp", "time__conversions__example_8cpp.html", "time__conversions__example_8cpp" ],
     [ "time_formatting_example.cpp", "time__formatting__example_8cpp.html", "time__formatting__example_8cpp" ],

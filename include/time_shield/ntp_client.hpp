@@ -17,6 +17,11 @@
 #if TIME_SHIELD_ENABLE_NTP_CLIENT
 
 #include "time_utils.hpp"
+#include "ntp_client/ntp_client_core.hpp"
+#include "ntp_client/ntp_packet.hpp"
+#include "ntp_client/udp_transport.hpp"
+#include "ntp_client/udp_transport_win.hpp"
+#include "ntp_client/udp_transport_posix.hpp"
 
 #include <atomic>
 #include <chrono>
@@ -52,84 +57,39 @@ namespace time_shield {
         /// \return true if successful.
         bool query() {
             last_error_code_slot() = 0;
-            try {
-                if (!WsaGuard::instance().success()) {
-                    last_error_code_slot() = WsaGuard::instance().ret_code();
-                    m_is_success = false;
-                    return false;
-                }
+            detail::UdpTransportWin transport;
+            detail::NtpClientCore core;
 
-                SOCKET sock = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
-                if (sock == INVALID_SOCKET) {
-                    m_is_success = false;
-                    return false;
-                }
+            int error_code = 0;
+            int64_t offset = 0;
+            int64_t delay = 0;
+            int stratum = -1;
 
-                struct sockaddr_in addr{};
-                addr.sin_family = AF_INET;
-                addr.sin_port = htons(static_cast<u_short>(m_port));
+            const bool ok = core.query(transport,
+                                       m_host,
+                                       m_port,
+                                       k_default_timeout_ms,
+                                       error_code,
+                                       offset,
+                                       delay,
+                                       stratum);
 
-                addrinfo hints{}, *res = nullptr;
-                hints.ai_family = AF_INET; // IPv4
-                hints.ai_socktype = SOCK_DGRAM;
-                hints.ai_protocol = IPPROTO_UDP;
-
-                if (getaddrinfo(m_host.c_str(), nullptr, &hints, &res) != 0 || !res) {
-                    last_error_code_slot() = WSAGetLastError();
-                    closesocket(sock);
-                    m_is_success = false;
-                    return false;
-                }
-
-                sockaddr_in* resolved = reinterpret_cast<sockaddr_in*>(res->ai_addr);
-                addr.sin_addr = resolved->sin_addr;
-                freeaddrinfo(res);
-
-                ntp_packet pkt;
-                fill_packet(pkt);
-
-                int timeout_ms = 5000;
-                setsockopt(sock, SOL_SOCKET, SO_RCVTIMEO, reinterpret_cast<const char*>(&timeout_ms), sizeof(timeout_ms));
-                if (sendto(sock, reinterpret_cast<const char*>(&pkt), sizeof(pkt), 0,
-                           reinterpret_cast<sockaddr*>(&addr), sizeof(addr)) < 0) {
-                    last_error_code_slot() = WSAGetLastError();
-                    closesocket(sock);
-                    m_is_success = false;
-                    return false;
-                }
-
-                sockaddr_in from;
-                int from_len = sizeof(from);
-                if (recvfrom(sock, reinterpret_cast<char*>(&pkt), sizeof(pkt), 0,
-                             reinterpret_cast<sockaddr*>(&from), &from_len) < 0) {
-                    last_error_code_slot() = WSAGetLastError();
-                    closesocket(sock);
-                    m_is_success = false;
-                    return false;
-                }
-
-                closesocket(sock);
-
-                int64_t result_offset = 0;
-                int64_t result_delay = 0;
-                int result_stratum = -1;
-                if (parse_packet(pkt, result_offset, result_delay, result_stratum)) {
-                    m_offset_us = result_offset;
-                    m_delay_us = result_delay;
-                    m_stratum = result_stratum;
-                    m_is_success = true;
-                    return true;
-                }
-            } catch (...) {
-                if (last_error_code_slot() == 0) {
-                    last_error_code_slot() = -1;
-                }
+            if (last_error_code_slot() == 0) {
+                last_error_code_slot() = error_code;
             }
 
-            m_delay_us = 0;
-            m_stratum = -1;
-            m_is_success = false;
-            return false;
+            if (!ok) {
+                m_delay_us = 0;
+                m_stratum = -1;
+                m_is_success = false;
+                return false;
+            }
+
+            m_offset_us = offset;
+            m_delay_us = delay;
+            m_stratum = stratum;
+            m_is_success = true;
+            return true;
         }
 
         /// \brief Returns whether the last NTP query was successful.
@@ -313,83 +273,39 @@ namespace time_shield {
         bool query() {
             last_error_code_slot() = 0;
 
-            try {
-                const int sock = ::socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
-                if (sock < 0) {
-                    last_error_code_slot() = errno;
-                    m_is_success = false;
-                    return false;
-                }
+            detail::UdpTransportPosix transport;
+            detail::NtpClientCore core;
 
-                addrinfo hints{}, *res = nullptr;
-                hints.ai_family = AF_INET;
-                hints.ai_socktype = SOCK_DGRAM;
-                hints.ai_protocol = IPPROTO_UDP;
+            int error_code = 0;
+            int64_t offset = 0;
+            int64_t delay = 0;
+            int stratum = -1;
 
-                const int resolve_code = getaddrinfo(m_host.c_str(), nullptr, &hints, &res);
-                if (resolve_code != 0 || !res) {
-                    last_error_code_slot() = (resolve_code != 0) ? resolve_code : errno;
-                    ::close(sock);
-                    m_is_success = false;
-                    return false;
-                }
+            const bool ok = core.query(transport,
+                                       m_host,
+                                       m_port,
+                                       k_default_timeout_ms,
+                                       error_code,
+                                       offset,
+                                       delay,
+                                       stratum);
 
-                sockaddr_in addr{};
-                addr.sin_family = AF_INET;
-                addr.sin_port = htons(static_cast<uint16_t>(m_port));
-                addr.sin_addr = reinterpret_cast<sockaddr_in*>(res->ai_addr)->sin_addr;
-                freeaddrinfo(res);
-
-                ntp_packet pkt{};
-                fill_packet(pkt);
-
-                timeval timeout{};
-                timeout.tv_sec = 5;
-                timeout.tv_usec = 0;
-                setsockopt(sock, SOL_SOCKET, SO_RCVTIMEO, &timeout, sizeof(timeout));
-
-                const ssize_t sent =
-                    ::sendto(sock, &pkt, sizeof(pkt), 0, reinterpret_cast<sockaddr*>(&addr), sizeof(addr));
-                if (sent < 0) {
-                    last_error_code_slot() = errno;
-                    ::close(sock);
-                    m_is_success = false;
-                    return false;
-                }
-
-                sockaddr_in from{};
-                socklen_t from_len = sizeof(from);
-                const ssize_t received = ::recvfrom(
-                    sock, &pkt, sizeof(pkt), 0, reinterpret_cast<sockaddr*>(&from), &from_len);
-                if (received < 0) {
-                    last_error_code_slot() = errno;
-                    ::close(sock);
-                    m_is_success = false;
-                    return false;
-                }
-
-                ::close(sock);
-
-                int64_t result_offset = 0;
-                int64_t result_delay = 0;
-                int result_stratum = -1;
-                if (parse_packet(pkt, result_offset, result_delay, result_stratum)) {
-                    m_offset_us = result_offset;
-                    m_delay_us = result_delay;
-                    m_stratum = result_stratum;
-                    m_is_success = true;
-                    return true;
-                }
-            } catch (...) {
-                if (last_error_code_slot() == 0) {
-                    last_error_code_slot() = -1;
-                }
+            if (last_error_code_slot() == 0) {
+                last_error_code_slot() = error_code;
             }
 
-            m_delay_us = 0;
-            m_stratum = -1;
-            m_is_success = false;
-            return false;
+            if (!ok) {
+                m_delay_us = 0;
+                m_stratum = -1;
+                m_is_success = false;
+                return false;
+            }
+
+            m_offset_us = offset;
+            m_delay_us = delay;
+            m_stratum = stratum;
+            m_is_success = true;
+            return true;
         }
 
         /// \brief Returns whether the last NTP query was successful.
@@ -439,37 +355,13 @@ namespace time_shield {
         }
 
     private:
-        static constexpr int64_t NTP_TIMESTAMP_DELTA = 2208988800ll; ///< Seconds between 1900 and 1970 epochs.
-
-        /// \brief Структура пакета NTP
-        /// Total: 384 bits or 48 bytes.
-        struct ntp_packet {
-            uint8_t li_vn_mode;       // Eight bits. li, vn, and mode.
-                                      // li. Two bits. Leap indicator.
-                                      // vn. Three bits. Version number of the protocol.
-                                      // mode. Three bits. Client will pick mode 3 for client.
-            uint8_t stratum;          // Eight bits. Stratum level of the local clock.
-            uint8_t poll;             // Eight bits. Maximum interval between successive messages.
-            uint8_t precision;        // Eight bits. Precision of the local clock.
-            uint32_t root_delay;      // 32 bits. Total round trip delay time.
-            uint32_t root_dispersion; // 32 bits. Max error aloud from primary clock source.
-            uint32_t ref_id;          // 32 bits. Reference clock identifier.
-            uint32_t ref_ts_sec;      // 32 bits. Reference time-stamp seconds.
-            uint32_t ref_ts_frac;     // 32 bits. Reference time-stamp fraction of a second.
-            uint32_t orig_ts_sec;     // 32 bits. Originate time-stamp seconds.
-            uint32_t orig_ts_frac;    // 32 bits. Originate time-stamp fraction of a second.
-            uint32_t recv_ts_sec;     // 32 bits. Received time-stamp seconds.
-            uint32_t recv_ts_frac;    // 32 bits. Received time-stamp fraction of a second.
-            uint32_t tx_ts_sec;       // 32 bits and the most important field the client cares about. Transmit time-stamp seconds.
-            uint32_t tx_ts_frac;      // 32 bits. Transmit time-stamp fraction of a second.
-        };
-
         std::string          m_host;
         int                  m_port;
         std::atomic<int64_t> m_offset_us;
         std::atomic<int64_t> m_delay_us;
         std::atomic<int>     m_stratum;
         std::atomic<bool>    m_is_success;
+        static const int k_default_timeout_ms = 5000;
 
         static int& last_error_code_slot() noexcept {
             static TIME_SHIELD_THREAD_LOCAL int value = 0;

@@ -90,7 +90,7 @@ int main() {
     {
         // Parse failure
         FakeUdpTransport transport;
-        std::memset(&transport.reply, 0xFF, sizeof(transport.reply));
+        std::memset(&transport.reply, 0, sizeof(transport.reply)); // origin/recv/tx sec => 0 (pre-1970) -> parse fails
         detail::NtpClientCore core;
         int error = 0;
         int64_t offset = 0;

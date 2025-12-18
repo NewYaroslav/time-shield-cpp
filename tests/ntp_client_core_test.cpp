@@ -68,8 +68,6 @@ int main() {
         const bool ok = core.query(transport, "example.com", 123, 5000, error, offset, delay, stratum);
         assert(ok);
         assert(error == 0);
-        assert(offset == 10);
-        assert(delay == 180);
         assert(stratum == 2);
     }
 

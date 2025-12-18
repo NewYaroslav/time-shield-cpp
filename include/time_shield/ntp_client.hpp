@@ -39,7 +39,12 @@ namespace time_shield {
     public:
         /// \brief Constructs NTP client with specified host and port.
         NtpClient(std::string server = "pool.ntp.org", int port = 123)
-            : m_host(std::move(server)), m_port(port) {
+            : m_host(std::move(server))
+            , m_port(port)
+            , m_offset_us(TIME_SHIELD_ATOMIC_INIT(0))
+            , m_delay_us(TIME_SHIELD_ATOMIC_INIT(0))
+            , m_stratum(TIME_SHIELD_ATOMIC_INIT(-1))
+            , m_is_success(TIME_SHIELD_ATOMIC_INIT(false)) {
             now_realtime_us();
         }
 
@@ -47,69 +52,82 @@ namespace time_shield {
         /// \return true if successful.
         bool query() {
             last_error_code_slot() = 0;
-            if (!WsaGuard::instance().success()) {
-                m_is_success = false;
-                throw std::runtime_error("WSAStartup failed with error: " + std::to_string(WsaGuard::instance().ret_code()));
-            }
+            try {
+                if (!WsaGuard::instance().success()) {
+                    last_error_code_slot() = WsaGuard::instance().ret_code();
+                    m_is_success = false;
+                    return false;
+                }
 
-            SOCKET sock = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
-            if (sock == INVALID_SOCKET) {
-                m_is_success = false;
-                return false;
-            }
+                SOCKET sock = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
+                if (sock == INVALID_SOCKET) {
+                    m_is_success = false;
+                    return false;
+                }
 
-            struct sockaddr_in addr{};
-            addr.sin_family = AF_INET;
-            addr.sin_port = htons(static_cast<u_short>(m_port));
+                struct sockaddr_in addr{};
+                addr.sin_family = AF_INET;
+                addr.sin_port = htons(static_cast<u_short>(m_port));
 
-            addrinfo hints{}, *res = nullptr;
-            hints.ai_family = AF_INET; // IPv4
-            hints.ai_socktype = SOCK_DGRAM;
-            hints.ai_protocol = IPPROTO_UDP;
+                addrinfo hints{}, *res = nullptr;
+                hints.ai_family = AF_INET; // IPv4
+                hints.ai_socktype = SOCK_DGRAM;
+                hints.ai_protocol = IPPROTO_UDP;
 
-            if (getaddrinfo(m_host.c_str(), nullptr, &hints, &res) != 0 || !res) {
-                last_error_code_slot() = WSAGetLastError();
+                if (getaddrinfo(m_host.c_str(), nullptr, &hints, &res) != 0 || !res) {
+                    last_error_code_slot() = WSAGetLastError();
+                    closesocket(sock);
+                    m_is_success = false;
+                    return false;
+                }
+
+                sockaddr_in* resolved = reinterpret_cast<sockaddr_in*>(res->ai_addr);
+                addr.sin_addr = resolved->sin_addr;
+                freeaddrinfo(res);
+
+                ntp_packet pkt;
+                fill_packet(pkt);
+
+                int timeout_ms = 5000;
+                setsockopt(sock, SOL_SOCKET, SO_RCVTIMEO, reinterpret_cast<const char*>(&timeout_ms), sizeof(timeout_ms));
+                if (sendto(sock, reinterpret_cast<const char*>(&pkt), sizeof(pkt), 0,
+                           reinterpret_cast<sockaddr*>(&addr), sizeof(addr)) < 0) {
+                    last_error_code_slot() = WSAGetLastError();
+                    closesocket(sock);
+                    m_is_success = false;
+                    return false;
+                }
+
+                sockaddr_in from;
+                int from_len = sizeof(from);
+                if (recvfrom(sock, reinterpret_cast<char*>(&pkt), sizeof(pkt), 0,
+                             reinterpret_cast<sockaddr*>(&from), &from_len) < 0) {
+                    last_error_code_slot() = WSAGetLastError();
+                    closesocket(sock);
+                    m_is_success = false;
+                    return false;
+                }
+
                 closesocket(sock);
-                m_is_success = false;
-                return false;
+
+                int64_t result_offset = 0;
+                int64_t result_delay = 0;
+                int result_stratum = -1;
+                if (parse_packet(pkt, result_offset, result_delay, result_stratum)) {
+                    m_offset_us = result_offset;
+                    m_delay_us = result_delay;
+                    m_stratum = result_stratum;
+                    m_is_success = true;
+                    return true;
+                }
+            } catch (...) {
+                if (last_error_code_slot() == 0) {
+                    last_error_code_slot() = -1;
+                }
             }
 
-            sockaddr_in* resolved = reinterpret_cast<sockaddr_in*>(res->ai_addr);
-            addr.sin_addr = resolved->sin_addr;
-            freeaddrinfo(res);
-
-            ntp_packet pkt;
-            fill_packet(pkt);
-
-            int timeout_ms = 5000;
-            setsockopt(sock, SOL_SOCKET, SO_RCVTIMEO, reinterpret_cast<const char*>(&timeout_ms), sizeof(timeout_ms));
-            if (sendto(sock, reinterpret_cast<const char*>(&pkt), sizeof(pkt), 0,
-                       reinterpret_cast<sockaddr*>(&addr), sizeof(addr)) < 0) {
-                last_error_code_slot() = WSAGetLastError();
-                closesocket(sock);
-                m_is_success = false;
-                return false;
-            }
-
-            sockaddr_in from;
-            int from_len = sizeof(from);
-            if (recvfrom(sock, reinterpret_cast<char*>(&pkt), sizeof(pkt), 0,
-                         reinterpret_cast<sockaddr*>(&from), &from_len) < 0) {
-                last_error_code_slot() = WSAGetLastError();
-                closesocket(sock);
-                m_is_success = false;
-                return false;
-            }
-
-            closesocket(sock);
-
-            int64_t result_offset;
-            if (parse_packet(pkt, result_offset)) {
-                m_offset_us = result_offset;
-                m_is_success = true;
-                return true;
-            }
-
+            m_delay_us = 0;
+            m_stratum = -1;
             m_is_success = false;
             return false;
         }
@@ -121,31 +139,41 @@ namespace time_shield {
         }
 
         /// \brief Returns the last measured offset in microseconds.
-        int64_t get_offset_us() const noexcept {
+        int64_t offset_us() const noexcept {
             return m_offset_us;
         }
-        
+
+        /// \brief Returns the last measured delay in microseconds.
+        int64_t delay_us() const noexcept {
+            return m_delay_us;
+        }
+
+        /// \brief Returns the last received stratum value.
+        int stratum() const noexcept {
+            return m_stratum;
+        }
+
         /// \brief Returns current UTC time in microseconds based on last NTP offset.
         /// \return Current UTC time in µs.
-        int64_t get_utc_time_us() const noexcept {
+        int64_t utc_time_us() const noexcept {
             const int64_t offset = m_offset_us.load();
             return now_realtime_us() + offset;
         }
-        
+
         /// \brief Returns current UTC time in milliseconds based on last NTP offset.
         /// \return Current UTC time in ms.
-        int64_t get_utc_time_ms() const noexcept {
-            return get_utc_time_us() / 1000;
+        int64_t utc_time_ms() const noexcept {
+            return utc_time_us() / 1000;
         }
 
         /// \brief Returns current UTC time as time_t (seconds since Unix epoch).
         /// \return UTC time in seconds.
-        time_t get_utc_time() const noexcept {
-            return static_cast<time_t>(get_utc_time_us() / 1000000);
+        time_t utc_time_sec() const noexcept {
+            return static_cast<time_t>(utc_time_us() / 1000000);
         }
-        
+
         /// \brief Returns last WinSock error code (if any).
-        int get_last_error_code() const noexcept {
+        int last_error_code() const noexcept {
             return last_error_code_slot();
         }
         
@@ -175,13 +203,15 @@ namespace time_shield {
             uint32_t tx_ts_frac;      // 32 bits. Transmit time-stamp fraction of a second.
         };
 
-        std::string              m_host;
-        int                      m_port = 123;
-        std::atomic<int64_t>     m_offset_us{0};
-        std::atomic<bool>        m_is_success{false};
+        std::string          m_host;
+        int                  m_port;
+        std::atomic<int64_t> m_offset_us;
+        std::atomic<int64_t> m_delay_us;
+        std::atomic<int>     m_stratum;
+        std::atomic<bool>    m_is_success;
 
         static int& last_error_code_slot() noexcept {
-            static thread_local int value = 0;
+            static TIME_SHIELD_THREAD_LOCAL int value = 0;
             return value;
         }
         
@@ -224,8 +254,9 @@ namespace time_shield {
             pkt.tx_ts_frac = htonl(static_cast<uint32_t>(frac));
         }
 
-        /// \brief Parses response and calculates offset.
-        bool parse_packet(const ntp_packet& pkt, int64_t& result_offset_us) const {
+        /// \brief Parses response and calculates offset and delay.
+        bool parse_packet(const ntp_packet& pkt, int64_t& result_offset_us, int64_t& result_delay_us,
+                          int& result_stratum) const {
             uint64_t arrival_us = 0;
             if (!get_now_us_u64(arrival_us)) return false;
 
@@ -242,6 +273,8 @@ namespace time_shield {
             const int64_t t4 = static_cast<int64_t>(arrival_us);
 
             result_offset_us = ((t2 - t1) + (t3 - t4)) / 2;
+            result_delay_us = (t4 - t1) - (t3 - t2);
+            result_stratum = pkt.stratum;
             return true;
         }
 
@@ -266,7 +299,12 @@ namespace time_shield {
     public:
         /// \brief Constructs NTP client with specified host and port.
         NtpClient(std::string server = "pool.ntp.org", int port = 123)
-            : m_host(std::move(server)), m_port(port) {
+            : m_host(std::move(server))
+            , m_port(port)
+            , m_offset_us(TIME_SHIELD_ATOMIC_INIT(0))
+            , m_delay_us(TIME_SHIELD_ATOMIC_INIT(0))
+            , m_stratum(TIME_SHIELD_ATOMIC_INIT(-1))
+            , m_is_success(TIME_SHIELD_ATOMIC_INIT(false)) {
             now_realtime_us();
         }
 
@@ -275,67 +313,81 @@ namespace time_shield {
         bool query() {
             last_error_code_slot() = 0;
 
-            const int sock = ::socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
-            if (sock < 0) {
-                last_error_code_slot() = errno;
-                m_is_success = false;
-                return false;
-            }
+            try {
+                const int sock = ::socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
+                if (sock < 0) {
+                    last_error_code_slot() = errno;
+                    m_is_success = false;
+                    return false;
+                }
 
-            addrinfo hints{}, *res = nullptr;
-            hints.ai_family = AF_INET;
-            hints.ai_socktype = SOCK_DGRAM;
-            hints.ai_protocol = IPPROTO_UDP;
+                addrinfo hints{}, *res = nullptr;
+                hints.ai_family = AF_INET;
+                hints.ai_socktype = SOCK_DGRAM;
+                hints.ai_protocol = IPPROTO_UDP;
 
-            const int resolve_code = getaddrinfo(m_host.c_str(), nullptr, &hints, &res);
-            if (resolve_code != 0 || !res) {
-                last_error_code_slot() = (resolve_code != 0) ? resolve_code : errno;
+                const int resolve_code = getaddrinfo(m_host.c_str(), nullptr, &hints, &res);
+                if (resolve_code != 0 || !res) {
+                    last_error_code_slot() = (resolve_code != 0) ? resolve_code : errno;
+                    ::close(sock);
+                    m_is_success = false;
+                    return false;
+                }
+
+                sockaddr_in addr{};
+                addr.sin_family = AF_INET;
+                addr.sin_port = htons(static_cast<uint16_t>(m_port));
+                addr.sin_addr = reinterpret_cast<sockaddr_in*>(res->ai_addr)->sin_addr;
+                freeaddrinfo(res);
+
+                ntp_packet pkt{};
+                fill_packet(pkt);
+
+                timeval timeout{};
+                timeout.tv_sec = 5;
+                timeout.tv_usec = 0;
+                setsockopt(sock, SOL_SOCKET, SO_RCVTIMEO, &timeout, sizeof(timeout));
+
+                const ssize_t sent =
+                    ::sendto(sock, &pkt, sizeof(pkt), 0, reinterpret_cast<sockaddr*>(&addr), sizeof(addr));
+                if (sent < 0) {
+                    last_error_code_slot() = errno;
+                    ::close(sock);
+                    m_is_success = false;
+                    return false;
+                }
+
+                sockaddr_in from{};
+                socklen_t from_len = sizeof(from);
+                const ssize_t received = ::recvfrom(
+                    sock, &pkt, sizeof(pkt), 0, reinterpret_cast<sockaddr*>(&from), &from_len);
+                if (received < 0) {
+                    last_error_code_slot() = errno;
+                    ::close(sock);
+                    m_is_success = false;
+                    return false;
+                }
+
                 ::close(sock);
-                m_is_success = false;
-                return false;
+
+                int64_t result_offset = 0;
+                int64_t result_delay = 0;
+                int result_stratum = -1;
+                if (parse_packet(pkt, result_offset, result_delay, result_stratum)) {
+                    m_offset_us = result_offset;
+                    m_delay_us = result_delay;
+                    m_stratum = result_stratum;
+                    m_is_success = true;
+                    return true;
+                }
+            } catch (...) {
+                if (last_error_code_slot() == 0) {
+                    last_error_code_slot() = -1;
+                }
             }
 
-            sockaddr_in addr{};
-            addr.sin_family = AF_INET;
-            addr.sin_port = htons(static_cast<uint16_t>(m_port));
-            addr.sin_addr = reinterpret_cast<sockaddr_in*>(res->ai_addr)->sin_addr;
-            freeaddrinfo(res);
-
-            ntp_packet pkt{};
-            fill_packet(pkt);
-
-            timeval timeout{};
-            timeout.tv_sec = 5;
-            timeout.tv_usec = 0;
-            setsockopt(sock, SOL_SOCKET, SO_RCVTIMEO, &timeout, sizeof(timeout));
-
-            const ssize_t sent = ::sendto(sock, &pkt, sizeof(pkt), 0, reinterpret_cast<sockaddr*>(&addr), sizeof(addr));
-            if (sent < 0) {
-                last_error_code_slot() = errno;
-                ::close(sock);
-                m_is_success = false;
-                return false;
-            }
-
-            sockaddr_in from{};
-            socklen_t from_len = sizeof(from);
-            const ssize_t received = ::recvfrom(sock, &pkt, sizeof(pkt), 0, reinterpret_cast<sockaddr*>(&from), &from_len);
-            if (received < 0) {
-                last_error_code_slot() = errno;
-                ::close(sock);
-                m_is_success = false;
-                return false;
-            }
-
-            ::close(sock);
-
-            int64_t result_offset = 0;
-            if (parse_packet(pkt, result_offset)) {
-                m_offset_us = result_offset;
-                m_is_success = true;
-                return true;
-            }
-
+            m_delay_us = 0;
+            m_stratum = -1;
             m_is_success = false;
             return false;
         }
@@ -347,13 +399,23 @@ namespace time_shield {
         }
 
         /// \brief Returns the last measured offset in microseconds.
-        int64_t get_offset_us() const noexcept {
+        int64_t offset_us() const noexcept {
             return m_offset_us;
+        }
+
+        /// \brief Returns the last measured delay in microseconds.
+        int64_t delay_us() const noexcept {
+            return m_delay_us;
+        }
+
+        /// \brief Returns the last received stratum value.
+        int stratum() const noexcept {
+            return m_stratum;
         }
 
         /// \brief Returns current NTP UTC timestamp in microseconds.
         /// \return UTC time in microseconds.
-        int64_t get_utc_time_us() const noexcept {
+        int64_t utc_time_us() const noexcept {
             uint64_t system_time_us = 0;
             if (!get_now_us_u64(system_time_us)) return 0;
             return static_cast<int64_t>(system_time_us) + m_offset_us.load();
@@ -361,18 +423,18 @@ namespace time_shield {
 
         /// \brief Returns current NTP UTC timestamp in milliseconds.
         /// \return UTC time in milliseconds.
-        int64_t get_utc_time_ms() const noexcept {
-            return get_utc_time_us() / 1000;
+        int64_t utc_time_ms() const noexcept {
+            return utc_time_us() / 1000;
         }
 
         /// \brief Returns current UTC time as time_t (seconds since Unix epoch).
         /// \return UTC time in seconds.
-        time_t get_utc_time() const noexcept {
-            return static_cast<time_t>(get_utc_time_us() / 1000000);
+        time_t utc_time_sec() const noexcept {
+            return static_cast<time_t>(utc_time_us() / 1000000);
         }
 
         /// \brief Returns last socket error code (if any).
-        int get_last_error_code() const noexcept {
+        int last_error_code() const noexcept {
             return last_error_code_slot();
         }
 
@@ -403,12 +465,14 @@ namespace time_shield {
         };
 
         std::string          m_host;
-        int                  m_port = 123;
-        std::atomic<int64_t> m_offset_us{0};
-        std::atomic<bool>    m_is_success{false};
+        int                  m_port;
+        std::atomic<int64_t> m_offset_us;
+        std::atomic<int64_t> m_delay_us;
+        std::atomic<int>     m_stratum;
+        std::atomic<bool>    m_is_success;
 
         static int& last_error_code_slot() noexcept {
-            static thread_local int value = 0;
+            static TIME_SHIELD_THREAD_LOCAL int value = 0;
             return value;
         }
 
@@ -451,8 +515,9 @@ namespace time_shield {
             pkt.tx_ts_frac = htonl(static_cast<uint32_t>(frac));
         }
 
-        /// \brief Parses response and calculates offset.
-        bool parse_packet(const ntp_packet& pkt, int64_t& result_offset_us) const {
+        /// \brief Parses response and calculates offset and delay.
+        bool parse_packet(const ntp_packet& pkt, int64_t& result_offset_us, int64_t& result_delay_us,
+                          int& result_stratum) const {
             uint64_t arrival_us = 0;
             if (!get_now_us_u64(arrival_us)) return false;
 
@@ -469,6 +534,8 @@ namespace time_shield {
             const int64_t t4 = static_cast<int64_t>(arrival_us);
 
             result_offset_us = ((t2 - t1) + (t3 - t4)) / 2;
+            result_delay_us = (t4 - t1) - (t3 - t2);
+            result_stratum = pkt.stratum;
             return true;
         }
 

@@ -56,7 +56,7 @@ more academic solutions like `HowardHinnant/date`, the library:
 - **Utilities**—fetches current timestamps, computes start/end of periods and
   works with fractions of a second.
 - **Time zone conversion**—functions for CET/EET to GMT.
-- **NTP client**—obtains accurate time over the network (Windows and Unix).
+- **NTP client and pool**—single-client queries plus a configurable pool/runner/service pipeline with offline testing hooks (Windows and Unix).
 - **MQL5 support**—adapted headers in the `MQL5` directory allow using the
   library in MetaTrader.
 - Compatible with `C++11`–`C++17`.
@@ -320,16 +320,24 @@ ts_t cet = to_ts(2024, Month::JUN, 21, 12, 0, 0);
 ts_t gmt = cet_to_gmt(cet);
 ```
 
-### NTP client (Windows)
+### NTP client, pool, and time service
 
 ```cpp
-#include <time_shield.hpp>
+#include <time_shield/ntp_client_pool.hpp>
+#include <time_shield/ntp_time_service.hpp>
 
-NtpClient client;
-if (client.query()) {
-    int64_t offset = client.get_offset_us();
-    int64_t utc_ms = client.get_utc_time_ms();
-}
+using namespace time_shield;
+
+NtpClientPool pool;
+pool.set_default_servers();
+pool.measure();
+int64_t pool_offset = pool.offset_us();
+
+// Background runner + lazy singleton service:
+auto& ntp = NtpTimeService::instance();
+ntp.init(std::chrono::seconds(30)); // or time_shield::ntp::init(...)
+int64_t utc_ms = ntp.utc_time_ms();
+ntp.shutdown();
 ```
 
 ## Documentation

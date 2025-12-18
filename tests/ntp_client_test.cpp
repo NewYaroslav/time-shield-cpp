@@ -134,18 +134,18 @@ int main() {
     server_thread.join();
 
     if (!is_query_successful || !client.success()) {
-        std::cerr << "NTP query failed, error code: " << client.get_last_error_code() << std::endl;
+        std::cerr << "NTP query failed, error code: " << client.last_error_code() << std::endl;
         return 1;
     }
 
-    const int64_t offset_us = client.get_offset_us();
+    const int64_t offset_us = client.offset_us();
     const int64_t tolerance_us = 50000; // 50 ms
     if (std::llabs(offset_us) > tolerance_us) {
         std::cerr << "Offset is too large: " << offset_us << std::endl;
         return 1;
     }
 
-    const int64_t utc_us = client.get_utc_time_us();
+    const int64_t utc_us = client.utc_time_us();
     const int64_t host_us = static_cast<int64_t>(system_now_us());
     const int64_t drift_us = std::llabs(utc_us - host_us);
     if (drift_us > 500000) { // 0.5s tolerance for local mock server

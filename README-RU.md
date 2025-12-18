@@ -34,7 +34,7 @@
 - **Астрономические утилиты** — расчёт Julian Date/MJD/JDN и оценка лунной фазы/возраста по Unix‑времени.
 - **Утилиты** — получение текущих меток времени, вычисления начала/конца периодов, работа с частями секунды.
 - **Преобразование часовых поясов** — функции для CET/EET в GMT.
-- **NTP‑клиент** — получение точного времени по сети (Windows и Unix).
+- **NTP‑клиент и пул** — одиночные запросы и конфигурируемый пул/раннер/сервис с возможностью офлайн‑тестов (Windows и Unix).
 - **Поддержка MQL5** — адаптированные заголовки в каталоге `MQL5` позволяют использовать библиотеку в MetaTrader.
 - Совместимость с `C++11` – `C++17`.
 
@@ -186,16 +186,24 @@ ts_t cet = to_ts(2024, Month::JUN, 21, 12, 0, 0);
 ts_t gmt = cet_to_gmt(cet);
 ```
 
-### NTP‑клиент (Windows)
+### NTP‑клиент, пул и сервис времени
 
 ```cpp
-#include <time_shield.hpp>
+#include <time_shield/ntp_client_pool.hpp>
+#include <time_shield/ntp_time_service.hpp>
 
-NtpClient client;
-if (client.query()) {
-    int64_t offset = client.get_offset_us();
-    int64_t utc_ms = client.get_utc_time_ms();
-}
+using namespace time_shield;
+
+NtpClientPool pool;
+pool.set_default_servers();
+pool.measure();
+int64_t pool_offset = pool.offset_us();
+
+// Фоновый runner + ленивый сервис:
+auto& ntp = NtpTimeService::instance();
+ntp.init(std::chrono::seconds(30)); // или time_shield::ntp::init(...)
+int64_t utc_ms = ntp.utc_time_ms();
+ntp.shutdown();
 ```
 
 ## Документация
@@ -205,4 +213,3 @@ if (client.query()) {
 ## Лицензия
 
 Проект распространяется по лицензии [MIT](LICENSE).
-

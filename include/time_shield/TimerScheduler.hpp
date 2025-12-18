@@ -55,7 +55,7 @@ namespace time_shield {
         };
 
         inline TimerState*& current_timer_state() {
-            static thread_local TimerState* state = nullptr;
+            static TIME_SHIELD_THREAD_LOCAL TimerState* state = nullptr;
             return state;
         }
 

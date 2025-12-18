@@ -11,6 +11,8 @@
 /// enable or disable parts of the library depending on the target platform or
 /// user preferences.
 
+#include <atomic>
+
 #if defined(_MSVC_LANG)
 #   define TIME_SHIELD_CXX_VERSION _MSVC_LANG
 #else
@@ -57,6 +59,24 @@
 #   else
 #       define TIME_SHIELD_NODISCARD
 #   endif
+#endif
+
+// Configure thread-local storage handling for compilers with partial support
+#if defined(__cpp_thread_local)
+#   define TIME_SHIELD_THREAD_LOCAL thread_local
+#elif defined(_MSC_VER)
+#   define TIME_SHIELD_THREAD_LOCAL __declspec(thread)
+#elif defined(__GNUC__)
+#   define TIME_SHIELD_THREAD_LOCAL __thread
+#else
+#   define TIME_SHIELD_THREAD_LOCAL
+#endif
+
+// Configure atomic initialization helper for pre-C++17 compilers
+#if defined(TIME_SHIELD_CPP11)
+#   define TIME_SHIELD_ATOMIC_INIT(value) ATOMIC_VAR_INIT(value)
+#else
+#   define TIME_SHIELD_ATOMIC_INIT(value) (value)
 #endif
 
 /// \name Platform detection

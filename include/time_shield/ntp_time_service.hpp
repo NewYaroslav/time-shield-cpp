@@ -174,7 +174,8 @@ namespace time_shield {
     public:
         static NtpTimeServiceT& instance() noexcept {
 #ifdef TIME_SHIELD_CPP17
-            return s_instance;
+            static NtpTimeServiceT instance_obj;
+            return instance_obj;
 #else
             return detail::g_ntp_time_service;
 #endif
@@ -451,10 +452,6 @@ namespace time_shield {
         NtpPoolConfig m_pool_cfg{};
 
         std::unique_ptr<RunnerT> m_runner;
-
-#ifdef TIME_SHIELD_CPP17
-        static inline NtpTimeServiceT s_instance{};
-#endif
     };
 
 #ifndef TIME_SHIELD_CPP17

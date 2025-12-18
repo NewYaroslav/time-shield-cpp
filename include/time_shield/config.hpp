@@ -61,6 +61,13 @@
 #   endif
 #endif
 
+// Attribute helpers
+#if defined(TIME_SHIELD_CPP17)
+#   define TIME_SHIELD_MAYBE_UNUSED [[maybe_unused]]
+#else
+#   define TIME_SHIELD_MAYBE_UNUSED
+#endif
+
 // Configure thread-local storage handling for compilers with partial support
 #if defined(__cpp_thread_local)
 #   define TIME_SHIELD_THREAD_LOCAL thread_local

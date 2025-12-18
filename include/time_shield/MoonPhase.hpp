@@ -280,12 +280,12 @@ namespace astronomy {
 
         static constexpr double kMmLong   = 64.975464;
         static constexpr double kMmLongp  = 349.383063;
-        [[maybe_unused]] static constexpr double kMNode    = 151.950429;
-        [[maybe_unused]] static constexpr double kMInc     = 5.145396;
+        TIME_SHIELD_MAYBE_UNUSED static constexpr double kMNode    = 151.950429;
+        TIME_SHIELD_MAYBE_UNUSED static constexpr double kMInc     = 5.145396;
         static constexpr double kMecc     = 0.054900;
         static constexpr double kMAngSiz  = 0.5181;     // deg
         static constexpr double kMsMax    = 384401.0;   // km
-        [[maybe_unused]] static constexpr double kMParallax= 0.9507;     // deg
+        TIME_SHIELD_MAYBE_UNUSED static constexpr double kMParallax= 0.9507;     // deg
         static constexpr double kSynMonth = 29.53058868;
 
         static constexpr double kPi = 3.14159265358979323846;

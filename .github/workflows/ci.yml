@@ -22,6 +22,22 @@ jobs:
         run: cmake --install build --prefix install
       - name: Test
         run: ctest --test-dir build
+      - name: Show CTest last log
+        if: always()
+        run: |
+          echo "=== build/Testing/Temporary/LastTest.log ==="
+          cat build/Testing/Temporary/LastTest.log || true
+      - name: Rerun failed tests verbosely
+        if: always()
+        run: ctest --test-dir build --rerun-failed --output-on-failure || true
+      - name: Upload CTest logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ctest-logs-${{ runner.os }}-cxx${{ matrix.std }}
+          path: |
+            build/Testing/Temporary/LastTest.log
+            build/Testing/**
       - name: Configure consumer project
         run: cmake -S tests/install_consumer -B build-consumer -DCMAKE_PREFIX_PATH=${{ github.workspace }}/install -DCMAKE_CXX_STANDARD=${{ matrix.std }}
       - name: Build consumer project
@@ -42,6 +58,22 @@ jobs:
         run: cmake --install build --prefix install --config Release
       - name: Test
         run: ctest --test-dir build -C Release
+      - name: Show CTest last log
+        if: always()
+        run: |
+          echo "=== build/Testing/Temporary/LastTest.log ==="
+          cat build/Testing/Temporary/LastTest.log || true
+      - name: Rerun failed tests verbosely
+        if: always()
+        run: ctest --test-dir build -C Release --rerun-failed --output-on-failure || true
+      - name: Upload CTest logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ctest-logs-${{ runner.os }}-cxx${{ matrix.std }}
+          path: |
+            build/Testing/Temporary/LastTest.log
+            build/Testing/**
       - name: Configure consumer project
         run: cmake -S tests/install_consumer -B build-consumer -DCMAKE_PREFIX_PATH="${{ github.workspace }}/install" -DCMAKE_CXX_STANDARD=${{ matrix.std }}
       - name: Build consumer project
@@ -62,6 +94,22 @@ jobs:
         run: cmake --install build --prefix install
       - name: Test
         run: ctest --test-dir build
+      - name: Show CTest last log
+        if: always()
+        run: |
+          echo "=== build/Testing/Temporary/LastTest.log ==="
+          cat build/Testing/Temporary/LastTest.log || true
+      - name: Rerun failed tests verbosely
+        if: always()
+        run: ctest --test-dir build --rerun-failed --output-on-failure || true
+      - name: Upload CTest logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ctest-logs-${{ runner.os }}-cxx${{ matrix.std }}
+          path: |
+            build/Testing/Temporary/LastTest.log
+            build/Testing/**
       - name: Configure consumer project
         run: cmake -S tests/install_consumer -B build-consumer -DCMAKE_PREFIX_PATH=${{ github.workspace }}/install -DCMAKE_CXX_STANDARD=${{ matrix.std }}
       - name: Build consumer project

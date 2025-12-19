@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 #pragma once
-#ifndef TIME_SHIELD_NTP_CLIENT_POOL_HPP_INCLUDED
-#define TIME_SHIELD_NTP_CLIENT_POOL_HPP_INCLUDED
+#ifndef _TIME_SHIELD_NTP_CLIENT_POOL_HPP_INCLUDED
+#define _TIME_SHIELD_NTP_CLIENT_POOL_HPP_INCLUDED
 
 #include "config.hpp"
 
@@ -25,35 +25,33 @@ namespace time_shield {
     /// \ingroup ntp
     /// \brief NTP measurement sample (one server response).
     struct NtpSample {
-        std::string host; ///< Server host name.
-        int         port = 123; ///< Server port.
-
-        bool    is_ok = false; ///< Indicates successful response parsing.
-        int     error_code = 0; ///< Error code when query or parsing failed.
-        int     stratum = -1; ///< NTP stratum level reported by server.
-        int64_t offset_us = 0; ///< Offset between UTC and local realtime, microseconds.
-        int64_t delay_us  = 0; ///< Estimated round-trip delay, microseconds.
-
-        int64_t max_delay_us = 0; ///< Maximum acceptable delay for this sample.
+        std::string host;          ///< Server host name.
+        int         port = 123;    ///< Server port.
+        bool    is_ok = false;     ///< Indicates successful response parsing.
+        int     error_code = 0;    ///< Error code when query or parsing failed.
+        int     stratum = -1;      ///< NTP stratum level reported by server.
+        int64_t offset_us = 0;     ///< Offset between UTC and local realtime, microseconds.
+        int64_t delay_us  = 0;     ///< Estimated round-trip delay, microseconds.
+        int64_t max_delay_us = 0;  ///< Maximum acceptable delay for this sample.
     };
 
     /// \ingroup ntp
     /// \brief Per-server configuration.
     struct NtpServerConfig {
-        std::string host; ///< Server host name.
+        std::string host;       ///< Server host name.
         int         port = 123; ///< Server port.
 
         std::chrono::milliseconds min_interval{15000}; ///< Minimum time between queries to the same server.
-        std::chrono::milliseconds max_delay{250}; ///< Maximum acceptable delay for responses from this server.
+        std::chrono::milliseconds max_delay{250};      ///< Maximum acceptable delay for responses from this server.
 
-        std::chrono::milliseconds backoff_initial{15000}; ///< Initial backoff after failure.
+        std::chrono::milliseconds backoff_initial{15000};                ///< Initial backoff after failure.
         std::chrono::milliseconds backoff_max{std::chrono::minutes(10)}; ///< Maximum backoff interval after repeated failures.
     };
 
     /// \ingroup ntp
     /// \brief Pool configuration.
     struct NtpPoolConfig {
-        std::size_t sample_servers = 5; ///< Number of servers to sample per measurement.
+        std::size_t sample_servers = 5;    ///< Number of servers to sample per measurement.
         std::size_t min_valid_samples = 3; ///< Minimum number of valid samples required to update offset.
 
         /// \brief Aggregation strategy for offset estimation.
@@ -64,7 +62,7 @@ namespace time_shield {
         } aggregation = Aggregation::Median;
 
         double smoothing_alpha = 1.0; ///< Exponential smoothing factor for offset updates.
-        std::uint64_t rng_seed = 0; ///< Random seed for server sampling; 0 uses time-based seed.
+        std::uint64_t rng_seed = 0;   ///< Random seed for server sampling; 0 uses time-based seed.
     };
 
     /// \ingroup ntp
@@ -732,4 +730,4 @@ namespace time_shield {
 
 #endif // TIME_SHIELD_ENABLE_NTP_CLIENT
 
-#endif // TIME_SHIELD_NTP_CLIENT_POOL_HPP_INCLUDED
+#endif // _TIME_SHIELD_NTP_CLIENT_POOL_HPP_INCLUDED

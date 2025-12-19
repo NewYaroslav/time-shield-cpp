@@ -49,5 +49,25 @@ int main() {
     is_ok = str_to_ts_ms("2024-03-20T12:34:56.789123-05:30", parsed_fail);
     assert(!is_ok);
 
+    (void)base_ts;
+    (void)str_z;
+    (void)parsed_z;
+    (void)str_pos;
+    (void)parsed_pos;
+    (void)offset_neg;
+    (void)str_neg;
+    (void)parsed_neg;
+    (void)base_ms;
+    (void)str_ms;
+    (void)parsed_ms;
+    (void)str_ms_z;
+    (void)parsed_ms_z;
+    (void)str_ms_pos;
+    (void)parsed_ms_pos;
+    (void)str_ms_neg;
+    (void)parsed_ms_neg;
+    (void)parsed_fail;
+    (void)is_ok;
+
     return 0;
 }

@@ -93,5 +93,17 @@ int main() {
     assert(!is_first_workday_of_month("not-a-date"));
     assert(!is_within_first_workdays_of_month_ms("invalid", 2));
 
+    (void)june_first;
+    (void)june_third;
+    (void)june_fourth;
+    (void)june_twenty_sixth;
+    (void)june_twenty_seventh;
+    (void)june_twenty_eighth;
+    (void)june_third_ms;
+    (void)june_fourth_ms;
+    (void)sept_first;
+    (void)sept_second;
+    (void)sept_first_ms;
+
     return 0;
 }

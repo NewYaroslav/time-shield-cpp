@@ -182,5 +182,22 @@ int main() {
     assert(autostart.is_running());
     assert(autostart.elapsed() >= ElapsedTimer::duration::zero());
 
+    (void)expected_deadline_ms;
+    (void)expected_deadline_sec;
+    (void)now_25_ms;
+    (void)now_60_ms;
+    (void)now_25_sec;
+    (void)now_2_sec;
+    (void)first_ms;
+    (void)first_ns;
+    (void)first_count;
+    (void)reference_ms;
+    (void)expected_ns;
+    (void)expected_ms;
+    (void)expected_sec;
+    (void)restarted_ms;
+    (void)expected_after_sec;
+    (void)restarted_sec;
+
     return 0;
 }

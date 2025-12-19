@@ -21,12 +21,24 @@ int main() {
         assert(dt.min == minute);
         assert(dt.sec == second);
         assert(dt.ms == millisecond);
+        (void)dt;
+        (void)year;
+        (void)month;
+        (void)day;
+        (void)hour;
+        (void)minute;
+        (void)second;
+        (void)millisecond;
     };
 
     auto check_tz = [](const TimeZoneStruct& tz, bool is_positive, int hour, int minute) {
         assert(tz.is_positive == is_positive);
         assert(tz.hour == hour);
         assert(tz.min == minute);
+        (void)tz;
+        (void)is_positive;
+        (void)hour;
+        (void)minute;
     };
 
     DateTimeStruct dt{};
@@ -49,6 +61,7 @@ int main() {
 
         const bool is_parsed = parse_iso8601(input, dt, tz);
         assert(is_parsed);
+        (void)is_parsed;
 
         check_dt(dt, year, month, day, hour, minute, second, millisecond);
         check_tz(tz, is_positive_tz, tz_hour, tz_minute);

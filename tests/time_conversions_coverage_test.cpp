@@ -260,5 +260,15 @@ int main() {
     assert(end_of_last_workday_month(last_workday_ts) == end_of_day(last_workday_ts));
     assert(end_of_last_workday_month_ms(last_workday_ts_ms) == end_of_day_ms(last_workday_ts_ms));
 
+    (void)unix_day_two_ts;
+    (void)unix_day_two_ms;
+    (void)minute_mark;
+    (void)sample_ts;
+    (void)day_start;
+    (void)workday_ts;
+    (void)workday_ts_ms;
+    (void)last_workday_ts;
+    (void)last_workday_ts_ms;
+
     return 0;
 }

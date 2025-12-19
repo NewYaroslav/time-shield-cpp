@@ -42,5 +42,19 @@ int main() {
     const double age_epoch = moon_age_days(static_cast<fts_t>(0));
     assert(std::fabs(age_epoch - 22.209231150442246) < 1e-9);
 
+    (void)epsilon;
+    (void)oa_epoch;
+    (void)oa_half_day;
+    (void)oa_zero;
+    (void)round_trip_ts;
+    (void)day_ms;
+    (void)oa_ms;
+    (void)jd_epoch;
+    (void)mjd_epoch;
+    (void)jd_year2000;
+    (void)jdn_unix_epoch;
+    (void)phase_epoch;
+    (void)age_epoch;
+
     return 0;
 }

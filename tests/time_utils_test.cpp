@@ -79,5 +79,23 @@ int main() {
     manual_timer.restart();
     assert(manual_timer.sample_count() == 0);
 
+    (void)ns;
+    (void)us;
+    (void)ms;
+    (void)t1;
+    (void)t2;
+    (void)u1;
+    (void)u2;
+    (void)rt1;
+    (void)rt2;
+    (void)rt3;
+    (void)first_sample;
+    (void)frozen_elapsed;
+    (void)resumed_sample;
+    (void)second_sample;
+    (void)no_sample;
+    (void)collected;
+    (void)manual_frozen;
+
     return 0;
 }

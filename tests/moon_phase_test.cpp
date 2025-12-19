@@ -75,5 +75,19 @@ int main() {
     const double far_from_event = quarters_struct.previous_first_quarter_unix_s + 172800.0;
     assert(!is_new_moon_window(far_from_event, 3600.0));
 
+    (void)ts;
+    (void)res;
+    (void)signal;
+    (void)approx_phase;
+    (void)approx_age_days;
+    (void)quarters_array;
+    (void)quarters_struct;
+    (void)lunar_cycle;
+    (void)first_gap;
+    (void)second_gap;
+    (void)third_gap;
+    (void)dot_product;
+    (void)far_from_event;
+
     return 0;
 }

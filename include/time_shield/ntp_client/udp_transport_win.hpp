@@ -3,11 +3,8 @@
 #ifndef TIME_SHIELD_UDP_TRANSPORT_WIN_HPP_INCLUDED
 #define TIME_SHIELD_UDP_TRANSPORT_WIN_HPP_INCLUDED
 
-#include "../config.hpp"
-
 #if TIME_SHIELD_PLATFORM_WINDOWS
 
-#include "../ntp_client/wsa_guard.hpp"
 #include "udp_transport.hpp"
 
 #include <winsock2.h>

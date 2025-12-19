@@ -3,8 +3,6 @@
 #ifndef TIME_SHIELD_UDP_TRANSPORT_HPP_INCLUDED
 #define TIME_SHIELD_UDP_TRANSPORT_HPP_INCLUDED
 
-#include "../config.hpp"
-
 #include <cstddef>
 #include <string>
 

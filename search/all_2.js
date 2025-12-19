@@ -36,5 +36,6 @@ var searchData=
   ['create_5ftime_5fstruct_33',['create_time_struct',['../group__time__structures.html#ga31f445e3e85cba85035f71b35de12e25',1,'time_shield::create_time_struct(int16_t hour, int16_t min, int16_t sec=0, int16_t ms=0)'],['../group__time__structures.html#ga13b01721128561fc611a2044ff5b7b0c',1,'time_shield::create_time_struct(const int hour, const int min, const int sec=0, const int ms=0)']]],
   ['create_5ftime_5fzone_5fstruct_34',['create_time_zone_struct',['../group__time__structures.html#gae83e4d4791a1f6ce69657a3868b00504',1,'time_shield']]],
   ['create_5ftimer_5fstate_35',['create_timer_state',['../classtime__shield_1_1TimerScheduler.html#ada09029c44122b63ad803a87b801a71b',1,'time_shield::TimerScheduler']]],
-  ['current_5ftimer_5fstate_36',['current_timer_state',['../namespacetime__shield_1_1detail.html#a5e9f998322af0d986f490b7526d5345d',1,'time_shield::detail']]]
+  ['ct_5fto_5fgmt_36',['ct_to_gmt',['../group__time__conversions__time__zone__conversions.html#ga303e31d36a74f2d70b158e22fb2db865',1,'time_shield']]],
+  ['current_5ftimer_5fstate_37',['current_timer_state',['../namespacetime__shield_1_1detail.html#a5e9f998322af0d986f490b7526d5345d',1,'time_shield::detail']]]
 ];

@@ -30,9 +30,12 @@ var searchData=
   ['git_20submodule_20with_20tt_20add_5fsubdirectory_20tt_27',['Git submodule with &lt;tt&gt;add_subdirectory&lt;/tt&gt;',['../index.html#install_submodule',1,'']]],
   ['gmt_28',['GMT',['../group__time__enums.html#ggad8cb858fb6cedcf76c4f0630d56e042bacce69cd6d90a968533a24acb0a5d3a72',1,'time_shield']]],
   ['gmt_5fto_5fcet_29',['gmt_to_cet',['../group__time__conversions__time__zone__conversions.html#ga6d2d0a5326b64abe301a962ce6e42c9d',1,'time_shield']]],
-  ['gmt_5fto_5feet_30',['gmt_to_eet',['../group__time__conversions__time__zone__conversions.html#ga0fdf7732ae50044e684ba0874fd52f0f',1,'time_shield']]],
-  ['gregorian_5fto_5fjd_31',['gregorian_to_jd',['../namespacetime__shield.html#a0b348975140c881557b1951654630133',1,'time_shield::gregorian_to_jd(double day, int64_t month, int64_t year) noexcept'],['../namespacetime__shield.html#a3ed00cd6d83ae31dde3be4fd0417de7f',1,'time_shield::gregorian_to_jd(uint32_t day, uint32_t month, uint32_t year, uint32_t hour, uint32_t minute, uint32_t second=0, uint32_t millisecond=0) noexcept']]],
-  ['gregorian_5fto_5fjdn_32',['gregorian_to_jdn',['../namespacetime__shield.html#ad6bc6f0425632d7502109ff81d43c458',1,'time_shield']]],
-  ['groups_2edox_33',['groups.dox',['../groups_8dox.html',1,'']]],
-  ['groups_5fmql5_2edox_34',['groups_mql5.dox',['../groups__mql5_8dox.html',1,'']]]
+  ['gmt_5fto_5fct_30',['gmt_to_ct',['../group__time__conversions__time__zone__conversions.html#gae72d7e9a591e4480b20a7562d4d202d0',1,'time_shield']]],
+  ['gmt_5fto_5feet_31',['gmt_to_eet',['../group__time__conversions__time__zone__conversions.html#ga0fdf7732ae50044e684ba0874fd52f0f',1,'time_shield']]],
+  ['gmt_5fto_5fet_32',['gmt_to_et',['../group__time__conversions__time__zone__conversions.html#ga04dc9f70431c00750855ac694a727896',1,'time_shield']]],
+  ['gmt_5fto_5fny_33',['gmt_to_ny',['../group__time__conversions__time__zone__conversions.html#ga6996754e0af94d173db1ed96ca0ae650',1,'time_shield']]],
+  ['gregorian_5fto_5fjd_34',['gregorian_to_jd',['../namespacetime__shield.html#a0b348975140c881557b1951654630133',1,'time_shield::gregorian_to_jd(double day, int64_t month, int64_t year) noexcept'],['../namespacetime__shield.html#a3ed00cd6d83ae31dde3be4fd0417de7f',1,'time_shield::gregorian_to_jd(uint32_t day, uint32_t month, uint32_t year, uint32_t hour, uint32_t minute, uint32_t second=0, uint32_t millisecond=0) noexcept']]],
+  ['gregorian_5fto_5fjdn_35',['gregorian_to_jdn',['../namespacetime__shield.html#ad6bc6f0425632d7502109ff81d43c458',1,'time_shield']]],
+  ['groups_2edox_36',['groups.dox',['../groups_8dox.html',1,'']]],
+  ['groups_5fmql5_2edox_37',['groups_mql5.dox',['../groups__mql5_8dox.html',1,'']]]
 ];

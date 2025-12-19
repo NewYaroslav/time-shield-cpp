@@ -28,5 +28,6 @@ var searchData=
   ['ensure_5fstarted_25',['ensure_started',['../classtime__shield_1_1NtpTimeServiceT.html#ae3d9af53f76327efdbad0587ec8a8eee',1,'time_shield::NtpTimeServiceT']]],
   ['eod_5ffrom_5funix_5fday_26',['eod_from_unix_day',['../group__time__conversions.html#ga37b83ed1b7727da914894ae1d01e83da',1,'time_shield']]],
   ['eod_5ffrom_5funix_5fday_5fms_27',['eod_from_unix_day_ms',['../group__time__conversions.html#ga7cf2827ccdd721b9c611010b4a7b0524',1,'time_shield']]],
-  ['execute_5fdue_5ftimers_28',['execute_due_timers',['../classtime__shield_1_1TimerScheduler.html#ace6e0ddb3b9f51f6541e585cb5711e3d',1,'time_shield::TimerScheduler']]]
+  ['et_5fto_5fgmt_28',['et_to_gmt',['../group__time__conversions__time__zone__conversions.html#gada2f6266e4b165ac81f57573ed7dc135',1,'time_shield']]],
+  ['execute_5fdue_5ftimers_29',['execute_due_timers',['../classtime__shield_1_1TimerScheduler.html#ace6e0ddb3b9f51f6541e585cb5711e3d',1,'time_shield::TimerScheduler']]]
 ];

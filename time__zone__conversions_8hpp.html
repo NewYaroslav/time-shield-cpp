@@ -114,7 +114,7 @@ $(function(){initNavTree('time__zone__conversions_8hpp.html',''); initResizable(
 </div><!--header-->
 <div class="contents">
 
-<p>Helpers for converting CET/EET timestamps to GMT.  
+<p>Helpers for converting CET/EET/ET timestamps to GMT (UTC).  
 <a href="#details">More...</a></p>
 
 <p><a href="time__zone__conversions_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -134,6 +134,27 @@ Functions</h2></td></tr>
 <tr class="memitem:ga0947d55d6b45837a23aa01ba52c2d49c" id="r_ga0947d55d6b45837a23aa01ba52c2d49c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__time__conversions__time__zone__conversions.html#ga0947d55d6b45837a23aa01ba52c2d49c">time_shield::eet_to_gmt</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> eet)</td></tr>
 <tr class="memdesc:ga0947d55d6b45837a23aa01ba52c2d49c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert Eastern European Time to Greenwich Mean Time.  <br /></td></tr>
 <tr class="separator:ga0947d55d6b45837a23aa01ba52c2d49c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga368574073b7e11e73dd258e319aa3db7" id="r_ga368574073b7e11e73dd258e319aa3db7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__time__conversions__time__zone__conversions.html#ga368574073b7e11e73dd258e319aa3db7">time_shield::is_us_eastern_dst_local</a> (const <a class="el" href="structtime__shield_1_1DateTimeStruct.html">DateTimeStruct</a> &amp;dt)</td></tr>
+<tr class="memdesc:ga368574073b7e11e73dd258e319aa3db7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if local US Eastern time uses DST.  <br /></td></tr>
+<tr class="separator:ga368574073b7e11e73dd258e319aa3db7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gada2f6266e4b165ac81f57573ed7dc135" id="r_gada2f6266e4b165ac81f57573ed7dc135"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__time__conversions__time__zone__conversions.html#gada2f6266e4b165ac81f57573ed7dc135">time_shield::et_to_gmt</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> et)</td></tr>
+<tr class="memdesc:gada2f6266e4b165ac81f57573ed7dc135"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert US Eastern Time (New York, EST/EDT) to GMT (UTC).  <br /></td></tr>
+<tr class="separator:gada2f6266e4b165ac81f57573ed7dc135"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga04dc9f70431c00750855ac694a727896" id="r_ga04dc9f70431c00750855ac694a727896"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__time__conversions__time__zone__conversions.html#ga04dc9f70431c00750855ac694a727896">time_shield::gmt_to_et</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> gmt)</td></tr>
+<tr class="memdesc:ga04dc9f70431c00750855ac694a727896"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert GMT (UTC) to US Eastern Time (New York, EST/EDT).  <br /></td></tr>
+<tr class="separator:ga04dc9f70431c00750855ac694a727896"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad25166780ededd0d3f6baf5f91097892" id="r_gad25166780ededd0d3f6baf5f91097892"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__time__conversions__time__zone__conversions.html#gad25166780ededd0d3f6baf5f91097892">time_shield::ny_to_gmt</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> ny)</td></tr>
+<tr class="memdesc:gad25166780ededd0d3f6baf5f91097892"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert New York Time to GMT (UTC).  <br /></td></tr>
+<tr class="separator:gad25166780ededd0d3f6baf5f91097892"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6996754e0af94d173db1ed96ca0ae650" id="r_ga6996754e0af94d173db1ed96ca0ae650"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__time__conversions__time__zone__conversions.html#ga6996754e0af94d173db1ed96ca0ae650">time_shield::gmt_to_ny</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> gmt)</td></tr>
+<tr class="memdesc:ga6996754e0af94d173db1ed96ca0ae650"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert GMT (UTC) to New York Time.  <br /></td></tr>
+<tr class="separator:ga6996754e0af94d173db1ed96ca0ae650"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga303e31d36a74f2d70b158e22fb2db865" id="r_ga303e31d36a74f2d70b158e22fb2db865"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__time__conversions__time__zone__conversions.html#ga303e31d36a74f2d70b158e22fb2db865">time_shield::ct_to_gmt</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> ct)</td></tr>
+<tr class="memdesc:ga303e31d36a74f2d70b158e22fb2db865"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert US Central Time (America/Chicago, CST/CDT) to GMT (UTC).  <br /></td></tr>
+<tr class="separator:ga303e31d36a74f2d70b158e22fb2db865"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae72d7e9a591e4480b20a7562d4d202d0" id="r_gae72d7e9a591e4480b20a7562d4d202d0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__time__conversions__time__zone__conversions.html#gae72d7e9a591e4480b20a7562d4d202d0">time_shield::gmt_to_ct</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> gmt)</td></tr>
+<tr class="memdesc:gae72d7e9a591e4480b20a7562d4d202d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert GMT (UTC) to US Central Time (America/Chicago, CST/CDT).  <br /></td></tr>
+<tr class="separator:gae72d7e9a591e4480b20a7562d4d202d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6d2d0a5326b64abe301a962ce6e42c9d" id="r_ga6d2d0a5326b64abe301a962ce6e42c9d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__time__conversions__time__zone__conversions.html#ga6d2d0a5326b64abe301a962ce6e42c9d">time_shield::gmt_to_cet</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> gmt)</td></tr>
 <tr class="memdesc:ga6d2d0a5326b64abe301a962ce6e42c9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert Greenwich Mean Time to Central European Time.  <br /></td></tr>
 <tr class="separator:ga6d2d0a5326b64abe301a962ce6e42c9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -142,7 +163,7 @@ Functions</h2></td></tr>
 <tr class="separator:ga0fdf7732ae50044e684ba0874fd52f0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Helpers for converting CET/EET timestamps to GMT. </p>
+<div class="textblock"><p>Helpers for converting CET/EET/ET timestamps to GMT (UTC). </p>
 
 <p class="definition">Definition in file <a class="el" href="time__zone__conversions_8hpp_source.html">time_zone_conversions.hpp</a>.</p>
 </div></div><!-- contents -->

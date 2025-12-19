@@ -44,6 +44,8 @@ namespace detail {
             addr.sin_family = AF_INET;
             addr.sin_port = htons(static_cast<uint16_t>(req.port));
             addr.sin_addr = reinterpret_cast<sockaddr_in*>(res->ai_addr)->sin_addr;
+            freeaddrinfo(res);
+            res = nullptr;
 
             const int timeout_ms = req.timeout_ms > 0 ? req.timeout_ms : 5000;
             timeval tv;
@@ -59,7 +61,6 @@ namespace detail {
                                           sizeof(addr));
             if (sent < 0 || static_cast<std::size_t>(sent) != req.send_size) {
                 out_error_code = errno;
-                freeaddrinfo(res);
                 ::close(sock);
                 return false;
             }
@@ -75,12 +76,10 @@ namespace detail {
 
             if (received < 0 || static_cast<std::size_t>(received) != req.recv_size) {
                 out_error_code = errno;
-                freeaddrinfo(res);
                 ::close(sock);
                 return false;
             }
 
-            freeaddrinfo(res);
             ::close(sock);
             return true;
         }

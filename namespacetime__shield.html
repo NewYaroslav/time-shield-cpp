@@ -182,6 +182,7 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtime__shield_1_1NtpTimeService.html">NtpTimeService</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtime__shield_1_1NtpTimeServiceT.html">NtpTimeServiceT</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Singleton service for background NTP measurements.  <a href="classtime__shield_1_1NtpTimeServiceT.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtime__shield_1_1Timer.html">Timer</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtime__shield_1_1Timer.html" title="Timer that mimics the behavior of Qt timers.">Timer</a> that mimics the behavior of Qt timers.  <a href="classtime__shield_1_1Timer.html#details">More...</a><br /></td></tr>
@@ -208,8 +209,9 @@ Typedefs</h2></td></tr>
 <tr class="separator:a4e3e4aa87fc426015d8553738d08aae5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc26156e2e002636d11038ab4822b977" id="r_afc26156e2e002636d11038ab4822b977"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afc26156e2e002636d11038ab4822b977">NtpClientPoolRunner</a> = <a class="el" href="classtime__shield_1_1BasicPoolRunner.html">BasicPoolRunner</a>&lt;<a class="el" href="classtime__shield_1_1NtpClientPool.html">NtpClientPool</a>&gt;</td></tr>
 <tr class="separator:afc26156e2e002636d11038ab4822b977"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a082593e1e418eeac1f2fb5d1d1001722" id="r_a082593e1e418eeac1f2fb5d1d1001722"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a082593e1e418eeac1f2fb5d1d1001722">NtpTimeService</a> = <a class="el" href="classtime__shield_1_1NtpTimeServiceT.html">NtpTimeServiceT</a>&lt;<a class="el" href="classtime__shield_1_1detail_1_1FakeNtpRunner.html">detail::FakeNtpRunner</a>&gt;</td></tr>
-<tr class="separator:a082593e1e418eeac1f2fb5d1d1001722"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga082593e1e418eeac1f2fb5d1d1001722" id="r_ga082593e1e418eeac1f2fb5d1d1001722"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ntp.html#ga082593e1e418eeac1f2fb5d1d1001722">NtpTimeService</a> = <a class="el" href="classtime__shield_1_1NtpTimeServiceT.html">NtpTimeServiceT</a>&lt;<a class="el" href="classtime__shield_1_1detail_1_1FakeNtpRunner.html">detail::FakeNtpRunner</a>&gt;</td></tr>
+<tr class="memdesc:ga082593e1e418eeac1f2fb5d1d1001722"><td class="mdescLeft">&#160;</td><td class="mdescRight">NTP time service alias that uses a fake runner for tests.  <br /></td></tr>
+<tr class="separator:ga082593e1e418eeac1f2fb5d1d1001722"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac34b21257d863282622da52b643de3e9" id="r_ac34b21257d863282622da52b643de3e9"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac34b21257d863282622da52b643de3e9">timer_state_ptr</a> = std::shared_ptr&lt;<a class="el" href="structtime__shield_1_1detail_1_1TimerState.html">detail::TimerState</a>&gt;</td></tr>
 <tr class="separator:ac34b21257d863282622da52b643de3e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab9f26871d6521b013bea4c65e6697ad9" id="r_gab9f26871d6521b013bea4c65e6697ad9"><td class="memItemLeft" align="right" valign="top">typedef int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9">year_t</a></td></tr>
@@ -3752,7 +3754,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ntp__client__pool_8hpp_source.html#l00689">689</a> of file <a class="el" href="ntp__client__pool_8hpp_source.html">ntp_client_pool.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__client__pool_8hpp_source.html#l00717">717</a> of file <a class="el" href="ntp__client__pool_8hpp_source.html">ntp_client_pool.hpp</a>.</p>
 
 </div>
 </div>
@@ -3768,23 +3770,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ntp__client__pool__runner_8hpp_source.html#l00179">179</a> of file <a class="el" href="ntp__client__pool__runner_8hpp_source.html">ntp_client_pool_runner.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a082593e1e418eeac1f2fb5d1d1001722" name="a082593e1e418eeac1f2fb5d1d1001722"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a082593e1e418eeac1f2fb5d1d1001722">&#9670;&#160;</a></span>NtpTimeService</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef <a class="el" href="classtime__shield_1_1NtpTimeServiceT.html">NtpTimeServiceT</a>&lt; <a class="el" href="classtime__shield_1_1NtpClientPoolRunner.html">NtpClientPoolRunner</a> &gt; time_shield::NtpTimeService = <a class="el" href="classtime__shield_1_1NtpTimeServiceT.html">NtpTimeServiceT</a>&lt;<a class="el" href="classtime__shield_1_1detail_1_1FakeNtpRunner.html">detail::FakeNtpRunner</a>&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00466">466</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__client__pool__runner_8hpp_source.html#l00217">217</a> of file <a class="el" href="ntp__client__pool__runner_8hpp_source.html">ntp_client_pool_runner.hpp</a>.</p>
 
 </div>
 </div>

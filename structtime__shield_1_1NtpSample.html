@@ -123,22 +123,28 @@ $(function(){initNavTree('structtime__shield_1_1NtpSample.html',''); initResizab
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a6be5c955741d7fc1e8689a01b899c3f5" id="r_a6be5c955741d7fc1e8689a01b899c3f5"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6be5c955741d7fc1e8689a01b899c3f5">host</a></td></tr>
+<tr class="memdesc:a6be5c955741d7fc1e8689a01b899c3f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Server host name.  <br /></td></tr>
 <tr class="separator:a6be5c955741d7fc1e8689a01b899c3f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae928ccb58862f6c337e263b1696170f9" id="r_ae928ccb58862f6c337e263b1696170f9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae928ccb58862f6c337e263b1696170f9">port</a> = 123</td></tr>
+<tr class="memdesc:ae928ccb58862f6c337e263b1696170f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Server port.  <br /></td></tr>
 <tr class="separator:ae928ccb58862f6c337e263b1696170f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e4edfb023954a975adc2ea2864bfc04" id="r_a6e4edfb023954a975adc2ea2864bfc04"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e4edfb023954a975adc2ea2864bfc04">is_ok</a> = false</td></tr>
+<tr class="memdesc:a6e4edfb023954a975adc2ea2864bfc04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates successful response parsing.  <br /></td></tr>
 <tr class="separator:a6e4edfb023954a975adc2ea2864bfc04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a493dc971de13797e49289afaced8543e" id="r_a493dc971de13797e49289afaced8543e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a493dc971de13797e49289afaced8543e">error_code</a> = 0</td></tr>
+<tr class="memdesc:a493dc971de13797e49289afaced8543e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error code when query or parsing failed.  <br /></td></tr>
 <tr class="separator:a493dc971de13797e49289afaced8543e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ac0ba58b23d389a371c70527ccf2b79" id="r_a6ac0ba58b23d389a371c70527ccf2b79"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ac0ba58b23d389a371c70527ccf2b79">stratum</a> = -1</td></tr>
+<tr class="memdesc:a6ac0ba58b23d389a371c70527ccf2b79"><td class="mdescLeft">&#160;</td><td class="mdescRight">NTP stratum level reported by server.  <br /></td></tr>
 <tr class="separator:a6ac0ba58b23d389a371c70527ccf2b79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9abbf9e79fe841044c77862ff272188" id="r_aa9abbf9e79fe841044c77862ff272188"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa9abbf9e79fe841044c77862ff272188">offset_us</a> = 0</td></tr>
-<tr class="memdesc:aa9abbf9e79fe841044c77862ff272188"><td class="mdescLeft">&#160;</td><td class="mdescRight">UTC - local realtime, microseconds.  <br /></td></tr>
+<tr class="memdesc:aa9abbf9e79fe841044c77862ff272188"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset between UTC and local realtime, microseconds.  <br /></td></tr>
 <tr class="separator:aa9abbf9e79fe841044c77862ff272188"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28ed19c2c35179b456a9d1bf2c4a5c6f" id="r_a28ed19c2c35179b456a9d1bf2c4a5c6f"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a28ed19c2c35179b456a9d1bf2c4a5c6f">delay_us</a> = 0</td></tr>
-<tr class="memdesc:a28ed19c2c35179b456a9d1bf2c4a5c6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">NTP round-trip delay estimate, microseconds.  <br /></td></tr>
+<tr class="memdesc:a28ed19c2c35179b456a9d1bf2c4a5c6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estimated round-trip delay, microseconds.  <br /></td></tr>
 <tr class="separator:a28ed19c2c35179b456a9d1bf2c4a5c6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a96b7ef762e6f811f5ec64cf8800921fa" id="r_a96b7ef762e6f811f5ec64cf8800921fa"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a96b7ef762e6f811f5ec64cf8800921fa">max_delay_us</a> = 0</td></tr>
+<tr class="memdesc:a96b7ef762e6f811f5ec64cf8800921fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum acceptable delay for this sample.  <br /></td></tr>
 <tr class="separator:a96b7ef762e6f811f5ec64cf8800921fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -158,9 +164,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>NTP round-trip delay estimate, microseconds. </p>
+<p>Estimated round-trip delay, microseconds. </p>
 
-<p class="definition">Definition at line <a class="el" href="ntp__client__pool_8hpp_source.html#l00035">35</a> of file <a class="el" href="ntp__client__pool_8hpp_source.html">ntp_client_pool.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__client__pool_8hpp_source.html#l00034">34</a> of file <a class="el" href="ntp__client__pool_8hpp_source.html">ntp_client_pool.hpp</a>.</p>
 
 </div>
 </div>
@@ -176,7 +182,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ntp__client__pool_8hpp_source.html#l00032">32</a> of file <a class="el" href="ntp__client__pool_8hpp_source.html">ntp_client_pool.hpp</a>.</p>
+<p>Error code when query or parsing failed. </p>
+
+<p class="definition">Definition at line <a class="el" href="ntp__client__pool_8hpp_source.html#l00031">31</a> of file <a class="el" href="ntp__client__pool_8hpp_source.html">ntp_client_pool.hpp</a>.</p>
 
 </div>
 </div>
@@ -191,6 +199,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Server host name. </p>
 
 <p class="definition">Definition at line <a class="el" href="ntp__client__pool_8hpp_source.html#l00028">28</a> of file <a class="el" href="ntp__client__pool_8hpp_source.html">ntp_client_pool.hpp</a>.</p>
 
@@ -208,7 +218,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ntp__client__pool_8hpp_source.html#l00031">31</a> of file <a class="el" href="ntp__client__pool_8hpp_source.html">ntp_client_pool.hpp</a>.</p>
+<p>Indicates successful response parsing. </p>
+
+<p class="definition">Definition at line <a class="el" href="ntp__client__pool_8hpp_source.html#l00030">30</a> of file <a class="el" href="ntp__client__pool_8hpp_source.html">ntp_client_pool.hpp</a>.</p>
 
 </div>
 </div>
@@ -224,7 +236,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ntp__client__pool_8hpp_source.html#l00037">37</a> of file <a class="el" href="ntp__client__pool_8hpp_source.html">ntp_client_pool.hpp</a>.</p>
+<p>Maximum acceptable delay for this sample. </p>
+
+<p class="definition">Definition at line <a class="el" href="ntp__client__pool_8hpp_source.html#l00035">35</a> of file <a class="el" href="ntp__client__pool_8hpp_source.html">ntp_client_pool.hpp</a>.</p>
 
 </div>
 </div>
@@ -240,9 +254,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>UTC - local realtime, microseconds. </p>
+<p>Offset between UTC and local realtime, microseconds. </p>
 
-<p class="definition">Definition at line <a class="el" href="ntp__client__pool_8hpp_source.html#l00034">34</a> of file <a class="el" href="ntp__client__pool_8hpp_source.html">ntp_client_pool.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__client__pool_8hpp_source.html#l00033">33</a> of file <a class="el" href="ntp__client__pool_8hpp_source.html">ntp_client_pool.hpp</a>.</p>
 
 </div>
 </div>
@@ -257,6 +271,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Server port. </p>
 
 <p class="definition">Definition at line <a class="el" href="ntp__client__pool_8hpp_source.html#l00029">29</a> of file <a class="el" href="ntp__client__pool_8hpp_source.html">ntp_client_pool.hpp</a>.</p>
 
@@ -274,7 +290,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ntp__client__pool_8hpp_source.html#l00033">33</a> of file <a class="el" href="ntp__client__pool_8hpp_source.html">ntp_client_pool.hpp</a>.</p>
+<p>NTP stratum level reported by server. </p>
+
+<p class="definition">Definition at line <a class="el" href="ntp__client__pool_8hpp_source.html#l00032">32</a> of file <a class="el" href="ntp__client__pool_8hpp_source.html">ntp_client_pool.hpp</a>.</p>
 
 </div>
 </div>

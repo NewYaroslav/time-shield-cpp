@@ -116,21 +116,27 @@ $(function(){initNavTree('classtime__shield_1_1detail_1_1NtpClientCore.html','')
 </div><!--header-->
 <div class="contents">
 
+<p>Core NTP query logic that parses packets and computes offsets.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="ntp__client__core_8hpp_source.html">ntp_client_core.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ae694972933d353e9065a26f6ed8ef97e" id="r_ae694972933d353e9065a26f6ed8ef97e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae694972933d353e9065a26f6ed8ef97e">query</a> (<a class="el" href="classtime__shield_1_1detail_1_1IUdpTransport.html">IUdpTransport</a> &amp;transport, const std::string &amp;host, int port, int timeout_ms, int &amp;out_error_code, int64_t &amp;out_offset_us, int64_t &amp;out_delay_us, int &amp;out_stratum) noexcept</td></tr>
+<tr class="memdesc:ae694972933d353e9065a26f6ed8ef97e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform one NTP transaction using a UDP transport.  <br /></td></tr>
 <tr class="separator:ae694972933d353e9065a26f6ed8ef97e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
 Static Private Member Functions</h2></td></tr>
 <tr class="memitem:a391c145c1493152404a4b949513f0f9b" id="r_a391c145c1493152404a4b949513f0f9b"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a391c145c1493152404a4b949513f0f9b">get_now_us</a> (uint64_t &amp;out) noexcept</td></tr>
+<tr class="memdesc:a391c145c1493152404a4b949513f0f9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read current realtime clock in microseconds.  <br /></td></tr>
 <tr class="separator:a391c145c1493152404a4b949513f0f9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="ntp__client__core_8hpp_source.html#l00015">15</a> of file <a class="el" href="ntp__client__core_8hpp_source.html">ntp_client_core.hpp</a>.</p>
+<div class="textblock"><p>Core NTP query logic that parses packets and computes offsets. </p>
+
+<p class="definition">Definition at line <a class="el" href="ntp__client__core_8hpp_source.html#l00016">16</a> of file <a class="el" href="ntp__client__core_8hpp_source.html">ntp_client_core.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a391c145c1493152404a4b949513f0f9b" name="a391c145c1493152404a4b949513f0f9b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a391c145c1493152404a4b949513f0f9b">&#9670;&#160;</a></span>get_now_us()</h2>
@@ -155,7 +161,9 @@ Static Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ntp__client__core_8hpp_source.html#l00073">73</a> of file <a class="el" href="ntp__client__core_8hpp_source.html">ntp_client_core.hpp</a>.</p>
+<p>Read current realtime clock in microseconds. </p>
+
+<p class="definition">Definition at line <a class="el" href="ntp__client__core_8hpp_source.html#l00076">76</a> of file <a class="el" href="ntp__client__core_8hpp_source.html">ntp_client_core.hpp</a>.</p>
 
 </div>
 </div>
@@ -216,7 +224,9 @@ Static Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ntp__client__core_8hpp_source.html#l00017">17</a> of file <a class="el" href="ntp__client__core_8hpp_source.html">ntp_client_core.hpp</a>.</p>
+<p>Perform one NTP transaction using a UDP transport. </p>
+
+<p class="definition">Definition at line <a class="el" href="ntp__client__core_8hpp_source.html#l00019">19</a> of file <a class="el" href="ntp__client__core_8hpp_source.html">ntp_client_core.hpp</a>.</p>
 
 </div>
 </div>

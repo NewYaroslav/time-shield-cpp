@@ -115,6 +115,9 @@ $(function(){initNavTree('classtime__shield_1_1detail_1_1IUdpTransport.html','')
 </div><!--header-->
 <div class="contents">
 
+<p>Abstract UDP transport interface for NTP queries.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="udp__transport_8hpp_source.html">udp_transport.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for time_shield::detail::IUdpTransport:</div>
@@ -122,21 +125,24 @@ Inheritance diagram for time_shield::detail::IUdpTransport:</div>
  <div class="center">
   <img src="classtime__shield_1_1detail_1_1IUdpTransport.png" usemap="#time_5Fshield::detail::IUdpTransport_map" alt=""/>
   <map id="time_5Fshield::detail::IUdpTransport_map" name="time_5Fshield::detail::IUdpTransport_map">
-<area href="classtime__shield_1_1detail_1_1UdpTransportPosix.html" alt="time_shield::detail::UdpTransportPosix" shape="rect" coords="0,56,222,80"/>
-<area href="classtime__shield_1_1detail_1_1UdpTransportWin.html" alt="time_shield::detail::UdpTransportWin" shape="rect" coords="232,56,454,80"/>
+<area href="classtime__shield_1_1detail_1_1UdpTransportPosix.html" title="POSIX UDP transport for NTP queries." alt="time_shield::detail::UdpTransportPosix" shape="rect" coords="0,56,222,80"/>
+<area href="classtime__shield_1_1detail_1_1UdpTransportWin.html" title="Windows UDP transport for NTP queries." alt="time_shield::detail::UdpTransportWin" shape="rect" coords="232,56,454,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a906434fbfc375931fd2afd603ca7bd63" id="r_a906434fbfc375931fd2afd603ca7bd63"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a906434fbfc375931fd2afd603ca7bd63">~IUdpTransport</a> ()</td></tr>
+<tr class="memdesc:a906434fbfc375931fd2afd603ca7bd63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor.  <br /></td></tr>
 <tr class="separator:a906434fbfc375931fd2afd603ca7bd63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc3d24663ea40f3b6d56994f22c1b932" id="r_adc3d24663ea40f3b6d56994f22c1b932"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adc3d24663ea40f3b6d56994f22c1b932">transact</a> (const <a class="el" href="structtime__shield_1_1detail_1_1UdpRequest.html">UdpRequest</a> &amp;req, int &amp;out_error_code) noexcept=0</td></tr>
+<tr class="memdesc:adc3d24663ea40f3b6d56994f22c1b932"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send request and receive response over UDP.  <br /></td></tr>
 <tr class="separator:adc3d24663ea40f3b6d56994f22c1b932"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="udp__transport_8hpp_source.html#l00022">22</a> of file <a class="el" href="udp__transport_8hpp_source.html">udp_transport.hpp</a>.</p>
+<div class="textblock"><p>Abstract UDP transport interface for NTP queries. </p>
+
+<p class="definition">Definition at line <a class="el" href="udp__transport_8hpp_source.html#l00024">24</a> of file <a class="el" href="udp__transport_8hpp_source.html">udp_transport.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a906434fbfc375931fd2afd603ca7bd63" name="a906434fbfc375931fd2afd603ca7bd63"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a906434fbfc375931fd2afd603ca7bd63">&#9670;&#160;</a></span>~IUdpTransport()</h2>
@@ -161,7 +167,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="udp__transport_8hpp_source.html#l00024">24</a> of file <a class="el" href="udp__transport_8hpp_source.html">udp_transport.hpp</a>.</p>
+<p>Virtual destructor. </p>
+
+<p class="definition">Definition at line <a class="el" href="udp__transport_8hpp_source.html#l00027">27</a> of file <a class="el" href="udp__transport_8hpp_source.html">udp_transport.hpp</a>.</p>
 
 </div>
 </div>
@@ -192,6 +200,8 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Send request and receive response over UDP. </p>
 
 <p>Implemented in <a class="el" href="classtime__shield_1_1detail_1_1UdpTransportPosix.html#a15cd6a7d67ae338eae1dbb994f6f59c9">time_shield::detail::UdpTransportPosix</a>, and <a class="el" href="classtime__shield_1_1detail_1_1UdpTransportWin.html#a2403429763fdc389e9fd71176bf20d93">time_shield::detail::UdpTransportWin</a>.</p>
 

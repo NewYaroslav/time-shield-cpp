@@ -110,7 +110,10 @@ $(function(){initNavTree('group__ntp.html',''); initResizable(true); });
 <div class="header">
   <div class="summary">
 <a href="#files">Files</a> &#124;
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">NTP Client</div></div>
 </div><!--header-->
 <div class="contents">
@@ -132,6 +135,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtime__shield_1_1NtpClient.html">time_shield::NtpClient</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">NTP client for measuring time offset.  <a href="classtime__shield_1_1NtpClient.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtime__shield_1_1detail_1_1NtpPacket.html">time_shield::detail::NtpPacket</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">NTP packet layout (48 bytes).  <a href="structtime__shield_1_1detail_1_1NtpPacket.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtime__shield_1_1WsaGuard.html">time_shield::WsaGuard</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Singleton guard for WinSock initialization.  <a href="classtime__shield_1_1WsaGuard.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -150,11 +156,96 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtime__shield_1_1BasicPoolRunner.html">time_shield::BasicPoolRunner&lt; PoolT &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Background runner that periodically measures NTP offsets using a pool.  <a href="classtime__shield_1_1BasicPoolRunner.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtime__shield_1_1NtpTimeServiceT.html">time_shield::NtpTimeServiceT&lt; RunnerT &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Singleton service for background NTP measurements.  <a href="classtime__shield_1_1NtpTimeServiceT.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ga082593e1e418eeac1f2fb5d1d1001722" id="r_ga082593e1e418eeac1f2fb5d1d1001722"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga082593e1e418eeac1f2fb5d1d1001722">time_shield::NtpTimeService</a> = <a class="el" href="classtime__shield_1_1NtpTimeServiceT.html">NtpTimeServiceT</a>&lt;<a class="el" href="classtime__shield_1_1detail_1_1FakeNtpRunner.html">detail::FakeNtpRunner</a>&gt;</td></tr>
+<tr class="memdesc:ga082593e1e418eeac1f2fb5d1d1001722"><td class="mdescLeft">&#160;</td><td class="mdescRight">NTP time service alias that uses a fake runner for tests.  <br /></td></tr>
+<tr class="separator:ga082593e1e418eeac1f2fb5d1d1001722"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:ga0415b8ea31444b289d12fa4477ab0956" id="r_ga0415b8ea31444b289d12fa4477ab0956"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0415b8ea31444b289d12fa4477ab0956">time_shield::detail::NtpProtoError</a> { <br />
+&#160;&#160;<a class="el" href="#gga0415b8ea31444b289d12fa4477ab0956ab5653c15b7cdad2635b0d68b2044e798">time_shield::detail::NTP_EPROTO_BASE</a> = -10000
+, <a class="el" href="#gga0415b8ea31444b289d12fa4477ab0956a22800d3f7fffe9107262feac5c976609">time_shield::detail::NTP_E_BAD_MODE</a> = NTP_EPROTO_BASE - 1
+, <a class="el" href="#gga0415b8ea31444b289d12fa4477ab0956ad254552bc1d64530f4589070ffedd4c2">time_shield::detail::NTP_E_BAD_VERSION</a> = NTP_EPROTO_BASE - 2
+, <a class="el" href="#gga0415b8ea31444b289d12fa4477ab0956a41a3a51fca5aa482320147a8ca931e9b">time_shield::detail::NTP_E_BAD_LI</a> = NTP_EPROTO_BASE - 3
+, <br />
+&#160;&#160;<a class="el" href="#gga0415b8ea31444b289d12fa4477ab0956a9a71453f4865abfbc41a111018d6f1d5">time_shield::detail::NTP_E_BAD_STRATUM</a> = NTP_EPROTO_BASE - 4
+, <a class="el" href="#gga0415b8ea31444b289d12fa4477ab0956a242bb8a1ee2d6b3299c14885992408d4">time_shield::detail::NTP_E_KOD</a> = NTP_EPROTO_BASE - 5
+, <a class="el" href="#gga0415b8ea31444b289d12fa4477ab0956ad39f33af632e93e1ef5ce7dd970af607">time_shield::detail::NTP_E_BAD_TS</a> = NTP_EPROTO_BASE - 6
+<br />
+ }</td></tr>
+<tr class="memdesc:ga0415b8ea31444b289d12fa4477ab0956"><td class="mdescLeft">&#160;</td><td class="mdescRight">Protocol-level error codes for NTP parsing.  <a href="#ga0415b8ea31444b289d12fa4477ab0956">More...</a><br /></td></tr>
+<tr class="separator:ga0415b8ea31444b289d12fa4477ab0956"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga6dd72024ef358bc8957e37468c861b85" id="r_ga6dd72024ef358bc8957e37468c861b85"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6dd72024ef358bc8957e37468c861b85">time_shield::ntp::init</a> (std::chrono::milliseconds interval=std::chrono::seconds(30), bool measure_immediately=true)</td></tr>
+<tr class="memdesc:ga6dd72024ef358bc8957e37468c861b85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize NTP time service and start background measurements.  <br /></td></tr>
+<tr class="separator:ga6dd72024ef358bc8957e37468c861b85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga45202c00e7e51d89a37d06d989df05d4" id="r_ga45202c00e7e51d89a37d06d989df05d4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga45202c00e7e51d89a37d06d989df05d4">time_shield::ntp::init</a> (int interval_ms, bool measure_immediately=true)</td></tr>
+<tr class="memdesc:ga45202c00e7e51d89a37d06d989df05d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize NTP time service using milliseconds.  <br /></td></tr>
+<tr class="separator:ga45202c00e7e51d89a37d06d989df05d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3d5c36686518a323f90adf29b128de8e" id="r_ga3d5c36686518a323f90adf29b128de8e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3d5c36686518a323f90adf29b128de8e">time_shield::ntp::shutdown</a> ()</td></tr>
+<tr class="memdesc:ga3d5c36686518a323f90adf29b128de8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop NTP time service.  <br /></td></tr>
+<tr class="separator:ga3d5c36686518a323f90adf29b128de8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3ce42f4011b126c3a9c1f4bf3a82b6af" id="r_ga3ce42f4011b126c3a9c1f4bf3a82b6af"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3ce42f4011b126c3a9c1f4bf3a82b6af">time_shield::ntp::offset_us</a> () noexcept</td></tr>
+<tr class="memdesc:ga3ce42f4011b126c3a9c1f4bf3a82b6af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return last estimated offset in microseconds.  <br /></td></tr>
+<tr class="separator:ga3ce42f4011b126c3a9c1f4bf3a82b6af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa8c3b3f112aa919f36d49dac16fd18cb" id="r_gaa8c3b3f112aa919f36d49dac16fd18cb"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa8c3b3f112aa919f36d49dac16fd18cb">time_shield::ntp::utc_time_us</a> () noexcept</td></tr>
+<tr class="memdesc:gaa8c3b3f112aa919f36d49dac16fd18cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return current UTC time in microseconds based on offset.  <br /></td></tr>
+<tr class="separator:gaa8c3b3f112aa919f36d49dac16fd18cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga49a0998a84278305b8b3346a9b7ff5dd" id="r_ga49a0998a84278305b8b3346a9b7ff5dd"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga49a0998a84278305b8b3346a9b7ff5dd">time_shield::ntp::utc_time_ms</a> () noexcept</td></tr>
+<tr class="memdesc:ga49a0998a84278305b8b3346a9b7ff5dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return current UTC time in milliseconds based on offset.  <br /></td></tr>
+<tr class="separator:ga49a0998a84278305b8b3346a9b7ff5dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0cd2643bc008bcd55dc240707740271c" id="r_ga0cd2643bc008bcd55dc240707740271c"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0cd2643bc008bcd55dc240707740271c">time_shield::ntp::utc_time_sec</a> () noexcept</td></tr>
+<tr class="memdesc:ga0cd2643bc008bcd55dc240707740271c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return current UTC time in seconds based on offset.  <br /></td></tr>
+<tr class="separator:ga0cd2643bc008bcd55dc240707740271c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga315bdecd8dc7d17905f30322aac15cba" id="r_ga315bdecd8dc7d17905f30322aac15cba"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga315bdecd8dc7d17905f30322aac15cba">time_shield::ntp::last_measure_ok</a> () noexcept</td></tr>
+<tr class="memdesc:ga315bdecd8dc7d17905f30322aac15cba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return whether last measurement updated the offset.  <br /></td></tr>
+<tr class="separator:ga315bdecd8dc7d17905f30322aac15cba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1a2568e1c057120cba4eeb913a598662" id="r_ga1a2568e1c057120cba4eeb913a598662"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1a2568e1c057120cba4eeb913a598662">time_shield::ntp::measure_count</a> () noexcept</td></tr>
+<tr class="memdesc:ga1a2568e1c057120cba4eeb913a598662"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return total number of measurement attempts.  <br /></td></tr>
+<tr class="separator:ga1a2568e1c057120cba4eeb913a598662"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8bfb71d253285afe4b337d32fd831e39" id="r_ga8bfb71d253285afe4b337d32fd831e39"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8bfb71d253285afe4b337d32fd831e39">time_shield::ntp::fail_count</a> () noexcept</td></tr>
+<tr class="memdesc:ga8bfb71d253285afe4b337d32fd831e39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return number of failed measurement attempts.  <br /></td></tr>
+<tr class="separator:ga8bfb71d253285afe4b337d32fd831e39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa187c80a0faa52fef837bfbe14a87bbe" id="r_gaa187c80a0faa52fef837bfbe14a87bbe"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa187c80a0faa52fef837bfbe14a87bbe">time_shield::ntp::last_update_realtime_us</a> () noexcept</td></tr>
+<tr class="memdesc:gaa187c80a0faa52fef837bfbe14a87bbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return realtime timestamp of last measurement attempt.  <br /></td></tr>
+<tr class="separator:gaa187c80a0faa52fef837bfbe14a87bbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7b26ca9277df54f9a73a8fb84eea47fb" id="r_ga7b26ca9277df54f9a73a8fb84eea47fb"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7b26ca9277df54f9a73a8fb84eea47fb">time_shield::ntp::last_success_realtime_us</a> () noexcept</td></tr>
+<tr class="memdesc:ga7b26ca9277df54f9a73a8fb84eea47fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return realtime timestamp of last successful measurement.  <br /></td></tr>
+<tr class="separator:ga7b26ca9277df54f9a73a8fb84eea47fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1bbaa91f329c2c7fd7b36bce2d288b15" id="r_ga1bbaa91f329c2c7fd7b36bce2d288b15"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1bbaa91f329c2c7fd7b36bce2d288b15">time_shield::ntp::stale</a> (std::chrono::milliseconds max_age) noexcept</td></tr>
+<tr class="memdesc:ga1bbaa91f329c2c7fd7b36bce2d288b15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true when last measurement is older than max_age.  <br /></td></tr>
+<tr class="separator:ga1bbaa91f329c2c7fd7b36bce2d288b15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Facilities for retrieving time using the Network Time Protocol. </p>
-<p>This module contains a minimal client capable of querying remote NTP servers to measure the offset between local and network time. It uses WinSock via the <code>WsaGuard</code> helper on Windows and POSIX sockets on Unix platforms.</p>
+<p>This module contains a minimal client and optional pool/service pipeline capable of querying remote NTP servers to measure the offset between local realtime and network time. It uses WinSock via the <code>WsaGuard</code> helper on Windows and POSIX sockets on Unix platforms.</p>
 <h3><a class="anchor" id="autotoc_md21"></a>
+Architecture:</h3>
+<ul>
+<li><code>NtpClient</code> performs a single request/response exchange with one server.</li>
+<li><code>NtpClientPool</code> samples multiple servers with rate limiting and backoff.</li>
+<li><code>NtpClientPoolRunner</code> runs the pool periodically in a background thread.</li>
+<li><code>NtpTimeService</code> wraps the runner in a singleton interface for easy access.</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md22"></a>
+Offset computation:</h3>
+<p>For each response, offsets and delays are computed using the standard NTP four-timestamp method:</p><ul>
+<li><code>t1</code> — client transmit time</li>
+<li><code>t2</code> — server receive time</li>
+<li><code>t3</code> — server transmit time</li>
+<li><code>t4</code> — client receive time</li>
+</ul>
+<p>Offset and delay are derived as: <code>offset = ((t2 - t1) + (t3 - t4)) / 2</code>, <code>delay = (t4 - t1) - (t3 - t2)</code>.</p>
+<p>Pools aggregate per-server offsets using the configured strategy (median, best-delay sample, or median with MAD trimming) and optional exponential smoothing.</p>
+<h3><a class="anchor" id="autotoc_md23"></a>
 Features:</h3>
 <ul>
 <li>Query NTP servers and obtain the time offset.</li>
@@ -162,16 +253,484 @@ Features:</h3>
 <li>Automatic WinSock initialization through <code>WsaGuard</code> (Windows build).</li>
 <li>Requires network connectivity.</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md22"></a>
+<h3><a class="anchor" id="autotoc_md24"></a>
 Example Usage:</h3>
 <div class="fragment"><div class="line"><a class="code hl_class" href="classtime__shield_1_1NtpClient.html">time_shield::NtpClient</a> client;</div>
 <div class="line"><span class="keywordflow">if</span> (client.<a class="code hl_function" href="classtime__shield_1_1NtpClient.html#aec57675f3cf62878d7fa628f9e512ab1">query</a>()) {</div>
-<div class="line">    int64_t offset = client.get_offset_us();</div>
-<div class="line">    int64_t utc_ms = client.get_utc_time_ms();</div>
+<div class="line">    int64_t offset = client.<a class="code hl_function" href="classtime__shield_1_1NtpClient.html#a0e35b8e95047daa69908148d604c0555">offset_us</a>();</div>
+<div class="line">    int64_t utc_ms = client.<a class="code hl_function" href="classtime__shield_1_1NtpClient.html#a16064378df6c333f7c4874fff8bd8969">utc_time_ms</a>();</div>
 <div class="line">}</div>
 <div class="ttc" id="aclasstime__shield_1_1NtpClient_html"><div class="ttname"><a href="classtime__shield_1_1NtpClient.html">time_shield::NtpClient</a></div><div class="ttdoc">NTP client for measuring time offset.</div><div class="ttdef"><b>Definition</b> <a href="ntp__client_8hpp_source.html#l00043">ntp_client.hpp:43</a></div></div>
-<div class="ttc" id="aclasstime__shield_1_1NtpClient_html_aec57675f3cf62878d7fa628f9e512ab1"><div class="ttname"><a href="classtime__shield_1_1NtpClient.html#aec57675f3cf62878d7fa628f9e512ab1">time_shield::NtpClient::query</a></div><div class="ttdeci">bool query()</div><div class="ttdoc">Queries the NTP server and updates the local offset.</div><div class="ttdef"><b>Definition</b> <a href="ntp__client_8hpp_source.html#l00058">ntp_client.hpp:58</a></div></div>
-</div><!-- fragment --> </div><!-- contents -->
+<div class="ttc" id="aclasstime__shield_1_1NtpClient_html_a0e35b8e95047daa69908148d604c0555"><div class="ttname"><a href="classtime__shield_1_1NtpClient.html#a0e35b8e95047daa69908148d604c0555">time_shield::NtpClient::offset_us</a></div><div class="ttdeci">int64_t offset_us() const noexcept</div><div class="ttdoc">Returns the last measured offset in microseconds.</div><div class="ttdef"><b>Definition</b> <a href="ntp__client_8hpp_source.html#l00113">ntp_client.hpp:113</a></div></div>
+<div class="ttc" id="aclasstime__shield_1_1NtpClient_html_a16064378df6c333f7c4874fff8bd8969"><div class="ttname"><a href="classtime__shield_1_1NtpClient.html#a16064378df6c333f7c4874fff8bd8969">time_shield::NtpClient::utc_time_ms</a></div><div class="ttdeci">int64_t utc_time_ms() const noexcept</div><div class="ttdoc">Returns current UTC time in milliseconds based on last NTP offset.</div><div class="ttdef"><b>Definition</b> <a href="ntp__client_8hpp_source.html#l00129">ntp_client.hpp:129</a></div></div>
+<div class="ttc" id="aclasstime__shield_1_1NtpClient_html_aec57675f3cf62878d7fa628f9e512ab1"><div class="ttname"><a href="classtime__shield_1_1NtpClient.html#aec57675f3cf62878d7fa628f9e512ab1">time_shield::NtpClient::query</a></div><div class="ttdeci">bool query()</div><div class="ttdoc">Queries the NTP server and updates the local offset.</div><div class="ttdef"><b>Definition</b> <a href="ntp__client_8hpp_source.html#l00061">ntp_client.hpp:61</a></div></div>
+</div><!-- fragment --> <h2 class="groupheader">Typedef Documentation</h2>
+<a id="ga082593e1e418eeac1f2fb5d1d1001722" name="ga082593e1e418eeac1f2fb5d1d1001722"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga082593e1e418eeac1f2fb5d1d1001722">&#9670;&#160;</a></span>NtpTimeService</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classtime__shield_1_1NtpTimeServiceT.html">NtpTimeServiceT</a>&lt; <a class="el" href="classtime__shield_1_1NtpClientPoolRunner.html">NtpClientPoolRunner</a> &gt; time_shield::NtpTimeService = <a class="el" href="classtime__shield_1_1NtpTimeServiceT.html">NtpTimeServiceT</a>&lt;<a class="el" href="classtime__shield_1_1detail_1_1FakeNtpRunner.html">detail::FakeNtpRunner</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>NTP time service alias that uses a fake runner for tests. </p>
+<p>NTP time service alias that uses the real pool runner. </p>
+
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00548">548</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="ga0415b8ea31444b289d12fa4477ab0956" name="ga0415b8ea31444b289d12fa4477ab0956"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0415b8ea31444b289d12fa4477ab0956">&#9670;&#160;</a></span>NtpProtoError</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#ga0415b8ea31444b289d12fa4477ab0956">time_shield::detail::NtpProtoError</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Protocol-level error codes for NTP parsing. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga0415b8ea31444b289d12fa4477ab0956ab5653c15b7cdad2635b0d68b2044e798" name="gga0415b8ea31444b289d12fa4477ab0956ab5653c15b7cdad2635b0d68b2044e798"></a>NTP_EPROTO_BASE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga0415b8ea31444b289d12fa4477ab0956a22800d3f7fffe9107262feac5c976609" name="gga0415b8ea31444b289d12fa4477ab0956a22800d3f7fffe9107262feac5c976609"></a>NTP_E_BAD_MODE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga0415b8ea31444b289d12fa4477ab0956ad254552bc1d64530f4589070ffedd4c2" name="gga0415b8ea31444b289d12fa4477ab0956ad254552bc1d64530f4589070ffedd4c2"></a>NTP_E_BAD_VERSION&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga0415b8ea31444b289d12fa4477ab0956a41a3a51fca5aa482320147a8ca931e9b" name="gga0415b8ea31444b289d12fa4477ab0956a41a3a51fca5aa482320147a8ca931e9b"></a>NTP_E_BAD_LI&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga0415b8ea31444b289d12fa4477ab0956a9a71453f4865abfbc41a111018d6f1d5" name="gga0415b8ea31444b289d12fa4477ab0956a9a71453f4865abfbc41a111018d6f1d5"></a>NTP_E_BAD_STRATUM&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga0415b8ea31444b289d12fa4477ab0956a242bb8a1ee2d6b3299c14885992408d4" name="gga0415b8ea31444b289d12fa4477ab0956a242bb8a1ee2d6b3299c14885992408d4"></a>NTP_E_KOD&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga0415b8ea31444b289d12fa4477ab0956ad39f33af632e93e1ef5ce7dd970af607" name="gga0415b8ea31444b289d12fa4477ab0956ad39f33af632e93e1ef5ce7dd970af607"></a>NTP_E_BAD_TS&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="ntp__packet_8hpp_source.html#l00042">42</a> of file <a class="el" href="ntp__packet_8hpp_source.html">ntp_packet.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ga8bfb71d253285afe4b337d32fd831e39" name="ga8bfb71d253285afe4b337d32fd831e39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8bfb71d253285afe4b337d32fd831e39">&#9670;&#160;</a></span>fail_count()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t time_shield::ntp::fail_count </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return number of failed measurement attempts. </p>
+<dl class="section return"><dt>Returns</dt><dd>Number of failed measurement attempts. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00628">628</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga45202c00e7e51d89a37d06d989df05d4" name="ga45202c00e7e51d89a37d06d989df05d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga45202c00e7e51d89a37d06d989df05d4">&#9670;&#160;</a></span>init() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool time_shield::ntp::init </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>interval_ms</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>measure_immediately</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initialize NTP time service using milliseconds. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">interval_ms</td><td>Measurement interval in milliseconds. </td></tr>
+    <tr><td class="paramname">measure_immediately</td><td>Measure before first sleep if true. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True when background runner started. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00572">572</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga6dd72024ef358bc8957e37468c861b85" name="ga6dd72024ef358bc8957e37468c861b85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6dd72024ef358bc8957e37468c861b85">&#9670;&#160;</a></span>init() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool time_shield::ntp::init </td>
+          <td>(</td>
+          <td class="paramtype">std::chrono::milliseconds</td>          <td class="paramname"><span class="paramname"><em>interval</em></span><span class="paramdefsep"> = </span><span class="paramdefval">std::chrono::seconds(30)</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>measure_immediately</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initialize NTP time service and start background measurements. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">interval</td><td>Measurement interval. </td></tr>
+    <tr><td class="paramname">measure_immediately</td><td>Measure before first sleep if true. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True when background runner started. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00562">562</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga315bdecd8dc7d17905f30322aac15cba" name="ga315bdecd8dc7d17905f30322aac15cba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga315bdecd8dc7d17905f30322aac15cba">&#9670;&#160;</a></span>last_measure_ok()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool time_shield::ntp::last_measure_ok </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return whether last measurement updated the offset. </p>
+<dl class="section return"><dt>Returns</dt><dd>True when last measurement updated the offset. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00614">614</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga7b26ca9277df54f9a73a8fb84eea47fb" name="ga7b26ca9277df54f9a73a8fb84eea47fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7b26ca9277df54f9a73a8fb84eea47fb">&#9670;&#160;</a></span>last_success_realtime_us()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64_t time_shield::ntp::last_success_realtime_us </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return realtime timestamp of last successful measurement. </p>
+<dl class="section return"><dt>Returns</dt><dd>Realtime microseconds timestamp for last successful measurement. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00642">642</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gaa187c80a0faa52fef837bfbe14a87bbe" name="gaa187c80a0faa52fef837bfbe14a87bbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa187c80a0faa52fef837bfbe14a87bbe">&#9670;&#160;</a></span>last_update_realtime_us()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64_t time_shield::ntp::last_update_realtime_us </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return realtime timestamp of last measurement attempt. </p>
+<dl class="section return"><dt>Returns</dt><dd>Realtime microseconds timestamp for last measurement attempt. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00635">635</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga1a2568e1c057120cba4eeb913a598662" name="ga1a2568e1c057120cba4eeb913a598662"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1a2568e1c057120cba4eeb913a598662">&#9670;&#160;</a></span>measure_count()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t time_shield::ntp::measure_count </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return total number of measurement attempts. </p>
+<dl class="section return"><dt>Returns</dt><dd>Number of measurement attempts. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00621">621</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga3ce42f4011b126c3a9c1f4bf3a82b6af" name="ga3ce42f4011b126c3a9c1f4bf3a82b6af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3ce42f4011b126c3a9c1f4bf3a82b6af">&#9670;&#160;</a></span>offset_us()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64_t time_shield::ntp::offset_us </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return last estimated offset in microseconds. </p>
+<dl class="section return"><dt>Returns</dt><dd>Offset in microseconds (UTC - local realtime). </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00586">586</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga3d5c36686518a323f90adf29b128de8e" name="ga3d5c36686518a323f90adf29b128de8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3d5c36686518a323f90adf29b128de8e">&#9670;&#160;</a></span>shutdown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void time_shield::ntp::shutdown </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Stop NTP time service. </p>
+
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00579">579</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga1bbaa91f329c2c7fd7b36bce2d288b15" name="ga1bbaa91f329c2c7fd7b36bce2d288b15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1bbaa91f329c2c7fd7b36bce2d288b15">&#9670;&#160;</a></span>stale()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool time_shield::ntp::stale </td>
+          <td>(</td>
+          <td class="paramtype">std::chrono::milliseconds</td>          <td class="paramname"><span class="paramname"><em>max_age</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return true when last measurement is older than max_age. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">max_age</td><td>Maximum allowed age. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True when last measurement age exceeds max_age. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00650">650</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga49a0998a84278305b8b3346a9b7ff5dd" name="ga49a0998a84278305b8b3346a9b7ff5dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga49a0998a84278305b8b3346a9b7ff5dd">&#9670;&#160;</a></span>utc_time_ms()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64_t time_shield::ntp::utc_time_ms </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return current UTC time in milliseconds based on offset. </p>
+<dl class="section return"><dt>Returns</dt><dd>UTC time in milliseconds using last offset. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00600">600</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga0cd2643bc008bcd55dc240707740271c" name="ga0cd2643bc008bcd55dc240707740271c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0cd2643bc008bcd55dc240707740271c">&#9670;&#160;</a></span>utc_time_sec()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64_t time_shield::ntp::utc_time_sec </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return current UTC time in seconds based on offset. </p>
+<dl class="section return"><dt>Returns</dt><dd>UTC time in seconds using last offset. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00607">607</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gaa8c3b3f112aa919f36d49dac16fd18cb" name="gaa8c3b3f112aa919f36d49dac16fd18cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa8c3b3f112aa919f36d49dac16fd18cb">&#9670;&#160;</a></span>utc_time_us()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64_t time_shield::ntp::utc_time_us </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return current UTC time in microseconds based on offset. </p>
+<dl class="section return"><dt>Returns</dt><dd>UTC time in microseconds using last offset. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00593">593</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

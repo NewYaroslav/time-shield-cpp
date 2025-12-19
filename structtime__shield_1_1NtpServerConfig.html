@@ -123,22 +123,28 @@ $(function(){initNavTree('structtime__shield_1_1NtpServerConfig.html',''); initR
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:ad8d2f104514dea31f4f375951223f30a" id="r_ad8d2f104514dea31f4f375951223f30a"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad8d2f104514dea31f4f375951223f30a">host</a></td></tr>
+<tr class="memdesc:ad8d2f104514dea31f4f375951223f30a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Server host name.  <br /></td></tr>
 <tr class="separator:ad8d2f104514dea31f4f375951223f30a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab66514ae795fd8c76ab4f7d4ffed4119" id="r_ab66514ae795fd8c76ab4f7d4ffed4119"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab66514ae795fd8c76ab4f7d4ffed4119">port</a> = 123</td></tr>
+<tr class="memdesc:ab66514ae795fd8c76ab4f7d4ffed4119"><td class="mdescLeft">&#160;</td><td class="mdescRight">Server port.  <br /></td></tr>
 <tr class="separator:ab66514ae795fd8c76ab4f7d4ffed4119"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a80d382a9220001426bfefb26914288b2" id="r_a80d382a9220001426bfefb26914288b2"><td class="memItemLeft" align="right" valign="top">std::chrono::milliseconds&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a80d382a9220001426bfefb26914288b2">min_interval</a> {15000}</td></tr>
+<tr class="memdesc:a80d382a9220001426bfefb26914288b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimum time between queries to the same server.  <br /></td></tr>
 <tr class="separator:a80d382a9220001426bfefb26914288b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72ef673a3ed532d871cd7242abc5dc6d" id="r_a72ef673a3ed532d871cd7242abc5dc6d"><td class="memItemLeft" align="right" valign="top">std::chrono::milliseconds&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a72ef673a3ed532d871cd7242abc5dc6d">max_delay</a> {250}</td></tr>
+<tr class="memdesc:a72ef673a3ed532d871cd7242abc5dc6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum acceptable delay for responses from this server.  <br /></td></tr>
 <tr class="separator:a72ef673a3ed532d871cd7242abc5dc6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a771b85a581c5e95aa6cc34544763a520" id="r_a771b85a581c5e95aa6cc34544763a520"><td class="memItemLeft" align="right" valign="top">std::chrono::milliseconds&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a771b85a581c5e95aa6cc34544763a520">backoff_initial</a> {15000}</td></tr>
+<tr class="memdesc:a771b85a581c5e95aa6cc34544763a520"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initial backoff after failure.  <br /></td></tr>
 <tr class="separator:a771b85a581c5e95aa6cc34544763a520"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3591085f2a995e144fbee4ece8ee1ce5" id="r_a3591085f2a995e144fbee4ece8ee1ce5"><td class="memItemLeft" align="right" valign="top">std::chrono::milliseconds&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3591085f2a995e144fbee4ece8ee1ce5">backoff_max</a> {std::chrono::minutes(10)}</td></tr>
+<tr class="memdesc:a3591085f2a995e144fbee4ece8ee1ce5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum backoff interval after repeated failures.  <br /></td></tr>
 <tr class="separator:a3591085f2a995e144fbee4ece8ee1ce5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Per-server configuration. </p>
 
-<p class="definition">Definition at line <a class="el" href="ntp__client__pool_8hpp_source.html#l00042">42</a> of file <a class="el" href="ntp__client__pool_8hpp_source.html">ntp_client_pool.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__client__pool_8hpp_source.html#l00040">40</a> of file <a class="el" href="ntp__client__pool_8hpp_source.html">ntp_client_pool.hpp</a>.</p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="a771b85a581c5e95aa6cc34544763a520" name="a771b85a581c5e95aa6cc34544763a520"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a771b85a581c5e95aa6cc34544763a520">&#9670;&#160;</a></span>backoff_initial</h2>
@@ -152,7 +158,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ntp__client__pool_8hpp_source.html#l00049">49</a> of file <a class="el" href="ntp__client__pool_8hpp_source.html">ntp_client_pool.hpp</a>.</p>
+<p>Initial backoff after failure. </p>
+
+<p class="definition">Definition at line <a class="el" href="ntp__client__pool_8hpp_source.html#l00047">47</a> of file <a class="el" href="ntp__client__pool_8hpp_source.html">ntp_client_pool.hpp</a>.</p>
 
 </div>
 </div>
@@ -168,7 +176,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ntp__client__pool_8hpp_source.html#l00050">50</a> of file <a class="el" href="ntp__client__pool_8hpp_source.html">ntp_client_pool.hpp</a>.</p>
+<p>Maximum backoff interval after repeated failures. </p>
+
+<p class="definition">Definition at line <a class="el" href="ntp__client__pool_8hpp_source.html#l00048">48</a> of file <a class="el" href="ntp__client__pool_8hpp_source.html">ntp_client_pool.hpp</a>.</p>
 
 </div>
 </div>
@@ -184,7 +194,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ntp__client__pool_8hpp_source.html#l00043">43</a> of file <a class="el" href="ntp__client__pool_8hpp_source.html">ntp_client_pool.hpp</a>.</p>
+<p>Server host name. </p>
+
+<p class="definition">Definition at line <a class="el" href="ntp__client__pool_8hpp_source.html#l00041">41</a> of file <a class="el" href="ntp__client__pool_8hpp_source.html">ntp_client_pool.hpp</a>.</p>
 
 </div>
 </div>
@@ -200,7 +212,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ntp__client__pool_8hpp_source.html#l00047">47</a> of file <a class="el" href="ntp__client__pool_8hpp_source.html">ntp_client_pool.hpp</a>.</p>
+<p>Maximum acceptable delay for responses from this server. </p>
+
+<p class="definition">Definition at line <a class="el" href="ntp__client__pool_8hpp_source.html#l00045">45</a> of file <a class="el" href="ntp__client__pool_8hpp_source.html">ntp_client_pool.hpp</a>.</p>
 
 </div>
 </div>
@@ -216,7 +230,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ntp__client__pool_8hpp_source.html#l00046">46</a> of file <a class="el" href="ntp__client__pool_8hpp_source.html">ntp_client_pool.hpp</a>.</p>
+<p>Minimum time between queries to the same server. </p>
+
+<p class="definition">Definition at line <a class="el" href="ntp__client__pool_8hpp_source.html#l00044">44</a> of file <a class="el" href="ntp__client__pool_8hpp_source.html">ntp_client_pool.hpp</a>.</p>
 
 </div>
 </div>
@@ -232,7 +248,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ntp__client__pool_8hpp_source.html#l00044">44</a> of file <a class="el" href="ntp__client__pool_8hpp_source.html">ntp_client_pool.hpp</a>.</p>
+<p>Server port. </p>
+
+<p class="definition">Definition at line <a class="el" href="ntp__client__pool_8hpp_source.html#l00042">42</a> of file <a class="el" href="ntp__client__pool_8hpp_source.html">ntp_client_pool.hpp</a>.</p>
 
 </div>
 </div>

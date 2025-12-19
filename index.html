@@ -196,7 +196,43 @@ Examples</h1>
 <li><code><a class="el" href="time__zone__conversions__example_8cpp.html" title="Demonstrates functions from time_shield::time_zone_conversions.">time_zone_conversions_example.cpp</a></code> — CET/EET ↔ GMT</li>
 <li><code><a class="el" href="ntp__client__example_8cpp.html" title="Demonstrates usage of time_shield::NtpClient.">ntp_client_example.cpp</a></code> — NTP sync (sockets)</li>
 </ul>
-<h2><a class="anchor" id="oa_and_astronomy"></a>
+<h1><a class="anchor" id="ntp_sec"></a>
+NTP client, pool, and time service</h1>
+<p>Time Shield provides an optional NTP stack (<code>TIME_SHIELD_ENABLE_NTP_CLIENT</code>) that can query remote servers and compute a local offset for UTC time.</p>
+<h3><a class="anchor" id="autotoc_md34"></a>
+Components</h3>
+<ul>
+<li><code>NtpClient</code> performs a single NTP request to one server.</li>
+<li><code>NtpClientPool</code> samples multiple servers with rate limiting and backoff.</li>
+<li><code>NtpClientPoolRunner</code> runs the pool periodically in a background thread.</li>
+<li><code>NtpTimeService</code> exposes a singleton interface with cached offset/UTC time.</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md35"></a>
+Offset computation</h3>
+<p>Each response is parsed using the standard four-timestamp method: <code>offset = ((t2 - t1) + (t3 - t4)) / 2</code>, <code>delay = (t4 - t1) - (t3 - t2)</code>, where <code>t1</code> is client transmit, <code>t2</code> is server receive, <code>t3</code> is server transmit, and <code>t4</code> is client receive time. Pool aggregation uses median or best-delay selection with optional MAD trimming and exponential smoothing.</p>
+<h3><a class="anchor" id="autotoc_md36"></a>
+Basic usage</h3>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="ntp__client_8hpp.html">time_shield/ntp_client.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="ntp__time__service_8hpp.html">time_shield/ntp_time_service.hpp</a>&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacetime__shield.html">time_shield</a>;</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_class" href="classtime__shield_1_1NtpClient.html">NtpClient</a> client(<span class="stringliteral">&quot;pool.ntp.org&quot;</span>);</div>
+<div class="line"><span class="keywordflow">if</span> (client.query()) {</div>
+<div class="line">    int64_t offset = client.offset_us();</div>
+<div class="line">    int64_t utc_ms = client.utc_time_ms();</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span>&amp; service = <a class="code hl_function" href="classtime__shield_1_1NtpTimeServiceT.html#a8151a412c1c0aa9df5b88efd235c4325">NtpTimeService::instance</a>();</div>
+<div class="line">service.init(std::chrono::seconds(30));</div>
+<div class="line">int64_t now_ms = service.utc_time_ms();</div>
+<div class="line">service.shutdown();</div>
+<div class="ttc" id="aclasstime__shield_1_1NtpClient_html"><div class="ttname"><a href="classtime__shield_1_1NtpClient.html">time_shield::NtpClient</a></div><div class="ttdoc">NTP client for measuring time offset.</div><div class="ttdef"><b>Definition</b> <a href="ntp__client_8hpp_source.html#l00043">ntp_client.hpp:43</a></div></div>
+<div class="ttc" id="aclasstime__shield_1_1NtpTimeServiceT_html_a8151a412c1c0aa9df5b88efd235c4325"><div class="ttname"><a href="classtime__shield_1_1NtpTimeServiceT.html#a8151a412c1c0aa9df5b88efd235c4325">time_shield::NtpTimeServiceT&lt; detail::FakeNtpRunner &gt;::instance</a></div><div class="ttdeci">static NtpTimeServiceT &amp; instance() noexcept</div><div class="ttdef"><b>Definition</b> <a href="ntp__time__service_8hpp_source.html#l00204">ntp_time_service.hpp:204</a></div></div>
+<div class="ttc" id="anamespacetime__shield_html"><div class="ttname"><a href="namespacetime__shield.html">time_shield</a></div><div class="ttdoc">Main namespace for the Time Shield library.</div></div>
+<div class="ttc" id="antp__client_8hpp_html"><div class="ttname"><a href="ntp__client_8hpp.html">ntp_client.hpp</a></div><div class="ttdoc">Simple NTP client for querying time offset from NTP servers.</div></div>
+<div class="ttc" id="antp__time__service_8hpp_html"><div class="ttname"><a href="ntp__time__service_8hpp.html">ntp_time_service.hpp</a></div></div>
+</div><!-- fragment --><h2><a class="anchor" id="oa_and_astronomy"></a>
 OA date and astronomy helpers</h2>
 <p>Convert between Unix timestamps and Excel/COM OA dates, or derive basic astronomical values from calendar inputs:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="ole__automation__conversions_8hpp.html">time_shield/ole_automation_conversions.hpp</a>&gt;</span></div>
@@ -219,7 +255,6 @@ OA date and astronomy helpers</h2>
 <div class="ttc" id="agroup__time__types_html_gaab97b453fa3ad4ad8a752b00019968d6"><div class="ttname"><a href="group__time__types.html#gaab97b453fa3ad4ad8a752b00019968d6">time_shield::oadate_t</a></div><div class="ttdeci">double oadate_t</div><div class="ttdoc">OLE Automation date (days since 1899‑12‑30, as double).</div><div class="ttdef"><b>Definition</b> <a href="types_8hpp_source.html#l00054">types.hpp:54</a></div></div>
 <div class="ttc" id="agroup__time__types_html_gac2c43d72af642bbab55e7c68ca268237"><div class="ttname"><a href="group__time__types.html#gac2c43d72af642bbab55e7c68ca268237">time_shield::mjd_t</a></div><div class="ttdeci">double mjd_t</div><div class="ttdoc">Modified Julian Date (JD − 2400000.5).</div><div class="ttdef"><b>Definition</b> <a href="types_8hpp_source.html#l00056">types.hpp:56</a></div></div>
 <div class="ttc" id="agroup__time__types_html_gad6b7a13bb33749e9f503f913d445a6e7"><div class="ttname"><a href="group__time__types.html#gad6b7a13bb33749e9f503f913d445a6e7">time_shield::jd_t</a></div><div class="ttdeci">double jd_t</div><div class="ttdoc">Julian Date (days since -4713‑11‑24T12:00:00Z).</div><div class="ttdef"><b>Definition</b> <a href="types_8hpp_source.html#l00055">types.hpp:55</a></div></div>
-<div class="ttc" id="anamespacetime__shield_html"><div class="ttname"><a href="namespacetime__shield.html">time_shield</a></div><div class="ttdoc">Main namespace for the Time Shield library.</div></div>
 <div class="ttc" id="anamespacetime__shield_html_a0a7cbd8ac4b9311d37ec2b1244d5fc00"><div class="ttname"><a href="namespacetime__shield.html#a0a7cbd8ac4b9311d37ec2b1244d5fc00">time_shield::ts_to_mjd</a></div><div class="ttdeci">mjd_t ts_to_mjd(ts_t ts) noexcept</div><div class="ttdoc">Convert Unix timestamp (seconds) to Modified Julian Date (MJD).</div><div class="ttdef"><b>Definition</b> <a href="astronomy__conversions_8hpp_source.html#l00098">astronomy_conversions.hpp:98</a></div></div>
 <div class="ttc" id="anamespacetime__shield_html_a0b348975140c881557b1951654630133"><div class="ttname"><a href="namespacetime__shield.html#a0b348975140c881557b1951654630133">time_shield::gregorian_to_jd</a></div><div class="ttdeci">jd_t gregorian_to_jd(double day, int64_t month, int64_t year) noexcept</div><div class="ttdoc">Convert Gregorian date (with optional fractional day) to Julian Date (JD).</div><div class="ttdef"><b>Definition</b> <a href="astronomy__conversions_8hpp_source.html#l00047">astronomy_conversions.hpp:47</a></div></div>
 <div class="ttc" id="anamespacetime__shield_html_a167c3fafd4f67c009a57926c58564dda"><div class="ttname"><a href="namespacetime__shield.html#a167c3fafd4f67c009a57926c58564dda">time_shield::ts_to_oadate</a></div><div class="ttdeci">TIME_SHIELD_CONSTEXPR oadate_t ts_to_oadate(ts_t ts) noexcept</div><div class="ttdoc">Convert Unix timestamp (seconds) to OA date.</div><div class="ttdef"><b>Definition</b> <a href="ole__automation__conversions_8hpp_source.html#l00030">ole_automation_conversions.hpp:30</a></div></div>

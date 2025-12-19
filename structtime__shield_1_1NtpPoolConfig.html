@@ -127,25 +127,30 @@ Public Types</h2></td></tr>
 , <a class="el" href="#a102a24d41f97f9da23cb8f7e28400947a2042bbaa54af7081b2ce9bec8d61583b">BestDelay</a>
 , <a class="el" href="#a102a24d41f97f9da23cb8f7e28400947ae1c1836c7e2a1c4bb75bddf3ad3e97ff">MedianMadTrim</a>
  }</td></tr>
+<tr class="memdesc:a102a24d41f97f9da23cb8f7e28400947"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a102a24d41f97f9da23cb8f7e28400947" title="Aggregation strategy for offset estimation.">Aggregation</a> strategy for offset estimation.  <a href="#a102a24d41f97f9da23cb8f7e28400947">More...</a><br /></td></tr>
 <tr class="separator:a102a24d41f97f9da23cb8f7e28400947"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:af669f7df5c819a41ffb04ed521d4c82a" id="r_af669f7df5c819a41ffb04ed521d4c82a"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af669f7df5c819a41ffb04ed521d4c82a">sample_servers</a> = 5</td></tr>
+<tr class="memdesc:af669f7df5c819a41ffb04ed521d4c82a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of servers to sample per measurement.  <br /></td></tr>
 <tr class="separator:af669f7df5c819a41ffb04ed521d4c82a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab137b8cd506ec3623c418983d0e03595" id="r_ab137b8cd506ec3623c418983d0e03595"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab137b8cd506ec3623c418983d0e03595">min_valid_samples</a> = 3</td></tr>
+<tr class="memdesc:ab137b8cd506ec3623c418983d0e03595"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimum number of valid samples required to update offset.  <br /></td></tr>
 <tr class="separator:ab137b8cd506ec3623c418983d0e03595"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81a22ef15374669054b75a4de4aa9100" id="r_a81a22ef15374669054b75a4de4aa9100"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="#a102a24d41f97f9da23cb8f7e28400947">time_shield::NtpPoolConfig::Aggregation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81a22ef15374669054b75a4de4aa9100">aggregation</a> = <a class="el" href="#a102a24d41f97f9da23cb8f7e28400947a66851a3adec6655a7bd563743e4a55a2">Aggregation::Median</a></td></tr>
 <tr class="separator:a81a22ef15374669054b75a4de4aa9100"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4e9f83fd5baa37cab2549a5eed3d4a6" id="r_af4e9f83fd5baa37cab2549a5eed3d4a6"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af4e9f83fd5baa37cab2549a5eed3d4a6">smoothing_alpha</a> = 1.0</td></tr>
+<tr class="memdesc:af4e9f83fd5baa37cab2549a5eed3d4a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exponential smoothing factor for offset updates.  <br /></td></tr>
 <tr class="separator:af4e9f83fd5baa37cab2549a5eed3d4a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d89dd999fd0f1055befe1b7815b77d2" id="r_a9d89dd999fd0f1055befe1b7815b77d2"><td class="memItemLeft" align="right" valign="top">std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9d89dd999fd0f1055befe1b7815b77d2">rng_seed</a> = 0</td></tr>
+<tr class="memdesc:a9d89dd999fd0f1055befe1b7815b77d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Random seed for server sampling; 0 uses time-based seed.  <br /></td></tr>
 <tr class="separator:a9d89dd999fd0f1055befe1b7815b77d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Pool configuration. </p>
 
-<p class="definition">Definition at line <a class="el" href="ntp__client__pool_8hpp_source.html#l00055">55</a> of file <a class="el" href="ntp__client__pool_8hpp_source.html">ntp_client_pool.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__client__pool_8hpp_source.html#l00053">53</a> of file <a class="el" href="ntp__client__pool_8hpp_source.html">ntp_client_pool.hpp</a>.</p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a102a24d41f97f9da23cb8f7e28400947" name="a102a24d41f97f9da23cb8f7e28400947"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a102a24d41f97f9da23cb8f7e28400947">&#9670;&#160;</a></span>Aggregation</h2>
@@ -166,13 +171,15 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p><a class="el" href="#a102a24d41f97f9da23cb8f7e28400947" title="Aggregation strategy for offset estimation.">Aggregation</a> strategy for offset estimation. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a102a24d41f97f9da23cb8f7e28400947a66851a3adec6655a7bd563743e4a55a2" name="a102a24d41f97f9da23cb8f7e28400947a66851a3adec6655a7bd563743e4a55a2"></a>Median&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a102a24d41f97f9da23cb8f7e28400947a2042bbaa54af7081b2ce9bec8d61583b" name="a102a24d41f97f9da23cb8f7e28400947a2042bbaa54af7081b2ce9bec8d61583b"></a>BestDelay&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a102a24d41f97f9da23cb8f7e28400947ae1c1836c7e2a1c4bb75bddf3ad3e97ff" name="a102a24d41f97f9da23cb8f7e28400947ae1c1836c7e2a1c4bb75bddf3ad3e97ff"></a>MedianMadTrim&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="ntp__client__pool_8hpp_source.html#l00059">59</a> of file <a class="el" href="ntp__client__pool_8hpp_source.html">ntp_client_pool.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__client__pool_8hpp_source.html#l00058">58</a> of file <a class="el" href="ntp__client__pool_8hpp_source.html">ntp_client_pool.hpp</a>.</p>
 
 </div>
 </div>
@@ -203,7 +210,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ntp__client__pool_8hpp_source.html#l00057">57</a> of file <a class="el" href="ntp__client__pool_8hpp_source.html">ntp_client_pool.hpp</a>.</p>
+<p>Minimum number of valid samples required to update offset. </p>
+
+<p class="definition">Definition at line <a class="el" href="ntp__client__pool_8hpp_source.html#l00055">55</a> of file <a class="el" href="ntp__client__pool_8hpp_source.html">ntp_client_pool.hpp</a>.</p>
 
 </div>
 </div>
@@ -219,7 +228,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ntp__client__pool_8hpp_source.html#l00066">66</a> of file <a class="el" href="ntp__client__pool_8hpp_source.html">ntp_client_pool.hpp</a>.</p>
+<p>Random seed for server sampling; 0 uses time-based seed. </p>
+
+<p class="definition">Definition at line <a class="el" href="ntp__client__pool_8hpp_source.html#l00065">65</a> of file <a class="el" href="ntp__client__pool_8hpp_source.html">ntp_client_pool.hpp</a>.</p>
 
 </div>
 </div>
@@ -235,7 +246,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ntp__client__pool_8hpp_source.html#l00056">56</a> of file <a class="el" href="ntp__client__pool_8hpp_source.html">ntp_client_pool.hpp</a>.</p>
+<p>Number of servers to sample per measurement. </p>
+
+<p class="definition">Definition at line <a class="el" href="ntp__client__pool_8hpp_source.html#l00054">54</a> of file <a class="el" href="ntp__client__pool_8hpp_source.html">ntp_client_pool.hpp</a>.</p>
 
 </div>
 </div>
@@ -251,7 +264,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ntp__client__pool_8hpp_source.html#l00065">65</a> of file <a class="el" href="ntp__client__pool_8hpp_source.html">ntp_client_pool.hpp</a>.</p>
+<p>Exponential smoothing factor for offset updates. </p>
+
+<p class="definition">Definition at line <a class="el" href="ntp__client__pool_8hpp_source.html#l00064">64</a> of file <a class="el" href="ntp__client__pool_8hpp_source.html">ntp_client_pool.hpp</a>.</p>
 
 </div>
 </div>

@@ -27,6 +27,7 @@ var classtime__shield_1_1NtpClientPoolT =
     [ "update_from_samples", "classtime__shield_1_1NtpClientPoolT.html#a3baf537b2621fc148c2ef521e24eff57", null ],
     [ "update_server_state_after_query", "classtime__shield_1_1NtpClientPoolT.html#a5c0cbf0dbc2d625f264ef864edef8464", null ],
     [ "utc_time_ms", "classtime__shield_1_1NtpClientPoolT.html#a6d2020fa707cb5ef35d6644d4651d078", null ],
+    [ "utc_time_sec", "classtime__shield_1_1NtpClientPoolT.html#a29506477e71a7d9d3e578080421006fe", null ],
     [ "utc_time_us", "classtime__shield_1_1NtpClientPoolT.html#a0d796c0fbe7eb88b9b2ddb5ab3f21cd6", null ],
     [ "m_cfg", "classtime__shield_1_1NtpClientPoolT.html#a2fd18f5a8a5cd8062d67aa3efe9c557d", null ],
     [ "m_last_samples", "classtime__shield_1_1NtpClientPoolT.html#ae7b76f6304884402cde60b3962cc64a1", null ],

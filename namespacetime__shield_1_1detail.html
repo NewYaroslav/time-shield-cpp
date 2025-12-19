@@ -124,11 +124,13 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper structure that represents a timer ready to run.  <a href="structtime__shield_1_1detail_1_1DueTimer.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtime__shield_1_1detail_1_1FakeNtpRunner.html">FakeNtpRunner</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fake runner used for tests without network.  <a href="classtime__shield_1_1detail_1_1FakeNtpRunner.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fake runner for tests without network access.  <a href="classtime__shield_1_1detail_1_1FakeNtpRunner.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtime__shield_1_1detail_1_1IUdpTransport.html">IUdpTransport</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract UDP transport interface for NTP queries.  <a href="classtime__shield_1_1detail_1_1IUdpTransport.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtime__shield_1_1detail_1_1NtpClientCore.html">NtpClientCore</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Core NTP query logic that parses packets and computes offsets.  <a href="classtime__shield_1_1detail_1_1NtpClientCore.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtime__shield_1_1detail_1_1NtpPacket.html">NtpPacket</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">NTP packet layout (48 bytes).  <a href="structtime__shield_1_1detail_1_1NtpPacket.html#details">More...</a><br /></td></tr>
@@ -145,10 +147,13 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal state shared between <a class="el" href="classtime__shield_1_1Timer.html" title="Timer that mimics the behavior of Qt timers.">Timer</a> and <a class="el" href="classtime__shield_1_1TimerScheduler.html" title="Scheduler that manages timer execution.">TimerScheduler</a>.  <a href="structtime__shield_1_1detail_1_1TimerState.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtime__shield_1_1detail_1_1UdpRequest.html">UdpRequest</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">UDP request parameters for NTP transactions.  <a href="structtime__shield_1_1detail_1_1UdpRequest.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtime__shield_1_1detail_1_1UdpTransportPosix.html">UdpTransportPosix</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">POSIX UDP transport for NTP queries.  <a href="classtime__shield_1_1detail_1_1UdpTransportPosix.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtime__shield_1_1detail_1_1UdpTransportWin.html">UdpTransportWin</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Windows UDP transport for NTP queries.  <a href="classtime__shield_1_1detail_1_1UdpTransportWin.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
@@ -164,34 +169,42 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a0415b8ea31444b289d12fa4477ab0956" id="r_a0415b8ea31444b289d12fa4477ab0956"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0415b8ea31444b289d12fa4477ab0956">NtpProtoError</a> { <br />
-&#160;&#160;<a class="el" href="#a0415b8ea31444b289d12fa4477ab0956ab5653c15b7cdad2635b0d68b2044e798">NTP_EPROTO_BASE</a> = -10000
-, <a class="el" href="#a0415b8ea31444b289d12fa4477ab0956a22800d3f7fffe9107262feac5c976609">NTP_E_BAD_MODE</a> = NTP_EPROTO_BASE - 1
-, <a class="el" href="#a0415b8ea31444b289d12fa4477ab0956ad254552bc1d64530f4589070ffedd4c2">NTP_E_BAD_VERSION</a> = NTP_EPROTO_BASE - 2
-, <a class="el" href="#a0415b8ea31444b289d12fa4477ab0956a41a3a51fca5aa482320147a8ca931e9b">NTP_E_BAD_LI</a> = NTP_EPROTO_BASE - 3
+<tr class="memitem:ga0415b8ea31444b289d12fa4477ab0956" id="r_ga0415b8ea31444b289d12fa4477ab0956"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ntp.html#ga0415b8ea31444b289d12fa4477ab0956">NtpProtoError</a> { <br />
+&#160;&#160;<a class="el" href="group__ntp.html#gga0415b8ea31444b289d12fa4477ab0956ab5653c15b7cdad2635b0d68b2044e798">NTP_EPROTO_BASE</a> = -10000
+, <a class="el" href="group__ntp.html#gga0415b8ea31444b289d12fa4477ab0956a22800d3f7fffe9107262feac5c976609">NTP_E_BAD_MODE</a> = NTP_EPROTO_BASE - 1
+, <a class="el" href="group__ntp.html#gga0415b8ea31444b289d12fa4477ab0956ad254552bc1d64530f4589070ffedd4c2">NTP_E_BAD_VERSION</a> = NTP_EPROTO_BASE - 2
+, <a class="el" href="group__ntp.html#gga0415b8ea31444b289d12fa4477ab0956a41a3a51fca5aa482320147a8ca931e9b">NTP_E_BAD_LI</a> = NTP_EPROTO_BASE - 3
 , <br />
-&#160;&#160;<a class="el" href="#a0415b8ea31444b289d12fa4477ab0956a9a71453f4865abfbc41a111018d6f1d5">NTP_E_BAD_STRATUM</a> = NTP_EPROTO_BASE - 4
-, <a class="el" href="#a0415b8ea31444b289d12fa4477ab0956a242bb8a1ee2d6b3299c14885992408d4">NTP_E_KOD</a> = NTP_EPROTO_BASE - 5
-, <a class="el" href="#a0415b8ea31444b289d12fa4477ab0956ad39f33af632e93e1ef5ce7dd970af607">NTP_E_BAD_TS</a> = NTP_EPROTO_BASE - 6
+&#160;&#160;<a class="el" href="group__ntp.html#gga0415b8ea31444b289d12fa4477ab0956a9a71453f4865abfbc41a111018d6f1d5">NTP_E_BAD_STRATUM</a> = NTP_EPROTO_BASE - 4
+, <a class="el" href="group__ntp.html#gga0415b8ea31444b289d12fa4477ab0956a242bb8a1ee2d6b3299c14885992408d4">NTP_E_KOD</a> = NTP_EPROTO_BASE - 5
+, <a class="el" href="group__ntp.html#gga0415b8ea31444b289d12fa4477ab0956ad39f33af632e93e1ef5ce7dd970af607">NTP_E_BAD_TS</a> = NTP_EPROTO_BASE - 6
 <br />
  }</td></tr>
-<tr class="separator:a0415b8ea31444b289d12fa4477ab0956"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memdesc:ga0415b8ea31444b289d12fa4477ab0956"><td class="mdescLeft">&#160;</td><td class="mdescRight">Protocol-level error codes for NTP parsing.  <a href="group__ntp.html#ga0415b8ea31444b289d12fa4477ab0956">More...</a><br /></td></tr>
+<tr class="separator:ga0415b8ea31444b289d12fa4477ab0956"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a32c9d9990baaee38adbd0afca3d579dc" id="r_a32c9d9990baaee38adbd0afca3d579dc"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a32c9d9990baaee38adbd0afca3d579dc">ntp_li</a> (uint8_t li_vn_mode) noexcept</td></tr>
+<tr class="memdesc:a32c9d9990baaee38adbd0afca3d579dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract leap indicator from LI/VN/Mode field.  <br /></td></tr>
 <tr class="separator:a32c9d9990baaee38adbd0afca3d579dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a55f4bcb77b1aefa9ca4e279c9be1eb" id="r_a7a55f4bcb77b1aefa9ca4e279c9be1eb"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a55f4bcb77b1aefa9ca4e279c9be1eb">ntp_vn</a> (uint8_t li_vn_mode) noexcept</td></tr>
+<tr class="memdesc:a7a55f4bcb77b1aefa9ca4e279c9be1eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract version number from LI/VN/Mode field.  <br /></td></tr>
 <tr class="separator:a7a55f4bcb77b1aefa9ca4e279c9be1eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4059fbd114386f3d22dfc00ab57b7028" id="r_a4059fbd114386f3d22dfc00ab57b7028"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4059fbd114386f3d22dfc00ab57b7028">ntp_mode</a> (uint8_t li_vn_mode) noexcept</td></tr>
+<tr class="memdesc:a4059fbd114386f3d22dfc00ab57b7028"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract mode from LI/VN/Mode field.  <br /></td></tr>
 <tr class="separator:a4059fbd114386f3d22dfc00ab57b7028"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a165f3de9ea02a3362c50f87eb144ff93" id="r_a165f3de9ea02a3362c50f87eb144ff93"><td class="memItemLeft" align="right" valign="top">static uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a165f3de9ea02a3362c50f87eb144ff93">ntp_frac_to_us</a> (uint32_t frac_net) noexcept</td></tr>
+<tr class="memdesc:a165f3de9ea02a3362c50f87eb144ff93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert NTP fractional seconds to microseconds.  <br /></td></tr>
 <tr class="separator:a165f3de9ea02a3362c50f87eb144ff93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a806a763f0fc1c59426422a2d5cf9218c" id="r_a806a763f0fc1c59426422a2d5cf9218c"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a806a763f0fc1c59426422a2d5cf9218c">ntp_ts_to_unix_us</a> (uint32_t sec_net, uint32_t frac_net, uint64_t &amp;out_us) noexcept</td></tr>
+<tr class="memdesc:a806a763f0fc1c59426422a2d5cf9218c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert NTP timestamp parts to Unix microseconds.  <br /></td></tr>
 <tr class="separator:a806a763f0fc1c59426422a2d5cf9218c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af660cd4c3b59a86868102cc8323d26fb" id="r_af660cd4c3b59a86868102cc8323d26fb"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af660cd4c3b59a86868102cc8323d26fb">fill_client_packet</a> (<a class="el" href="structtime__shield_1_1detail_1_1NtpPacket.html">NtpPacket</a> &amp;pkt, uint64_t now_us)</td></tr>
+<tr class="memdesc:af660cd4c3b59a86868102cc8323d26fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill an NTP client request packet using local time.  <br /></td></tr>
 <tr class="separator:af660cd4c3b59a86868102cc8323d26fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae7f2f8b871c0f6d5d03b789823abaa26" id="r_ae7f2f8b871c0f6d5d03b789823abaa26"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae7f2f8b871c0f6d5d03b789823abaa26">parse_server_packet</a> (const <a class="el" href="structtime__shield_1_1detail_1_1NtpPacket.html">NtpPacket</a> &amp;pkt, uint64_t arrival_us, int64_t &amp;offset_us, int64_t &amp;delay_us, int &amp;stratum, int &amp;out_error_code) noexcept</td></tr>
+<tr class="memdesc:ae7f2f8b871c0f6d5d03b789823abaa26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse server response and compute offset and delay.  <br /></td></tr>
 <tr class="separator:ae7f2f8b871c0f6d5d03b789823abaa26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8457db4d57439e08761c4233512af39f" id="r_a8457db4d57439e08761c4233512af39f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8457db4d57439e08761c4233512af39f">trim_copy_ascii</a> (const std::string &amp;s)</td></tr>
 <tr class="memdesc:a8457db4d57439e08761c4233512af39f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trim ASCII whitespace from both ends.  <br /></td></tr>
@@ -272,7 +285,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00163">163</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00184">184</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
 
 </div>
 </div>
@@ -305,32 +318,6 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="TimerScheduler_8hpp_source.html#l00040">40</a> of file <a class="el" href="TimerScheduler_8hpp_source.html">TimerScheduler.hpp</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="a0415b8ea31444b289d12fa4477ab0956" name="a0415b8ea31444b289d12fa4477ab0956"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0415b8ea31444b289d12fa4477ab0956">&#9670;&#160;</a></span>NtpProtoError</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="#a0415b8ea31444b289d12fa4477ab0956">time_shield::detail::NtpProtoError</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a0415b8ea31444b289d12fa4477ab0956ab5653c15b7cdad2635b0d68b2044e798" name="a0415b8ea31444b289d12fa4477ab0956ab5653c15b7cdad2635b0d68b2044e798"></a>NTP_EPROTO_BASE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a0415b8ea31444b289d12fa4477ab0956a22800d3f7fffe9107262feac5c976609" name="a0415b8ea31444b289d12fa4477ab0956a22800d3f7fffe9107262feac5c976609"></a>NTP_E_BAD_MODE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a0415b8ea31444b289d12fa4477ab0956ad254552bc1d64530f4589070ffedd4c2" name="a0415b8ea31444b289d12fa4477ab0956ad254552bc1d64530f4589070ffedd4c2"></a>NTP_E_BAD_VERSION&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a0415b8ea31444b289d12fa4477ab0956a41a3a51fca5aa482320147a8ca931e9b" name="a0415b8ea31444b289d12fa4477ab0956a41a3a51fca5aa482320147a8ca931e9b"></a>NTP_E_BAD_LI&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a0415b8ea31444b289d12fa4477ab0956a9a71453f4865abfbc41a111018d6f1d5" name="a0415b8ea31444b289d12fa4477ab0956a9a71453f4865abfbc41a111018d6f1d5"></a>NTP_E_BAD_STRATUM&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a0415b8ea31444b289d12fa4477ab0956a242bb8a1ee2d6b3299c14885992408d4" name="a0415b8ea31444b289d12fa4477ab0956a242bb8a1ee2d6b3299c14885992408d4"></a>NTP_E_KOD&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a0415b8ea31444b289d12fa4477ab0956ad39f33af632e93e1ef5ce7dd970af607" name="a0415b8ea31444b289d12fa4477ab0956ad39f33af632e93e1ef5ce7dd970af607"></a>NTP_E_BAD_TS&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-<p class="definition">Definition at line <a class="el" href="ntp__packet_8hpp_source.html#l00039">39</a> of file <a class="el" href="ntp__packet_8hpp_source.html">ntp_packet.hpp</a>.</p>
 
 </div>
 </div>
@@ -389,7 +376,9 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ntp__packet_8hpp_source.html#l00074">74</a> of file <a class="el" href="ntp__packet_8hpp_source.html">ntp_packet.hpp</a>.</p>
+<p>Fill an NTP client request packet using local time. </p>
+
+<p class="definition">Definition at line <a class="el" href="ntp__packet_8hpp_source.html#l00083">83</a> of file <a class="el" href="ntp__packet_8hpp_source.html">ntp_packet.hpp</a>.</p>
 
 </div>
 </div>
@@ -554,7 +543,9 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ntp__packet_8hpp_source.html#l00061">61</a> of file <a class="el" href="ntp__packet_8hpp_source.html">ntp_packet.hpp</a>.</p>
+<p>Convert NTP fractional seconds to microseconds. </p>
+
+<p class="definition">Definition at line <a class="el" href="ntp__packet_8hpp_source.html#l00068">68</a> of file <a class="el" href="ntp__packet_8hpp_source.html">ntp_packet.hpp</a>.</p>
 
 </div>
 </div>
@@ -581,7 +572,9 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ntp__packet_8hpp_source.html#l00049">49</a> of file <a class="el" href="ntp__packet_8hpp_source.html">ntp_packet.hpp</a>.</p>
+<p>Extract leap indicator from LI/VN/Mode field. </p>
+
+<p class="definition">Definition at line <a class="el" href="ntp__packet_8hpp_source.html#l00053">53</a> of file <a class="el" href="ntp__packet_8hpp_source.html">ntp_packet.hpp</a>.</p>
 
 </div>
 </div>
@@ -608,7 +601,9 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ntp__packet_8hpp_source.html#l00057">57</a> of file <a class="el" href="ntp__packet_8hpp_source.html">ntp_packet.hpp</a>.</p>
+<p>Extract mode from LI/VN/Mode field. </p>
+
+<p class="definition">Definition at line <a class="el" href="ntp__packet_8hpp_source.html#l00063">63</a> of file <a class="el" href="ntp__packet_8hpp_source.html">ntp_packet.hpp</a>.</p>
 
 </div>
 </div>
@@ -644,7 +639,9 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ntp__packet_8hpp_source.html#l00066">66</a> of file <a class="el" href="ntp__packet_8hpp_source.html">ntp_packet.hpp</a>.</p>
+<p>Convert NTP timestamp parts to Unix microseconds. </p>
+
+<p class="definition">Definition at line <a class="el" href="ntp__packet_8hpp_source.html#l00074">74</a> of file <a class="el" href="ntp__packet_8hpp_source.html">ntp_packet.hpp</a>.</p>
 
 </div>
 </div>
@@ -671,7 +668,9 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ntp__packet_8hpp_source.html#l00053">53</a> of file <a class="el" href="ntp__packet_8hpp_source.html">ntp_packet.hpp</a>.</p>
+<p>Extract version number from LI/VN/Mode field. </p>
+
+<p class="definition">Definition at line <a class="el" href="ntp__packet_8hpp_source.html#l00058">58</a> of file <a class="el" href="ntp__packet_8hpp_source.html">ntp_packet.hpp</a>.</p>
 
 </div>
 </div>
@@ -923,7 +922,9 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ntp__packet_8hpp_source.html#l00085">85</a> of file <a class="el" href="ntp__packet_8hpp_source.html">ntp_packet.hpp</a>.</p>
+<p>Parse server response and compute offset and delay. </p>
+
+<p class="definition">Definition at line <a class="el" href="ntp__packet_8hpp_source.html#l00095">95</a> of file <a class="el" href="ntp__packet_8hpp_source.html">ntp_packet.hpp</a>.</p>
 
 </div>
 </div>
@@ -1113,7 +1114,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00460">460</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00540">540</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
 
 </div>
 </div>

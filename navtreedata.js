@@ -30,7 +30,8 @@ var NAVTREE =
     [ "Features", "index.html#features_sec", null ],
     [ "Configuration", "index.html#config_sec", null ],
     [ "API Invariants", "index.html#invariants_sec", null ],
-    [ "Examples", "index.html#examples_sec", [
+    [ "Examples", "index.html#examples_sec", null ],
+    [ "NTP client, pool, and time service", "index.html#ntp_sec", [
       [ "OA date and astronomy helpers", "index.html#oa_and_astronomy", null ],
       [ "Workday helpers", "index.html#workday_helpers", null ]
     ] ],
@@ -82,15 +83,15 @@ var NAVTREEINDEX =
 [
 "CpuTickTimer_8hpp.html",
 "classtime__shield_1_1DateTime.html#afd3ae5c2b4a50d3997b139bd152c0886",
-"classtime__shield_1_1NtpTimeServiceT.html#aa11a3e5e334e509f7d3d830fbd35429b",
-"classtime__shield_1_1detail_1_1FakeNtpRunner.html#a676a843f848aceaefc42849e85f63f1a",
-"group__time__constants.html#ga66f2fda826d6d5a77d54940620082699",
-"group__time__conversions.html#ga52fe66c93701f484abf66b1b6e0091ef",
-"group__time__conversions.html#gac75927edfd0c98a2f70744ae9f908d1b",
-"group__time__enums.html#ggac2ffd79e06ab94cf1bb50fec432c68a8a5e3a6e5c23188b146d1b63ed3aa51d37",
-"group__time__structures.html#ga23bf99c2bc02f3a430517a3abaf62b38",
-"namespacetime__shield.html#a5d4625d12243235c5993141097223af2",
-"structtime__shield_1_1detail_1_1NtpPacket.html#ad556733ef47fd047f2276ea5f388180d"
+"classtime__shield_1_1Timer.html#a27d7a174235fbd7e4d4f9a9709a22c95",
+"classtime__shield_1_1detail_1_1FakeNtpRunner.html#ad592144b933a7a9c4dc244b9c118535b",
+"group__time__constants.html#ga91d10a3b0dbdb3ac27588282d62f17e8",
+"group__time__conversions.html#ga592d9e7b90284fcb948334ddf74aa7c8",
+"group__time__conversions.html#gacef72061566d1b88fd191abe918387e8",
+"group__time__enums.html#ggac2ffd79e06ab94cf1bb50fec432c68a8ad3768e2a19435e8e723f135215b827fb",
+"group__time__structures.html#ga593f77471d15efc8cd41773ae3b14c77",
+"namespacetime__shield_1_1detail.html",
+"structtime__shield_1_1detail_1_1UdpRequest.html#a201bf235e84a250ec29321aec6578be6"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

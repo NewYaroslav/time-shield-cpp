@@ -16,14 +16,14 @@ var namespacetime__shield_1_1detail =
     [ "RunnerAlias", "namespacetime__shield_1_1detail.html#a787d6e107fe144f38103b3caff9d20b7", null ],
     [ "TimerCallback", "namespacetime__shield_1_1detail.html#ab7895535bd678165a097bd78ce41eb1b", null ],
     [ "TimerClock", "namespacetime__shield_1_1detail.html#a1555f22edeb3f1a8440448483811bc44", null ],
-    [ "NtpProtoError", "namespacetime__shield_1_1detail.html#a0415b8ea31444b289d12fa4477ab0956", [
-      [ "NTP_EPROTO_BASE", "namespacetime__shield_1_1detail.html#a0415b8ea31444b289d12fa4477ab0956ab5653c15b7cdad2635b0d68b2044e798", null ],
-      [ "NTP_E_BAD_MODE", "namespacetime__shield_1_1detail.html#a0415b8ea31444b289d12fa4477ab0956a22800d3f7fffe9107262feac5c976609", null ],
-      [ "NTP_E_BAD_VERSION", "namespacetime__shield_1_1detail.html#a0415b8ea31444b289d12fa4477ab0956ad254552bc1d64530f4589070ffedd4c2", null ],
-      [ "NTP_E_BAD_LI", "namespacetime__shield_1_1detail.html#a0415b8ea31444b289d12fa4477ab0956a41a3a51fca5aa482320147a8ca931e9b", null ],
-      [ "NTP_E_BAD_STRATUM", "namespacetime__shield_1_1detail.html#a0415b8ea31444b289d12fa4477ab0956a9a71453f4865abfbc41a111018d6f1d5", null ],
-      [ "NTP_E_KOD", "namespacetime__shield_1_1detail.html#a0415b8ea31444b289d12fa4477ab0956a242bb8a1ee2d6b3299c14885992408d4", null ],
-      [ "NTP_E_BAD_TS", "namespacetime__shield_1_1detail.html#a0415b8ea31444b289d12fa4477ab0956ad39f33af632e93e1ef5ce7dd970af607", null ]
+    [ "NtpProtoError", "group__ntp.html#ga0415b8ea31444b289d12fa4477ab0956", [
+      [ "NTP_EPROTO_BASE", "group__ntp.html#gga0415b8ea31444b289d12fa4477ab0956ab5653c15b7cdad2635b0d68b2044e798", null ],
+      [ "NTP_E_BAD_MODE", "group__ntp.html#gga0415b8ea31444b289d12fa4477ab0956a22800d3f7fffe9107262feac5c976609", null ],
+      [ "NTP_E_BAD_VERSION", "group__ntp.html#gga0415b8ea31444b289d12fa4477ab0956ad254552bc1d64530f4589070ffedd4c2", null ],
+      [ "NTP_E_BAD_LI", "group__ntp.html#gga0415b8ea31444b289d12fa4477ab0956a41a3a51fca5aa482320147a8ca931e9b", null ],
+      [ "NTP_E_BAD_STRATUM", "group__ntp.html#gga0415b8ea31444b289d12fa4477ab0956a9a71453f4865abfbc41a111018d6f1d5", null ],
+      [ "NTP_E_KOD", "group__ntp.html#gga0415b8ea31444b289d12fa4477ab0956a242bb8a1ee2d6b3299c14885992408d4", null ],
+      [ "NTP_E_BAD_TS", "group__ntp.html#gga0415b8ea31444b289d12fa4477ab0956ad39f33af632e93e1ef5ce7dd970af607", null ]
     ] ],
     [ "current_timer_state", "namespacetime__shield_1_1detail.html#a5e9f998322af0d986f490b7526d5345d", null ],
     [ "fill_client_packet", "namespacetime__shield_1_1detail.html#af660cd4c3b59a86868102cc8323d26fb", null ],

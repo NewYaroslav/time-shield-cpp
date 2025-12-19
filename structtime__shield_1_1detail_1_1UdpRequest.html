@@ -115,28 +115,39 @@ $(function(){initNavTree('structtime__shield_1_1detail_1_1UdpRequest.html',''); 
 </div><!--header-->
 <div class="contents">
 
+<p>UDP request parameters for NTP transactions.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="udp__transport_8hpp_source.html">udp_transport.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a7e59e11856e6ee7e49121a6ae44429c0" id="r_a7e59e11856e6ee7e49121a6ae44429c0"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7e59e11856e6ee7e49121a6ae44429c0">host</a></td></tr>
+<tr class="memdesc:a7e59e11856e6ee7e49121a6ae44429c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Target host name or IP address.  <br /></td></tr>
 <tr class="separator:a7e59e11856e6ee7e49121a6ae44429c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad365344f6d102d147aa263bdee08d8f" id="r_aad365344f6d102d147aa263bdee08d8f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad365344f6d102d147aa263bdee08d8f">port</a> = 123</td></tr>
+<tr class="memdesc:aad365344f6d102d147aa263bdee08d8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Target port.  <br /></td></tr>
 <tr class="separator:aad365344f6d102d147aa263bdee08d8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb11ac56cc4a25b5fa578c2b5c636734" id="r_adb11ac56cc4a25b5fa578c2b5c636734"><td class="memItemLeft" align="right" valign="top">const void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adb11ac56cc4a25b5fa578c2b5c636734">send_data</a> = nullptr</td></tr>
+<tr class="memdesc:adb11ac56cc4a25b5fa578c2b5c636734"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to outgoing payload.  <br /></td></tr>
 <tr class="separator:adb11ac56cc4a25b5fa578c2b5c636734"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a201bf235e84a250ec29321aec6578be6" id="r_a201bf235e84a250ec29321aec6578be6"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a201bf235e84a250ec29321aec6578be6">send_size</a> = 0</td></tr>
+<tr class="memdesc:a201bf235e84a250ec29321aec6578be6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Outgoing payload size in bytes.  <br /></td></tr>
 <tr class="separator:a201bf235e84a250ec29321aec6578be6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae0c61a4d970d95ec22fd856591e8a2bd" id="r_ae0c61a4d970d95ec22fd856591e8a2bd"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae0c61a4d970d95ec22fd856591e8a2bd">recv_data</a> = nullptr</td></tr>
+<tr class="memdesc:ae0c61a4d970d95ec22fd856591e8a2bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to receive buffer.  <br /></td></tr>
 <tr class="separator:ae0c61a4d970d95ec22fd856591e8a2bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83ac56da4630365757800be1fc79599b" id="r_a83ac56da4630365757800be1fc79599b"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a83ac56da4630365757800be1fc79599b">recv_size</a> = 0</td></tr>
+<tr class="memdesc:a83ac56da4630365757800be1fc79599b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receive buffer size in bytes.  <br /></td></tr>
 <tr class="separator:a83ac56da4630365757800be1fc79599b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4bcf5bdde9b6be2ac6b0e082795d8623" id="r_a4bcf5bdde9b6be2ac6b0e082795d8623"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4bcf5bdde9b6be2ac6b0e082795d8623">timeout_ms</a> = 5000</td></tr>
+<tr class="memdesc:a4bcf5bdde9b6be2ac6b0e082795d8623"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receive timeout in milliseconds.  <br /></td></tr>
 <tr class="separator:a4bcf5bdde9b6be2ac6b0e082795d8623"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="udp__transport_8hpp_source.html#l00012">12</a> of file <a class="el" href="udp__transport_8hpp_source.html">udp_transport.hpp</a>.</p>
+<div class="textblock"><p>UDP request parameters for NTP transactions. </p>
+
+<p class="definition">Definition at line <a class="el" href="udp__transport_8hpp_source.html#l00013">13</a> of file <a class="el" href="udp__transport_8hpp_source.html">udp_transport.hpp</a>.</p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="a7e59e11856e6ee7e49121a6ae44429c0" name="a7e59e11856e6ee7e49121a6ae44429c0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7e59e11856e6ee7e49121a6ae44429c0">&#9670;&#160;</a></span>host</h2>
@@ -150,7 +161,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="udp__transport_8hpp_source.html#l00013">13</a> of file <a class="el" href="udp__transport_8hpp_source.html">udp_transport.hpp</a>.</p>
+<p>Target host name or IP address. </p>
+
+<p class="definition">Definition at line <a class="el" href="udp__transport_8hpp_source.html#l00014">14</a> of file <a class="el" href="udp__transport_8hpp_source.html">udp_transport.hpp</a>.</p>
 
 </div>
 </div>
@@ -166,7 +179,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="udp__transport_8hpp_source.html#l00014">14</a> of file <a class="el" href="udp__transport_8hpp_source.html">udp_transport.hpp</a>.</p>
+<p>Target port. </p>
+
+<p class="definition">Definition at line <a class="el" href="udp__transport_8hpp_source.html#l00015">15</a> of file <a class="el" href="udp__transport_8hpp_source.html">udp_transport.hpp</a>.</p>
 
 </div>
 </div>
@@ -182,7 +197,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="udp__transport_8hpp_source.html#l00017">17</a> of file <a class="el" href="udp__transport_8hpp_source.html">udp_transport.hpp</a>.</p>
+<p>Pointer to receive buffer. </p>
+
+<p class="definition">Definition at line <a class="el" href="udp__transport_8hpp_source.html#l00018">18</a> of file <a class="el" href="udp__transport_8hpp_source.html">udp_transport.hpp</a>.</p>
 
 </div>
 </div>
@@ -198,7 +215,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="udp__transport_8hpp_source.html#l00018">18</a> of file <a class="el" href="udp__transport_8hpp_source.html">udp_transport.hpp</a>.</p>
+<p>Receive buffer size in bytes. </p>
+
+<p class="definition">Definition at line <a class="el" href="udp__transport_8hpp_source.html#l00019">19</a> of file <a class="el" href="udp__transport_8hpp_source.html">udp_transport.hpp</a>.</p>
 
 </div>
 </div>
@@ -214,7 +233,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="udp__transport_8hpp_source.html#l00015">15</a> of file <a class="el" href="udp__transport_8hpp_source.html">udp_transport.hpp</a>.</p>
+<p>Pointer to outgoing payload. </p>
+
+<p class="definition">Definition at line <a class="el" href="udp__transport_8hpp_source.html#l00016">16</a> of file <a class="el" href="udp__transport_8hpp_source.html">udp_transport.hpp</a>.</p>
 
 </div>
 </div>
@@ -230,7 +251,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="udp__transport_8hpp_source.html#l00016">16</a> of file <a class="el" href="udp__transport_8hpp_source.html">udp_transport.hpp</a>.</p>
+<p>Outgoing payload size in bytes. </p>
+
+<p class="definition">Definition at line <a class="el" href="udp__transport_8hpp_source.html#l00017">17</a> of file <a class="el" href="udp__transport_8hpp_source.html">udp_transport.hpp</a>.</p>
 
 </div>
 </div>
@@ -246,7 +269,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="udp__transport_8hpp_source.html#l00019">19</a> of file <a class="el" href="udp__transport_8hpp_source.html">udp_transport.hpp</a>.</p>
+<p>Receive timeout in milliseconds. </p>
+
+<p class="definition">Definition at line <a class="el" href="udp__transport_8hpp_source.html#l00020">20</a> of file <a class="el" href="udp__transport_8hpp_source.html">udp_transport.hpp</a>.</p>
 
 </div>
 </div>

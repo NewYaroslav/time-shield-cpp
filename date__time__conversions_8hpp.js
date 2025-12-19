@@ -27,7 +27,7 @@ var date__time__conversions_8hpp =
     [ "time_shield::month_of_year", "group__time__structures.html#ga2673575f5f1962b618dbdf1a1c596914", null ],
     [ "time_shield::next_day", "group__time__structures.html#gab88cbc8062ea211724a30df28f4781a2", null ],
     [ "time_shield::next_day_ms", "group__time__structures.html#gab137480ffab276959b4ac440b6d09fb0", null ],
-    [ "time_shield::num_days_in_month", "group__time__structures.html#gae9c381fdf8d53297de5459eab29c4a8f", null ],
+    [ "time_shield::num_days_in_month", "group__time__structures.html#gaca81d77e5983c17b998f147132540249", null ],
     [ "time_shield::num_days_in_month_ts", "group__time__structures.html#ga87a61143fab23f66f64f5487882c07b5", null ],
     [ "time_shield::start_of_day", "group__time__structures.html#ga9645c1e5b43e602c456bd297c78e7f4b", null ],
     [ "time_shield::start_of_day_ms", "group__time__structures.html#ga518e724145efa3e49429908db595d09e", null ],

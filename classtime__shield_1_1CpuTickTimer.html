@@ -136,27 +136,27 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8926e0c820fb9658930337c94ea6c517" id="r_a8926e0c820fb9658930337c94ea6c517"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8926e0c820fb9658930337c94ea6c517">stop</a> () noexcept</td></tr>
 <tr class="memdesc:a8926e0c820fb9658930337c94ea6c517"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop measuring CPU time and freeze elapsed ticks.  <br /></td></tr>
 <tr class="separator:a8926e0c820fb9658930337c94ea6c517"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb20c8ee2ef026541d4bffb3b6376faa" id="r_adb20c8ee2ef026541d4bffb3b6376faa"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adb20c8ee2ef026541d4bffb3b6376faa">elapsed</a> () const noexcept</td></tr>
-<tr class="memdesc:adb20c8ee2ef026541d4bffb3b6376faa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get elapsed CPU ticks since the last start.  <br /></td></tr>
-<tr class="separator:adb20c8ee2ef026541d4bffb3b6376faa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60cd4ec34465ab04e97c9b2785dc8baa" id="r_a60cd4ec34465ab04e97c9b2785dc8baa"><td class="memItemLeft" align="right" valign="top">TIME_SHIELD_NODISCARD double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a60cd4ec34465ab04e97c9b2785dc8baa">elapsed</a> () const noexcept</td></tr>
+<tr class="memdesc:a60cd4ec34465ab04e97c9b2785dc8baa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get elapsed CPU ticks since the last start.  <br /></td></tr>
+<tr class="separator:a60cd4ec34465ab04e97c9b2785dc8baa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9fd61788fe02707490a2927fd4c45255" id="r_a9fd61788fe02707490a2927fd4c45255"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9fd61788fe02707490a2927fd4c45255">record_sample</a> () noexcept</td></tr>
 <tr class="memdesc:a9fd61788fe02707490a2927fd4c45255"><td class="mdescLeft">&#160;</td><td class="mdescRight">Record sample using elapsed ticks and restart timer.  <br /></td></tr>
 <tr class="separator:a9fd61788fe02707490a2927fd4c45255"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7da52f8122ebe864fc99fc9d99a171f8" id="r_a7da52f8122ebe864fc99fc9d99a171f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7da52f8122ebe864fc99fc9d99a171f8">reset_samples</a> () noexcept</td></tr>
 <tr class="memdesc:a7da52f8122ebe864fc99fc9d99a171f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset collected samples without touching running state.  <br /></td></tr>
 <tr class="separator:a7da52f8122ebe864fc99fc9d99a171f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aecf3ed3f89ee4e8b67ced3fe1530a6c8" id="r_aecf3ed3f89ee4e8b67ced3fe1530a6c8"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aecf3ed3f89ee4e8b67ced3fe1530a6c8">sample_count</a> () const noexcept</td></tr>
-<tr class="memdesc:aecf3ed3f89ee4e8b67ced3fe1530a6c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of recorded samples.  <br /></td></tr>
-<tr class="separator:aecf3ed3f89ee4e8b67ced3fe1530a6c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a789f77753f5e15b701d1c0a077dffc3c" id="r_a789f77753f5e15b701d1c0a077dffc3c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a789f77753f5e15b701d1c0a077dffc3c">total_ticks</a> () const noexcept</td></tr>
-<tr class="memdesc:a789f77753f5e15b701d1c0a077dffc3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get total recorded CPU ticks across samples.  <br /></td></tr>
-<tr class="separator:a789f77753f5e15b701d1c0a077dffc3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0476e2176ab4465f93fc71930ba74a2d" id="r_a0476e2176ab4465f93fc71930ba74a2d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0476e2176ab4465f93fc71930ba74a2d">average_ticks</a> () const noexcept</td></tr>
-<tr class="memdesc:a0476e2176ab4465f93fc71930ba74a2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get average CPU ticks per sample.  <br /></td></tr>
-<tr class="separator:a0476e2176ab4465f93fc71930ba74a2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1992b7d86d0bc9854f4b4d6de3420fe9" id="r_a1992b7d86d0bc9854f4b4d6de3420fe9"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1992b7d86d0bc9854f4b4d6de3420fe9">last_sample_ticks</a> () const noexcept</td></tr>
-<tr class="memdesc:a1992b7d86d0bc9854f4b4d6de3420fe9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get ticks collected during the last recorded sample.  <br /></td></tr>
-<tr class="separator:a1992b7d86d0bc9854f4b4d6de3420fe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73295308809c80fd135fc4b678db428f" id="r_a73295308809c80fd135fc4b678db428f"><td class="memItemLeft" align="right" valign="top">TIME_SHIELD_NODISCARD std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73295308809c80fd135fc4b678db428f">sample_count</a> () const noexcept</td></tr>
+<tr class="memdesc:a73295308809c80fd135fc4b678db428f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of recorded samples.  <br /></td></tr>
+<tr class="separator:a73295308809c80fd135fc4b678db428f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14d270f1dc8be491a80cd88c717e6806" id="r_a14d270f1dc8be491a80cd88c717e6806"><td class="memItemLeft" align="right" valign="top">TIME_SHIELD_NODISCARD double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a14d270f1dc8be491a80cd88c717e6806">total_ticks</a> () const noexcept</td></tr>
+<tr class="memdesc:a14d270f1dc8be491a80cd88c717e6806"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get total recorded CPU ticks across samples.  <br /></td></tr>
+<tr class="separator:a14d270f1dc8be491a80cd88c717e6806"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0fcfe5dd9d0292050ee5f146fea45ee" id="r_ab0fcfe5dd9d0292050ee5f146fea45ee"><td class="memItemLeft" align="right" valign="top">TIME_SHIELD_NODISCARD double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab0fcfe5dd9d0292050ee5f146fea45ee">average_ticks</a> () const noexcept</td></tr>
+<tr class="memdesc:ab0fcfe5dd9d0292050ee5f146fea45ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get average CPU ticks per sample.  <br /></td></tr>
+<tr class="separator:ab0fcfe5dd9d0292050ee5f146fea45ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48297cfc8b4b3f37fccb30062547bf46" id="r_a48297cfc8b4b3f37fccb30062547bf46"><td class="memItemLeft" align="right" valign="top">TIME_SHIELD_NODISCARD double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a48297cfc8b4b3f37fccb30062547bf46">last_sample_ticks</a> () const noexcept</td></tr>
+<tr class="memdesc:a48297cfc8b4b3f37fccb30062547bf46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get ticks collected during the last recorded sample.  <br /></td></tr>
+<tr class="separator:a48297cfc8b4b3f37fccb30062547bf46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -249,8 +249,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a0476e2176ab4465f93fc71930ba74a2d" name="a0476e2176ab4465f93fc71930ba74a2d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0476e2176ab4465f93fc71930ba74a2d">&#9670;&#160;</a></span>average_ticks()</h2>
+<a id="ab0fcfe5dd9d0292050ee5f146fea45ee" name="ab0fcfe5dd9d0292050ee5f146fea45ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0fcfe5dd9d0292050ee5f146fea45ee">&#9670;&#160;</a></span>average_ticks()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -259,7 +259,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double time_shield::CpuTickTimer::average_ticks </td>
+          <td class="memname">TIME_SHIELD_NODISCARD double time_shield::CpuTickTimer::average_ticks </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -267,7 +267,7 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -279,8 +279,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="adb20c8ee2ef026541d4bffb3b6376faa" name="adb20c8ee2ef026541d4bffb3b6376faa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adb20c8ee2ef026541d4bffb3b6376faa">&#9670;&#160;</a></span>elapsed()</h2>
+<a id="a60cd4ec34465ab04e97c9b2785dc8baa" name="a60cd4ec34465ab04e97c9b2785dc8baa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60cd4ec34465ab04e97c9b2785dc8baa">&#9670;&#160;</a></span>elapsed()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -289,7 +289,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double time_shield::CpuTickTimer::elapsed </td>
+          <td class="memname">TIME_SHIELD_NODISCARD double time_shield::CpuTickTimer::elapsed </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -297,7 +297,7 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -309,8 +309,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a1992b7d86d0bc9854f4b4d6de3420fe9" name="a1992b7d86d0bc9854f4b4d6de3420fe9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1992b7d86d0bc9854f4b4d6de3420fe9">&#9670;&#160;</a></span>last_sample_ticks()</h2>
+<a id="a48297cfc8b4b3f37fccb30062547bf46" name="a48297cfc8b4b3f37fccb30062547bf46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48297cfc8b4b3f37fccb30062547bf46">&#9670;&#160;</a></span>last_sample_ticks()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -319,7 +319,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double time_shield::CpuTickTimer::last_sample_ticks </td>
+          <td class="memname">TIME_SHIELD_NODISCARD double time_shield::CpuTickTimer::last_sample_ticks </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -327,7 +327,7 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -427,8 +427,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="aecf3ed3f89ee4e8b67ced3fe1530a6c8" name="aecf3ed3f89ee4e8b67ced3fe1530a6c8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aecf3ed3f89ee4e8b67ced3fe1530a6c8">&#9670;&#160;</a></span>sample_count()</h2>
+<a id="a73295308809c80fd135fc4b678db428f" name="a73295308809c80fd135fc4b678db428f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73295308809c80fd135fc4b678db428f">&#9670;&#160;</a></span>sample_count()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -437,7 +437,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::size_t time_shield::CpuTickTimer::sample_count </td>
+          <td class="memname">TIME_SHIELD_NODISCARD std::size_t time_shield::CpuTickTimer::sample_count </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -445,7 +445,7 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -515,8 +515,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a789f77753f5e15b701d1c0a077dffc3c" name="a789f77753f5e15b701d1c0a077dffc3c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a789f77753f5e15b701d1c0a077dffc3c">&#9670;&#160;</a></span>total_ticks()</h2>
+<a id="a14d270f1dc8be491a80cd88c717e6806" name="a14d270f1dc8be491a80cd88c717e6806"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14d270f1dc8be491a80cd88c717e6806">&#9670;&#160;</a></span>total_ticks()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -525,7 +525,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double time_shield::CpuTickTimer::total_ticks </td>
+          <td class="memname">TIME_SHIELD_NODISCARD double time_shield::CpuTickTimer::total_ticks </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -533,7 +533,7 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

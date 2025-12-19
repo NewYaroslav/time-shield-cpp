@@ -188,13 +188,13 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a10a953c7e83b5b036f9b0c7505a19c87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a03653c5abfd80a7d18a43cf4fbbc1bce" id="r_a03653c5abfd80a7d18a43cf4fbbc1bce"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a03653c5abfd80a7d18a43cf4fbbc1bce">m_last_measure_ok</a> {false}</td></tr>
 <tr class="separator:a03653c5abfd80a7d18a43cf4fbbc1bce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5786a35a935477dd5da4bc4a56c79c33" id="r_a5786a35a935477dd5da4bc4a56c79c33"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; uint64_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5786a35a935477dd5da4bc4a56c79c33">m_measure_count</a> {TIME_SHIELD_ATOMIC_INIT(0)}</td></tr>
+<tr class="memitem:a5786a35a935477dd5da4bc4a56c79c33" id="r_a5786a35a935477dd5da4bc4a56c79c33"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; uint64_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5786a35a935477dd5da4bc4a56c79c33">m_measure_count</a> {0}</td></tr>
 <tr class="separator:a5786a35a935477dd5da4bc4a56c79c33"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8beedfc8212dab11f0f73011fa322486" id="r_a8beedfc8212dab11f0f73011fa322486"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; uint64_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8beedfc8212dab11f0f73011fa322486">m_fail_count</a> {TIME_SHIELD_ATOMIC_INIT(0)}</td></tr>
+<tr class="memitem:a8beedfc8212dab11f0f73011fa322486" id="r_a8beedfc8212dab11f0f73011fa322486"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; uint64_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8beedfc8212dab11f0f73011fa322486">m_fail_count</a> {0}</td></tr>
 <tr class="separator:a8beedfc8212dab11f0f73011fa322486"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d254aa23dfed62d4d043653b21f6756" id="r_a0d254aa23dfed62d4d043653b21f6756"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int64_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0d254aa23dfed62d4d043653b21f6756">m_last_update_realtime_us</a> {TIME_SHIELD_ATOMIC_INIT(0)}</td></tr>
+<tr class="memitem:a0d254aa23dfed62d4d043653b21f6756" id="r_a0d254aa23dfed62d4d043653b21f6756"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int64_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0d254aa23dfed62d4d043653b21f6756">m_last_update_realtime_us</a> {0}</td></tr>
 <tr class="separator:a0d254aa23dfed62d4d043653b21f6756"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac445f740e48c1771970eae29a37672af" id="r_ac445f740e48c1771970eae29a37672af"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int64_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac445f740e48c1771970eae29a37672af">m_last_success_realtime_us</a> {TIME_SHIELD_ATOMIC_INIT(0)}</td></tr>
+<tr class="memitem:ac445f740e48c1771970eae29a37672af" id="r_ac445f740e48c1771970eae29a37672af"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int64_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac445f740e48c1771970eae29a37672af">m_last_success_realtime_us</a> {0}</td></tr>
 <tr class="separator:ac445f740e48c1771970eae29a37672af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -211,7 +211,7 @@ class time_shield::BasicPoolRunner&lt; PoolT &gt;</div><p>Background runner that
 <div class="line"> </div>
 <div class="line">runner.stop();</div>
 <div class="ttc" id="aclasstime__shield_1_1NtpClientPoolRunner_html"><div class="ttname"><a href="classtime__shield_1_1NtpClientPoolRunner.html">time_shield::NtpClientPoolRunner</a></div><div class="ttdef"><b>Definition</b> <a href="ntp__client__pool__runner_8hpp_source.html#l00186">ntp_client_pool_runner.hpp:186</a></div></div>
-<div class="ttc" id="aclasstime__shield_1_1NtpClientPool_html"><div class="ttname"><a href="classtime__shield_1_1NtpClientPool.html">time_shield::NtpClientPool</a></div><div class="ttdef"><b>Definition</b> <a href="ntp__client__pool_8hpp_source.html#l00693">ntp_client_pool.hpp:693</a></div></div>
+<div class="ttc" id="aclasstime__shield_1_1NtpClientPool_html"><div class="ttname"><a href="classtime__shield_1_1NtpClientPool.html">time_shield::NtpClientPool</a></div><div class="ttdef"><b>Definition</b> <a href="ntp__client__pool_8hpp_source.html#l00695">ntp_client_pool.hpp:695</a></div></div>
 </div><!-- fragment --> 
 <p class="definition">Definition at line <a class="el" href="ntp__client__pool__runner_8hpp_source.html#l00040">40</a> of file <a class="el" href="ntp__client__pool__runner_8hpp_source.html">ntp_client_pool_runner.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -873,7 +873,7 @@ template&lt;class PoolT&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::atomic&lt;uint64_t&gt; <a class="el" href="classtime__shield_1_1BasicPoolRunner.html">time_shield::BasicPoolRunner</a>&lt; PoolT &gt;::m_fail_count {TIME_SHIELD_ATOMIC_INIT(0)}</td>
+          <td class="memname">std::atomic&lt;uint64_t&gt; <a class="el" href="classtime__shield_1_1BasicPoolRunner.html">time_shield::BasicPoolRunner</a>&lt; PoolT &gt;::m_fail_count {0}</td>
         </tr>
       </table>
   </td>
@@ -1003,7 +1003,7 @@ template&lt;class PoolT&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::atomic&lt;int64_t&gt; <a class="el" href="classtime__shield_1_1BasicPoolRunner.html">time_shield::BasicPoolRunner</a>&lt; PoolT &gt;::m_last_success_realtime_us {TIME_SHIELD_ATOMIC_INIT(0)}</td>
+          <td class="memname">std::atomic&lt;int64_t&gt; <a class="el" href="classtime__shield_1_1BasicPoolRunner.html">time_shield::BasicPoolRunner</a>&lt; PoolT &gt;::m_last_success_realtime_us {0}</td>
         </tr>
       </table>
   </td>
@@ -1029,7 +1029,7 @@ template&lt;class PoolT&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::atomic&lt;int64_t&gt; <a class="el" href="classtime__shield_1_1BasicPoolRunner.html">time_shield::BasicPoolRunner</a>&lt; PoolT &gt;::m_last_update_realtime_us {TIME_SHIELD_ATOMIC_INIT(0)}</td>
+          <td class="memname">std::atomic&lt;int64_t&gt; <a class="el" href="classtime__shield_1_1BasicPoolRunner.html">time_shield::BasicPoolRunner</a>&lt; PoolT &gt;::m_last_update_realtime_us {0}</td>
         </tr>
       </table>
   </td>
@@ -1055,7 +1055,7 @@ template&lt;class PoolT&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::atomic&lt;uint64_t&gt; <a class="el" href="classtime__shield_1_1BasicPoolRunner.html">time_shield::BasicPoolRunner</a>&lt; PoolT &gt;::m_measure_count {TIME_SHIELD_ATOMIC_INIT(0)}</td>
+          <td class="memname">std::atomic&lt;uint64_t&gt; <a class="el" href="classtime__shield_1_1BasicPoolRunner.html">time_shield::BasicPoolRunner</a>&lt; PoolT &gt;::m_measure_count {0}</td>
         </tr>
       </table>
   </td>

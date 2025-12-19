@@ -194,15 +194,15 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a42bf0add8e3992983a052e4776c4e000"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41879f5b7b2af64ea672979f1778102f" id="r_a41879f5b7b2af64ea672979f1778102f"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a41879f5b7b2af64ea672979f1778102f">m_last_measure_ok</a> {false}</td></tr>
 <tr class="separator:a41879f5b7b2af64ea672979f1778102f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ec02a5fb987e2cc3ee243d9339593e9" id="r_a8ec02a5fb987e2cc3ee243d9339593e9"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; uint64_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ec02a5fb987e2cc3ee243d9339593e9">m_measure_count</a> {TIME_SHIELD_ATOMIC_INIT(0)}</td></tr>
+<tr class="memitem:a8ec02a5fb987e2cc3ee243d9339593e9" id="r_a8ec02a5fb987e2cc3ee243d9339593e9"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; uint64_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ec02a5fb987e2cc3ee243d9339593e9">m_measure_count</a> {0}</td></tr>
 <tr class="separator:a8ec02a5fb987e2cc3ee243d9339593e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb979c7242368a74ebb9852963a26310" id="r_aeb979c7242368a74ebb9852963a26310"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; uint64_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeb979c7242368a74ebb9852963a26310">m_fail_count</a> {TIME_SHIELD_ATOMIC_INIT(0)}</td></tr>
+<tr class="memitem:aeb979c7242368a74ebb9852963a26310" id="r_aeb979c7242368a74ebb9852963a26310"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; uint64_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeb979c7242368a74ebb9852963a26310">m_fail_count</a> {0}</td></tr>
 <tr class="separator:aeb979c7242368a74ebb9852963a26310"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e143d8b6085dd3f7bb885bb98249788" id="r_a6e143d8b6085dd3f7bb885bb98249788"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int64_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e143d8b6085dd3f7bb885bb98249788">m_last_update_realtime_us</a> {TIME_SHIELD_ATOMIC_INIT(0)}</td></tr>
+<tr class="memitem:a6e143d8b6085dd3f7bb885bb98249788" id="r_a6e143d8b6085dd3f7bb885bb98249788"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int64_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e143d8b6085dd3f7bb885bb98249788">m_last_update_realtime_us</a> {0}</td></tr>
 <tr class="separator:a6e143d8b6085dd3f7bb885bb98249788"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e32de0bedaccaacb690764f462de94d" id="r_a1e32de0bedaccaacb690764f462de94d"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int64_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e32de0bedaccaacb690764f462de94d">m_last_success_realtime_us</a> {TIME_SHIELD_ATOMIC_INIT(0)}</td></tr>
+<tr class="memitem:a1e32de0bedaccaacb690764f462de94d" id="r_a1e32de0bedaccaacb690764f462de94d"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int64_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e32de0bedaccaacb690764f462de94d">m_last_success_realtime_us</a> {0}</td></tr>
 <tr class="separator:a1e32de0bedaccaacb690764f462de94d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa101fb0183b4eb0f947fb8ffc3c1d015" id="r_aa101fb0183b4eb0f947fb8ffc3c1d015"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int64_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa101fb0183b4eb0f947fb8ffc3c1d015">m_offset_us</a> {TIME_SHIELD_ATOMIC_INIT(0)}</td></tr>
+<tr class="memitem:aa101fb0183b4eb0f947fb8ffc3c1d015" id="r_aa101fb0183b4eb0f947fb8ffc3c1d015"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int64_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa101fb0183b4eb0f947fb8ffc3c1d015">m_offset_us</a> {0}</td></tr>
 <tr class="separator:aa101fb0183b4eb0f947fb8ffc3c1d015"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -893,7 +893,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::atomic&lt;uint64_t&gt; time_shield::detail::FakeNtpRunner::m_fail_count {TIME_SHIELD_ATOMIC_INIT(0)}</td>
+          <td class="memname">std::atomic&lt;uint64_t&gt; time_shield::detail::FakeNtpRunner::m_fail_count {0}</td>
         </tr>
       </table>
   </td>
@@ -1037,7 +1037,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::atomic&lt;int64_t&gt; time_shield::detail::FakeNtpRunner::m_last_success_realtime_us {TIME_SHIELD_ATOMIC_INIT(0)}</td>
+          <td class="memname">std::atomic&lt;int64_t&gt; time_shield::detail::FakeNtpRunner::m_last_success_realtime_us {0}</td>
         </tr>
       </table>
   </td>
@@ -1061,7 +1061,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::atomic&lt;int64_t&gt; time_shield::detail::FakeNtpRunner::m_last_update_realtime_us {TIME_SHIELD_ATOMIC_INIT(0)}</td>
+          <td class="memname">std::atomic&lt;int64_t&gt; time_shield::detail::FakeNtpRunner::m_last_update_realtime_us {0}</td>
         </tr>
       </table>
   </td>
@@ -1085,7 +1085,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::atomic&lt;uint64_t&gt; time_shield::detail::FakeNtpRunner::m_measure_count {TIME_SHIELD_ATOMIC_INIT(0)}</td>
+          <td class="memname">std::atomic&lt;uint64_t&gt; time_shield::detail::FakeNtpRunner::m_measure_count {0}</td>
         </tr>
       </table>
   </td>
@@ -1133,7 +1133,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::atomic&lt;int64_t&gt; time_shield::detail::FakeNtpRunner::m_offset_us {TIME_SHIELD_ATOMIC_INIT(0)}</td>
+          <td class="memname">std::atomic&lt;int64_t&gt; time_shield::detail::FakeNtpRunner::m_offset_us {0}</td>
         </tr>
       </table>
   </td>

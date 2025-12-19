@@ -16,5 +16,5 @@ var searchData=
   ['year_5fstart_5fdate_5fms_13',['year_start_date_ms',['../group__time__conversions.html#ga4bdee764e25f1aeaad0ff452c92567fa',1,'time_shield::year_start_date_ms(T year)'],['../group__time__conversions.html#ga644cbce6a762ab0b0439df9573c008c2',1,'time_shield::year_start_date_ms(long year)']]],
   ['year_5fstart_5fms_14',['year_start_ms',['../group__time__conversions.html#ga2224f769bd6d07137bb752de96ba76a3',1,'time_shield::year_start_ms(ts_ms_t ts_ms=time_shield::ts_ms())'],['../group__time__conversions.html#ga46d49cd485c11bc9e26bf80b213a56c1',1,'time_shield::year_start_ms(long ts_ms)']]],
   ['year_5ft_15',['year_t',['../group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9',1,'time_shield']]],
-  ['years_5fsince_5fepoch_16',['years_since_epoch',['../group__time__conversions.html#ga2ceab003cb267446f1ce3249f0ff7d6e',1,'time_shield']]]
+  ['years_5fsince_5fepoch_16',['years_since_epoch',['../group__time__conversions.html#ga40ef0f060775d17045700553841865e5',1,'time_shield']]]
 ];

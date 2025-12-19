@@ -1,7 +1,7 @@
 var searchData=
 [
   ['same_5flocal_0',['same_local',['../classtime__shield_1_1DateTime.html#a37efaac085e60cc4e3457c06979423ea',1,'time_shield::DateTime']]],
-  ['sample_5fcount_1',['sample_count',['../classtime__shield_1_1CpuTickTimer.html#aecf3ed3f89ee4e8b67ced3fe1530a6c8',1,'time_shield::CpuTickTimer']]],
+  ['sample_5fcount_1',['sample_count',['../classtime__shield_1_1CpuTickTimer.html#a73295308809c80fd135fc4b678db428f',1,'time_shield::CpuTickTimer']]],
   ['sample_5fservers_2',['sample_servers',['../structtime__shield_1_1NtpPoolConfig.html#af669f7df5c819a41ffb04ed521d4c82a',1,'time_shield::NtpPoolConfig']]],
   ['sat_3',['SAT',['../group__time__enums.html#ggadf684443100352064316f6134bbe44f8ae2bf2f0672007a58be8af305dc0f4d60',1,'time_shield']]],
   ['saturday_5fbegin_4',['saturday_begin',['../group__time__conversions.html#ga6125ddab1c2f295ebcc5ef5489924e65',1,'time_shield::saturday_begin(ts_t ts=time_shield::ts())'],['../group__time__conversions.html#gab872321d4b7d210cb3074d8ed5e2aeb8',1,'time_shield::saturday_begin(long ts)']]],
@@ -45,7 +45,7 @@ var searchData=
   ['sec_5fto_5fhour_42',['sec_to_hour',['../group__time__conversions.html#gac2db906f9fe6330c30021e80b7e476e4',1,'time_shield::sec_to_hour(T2 ts) noexcept'],['../group__time__conversions.html#gad97d0e25fbc9eef80a787bd82309d40a',1,'time_shield::sec_to_hour(long sec)']]],
   ['sec_5fto_5fmin_43',['sec_to_min',['../group__time__conversions.html#gabc06cbdc579a089cd1eea7ced9b7979a',1,'time_shield::sec_to_min(T2 ts) noexcept'],['../group__time__conversions.html#ga1876ef81298a3bd000479d542514ecb6',1,'time_shield::sec_to_min(long sec)']]],
   ['sec_5fto_5fms_44',['sec_to_ms',['../group__time__conversions.html#gacf399fc904a25ad11845fffcf161cb87',1,'time_shield::sec_to_ms(T2 ts) noexcept'],['../group__time__conversions.html#ga2f230821eb8fa6b00c1d766210791bfe',1,'time_shield::sec_to_ms(double sec)']]],
-  ['sec_5fto_5fms_5fimpl_45',['sec_to_ms_impl',['../group__time__conversions.html#ga5327f3d1f658bac255ce6541efef1fcf',1,'time_shield::sec_to_ms_impl(T t, std::true_type tag) noexcept'],['../group__time__conversions.html#ga7956f1222326f09958726290320d74eb',1,'time_shield::sec_to_ms_impl(T t, std::false_type tag) noexcept']]],
+  ['sec_5fto_5fms_5fimpl_45',['sec_to_ms_impl',['../group__time__conversions.html#ga25374efdf585f171d2166d26d73ed0c8',1,'time_shield::sec_to_ms_impl(T t, std::true_type) noexcept'],['../group__time__conversions.html#ga7cb74f5da9e42242545c01417c95047d',1,'time_shield::sec_to_ms_impl(T t, std::false_type) noexcept']]],
   ['second_46',['second',['../classtime__shield_1_1DateTime.html#ab9434203c0dd1e7ee961f19226ab70ff',1,'time_shield::DateTime']]],
   ['send_5fdata_47',['send_data',['../structtime__shield_1_1detail_1_1UdpRequest.html#adb11ac56cc4a25b5fa578c2b5c636734',1,'time_shield::detail::UdpRequest']]],
   ['send_5fsize_48',['send_size',['../structtime__shield_1_1detail_1_1UdpRequest.html#a201bf235e84a250ec29321aec6578be6',1,'time_shield::detail::UdpRequest']]],

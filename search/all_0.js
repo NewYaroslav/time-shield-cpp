@@ -27,7 +27,7 @@ var searchData=
   ['astronomy_20helpers_24',['OA date and astronomy helpers',['../index.html#oa_and_astronomy',1,'']]],
   ['astronomy_5fconversions_2ehpp_25',['astronomy_conversions.hpp',['../astronomy__conversions_8hpp.html',1,'']]],
   ['aug_26',['AUG',['../group__time__enums.html#ggac2ffd79e06ab94cf1bb50fec432c68a8a939f4fa15cc31f9b2ec0fc54fed08595',1,'time_shield']]],
-  ['average_5fticks_27',['average_ticks',['../classtime__shield_1_1CpuTickTimer.html#a0476e2176ab4465f93fc71930ba74a2d',1,'time_shield::CpuTickTimer']]],
+  ['average_5fticks_27',['average_ticks',['../classtime__shield_1_1CpuTickTimer.html#ab0fcfe5dd9d0292050ee5f146fea45ee',1,'time_shield::CpuTickTimer']]],
   ['avg_5fdays_5fper_5fyear_28',['AVG_DAYS_PER_YEAR',['../group__time__constants.html#ga24075d386d517252e371f0fa915b768d',1,'time_shield']]],
   ['avg_5fsec_5fper_5fyear_29',['AVG_SEC_PER_YEAR',['../group__time__constants.html#ga917a14b2c8ee5cb4f9978fec639b8fd6',1,'time_shield']]]
 ];

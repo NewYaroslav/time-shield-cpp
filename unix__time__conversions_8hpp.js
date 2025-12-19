@@ -16,5 +16,5 @@ var unix__time__conversions_8hpp =
     [ "time_shield::start_of_next_day_from_unix_day_ms", "group__time__conversions.html#gad8b01fcae98d98b70bd70ba912e4b7ca", null ],
     [ "time_shield::unix_day_to_ts", "group__time__conversions.html#gaea15fa45a52cdbde3a9e06644a87cfac", null ],
     [ "time_shield::unix_day_to_ts_ms", "group__time__conversions.html#gaec533d5bb3270f12bd2052c3bae95a6e", null ],
-    [ "time_shield::years_since_epoch", "group__time__conversions.html#ga2ceab003cb267446f1ce3249f0ff7d6e", null ]
+    [ "time_shield::years_since_epoch", "group__time__conversions.html#ga40ef0f060775d17045700553841865e5", null ]
 ];

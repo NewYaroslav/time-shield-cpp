@@ -15,8 +15,10 @@
 namespace time_shield {
 namespace detail {
 
+    /// \brief Windows UDP transport for NTP queries.
     class UdpTransportWin : public IUdpTransport {
     public:
+        /// \brief Send request and receive response over UDP.
         bool transact(const UdpRequest& req, int& out_error_code) noexcept override {
             out_error_code = 0;
             if (!WsaGuard::instance().success()) {

@@ -161,10 +161,32 @@ ts_t gmt_ts = time_shield::cet_to_gmt(cet_ts);
 \defgroup ntp NTP Client
 \brief Facilities for retrieving time using the Network Time Protocol.
 
-This module contains a minimal client capable of querying remote NTP
-servers to measure the offset between local and network time. It uses
-WinSock via the `WsaGuard` helper on Windows and POSIX sockets on Unix
-platforms.
+This module contains a minimal client and optional pool/service pipeline
+capable of querying remote NTP servers to measure the offset between local
+realtime and network time. It uses WinSock via the `WsaGuard` helper on
+Windows and POSIX sockets on Unix platforms.
+
+### Architecture:
+- `NtpClient` performs a single request/response exchange with one server.
+- `NtpClientPool` samples multiple servers with rate limiting and backoff.
+- `NtpClientPoolRunner` runs the pool periodically in a background thread.
+- `NtpTimeService` wraps the runner in a singleton interface for easy access.
+
+### Offset computation:
+For each response, offsets and delays are computed using the standard NTP
+four-timestamp method:
+- `t1` — client transmit time
+- `t2` — server receive time
+- `t3` — server transmit time
+- `t4` — client receive time
+
+Offset and delay are derived as:
+`offset = ((t2 - t1) + (t3 - t4)) / 2`,
+`delay = (t4 - t1) - (t3 - t2)`.
+
+Pools aggregate per-server offsets using the configured strategy (median,
+best-delay sample, or median with MAD trimming) and optional exponential
+smoothing.
 
 ### Features:
 - Query NTP servers and obtain the time offset.
@@ -176,8 +198,8 @@ platforms.
 ```cpp
 time_shield::NtpClient client;
 if (client.query()) {
-    int64_t offset = client.get_offset_us();
-    int64_t utc_ms = client.get_utc_time_ms();
+    int64_t offset = client.offset_us();
+    int64_t utc_ms = client.utc_time_ms();
 }
 ```
 */

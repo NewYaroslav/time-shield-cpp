@@ -39,13 +39,20 @@ namespace time_shield {
     template <class PoolT>
     class BasicPoolRunner {
     public:
+        /// \brief Construct runner with a pool instance.
+        /// \param pool Pool instance to use.
         explicit BasicPoolRunner(PoolT pool = PoolT{})
             : m_pool(std::move(pool)) {}
 
+        /// \brief Stop background thread on destruction.
         ~BasicPoolRunner() {
             stop();
         }
 
+        /// \brief Start periodic measurements on a background thread.
+        /// \param interval Measurement interval.
+        /// \param measure_immediately Measure before first sleep if true.
+        /// \return True when background thread started.
         bool start(std::chrono::milliseconds interval = std::chrono::seconds(30),
                    bool measure_immediately = true) {
             if (m_is_running.load()) {
@@ -69,10 +76,15 @@ namespace time_shield {
             return true;
         }
 
+        /// \brief Start periodic measurements using milliseconds.
+        /// \param interval_ms Measurement interval in milliseconds.
+        /// \param measure_immediately Measure before first sleep if true.
+        /// \return True when background thread started.
         bool start(int interval_ms, bool measure_immediately = true) {
             return start(std::chrono::milliseconds(interval_ms), measure_immediately);
         }
 
+        /// \brief Stop background measurements.
         void stop() {
             m_is_stop_requested.store(true);
             m_cv.notify_all();
@@ -82,8 +94,12 @@ namespace time_shield {
             m_is_running.store(false);
         }
 
+        /// \brief Return true when background thread is running.
+        /// \return True when background measurements are active.
         bool running() const noexcept { return m_is_running.load(); }
 
+        /// \brief Wake the worker thread and request a measurement.
+        /// \return True when request accepted.
         bool force_measure() {
             if (!m_is_running.load()) {
                 return false;
@@ -93,21 +109,43 @@ namespace time_shield {
             return true;
         }
 
+        /// \brief Perform one measurement immediately.
+        /// \return True when pool offset updated.
         bool measure_now() {
             return do_measure();
         }
 
+        /// \brief Return last estimated offset in microseconds.
+        /// \return Offset in microseconds (UTC - local realtime).
         int64_t offset_us() const noexcept { return m_pool.offset_us(); }
+        /// \brief Return current UTC time in microseconds using pool offset.
+        /// \return UTC time in microseconds using pool offset.
         int64_t utc_time_us() const noexcept { return m_pool.utc_time_us(); }
+        /// \brief Return current UTC time in milliseconds using pool offset.
+        /// \return UTC time in milliseconds using pool offset.
         int64_t utc_time_ms() const noexcept { return m_pool.utc_time_ms(); }
+        /// \brief Return current UTC time in seconds using pool offset.
+        /// \return UTC time in seconds using pool offset.
         int64_t utc_time_sec() const noexcept { return utc_time_us() / 1000000; }
 
+        /// \brief Return whether last measurement updated the offset.
+        /// \return True when last measurement updated the offset.
         bool last_measure_ok() const noexcept { return m_last_measure_ok.load(); }
+        /// \brief Return total number of measurement attempts.
+        /// \return Number of measurement attempts.
         uint64_t measure_count() const noexcept { return m_measure_count.load(); }
+        /// \brief Return number of failed measurement attempts.
+        /// \return Number of failed measurement attempts.
         uint64_t fail_count() const noexcept { return m_fail_count.load(); }
+        /// \brief Return realtime timestamp of last measurement attempt.
+        /// \return Realtime microseconds timestamp for last measurement attempt.
         int64_t last_update_realtime_us() const noexcept { return m_last_update_realtime_us.load(); }
+        /// \brief Return realtime timestamp of last successful measurement.
+        /// \return Realtime microseconds timestamp for last successful measurement.
         int64_t last_success_realtime_us() const noexcept { return m_last_success_realtime_us.load(); }
 
+        /// \brief Return copy of the most recent samples.
+        /// \return Copy of samples from the last measurement.
         std::vector<NtpSample> last_samples() const { return m_pool.last_samples(); }
 
     private:

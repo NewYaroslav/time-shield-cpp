@@ -89,6 +89,44 @@ Additional example files are located in the `examples/` folder:
 - `time_zone_conversions_example.cpp` — CET/EET ↔ GMT
 - `ntp_client_example.cpp` — NTP sync (sockets)
 
+\section ntp_sec NTP client, pool, and time service
+
+Time Shield provides an optional NTP stack (`TIME_SHIELD_ENABLE_NTP_CLIENT`)
+that can query remote servers and compute a local offset for UTC time.
+
+### Components
+- `NtpClient` performs a single NTP request to one server.
+- `NtpClientPool` samples multiple servers with rate limiting and backoff.
+- `NtpClientPoolRunner` runs the pool periodically in a background thread.
+- `NtpTimeService` exposes a singleton interface with cached offset/UTC time.
+
+### Offset computation
+Each response is parsed using the standard four-timestamp method:
+`offset = ((t2 - t1) + (t3 - t4)) / 2`,
+`delay = (t4 - t1) - (t3 - t2)`,
+where `t1` is client transmit, `t2` is server receive, `t3` is server transmit,
+and `t4` is client receive time. Pool aggregation uses median or best-delay
+selection with optional MAD trimming and exponential smoothing.
+
+### Basic usage
+\code{.cpp}
+#include <time_shield/ntp_client.hpp>
+#include <time_shield/ntp_time_service.hpp>
+
+using namespace time_shield;
+
+NtpClient client("pool.ntp.org");
+if (client.query()) {
+    int64_t offset = client.offset_us();
+    int64_t utc_ms = client.utc_time_ms();
+}
+
+auto& service = NtpTimeService::instance();
+service.init(std::chrono::seconds(30));
+int64_t now_ms = service.utc_time_ms();
+service.shutdown();
+\endcode
+
 \subsection oa_and_astronomy OA date and astronomy helpers
 
 Convert between Unix timestamps and Excel/COM OA dates, or derive basic

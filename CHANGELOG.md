@@ -20,6 +20,8 @@ All notable changes to this project will be documented in this file.
 - Unified `now_realtime_us()` precision across Windows and Unix by combining realtime anchors with monotonic clocks.
 - Added MQL5 counterparts for recent workday boundary and ISO parsing helpers.
 - Introduced templated NTP client pools, offline/fake testing paths, background runner helpers, and a singleton NTP time service with convenience wrappers.
+- Added US Eastern Time (ET/NY) to GMT (UTC) conversion helpers with DST rules.
+- Added US Central Time (CT) to GMT (UTC) conversion helpers for America/Chicago.
 
 ## [v1.0.4] - 2025-09-20
 - fix ODR violations in headers

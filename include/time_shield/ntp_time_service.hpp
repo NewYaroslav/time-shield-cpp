@@ -203,8 +203,7 @@ namespace time_shield {
         /// \return Singleton instance.
         static NtpTimeServiceT& instance() noexcept {
 #ifdef TIME_SHIELD_CPP17
-            static NtpTimeServiceT instance_obj;
-            return instance_obj;
+            return m_instance;
 #else
             return detail::g_ntp_time_service;
 #endif
@@ -532,6 +531,10 @@ namespace time_shield {
         NtpPoolConfig m_pool_cfg{};
 
         std::unique_ptr<RunnerT> m_runner;
+
+#ifdef TIME_SHIELD_CPP17
+        static inline NtpTimeServiceT m_instance{};
+#endif
     };
 
 #ifndef _TIME_SHIELD_CPP17

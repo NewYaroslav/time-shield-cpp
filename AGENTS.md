@@ -39,3 +39,89 @@
 
 - Keep diffs minimal and focused.
 - Do not refactor or apply style changes beyond the lines you directly touch.
+
+## Header-only singleton/service storage rule (C++11–C++20)
+
+Use this rule to avoid ODR issues while keeping a single instance per program.
+
+### C++17 and newer
+Prefer `static inline` storage inside the class:
+
+```cpp
+class Service {
+public:
+    static Service& instance() noexcept {
+        return s_instance;
+    }
+
+private:
+    Service() = default;
+    static inline Service s_instance{}; // single instance (C++17+)
+};
+```
+
+### C++11/14 (header-only is not possible without one TU)
+You must define storage in exactly one translation unit (TU) using a macro.
+
+Header (`Service.hpp`):
+
+```cpp
+#pragma once
+
+class Service {
+public:
+    static Service& instance() noexcept;
+
+private:
+    Service() = default;
+#if __cplusplus >= 201703L
+    static inline Service s_instance{}; // single instance (C++17+)
+#endif
+};
+
+#if __cplusplus >= 201703L
+
+inline Service& Service::instance() noexcept {
+    return s_instance;
+}
+
+#else
+
+namespace detail {
+#   if defined(SERVICE_DEFINE_STORAGE)
+        Service g_service;
+#   else
+        extern Service g_service;
+#   endif
+}
+
+inline Service& Service::instance() noexcept {
+    return detail::g_service;
+}
+
+#endif
+```
+
+Usage (C++11/14): define the macro in exactly one `.cpp` file (usually `main.cpp`):
+
+```cpp
+#define SERVICE_DEFINE_STORAGE
+#include "Service.hpp"
+```
+
+All other `.cpp` files should include without the macro:
+
+```cpp
+#include "Service.hpp"
+```
+
+Notes:
+- The macro must be defined in exactly one TU.
+- If it is not defined anywhere, you will get an undefined reference error.
+- If it is defined in multiple TUs, you will get multiple definition errors.
+- In C++17+, the macro is unnecessary (but harmless).
+- Use `detail` to keep raw storage out of public API.
+- If many services exist in C++11/14, prefer a single TU like `project_singletons.cpp` that defines all `*_DEFINE_STORAGE` macros.
+
+Naming convention for macros:
+- `FOO_DEFINE_STORAGE` (or `FOO_IMPLEMENTATION`) — exactly one TU defines it.

@@ -113,8 +113,8 @@ $(function(){initNavTree('ntp__client__pool__runner_8hpp_source.html',''); initR
 <div class="contents">
 <a href="ntp__client__pool__runner_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// SPDX-License-Identifier: MIT</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#ifndef TIME_SHIELD_NTP_CLIENT_POOL_RUNNER_HPP_INCLUDED</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#define TIME_SHIELD_NTP_CLIENT_POOL_RUNNER_HPP_INCLUDED</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#ifndef _TIME_SHIELD_NTP_CLIENT_POOL_RUNNER_HPP_INCLUDED</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#define _TIME_SHIELD_NTP_CLIENT_POOL_RUNNER_HPP_INCLUDED</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="config_8hpp.html">config.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
@@ -313,9 +313,9 @@ $(function(){initNavTree('ntp__client__pool__runner_8hpp_source.html',''); initR
 </div>
 <div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>} <span class="comment">// namespace time_shield</span></div>
 <div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span> </div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span><span class="preprocessor">#endif </span><span class="comment">// TIME_SHIELD_ENABLE_NTP_CLIENT</span></div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span><span class="preprocessor">#endif </span><span class="comment">// _TIME_SHIELD_ENABLE_NTP_CLIENT</span></div>
 <div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span> </div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span><span class="preprocessor">#endif </span><span class="comment">// TIME_SHIELD_NTP_CLIENT_POOL_RUNNER_HPP_INCLUDED</span></div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span><span class="preprocessor">#endif </span><span class="comment">// _TIME_SHIELD_NTP_CLIENT_POOL_RUNNER_HPP_INCLUDED</span></div>
 <div class="ttc" id="aclasstime__shield_1_1BasicPoolRunner_html"><div class="ttname"><a href="classtime__shield_1_1BasicPoolRunner.html">time_shield::BasicPoolRunner</a></div><div class="ttdoc">Background runner that periodically measures NTP offsets using a pool.</div><div class="ttdef"><b>Definition</b> <a href="#l00040">ntp_client_pool_runner.hpp:40</a></div></div>
 <div class="ttc" id="aclasstime__shield_1_1BasicPoolRunner_html_a03653c5abfd80a7d18a43cf4fbbc1bce"><div class="ttname"><a href="classtime__shield_1_1BasicPoolRunner.html#a03653c5abfd80a7d18a43cf4fbbc1bce">time_shield::BasicPoolRunner&lt; NtpClientPool &gt;::m_last_measure_ok</a></div><div class="ttdeci">std::atomic&lt; bool &gt; m_last_measure_ok</div><div class="ttdef"><b>Definition</b> <a href="#l00210">ntp_client_pool_runner.hpp:210</a></div></div>
 <div class="ttc" id="aclasstime__shield_1_1BasicPoolRunner_html_a075a3738d761085295be97b2741f130e"><div class="ttname"><a href="classtime__shield_1_1BasicPoolRunner.html#a075a3738d761085295be97b2741f130e">time_shield::BasicPoolRunner::start</a></div><div class="ttdeci">bool start(int interval_ms, bool measure_immediately=true)</div><div class="ttdoc">Start periodic measurements using milliseconds.</div><div class="ttdef"><b>Definition</b> <a href="#l00083">ntp_client_pool_runner.hpp:83</a></div></div>

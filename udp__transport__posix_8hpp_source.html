@@ -113,8 +113,8 @@ $(function(){initNavTree('udp__transport__posix_8hpp_source.html',''); initResiz
 <div class="contents">
 <a href="udp__transport__posix_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// SPDX-License-Identifier: MIT</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#ifndef TIME_SHIELD_UDP_TRANSPORT_POSIX_HPP_INCLUDED</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#define TIME_SHIELD_UDP_TRANSPORT_POSIX_HPP_INCLUDED</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#ifndef _TIME_SHIELD_UDP_TRANSPORT_POSIX_HPP_INCLUDED</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#define _TIME_SHIELD_UDP_TRANSPORT_POSIX_HPP_INCLUDED</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#if TIME_SHIELD_PLATFORM_UNIX</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
@@ -205,9 +205,9 @@ $(function(){initNavTree('udp__transport__posix_8hpp_source.html',''); initResiz
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>} <span class="comment">// namespace detail</span></div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>} <span class="comment">// namespace time_shield</span></div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="preprocessor">#endif </span><span class="comment">// TIME_SHIELD_PLATFORM_UNIX</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="preprocessor">#endif </span><span class="comment">// _TIME_SHIELD_PLATFORM_UNIX</span></div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="preprocessor">#endif </span><span class="comment">// TIME_SHIELD_UDP_TRANSPORT_POSIX_HPP_INCLUDED</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="preprocessor">#endif </span><span class="comment">// _TIME_SHIELD_UDP_TRANSPORT_POSIX_HPP_INCLUDED</span></div>
 <div class="ttc" id="aclasstime__shield_1_1detail_1_1IUdpTransport_html"><div class="ttname"><a href="classtime__shield_1_1detail_1_1IUdpTransport.html">time_shield::detail::IUdpTransport</a></div><div class="ttdoc">Abstract UDP transport interface for NTP queries.</div><div class="ttdef"><b>Definition</b> <a href="udp__transport_8hpp_source.html#l00024">udp_transport.hpp:24</a></div></div>
 <div class="ttc" id="aclasstime__shield_1_1detail_1_1UdpTransportPosix_html"><div class="ttname"><a href="classtime__shield_1_1detail_1_1UdpTransportPosix.html">time_shield::detail::UdpTransportPosix</a></div><div class="ttdoc">POSIX UDP transport for NTP queries.</div><div class="ttdef"><b>Definition</b> <a href="#l00022">udp_transport_posix.hpp:22</a></div></div>
 <div class="ttc" id="aclasstime__shield_1_1detail_1_1UdpTransportPosix_html_a15cd6a7d67ae338eae1dbb994f6f59c9"><div class="ttname"><a href="classtime__shield_1_1detail_1_1UdpTransportPosix.html#a15cd6a7d67ae338eae1dbb994f6f59c9">time_shield::detail::UdpTransportPosix::transact</a></div><div class="ttdeci">bool transact(const UdpRequest &amp;req, int &amp;out_error_code) noexcept override</div><div class="ttdoc">Send request and receive response over UDP.</div><div class="ttdef"><b>Definition</b> <a href="#l00025">udp_transport_posix.hpp:25</a></div></div>

@@ -141,9 +141,9 @@ namespace time_shield {
             std::chrono::milliseconds m_interval{std::chrono::seconds(30)};
             bool m_measure_immediately{true};
 
-        std::thread m_thread;
-        std::condition_variable m_cv;
-        std::mutex m_cv_mtx;
+            std::thread m_thread;
+            std::condition_variable m_cv;
+            std::mutex m_cv_mtx;
 
             std::atomic<bool> m_is_running{false};
             std::atomic<bool> m_is_stop_requested{false};
@@ -470,54 +470,59 @@ namespace detail {
 
 namespace ntp {
 
-inline bool init(std::chrono::milliseconds interval = std::chrono::seconds(30),
-                 bool measure_immediately = true) {
-    return NtpTimeService::instance().init(interval, measure_immediately);
-}
+    inline bool init(std::chrono::milliseconds interval = std::chrono::seconds(30),
+                     bool measure_immediately = true) {
+        return NtpTimeService::instance().init(interval, measure_immediately);
+    }
 
-inline void shutdown() {
-    NtpTimeService::instance().shutdown();
-}
-
-inline int64_t offset_us() noexcept {
-    return NtpTimeService::instance().offset_us();
-}
-
-inline int64_t utc_time_us() noexcept {
-    return NtpTimeService::instance().utc_time_us();
-}
-
-inline int64_t utc_time_ms() noexcept {
-    return NtpTimeService::instance().utc_time_ms();
-}
-
-inline int64_t utc_time_sec() noexcept {
-    return NtpTimeService::instance().utc_time_sec();
-}
-
-inline bool last_measure_ok() noexcept {
-    return NtpTimeService::instance().last_measure_ok();
-}
-
-inline uint64_t measure_count() noexcept {
-    return NtpTimeService::instance().measure_count();
-}
-
-inline uint64_t fail_count() noexcept {
-    return NtpTimeService::instance().fail_count();
-}
-
-inline int64_t last_update_realtime_us() noexcept {
-    return NtpTimeService::instance().last_update_realtime_us();
-}
-
-inline int64_t last_success_realtime_us() noexcept {
-    return NtpTimeService::instance().last_success_realtime_us();
-}
-
-inline bool stale(std::chrono::milliseconds max_age) noexcept {
-    return NtpTimeService::instance().stale(max_age);
-}
+    inline bool init(int interval_ms,
+                     bool measure_immediately = true) {
+        return NtpTimeService::instance().init(std::chrono::milliseconds(interval_ms), measure_immediately);
+    }
+    
+    inline void shutdown() {
+        NtpTimeService::instance().shutdown();
+    }
+    
+    inline int64_t offset_us() noexcept {
+        return NtpTimeService::instance().offset_us();
+    }
+    
+    inline int64_t utc_time_us() noexcept {
+        return NtpTimeService::instance().utc_time_us();
+    }
+    
+    inline int64_t utc_time_ms() noexcept {
+        return NtpTimeService::instance().utc_time_ms();
+    }
+    
+    inline int64_t utc_time_sec() noexcept {
+        return NtpTimeService::instance().utc_time_sec();
+    }
+    
+    inline bool last_measure_ok() noexcept {
+        return NtpTimeService::instance().last_measure_ok();
+    }
+    
+    inline uint64_t measure_count() noexcept {
+        return NtpTimeService::instance().measure_count();
+    }
+    
+    inline uint64_t fail_count() noexcept {
+        return NtpTimeService::instance().fail_count();
+    }
+    
+    inline int64_t last_update_realtime_us() noexcept {
+        return NtpTimeService::instance().last_update_realtime_us();
+    }
+    
+    inline int64_t last_success_realtime_us() noexcept {
+        return NtpTimeService::instance().last_success_realtime_us();
+    }
+    
+    inline bool stale(std::chrono::milliseconds max_age) noexcept {
+        return NtpTimeService::instance().stale(max_age);
+    }
 
 } // namespace ntp
 

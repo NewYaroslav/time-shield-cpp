@@ -441,13 +441,15 @@ namespace time_shield {
 
         /// \brief Returns median of values.
         static int64_t median(std::vector<int64_t>& values) {
-            std::nth_element(values.begin(), values.begin() + values.size() / 2, values.end());
-            const int64_t mid = values[values.size() / 2];
+            using diff_t = std::vector<int64_t>::difference_type;
+            const diff_t mid_index = static_cast<diff_t>(values.size() / 2);
+            std::nth_element(values.begin(), values.begin() + mid_index, values.end());
+            const int64_t mid = values[static_cast<std::size_t>(mid_index)];
             if (values.size() % 2 == 1) {
                 return mid;
             }
 
-            const auto it = std::max_element(values.begin(), values.begin() + values.size() / 2);
+            const auto it = std::max_element(values.begin(), values.begin() + mid_index);
             return (*it + mid) / 2;
         }
 

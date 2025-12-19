@@ -155,7 +155,7 @@ namespace time_shield {
     template<class T = int>
     inline T us_of_sec() noexcept {
         const struct timespec ts = get_timespec_impl();
-        return ts.tv_nsec / NS_PER_US;
+        return static_cast<T>(ts.tv_nsec / NS_PER_US);
     }
 
     /// \ingroup time_utils
@@ -165,7 +165,7 @@ namespace time_shield {
     template<class T = int>
     inline T ms_of_sec() noexcept {
         const struct timespec ts = get_timespec_impl();
-        return ts.tv_nsec / NS_PER_MS;
+        return static_cast<T>(ts.tv_nsec / NS_PER_MS);
     }
 
     /// \brief Get the current UTC timestamp in seconds.

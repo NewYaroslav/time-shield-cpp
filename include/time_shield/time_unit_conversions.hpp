@@ -74,7 +74,7 @@ namespace time_shield {
     /// \param tag std::false_type indicates a non-floating-point type.
     /// \return ts_ms_t Timestamp in milliseconds.
     template<class T>
-    constexpr ts_ms_t sec_to_ms_impl(T t, std::false_type tag) noexcept {
+    constexpr ts_ms_t sec_to_ms_impl(T t, std::false_type) noexcept {
         return static_cast<ts_ms_t>(t) * static_cast<ts_ms_t>(MS_PER_SEC);
     }
 #   endif // TIME_SHIELD_CPP17

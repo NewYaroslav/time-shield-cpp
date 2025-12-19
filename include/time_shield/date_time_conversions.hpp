@@ -785,13 +785,10 @@ namespace time_shield {
     /// \return The number of days in the given month and year.
     template<class T1 = int, class T2 = year_t, class T3 = int>
     constexpr T1 num_days_in_month(T2 year, T3 month) noexcept {
-        if (month > MONTHS_PER_YEAR || month < 0) return 0;
         constexpr T1 num_days[13] = {0,31,30,31,30,31,30,31,31,30,31,30,31};
-        if (month == FEB) {
-            if (is_leap_year_date(year)) return 29;
-            return 28;
-        }
-        return num_days[month];
+        return (month > MONTHS_PER_YEAR || month < 0)
+            ? static_cast<T1>(0)
+            : (month == FEB ? static_cast<T1>(is_leap_year_date(year) ? 29 : 28) : num_days[month]);
     }
 
     /// \brief Get the number of days in the month of the given timestamp.

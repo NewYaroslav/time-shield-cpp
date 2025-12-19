@@ -5,7 +5,6 @@
 
 #include "ntp_packet.hpp"
 #include "udp_transport.hpp"
-#include "../time_utils.hpp"
 
 #include <cstdint>
 #include <string>

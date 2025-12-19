@@ -2,6 +2,7 @@
 
 #if TIME_SHIELD_ENABLE_NTP_CLIENT
 
+#include <time_shield/time_utils.hpp>
 #include <time_shield/ntp_client/ntp_client_core.hpp>
 #include <time_shield/ntp_client/ntp_packet.hpp>
 #include <time_shield/ntp_client/udp_transport.hpp>

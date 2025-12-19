@@ -36,6 +36,28 @@ namespace detail {
 
     static_assert(sizeof(NtpPacket) == 48, "NtpPacket must be 48 bytes");
 
+    enum NtpProtoError {
+        NTP_EPROTO_BASE   = -10000,
+        NTP_E_BAD_MODE    = NTP_EPROTO_BASE - 1,
+        NTP_E_BAD_VERSION = NTP_EPROTO_BASE - 2,
+        NTP_E_BAD_LI      = NTP_EPROTO_BASE - 3,
+        NTP_E_BAD_STRATUM = NTP_EPROTO_BASE - 4,
+        NTP_E_KOD         = NTP_EPROTO_BASE - 5,
+        NTP_E_BAD_TS      = NTP_EPROTO_BASE - 6
+    };
+
+    static inline uint8_t ntp_li(uint8_t li_vn_mode) noexcept {
+        return static_cast<uint8_t>((li_vn_mode >> 6) & 0x03);
+    }
+
+    static inline uint8_t ntp_vn(uint8_t li_vn_mode) noexcept {
+        return static_cast<uint8_t>((li_vn_mode >> 3) & 0x07);
+    }
+
+    static inline uint8_t ntp_mode(uint8_t li_vn_mode) noexcept {
+        return static_cast<uint8_t>(li_vn_mode & 0x07);
+    }
+
     static inline uint64_t ntp_frac_to_us(uint32_t frac_net) noexcept {
         const uint64_t frac = static_cast<uint64_t>(ntohl(frac_net));
         return (frac * 1000000ULL) >> 32;
@@ -64,22 +86,66 @@ namespace detail {
                                            uint64_t arrival_us,
                                            int64_t& offset_us,
                                            int64_t& delay_us,
-                                           int& stratum) noexcept {
+                                           int& stratum,
+                                           int& out_error_code) noexcept {
+        const uint8_t li = ntp_li(pkt.li_vn_mode);
+        const uint8_t vn = ntp_vn(pkt.li_vn_mode);
+        const uint8_t mode = ntp_mode(pkt.li_vn_mode);
+
+        if (mode != 4) {
+            out_error_code = NTP_E_BAD_MODE;
+            return false;
+        }
+        if (vn < 3 || vn > 4) {
+            out_error_code = NTP_E_BAD_VERSION;
+            return false;
+        }
+        if (li == 3) {
+            out_error_code = NTP_E_BAD_LI;
+            return false;
+        }
+        if (pkt.stratum == 0) {
+            out_error_code = NTP_E_KOD;
+            return false;
+        }
+        if (pkt.stratum >= 16) {
+            out_error_code = NTP_E_BAD_STRATUM;
+            return false;
+        }
+
         uint64_t originate_us = 0;
         uint64_t receive_us = 0;
         uint64_t transmit_us = 0;
 
-        if (!ntp_ts_to_unix_us(pkt.orig_ts_sec, pkt.orig_ts_frac, originate_us)) return false;
-        if (!ntp_ts_to_unix_us(pkt.recv_ts_sec, pkt.recv_ts_frac, receive_us)) return false;
-        if (!ntp_ts_to_unix_us(pkt.tx_ts_sec, pkt.tx_ts_frac, transmit_us)) return false;
+        if (!ntp_ts_to_unix_us(pkt.orig_ts_sec, pkt.orig_ts_frac, originate_us)) {
+            out_error_code = NTP_E_BAD_TS;
+            return false;
+        }
+        if (!ntp_ts_to_unix_us(pkt.recv_ts_sec, pkt.recv_ts_frac, receive_us)) {
+            out_error_code = NTP_E_BAD_TS;
+            return false;
+        }
+        if (!ntp_ts_to_unix_us(pkt.tx_ts_sec, pkt.tx_ts_frac, transmit_us)) {
+            out_error_code = NTP_E_BAD_TS;
+            return false;
+        }
 
         const int64_t t1 = static_cast<int64_t>(originate_us);
         const int64_t t2 = static_cast<int64_t>(receive_us);
         const int64_t t3 = static_cast<int64_t>(transmit_us);
         const int64_t t4 = static_cast<int64_t>(arrival_us);
 
+        if (t3 < t2) {
+            out_error_code = NTP_E_BAD_TS;
+            return false;
+        }
+
         offset_us = ((t2 - t1) + (t3 - t4)) / 2;
         delay_us = (t4 - t1) - (t3 - t2);
+        if (delay_us < 0) {
+            out_error_code = NTP_E_BAD_TS;
+            return false;
+        }
         stratum = pkt.stratum;
         return true;
     }

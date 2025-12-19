@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['wsaguard_0',['WsaGuard',['../classtime__shield_1_1WsaGuard.html',1,'time_shield']]]
+  ['scheduledcomparator_0',['ScheduledComparator',['../structtime__shield_1_1detail_1_1ScheduledComparator.html',1,'time_shield::detail']]],
+  ['scheduledtimer_1',['ScheduledTimer',['../structtime__shield_1_1detail_1_1ScheduledTimer.html',1,'time_shield::detail']]],
+  ['serverstate_2',['ServerState',['../structtime__shield_1_1NtpClientPoolT_1_1ServerState.html',1,'time_shield::NtpClientPoolT']]]
 ];

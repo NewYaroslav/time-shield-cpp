@@ -58,11 +58,13 @@ var NAVTREE =
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
+      [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", "functions_func" ],
-        [ "Variables", "functions_vars.html", null ],
+        [ "Variables", "functions_vars.html", "functions_vars" ],
         [ "Typedefs", "functions_type.html", null ],
+        [ "Enumerations", "functions_enum.html", null ],
         [ "Related Symbols", "functions_rela.html", null ]
       ] ]
     ] ],
@@ -79,15 +81,16 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "CpuTickTimer_8hpp.html",
-"classtime__shield_1_1DeadlineTimer.html#a7288ec914c48e188e336eaf0d2e80a9d",
-"classtime__shield_1_1astronomy_1_1MoonPhase.html",
-"group__time__constants.html#ga81bd0ad5603bc45765f8658f2167d224",
-"group__time__conversions.html#ga566f242068887306bf5fb1f03e294068",
-"group__time__conversions.html#gacdb44ec16a4fd8252a574c1b7d8d7db6",
-"group__time__enums.html#ggac2ffd79e06ab94cf1bb50fec432c68a8a939f4fa15cc31f9b2ec0fc54fed08595",
-"group__time__structures.html#ga38caa64a9fbc211fd0b647e1c4215aef",
-"namespacetime__shield_1_1astronomy.html",
-"validation_8hpp.html"
+"classtime__shield_1_1DateTime.html#afd3ae5c2b4a50d3997b139bd152c0886",
+"classtime__shield_1_1NtpTimeServiceT.html#aa11a3e5e334e509f7d3d830fbd35429b",
+"classtime__shield_1_1detail_1_1FakeNtpRunner.html#a676a843f848aceaefc42849e85f63f1a",
+"group__time__constants.html#ga66f2fda826d6d5a77d54940620082699",
+"group__time__conversions.html#ga533a859a0c5f8671387f5e8190686d23",
+"group__time__conversions.html#gac9040bd2876cafb225cafc89b4109b07",
+"group__time__enums.html#ggac2ffd79e06ab94cf1bb50fec432c68a8a5e3a6e5c23188b146d1b63ed3aa51d37",
+"group__time__structures.html#ga23bf99c2bc02f3a430517a3abaf62b38",
+"namespacetime__shield.html#a5d4625d12243235c5993141097223af2",
+"structtime__shield_1_1detail_1_1ScheduledComparator.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

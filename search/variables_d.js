@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['tx_5fts_5ffrac_0',['tx_ts_frac',['../structtime__shield_1_1NtpClient_1_1ntp__packet.html#a52fe48d752f38af5b5cb5608ca4f93a5',1,'time_shield::NtpClient::ntp_packet']]],
-  ['tx_5fts_5fsec_1',['tx_ts_sec',['../structtime__shield_1_1NtpClient_1_1ntp__packet.html#ad3085327f347e4d4b24d4289b4ded606',1,'time_shield::NtpClient::ntp_packet']]]
+  ['offset_5fus_0',['offset_us',['../structtime__shield_1_1NtpSample.html#aa9abbf9e79fe841044c77862ff272188',1,'time_shield::NtpSample']]],
+  ['ole_5fepoch_1',['OLE_EPOCH',['../group__time__constants.html#ga61d50bb5fe7666932965fc43ff9ed245',1,'time_shield']]],
+  ['orig_5fts_5ffrac_2',['orig_ts_frac',['../structtime__shield_1_1detail_1_1NtpPacket.html#a93db290c4efc7692651c353726c4f6eb',1,'time_shield::detail::NtpPacket']]],
+  ['orig_5fts_5fsec_3',['orig_ts_sec',['../structtime__shield_1_1detail_1_1NtpPacket.html#aa3f0b8bd4830953d51a1359c9304921a',1,'time_shield::detail::NtpPacket']]]
 ];

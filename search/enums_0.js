@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['formattype_0',['FormatType',['../group__time__enums.html#ga97004b8781e8dbb9b46201b0a5280b81',1,'time_shield::FormatType'],['../group__mql5__time__enums.html#ga97004b8781e8dbb9b46201b0a5280b81',1,'time_shield::FormatType']]]
+  ['aggregation_0',['Aggregation',['../structtime__shield_1_1NtpPoolConfig.html#a102a24d41f97f9da23cb8f7e28400947',1,'time_shield::NtpPoolConfig']]]
 ];

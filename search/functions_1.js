@@ -1,18 +1,7 @@
 var searchData=
 [
-  ['cet_5fto_5fgmt_0',['cet_to_gmt',['../group__time__conversions__time__zone__conversions.html#ga5974ceb721d677396c4297474832adad',1,'time_shield::cet_to_gmt(ts_t cet)'],['../group__time__conversions.html#gab510347fe16134c9b63a223c85528493',1,'time_shield::cet_to_gmt(const datetime cet)']]],
-  ['check_5fleap_5fyear_1',['check_leap_year',['../group__time__validation.html#ga0d94fbfb5290a1ae3bc863d47c34ba22',1,'time_shield::check_leap_year(T year) noexcept'],['../group__time__validation.html#gad4b8ac012407d765d149fc5b0be8b4a9',1,'time_shield::check_leap_year(const long year)']]],
-  ['check_5fleap_5fyear_5fts_2',['check_leap_year_ts',['../group__time__validation.html#gac6498174d5a46f29615d696c3a659380',1,'time_shield::check_leap_year_ts(ts_t ts)'],['../group__time__validation.html#ga43da8dd61e14b485bf6bb491278241f8',1,'time_shield::check_leap_year_ts(const long ts)']]],
-  ['collect_5fdue_5ftimers_5flocked_3',['collect_due_timers_locked',['../classtime__shield_1_1TimerScheduler.html#a7fc6f0da6c61b1e81a08a6f61a120d9e',1,'time_shield::TimerScheduler']]],
-  ['compute_4',['compute',['../classtime__shield_1_1astronomy_1_1MoonPhase.html#a510f2cd6268d99dd1a99f391893beedf',1,'time_shield::astronomy::MoonPhase']]],
-  ['compute_5fphase_5',['compute_phase',['../classtime__shield_1_1astronomy_1_1MoonPhase.html#a95bdc8ef4de8e54a4d91d226a8d6b31b',1,'time_shield::astronomy::MoonPhase']]],
-  ['count_5fworkdays_5fin_5fmonth_6',['count_workdays_in_month',['../group__time__conversions.html#ga52facb2fe971b2454e7de9659c0e5b67',1,'time_shield::count_workdays_in_month(year_t year, int month) noexcept'],['../group__time__conversions.html#ga24ac9801120589a819da00dd69d752dc',1,'time_shield::count_workdays_in_month(long year, int month)']]],
-  ['cputicktimer_7',['CpuTickTimer',['../classtime__shield_1_1CpuTickTimer.html#abce29a5ab8b90b0e26b35f98cd09897b',1,'time_shield::CpuTickTimer']]],
-  ['create_5fdate_5fstruct_8',['create_date_struct',['../group__time__structures.html#ga2ea065cf0bd4d934cb3c64ae54975448',1,'time_shield::create_date_struct(int64_t year, int32_t mon=1, int32_t day=1)'],['../group__time__structures.html#gaa556c97bfce724e9739a5fb57ae7a9ef',1,'time_shield::create_date_struct(const long year, const int mon=1, const int day=1)']]],
-  ['create_5fdate_5ftime_5fstruct_9',['create_date_time_struct',['../group__time__structures.html#gab6cf08da5ef726f11d460ad3e45f6800',1,'time_shield::create_date_time_struct(int64_t year, int mon=1, int day=1, int hour=0, int min=0, int sec=0, int ms=0)'],['../group__time__structures.html#ga0c596486a334547054b4e8ac71e4b3e4',1,'time_shield::create_date_time_struct(const long year, const int mon=1, const int day=1, const int hour=0, const int min=0, const int sec=0, const int ms=0)']]],
-  ['create_5fiso_5fweek_5fdate_5fstruct_10',['create_iso_week_date_struct',['../group__time__structures.html#ga9da8bcc317b82ac17d1768ba31eaece5',1,'time_shield']]],
-  ['create_5ftime_5fstruct_11',['create_time_struct',['../group__time__structures.html#ga31f445e3e85cba85035f71b35de12e25',1,'time_shield::create_time_struct(int16_t hour, int16_t min, int16_t sec=0, int16_t ms=0)'],['../group__time__structures.html#ga13b01721128561fc611a2044ff5b7b0c',1,'time_shield::create_time_struct(const int hour, const int min, const int sec=0, const int ms=0)']]],
-  ['create_5ftime_5fzone_5fstruct_12',['create_time_zone_struct',['../group__time__structures.html#gae83e4d4791a1f6ce69657a3868b00504',1,'time_shield']]],
-  ['create_5ftimer_5fstate_13',['create_timer_state',['../classtime__shield_1_1TimerScheduler.html#ada09029c44122b63ad803a87b801a71b',1,'time_shield::TimerScheduler']]],
-  ['current_5ftimer_5fstate_14',['current_timer_state',['../namespacetime__shield_1_1detail.html#a5e9f998322af0d986f490b7526d5345d',1,'time_shield::detail']]]
+  ['basicpoolrunner_0',['BasicPoolRunner',['../classtime__shield_1_1BasicPoolRunner.html#aaf63841c1d0dd73110cd1233129b8706',1,'time_shield::BasicPoolRunner']]],
+  ['best_5fdelay_5foffset_1',['best_delay_offset',['../classtime__shield_1_1NtpClientPoolT.html#ae3a35f9f2969ca22314d7b9558f74911',1,'time_shield::NtpClientPoolT']]],
+  ['build_5fdefault_5fservers_2',['build_default_servers',['../classtime__shield_1_1NtpClientPoolT.html#a0ece43f90d4ed5fa9ca5e57a75752f9f',1,'time_shield::NtpClientPoolT']]],
+  ['build_5frunner_5flocked_3',['build_runner_locked',['../classtime__shield_1_1NtpTimeServiceT.html#a03077cfbb94ffddeb059fcb5549717a8',1,'time_shield::NtpTimeServiceT']]]
 ];

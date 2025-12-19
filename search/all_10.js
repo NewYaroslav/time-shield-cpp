@@ -1,23 +1,9 @@
 var searchData=
 [
-  ['rad2deg_0',['rad2deg',['../classtime__shield_1_1astronomy_1_1MoonPhase.html#a8d4be9a42d333a53d54972970f81e0fc',1,'time_shield::astronomy::MoonPhase']]],
-  ['record_5fsample_1',['record_sample',['../classtime__shield_1_1CpuTickTimer.html#a9fd61788fe02707490a2927fd4c45255',1,'time_shield::CpuTickTimer']]],
-  ['recv_5fts_5ffrac_2',['recv_ts_frac',['../structtime__shield_1_1NtpClient_1_1ntp__packet.html#a1e8d6a06161030b7d9f97e7b1a9c30b9',1,'time_shield::NtpClient::ntp_packet']]],
-  ['recv_5fts_5fsec_3',['recv_ts_sec',['../structtime__shield_1_1NtpClient_1_1ntp__packet.html#a498bfd7de8993c3be2eea82af07ce419',1,'time_shield::NtpClient::ntp_packet']]],
-  ['ref_5fid_4',['ref_id',['../structtime__shield_1_1NtpClient_1_1ntp__packet.html#a6aed650e98fae6afbaa7e705babcfd0a',1,'time_shield::NtpClient::ntp_packet']]],
-  ['ref_5fts_5ffrac_5',['ref_ts_frac',['../structtime__shield_1_1NtpClient_1_1ntp__packet.html#aae4bb9a5f264f436c27997e722920303',1,'time_shield::NtpClient::ntp_packet']]],
-  ['ref_5fts_5fsec_6',['ref_ts_sec',['../structtime__shield_1_1NtpClient_1_1ntp__packet.html#a02a7027aab9051cf33aee0c7927e8236',1,'time_shield::NtpClient::ntp_packet']]],
-  ['remaining_5ftime_7',['remaining_time',['../classtime__shield_1_1DeadlineTimer.html#ac27862f5be82232981ecc145fbf13dba',1,'time_shield::DeadlineTimer::remaining_time() const noexcept'],['../classtime__shield_1_1DeadlineTimer.html#af4b170a6619e0004111794af30b10bba',1,'time_shield::DeadlineTimer::remaining_time(time_point now) const noexcept']]],
-  ['remaining_5ftime_5fms_8',['remaining_time_ms',['../classtime__shield_1_1DeadlineTimer.html#ae7ae49770609bc34007d996bbcb6910d',1,'time_shield::DeadlineTimer']]],
-  ['remaining_5ftime_5fsec_9',['remaining_time_sec',['../classtime__shield_1_1DeadlineTimer.html#a5c7e400bd9a20bccf4b88ece84b6bf6c',1,'time_shield::DeadlineTimer']]],
-  ['repository_10',['Repository',['../index.html#repo_sec',1,'']]],
-  ['reset_5fsamples_11',['reset_samples',['../classtime__shield_1_1CpuTickTimer.html#a7da52f8122ebe864fc99fc9d99a171f8',1,'time_shield::CpuTickTimer']]],
-  ['restart_12',['restart',['../classtime__shield_1_1CpuTickTimer.html#ae9ba5d4213a9a2b7716ee8d490d601e1',1,'time_shield::CpuTickTimer::restart()'],['../classtime__shield_1_1ElapsedTimer.html#acf142ec6b6d784ff050e5346789a460a',1,'time_shield::ElapsedTimer::restart() noexcept']]],
-  ['restart_5fms_13',['restart_ms',['../classtime__shield_1_1ElapsedTimer.html#aba6c2d2154bb7421f0ccb0de2db3076a',1,'time_shield::ElapsedTimer']]],
-  ['restart_5fsec_14',['restart_sec',['../classtime__shield_1_1ElapsedTimer.html#acf8a542d1e1f2355db0a9c5b7e97944e',1,'time_shield::ElapsedTimer']]],
-  ['ret_5fcode_15',['ret_code',['../classtime__shield_1_1WsaGuard.html#a4e86920a956f06115dac13f75a7bcc9d',1,'time_shield::WsaGuard']]],
-  ['root_5fdelay_16',['root_delay',['../structtime__shield_1_1NtpClient_1_1ntp__packet.html#a91596e68d04ef84d1b8f47a0bf829c2d',1,'time_shield::NtpClient::ntp_packet']]],
-  ['root_5fdispersion_17',['root_dispersion',['../structtime__shield_1_1NtpClient_1_1ntp__packet.html#a6636a3b8048f1665e4f8a2d1290f8808',1,'time_shield::NtpClient::ntp_packet']]],
-  ['run_18',['run',['../classtime__shield_1_1TimerScheduler.html#a38b9eea4bc001e3d8c83f47645d2ec62',1,'time_shield::TimerScheduler']]],
-  ['runningtimerscope_19',['RunningTimerScope',['../structtime__shield_1_1detail_1_1RunningTimerScope.html',1,'time_shield::detail::RunningTimerScope'],['../structtime__shield_1_1detail_1_1RunningTimerScope.html#a5fb24d1c5d9e86e75609047677980e79',1,'time_shield::detail::RunningTimerScope::RunningTimerScope()']]]
+  ['quarter_5finstants_5funix_0',['quarter_instants_unix',['../classtime__shield_1_1astronomy_1_1MoonPhase.html#a596b898f56948e52343ffa94aa547d19',1,'time_shield::astronomy::MoonPhase']]],
+  ['quarter_5ftimes_1',['quarter_times',['../classtime__shield_1_1astronomy_1_1MoonPhase.html#a85cf6d6f58cfc24c6176b5d963f64f25',1,'time_shield::astronomy::MoonPhase']]],
+  ['quarter_5ftimes_5funix_2',['quarter_times_unix',['../classtime__shield_1_1astronomy_1_1MoonPhase.html#a8ac97be03c5d31fb2fa832a1ee17ed38',1,'time_shield::astronomy::MoonPhase']]],
+  ['quarters_5funix_5fs_5ft_3',['quarters_unix_s_t',['../classtime__shield_1_1astronomy_1_1MoonPhase.html#a9e5093e5d7e0f613eabae913f8c83c2a',1,'time_shield::astronomy::MoonPhase']]],
+  ['query_4',['query',['../classtime__shield_1_1NtpClient.html#aec57675f3cf62878d7fa628f9e512ab1',1,'time_shield::NtpClient::query()'],['../classtime__shield_1_1detail_1_1NtpClientCore.html#ae694972933d353e9065a26f6ed8ef97e',1,'time_shield::detail::NtpClientCore::query()']]],
+  ['query_5fone_5',['query_one',['../classtime__shield_1_1NtpClientPoolT.html#a01e7cae9a8ac6a41d23aaf6a02eaa5ef',1,'time_shield::NtpClientPoolT']]]
 ];

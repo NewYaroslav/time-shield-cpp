@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['iso8601_5fno_5ftz_0',['ISO8601_NO_TZ',['../group__time__enums.html#gga81dfe20e6515b855c625bd9c7aea58e6a277f00aa177ee8df19291e95198592fa',1,'time_shield']]],
-  ['iso8601_5fwith_5ftz_1',['ISO8601_WITH_TZ',['../group__time__enums.html#gga81dfe20e6515b855c625bd9c7aea58e6a4ff17c3d5d81826da9439478a0bbf5fb',1,'time_shield']]]
+  ['gmt_0',['GMT',['../group__time__enums.html#ggad8cb858fb6cedcf76c4f0630d56e042bacce69cd6d90a968533a24acb0a5d3a72',1,'time_shield']]]
 ];

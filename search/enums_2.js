@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['timeformattype_0',['TimeFormatType',['../group__time__enums.html#ga81dfe20e6515b855c625bd9c7aea58e6',1,'time_shield::TimeFormatType'],['../group__mql5__time__enums.html#ga81dfe20e6515b855c625bd9c7aea58e6',1,'time_shield::TimeFormatType']]],
-  ['timezone_1',['TimeZone',['../group__time__enums.html#gad8cb858fb6cedcf76c4f0630d56e042b',1,'time_shield::TimeZone'],['../group__mql5__time__enums.html#gad8cb858fb6cedcf76c4f0630d56e042b',1,'time_shield::TimeZone']]]
+  ['month_0',['Month',['../group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8',1,'time_shield::Month'],['../group__mql5__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8',1,'time_shield::Month']]],
+  ['moonphase_1',['MoonPhase',['../group__time__enums.html#ga5fa51beb76e014adfffcd028fe1804ac',1,'time_shield::MoonPhase'],['../group__mql5__time__enums.html#ga5fa51beb76e014adfffcd028fe1804ac',1,'time_shield::MoonPhase']]]
 ];

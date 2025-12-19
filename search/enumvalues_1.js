@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['cest_0',['CEST',['../group__time__enums.html#ggad8cb858fb6cedcf76c4f0630d56e042ba58331bcf5a90a0aa39a31e5e352651f7',1,'time_shield']]],
-  ['cet_1',['CET',['../group__time__enums.html#ggad8cb858fb6cedcf76c4f0630d56e042bae7eeb64ed11ca4512bf69c49cb3d6726',1,'time_shield']]]
+  ['bestdelay_0',['BestDelay',['../structtime__shield_1_1NtpPoolConfig.html#a102a24d41f97f9da23cb8f7e28400947a2042bbaa54af7081b2ce9bec8d61583b',1,'time_shield::NtpPoolConfig']]]
 ];

@@ -110,7 +110,8 @@ $(function(){initNavTree('ntp__client_8hpp.html',''); initResizable(true); });
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle"><div class="title">ntp_client.hpp File Reference<div class="ingroups"><a class="el" href="group__ntp.html">NTP Client</a></div></div></div>
 </div><!--header-->
 <div class="contents">
@@ -123,10 +124,7 @@ $(function(){initNavTree('ntp__client_8hpp.html',''); initResizable(true); });
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtime__shield_1_1NtpClient.html">time_shield::NtpClient</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Windows implementation of the NTP client for measuring time offset.  <a href="classtime__shield_1_1NtpClient.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtime__shield_1_1NtpClient_1_1ntp__packet.html">time_shield::NtpClient::ntp_packet</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Структура пакета NTP Total: 384 bits or 48 bytes.  <a href="structtime__shield_1_1NtpClient_1_1ntp__packet.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">NTP client for measuring time offset.  <a href="classtime__shield_1_1NtpClient.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
@@ -134,10 +132,16 @@ Namespaces</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetime__shield.html">time_shield</a></td></tr>
 <tr class="memdesc:namespacetime__shield"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main namespace for the Time Shield library. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetime__shield_1_1detail.html">time_shield::detail</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a75ee3a49ceb0d28587cec20b93d51298" id="r_a75ee3a49ceb0d28587cec20b93d51298"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetime__shield_1_1detail.html#a75ee3a49ceb0d28587cec20b93d51298">time_shield::detail::PlatformUdpTransport</a> = <a class="el" href="classtime__shield_1_1detail_1_1UdpTransportWin.html">UdpTransportWin</a></td></tr>
+<tr class="separator:a75ee3a49ceb0d28587cec20b93d51298"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Simple NTP client for querying time offset from NTP servers. </p>
-<p>This module provides a minimal client that can query a remote NTP server over UDP and calculate the offset between local system time and the NTP-reported time.</p>
 <p>The feature is optional and controlled by <code>TIME_SHIELD_ENABLE_NTP_CLIENT</code>. </p>
 
 <p class="definition">Definition in file <a class="el" href="ntp__client_8hpp_source.html">ntp_client.hpp</a>.</p>

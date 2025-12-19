@@ -986,7 +986,7 @@ namespace time_shield {
     /// \return Minute of day.
     template<class T = int>
     constexpr T min_of_day(ts_t ts = time_shield::ts()) noexcept {
-        return ((ts / SEC_PER_MIN) % MIN_PER_DAY);
+        return static_cast<T>((ts / SEC_PER_MIN) % MIN_PER_DAY);
     }
 
     /// \brief Get hour of day.
@@ -995,7 +995,7 @@ namespace time_shield {
     /// \return Hour of day.
     template<class T = int>
     constexpr T hour_of_day(ts_t ts = time_shield::ts()) noexcept {
-        return ((ts / SEC_PER_HOUR) % HOURS_PER_DAY);
+        return static_cast<T>((ts / SEC_PER_HOUR) % HOURS_PER_DAY);
     }
 
     /// \brief Get minute of hour.
@@ -1004,7 +1004,7 @@ namespace time_shield {
     /// \return Minute of hour.
     template<class T = int>
     constexpr T min_of_hour(ts_t ts = time_shield::ts()) noexcept {
-        return ((ts / SEC_PER_MIN) % MIN_PER_HOUR);
+        return static_cast<T>((ts / SEC_PER_MIN) % MIN_PER_HOUR);
     }
 
     /// \brief Get the timestamp of the start of the period.

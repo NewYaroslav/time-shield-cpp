@@ -64,7 +64,7 @@ namespace time_shield {
     /// \param tag std::true_type indicates a floating-point type.
     /// \return ts_ms_t Timestamp in milliseconds.
     template<class T>
-    constexpr ts_ms_t sec_to_ms_impl(T t, std::true_type tag) noexcept {
+    constexpr ts_ms_t sec_to_ms_impl(T t, std::true_type) noexcept {
         return static_cast<ts_ms_t>(std::round(t * static_cast<T>(MS_PER_SEC)));
     }
 
@@ -93,11 +93,11 @@ namespace time_shield {
             return static_cast<T1>(ts) * static_cast<T1>(MS_PER_SEC);
         }
 #       else
-        return sec_to_ms_impl(ts, typename std::conditional<
+        return static_cast<T1>(sec_to_ms_impl(ts, typename std::conditional<
             (std::is_same<T2, double>::value || std::is_same<T2, float>::value),
             std::true_type,
             std::false_type
-        >::type{});
+        >::type{}));
 #       endif
     }
 
@@ -137,7 +137,7 @@ namespace time_shield {
     /// \param tag std::true_type indicates a floating-point type (double or float).
     /// \return ts_ms_t Timestamp in milliseconds.
     template<class T>
-    constexpr ts_ms_t min_to_ms_impl(T t, std::true_type tag) noexcept {
+    constexpr ts_ms_t min_to_ms_impl(T t, std::true_type) noexcept {
         return static_cast<ts_ms_t>(std::round(t * static_cast<T>(MS_PER_MIN)));
     }
 
@@ -147,7 +147,7 @@ namespace time_shield {
     /// \param tag std::false_type indicates a non-floating-point type.
     /// \return ts_ms_t Timestamp in milliseconds.
     template<class T>
-    constexpr ts_ms_t min_to_ms_impl(T t, std::false_type tag) noexcept {
+    constexpr ts_ms_t min_to_ms_impl(T t, std::false_type) noexcept {
         return static_cast<ts_ms_t>(t) * static_cast<ts_ms_t>(MS_PER_MIN);
     }
 #   endif // TIME_SHIELD_CPP17
@@ -166,11 +166,11 @@ namespace time_shield {
             return static_cast<T1>(ts) * static_cast<T1>(MS_PER_MIN);
         }
 #       else
-        return min_to_ms_impl(ts, typename std::conditional<
+        return static_cast<T1>(min_to_ms_impl(ts, typename std::conditional<
             (std::is_same<T2, double>::value || std::is_same<T2, float>::value),
             std::true_type,
             std::false_type
-        >::type{});
+        >::type{}));
 #       endif
     }
 
@@ -194,7 +194,7 @@ namespace time_shield {
     /// \param tag std::true_type indicates a floating-point type (double or float).
     /// \return ts_t Timestamp in seconds.
     template<class T>
-    constexpr ts_t min_to_sec_impl(T t, std::true_type tag) noexcept {
+    constexpr ts_t min_to_sec_impl(T t, std::true_type) noexcept {
         return static_cast<ts_t>(std::round(t * static_cast<T>(SEC_PER_MIN)));
     }
 
@@ -204,7 +204,7 @@ namespace time_shield {
     /// \param tag std::false_type indicates a non-floating-point type.
     /// \return ts_t Timestamp in seconds.
     template<class T>
-    constexpr ts_t min_to_sec_impl(T t, std::false_type tag) noexcept {
+    constexpr ts_t min_to_sec_impl(T t, std::false_type) noexcept {
         return static_cast<ts_t>(t) * static_cast<ts_t>(SEC_PER_MIN);
     }
 #   endif // TIME_SHIELD_CPP17
@@ -223,11 +223,11 @@ namespace time_shield {
             return static_cast<T1>(ts) * static_cast<T1>(SEC_PER_MIN);
         }
 #       else
-        return min_to_sec_impl(ts, typename std::conditional<
+        return static_cast<T1>(min_to_sec_impl(ts, typename std::conditional<
             (std::is_same<T2, double>::value || std::is_same<T2, float>::value),
             std::true_type,
             std::false_type
-        >::type{});
+        >::type{}));
 #       endif
     }
 
@@ -270,7 +270,7 @@ namespace time_shield {
     /// \param tag std::true_type indicates a floating-point type (double or float).
     /// \return ts_ms_t Timestamp in milliseconds.
     template<class T>
-    constexpr ts_ms_t hour_to_ms_impl(T t, std::true_type tag) noexcept {
+    constexpr ts_ms_t hour_to_ms_impl(T t, std::true_type) noexcept {
         return static_cast<ts_ms_t>(std::round(t * static_cast<T>(MS_PER_HOUR)));
     }
 
@@ -280,7 +280,7 @@ namespace time_shield {
     /// \param tag Type tag used to select the integral overload (must be std::false_type).
     /// \return ts_ms_t Timestamp in milliseconds.
     template<class T>
-    constexpr ts_ms_t hour_to_ms_impl(T t, std::false_type tag) noexcept {
+    constexpr ts_ms_t hour_to_ms_impl(T t, std::false_type) noexcept {
         return static_cast<ts_ms_t>(t) * static_cast<ts_ms_t>(MS_PER_HOUR);
     }
 #   endif // TIME_SHIELD_CPP17
@@ -299,11 +299,11 @@ namespace time_shield {
             return static_cast<T1>(ts) * static_cast<T1>(MS_PER_HOUR);
         }
 #       else
-        return hour_to_ms_impl(ts, typename std::conditional<
+        return static_cast<T1>(hour_to_ms_impl(ts, typename std::conditional<
             (std::is_same<T2, double>::value || std::is_same<T2, float>::value),
             std::true_type,
             std::false_type
-        >::type{});
+        >::type{}));
 #       endif
     }
 
@@ -328,7 +328,7 @@ namespace time_shield {
     /// \param tag std::true_type indicates a floating-point type (double or float).
     /// \return ts_t Timestamp in seconds.
     template<class T>
-    constexpr ts_t hour_to_sec_impl(T t, std::true_type tag) noexcept {
+    constexpr ts_t hour_to_sec_impl(T t, std::true_type) noexcept {
         return static_cast<ts_t>(std::round(t * static_cast<T>(SEC_PER_HOUR)));
     }
 
@@ -338,7 +338,7 @@ namespace time_shield {
     /// \param tag std::false_type indicates a non-floating-point type.
     /// \return ts_t Timestamp in seconds.
     template<class T>
-    constexpr ts_t hour_to_sec_impl(T t, std::false_type tag) noexcept {
+    constexpr ts_t hour_to_sec_impl(T t, std::false_type) noexcept {
         return static_cast<ts_t>(t) * static_cast<ts_t>(SEC_PER_HOUR);
     }
 #   endif // TIME_SHIELD_CPP17
@@ -357,11 +357,11 @@ namespace time_shield {
             return static_cast<T1>(ts) * static_cast<T1>(SEC_PER_HOUR);
         }
 #       else
-        return hour_to_sec_impl(ts, typename std::conditional<
+        return static_cast<T1>(hour_to_sec_impl(ts, typename std::conditional<
             (std::is_same<T2, double>::value || std::is_same<T2, float>::value),
             std::true_type,
             std::false_type
-        >::type{});
+        >::type{}));
 #       endif
     }
 

@@ -114,7 +114,7 @@ namespace time_shield {
     /// \return The number of days between start and stop.
     template<class T = int>
     constexpr T days_between(ts_t start, ts_t stop) noexcept {
-        return (stop - start) / SEC_PER_DAY;
+        return static_cast<T>((stop - start) / SEC_PER_DAY);
     }
 
     /// \brief Converts a UNIX day to a timestamp in seconds.
@@ -216,7 +216,7 @@ namespace time_shield {
     /// \return Second of the day.
     template<class T = int>
     constexpr T sec_of_day(ts_t ts = time_shield::ts()) noexcept {
-        return ts % SEC_PER_DAY;
+        return static_cast<T>(ts % SEC_PER_DAY);
     }
 
     /// \brief Get the second of the day from milliseconds timestamp.
@@ -260,7 +260,7 @@ namespace time_shield {
     /// \return Second of the minute.
     template<class T = int>
     constexpr T sec_of_min(ts_t ts = time_shield::ts()) {
-        return (ts % SEC_PER_MIN);
+        return static_cast<T>(ts % SEC_PER_MIN);
     }
 
     /// \brief Get the second of the hour.
@@ -272,7 +272,7 @@ namespace time_shield {
     /// \return Second of the hour.
     template<class T = int>
     constexpr T sec_of_hour(ts_t ts = time_shield::ts()) {
-        return (ts % SEC_PER_HOUR);
+        return static_cast<T>(ts % SEC_PER_HOUR);
     }
 
 /// \}

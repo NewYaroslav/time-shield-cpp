@@ -4,6 +4,7 @@ var namespacetime__shield =
     [ "detail", "namespacetime__shield_1_1detail.html", "namespacetime__shield_1_1detail" ],
     [ "ntp", "namespacetime__shield_1_1ntp.html", [
       [ "fail_count", "namespacetime__shield_1_1ntp.html#a8bfb71d253285afe4b337d32fd831e39", null ],
+      [ "init", "namespacetime__shield_1_1ntp.html#a45202c00e7e51d89a37d06d989df05d4", null ],
       [ "init", "namespacetime__shield_1_1ntp.html#a6dd72024ef358bc8957e37468c861b85", null ],
       [ "last_measure_ok", "namespacetime__shield_1_1ntp.html#a315bdecd8dc7d17905f30322aac15cba", null ],
       [ "last_success_realtime_us", "namespacetime__shield_1_1ntp.html#a7b26ca9277df54f9a73a8fb84eea47fb", null ],

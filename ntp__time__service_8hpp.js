@@ -17,5 +17,6 @@ var ntp__time__service_8hpp =
     [ "time_shield::ntp::utc_time_ms", "group__ntp.html#ga49a0998a84278305b8b3346a9b7ff5dd", null ],
     [ "time_shield::ntp::utc_time_sec", "group__ntp.html#ga0cd2643bc008bcd55dc240707740271c", null ],
     [ "time_shield::ntp::utc_time_us", "group__ntp.html#gaa8c3b3f112aa919f36d49dac16fd18cb", null ],
-    [ "time_shield::detail::g_ntp_time_service", "namespacetime__shield_1_1detail.html#ada79468a2f3aec5293b6b5f40f2be7db", null ]
+    [ "time_shield::detail::g_ntp_time_service", "namespacetime__shield_1_1detail.html#ada79468a2f3aec5293b6b5f40f2be7db", null ],
+    [ "time_shield::m_instance", "namespacetime__shield.html#a39a80a3aa8e3f0792d8287cab2584802", null ]
 ];

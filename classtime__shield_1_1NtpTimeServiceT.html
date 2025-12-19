@@ -113,6 +113,7 @@ $(function(){initNavTree('classtime__shield_1_1NtpTimeServiceT.html',''); initRe
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="classtime__shield_1_1NtpTimeServiceT-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">time_shield::NtpTimeServiceT&lt; RunnerT &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__ntp.html">NTP Client</a></div></div></div>
 </div><!--header-->
@@ -235,6 +236,11 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a6e606f11d32765b0ebcc36e6cbf77327"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abbd08b44703bda830c4346eac0960019" id="r_abbd08b44703bda830c4346eac0960019"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; RunnerT &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abbd08b44703bda830c4346eac0960019">m_runner</a></td></tr>
 <tr class="separator:abbd08b44703bda830c4346eac0960019"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:aa5a6a2596ca48a0a592f587bc39c9a27" id="r_aa5a6a2596ca48a0a592f587bc39c9a27"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classtime__shield_1_1NtpTimeServiceT.html">NtpTimeServiceT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa5a6a2596ca48a0a592f587bc39c9a27">m_instance</a></td></tr>
+<tr class="separator:aa5a6a2596ca48a0a592f587bc39c9a27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class RunnerT&gt;<br />
@@ -326,7 +332,7 @@ template&lt;class RunnerT&gt; </div>
 
 <p>Stop background runner on destruction. </p>
 
-<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00448">448</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00447">447</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
 
 </div>
 </div>
@@ -359,7 +365,7 @@ template&lt;class RunnerT&gt; </div>
 <p>Apply current config by rebuilding the runner. </p>
 <dl class="section return"><dt>Returns</dt><dd>True when runner restarted successfully. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00454">454</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00453">453</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
 
 </div>
 </div>
@@ -390,7 +396,7 @@ template&lt;class RunnerT&gt; </div>
 
 <p>Build a runner with current server list and pool config. </p>
 
-<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00502">502</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00501">501</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
 
 </div>
 </div>
@@ -422,7 +428,7 @@ template&lt;class RunnerT&gt; </div>
 <p>Clear custom server list and return to default behavior. </p>
 <dl class="section return"><dt>Returns</dt><dd>False when service is already running. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00404">404</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00403">403</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
 
 </div>
 </div>
@@ -453,7 +459,7 @@ template&lt;class RunnerT&gt; </div>
 
 <p>Ensure background runner is started with current config. </p>
 
-<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00288">288</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00287">287</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
 
 </div>
 </div>
@@ -485,7 +491,7 @@ template&lt;class RunnerT&gt; </div>
 <p>Return number of failed measurement attempts. </p>
 <dl class="section return"><dt>Returns</dt><dd>Number of failed measurement attempts. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00343">343</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00342">342</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
 
 </div>
 </div>
@@ -517,7 +523,7 @@ template&lt;class RunnerT&gt; </div>
 <p>Start background measurements using stored interval. </p>
 <dl class="section return"><dt>Returns</dt><dd>True when background runner started. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00218">218</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00217">217</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
 
 </div>
 </div>
@@ -560,7 +566,7 @@ template&lt;class RunnerT&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True when background runner started. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00226">226</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00225">225</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
 
 </div>
 </div>
@@ -623,7 +629,7 @@ template&lt;class RunnerT&gt; </div>
 
 <p>Check runner status under lock. </p>
 
-<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00497">497</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00496">496</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
 
 </div>
 </div>
@@ -655,7 +661,7 @@ template&lt;class RunnerT&gt; </div>
 <p>Return whether last measurement updated the offset. </p>
 <dl class="section return"><dt>Returns</dt><dd>True when last measurement updated the offset. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00327">327</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00326">326</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
 
 </div>
 </div>
@@ -687,7 +693,7 @@ template&lt;class RunnerT&gt; </div>
 <p>Return copy of last measurement samples. </p>
 <dl class="section return"><dt>Returns</dt><dd>Copy of samples from the last measurement. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00439">439</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00438">438</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
 
 </div>
 </div>
@@ -719,7 +725,7 @@ template&lt;class RunnerT&gt; </div>
 <p>Return realtime timestamp of last successful measurement. </p>
 <dl class="section return"><dt>Returns</dt><dd>Realtime microseconds timestamp for last successful measurement. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00359">359</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00358">358</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
 
 </div>
 </div>
@@ -751,7 +757,7 @@ template&lt;class RunnerT&gt; </div>
 <p>Return realtime timestamp of last measurement attempt. </p>
 <dl class="section return"><dt>Returns</dt><dd>Realtime microseconds timestamp for last measurement attempt. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00351">351</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00350">350</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
 
 </div>
 </div>
@@ -783,7 +789,7 @@ template&lt;class RunnerT&gt; </div>
 <p>Return total number of measurement attempts. </p>
 <dl class="section return"><dt>Returns</dt><dd>Number of measurement attempts. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00335">335</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00334">334</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
 
 </div>
 </div>
@@ -815,7 +821,7 @@ template&lt;class RunnerT&gt; </div>
 <p>Return last estimated offset in microseconds. </p>
 <dl class="section return"><dt>Returns</dt><dd>Offset in microseconds (UTC - local realtime). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00297">297</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00296">296</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
 
 </div>
 </div>
@@ -874,7 +880,7 @@ template&lt;class RunnerT&gt; </div>
 <p>Return current pool configuration. </p>
 <dl class="section return"><dt>Returns</dt><dd>Current pool configuration. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00429">429</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00428">428</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
 
 </div>
 </div>
@@ -906,7 +912,7 @@ template&lt;class RunnerT&gt; </div>
 <p>Return true when background runner is active. </p>
 <dl class="section return"><dt>Returns</dt><dd>True when background runner is active. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00282">282</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00281">281</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
 
 </div>
 </div>
@@ -938,7 +944,7 @@ template&lt;class RunnerT&gt; </div>
 <p>Use conservative default servers for new runner instances. </p>
 <dl class="section return"><dt>Returns</dt><dd>False when service is already running. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00392">392</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00391">391</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
 
 </div>
 </div>
@@ -976,7 +982,7 @@ template&lt;class RunnerT&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>False when service is already running. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00417">417</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00416">416</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
 
 </div>
 </div>
@@ -1014,7 +1020,7 @@ template&lt;class RunnerT&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>False when service is already running. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00380">380</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00379">379</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
 
 </div>
 </div>
@@ -1045,7 +1051,7 @@ template&lt;class RunnerT&gt; </div>
 
 <p>Stop background measurements and release resources. </p>
 
-<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00264">264</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00263">263</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
 
 </div>
 </div>
@@ -1083,7 +1089,7 @@ template&lt;class RunnerT&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True when last measurement age exceeds max_age. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00368">368</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00367">367</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
 
 </div>
 </div>
@@ -1115,7 +1121,7 @@ template&lt;class RunnerT&gt; </div>
 <p>Return current UTC time in milliseconds based on offset. </p>
 <dl class="section return"><dt>Returns</dt><dd>UTC time in milliseconds using last offset. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00315">315</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00314">314</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
 
 </div>
 </div>
@@ -1147,7 +1153,7 @@ template&lt;class RunnerT&gt; </div>
 <p>Return current UTC time in seconds based on offset. </p>
 <dl class="section return"><dt>Returns</dt><dd>UTC time in seconds using last offset. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00321">321</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00320">320</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
 
 </div>
 </div>
@@ -1179,7 +1185,7 @@ template&lt;class RunnerT&gt; </div>
 <p>Return current UTC time in microseconds based on offset. </p>
 <dl class="section return"><dt>Returns</dt><dd>UTC time in microseconds using last offset. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00306">306</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00305">305</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
 
 </div>
 </div>
@@ -1206,7 +1212,7 @@ template&lt;class RunnerT&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00531">531</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00530">530</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
 
 </div>
 </div>
@@ -1232,7 +1238,33 @@ template&lt;class RunnerT&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00528">528</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00527">527</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aa5a6a2596ca48a0a592f587bc39c9a27" name="aa5a6a2596ca48a0a592f587bc39c9a27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5a6a2596ca48a0a592f587bc39c9a27">&#9670;&#160;</a></span>m_instance</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class RunnerT&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtime__shield_1_1NtpTimeServiceT.html">NtpTimeServiceT</a> <a class="el" href="classtime__shield_1_1NtpTimeServiceT.html">time_shield::NtpTimeServiceT</a>&lt; RunnerT &gt;::m_instance</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00536">536</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
 
 </div>
 </div>
@@ -1258,7 +1290,7 @@ template&lt;class RunnerT&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00525">525</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00524">524</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
 
 </div>
 </div>
@@ -1284,7 +1316,7 @@ template&lt;class RunnerT&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00526">526</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00525">525</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
 
 </div>
 </div>
@@ -1310,7 +1342,7 @@ template&lt;class RunnerT&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00524">524</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00523">523</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
 
 </div>
 </div>
@@ -1336,7 +1368,7 @@ template&lt;class RunnerT&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00532">532</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00531">531</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
 
 </div>
 </div>
@@ -1362,7 +1394,7 @@ template&lt;class RunnerT&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00534">534</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00533">533</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
 
 </div>
 </div>
@@ -1388,7 +1420,7 @@ template&lt;class RunnerT&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00529">529</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00528">528</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
 
 </div>
 </div>

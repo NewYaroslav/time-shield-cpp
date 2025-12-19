@@ -1225,6 +1225,7 @@ var namespacetime__shield =
     [ "NS_PER_MS", "group__time__constants.html#gab0da694e20be23dfc97f464ff0c2bec7", null ],
     [ "NS_PER_SEC", "group__time__constants.html#gad3720fc83862c4540189191ac518799e", null ],
     [ "NS_PER_US", "group__time__constants.html#gaad471abbc210ed35d64215f7d33cda3e", null ],
+    [ "NtpTimeServiceT< RunnerT >::m_instance", "namespacetime__shield.html#a39a80a3aa8e3f0792d8287cab2584802", null ],
     [ "OLE_EPOCH", "group__time__constants.html#ga61d50bb5fe7666932965fc43ff9ed245", null ],
     [ "SEC_1", "group__time__constants.html#ga984d0cdd2ad07f89ebc8a9d21323ac2b", null ],
     [ "SEC_10", "group__time__constants.html#ga9486cd35672741fc519751fcd25ee954", null ],

@@ -31,6 +31,7 @@ var classtime__shield_1_1NtpTimeServiceT =
     [ "utc_time_us", "classtime__shield_1_1NtpTimeServiceT.html#ac12163c21e5298b756935ca14c0b98ff", null ],
     [ "m_has_custom_pool_cfg", "classtime__shield_1_1NtpTimeServiceT.html#a7e6100492c2449165123bc012c1d811f", null ],
     [ "m_has_custom_servers", "classtime__shield_1_1NtpTimeServiceT.html#a86d092cb776925c0b4d55999bbaca221", null ],
+    [ "m_instance", "classtime__shield_1_1NtpTimeServiceT.html#aa5a6a2596ca48a0a592f587bc39c9a27", null ],
     [ "m_interval", "classtime__shield_1_1NtpTimeServiceT.html#ad2de56e5b740e7fea60dd5f3201b125f", null ],
     [ "m_measure_immediately", "classtime__shield_1_1NtpTimeServiceT.html#aad8a83e7bcc6ffe2d6949d2310a72af6", null ],
     [ "m_mtx", "classtime__shield_1_1NtpTimeServiceT.html#aa11a3e5e334e509f7d3d830fbd35429b", null ],

@@ -3,8 +3,6 @@
 #ifndef TIME_SHIELD_UDP_TRANSPORT_POSIX_HPP_INCLUDED
 #define TIME_SHIELD_UDP_TRANSPORT_POSIX_HPP_INCLUDED
 
-#include "../config.hpp"
-
 #if TIME_SHIELD_PLATFORM_UNIX
 
 #include "udp_transport.hpp"

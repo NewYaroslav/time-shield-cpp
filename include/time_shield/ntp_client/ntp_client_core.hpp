@@ -3,8 +3,6 @@
 #ifndef TIME_SHIELD_NTP_CLIENT_CORE_HPP_INCLUDED
 #define TIME_SHIELD_NTP_CLIENT_CORE_HPP_INCLUDED
 
-#include "../config.hpp"
-#include "../time_utils.hpp"
 #include "ntp_packet.hpp"
 #include "udp_transport.hpp"
 

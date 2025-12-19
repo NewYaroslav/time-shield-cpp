@@ -7,7 +7,8 @@ int main() {
     using namespace time_shield;
 
     auto first_sunday_month_day = [](int year, int month) {
-        return 1 + (DAYS_PER_WEEK - day_of_week_date(year, month, 1)) % DAYS_PER_WEEK;
+        return static_cast<int>(
+            1 + (DAYS_PER_WEEK - day_of_week_date(year, month, 1)) % DAYS_PER_WEEK);
     };
 
     auto second_sunday_month_day = [&](int year, int month) {

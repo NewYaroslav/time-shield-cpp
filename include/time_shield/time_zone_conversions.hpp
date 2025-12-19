@@ -108,13 +108,16 @@ namespace time_shield {
         if(dt.year >= 2007) {
             start_month = MAR;
             end_month = NOV;
-            int first_sunday_march = 1 + (DAYS_PER_WEEK - day_of_week_date(dt.year, MAR, 1)) % DAYS_PER_WEEK;
+            int first_sunday_march = static_cast<int>(
+                1 + (DAYS_PER_WEEK - day_of_week_date(dt.year, MAR, 1)) % DAYS_PER_WEEK);
             start_day = first_sunday_march + 7;
-            end_day = 1 + (DAYS_PER_WEEK - day_of_week_date(dt.year, NOV, 1)) % DAYS_PER_WEEK;
+            end_day = static_cast<int>(
+                1 + (DAYS_PER_WEEK - day_of_week_date(dt.year, NOV, 1)) % DAYS_PER_WEEK);
         } else {
             start_month = APR;
             end_month = OCT;
-            start_day = 1 + (DAYS_PER_WEEK - day_of_week_date(dt.year, APR, 1)) % DAYS_PER_WEEK;
+            start_day = static_cast<int>(
+                1 + (DAYS_PER_WEEK - day_of_week_date(dt.year, APR, 1)) % DAYS_PER_WEEK);
             end_day = last_sunday_month_day(dt.year, OCT);
         }
 

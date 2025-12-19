@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 #pragma once
-#ifndef TIME_SHIELD_NTP_PACKET_HPP_INCLUDED
-#define TIME_SHIELD_NTP_PACKET_HPP_INCLUDED
+#ifndef _TIME_SHIELD_NTP_PACKET_HPP_INCLUDED
+#define _TIME_SHIELD_NTP_PACKET_HPP_INCLUDED
 
 #include <cstdint>
 #include <cstring>
@@ -163,4 +163,4 @@ namespace detail {
 } // namespace detail
 } // namespace time_shield
 
-#endif // TIME_SHIELD_NTP_PACKET_HPP_INCLUDED
+#endif // _TIME_SHIELD_NTP_PACKET_HPP_INCLUDED

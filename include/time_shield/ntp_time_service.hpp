@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 #pragma once
-#ifndef TIME_SHIELD_NTP_TIME_SERVICE_HPP_INCLUDED
-#define TIME_SHIELD_NTP_TIME_SERVICE_HPP_INCLUDED
+#ifndef _TIME_SHIELD_NTP_TIME_SERVICE_HPP_INCLUDED
+#define _TIME_SHIELD_NTP_TIME_SERVICE_HPP_INCLUDED
 
 #include "config.hpp"
 
@@ -177,9 +177,9 @@ namespace time_shield {
             std::atomic<int64_t> m_last_success_realtime_us{0};
             std::atomic<int64_t> m_offset_us{0};
         };
-#endif // TIME_SHIELD_TEST_FAKE_NTP
+#endif // _TIME_SHIELD_TEST_FAKE_NTP
 
-#ifndef TIME_SHIELD_CPP17
+#ifndef _TIME_SHIELD_CPP17
 #if defined(TIME_SHIELD_TEST_FAKE_NTP)
         using RunnerAlias = detail::FakeNtpRunner;
 #else
@@ -534,7 +534,7 @@ namespace time_shield {
         std::unique_ptr<RunnerT> m_runner;
     };
 
-#ifndef TIME_SHIELD_CPP17
+#ifndef _TIME_SHIELD_CPP17
 namespace detail {
 #if defined(TIME_SHIELD_NTP_TIME_SERVICE_DEFINE)
     NtpTimeServiceT<RunnerAlias> g_ntp_time_service;
@@ -667,6 +667,6 @@ namespace time_shield {
     };
 } // namespace time_shield
 
-#endif // TIME_SHIELD_ENABLE_NTP_CLIENT
+#endif // _TIME_SHIELD_ENABLE_NTP_CLIENT
 
-#endif // TIME_SHIELD_NTP_TIME_SERVICE_HPP_INCLUDED
+#endif // _TIME_SHIELD_NTP_TIME_SERVICE_HPP_INCLUDED

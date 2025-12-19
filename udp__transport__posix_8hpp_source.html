@@ -159,56 +159,55 @@ $(function(){initNavTree('udp__transport__posix_8hpp_source.html',''); initResiz
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            addr.sin_family = AF_INET;</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            addr.sin_port = htons(<span class="keyword">static_cast&lt;</span>uint16_t<span class="keyword">&gt;</span>(req.port));</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            addr.sin_addr = <span class="keyword">reinterpret_cast&lt;</span>sockaddr_in*<span class="keyword">&gt;</span>(res-&gt;ai_addr)-&gt;sin_addr;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            <span class="keyword">const</span> <span class="keywordtype">int</span> timeout_ms = req.timeout_ms &gt; 0 ? req.timeout_ms : 5000;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            timeval tv;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            tv.tv_sec = timeout_ms / 1000;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            tv.tv_usec = (timeout_ms % 1000) * 1000;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            ::setsockopt(sock, SOL_SOCKET, SO_RCVTIMEO, &amp;tv, <span class="keyword">sizeof</span>(tv));</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            <span class="keyword">const</span> ssize_t sent = ::sendto(sock,</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                                          req.send_data,</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                                          req.send_size,</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                                          0,</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                                          <span class="keyword">reinterpret_cast&lt;</span>sockaddr*<span class="keyword">&gt;</span>(&amp;addr),</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                                          <span class="keyword">sizeof</span>(addr));</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            <span class="keywordflow">if</span> (sent &lt; 0 || <span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span>(sent) != req.send_size) {</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                out_error_code = errno;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                freeaddrinfo(res);</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>                ::close(sock);</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            }</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            sockaddr_in from{};</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            socklen_t from_len = <span class="keyword">sizeof</span>(from);</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            <span class="keyword">const</span> ssize_t received = ::recvfrom(sock,</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                                                req.recv_data,</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                                                req.recv_size,</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                                                0,</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                                                <span class="keyword">reinterpret_cast&lt;</span>sockaddr*<span class="keyword">&gt;</span>(&amp;from),</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                                                &amp;from_len);</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            <span class="keywordflow">if</span> (received &lt; 0 || <span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span>(received) != req.recv_size) {</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                out_error_code = errno;</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                freeaddrinfo(res);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            freeaddrinfo(res);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            res = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            <span class="keyword">const</span> <span class="keywordtype">int</span> timeout_ms = req.timeout_ms &gt; 0 ? req.timeout_ms : 5000;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            timeval tv;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            tv.tv_sec = timeout_ms / 1000;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            tv.tv_usec = (timeout_ms % 1000) * 1000;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            ::setsockopt(sock, SOL_SOCKET, SO_RCVTIMEO, &amp;tv, <span class="keyword">sizeof</span>(tv));</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            <span class="keyword">const</span> ssize_t sent = ::sendto(sock,</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                                          req.send_data,</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                                          req.send_size,</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                                          0,</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                                          <span class="keyword">reinterpret_cast&lt;</span>sockaddr*<span class="keyword">&gt;</span>(&amp;addr),</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                                          <span class="keyword">sizeof</span>(addr));</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            <span class="keywordflow">if</span> (sent &lt; 0 || <span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span>(sent) != req.send_size) {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>                out_error_code = errno;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                ::close(sock);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            }</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            sockaddr_in from{};</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            socklen_t from_len = <span class="keyword">sizeof</span>(from);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            <span class="keyword">const</span> ssize_t received = ::recvfrom(sock,</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                                                req.recv_data,</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                                                req.recv_size,</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                                                0,</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                                                <span class="keyword">reinterpret_cast&lt;</span>sockaddr*<span class="keyword">&gt;</span>(&amp;from),</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                                                &amp;from_len);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            <span class="keywordflow">if</span> (received &lt; 0 || <span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span>(received) != req.recv_size) {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                out_error_code = errno;</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>                ::close(sock);</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            }</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            freeaddrinfo(res);</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            ::close(sock);</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        }</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            ::close(sock);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        }</div>
 </div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    };</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    };</div>
 </div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>} <span class="comment">// namespace detail</span></div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>} <span class="comment">// namespace time_shield</span></div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="preprocessor">#endif </span><span class="comment">// TIME_SHIELD_PLATFORM_UNIX</span></div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="preprocessor">#endif </span><span class="comment">// TIME_SHIELD_UDP_TRANSPORT_POSIX_HPP_INCLUDED</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>} <span class="comment">// namespace detail</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>} <span class="comment">// namespace time_shield</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="preprocessor">#endif </span><span class="comment">// TIME_SHIELD_PLATFORM_UNIX</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="preprocessor">#endif </span><span class="comment">// TIME_SHIELD_UDP_TRANSPORT_POSIX_HPP_INCLUDED</span></div>
 <div class="ttc" id="aclasstime__shield_1_1detail_1_1IUdpTransport_html"><div class="ttname"><a href="classtime__shield_1_1detail_1_1IUdpTransport.html">time_shield::detail::IUdpTransport</a></div><div class="ttdef"><b>Definition</b> <a href="udp__transport_8hpp_source.html#l00022">udp_transport.hpp:22</a></div></div>
 <div class="ttc" id="aclasstime__shield_1_1detail_1_1UdpTransportPosix_html"><div class="ttname"><a href="classtime__shield_1_1detail_1_1UdpTransportPosix.html">time_shield::detail::UdpTransportPosix</a></div><div class="ttdef"><b>Definition</b> <a href="#l00021">udp_transport_posix.hpp:21</a></div></div>
 <div class="ttc" id="aclasstime__shield_1_1detail_1_1UdpTransportPosix_html_a15cd6a7d67ae338eae1dbb994f6f59c9"><div class="ttname"><a href="classtime__shield_1_1detail_1_1UdpTransportPosix.html#a15cd6a7d67ae338eae1dbb994f6f59c9">time_shield::detail::UdpTransportPosix::transact</a></div><div class="ttdeci">bool transact(const UdpRequest &amp;req, int &amp;out_error_code) noexcept override</div><div class="ttdef"><b>Definition</b> <a href="#l00023">udp_transport_posix.hpp:23</a></div></div>

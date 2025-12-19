@@ -12,8 +12,10 @@
 namespace time_shield {
 namespace detail {
 
+    /// \brief Core NTP query logic that parses packets and computes offsets.
     class NtpClientCore {
     public:
+        /// \brief Perform one NTP transaction using a UDP transport.
         bool query(IUdpTransport& transport,
                    const std::string& host,
                    int port,
@@ -70,6 +72,7 @@ namespace detail {
         }
 
     private:
+        /// \brief Read current realtime clock in microseconds.
         static bool get_now_us(uint64_t& out) noexcept {
             const int64_t v = time_shield::now_realtime_us();
             if (v < 0) return false;

@@ -43,6 +43,8 @@ namespace time_shield {
     class NtpClient {
     public:
         /// \brief Constructs NTP client with specified host and port.
+        /// \param server NTP server host name.
+        /// \param port NTP server port.
         NtpClient(std::string server = "pool.ntp.org", int port = 123)
             : m_host(std::move(server))
             , m_port(port)
@@ -54,7 +56,8 @@ namespace time_shield {
         }
 
         /// \brief Queries the NTP server and updates the local offset.
-        /// \return true if successful.
+        /// \return True when response parsed successfully.
+        /// \note Requires network connectivity and a reachable server.
         bool query() {
             last_error_code_slot() = 0;
 
@@ -102,27 +105,35 @@ namespace time_shield {
         }
 
         /// \brief Returns whether the last NTP query was successful.
+        /// \return True when the last query updated internal state.
         bool success() const noexcept { return m_is_success.load(); }
 
         /// \brief Returns the last measured offset in microseconds.
+        /// \return Offset in microseconds (UTC - local realtime).
         int64_t offset_us() const noexcept { return m_offset_us; }
 
         /// \brief Returns the last measured delay in microseconds.
+        /// \return Round-trip delay estimate in microseconds.
         int64_t delay_us() const noexcept { return m_delay_us; }
 
         /// \brief Returns the last received stratum value.
+        /// \return NTP stratum value.
         int stratum() const noexcept { return m_stratum; }
 
         /// \brief Returns current UTC time in microseconds based on last NTP offset.
+        /// \return UTC time in microseconds using last offset.
         int64_t utc_time_us() const noexcept { return now_realtime_us() + m_offset_us.load(); }
 
         /// \brief Returns current UTC time in milliseconds based on last NTP offset.
+        /// \return UTC time in milliseconds using last offset.
         int64_t utc_time_ms() const noexcept { return utc_time_us() / 1000; }
 
         /// \brief Returns current UTC time as time_t (seconds since Unix epoch).
+        /// \return UTC time in seconds since Unix epoch.
         time_t utc_time_sec() const noexcept { return static_cast<time_t>(utc_time_us() / 1000000); }
 
         /// \brief Returns last socket error code (if any).
+        /// \return Error code from last query attempt.
         int last_error_code() const noexcept { return last_error_code_slot(); }
 
     private:

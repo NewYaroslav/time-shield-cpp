@@ -18,8 +18,10 @@
 namespace time_shield {
 namespace detail {
 
+    /// \brief POSIX UDP transport for NTP queries.
     class UdpTransportPosix : public IUdpTransport {
     public:
+        /// \brief Send request and receive response over UDP.
         bool transact(const UdpRequest& req, int& out_error_code) noexcept override {
             out_error_code = 0;
             const int sock = ::socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);

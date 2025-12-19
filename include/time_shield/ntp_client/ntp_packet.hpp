@@ -15,6 +15,7 @@
 namespace time_shield {
 namespace detail {
 
+    /// \ingroup ntp
     /// \brief NTP packet layout (48 bytes).
     struct NtpPacket {
         uint8_t li_vn_mode;
@@ -36,6 +37,8 @@ namespace detail {
 
     static_assert(sizeof(NtpPacket) == 48, "NtpPacket must be 48 bytes");
 
+    /// \ingroup ntp
+    /// \brief Protocol-level error codes for NTP parsing.
     enum NtpProtoError {
         NTP_EPROTO_BASE   = -10000,
         NTP_E_BAD_MODE    = NTP_EPROTO_BASE - 1,
@@ -46,23 +49,28 @@ namespace detail {
         NTP_E_BAD_TS      = NTP_EPROTO_BASE - 6
     };
 
+    /// \brief Extract leap indicator from LI/VN/Mode field.
     static inline uint8_t ntp_li(uint8_t li_vn_mode) noexcept {
         return static_cast<uint8_t>((li_vn_mode >> 6) & 0x03);
     }
 
+    /// \brief Extract version number from LI/VN/Mode field.
     static inline uint8_t ntp_vn(uint8_t li_vn_mode) noexcept {
         return static_cast<uint8_t>((li_vn_mode >> 3) & 0x07);
     }
 
+    /// \brief Extract mode from LI/VN/Mode field.
     static inline uint8_t ntp_mode(uint8_t li_vn_mode) noexcept {
         return static_cast<uint8_t>(li_vn_mode & 0x07);
     }
 
+    /// \brief Convert NTP fractional seconds to microseconds.
     static inline uint64_t ntp_frac_to_us(uint32_t frac_net) noexcept {
         const uint64_t frac = static_cast<uint64_t>(ntohl(frac_net));
         return (frac * 1000000ULL) >> 32;
     }
 
+    /// \brief Convert NTP timestamp parts to Unix microseconds.
     static inline bool ntp_ts_to_unix_us(uint32_t sec_net, uint32_t frac_net, uint64_t& out_us) noexcept {
         static const int64_t NTP_TIMESTAMP_DELTA = 2208988800ll;
         const int64_t sec = static_cast<int64_t>(ntohl(sec_net)) - NTP_TIMESTAMP_DELTA;
@@ -71,6 +79,7 @@ namespace detail {
         return true;
     }
 
+    /// \brief Fill an NTP client request packet using local time.
     static inline void fill_client_packet(NtpPacket& pkt, uint64_t now_us) {
         std::memset(&pkt, 0, sizeof(pkt));
         pkt.li_vn_mode = static_cast<uint8_t>((0 << 6) | (3 << 3) | 3); // LI=0, VN=3, Mode=3
@@ -82,6 +91,7 @@ namespace detail {
         pkt.tx_ts_frac = htonl(static_cast<uint32_t>(frac));
     }
 
+    /// \brief Parse server response and compute offset and delay.
     static inline bool parse_server_packet(const NtpPacket& pkt,
                                            uint64_t arrival_us,
                                            int64_t& offset_us,

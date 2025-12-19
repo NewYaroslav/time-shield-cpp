@@ -28,19 +28,23 @@ namespace time_shield {
 
     namespace detail {
 #ifdef TIME_SHIELD_TEST_FAKE_NTP
-        /// \brief Fake runner used for tests without network.
+        /// \brief Fake runner for tests without network access.
         class FakeNtpRunner {
         public:
+            /// \brief Construct fake runner.
             FakeNtpRunner() = default;
+            /// \brief Construct fake runner with an unused pool.
             explicit FakeNtpRunner(NtpClientPool) {}
 
             FakeNtpRunner(const FakeNtpRunner&) = delete;
             FakeNtpRunner& operator=(const FakeNtpRunner&) = delete;
 
+            /// \brief Stop background thread on destruction.
             ~FakeNtpRunner() {
                 stop();
             }
 
+            /// \brief Start fake measurements on a background thread.
             bool start(std::chrono::milliseconds interval = std::chrono::seconds(30),
                        bool measure_immediately = true) {
                 if (m_is_running.load()) {
@@ -63,10 +67,12 @@ namespace time_shield {
                 return true;
             }
 
+            /// \brief Start fake measurements using milliseconds.
             bool start(int interval_ms, bool measure_immediately = true) {
                 return start(std::chrono::milliseconds(interval_ms), measure_immediately);
             }
 
+            /// \brief Stop background measurements.
             void stop() {
                 m_is_stop_requested.store(true);
                 m_cv.notify_all();
@@ -76,8 +82,10 @@ namespace time_shield {
                 m_is_running.store(false);
             }
 
+            /// \brief Return true when background thread is running.
             bool running() const noexcept { return m_is_running.load(); }
 
+            /// \brief Wake the worker thread and request a measurement.
             bool force_measure() {
                 if (!m_is_running.load()) {
                     return false;
@@ -87,24 +95,36 @@ namespace time_shield {
                 return true;
             }
 
+            /// \brief Perform one measurement immediately.
             bool measure_now() {
                 return do_measure();
             }
 
+            /// \brief Return last estimated offset in microseconds.
             int64_t offset_us() const noexcept { return m_offset_us.load(); }
+            /// \brief Return current UTC time in microseconds based on offset.
             int64_t utc_time_us() const noexcept { return now_realtime_us() + m_offset_us.load(); }
+            /// \brief Return current UTC time in milliseconds based on offset.
             int64_t utc_time_ms() const noexcept { return utc_time_us() / 1000; }
+            /// \brief Return current UTC time in seconds based on offset.
             int64_t utc_time_sec() const noexcept { return utc_time_us() / 1000000; }
 
+            /// \brief Return whether last measurement updated the offset.
             bool last_measure_ok() const noexcept { return m_last_measure_ok.load(); }
+            /// \brief Return total number of measurement attempts.
             uint64_t measure_count() const noexcept { return m_measure_count.load(); }
+            /// \brief Return number of failed measurement attempts.
             uint64_t fail_count() const noexcept { return m_fail_count.load(); }
+            /// \brief Return realtime timestamp of last measurement attempt.
             int64_t last_update_realtime_us() const noexcept { return m_last_update_realtime_us.load(); }
+            /// \brief Return realtime timestamp of last successful measurement.
             int64_t last_success_realtime_us() const noexcept { return m_last_success_realtime_us.load(); }
 
+            /// \brief Return copy of most recent samples.
             std::vector<NtpSample> last_samples() const { return {}; }
 
         private:
+            /// \brief Background loop for fake measurements.
             void run_loop() {
                 const auto sleep_interval = m_interval;
                 bool is_first = m_measure_immediately;
@@ -127,6 +147,7 @@ namespace time_shield {
                 m_is_running.store(false);
             }
 
+            /// \brief Update fake offset and stats.
             bool do_measure() {
                 const uint64_t count = m_measure_count.fetch_add(1) + 1;
                 m_offset_us.store(static_cast<int64_t>(count * 1000));
@@ -169,9 +190,17 @@ namespace time_shield {
 #endif // !TIME_SHIELD_CPP17
     } // namespace detail
 
+    /// \ingroup ntp
+    /// \brief Singleton service for background NTP measurements.
+    ///
+    /// Uses an internal runner to keep offset updated. It exposes UTC time
+    /// computed as realtime clock plus the latest offset. Configure pool
+    /// servers and sampling before starting the service.
     template <class RunnerT>
     class NtpTimeServiceT {
     public:
+        /// \brief Return the singleton instance.
+        /// \return Singleton instance.
         static NtpTimeServiceT& instance() noexcept {
 #ifdef TIME_SHIELD_CPP17
             static NtpTimeServiceT instance_obj;
@@ -184,10 +213,16 @@ namespace time_shield {
         NtpTimeServiceT(const NtpTimeServiceT&) = delete;
         NtpTimeServiceT& operator=(const NtpTimeServiceT&) = delete;
 
+        /// \brief Start background measurements using stored interval.
+        /// \return True when background runner started.
         bool init() {
             return init(m_interval, m_measure_immediately);
         }
 
+        /// \brief Start background measurements with interval and immediate flag.
+        /// \param interval Measurement interval.
+        /// \param measure_immediately Measure before first sleep if true.
+        /// \return True when background runner started.
         bool init(std::chrono::milliseconds interval, bool measure_immediately = true) {
             std::unique_ptr<RunnerT> local_runner;
             {
@@ -225,6 +260,7 @@ namespace time_shield {
             return is_ok;
         }
 
+        /// \brief Stop background measurements and release resources.
         void shutdown() {
             std::unique_ptr<RunnerT> local_runner;
             {
@@ -241,11 +277,14 @@ namespace time_shield {
             }
         }
 
+        /// \brief Return true when background runner is active.
+        /// \return True when background runner is active.
         bool running() const noexcept {
             std::lock_guard<std::mutex> lk(m_mtx);
             return is_running_locked();
         }
 
+        /// \brief Ensure background runner is started with current config.
         void ensure_started() noexcept {
             if (running()) {
                 return;
@@ -253,6 +292,8 @@ namespace time_shield {
             (void)init();
         }
 
+        /// \brief Return last estimated offset in microseconds.
+        /// \return Offset in microseconds (UTC - local realtime).
         int64_t offset_us() noexcept {
             ensure_started();
             std::lock_guard<std::mutex> lk(m_mtx);
@@ -260,6 +301,8 @@ namespace time_shield {
             return m_runner->offset_us();
         }
 
+        /// \brief Return current UTC time in microseconds based on offset.
+        /// \return UTC time in microseconds using last offset.
         int64_t utc_time_us() noexcept {
             ensure_started();
             std::lock_guard<std::mutex> lk(m_mtx);
@@ -267,44 +310,61 @@ namespace time_shield {
             return m_runner->utc_time_us();
         }
 
+        /// \brief Return current UTC time in milliseconds based on offset.
+        /// \return UTC time in milliseconds using last offset.
         int64_t utc_time_ms() noexcept {
             return utc_time_us() / 1000;
         }
 
+        /// \brief Return current UTC time in seconds based on offset.
+        /// \return UTC time in seconds using last offset.
         int64_t utc_time_sec() noexcept {
             return utc_time_us() / 1000000;
         }
 
+        /// \brief Return whether last measurement updated the offset.
+        /// \return True when last measurement updated the offset.
         bool last_measure_ok() const noexcept {
             std::lock_guard<std::mutex> lk(m_mtx);
             if (!m_runner) return false;
             return m_runner->last_measure_ok();
         }
 
+        /// \brief Return total number of measurement attempts.
+        /// \return Number of measurement attempts.
         uint64_t measure_count() const noexcept {
             std::lock_guard<std::mutex> lk(m_mtx);
             if (!m_runner) return 0;
             return m_runner->measure_count();
         }
 
+        /// \brief Return number of failed measurement attempts.
+        /// \return Number of failed measurement attempts.
         uint64_t fail_count() const noexcept {
             std::lock_guard<std::mutex> lk(m_mtx);
             if (!m_runner) return 0;
             return m_runner->fail_count();
         }
 
+        /// \brief Return realtime timestamp of last measurement attempt.
+        /// \return Realtime microseconds timestamp for last measurement attempt.
         int64_t last_update_realtime_us() const noexcept {
             std::lock_guard<std::mutex> lk(m_mtx);
             if (!m_runner) return 0;
             return m_runner->last_update_realtime_us();
         }
 
+        /// \brief Return realtime timestamp of last successful measurement.
+        /// \return Realtime microseconds timestamp for last successful measurement.
         int64_t last_success_realtime_us() const noexcept {
             std::lock_guard<std::mutex> lk(m_mtx);
             if (!m_runner) return 0;
             return m_runner->last_success_realtime_us();
         }
 
+        /// \brief Return true when last measurement is older than max_age.
+        /// \param max_age Maximum allowed age.
+        /// \return True when last measurement age exceeds max_age.
         bool stale(std::chrono::milliseconds max_age) const noexcept {
             const int64_t last = last_update_realtime_us();
             if (last == 0) {
@@ -314,6 +374,9 @@ namespace time_shield {
             return age > max_age.count() * 1000;
         }
 
+        /// \brief Replace server list used for new runner instances.
+        /// \param servers Server configurations to use.
+        /// \return False when service is already running.
         bool set_servers(std::vector<NtpServerConfig> servers) {
             std::lock_guard<std::mutex> lk(m_mtx);
             if (is_running_locked()) {
@@ -324,6 +387,8 @@ namespace time_shield {
             return true;
         }
 
+        /// \brief Use conservative default servers for new runner instances.
+        /// \return False when service is already running.
         bool set_default_servers() {
             std::lock_guard<std::mutex> lk(m_mtx);
             if (is_running_locked()) {
@@ -334,6 +399,8 @@ namespace time_shield {
             return true;
         }
 
+        /// \brief Clear custom server list and return to default behavior.
+        /// \return False when service is already running.
         bool clear_servers() {
             std::lock_guard<std::mutex> lk(m_mtx);
             if (is_running_locked()) {
@@ -344,6 +411,9 @@ namespace time_shield {
             return true;
         }
 
+        /// \brief Override pool configuration for new runner instances.
+        /// \param cfg Pool configuration to apply.
+        /// \return False when service is already running.
         bool set_pool_config(NtpPoolConfig cfg) {
             std::lock_guard<std::mutex> lk(m_mtx);
             if (is_running_locked()) {
@@ -354,6 +424,8 @@ namespace time_shield {
             return true;
         }
 
+        /// \brief Return current pool configuration.
+        /// \return Current pool configuration.
         NtpPoolConfig pool_config() const {
             std::lock_guard<std::mutex> lk(m_mtx);
             if (m_has_custom_pool_cfg) {
@@ -362,17 +434,23 @@ namespace time_shield {
             return NtpPoolConfig{};
         }
 
+        /// \brief Return copy of last measurement samples.
+        /// \return Copy of samples from the last measurement.
         std::vector<NtpSample> last_samples() const {
             std::lock_guard<std::mutex> lk(m_mtx);
             if (!m_runner) return {};
             return m_runner->last_samples();
         }
 
+        /// \brief Construct service.
         NtpTimeServiceT() = default;
+        /// \brief Stop background runner on destruction.
         ~NtpTimeServiceT() {
             shutdown();
         }
 
+        /// \brief Apply current config by rebuilding the runner.
+        /// \return True when runner restarted successfully.
         bool apply_config_now() {
             std::unique_ptr<RunnerT> new_runner;
             std::unique_ptr<RunnerT> old_runner;
@@ -415,10 +493,12 @@ namespace time_shield {
         }
 
     private:
+        /// \brief Check runner status under lock.
         bool is_running_locked() const noexcept {
             return m_runner && m_runner->running();
         }
 
+        /// \brief Build a runner with current server list and pool config.
         std::unique_ptr<RunnerT> build_runner_locked() {
             std::vector<NtpServerConfig> servers;
             if (m_has_custom_servers) {
@@ -463,63 +543,110 @@ namespace detail {
 #endif
 
 #if defined(TIME_SHIELD_TEST_FAKE_NTP)
+    /// \ingroup ntp
+    /// \brief NTP time service alias that uses a fake runner for tests.
     using NtpTimeService = NtpTimeServiceT<detail::FakeNtpRunner>;
 #else
+    /// \ingroup ntp
+    /// \brief NTP time service alias that uses the real pool runner.
     using NtpTimeService = NtpTimeServiceT<NtpClientPoolRunner>;
 #endif
 
 namespace ntp {
 
+    /// \ingroup ntp
+    /// \brief Initialize NTP time service and start background measurements.
+    /// \param interval Measurement interval.
+    /// \param measure_immediately Measure before first sleep if true.
+    /// \return True when background runner started.
     inline bool init(std::chrono::milliseconds interval = std::chrono::seconds(30),
                      bool measure_immediately = true) {
         return NtpTimeService::instance().init(interval, measure_immediately);
     }
 
+    /// \ingroup ntp
+    /// \brief Initialize NTP time service using milliseconds.
+    /// \param interval_ms Measurement interval in milliseconds.
+    /// \param measure_immediately Measure before first sleep if true.
+    /// \return True when background runner started.
     inline bool init(int interval_ms,
                      bool measure_immediately = true) {
         return NtpTimeService::instance().init(std::chrono::milliseconds(interval_ms), measure_immediately);
     }
     
+    /// \ingroup ntp
+    /// \brief Stop NTP time service.
     inline void shutdown() {
         NtpTimeService::instance().shutdown();
     }
     
+    /// \ingroup ntp
+    /// \brief Return last estimated offset in microseconds.
+    /// \return Offset in microseconds (UTC - local realtime).
     inline int64_t offset_us() noexcept {
         return NtpTimeService::instance().offset_us();
     }
     
+    /// \ingroup ntp
+    /// \brief Return current UTC time in microseconds based on offset.
+    /// \return UTC time in microseconds using last offset.
     inline int64_t utc_time_us() noexcept {
         return NtpTimeService::instance().utc_time_us();
     }
     
+    /// \ingroup ntp
+    /// \brief Return current UTC time in milliseconds based on offset.
+    /// \return UTC time in milliseconds using last offset.
     inline int64_t utc_time_ms() noexcept {
         return NtpTimeService::instance().utc_time_ms();
     }
     
+    /// \ingroup ntp
+    /// \brief Return current UTC time in seconds based on offset.
+    /// \return UTC time in seconds using last offset.
     inline int64_t utc_time_sec() noexcept {
         return NtpTimeService::instance().utc_time_sec();
     }
     
+    /// \ingroup ntp
+    /// \brief Return whether last measurement updated the offset.
+    /// \return True when last measurement updated the offset.
     inline bool last_measure_ok() noexcept {
         return NtpTimeService::instance().last_measure_ok();
     }
     
+    /// \ingroup ntp
+    /// \brief Return total number of measurement attempts.
+    /// \return Number of measurement attempts.
     inline uint64_t measure_count() noexcept {
         return NtpTimeService::instance().measure_count();
     }
     
+    /// \ingroup ntp
+    /// \brief Return number of failed measurement attempts.
+    /// \return Number of failed measurement attempts.
     inline uint64_t fail_count() noexcept {
         return NtpTimeService::instance().fail_count();
     }
     
+    /// \ingroup ntp
+    /// \brief Return realtime timestamp of last measurement attempt.
+    /// \return Realtime microseconds timestamp for last measurement attempt.
     inline int64_t last_update_realtime_us() noexcept {
         return NtpTimeService::instance().last_update_realtime_us();
     }
     
+    /// \ingroup ntp
+    /// \brief Return realtime timestamp of last successful measurement.
+    /// \return Realtime microseconds timestamp for last successful measurement.
     inline int64_t last_success_realtime_us() noexcept {
         return NtpTimeService::instance().last_success_realtime_us();
     }
     
+    /// \ingroup ntp
+    /// \brief Return true when last measurement is older than max_age.
+    /// \param max_age Maximum allowed age.
+    /// \return True when last measurement age exceeds max_age.
     inline bool stale(std::chrono::milliseconds max_age) noexcept {
         return NtpTimeService::instance().stale(max_age);
     }

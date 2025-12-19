@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 #pragma once
-#ifndef TIME_SHIELD_NTP_CLIENT_POOL_HPP_INCLUDED
-#define TIME_SHIELD_NTP_CLIENT_POOL_HPP_INCLUDED
+#ifndef _TIME_SHIELD_NTP_CLIENT_POOL_HPP_INCLUDED
+#define _TIME_SHIELD_NTP_CLIENT_POOL_HPP_INCLUDED
 
 #include "config.hpp"
 
@@ -25,45 +25,44 @@ namespace time_shield {
     /// \ingroup ntp
     /// \brief NTP measurement sample (one server response).
     struct NtpSample {
-        std::string host;
-        int         port = 123;
-
-        bool    is_ok = false;
-        int     error_code = 0;
-        int     stratum = -1;
-        int64_t offset_us = 0; ///< UTC - local realtime, microseconds.
-        int64_t delay_us  = 0; ///< NTP round-trip delay estimate, microseconds.
-
-        int64_t max_delay_us = 0;
+        std::string host;          ///< Server host name.
+        int         port = 123;    ///< Server port.
+        bool    is_ok = false;     ///< Indicates successful response parsing.
+        int     error_code = 0;    ///< Error code when query or parsing failed.
+        int     stratum = -1;      ///< NTP stratum level reported by server.
+        int64_t offset_us = 0;     ///< Offset between UTC and local realtime, microseconds.
+        int64_t delay_us  = 0;     ///< Estimated round-trip delay, microseconds.
+        int64_t max_delay_us = 0;  ///< Maximum acceptable delay for this sample.
     };
 
     /// \ingroup ntp
     /// \brief Per-server configuration.
     struct NtpServerConfig {
-        std::string host;
-        int         port = 123;
+        std::string host;       ///< Server host name.
+        int         port = 123; ///< Server port.
 
-        std::chrono::milliseconds min_interval{15000};
-        std::chrono::milliseconds max_delay{250};
+        std::chrono::milliseconds min_interval{15000}; ///< Minimum time between queries to the same server.
+        std::chrono::milliseconds max_delay{250};      ///< Maximum acceptable delay for responses from this server.
 
-        std::chrono::milliseconds backoff_initial{15000};
-        std::chrono::milliseconds backoff_max{std::chrono::minutes(10)};
+        std::chrono::milliseconds backoff_initial{15000};                ///< Initial backoff after failure.
+        std::chrono::milliseconds backoff_max{std::chrono::minutes(10)}; ///< Maximum backoff interval after repeated failures.
     };
 
     /// \ingroup ntp
     /// \brief Pool configuration.
     struct NtpPoolConfig {
-        std::size_t sample_servers = 5;
-        std::size_t min_valid_samples = 3;
+        std::size_t sample_servers = 5;    ///< Number of servers to sample per measurement.
+        std::size_t min_valid_samples = 3; ///< Minimum number of valid samples required to update offset.
 
+        /// \brief Aggregation strategy for offset estimation.
         enum class Aggregation {
             Median,
             BestDelay,
             MedianMadTrim
         } aggregation = Aggregation::Median;
 
-        double smoothing_alpha = 1.0;
-        std::uint64_t rng_seed = 0;
+        double smoothing_alpha = 1.0; ///< Exponential smoothing factor for offset updates.
+        std::uint64_t rng_seed = 0;   ///< Random seed for server sampling; 0 uses time-based seed.
     };
 
     /// \ingroup ntp
@@ -78,6 +77,8 @@ namespace time_shield {
     template <class ClientT>
     class NtpClientPoolT {
     public:
+        /// \brief Construct pool with configuration.
+        /// \param cfg Pool configuration.
         explicit NtpClientPoolT(NtpPoolConfig cfg = {})
             : m_cfg(std::move(cfg))
             , m_offset_us(0)
@@ -86,6 +87,7 @@ namespace time_shield {
         NtpClientPoolT(const NtpClientPoolT&) = delete;
         NtpClientPoolT& operator=(const NtpClientPoolT&) = delete;
 
+        /// \brief Move-construct pool state.
         NtpClientPoolT(NtpClientPoolT&& other) noexcept
             : m_cfg()
             , m_offset_us(0)
@@ -98,6 +100,7 @@ namespace time_shield {
             m_rng = std::move(other.m_rng);
         }
 
+        /// \brief Move-assign pool state.
         NtpClientPoolT& operator=(NtpClientPoolT&& other) noexcept {
             if (this == &other) {
                 return *this;
@@ -115,6 +118,7 @@ namespace time_shield {
         }
 
         /// \brief Replace server list (keeps pool config).
+        /// \param servers Server configurations to use.
         void set_servers(std::vector<NtpServerConfig> servers) {
             std::lock_guard<std::mutex> lk(m_mtx);
             m_servers.clear();
@@ -127,6 +131,7 @@ namespace time_shield {
         }
 
         /// \brief Add one server.
+        /// \param server_cfg Server configuration to add.
         void add_server(NtpServerConfig server_cfg) {
             std::lock_guard<std::mutex> lk(m_mtx);
             ServerState state;
@@ -135,6 +140,7 @@ namespace time_shield {
         }
 
         /// \brief Build a conservative default server list.
+        /// \return Default server list with conservative timing settings.
         static std::vector<NtpServerConfig> build_default_servers() {
             std::vector<NtpServerConfig> servers;
             servers.reserve(160);
@@ -381,13 +387,15 @@ namespace time_shield {
         }
 
         /// \brief Perform measurement using current config (queries up to sample_servers).
-        /// \return true if pool offset updated.
+        /// \return True when pool offset updated.
         bool measure() {
             const auto cfg = config();
             return measure_n(cfg.sample_servers);
         }
 
         /// \brief Perform measurement using a custom number of servers.
+        /// \param servers_to_sample Number of servers to query in this measurement.
+        /// \return True when pool offset updated.
         bool measure_n(std::size_t servers_to_sample) {
             std::vector<std::size_t> picked;
             NtpPoolConfig cfg;
@@ -415,21 +423,31 @@ namespace time_shield {
         }
 
         /// \brief Last estimated pool offset (µs).
+        /// \return Offset in microseconds (UTC - local realtime).
         int64_t offset_us() const noexcept { return m_offset_us.load(); }
 
         /// \brief Current UTC time in microseconds based on pool offset.
+        /// \return UTC time in microseconds using pool offset.
         int64_t utc_time_us() const noexcept { return now_realtime_us() + m_offset_us.load(); }
 
         /// \brief Current UTC time in milliseconds based on pool offset.
+        /// \return UTC time in milliseconds using pool offset.
         int64_t utc_time_ms() const noexcept { return utc_time_us() / 1000; }
 
+        /// \brief Current UTC time in seconds based on pool offset.
+        /// \return UTC time in seconds using pool offset.
+        int64_t utc_time_sec() const noexcept { return utc_time_us() / 1000000; }
+
         /// \brief Returns last measurement samples (copy).
+        /// \return Copy of samples from the last measurement.
         std::vector<NtpSample> last_samples() const {
             std::lock_guard<std::mutex> lk(m_mtx);
             return m_last_samples;
         }
 
         /// \brief Apply pre-collected samples (testing/offline).
+        /// \param samples Sample list to apply.
+        /// \return True when pool offset updated.
         /// \note Primarily for tests; does not enforce rate limiting or backoff.
         bool apply_samples(const std::vector<NtpSample>& samples) {
             const NtpPoolConfig cfg = config();
@@ -440,6 +458,8 @@ namespace time_shield {
         }
 
         /// \brief Returns median of values.
+        /// \param values Values to process in-place.
+        /// \return Median of the input values.
         static int64_t median(std::vector<int64_t>& values) {
             using diff_t = std::vector<int64_t>::difference_type;
             const diff_t mid_index = static_cast<diff_t>(values.size() / 2);
@@ -454,6 +474,8 @@ namespace time_shield {
         }
 
         /// \brief Median with MAD trimming.
+        /// \param offsets Offset list to process in-place.
+        /// \return Median after MAD-based trimming.
         static int64_t median_mad_trim(std::vector<int64_t>& offsets) {
             const int64_t med = median(offsets);
 
@@ -484,6 +506,8 @@ namespace time_shield {
         }
 
         /// \brief Offset from best (lowest) delay sample.
+        /// \param samples Sample list to scan.
+        /// \return Offset from the sample with the lowest delay.
         static int64_t best_delay_offset(const std::vector<NtpSample>& samples) {
             const NtpSample* best = nullptr;
             for (const auto& sample : samples) {
@@ -505,15 +529,19 @@ namespace time_shield {
         }
 
         /// \brief Access config.
+        /// \return Current pool configuration.
         NtpPoolConfig config() const {
             std::lock_guard<std::mutex> lk(m_mtx);
             return m_cfg;
         }
+        /// \brief Replace pool configuration.
+        /// \param cfg New pool configuration.
         void set_config(NtpPoolConfig cfg) {
             std::lock_guard<std::mutex> lk(m_mtx);
             m_cfg = std::move(cfg);
         }
 
+        /// \brief Runtime state for a configured server.
         struct ServerState {
             NtpServerConfig cfg;
 
@@ -702,4 +730,4 @@ namespace time_shield {
 
 #endif // TIME_SHIELD_ENABLE_NTP_CLIENT
 
-#endif // TIME_SHIELD_NTP_CLIENT_POOL_HPP_INCLUDED
+#endif // _TIME_SHIELD_NTP_CLIENT_POOL_HPP_INCLUDED

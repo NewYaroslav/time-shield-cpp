@@ -25,5 +25,8 @@ int main() {
     assert(start_of_first_workday_month(2024, 13) == ERROR_TIMESTAMP);
     assert(end_of_last_workday_month_ms(2024, 0) == ERROR_TIMESTAMP);
 
+    (void)first_workday_start;
+    (void)last_workday_start;
+
     return 0;
 }

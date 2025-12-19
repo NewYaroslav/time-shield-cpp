@@ -88,5 +88,8 @@ int main() {
     assert(cancelled_counter.load() == 0);
     assert(scheduler.active_timer_count_for_testing() == cancellation_baseline);
 
+    (void)baseline_states;
+    (void)cancellation_baseline;
+
     return 0;
 }

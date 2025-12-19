@@ -55,7 +55,7 @@ namespace time_shield {
 
         /// \brief Get elapsed CPU ticks since the last start.
         /// \return Elapsed CPU tick units produced by get_cpu_time().
-        [[nodiscard]] double elapsed() const noexcept {
+        TIME_SHIELD_NODISCARD double elapsed() const noexcept {
             const double final_ticks = m_is_running ? get_cpu_time() : m_end_ticks;
             return final_ticks - m_start_ticks;
         }
@@ -90,19 +90,19 @@ namespace time_shield {
 
         /// \brief Get the number of recorded samples.
         /// \return Count of recorded samples.
-        [[nodiscard]] std::size_t sample_count() const noexcept {
+        TIME_SHIELD_NODISCARD std::size_t sample_count() const noexcept {
             return m_sample_count;
         }
 
         /// \brief Get total recorded CPU ticks across samples.
         /// \return Sum of recorded CPU tick units.
-        [[nodiscard]] double total_ticks() const noexcept {
+        TIME_SHIELD_NODISCARD double total_ticks() const noexcept {
             return m_total_ticks;
         }
 
         /// \brief Get average CPU ticks per sample.
         /// \return Average CPU tick units or NaN if there are no samples.
-        [[nodiscard]] double average_ticks() const noexcept {
+        TIME_SHIELD_NODISCARD double average_ticks() const noexcept {
             if (m_sample_count == 0U) {
                 return std::numeric_limits<double>::quiet_NaN();
             }
@@ -111,7 +111,7 @@ namespace time_shield {
 
         /// \brief Get ticks collected during the last recorded sample.
         /// \return Ticks from the most recent sample in CPU tick units.
-        [[nodiscard]] double last_sample_ticks() const noexcept {
+        TIME_SHIELD_NODISCARD double last_sample_ticks() const noexcept {
             return m_last_sample_ticks;
         }
 

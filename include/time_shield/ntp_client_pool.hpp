@@ -80,7 +80,7 @@ namespace time_shield {
     public:
         explicit NtpClientPoolT(NtpPoolConfig cfg = {})
             : m_cfg(std::move(cfg))
-            , m_offset_us(TIME_SHIELD_ATOMIC_INIT(0))
+            , m_offset_us(0)
             , m_rng(init_seed(m_cfg.rng_seed)) {}
 
         NtpClientPoolT(const NtpClientPoolT&) = delete;
@@ -88,7 +88,7 @@ namespace time_shield {
 
         NtpClientPoolT(NtpClientPoolT&& other) noexcept
             : m_cfg()
-            , m_offset_us(TIME_SHIELD_ATOMIC_INIT(0))
+            , m_offset_us(0)
             , m_rng(init_seed(other.m_cfg.rng_seed)) {
             std::lock_guard<std::mutex> lk(other.m_mtx);
             m_cfg = other.m_cfg;
@@ -441,13 +441,15 @@ namespace time_shield {
 
         /// \brief Returns median of values.
         static int64_t median(std::vector<int64_t>& values) {
-            std::nth_element(values.begin(), values.begin() + values.size() / 2, values.end());
-            const int64_t mid = values[values.size() / 2];
+            using diff_t = std::vector<int64_t>::difference_type;
+            const diff_t mid_index = static_cast<diff_t>(values.size() / 2);
+            std::nth_element(values.begin(), values.begin() + mid_index, values.end());
+            const int64_t mid = values[static_cast<std::size_t>(mid_index)];
             if (values.size() % 2 == 1) {
                 return mid;
             }
 
-            const auto it = std::max_element(values.begin(), values.begin() + values.size() / 2);
+            const auto it = std::max_element(values.begin(), values.begin() + mid_index);
             return (*it + mid) / 2;
         }
 

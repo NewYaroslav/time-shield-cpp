@@ -73,7 +73,10 @@ namespace time_shield {
     /// \return Day of the week (SUN = 0, MON = 1, ... SAT = 6).
     template<class T1 = Weekday, class T2 = year_t, class T3 = int, class T4 = int>
     TIME_SHIELD_CONSTEXPR inline T1 day_of_week_date(T2 year, T3 month, T4 day) {
-        year_t a, y, m, R;
+        year_t a = 0;
+        year_t y = 0;
+        year_t m = 0;
+        year_t R = 0;
         a = (14 - month) / MONTHS_PER_YEAR;
         y = year - a;
         m = month + MONTHS_PER_YEAR * a - 2;

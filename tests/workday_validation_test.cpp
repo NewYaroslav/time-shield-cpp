@@ -35,5 +35,14 @@ int main() {
     assert(!is_workday("not-a-date"));
     assert(!is_workday_ms("2024-13-40T00:00:00.000Z"));
 
+    (void)weekday_ts;
+    (void)weekend_ts;
+    (void)weekday_ms;
+    (void)weekend_ms;
+    (void)weekday_iso;
+    (void)weekend_iso;
+    (void)weekday_iso_ms;
+    (void)weekend_iso_ms;
+
     return 0;
 }

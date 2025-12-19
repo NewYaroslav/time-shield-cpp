@@ -66,6 +66,8 @@ int main() {
         const uint64_t after = runner.measure_count();
         assert(before == after);
         assert(!runner.running());
+        (void)before;
+        (void)after;
     }
 
     {

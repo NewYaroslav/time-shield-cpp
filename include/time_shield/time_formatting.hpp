@@ -130,7 +130,7 @@ namespace time_shield {
             if (repeat_count == 1) {
                 // %Y-%m-%d ISO 8601 date format
                 char buffer[32] = {0};
-                if (dt.year <= 9999 || dt.year >= 0) {
+                if (dt.year <= 9999 && dt.year >= 0) {
                     snprintf(buffer, sizeof(buffer), "%.4d-%.2d-%.2d", (int)dt.year, dt.mon, dt.day);
                 } else
                 if (dt.year < 0) {

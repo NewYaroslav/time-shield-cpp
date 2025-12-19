@@ -33,5 +33,20 @@ int main() {
     ts_ms_t start_ms = ts_ms("2020-01-01T00:00:00Z");
     assert(frac_ms - start_ms == 123);
 
+    (void)feb29;
+    (void)march1;
+    (void)feb28;
+    (void)march1_2023;
+    (void)apr_end;
+    (void)may_start;
+    (void)dec_start;
+    (void)dec_end;
+    (void)jan_start;
+    (void)jan_end;
+    (void)start_day;
+    (void)end_day;
+    (void)frac_ms;
+    (void)start_ms;
+
     return 0;
 }

@@ -46,10 +46,10 @@ namespace time_shield {
         NtpClient(std::string server = "pool.ntp.org", int port = 123)
             : m_host(std::move(server))
             , m_port(port)
-            , m_offset_us(TIME_SHIELD_ATOMIC_INIT(0))
-            , m_delay_us(TIME_SHIELD_ATOMIC_INIT(0))
-            , m_stratum(TIME_SHIELD_ATOMIC_INIT(-1))
-            , m_is_success(TIME_SHIELD_ATOMIC_INIT(false)) {
+            , m_offset_us(0)
+            , m_delay_us(0)
+            , m_stratum(-1)
+            , m_is_success(false) {
             now_realtime_us();
         }
 

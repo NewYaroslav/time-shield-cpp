@@ -2,6 +2,7 @@
 
 #if TIME_SHIELD_ENABLE_NTP_CLIENT
 
+#include <time_shield/time_utils.hpp>
 #include <time_shield/ntp_client/ntp_client_core.hpp>
 #include <time_shield/ntp_client/ntp_packet.hpp>
 #include <time_shield/ntp_client/udp_transport.hpp>
@@ -70,6 +71,11 @@ int main() {
         assert(error == 0);
         assert(offset != 0 || delay != 0); // basic sanity without relying on realtime arrival
         assert(stratum == 2);
+        (void)ok;
+        (void)error;
+        (void)offset;
+        (void)delay;
+        (void)stratum;
     }
 
     {
@@ -85,6 +91,11 @@ int main() {
         const bool ok = core.query(transport, "example.com", 123, 5000, error, offset, delay, stratum);
         assert(!ok);
         assert(error == 42);
+        (void)ok;
+        (void)error;
+        (void)offset;
+        (void)delay;
+        (void)stratum;
     }
 
     {
@@ -99,6 +110,11 @@ int main() {
         const bool ok = core.query(transport, "example.com", 123, 5000, error, offset, delay, stratum);
         assert(!ok);
         assert(error == -1);
+        (void)ok;
+        (void)error;
+        (void)offset;
+        (void)delay;
+        (void)stratum;
     }
 
     {

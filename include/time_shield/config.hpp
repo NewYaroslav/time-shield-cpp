@@ -48,7 +48,7 @@
 
 // Configure nodiscard attribute support while keeping compatibility with C++11 compilers
 #if defined(__has_cpp_attribute)
-#   if __has_cpp_attribute(nodiscard)
+#   if __has_cpp_attribute(nodiscard) && defined(TIME_SHIELD_CPP17)
 #       define TIME_SHIELD_NODISCARD [[nodiscard]]
 #   else
 #       define TIME_SHIELD_NODISCARD
@@ -79,12 +79,6 @@
 #   define TIME_SHIELD_THREAD_LOCAL
 #endif
 
-// Configure atomic initialization helper for pre-C++17 compilers
-#if defined(TIME_SHIELD_CPP11)
-#   define TIME_SHIELD_ATOMIC_INIT(value) ATOMIC_VAR_INIT(value)
-#else
-#   define TIME_SHIELD_ATOMIC_INIT(value) (value)
-#endif
 
 /// \name Platform detection
 ///@{

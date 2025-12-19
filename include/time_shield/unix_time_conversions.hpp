@@ -22,7 +22,7 @@ namespace time_shield {
     /// \param ts UNIX timestamp.
     /// \return T Year corresponding to the given timestamp.
     template<class T = year_t>
-    constexpr T years_since_epoch(ts_t ts) noexcept {
+    TIME_SHIELD_CONSTEXPR T years_since_epoch(ts_t ts) noexcept {
         // 9223372029693630000 - значение на момент 292277024400 от 2000 года
         // Такое значение приводит к неправильному вычислению умножения n_400_years * SEC_PER_400_YEARS
         // Поэтому пришлось снизить до 9223371890843040000
@@ -114,7 +114,7 @@ namespace time_shield {
     /// \return The number of days between start and stop.
     template<class T = int>
     constexpr T days_between(ts_t start, ts_t stop) noexcept {
-        return (stop - start) / SEC_PER_DAY;
+        return static_cast<T>((stop - start) / SEC_PER_DAY);
     }
 
     /// \brief Converts a UNIX day to a timestamp in seconds.
@@ -216,7 +216,7 @@ namespace time_shield {
     /// \return Second of the day.
     template<class T = int>
     constexpr T sec_of_day(ts_t ts = time_shield::ts()) noexcept {
-        return ts % SEC_PER_DAY;
+        return static_cast<T>(ts % SEC_PER_DAY);
     }
 
     /// \brief Get the second of the day from milliseconds timestamp.
@@ -260,7 +260,7 @@ namespace time_shield {
     /// \return Second of the minute.
     template<class T = int>
     constexpr T sec_of_min(ts_t ts = time_shield::ts()) {
-        return (ts % SEC_PER_MIN);
+        return static_cast<T>(ts % SEC_PER_MIN);
     }
 
     /// \brief Get the second of the hour.
@@ -272,7 +272,7 @@ namespace time_shield {
     /// \return Second of the hour.
     template<class T = int>
     constexpr T sec_of_hour(ts_t ts = time_shield::ts()) {
-        return (ts % SEC_PER_HOUR);
+        return static_cast<T>(ts % SEC_PER_HOUR);
     }
 
 /// \}

@@ -80,7 +80,7 @@ namespace time_shield {
     public:
         explicit NtpClientPoolT(NtpPoolConfig cfg = {})
             : m_cfg(std::move(cfg))
-            , m_offset_us(TIME_SHIELD_ATOMIC_INIT(0))
+            , m_offset_us(0)
             , m_rng(init_seed(m_cfg.rng_seed)) {}
 
         NtpClientPoolT(const NtpClientPoolT&) = delete;
@@ -88,7 +88,7 @@ namespace time_shield {
 
         NtpClientPoolT(NtpClientPoolT&& other) noexcept
             : m_cfg()
-            , m_offset_us(TIME_SHIELD_ATOMIC_INIT(0))
+            , m_offset_us(0)
             , m_rng(init_seed(other.m_cfg.rng_seed)) {
             std::lock_guard<std::mutex> lk(other.m_mtx);
             m_cfg = other.m_cfg;

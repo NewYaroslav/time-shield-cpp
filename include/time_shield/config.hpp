@@ -79,10 +79,6 @@
 #   define TIME_SHIELD_THREAD_LOCAL
 #endif
 
-// Configure atomic initialization helper for pre-C++17 compilers.
-// std::atomic provides value constructors in C++11, so direct initialization is safe here
-// and avoids braced-scalar-init warnings on some toolchains.
-#define TIME_SHIELD_ATOMIC_INIT(value) (value)
 
 /// \name Platform detection
 ///@{

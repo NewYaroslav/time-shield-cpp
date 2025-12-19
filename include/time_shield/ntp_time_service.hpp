@@ -150,11 +150,11 @@ namespace time_shield {
             std::atomic<bool> m_is_force_requested{false};
 
             std::atomic<bool> m_last_measure_ok{false};
-            std::atomic<uint64_t> m_measure_count{TIME_SHIELD_ATOMIC_INIT(0)};
-            std::atomic<uint64_t> m_fail_count{TIME_SHIELD_ATOMIC_INIT(0)};
-            std::atomic<int64_t> m_last_update_realtime_us{TIME_SHIELD_ATOMIC_INIT(0)};
-            std::atomic<int64_t> m_last_success_realtime_us{TIME_SHIELD_ATOMIC_INIT(0)};
-            std::atomic<int64_t> m_offset_us{TIME_SHIELD_ATOMIC_INIT(0)};
+            std::atomic<uint64_t> m_measure_count{0};
+            std::atomic<uint64_t> m_fail_count{0};
+            std::atomic<int64_t> m_last_update_realtime_us{0};
+            std::atomic<int64_t> m_last_success_realtime_us{0};
+            std::atomic<int64_t> m_offset_us{0};
         };
 #endif // TIME_SHIELD_TEST_FAKE_NTP
 

@@ -34,6 +34,8 @@ namespace detail {
         uint32_t tx_ts_frac;
     };
 
+    static_assert(sizeof(NtpPacket) == 48, "NtpPacket must be 48 bytes");
+
     static inline uint64_t ntp_frac_to_us(uint32_t frac_net) noexcept {
         const uint64_t frac = static_cast<uint64_t>(ntohl(frac_net));
         return (frac * 1000000ULL) >> 32;

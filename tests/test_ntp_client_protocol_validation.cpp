@@ -109,6 +109,7 @@ int main() {
         const bool is_ok = core.query(transport, "example.com", 123, 5000, error, offset, delay, stratum);
         assert(!is_ok);
         assert(error == detail::NTP_E_BAD_MODE);
+        (void)is_ok;
     }
 
     {
@@ -126,6 +127,7 @@ int main() {
         const bool is_ok = core.query(transport, "example.com", 123, 5000, error, offset, delay, stratum);
         assert(!is_ok);
         assert(error == detail::NTP_E_BAD_VERSION);
+        (void)is_ok;
     }
 
     {
@@ -143,6 +145,7 @@ int main() {
         const bool is_ok = core.query(transport, "example.com", 123, 5000, error, offset, delay, stratum);
         assert(!is_ok);
         assert(error == detail::NTP_E_BAD_LI);
+        (void)is_ok;
     }
 
     {
@@ -160,6 +163,7 @@ int main() {
         const bool is_ok = core.query(transport, "example.com", 123, 5000, error, offset, delay, stratum);
         assert(!is_ok);
         assert(error == detail::NTP_E_KOD);
+        (void)is_ok;
     }
 
     {
@@ -177,6 +181,7 @@ int main() {
         const bool is_ok = core.query(transport, "example.com", 123, 5000, error, offset, delay, stratum);
         assert(!is_ok);
         assert(error == detail::NTP_E_BAD_STRATUM);
+        (void)is_ok;
     }
 
     {
@@ -195,6 +200,7 @@ int main() {
         const bool is_ok = core.query(transport, "example.com", 123, 5000, error, offset, delay, stratum);
         assert(!is_ok);
         assert(error == detail::NTP_E_BAD_TS);
+        (void)is_ok;
     }
 
     {
@@ -228,6 +234,7 @@ int main() {
         const bool is_ok = core.query(transport, "example.com", 123, 5000, error, offset, delay, stratum);
         assert(!is_ok);
         assert(error == detail::NTP_E_BAD_TS);
+        (void)is_ok;
     }
 
     return 0;

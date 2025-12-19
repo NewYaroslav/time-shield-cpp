@@ -3,8 +3,6 @@
 #ifndef TIME_SHIELD_NTP_PACKET_HPP_INCLUDED
 #define TIME_SHIELD_NTP_PACKET_HPP_INCLUDED
 
-#include "../config.hpp"
-
 #include <cstdint>
 #include <cstring>
 

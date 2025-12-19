@@ -46,7 +46,7 @@ int main() {
     ts_t gmt_eet_summer = eet_to_gmt(eet_summer);
     assert(gmt_eet_summer == to_timestamp(2023, 7, 1, 9, 0, 0));
 
-    int spring_day_2024 = second_sunday_month_day(2024, MAR);
+    int spring_day_2024 = static_cast<int>(second_sunday_month_day(2024, MAR));
     ts_t et_before_spring = to_timestamp(2024, int(MAR), spring_day_2024, 1, 59, 59);
     ts_t gmt_before_spring = et_to_gmt(et_before_spring);
     assert(gmt_before_spring == to_timestamp(2024, int(MAR), spring_day_2024, 6, 59, 59));
@@ -55,7 +55,7 @@ int main() {
     ts_t et_after_spring = gmt_to_et(gmt_spring_switch);
     assert(et_after_spring == to_timestamp(2024, int(MAR), spring_day_2024, 3, 0, 0));
 
-    int fall_day_2024 = first_sunday_month_day(2024, NOV);
+    int fall_day_2024 = static_cast<int>(first_sunday_month_day(2024, NOV));
     ts_t gmt_fall_before = to_timestamp(2024, int(NOV), fall_day_2024, 6, 59, 59);
     ts_t et_fall_before = gmt_to_et(gmt_fall_before);
     assert(gmt_fall_before - et_fall_before == SEC_PER_HOUR * 4);
@@ -64,7 +64,7 @@ int main() {
     ts_t et_fall_after = gmt_to_et(gmt_fall_after);
     assert(gmt_fall_after - et_fall_after == SEC_PER_HOUR * 5);
 
-    int spring_day_2006 = first_sunday_month_day(2006, APR);
+    int spring_day_2006 = static_cast<int>(first_sunday_month_day(2006, APR));
     ts_t et_before_2006 = to_timestamp(2006, int(APR), spring_day_2006, 1, 59, 59);
     ts_t gmt_before_2006 = et_to_gmt(et_before_2006);
     assert(gmt_before_2006 == to_timestamp(2006, int(APR), spring_day_2006, 6, 59, 59));

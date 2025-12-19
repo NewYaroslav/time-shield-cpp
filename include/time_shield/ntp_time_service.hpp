@@ -533,9 +533,14 @@ namespace time_shield {
         std::unique_ptr<RunnerT> m_runner;
 
 #ifdef TIME_SHIELD_CPP17
-        static inline NtpTimeServiceT m_instance{};
+        static NtpTimeServiceT m_instance;
 #endif
     };
+
+#ifdef TIME_SHIELD_CPP17
+    template <class RunnerT>
+    inline NtpTimeServiceT<RunnerT> NtpTimeServiceT<RunnerT>::m_instance{};
+#endif
 
 #ifndef _TIME_SHIELD_CPP17
 namespace detail {

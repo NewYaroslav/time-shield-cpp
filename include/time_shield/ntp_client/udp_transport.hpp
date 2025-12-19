@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 #pragma once
-#ifndef TIME_SHIELD_UDP_TRANSPORT_HPP_INCLUDED
-#define TIME_SHIELD_UDP_TRANSPORT_HPP_INCLUDED
+#ifndef _TIME_SHIELD_UDP_TRANSPORT_HPP_INCLUDED
+#define _TIME_SHIELD_UDP_TRANSPORT_HPP_INCLUDED
 
 #include <cstddef>
 #include <string>
@@ -11,8 +11,8 @@ namespace detail {
 
     /// \brief UDP request parameters for NTP transactions.
     struct UdpRequest {
-        std::string host;       ///< Target host name or IP address.
-        int         port = 123; ///< Target port.
+        std::string host;                ///< Target host name or IP address.
+        int         port = 123;          ///< Target port.
         const void* send_data = nullptr; ///< Pointer to outgoing payload.
         std::size_t send_size = 0;       ///< Outgoing payload size in bytes.
         void*       recv_data = nullptr; ///< Pointer to receive buffer.
@@ -32,4 +32,4 @@ namespace detail {
 } // namespace detail
 } // namespace time_shield
 
-#endif // TIME_SHIELD_UDP_TRANSPORT_HPP_INCLUDED
+#endif // _TIME_SHIELD_UDP_TRANSPORT_HPP_INCLUDED

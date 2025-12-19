@@ -22,7 +22,7 @@ namespace time_shield {
     /// \param ts UNIX timestamp.
     /// \return T Year corresponding to the given timestamp.
     template<class T = year_t>
-    constexpr T years_since_epoch(ts_t ts) noexcept {
+    TIME_SHIELD_CONSTEXPR T years_since_epoch(ts_t ts) noexcept {
         // 9223372029693630000 - значение на момент 292277024400 от 2000 года
         // Такое значение приводит к неправильному вычислению умножения n_400_years * SEC_PER_400_YEARS
         // Поэтому пришлось снизить до 9223371890843040000

@@ -784,7 +784,7 @@ namespace time_shield {
     /// \param month Month as an integer.
     /// \return The number of days in the given month and year.
     template<class T1 = int, class T2 = year_t, class T3 = int>
-    constexpr T1 num_days_in_month(T2 year, T3 month) noexcept {
+    TIME_SHIELD_CONSTEXPR T1 num_days_in_month(T2 year, T3 month) noexcept {
         constexpr T1 num_days[13] = {0,31,30,31,30,31,30,31,31,30,31,30,31};
         return (month > MONTHS_PER_YEAR || month < 0)
             ? static_cast<T1>(0)

@@ -23,8 +23,8 @@ namespace time_shield {
     /// \param ts Timestamp in floating-point seconds.
     /// \return T Nanosecond part of the second.
     template<class T = int>
-    constexpr T ns_of_sec(fts_t ts) noexcept {
-        fts_t temp;
+    TIME_SHIELD_CONSTEXPR T ns_of_sec(fts_t ts) noexcept {
+        fts_t temp = 0;
         return static_cast<T>(std::round(std::modf(ts, &temp) * static_cast<fts_t>(NS_PER_SEC)));
     }
 
@@ -33,8 +33,8 @@ namespace time_shield {
     /// \param ts Timestamp in floating-point seconds.
     /// \return T Microsecond part of the second.
     template<class T = int>
-    constexpr T us_of_sec(fts_t ts) noexcept {
-        fts_t temp;
+    TIME_SHIELD_CONSTEXPR T us_of_sec(fts_t ts) noexcept {
+        fts_t temp = 0;
         return static_cast<T>(std::round(std::modf(ts, &temp) * static_cast<fts_t>(US_PER_SEC)));
     }
 
@@ -43,8 +43,8 @@ namespace time_shield {
     /// \param ts Timestamp in floating-point seconds.
     /// \return T Millisecond part of the second.
     template<class T = int>
-    constexpr T ms_of_sec(fts_t ts) noexcept {
-        fts_t temp;
+    TIME_SHIELD_CONSTEXPR T ms_of_sec(fts_t ts) noexcept {
+        fts_t temp = 0;
         return static_cast<T>(std::round(std::modf(ts, &temp) * static_cast<fts_t>(MS_PER_SEC)));
     }
 

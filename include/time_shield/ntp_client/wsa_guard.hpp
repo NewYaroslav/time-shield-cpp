@@ -6,8 +6,6 @@
 /// \brief Singleton guard for WinSock initialization.
 /// \ingroup ntp
 
-#include "../config.hpp"
-
 #if TIME_SHIELD_HAS_WINSOCK
 #   ifndef WIN32_LEAN_AND_MEAN
 #       define WIN32_LEAN_AND_MEAN

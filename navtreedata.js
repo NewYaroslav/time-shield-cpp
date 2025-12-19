@@ -90,7 +90,7 @@ var NAVTREEINDEX =
 "group__time__enums.html#ggac2ffd79e06ab94cf1bb50fec432c68a8a5e3a6e5c23188b146d1b63ed3aa51d37",
 "group__time__structures.html#ga23bf99c2bc02f3a430517a3abaf62b38",
 "namespacetime__shield.html#a5d4625d12243235c5993141097223af2",
-"structtime__shield_1_1detail_1_1ScheduledComparator.html"
+"structtime__shield_1_1detail_1_1NtpPacket.html#ad556733ef47fd047f2276ea5f388180d"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

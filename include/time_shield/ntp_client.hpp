@@ -19,7 +19,6 @@
 #include "ntp_client/udp_transport.hpp"
 
 #if TIME_SHIELD_PLATFORM_WINDOWS
-#   include "ntp_client/wsa_guard.hpp"
 #   include "ntp_client/udp_transport_win.hpp"
 #elif TIME_SHIELD_PLATFORM_UNIX
 #   include "ntp_client/udp_transport_posix.hpp"
@@ -75,18 +74,18 @@ namespace time_shield {
             int64_t delay = 0;
             int stratum = -1;
 
-            const bool ok = core.query(transport,
-                                       m_host,
-                                       m_port,
-                                       k_default_timeout_ms,
-                                       error_code,
-                                       offset,
-                                       delay,
-                                       stratum);
+            const bool ok = core.query(
+                transport,
+                m_host,
+                m_port,
+                k_default_timeout_ms,
+                error_code,
+                offset,
+                delay,
+                stratum
+            );
 
-            if (last_error_code_slot() == 0) {
-                last_error_code_slot() = error_code;
-            }
+            last_error_code_slot() = error_code;
 
             if (!ok) {
                 m_delay_us = 0;

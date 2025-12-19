@@ -57,14 +57,17 @@ jobs:
       - name: Install
         run: cmake --install build --prefix install --config Release
       - name: Test
+        shell: bash
         run: ctest --test-dir build -C Release
       - name: Show CTest last log
         if: always()
+        shell: bash
         run: |
           echo "=== build/Testing/Temporary/LastTest.log ==="
           cat build/Testing/Temporary/LastTest.log || true
       - name: Rerun failed tests verbosely
         if: always()
+        shell: bash
         run: ctest --test-dir build -C Release --rerun-failed --output-on-failure || true
       - name: Upload CTest logs
         if: always()

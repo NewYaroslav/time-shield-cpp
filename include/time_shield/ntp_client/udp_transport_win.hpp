@@ -5,6 +5,7 @@
 
 #if TIME_SHIELD_PLATFORM_WINDOWS
 
+#include "wsa_guard.hpp"
 #include "udp_transport.hpp"
 
 #include <winsock2.h>

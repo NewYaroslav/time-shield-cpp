@@ -58,6 +58,7 @@ int main() {
         pkt.tx_ts_sec = sec;
         pkt.tx_ts_frac = frac;
 
+        pkt.li_vn_mode = static_cast<uint8_t>((0 << 6) | (3 << 3) | 4);
         pkt.stratum = 2;
         transport.reply = pkt;
 
@@ -102,6 +103,8 @@ int main() {
         // Parse failure
         FakeUdpTransport transport;
         std::memset(&transport.reply, 0, sizeof(transport.reply)); // origin/recv/tx sec => 0 (pre-1970) -> parse fails
+        transport.reply.li_vn_mode = static_cast<uint8_t>((0 << 6) | (3 << 3) | 4);
+        transport.reply.stratum = 2;
         detail::NtpClientCore core;
         int error = 0;
         int64_t offset = 0;
@@ -109,7 +112,7 @@ int main() {
         int stratum = -1;
         const bool ok = core.query(transport, "example.com", 123, 5000, error, offset, delay, stratum);
         assert(!ok);
-        assert(error == -1);
+        assert(error == detail::NTP_E_BAD_TS);
         (void)ok;
         (void)error;
         (void)offset;

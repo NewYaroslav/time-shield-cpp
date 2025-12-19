@@ -59,7 +59,7 @@ namespace detail {
                 return false;
             }
 
-            if (!parse_server_packet(reply, arrival_us, out_offset_us, out_delay_us, out_stratum)) {
+            if (!parse_server_packet(reply, arrival_us, out_offset_us, out_delay_us, out_stratum, out_error_code)) {
                 if (out_error_code == 0) {
                     out_error_code = -1;
                 }

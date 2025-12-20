@@ -111,6 +111,7 @@ $(function(){initNavTree('group__time__conversions.html',''); initResizable(true
   <div class="summary">
 <a href="#groups">Topics</a> &#124;
 <a href="#files">Files</a> &#124;
+<a href="#namespaces">Namespaces</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">Time Conversions</div></div>
 </div><!--header-->
@@ -137,6 +138,11 @@ Files</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ole__automation__conversions_8hpp.html">ole_automation_conversions.hpp</a></td></tr>
 <tr class="memdesc:ole__automation__conversions_8hpp"><td class="mdescLeft">&#160;</td><td class="mdescRight">OLE Automation Date (OA date) conversions. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetime__shield_1_1legacy.html">time_shield::legacy</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
@@ -1719,74 +1725,6 @@ Functions</h2></td></tr>
 <tr class="memitem:ga3f863e29b5cf3e9d27d810db9eff6f9d" id="r_ga3f863e29b5cf3e9d27d810db9eff6f9d"><td class="memItemLeft" align="right" valign="top">TIME_SHIELD_CONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3f863e29b5cf3e9d27d810db9eff6f9d">time_shield::is_valid_tz_offset</a> (<a class="el" href="group__time__types.html#ga467db13fb99208bd078b5abff59866fb">tz_t</a> off) noexcept</td></tr>
 <tr class="memdesc:ga3f863e29b5cf3e9d27d810db9eff6f9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a numeric offset is within supported bounds.  <br /></td></tr>
 <tr class="separator:ga3f863e29b5cf3e9d27d810db9eff6f9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga40ef0f060775d17045700553841865e5" id="r_ga40ef0f060775d17045700553841865e5"><td class="memTemplParams" colspan="2">template&lt;class T = year_t&gt; </td></tr>
-<tr class="memitem:ga40ef0f060775d17045700553841865e5"><td class="memTemplItemLeft" align="right" valign="top">TIME_SHIELD_CONSTEXPR T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga40ef0f060775d17045700553841865e5">time_shield::years_since_epoch</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="#ga4701e4f2553acb70bf28ada865531a03">ts</a>) noexcept</td></tr>
-<tr class="memdesc:ga40ef0f060775d17045700553841865e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a UNIX timestamp to a year.  <br /></td></tr>
-<tr class="separator:ga40ef0f060775d17045700553841865e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga41e7701cd4b5c73aa96c547a1e4b03a3" id="r_ga41e7701cd4b5c73aa96c547a1e4b03a3"><td class="memTemplParams" colspan="2">template&lt;class Year, class <a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a>, class Day&gt; </td></tr>
-<tr class="memitem:ga41e7701cd4b5c73aa96c547a1e4b03a3"><td class="memTemplItemLeft" align="right" valign="top">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga63a3e5f64aa9c168fc51dc05a7014f37">uday_t</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga41e7701cd4b5c73aa96c547a1e4b03a3">time_shield::date_to_unix_day</a> (Year <a class="el" href="#gadd68b9e632d1b5a43c18b116bbf105a4">year</a>, <a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a> month, Day day) noexcept</td></tr>
-<tr class="memdesc:ga41e7701cd4b5c73aa96c547a1e4b03a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a calendar date to UNIX day count.  <br /></td></tr>
-<tr class="separator:ga41e7701cd4b5c73aa96c547a1e4b03a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafbe4e9ea57b4a4ebc83ab13e05ac2d25" id="r_gafbe4e9ea57b4a4ebc83ab13e05ac2d25"><td class="memTemplParams" colspan="2">template&lt;class T = uday_t&gt; </td></tr>
-<tr class="memitem:gafbe4e9ea57b4a4ebc83ab13e05ac2d25"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#gafbe4e9ea57b4a4ebc83ab13e05ac2d25">time_shield::days_since_epoch</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="#ga4701e4f2553acb70bf28ada865531a03">ts</a>=<a class="el" href="#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>()) noexcept</td></tr>
-<tr class="memdesc:gafbe4e9ea57b4a4ebc83ab13e05ac2d25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get UNIX day.  <br /></td></tr>
-<tr class="separator:gafbe4e9ea57b4a4ebc83ab13e05ac2d25"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad2730d1019c6163cfb9188b790dc3ffb" id="r_gad2730d1019c6163cfb9188b790dc3ffb"><td class="memTemplParams" colspan="2">template&lt;class T = uday_t&gt; </td></tr>
-<tr class="memitem:gad2730d1019c6163cfb9188b790dc3ffb"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#gad2730d1019c6163cfb9188b790dc3ffb">time_shield::days_since_epoch_ms</a> (<a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> t_ms=<a class="el" href="#ga5ea6979cd4275492cf00833278b95c6b">time_shield::ts_ms</a>()) noexcept</td></tr>
-<tr class="memdesc:gad2730d1019c6163cfb9188b790dc3ffb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get UNIX day from milliseconds timestamp.  <br /></td></tr>
-<tr class="separator:gad2730d1019c6163cfb9188b790dc3ffb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2288d8567ef5fe32edb533612171f3f9" id="r_ga2288d8567ef5fe32edb533612171f3f9"><td class="memTemplParams" colspan="2">template&lt;class T = int&gt; </td></tr>
-<tr class="memitem:ga2288d8567ef5fe32edb533612171f3f9"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga2288d8567ef5fe32edb533612171f3f9">time_shield::days_between</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> start, <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> stop) noexcept</td></tr>
-<tr class="memdesc:ga2288d8567ef5fe32edb533612171f3f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of days between two timestamps.  <br /></td></tr>
-<tr class="separator:ga2288d8567ef5fe32edb533612171f3f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaea15fa45a52cdbde3a9e06644a87cfac" id="r_gaea15fa45a52cdbde3a9e06644a87cfac"><td class="memTemplParams" colspan="2">template&lt;class T = ts_t&gt; </td></tr>
-<tr class="memitem:gaea15fa45a52cdbde3a9e06644a87cfac"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#gaea15fa45a52cdbde3a9e06644a87cfac">time_shield::unix_day_to_ts</a> (<a class="el" href="group__time__types.html#ga63a3e5f64aa9c168fc51dc05a7014f37">uday_t</a> <a class="el" href="#ga0aa3eab8489bde9d3004e15461f8b925">unix_day</a>) noexcept</td></tr>
-<tr class="memdesc:gaea15fa45a52cdbde3a9e06644a87cfac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a UNIX day to a timestamp in seconds.  <br /></td></tr>
-<tr class="separator:gaea15fa45a52cdbde3a9e06644a87cfac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaec533d5bb3270f12bd2052c3bae95a6e" id="r_gaec533d5bb3270f12bd2052c3bae95a6e"><td class="memTemplParams" colspan="2">template&lt;class T = ts_t&gt; </td></tr>
-<tr class="memitem:gaec533d5bb3270f12bd2052c3bae95a6e"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#gaec533d5bb3270f12bd2052c3bae95a6e">time_shield::unix_day_to_ts_ms</a> (<a class="el" href="group__time__types.html#ga63a3e5f64aa9c168fc51dc05a7014f37">uday_t</a> <a class="el" href="#ga0aa3eab8489bde9d3004e15461f8b925">unix_day</a>) noexcept</td></tr>
-<tr class="memdesc:gaec533d5bb3270f12bd2052c3bae95a6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a UNIX day to a timestamp in milliseconds.  <br /></td></tr>
-<tr class="separator:gaec533d5bb3270f12bd2052c3bae95a6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacef72061566d1b88fd191abe918387e8" id="r_gacef72061566d1b88fd191abe918387e8"><td class="memTemplParams" colspan="2">template&lt;class T = ts_t&gt; </td></tr>
-<tr class="memitem:gacef72061566d1b88fd191abe918387e8"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#gacef72061566d1b88fd191abe918387e8">time_shield::end_of_day_from_unix_day</a> (<a class="el" href="group__time__types.html#ga63a3e5f64aa9c168fc51dc05a7014f37">uday_t</a> <a class="el" href="#ga0aa3eab8489bde9d3004e15461f8b925">unix_day</a>) noexcept</td></tr>
-<tr class="memdesc:gacef72061566d1b88fd191abe918387e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a UNIX day to a timestamp representing the end of the day in seconds.  <br /></td></tr>
-<tr class="separator:gacef72061566d1b88fd191abe918387e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0b2e58c70c04fef189a3bb65fe27ba8d" id="r_ga0b2e58c70c04fef189a3bb65fe27ba8d"><td class="memTemplParams" colspan="2">template&lt;class T = ts_ms_t&gt; </td></tr>
-<tr class="memitem:ga0b2e58c70c04fef189a3bb65fe27ba8d"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga0b2e58c70c04fef189a3bb65fe27ba8d">time_shield::end_of_day_from_unix_day_ms</a> (<a class="el" href="group__time__types.html#ga63a3e5f64aa9c168fc51dc05a7014f37">uday_t</a> <a class="el" href="#ga0aa3eab8489bde9d3004e15461f8b925">unix_day</a>) noexcept</td></tr>
-<tr class="memdesc:ga0b2e58c70c04fef189a3bb65fe27ba8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a UNIX day to a timestamp representing the end of the day in milliseconds.  <br /></td></tr>
-<tr class="separator:ga0b2e58c70c04fef189a3bb65fe27ba8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga37d80a29a2683f3a26a3f6f49faf22b0" id="r_ga37d80a29a2683f3a26a3f6f49faf22b0"><td class="memTemplParams" colspan="2">template&lt;class T = ts_ms_t&gt; </td></tr>
-<tr class="memitem:ga37d80a29a2683f3a26a3f6f49faf22b0"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga37d80a29a2683f3a26a3f6f49faf22b0">time_shield::start_of_next_day_from_unix_day</a> (<a class="el" href="group__time__types.html#ga63a3e5f64aa9c168fc51dc05a7014f37">uday_t</a> <a class="el" href="#ga0aa3eab8489bde9d3004e15461f8b925">unix_day</a>) noexcept</td></tr>
-<tr class="memdesc:ga37d80a29a2683f3a26a3f6f49faf22b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a UNIX day to a timestamp representing the start of the next day in seconds.  <br /></td></tr>
-<tr class="separator:ga37d80a29a2683f3a26a3f6f49faf22b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad8b01fcae98d98b70bd70ba912e4b7ca" id="r_gad8b01fcae98d98b70bd70ba912e4b7ca"><td class="memTemplParams" colspan="2">template&lt;class T = ts_ms_t&gt; </td></tr>
-<tr class="memitem:gad8b01fcae98d98b70bd70ba912e4b7ca"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#gad8b01fcae98d98b70bd70ba912e4b7ca">time_shield::start_of_next_day_from_unix_day_ms</a> (<a class="el" href="group__time__types.html#ga63a3e5f64aa9c168fc51dc05a7014f37">uday_t</a> <a class="el" href="#ga0aa3eab8489bde9d3004e15461f8b925">unix_day</a>) noexcept</td></tr>
-<tr class="memdesc:gad8b01fcae98d98b70bd70ba912e4b7ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a UNIX day to a timestamp representing the start of the next day in milliseconds.  <br /></td></tr>
-<tr class="separator:gad8b01fcae98d98b70bd70ba912e4b7ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabe93fcf253ad0f4485beb1a05af697b5" id="r_gabe93fcf253ad0f4485beb1a05af697b5"><td class="memTemplParams" colspan="2">template&lt;class T = int64_t&gt; </td></tr>
-<tr class="memitem:gabe93fcf253ad0f4485beb1a05af697b5"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#gabe93fcf253ad0f4485beb1a05af697b5">time_shield::min_since_epoch</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="#ga4701e4f2553acb70bf28ada865531a03">ts</a>=<a class="el" href="#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>())</td></tr>
-<tr class="memdesc:gabe93fcf253ad0f4485beb1a05af697b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get UNIX minute.  <br /></td></tr>
-<tr class="separator:gabe93fcf253ad0f4485beb1a05af697b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3e0dacaaca3411cad9ab66f6d828e6c7" id="r_ga3e0dacaaca3411cad9ab66f6d828e6c7"><td class="memTemplParams" colspan="2">template&lt;class T = int&gt; </td></tr>
-<tr class="memitem:ga3e0dacaaca3411cad9ab66f6d828e6c7"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga3e0dacaaca3411cad9ab66f6d828e6c7">time_shield::sec_of_day</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="#ga4701e4f2553acb70bf28ada865531a03">ts</a>=<a class="el" href="#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>()) noexcept</td></tr>
-<tr class="memdesc:ga3e0dacaaca3411cad9ab66f6d828e6c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the second of the day.  <br /></td></tr>
-<tr class="separator:ga3e0dacaaca3411cad9ab66f6d828e6c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6a4af93515d5ba8a74f6fb01af12634d" id="r_ga6a4af93515d5ba8a74f6fb01af12634d"><td class="memTemplParams" colspan="2">template&lt;class T = int&gt; </td></tr>
-<tr class="memitem:ga6a4af93515d5ba8a74f6fb01af12634d"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga6a4af93515d5ba8a74f6fb01af12634d">time_shield::sec_of_day_ms</a> (<a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> <a class="el" href="#ga5ea6979cd4275492cf00833278b95c6b">ts_ms</a>) noexcept</td></tr>
-<tr class="memdesc:ga6a4af93515d5ba8a74f6fb01af12634d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the second of the day from milliseconds timestamp.  <br /></td></tr>
-<tr class="separator:ga6a4af93515d5ba8a74f6fb01af12634d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf34569a5067e2a36ca0ecc4d6d93e5bd" id="r_gaf34569a5067e2a36ca0ecc4d6d93e5bd"><td class="memTemplParams" colspan="2">template&lt;class T1 = int, class T2 = int&gt; </td></tr>
-<tr class="memitem:gaf34569a5067e2a36ca0ecc4d6d93e5bd"><td class="memTemplItemLeft" align="right" valign="top">constexpr T1&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#gaf34569a5067e2a36ca0ecc4d6d93e5bd">time_shield::sec_of_day</a> (T2 hour, T2 min, T2 sec) noexcept</td></tr>
-<tr class="memdesc:gaf34569a5067e2a36ca0ecc4d6d93e5bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the second of the day.  <br /></td></tr>
-<tr class="separator:gaf34569a5067e2a36ca0ecc4d6d93e5bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0da99e0b94fac004c8a92754e57c010a" id="r_ga0da99e0b94fac004c8a92754e57c010a"><td class="memTemplParams" colspan="2">template&lt;class T = int&gt; </td></tr>
-<tr class="memitem:ga0da99e0b94fac004c8a92754e57c010a"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga0da99e0b94fac004c8a92754e57c010a">time_shield::sec_of_min</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="#ga4701e4f2553acb70bf28ada865531a03">ts</a>=<a class="el" href="#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>())</td></tr>
-<tr class="memdesc:ga0da99e0b94fac004c8a92754e57c010a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the second of the minute.  <br /></td></tr>
-<tr class="separator:ga0da99e0b94fac004c8a92754e57c010a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga06e030e61df66069bde597b78c0cd03b" id="r_ga06e030e61df66069bde597b78c0cd03b"><td class="memTemplParams" colspan="2">template&lt;class T = int&gt; </td></tr>
-<tr class="memitem:ga06e030e61df66069bde597b78c0cd03b"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga06e030e61df66069bde597b78c0cd03b">time_shield::sec_of_hour</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="#ga4701e4f2553acb70bf28ada865531a03">ts</a>=<a class="el" href="#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>())</td></tr>
-<tr class="memdesc:ga06e030e61df66069bde597b78c0cd03b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the second of the hour.  <br /></td></tr>
-<tr class="separator:ga06e030e61df66069bde597b78c0cd03b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6dfba116cfa44c4189eec96a888b7365" id="r_ga6dfba116cfa44c4189eec96a888b7365"><td class="memItemLeft" align="right" valign="top">TIME_SHIELD_CONSTEXPR int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6dfba116cfa44c4189eec96a888b7365">time_shield::first_workday_day</a> (<a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9">year_t</a> <a class="el" href="#gadd68b9e632d1b5a43c18b116bbf105a4">year</a>, int month) noexcept</td></tr>
 <tr class="memdesc:ga6dfba116cfa44c4189eec96a888b7365"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the first workday number within a month.  <br /></td></tr>
 <tr class="separator:ga6dfba116cfa44c4189eec96a888b7365"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1904,12 +1842,12 @@ Usage Examples:</h3>
 <div class="ttc" id="agroup__time__utils_html_ga8de184eb4e3279be0b1e8e45ddcd1d27"><div class="ttname"><a href="group__time__utils.html#ga8de184eb4e3279be0b1e8e45ddcd1d27">time_shield::ms_of_sec</a></div><div class="ttdeci">T ms_of_sec() noexcept</div><div class="ttdoc">Get the millisecond part of the current second.</div><div class="ttdef"><b>Definition</b> <a href="time__utils_8hpp_source.html#l00166">time_utils.hpp:166</a></div></div>
 </div><!-- fragment --></li>
 <li>Convert a date-time structure to a timestamp: <div class="fragment"><div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="group__time__utils.html#ga1d1c996fff6a55bf6a064991fec1f819">ts</a> = <a class="code hl_function" href="group__time__structures.html#gaa0d04ce5842219b3527561b9ff9aedeb">time_shield::to_timestamp</a>(2024, 11, 25, 14, 30, 0);</div>
-<div class="ttc" id="agroup__time__structures_html_gaa0d04ce5842219b3527561b9ff9aedeb"><div class="ttname"><a href="group__time__structures.html#gaa0d04ce5842219b3527561b9ff9aedeb">time_shield::to_timestamp</a></div><div class="ttdeci">TIME_SHIELD_CONSTEXPR ts_t to_timestamp(T1 year, T2 month, T2 day, T2 hour=0, T2 min=0, T2 sec=0)</div><div class="ttdoc">Converts a date and time to a timestamp.</div><div class="ttdef"><b>Definition</b> <a href="date__time__conversions_8hpp_source.html#l00182">date_time_conversions.hpp:182</a></div></div>
+<div class="ttc" id="agroup__time__structures_html_gaa0d04ce5842219b3527561b9ff9aedeb"><div class="ttname"><a href="group__time__structures.html#gaa0d04ce5842219b3527561b9ff9aedeb">time_shield::to_timestamp</a></div><div class="ttdeci">TIME_SHIELD_CONSTEXPR ts_t to_timestamp(T1 year, T2 month, T2 day, T2 hour=0, T2 min=0, T2 sec=0)</div><div class="ttdoc">Converts a date and time to a timestamp.</div><div class="ttdef"><b>Definition</b> <a href="date__time__conversions_8hpp_source.html#l00434">date_time_conversions.hpp:434</a></div></div>
 <div class="ttc" id="agroup__time__utils_html_ga1d1c996fff6a55bf6a064991fec1f819"><div class="ttname"><a href="group__time__utils.html#ga1d1c996fff6a55bf6a064991fec1f819">time_shield::ts</a></div><div class="ttdeci">ts_t ts() noexcept</div><div class="ttdoc">Get the current UTC timestamp in seconds.</div><div class="ttdef"><b>Definition</b> <a href="time__utils_8hpp_source.html#l00173">time_utils.hpp:173</a></div></div>
 </div><!-- fragment --></li>
 <li>Determine the start of the current year: <div class="fragment"><div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#ga8b38d3c0876842f3c82ddeb4d606562a">year_start</a> = <a class="code hl_function" href="group__time__structures.html#ga640c300de87bfdee848948c354e9b66c">time_shield::start_of_year</a>(current_timestamp());</div>
 <div class="ttc" id="agroup__time__conversions_html_ga8b38d3c0876842f3c82ddeb4d606562a"><div class="ttname"><a href="#ga8b38d3c0876842f3c82ddeb4d606562a">time_shield::year_start</a></div><div class="ttdeci">TIME_SHIELD_CONSTEXPR ts_t year_start(ts_t ts=time_shield::ts())</div><div class="ttdoc">Alias for start_of_year function.</div><div class="ttdef"><b>Definition</b> <a href="time__conversion__aliases_8hpp_source.html#l01636">time_conversion_aliases.hpp:1636</a></div></div>
-<div class="ttc" id="agroup__time__structures_html_ga640c300de87bfdee848948c354e9b66c"><div class="ttname"><a href="group__time__structures.html#ga640c300de87bfdee848948c354e9b66c">time_shield::start_of_year</a></div><div class="ttdeci">TIME_SHIELD_CONSTEXPR ts_t start_of_year(ts_t ts) noexcept</div><div class="ttdoc">Get the start of the year timestamp.</div><div class="ttdef"><b>Definition</b> <a href="date__time__conversions_8hpp_source.html#l00555">date_time_conversions.hpp:555</a></div></div>
+<div class="ttc" id="agroup__time__structures_html_ga640c300de87bfdee848948c354e9b66c"><div class="ttname"><a href="group__time__structures.html#ga640c300de87bfdee848948c354e9b66c">time_shield::start_of_year</a></div><div class="ttdeci">TIME_SHIELD_CONSTEXPR ts_t start_of_year(ts_t ts) noexcept</div><div class="ttdoc">Get the start of the year timestamp.</div><div class="ttdef"><b>Definition</b> <a href="date__time__conversions_8hpp_source.html#l00770">date_time_conversions.hpp:770</a></div></div>
 </div><!-- fragment --> </li>
 </ul>
 <h2 class="groupheader">Function Documentation</h2>
@@ -2005,7 +1943,7 @@ Usage Examples:</h3>
 </div>
 </div>
 <a id="gad66661265c1484878c71b7002db8b894" name="gad66661265c1484878c71b7002db8b894"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gad66661265c1484878c71b7002db8b894">&#9670;&#160;</a></span>date_to_unix_day() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gad66661265c1484878c71b7002db8b894">&#9670;&#160;</a></span>date_to_unix_day()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2040,64 +1978,6 @@ Usage Examples:</h3>
 <dl class="section return"><dt>Returns</dt><dd>Number of days since UNIX epoch. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l01316">1316</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
-
-</div>
-</div>
-<a id="ga41e7701cd4b5c73aa96c547a1e4b03a3" name="ga41e7701cd4b5c73aa96c547a1e4b03a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga41e7701cd4b5c73aa96c547a1e4b03a3">&#9670;&#160;</a></span>date_to_unix_day() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class Year, class <a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a>, class Day&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga63a3e5f64aa9c168fc51dc05a7014f37">uday_t</a> time_shield::date_to_unix_day </td>
-          <td>(</td>
-          <td class="paramtype">Year</td>          <td class="paramname"><span class="paramname"><em>year</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a></td>          <td class="paramname"><span class="paramname"><em>month</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Day</td>          <td class="paramname"><span class="paramname"><em>day</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Convert a calendar date to UNIX day count. </p>
-<p>Calculates the number of days since the UNIX epoch (January 1, 1970) for the provided calendar date components.</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">Year</td><td>Type of the year component. </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a></td><td>Type of the month component. </td></tr>
-    <tr><td class="paramname">Day</td><td>Type of the day component. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">year</td><td>Year component of the date. </td></tr>
-    <tr><td class="paramname">month</td><td><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a> component of the date. </td></tr>
-    <tr><td class="paramname">day</td><td>Day component of the date. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Number of days since the UNIX epoch. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="unix__time__conversions_8hpp_source.html#l00068">68</a> of file <a class="el" href="unix__time__conversions_8hpp_source.html">unix_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -3256,56 +3136,6 @@ template&lt;class T = int&gt; </div>
 
 </div>
 </div>
-<a id="ga2288d8567ef5fe32edb533612171f3f9" name="ga2288d8567ef5fe32edb533612171f3f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga2288d8567ef5fe32edb533612171f3f9">&#9670;&#160;</a></span>days_between()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T = int&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">T time_shield::days_between </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a></td>          <td class="paramname"><span class="paramname"><em>start</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a></td>          <td class="paramname"><span class="paramname"><em>stop</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the number of days between two timestamps. </p>
-<p>This function calculates the number of days between two timestamps.</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The type of the return value, defaults to int. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">start</td><td>The timestamp of the start of the period. </td></tr>
-    <tr><td class="paramname">stop</td><td>The timestamp of the end of the period. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The number of days between start and stop. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="unix__time__conversions_8hpp_source.html#l00116">116</a> of file <a class="el" href="unix__time__conversions_8hpp_source.html">unix_time_conversions.hpp</a>.</p>
-
-</div>
-</div>
 <a id="ga847e5faa3ebe0a1ab699ff52076c9359" name="ga847e5faa3ebe0a1ab699ff52076c9359"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga847e5faa3ebe0a1ab699ff52076c9359">&#9670;&#160;</a></span>days_in_month() <span class="overload">[1/4]</span></h2>
 
@@ -3588,96 +3418,6 @@ template&lt;class T = int&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>Number of days in the current year.    </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversion__aliases_8hpp_source.html#l01749">1749</a> of file <a class="el" href="time__conversion__aliases_8hpp_source.html">time_conversion_aliases.hpp</a>.</p>
-
-</div>
-</div>
-<a id="gafbe4e9ea57b4a4ebc83ab13e05ac2d25" name="gafbe4e9ea57b4a4ebc83ab13e05ac2d25"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gafbe4e9ea57b4a4ebc83ab13e05ac2d25">&#9670;&#160;</a></span>days_since_epoch()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T = uday_t&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">T time_shield::days_since_epoch </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a></td>          <td class="paramname"><span class="paramname"><em>ts</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>()</span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get UNIX day. </p>
-<p>This function returns the number of days elapsed since the UNIX epoch.</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga391046d8662dee26a659793b8c0daf6a" title="Alias for Unix day count type.">unixday_t</a>). </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">ts</td><td>Timestamp in seconds (default is current timestamp). </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Number of days since the UNIX epoch. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="unix__time__conversions_8hpp_source.html#l00091">91</a> of file <a class="el" href="unix__time__conversions_8hpp_source.html">unix_time_conversions.hpp</a>.</p>
-
-</div>
-</div>
-<a id="gad2730d1019c6163cfb9188b790dc3ffb" name="gad2730d1019c6163cfb9188b790dc3ffb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gad2730d1019c6163cfb9188b790dc3ffb">&#9670;&#160;</a></span>days_since_epoch_ms()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T = uday_t&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">T time_shield::days_since_epoch_ms </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a></td>          <td class="paramname"><span class="paramname"><em>t_ms</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="#ga5ea6979cd4275492cf00833278b95c6b">time_shield::ts_ms</a>()</span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get UNIX day from milliseconds timestamp. </p>
-<p>This function returns the number of days elapsed since the UNIX epoch, given a timestamp in milliseconds.</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga391046d8662dee26a659793b8c0daf6a" title="Alias for Unix day count type.">unixday_t</a>). </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">t_ms</td><td>Timestamp in milliseconds (default is current timestamp in milliseconds). </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Number of days since the UNIX epoch. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="unix__time__conversions_8hpp_source.html#l00103">103</a> of file <a class="el" href="unix__time__conversions_8hpp_source.html">unix_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -4350,7 +4090,7 @@ template&lt;class T&gt; </div>
 </div>
 </div>
 <a id="ga4185764b74c78b0de5d56248eba51713" name="ga4185764b74c78b0de5d56248eba51713"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga4185764b74c78b0de5d56248eba51713">&#9670;&#160;</a></span>end_of_day_from_unix_day() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4185764b74c78b0de5d56248eba51713">&#9670;&#160;</a></span>end_of_day_from_unix_day()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4377,53 +4117,8 @@ template&lt;class T&gt; </div>
 
 </div>
 </div>
-<a id="gacef72061566d1b88fd191abe918387e8" name="gacef72061566d1b88fd191abe918387e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gacef72061566d1b88fd191abe918387e8">&#9670;&#160;</a></span>end_of_day_from_unix_day() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T = ts_t&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">T time_shield::end_of_day_from_unix_day </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__time__types.html#ga63a3e5f64aa9c168fc51dc05a7014f37">uday_t</a></td>          <td class="paramname"><span class="paramname"><em>unix_day</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Converts a UNIX day to a timestamp representing the end of the day in seconds. </p>
-<p>Converts a number of days since the UNIX epoch (January 1, 1970) to the corresponding timestamp in seconds at the end of the specified day (23:59:59).</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Unix timestamp in seconds since 1970‑01‑01T00:00:00Z.">ts_t</a>). </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">unix_day</td><td>The number of days since the UNIX epoch. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The timestamp in seconds representing the end of the specified UNIX day. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="unix__time__conversions_8hpp_source.html#l00155">155</a> of file <a class="el" href="unix__time__conversions_8hpp_source.html">unix_time_conversions.hpp</a>.</p>
-
-</div>
-</div>
 <a id="gaaa5a4fbea2ad2184d4cca6ee95bfbeec" name="gaaa5a4fbea2ad2184d4cca6ee95bfbeec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaaa5a4fbea2ad2184d4cca6ee95bfbeec">&#9670;&#160;</a></span>end_of_day_from_unix_day_ms() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gaaa5a4fbea2ad2184d4cca6ee95bfbeec">&#9670;&#160;</a></span>end_of_day_from_unix_day_ms()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4447,51 +4142,6 @@ template&lt;class T = ts_t&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>Timestamp at 23:59:59.999 of the specified day. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l01444">1444</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
-
-</div>
-</div>
-<a id="ga0b2e58c70c04fef189a3bb65fe27ba8d" name="ga0b2e58c70c04fef189a3bb65fe27ba8d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0b2e58c70c04fef189a3bb65fe27ba8d">&#9670;&#160;</a></span>end_of_day_from_unix_day_ms() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T = ts_ms_t&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">T time_shield::end_of_day_from_unix_day_ms </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__time__types.html#ga63a3e5f64aa9c168fc51dc05a7014f37">uday_t</a></td>          <td class="paramname"><span class="paramname"><em>unix_day</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Converts a UNIX day to a timestamp representing the end of the day in milliseconds. </p>
-<p>Converts a number of days since the UNIX epoch (January 1, 1970) to the corresponding timestamp in milliseconds at the end of the specified day (23:59:59.999).</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Unix timestamp in milliseconds since epoch.">ts_ms_t</a>). </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">unix_day</td><td>The number of days since the UNIX epoch. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The timestamp in milliseconds representing the end of the specified UNIX day. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="unix__time__conversions_8hpp_source.html#l00168">168</a> of file <a class="el" href="unix__time__conversions_8hpp_source.html">unix_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -8287,7 +7937,8 @@ template&lt;class T = year_t&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>T Year corresponding to the given timestamp.    </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>T Year corresponding to the given timestamp. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Inspired by the algorithm described in: <a href="https://www.benjoffe.com/fast-date-64">https://www.benjoffe.com/fast-date-64</a> This implementation is written from scratch (no code copied).    </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversion__aliases_8hpp_source.html#l00037">37</a> of file <a class="el" href="time__conversion__aliases_8hpp_source.html">time_conversion_aliases.hpp</a>.</p>
 
@@ -11191,51 +10842,6 @@ template&lt;class Y = year_t, class M = Month, class D = int&gt; </div>
 
 </div>
 </div>
-<a id="gabe93fcf253ad0f4485beb1a05af697b5" name="gabe93fcf253ad0f4485beb1a05af697b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gabe93fcf253ad0f4485beb1a05af697b5">&#9670;&#160;</a></span>min_since_epoch()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T = int64_t&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">T time_shield::min_since_epoch </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a></td>          <td class="paramname"><span class="paramname"><em>ts</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>()</span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get UNIX minute. </p>
-<p>This function returns the number of minutes elapsed since the UNIX epoch.</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is int64_t). </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">ts</td><td>Timestamp in seconds (default is current timestamp). </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Number of minutes since the UNIX epoch. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="unix__time__conversions_8hpp_source.html#l00206">206</a> of file <a class="el" href="unix__time__conversions_8hpp_source.html">unix_time_conversions.hpp</a>.</p>
-
-</div>
-</div>
 <a id="ga7b6f861c4819e3c630bc620bdbf55235" name="ga7b6f861c4819e3c630bc620bdbf55235"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga7b6f861c4819e3c630bc620bdbf55235">&#9670;&#160;</a></span>min_to_fsec() <span class="overload">[1/2]</span></h2>
 
@@ -13488,7 +13094,7 @@ template&lt;class T = int&gt; </div>
 </div>
 </div>
 <a id="ga196d7033d42896f229994c43d23d8143" name="ga196d7033d42896f229994c43d23d8143"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga196d7033d42896f229994c43d23d8143">&#9670;&#160;</a></span>sec_of_day() <span class="overload">[1/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga196d7033d42896f229994c43d23d8143">&#9670;&#160;</a></span>sec_of_day() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -13527,7 +13133,7 @@ template&lt;class T = int&gt; </div>
 </div>
 </div>
 <a id="ga381f1602adb0816734c5b4285bf07d01" name="ga381f1602adb0816734c5b4285bf07d01"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga381f1602adb0816734c5b4285bf07d01">&#9670;&#160;</a></span>sec_of_day() <span class="overload">[2/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga381f1602adb0816734c5b4285bf07d01">&#9670;&#160;</a></span>sec_of_day() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -13554,110 +13160,8 @@ template&lt;class T = int&gt; </div>
 
 </div>
 </div>
-<a id="gaf34569a5067e2a36ca0ecc4d6d93e5bd" name="gaf34569a5067e2a36ca0ecc4d6d93e5bd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf34569a5067e2a36ca0ecc4d6d93e5bd">&#9670;&#160;</a></span>sec_of_day() <span class="overload">[3/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T1 = int, class T2 = int&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">T1 time_shield::sec_of_day </td>
-          <td>(</td>
-          <td class="paramtype">T2</td>          <td class="paramname"><span class="paramname"><em>hour</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">T2</td>          <td class="paramname"><span class="paramname"><em>min</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">T2</td>          <td class="paramname"><span class="paramname"><em>sec</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the second of the day. </p>
-<p>This function returns a value between 0 and MAX_SEC_PER_DAY representing the second of the day, given the hour, minute, and second.</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T1</td><td>The return type of the function (default is int). </td></tr>
-    <tr><td class="paramname">T2</td><td>The type of the hour, minute, and second parameters (default is int). </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">hour</td><td>Hour of the day. </td></tr>
-    <tr><td class="paramname">min</td><td>Minute of the hour. </td></tr>
-    <tr><td class="paramname">sec</td><td>Second of the minute. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Second of the day. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="unix__time__conversions_8hpp_source.html#l00245">245</a> of file <a class="el" href="unix__time__conversions_8hpp_source.html">unix_time_conversions.hpp</a>.</p>
-
-</div>
-</div>
-<a id="ga3e0dacaaca3411cad9ab66f6d828e6c7" name="ga3e0dacaaca3411cad9ab66f6d828e6c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga3e0dacaaca3411cad9ab66f6d828e6c7">&#9670;&#160;</a></span>sec_of_day() <span class="overload">[4/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T = int&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">T time_shield::sec_of_day </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a></td>          <td class="paramname"><span class="paramname"><em>ts</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>()</span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the second of the day. </p>
-<p>This function returns a value from 0 to MAX_SEC_PER_DAY representing the second of the day.</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is int). </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">ts</td><td>Timestamp in seconds (default is current timestamp). </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Second of the day. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="unix__time__conversions_8hpp_source.html#l00218">218</a> of file <a class="el" href="unix__time__conversions_8hpp_source.html">unix_time_conversions.hpp</a>.</p>
-
-</div>
-</div>
 <a id="ga206fd5a98a831cde8bd5d184c4b48f93" name="ga206fd5a98a831cde8bd5d184c4b48f93"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga206fd5a98a831cde8bd5d184c4b48f93">&#9670;&#160;</a></span>sec_of_day_ms() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga206fd5a98a831cde8bd5d184c4b48f93">&#9670;&#160;</a></span>sec_of_day_ms()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -13681,141 +13185,6 @@ template&lt;class T = int&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>Second of the day. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l01519">1519</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
-
-</div>
-</div>
-<a id="ga6a4af93515d5ba8a74f6fb01af12634d" name="ga6a4af93515d5ba8a74f6fb01af12634d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga6a4af93515d5ba8a74f6fb01af12634d">&#9670;&#160;</a></span>sec_of_day_ms() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T = int&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">T time_shield::sec_of_day_ms </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a></td>          <td class="paramname"><span class="paramname"><em>ts_ms</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the second of the day from milliseconds timestamp. </p>
-<p>This function returns a value from 0 to MAX_SEC_PER_DAY representing the second of the day, given a timestamp in milliseconds.</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is int). </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">ts_ms</td><td>Timestamp in milliseconds. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Second of the day. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="unix__time__conversions_8hpp_source.html#l00230">230</a> of file <a class="el" href="unix__time__conversions_8hpp_source.html">unix_time_conversions.hpp</a>.</p>
-
-</div>
-</div>
-<a id="ga06e030e61df66069bde597b78c0cd03b" name="ga06e030e61df66069bde597b78c0cd03b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga06e030e61df66069bde597b78c0cd03b">&#9670;&#160;</a></span>sec_of_hour()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T = int&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">T time_shield::sec_of_hour </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a></td>          <td class="paramname"><span class="paramname"><em>ts</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>()</span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the second of the hour. </p>
-<p>This function returns a value between 0 and 3599 representing the second of the hour.</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is int). </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">ts</td><td>Timestamp in seconds (default is current timestamp). </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Second of the hour. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="unix__time__conversions_8hpp_source.html#l00274">274</a> of file <a class="el" href="unix__time__conversions_8hpp_source.html">unix_time_conversions.hpp</a>.</p>
-
-</div>
-</div>
-<a id="ga0da99e0b94fac004c8a92754e57c010a" name="ga0da99e0b94fac004c8a92754e57c010a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0da99e0b94fac004c8a92754e57c010a">&#9670;&#160;</a></span>sec_of_min()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T = int&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">T time_shield::sec_of_min </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a></td>          <td class="paramname"><span class="paramname"><em>ts</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>()</span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the second of the minute. </p>
-<p>This function returns a value between 0 and 59 representing the second of the minute.</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is int). </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">ts</td><td>Timestamp in seconds (default is current timestamp). </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Second of the minute. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="unix__time__conversions_8hpp_source.html#l00262">262</a> of file <a class="el" href="unix__time__conversions_8hpp_source.html">unix_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -15270,7 +14639,7 @@ template&lt;class T = ts_t&gt; </div>
 </div>
 </div>
 <a id="ga353ed12b0e57cce4498e7070319d86a4" name="ga353ed12b0e57cce4498e7070319d86a4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga353ed12b0e57cce4498e7070319d86a4">&#9670;&#160;</a></span>start_of_next_day_from_unix_day() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga353ed12b0e57cce4498e7070319d86a4">&#9670;&#160;</a></span>start_of_next_day_from_unix_day()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -15297,53 +14666,8 @@ template&lt;class T = ts_t&gt; </div>
 
 </div>
 </div>
-<a id="ga37d80a29a2683f3a26a3f6f49faf22b0" name="ga37d80a29a2683f3a26a3f6f49faf22b0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga37d80a29a2683f3a26a3f6f49faf22b0">&#9670;&#160;</a></span>start_of_next_day_from_unix_day() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T = ts_ms_t&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">T time_shield::start_of_next_day_from_unix_day </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__time__types.html#ga63a3e5f64aa9c168fc51dc05a7014f37">uday_t</a></td>          <td class="paramname"><span class="paramname"><em>unix_day</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Converts a UNIX day to a timestamp representing the start of the next day in seconds. </p>
-<p>Converts a number of days since the UNIX epoch (January 1, 1970) to the corresponding timestamp in seconds at the start of the next day (00:00:00).</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Unix timestamp in seconds since 1970‑01‑01T00:00:00Z.">ts_t</a>). </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">unix_day</td><td>The number of days since the UNIX epoch. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The timestamp in seconds representing the beginning of the next UNIX day. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="unix__time__conversions_8hpp_source.html#l00181">181</a> of file <a class="el" href="unix__time__conversions_8hpp_source.html">unix_time_conversions.hpp</a>.</p>
-
-</div>
-</div>
 <a id="gac7fa1427c5c6d7653ac7d308ca45f466" name="gac7fa1427c5c6d7653ac7d308ca45f466"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac7fa1427c5c6d7653ac7d308ca45f466">&#9670;&#160;</a></span>start_of_next_day_from_unix_day_ms() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gac7fa1427c5c6d7653ac7d308ca45f466">&#9670;&#160;</a></span>start_of_next_day_from_unix_day_ms()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -15367,51 +14691,6 @@ template&lt;class T = ts_ms_t&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>Timestamp at start of next day in milliseconds. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l01466">1466</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
-
-</div>
-</div>
-<a id="gad8b01fcae98d98b70bd70ba912e4b7ca" name="gad8b01fcae98d98b70bd70ba912e4b7ca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gad8b01fcae98d98b70bd70ba912e4b7ca">&#9670;&#160;</a></span>start_of_next_day_from_unix_day_ms() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T = ts_ms_t&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">T time_shield::start_of_next_day_from_unix_day_ms </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__time__types.html#ga63a3e5f64aa9c168fc51dc05a7014f37">uday_t</a></td>          <td class="paramname"><span class="paramname"><em>unix_day</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Converts a UNIX day to a timestamp representing the start of the next day in milliseconds. </p>
-<p>Converts a number of days since the UNIX epoch (January 1, 1970) to the corresponding timestamp in milliseconds at the start of the next day (00:00:00.000).</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Unix timestamp in milliseconds since epoch.">ts_ms_t</a>). </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">unix_day</td><td>The number of days since the UNIX epoch. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The timestamp in milliseconds representing the beginning of the next UNIX day. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="unix__time__conversions_8hpp_source.html#l00194">194</a> of file <a class="el" href="unix__time__conversions_8hpp_source.html">unix_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -16713,7 +15992,7 @@ template&lt;class T&gt; </div>
 
 <p>Alias for to_date_time. </p>
 <p>Converts a timestamp to a date-time structure.   </p>
-<p>This function converts a timestamp (usually an integer representing seconds since epoch) to a custom date-time structure. The default type for the timestamp is int64_t.</p>
+<p>This function converts a timestamp (usually an integer representing seconds since epoch) to a custom date-time structure. The default type for the timestamp is int64_t. </p><dl class="section note"><dt>Note</dt><dd>Inspired by the algorithm described in: <a href="https://www.benjoffe.com/fast-date-64">https://www.benjoffe.com/fast-date-64</a> This implementation is written from scratch (no code copied).</dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T1</td><td>The date-time structure type to be returned. </td></tr>
@@ -16752,7 +16031,7 @@ template&lt;class T1, class T2 = ts_t&gt; </div>
 
 <p>Alias for to_date_time function. </p>
 <p>Converts a timestamp to a date-time structure.   </p>
-<p>This function converts a timestamp (usually an integer representing seconds since epoch) to a custom date-time structure. The default type for the timestamp is int64_t.</p>
+<p>This function converts a timestamp (usually an integer representing seconds since epoch) to a custom date-time structure. The default type for the timestamp is int64_t. </p><dl class="section note"><dt>Note</dt><dd>Inspired by the algorithm described in: <a href="https://www.benjoffe.com/fast-date-64">https://www.benjoffe.com/fast-date-64</a> This implementation is written from scratch (no code copied).</dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T1</td><td>The date-time structure type to be returned. </td></tr>
@@ -16797,7 +16076,7 @@ template&lt;class T1, class T2 = ts_t&gt; </div>
 
 <p>Alias for to_date_time function. </p>
 <p>Converts a timestamp to a date-time structure.   </p>
-<p>This function converts a timestamp (usually an integer representing seconds since epoch) to a custom date-time structure. The default type for the timestamp is int64_t.</p>
+<p>This function converts a timestamp (usually an integer representing seconds since epoch) to a custom date-time structure. The default type for the timestamp is int64_t. </p><dl class="section note"><dt>Note</dt><dd>Inspired by the algorithm described in: <a href="https://www.benjoffe.com/fast-date-64">https://www.benjoffe.com/fast-date-64</a> This implementation is written from scratch (no code copied).</dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T1</td><td>The date-time structure type to be returned. </td></tr>
@@ -16953,7 +16232,7 @@ template&lt;class T1, class T2 = ts_t&gt; </div>
 
 <p>Alias for to_date_time function. </p>
 <p>Converts a timestamp to a date-time structure.   </p>
-<p>This function converts a timestamp (usually an integer representing seconds since epoch) to a custom date-time structure. The default type for the timestamp is int64_t.</p>
+<p>This function converts a timestamp (usually an integer representing seconds since epoch) to a custom date-time structure. The default type for the timestamp is int64_t. </p><dl class="section note"><dt>Note</dt><dd>Inspired by the algorithm described in: <a href="https://www.benjoffe.com/fast-date-64">https://www.benjoffe.com/fast-date-64</a> This implementation is written from scratch (no code copied).</dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T1</td><td>The date-time structure type to be returned. </td></tr>
@@ -19117,7 +18396,8 @@ template&lt;class T = int64_t&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>T Year corresponding to the given timestamp.       </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>T Year corresponding to the given timestamp. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Inspired by the algorithm described in: <a href="https://www.benjoffe.com/fast-date-64">https://www.benjoffe.com/fast-date-64</a> This implementation is written from scratch (no code copied).       </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l00235">235</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
 
@@ -19162,7 +18442,8 @@ template&lt;class T = year_t&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>T Year corresponding to the given timestamp.    </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>T Year corresponding to the given timestamp. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Inspired by the algorithm described in: <a href="https://www.benjoffe.com/fast-date-64">https://www.benjoffe.com/fast-date-64</a> This implementation is written from scratch (no code copied).    </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversion__aliases_8hpp_source.html#l00030">30</a> of file <a class="el" href="time__conversion__aliases_8hpp_source.html">time_conversion_aliases.hpp</a>.</p>
 
@@ -21105,7 +20386,7 @@ template&lt;class T = ts_t&gt; </div>
 </div>
 </div>
 <a id="ga6df0efa89f48f8c9df21ce6d154b75b3" name="ga6df0efa89f48f8c9df21ce6d154b75b3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga6df0efa89f48f8c9df21ce6d154b75b3">&#9670;&#160;</a></span>unix_day_to_ts() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6df0efa89f48f8c9df21ce6d154b75b3">&#9670;&#160;</a></span>unix_day_to_ts()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -21133,53 +20414,8 @@ template&lt;class T = ts_t&gt; </div>
 
 </div>
 </div>
-<a id="gaea15fa45a52cdbde3a9e06644a87cfac" name="gaea15fa45a52cdbde3a9e06644a87cfac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaea15fa45a52cdbde3a9e06644a87cfac">&#9670;&#160;</a></span>unix_day_to_ts() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T = ts_t&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">T time_shield::unix_day_to_ts </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__time__types.html#ga63a3e5f64aa9c168fc51dc05a7014f37">uday_t</a></td>          <td class="paramname"><span class="paramname"><em>unix_day</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Converts a UNIX day to a timestamp in seconds. </p>
-<p>Converts a number of days since the UNIX epoch (January 1, 1970) to the corresponding timestamp in seconds at the start of the specified day.</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Unix timestamp in seconds since 1970‑01‑01T00:00:00Z.">ts_t</a>). </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">unix_day</td><td>Number of days since the UNIX epoch. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The timestamp in seconds representing the beginning of the specified UNIX day. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="unix__time__conversions_8hpp_source.html#l00129">129</a> of file <a class="el" href="unix__time__conversions_8hpp_source.html">unix_time_conversions.hpp</a>.</p>
-
-</div>
-</div>
 <a id="ga1f3a672ae1b48bed343157115dc4ffdb" name="ga1f3a672ae1b48bed343157115dc4ffdb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga1f3a672ae1b48bed343157115dc4ffdb">&#9670;&#160;</a></span>unix_day_to_ts_ms() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1f3a672ae1b48bed343157115dc4ffdb">&#9670;&#160;</a></span>unix_day_to_ts_ms()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -21204,51 +20440,6 @@ template&lt;class T = ts_t&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>Timestamp at start of the day in milliseconds.    </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l01420">1420</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
-
-</div>
-</div>
-<a id="gaec533d5bb3270f12bd2052c3bae95a6e" name="gaec533d5bb3270f12bd2052c3bae95a6e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaec533d5bb3270f12bd2052c3bae95a6e">&#9670;&#160;</a></span>unix_day_to_ts_ms() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T = ts_t&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">T time_shield::unix_day_to_ts_ms </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__time__types.html#ga63a3e5f64aa9c168fc51dc05a7014f37">uday_t</a></td>          <td class="paramname"><span class="paramname"><em>unix_day</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Converts a UNIX day to a timestamp in milliseconds. </p>
-<p>Converts a number of days since the UNIX epoch (January 1, 1970) to the corresponding timestamp in milliseconds at the start of the specified day.</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Unix timestamp in seconds since 1970‑01‑01T00:00:00Z.">ts_t</a>). </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">unix_day</td><td>Number of days since the UNIX epoch. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The timestamp in milliseconds representing the beginning of the specified UNIX day. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="unix__time__conversions_8hpp_source.html#l00142">142</a> of file <a class="el" href="unix__time__conversions_8hpp_source.html">unix_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -21365,7 +20556,8 @@ template&lt;class T = int64_t&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>T Year corresponding to the given timestamp.       </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>T Year corresponding to the given timestamp. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Inspired by the algorithm described in: <a href="https://www.benjoffe.com/fast-date-64">https://www.benjoffe.com/fast-date-64</a> This implementation is written from scratch (no code copied).       </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversions_8mqh_source.html#l00231">231</a> of file <a class="el" href="time__conversions_8mqh_source.html">time_conversions.mqh</a>.</p>
 
@@ -21410,7 +20602,8 @@ template&lt;class T = year_t&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>T Year corresponding to the given timestamp.    </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>T Year corresponding to the given timestamp. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Inspired by the algorithm described in: <a href="https://www.benjoffe.com/fast-date-64">https://www.benjoffe.com/fast-date-64</a> This implementation is written from scratch (no code copied).    </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversion__aliases_8hpp_source.html#l00023">23</a> of file <a class="el" href="time__conversion__aliases_8hpp_source.html">time_conversion_aliases.hpp</a>.</p>
 
@@ -23373,50 +22566,6 @@ template&lt;class T = year_t&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>Timestamp at 00:00:00.000 of the first day of the year.    </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__conversion__aliases_8hpp_source.html#l01650">1650</a> of file <a class="el" href="time__conversion__aliases_8hpp_source.html">time_conversion_aliases.hpp</a>.</p>
-
-</div>
-</div>
-<a id="ga40ef0f060775d17045700553841865e5" name="ga40ef0f060775d17045700553841865e5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga40ef0f060775d17045700553841865e5">&#9670;&#160;</a></span>years_since_epoch()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T = year_t&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">TIME_SHIELD_CONSTEXPR T time_shield::years_since_epoch </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a></td>          <td class="paramname"><span class="paramname"><em>ts</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Converts a UNIX timestamp to a year. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The type of the year (default is <a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9" title="Year as an integer (e.g., 2024).">year_t</a>). </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">ts</td><td>UNIX timestamp. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>T Year corresponding to the given timestamp. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="unix__time__conversions_8hpp_source.html#l00025">25</a> of file <a class="el" href="unix__time__conversions_8hpp_source.html">unix_time_conversions.hpp</a>.</p>
 
 </div>
 </div>

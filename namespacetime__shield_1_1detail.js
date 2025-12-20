@@ -1,7 +1,12 @@
 var namespacetime__shield_1_1detail =
 [
+    [ "anonymous_namespace{fast_date.hpp}", "namespacetime__shield_1_1detail_1_1anonymous__namespace_02fast__date_8hpp_03.html", [
+      [ "k_doy_from_march", "namespacetime__shield_1_1detail_1_1anonymous__namespace_02fast__date_8hpp_03.html#ae90386ac1b273c5cba0a059ae70aa26d", null ]
+    ] ],
+    [ "DaySplit", "structtime__shield_1_1detail_1_1DaySplit.html", "structtime__shield_1_1detail_1_1DaySplit" ],
     [ "DueTimer", "structtime__shield_1_1detail_1_1DueTimer.html", "structtime__shield_1_1detail_1_1DueTimer" ],
     [ "FakeNtpRunner", "classtime__shield_1_1detail_1_1FakeNtpRunner.html", "classtime__shield_1_1detail_1_1FakeNtpRunner" ],
+    [ "FastDate", "structtime__shield_1_1detail_1_1FastDate.html", "structtime__shield_1_1detail_1_1FastDate" ],
     [ "IUdpTransport", "classtime__shield_1_1detail_1_1IUdpTransport.html", "classtime__shield_1_1detail_1_1IUdpTransport" ],
     [ "NtpClientCore", "classtime__shield_1_1detail_1_1NtpClientCore.html", "classtime__shield_1_1detail_1_1NtpClientCore" ],
     [ "NtpPacket", "structtime__shield_1_1detail_1_1NtpPacket.html", "structtime__shield_1_1detail_1_1NtpPacket" ],
@@ -26,9 +31,19 @@ var namespacetime__shield_1_1detail =
       [ "NTP_E_BAD_TS", "group__ntp.html#gga0415b8ea31444b289d12fa4477ab0956ad39f33af632e93e1ef5ce7dd970af607", null ]
     ] ],
     [ "current_timer_state", "namespacetime__shield_1_1detail.html#a5e9f998322af0d986f490b7526d5345d", null ],
+    [ "fast_date_from_days", "namespacetime__shield_1_1detail.html#ad8015908b646d7409a7b5fada9f5c075", null ],
+    [ "fast_date_from_days_constexpr", "namespacetime__shield_1_1detail.html#a5a89f8fabdea556865c9b9abe0991a17", null ],
+    [ "fast_days_from_date", "namespacetime__shield_1_1detail.html#af1f56d3148488a0028b175e63bae2d00", null ],
+    [ "fast_days_from_date_constexpr", "namespacetime__shield_1_1detail.html#ae7b07a465de5c2a498d609c9099bfb58", null ],
+    [ "fast_year_from_days", "namespacetime__shield_1_1detail.html#a9526a97329d89f4c84b36c22792ff35a", null ],
+    [ "fast_year_from_days_constexpr", "namespacetime__shield_1_1detail.html#ac37a65d82c36d9de43ab5e59bc437467", null ],
     [ "fill_client_packet", "namespacetime__shield_1_1detail.html#af660cd4c3b59a86868102cc8323d26fb", null ],
     [ "is_ascii_digit", "namespacetime__shield_1_1detail.html#a30bd76de8e4ab15d80d93032c4216245", null ],
     [ "is_ascii_space", "namespacetime__shield_1_1detail.html#a4c4e74dd641a830641fdb33e3d225944", null ],
+    [ "mul_hi_u64", "namespacetime__shield_1_1detail.html#a68c2a273d69c3e128beccdfb5626f640", null ],
+    [ "mul_hi_u64_constexpr", "namespacetime__shield_1_1detail.html#a5e3de882b3ea0aecee3f5db51ce8c5a6", null ],
+    [ "mul_shift_u64", "namespacetime__shield_1_1detail.html#a1ab6dcd11256fecab0b344c57622ac61", null ],
+    [ "mul_shift_u64_constexpr", "namespacetime__shield_1_1detail.html#a81b1741ca85a3c2fbe58d8021d4dc63d", null ],
     [ "normalise_month_token_lower", "namespacetime__shield_1_1detail.html#a53651fd1b0b021a4314685e7ef988c1f", null ],
     [ "normalise_month_token_lower", "namespacetime__shield_1_1detail.html#a1844457ef45fe59921b56ca62179423b", null ],
     [ "ntp_frac_to_us", "namespacetime__shield_1_1detail.html#a165f3de9ea02a3362c50f87eb144ff93", null ],
@@ -43,6 +58,7 @@ var namespacetime__shield_1_1detail =
     [ "parse_month_index", "namespacetime__shield_1_1detail.html#a6dee1c0e77efc5a9b190b31ba07ff2ed", null ],
     [ "parse_server_packet", "namespacetime__shield_1_1detail.html#ae7f2f8b871c0f6d5d03b789823abaa26", null ],
     [ "skip_spaces", "namespacetime__shield_1_1detail.html#a8732a208af06d7af4e8b4e3a670800a1", null ],
+    [ "split_unix_day", "namespacetime__shield_1_1detail.html#a6e01839da3cbd15ae7bc05bd4ac9858d", null ],
     [ "trim_copy_ascii", "namespacetime__shield_1_1detail.html#a8457db4d57439e08761c4233512af39f", null ],
     [ "trim_view_ascii", "namespacetime__shield_1_1detail.html#a9ebc306d8cf35e7bd04192e453546848", null ],
     [ "try_parse_month_index", "namespacetime__shield_1_1detail.html#ac029cb3ca44207a7235acda196e3ad1b", null ],

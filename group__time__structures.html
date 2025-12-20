@@ -149,6 +149,10 @@ Functions</h2></td></tr>
 <tr class="memitem:ga2ea065cf0bd4d934cb3c64ae54975448" id="r_ga2ea065cf0bd4d934cb3c64ae54975448"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structtime__shield_1_1DateStruct.html">DateStruct</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2ea065cf0bd4d934cb3c64ae54975448">time_shield::create_date_struct</a> (int64_t <a class="el" href="group__time__conversions.html#gadd68b9e632d1b5a43c18b116bbf105a4">year</a>, int32_t mon=1, int32_t day=1)</td></tr>
 <tr class="memdesc:ga2ea065cf0bd4d934cb3c64ae54975448"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="structtime__shield_1_1DateStruct.html" title="Structure to represent a date.">DateStruct</a> instance.  <br /></td></tr>
 <tr class="separator:ga2ea065cf0bd4d934cb3c64ae54975448"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab2f5d5f6dcbef50ff35c876ee4f0ca05" id="r_gab2f5d5f6dcbef50ff35c876ee4f0ca05"><td class="memTemplParams" colspan="2">template&lt;class T1 = DateTimeStruct, class T2 = ts_t&gt; </td></tr>
+<tr class="memitem:gab2f5d5f6dcbef50ff35c876ee4f0ca05"><td class="memTemplItemLeft" align="right" valign="top">T1&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#gab2f5d5f6dcbef50ff35c876ee4f0ca05">time_shield::legacy::to_date_time</a> (T2 <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>)</td></tr>
+<tr class="memdesc:gab2f5d5f6dcbef50ff35c876ee4f0ca05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a timestamp to a date-time structure.  <br /></td></tr>
+<tr class="separator:gab2f5d5f6dcbef50ff35c876ee4f0ca05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab6cf08da5ef726f11d460ad3e45f6800" id="r_gab6cf08da5ef726f11d460ad3e45f6800"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structtime__shield_1_1DateTimeStruct.html">DateTimeStruct</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab6cf08da5ef726f11d460ad3e45f6800">time_shield::create_date_time_struct</a> (int64_t <a class="el" href="group__time__conversions.html#gadd68b9e632d1b5a43c18b116bbf105a4">year</a>, int mon=1, int day=1, int hour=0, int min=0, int sec=0, int ms=0)</td></tr>
 <tr class="memdesc:gab6cf08da5ef726f11d460ad3e45f6800"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="structtime__shield_1_1DateTimeStruct.html" title="Structure to represent date and time.">DateTimeStruct</a> instance.  <br /></td></tr>
 <tr class="separator:gab6cf08da5ef726f11d460ad3e45f6800"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -232,6 +236,10 @@ Functions</h2></td></tr>
 <tr class="memitem:ga0cf44698c7145d5d7476e533e4a3db8d"><td class="memTemplItemLeft" align="right" valign="top">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f">fts_t</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga0cf44698c7145d5d7476e533e4a3db8d">time_shield::dt_to_ftimestamp</a> (const T &amp;date_time)</td></tr>
 <tr class="memdesc:ga0cf44698c7145d5d7476e533e4a3db8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a date-time structure to a floating-point timestamp.  <br /></td></tr>
 <tr class="separator:ga0cf44698c7145d5d7476e533e4a3db8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1269508b746b372349cf3bfb374f7546" id="r_ga1269508b746b372349cf3bfb374f7546"><td class="memTemplParams" colspan="2">template&lt;class T1 = year_t, class T2 = int&gt; </td></tr>
+<tr class="memitem:ga1269508b746b372349cf3bfb374f7546"><td class="memTemplItemLeft" align="right" valign="top">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga1269508b746b372349cf3bfb374f7546">time_shield::to_timestamp_unchecked</a> (T1 <a class="el" href="group__time__conversions.html#gadd68b9e632d1b5a43c18b116bbf105a4">year</a>, T2 month, T2 day, T2 hour=0, T2 min=0, T2 sec=0) noexcept</td></tr>
+<tr class="memdesc:ga1269508b746b372349cf3bfb374f7546"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a date and time to a timestamp without validation.  <br /></td></tr>
+<tr class="separator:ga1269508b746b372349cf3bfb374f7546"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa0d04ce5842219b3527561b9ff9aedeb" id="r_gaa0d04ce5842219b3527561b9ff9aedeb"><td class="memTemplParams" colspan="2">template&lt;class T1 = year_t, class T2 = int&gt; </td></tr>
 <tr class="memitem:gaa0d04ce5842219b3527561b9ff9aedeb"><td class="memTemplItemLeft" align="right" valign="top">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#gaa0d04ce5842219b3527561b9ff9aedeb">time_shield::to_timestamp</a> (T1 <a class="el" href="group__time__conversions.html#gadd68b9e632d1b5a43c18b116bbf105a4">year</a>, T2 month, T2 day, T2 hour=0, T2 min=0, T2 sec=0)</td></tr>
 <tr class="memdesc:gaa0d04ce5842219b3527561b9ff9aedeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a date and time to a timestamp.  <br /></td></tr>
@@ -1006,7 +1014,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Day of the month. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00753">753</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00968">968</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -1125,7 +1133,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Day of the year. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00714">714</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00929">929</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -1256,7 +1264,7 @@ template&lt;class T&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00381">381</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00596">596</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -1359,7 +1367,7 @@ template&lt;class T&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00248">248</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00463">463</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -1410,7 +1418,7 @@ template&lt;class T&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00320">320</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00535">535</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -1551,7 +1559,7 @@ template&lt;class T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Timestamp at the end of the day. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00502">502</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00717">717</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -1588,7 +1596,7 @@ template&lt;class T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Timestamp at the end of the day in milliseconds. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00522">522</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00737">737</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -1625,7 +1633,7 @@ template&lt;class T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Timestamp at the end of the day in seconds. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00512">512</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00727">727</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -1661,7 +1669,7 @@ template&lt;class T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns the timestamp of the end of the hour. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00951">951</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l01166">1166</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -1697,7 +1705,7 @@ template&lt;class T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns the timestamp of the end of the hour in milliseconds. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00965">965</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l01180">1180</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -1733,7 +1741,7 @@ template&lt;class T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns the timestamp of the end of the hour in seconds. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00958">958</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l01173">1173</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -1769,7 +1777,7 @@ template&lt;class T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns the timestamp of the end of the minute. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00979">979</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l01194">1194</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -1806,7 +1814,7 @@ template&lt;class T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Last timestamp of the current month </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00858">858</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l01073">1073</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -1849,7 +1857,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns the timestamp of the end of the period. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l01024">1024</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l01239">1239</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -1886,7 +1894,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns the timestamp of the end of the week. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00904">904</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l01119">1119</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -1923,7 +1931,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>End-of-year timestamp. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00637">637</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00852">852</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -1962,7 +1970,7 @@ template&lt;class T = year_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>End-of-year timestamp in milliseconds. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00703">703</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00918">918</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -2273,7 +2281,7 @@ template&lt;class T = Weekday&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8">Weekday</a> (SUN = 0, MON = 1, ... SAT = 6).    </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00829">829</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l01044">1044</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -2312,7 +2320,7 @@ template&lt;class T = Weekday&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8">Weekday</a> (SUN = 0, MON = 1, ... SAT = 6).    </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00836">836</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l01051">1051</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -2350,7 +2358,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Hour of day. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00997">997</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l01212">1212</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -2660,7 +2668,7 @@ template&lt;class T1 = int, class T2 = year_t, class T3 = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Day of the last Sunday of the given month and year </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00881">881</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l01096">1096</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -2697,7 +2705,7 @@ template&lt;class T1 = int, class T2 = year_t, class T3 = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Timestamp of the last Sunday of the current month </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00869">869</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l01084">1084</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -2735,7 +2743,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Minute of day. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00988">988</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l01203">1203</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -2773,7 +2781,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Minute of hour. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l01006">1006</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l01221">1221</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -2812,7 +2820,7 @@ template&lt;class T = Month&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a> of the year. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00725">725</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00940">940</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -2856,7 +2864,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The timestamp in seconds after adding the specified number of days. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00480">480</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00695">695</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -2900,7 +2908,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The timestamp in milliseconds after adding the specified number of days. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00492">492</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00707">707</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -2944,7 +2952,7 @@ template&lt;class T1 = int, class T2 = year_t, class T3 = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The number of days in the given month and year. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00787">787</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l01002">1002</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -2983,7 +2991,7 @@ template&lt;class T1 = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The number of days in the month of the given timestamp. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00801">801</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l01016">1016</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -3020,7 +3028,7 @@ template&lt;class T1 = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Start of the day timestamp. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00408">408</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00623">623</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -3057,7 +3065,7 @@ template&lt;class T1 = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Start of the day timestamp in milliseconds. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00442">442</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00657">657</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -3094,7 +3102,7 @@ template&lt;class T1 = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Start of the day timestamp in seconds. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00431">431</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00646">646</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -3131,7 +3139,7 @@ template&lt;class T1 = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Timestamp at the start of the hour. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00926">926</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l01141">1141</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -3167,7 +3175,7 @@ template&lt;class T1 = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Timestamp at the start of the hour in milliseconds. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00944">944</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l01159">1159</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -3204,7 +3212,7 @@ template&lt;class T1 = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Timestamp at the start of the hour in seconds. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00936">936</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l01151">1151</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -3240,7 +3248,7 @@ template&lt;class T1 = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns the timestamp of the beginning of the minute. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00972">972</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l01187">1187</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -3277,7 +3285,7 @@ template&lt;class T1 = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Timestamp at the start of the current month </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00847">847</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l01062">1062</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -3321,7 +3329,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The timestamp in seconds representing the beginning of the specified future day. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00455">455</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00670">670</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -3365,7 +3373,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The timestamp in milliseconds representing the beginning of the specified future day. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00468">468</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00683">683</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -3408,7 +3416,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns the timestamp of the start of the period. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l01015">1015</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l01230">1230</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -3452,7 +3460,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Timestamp of the start of the previous day. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00420">420</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00635">635</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -3489,7 +3497,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns the timestamp of the start of Saturday. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00915">915</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l01130">1130</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -3526,7 +3534,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns the timestamp of the beginning of the week. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00893">893</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l01108">1108</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -3563,7 +3571,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Start of the year timestamp. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00555">555</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00770">770</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -3601,7 +3609,7 @@ template&lt;class T = year_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Timestamp at 00:00:00 of the first day of the year. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00530">530</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00745">745</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -3646,7 +3654,7 @@ template&lt;class T = year_t&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00544">544</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00759">759</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -3682,7 +3690,7 @@ template&lt;class T = year_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Timestamp at 00:00:00.000 of the first day of the year. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00627">627</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00842">842</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -3829,7 +3837,7 @@ template&lt;class T&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00396">396</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00611">611</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -3910,7 +3918,7 @@ template&lt;class T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Timestamp representing the given date and time. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00268">268</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00483">483</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -3947,7 +3955,7 @@ template&lt;class T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Timestamp in milliseconds representing the given date and time. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00333">333</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00548">548</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -3989,8 +3997,8 @@ template&lt;class T&gt; </div>
 
 </div>
 </div>
-<a id="gabac8bf6f17030312b53ebdff04a034a7" name="gabac8bf6f17030312b53ebdff04a034a7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gabac8bf6f17030312b53ebdff04a034a7">&#9670;&#160;</a></span>to_date_time()</h2>
+<a id="gab2f5d5f6dcbef50ff35c876ee4f0ca05" name="gab2f5d5f6dcbef50ff35c876ee4f0ca05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab2f5d5f6dcbef50ff35c876ee4f0ca05">&#9670;&#160;</a></span>to_date_time() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3998,7 +4006,7 @@ template&lt;class T&gt; </div>
 template&lt;class T1 = DateTimeStruct, class T2 = ts_t&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">T1 time_shield::to_date_time </td>
+          <td class="memname">T1 time_shield::legacy::to_date_time </td>
           <td>(</td>
           <td class="paramtype">T2</td>          <td class="paramname"><span class="paramname"><em>ts</em></span></td><td>)</td>
           <td></td>
@@ -4023,7 +4031,45 @@ template&lt;class T1 = DateTimeStruct, class T2 = ts_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A date-time structure of type T1. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00041">41</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00045">45</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gabac8bf6f17030312b53ebdff04a034a7" name="gabac8bf6f17030312b53ebdff04a034a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabac8bf6f17030312b53ebdff04a034a7">&#9670;&#160;</a></span>to_date_time() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T1 = DateTimeStruct, class T2 = ts_t&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">T1 time_shield::to_date_time </td>
+          <td>(</td>
+          <td class="paramtype">T2</td>          <td class="paramname"><span class="paramname"><em>ts</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Converts a timestamp to a date-time structure. </p>
+<p>This function converts a timestamp (usually an integer representing seconds since epoch) to a custom date-time structure. The default type for the timestamp is int64_t. </p><dl class="section note"><dt>Note</dt><dd>Inspired by the algorithm described in: <a href="https://www.benjoffe.com/fast-date-64">https://www.benjoffe.com/fast-date-64</a> This implementation is written from scratch (no code copied).</dd></dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T1</td><td>The date-time structure type to be returned. </td></tr>
+    <tr><td class="paramname">T2</td><td>The type of the timestamp (default is int64_t). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ts</td><td>The timestamp to be converted. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A date-time structure of type T1. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00158">158</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -4067,7 +4113,7 @@ template&lt;class T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>T A date-time structure with the corresponding date and time components. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00144">144</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00191">191</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -4090,7 +4136,7 @@ template&lt;class T1, class T2 = ts_t&gt; </div>
 
 <p>Alias for to_date_time function. </p>
 <p>Converts a timestamp to a date-time structure.   </p>
-<p>This function converts a timestamp (usually an integer representing seconds since epoch) to a custom date-time structure. The default type for the timestamp is int64_t.</p>
+<p>This function converts a timestamp (usually an integer representing seconds since epoch) to a custom date-time structure. The default type for the timestamp is int64_t. </p><dl class="section note"><dt>Note</dt><dd>Inspired by the algorithm described in: <a href="https://www.benjoffe.com/fast-date-64">https://www.benjoffe.com/fast-date-64</a> This implementation is written from scratch (no code copied).</dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T1</td><td>The date-time structure type to be returned. </td></tr>
@@ -4135,7 +4181,7 @@ template&lt;class T1, class T2 = ts_t&gt; </div>
 
 <p>Alias for to_date_time function. </p>
 <p>Converts a timestamp to a date-time structure.   </p>
-<p>This function converts a timestamp (usually an integer representing seconds since epoch) to a custom date-time structure. The default type for the timestamp is int64_t.</p>
+<p>This function converts a timestamp (usually an integer representing seconds since epoch) to a custom date-time structure. The default type for the timestamp is int64_t. </p><dl class="section note"><dt>Note</dt><dd>Inspired by the algorithm described in: <a href="https://www.benjoffe.com/fast-date-64">https://www.benjoffe.com/fast-date-64</a> This implementation is written from scratch (no code copied).</dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T1</td><td>The date-time structure type to be returned. </td></tr>
@@ -4262,7 +4308,7 @@ template&lt;class T1, class T2 = ts_t&gt; </div>
 
 <p>Alias for to_date_time function. </p>
 <p>Converts a timestamp to a date-time structure.   </p>
-<p>This function converts a timestamp (usually an integer representing seconds since epoch) to a custom date-time structure. The default type for the timestamp is int64_t.</p>
+<p>This function converts a timestamp (usually an integer representing seconds since epoch) to a custom date-time structure. The default type for the timestamp is int64_t. </p><dl class="section note"><dt>Note</dt><dd>Inspired by the algorithm described in: <a href="https://www.benjoffe.com/fast-date-64">https://www.benjoffe.com/fast-date-64</a> This implementation is written from scratch (no code copied).</dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T1</td><td>The date-time structure type to be returned. </td></tr>
@@ -4507,7 +4553,7 @@ template&lt;class T1 = year_t, class T2 = int, class T3 = int&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00357">357</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00572">572</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -4711,6 +4757,7 @@ template&lt;class T1 = year_t, class T2 = int&gt; </div>
 <p>Converts a date and time to a timestamp. </p>
 <p>This function converts a given date and time to a timestamp, which is the number of seconds since the Unix epoch (January 1, 1970).</p>
 <p>If the <code>day</code> is ≥ 1970 and <code>year</code> ≤ 31, parameters are assumed to be in DD-MM-YYYY order and are automatically reordered.</p>
+<dl class="section note"><dt>Note</dt><dd>Inspired by the algorithm described in: <a href="https://www.benjoffe.com/fast-date-64">https://www.benjoffe.com/fast-date-64</a> This implementation is written from scratch (no code copied).</dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T1</td><td>The type of the year parameter (default is int64_t). </td></tr>
@@ -4755,7 +4802,7 @@ template&lt;class T1 = year_t, class T2 = int&gt; </div>
 <dd>
 <a class="el" href="group__time__conversions.html#ga5efcc46cc96ba400832647939b620280" title="Alias for to_timestamp.">to_ts()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00182">182</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00434">434</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -4894,7 +4941,84 @@ template&lt;class T1 = year_t, class T2 = int&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00298">298</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00513">513</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga1269508b746b372349cf3bfb374f7546" name="ga1269508b746b372349cf3bfb374f7546"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1269508b746b372349cf3bfb374f7546">&#9670;&#160;</a></span>to_timestamp_unchecked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T1 = year_t, class T2 = int&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> time_shield::to_timestamp_unchecked </td>
+          <td>(</td>
+          <td class="paramtype">T1</td>          <td class="paramname"><span class="paramname"><em>year</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T2</td>          <td class="paramname"><span class="paramname"><em>month</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T2</td>          <td class="paramname"><span class="paramname"><em>day</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T2</td>          <td class="paramname"><span class="paramname"><em>hour</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T2</td>          <td class="paramname"><span class="paramname"><em>min</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T2</td>          <td class="paramname"><span class="paramname"><em>sec</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts a date and time to a timestamp without validation. </p>
+<p>This function converts a given date and time to a timestamp, which is the number of seconds since the Unix epoch (January 1, 1970).</p>
+<p>If the <code>day</code> is ≥ 1970 and <code>year</code> ≤ 31, parameters are assumed to be in DD-MM-YYYY order and are automatically reordered.</p>
+<dl class="section note"><dt>Note</dt><dd>Inspired by the algorithm described in: <a href="https://www.benjoffe.com/fast-date-64">https://www.benjoffe.com/fast-date-64</a> This implementation is written from scratch (no code copied).</dd></dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T1</td><td>The type of the year parameter (default is int64_t). </td></tr>
+    <tr><td class="paramname">T2</td><td>The type of the other date and time parameters (default is int). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">year</td><td>The year value. </td></tr>
+    <tr><td class="paramname">month</td><td>The month value. </td></tr>
+    <tr><td class="paramname">day</td><td>The day value. </td></tr>
+    <tr><td class="paramname">hour</td><td>The hour value (default is 0). </td></tr>
+    <tr><td class="paramname">min</td><td>The minute value (default is 0). </td></tr>
+    <tr><td class="paramname">sec</td><td>The second value (default is 0). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Timestamp representing the given date and time. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00380">380</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -5299,7 +5423,7 @@ template&lt;class T = Weekday&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8">Weekday</a> (SUN = 0, MON = 1, ... SAT = 6). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00814">814</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l01029">1029</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -5337,7 +5461,7 @@ template&lt;class T = Weekday&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8">Weekday</a> (SUN = 0, MON = 1, ... SAT = 6). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l00822">822</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date__time__conversions_8hpp_source.html#l01037">1037</a> of file <a class="el" href="date__time__conversions_8hpp_source.html">date_time_conversions.hpp</a>.</p>
 
 </div>
 </div>

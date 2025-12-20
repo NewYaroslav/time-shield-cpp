@@ -85,13 +85,13 @@ var NAVTREEINDEX =
 "classtime__shield_1_1DateTime.html#afd3ae5c2b4a50d3997b139bd152c0886",
 "classtime__shield_1_1Timer.html#a27d7a174235fbd7e4d4f9a9709a22c95",
 "classtime__shield_1_1detail_1_1FakeNtpRunner.html#ad4af303ea14f5c1655e23d8f0fbd0ef6",
-"group__time__constants.html#ga917a14b2c8ee5cb4f9978fec639b8fd6",
-"group__time__conversions.html#ga57ffd42aa8dd5195fecdd9d1dc7db0da",
-"group__time__conversions.html#gacee68275964c2c18bdefbe4ed6ea25ca",
-"group__time__enums.html#ggac2ffd79e06ab94cf1bb50fec432c68a8a939f4fa15cc31f9b2ec0fc54fed08595",
-"group__time__structures.html#ga31f445e3e85cba85035f71b35de12e25",
+"group__time__constants.html#ga8da1e806bac8c527d038c2b2c4558a11",
+"group__time__conversions.html#ga59da94c04d571a9b7aebca0ac2d1046a",
+"group__time__conversions.html#gad4465a91d40754de5bc02b437542a426",
+"group__time__enums.html#ggac2ffd79e06ab94cf1bb50fec432c68a8adc464480c1df7794618298c3cfe74a98",
+"group__time__structures.html#ga7b74948156af28b57aeaada2d7beba49",
 "namespacetime__shield.html#ab21cf0204fe3d8aeb0041835d32f0f74",
-"structtime__shield_1_1detail_1_1TimerState.html#ab3dcab3f847a6969a67b87e572c963c4"
+"structtime__shield_1_1detail_1_1RunningTimerScope.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

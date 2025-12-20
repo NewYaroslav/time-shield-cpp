@@ -7,8 +7,10 @@ var annotated_dup =
         [ "MoonQuarterInstants", "structtime__shield_1_1astronomy_1_1MoonQuarterInstants.html", "structtime__shield_1_1astronomy_1_1MoonQuarterInstants" ]
       ] ],
       [ "detail", "namespacetime__shield_1_1detail.html", [
+        [ "DaySplit", "structtime__shield_1_1detail_1_1DaySplit.html", "structtime__shield_1_1detail_1_1DaySplit" ],
         [ "DueTimer", "structtime__shield_1_1detail_1_1DueTimer.html", "structtime__shield_1_1detail_1_1DueTimer" ],
         [ "FakeNtpRunner", "classtime__shield_1_1detail_1_1FakeNtpRunner.html", "classtime__shield_1_1detail_1_1FakeNtpRunner" ],
+        [ "FastDate", "structtime__shield_1_1detail_1_1FastDate.html", "structtime__shield_1_1detail_1_1FastDate" ],
         [ "IUdpTransport", "classtime__shield_1_1detail_1_1IUdpTransport.html", "classtime__shield_1_1detail_1_1IUdpTransport" ],
         [ "NtpClientCore", "classtime__shield_1_1detail_1_1NtpClientCore.html", "classtime__shield_1_1detail_1_1NtpClientCore" ],
         [ "NtpPacket", "structtime__shield_1_1detail_1_1NtpPacket.html", "structtime__shield_1_1detail_1_1NtpPacket" ],

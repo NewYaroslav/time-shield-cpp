@@ -109,6 +109,7 @@ $(function(){initNavTree('namespacetime__shield_1_1detail.html',''); initResizab
 
 <div class="header">
   <div class="summary">
+<a href="#namespaces">Namespaces</a> &#124;
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
@@ -118,13 +119,22 @@ $(function(){initNavTree('namespacetime__shield_1_1detail.html',''); initResizab
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetime__shield_1_1detail_1_1anonymous__namespace_02fast__date_8hpp_03.html">anonymous_namespace{fast_date.hpp}</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtime__shield_1_1detail_1_1DaySplit.html">DaySplit</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtime__shield_1_1detail_1_1DueTimer.html">DueTimer</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper structure that represents a timer ready to run.  <a href="structtime__shield_1_1detail_1_1DueTimer.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtime__shield_1_1detail_1_1FakeNtpRunner.html">FakeNtpRunner</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fake runner for tests without network access.  <a href="classtime__shield_1_1detail_1_1FakeNtpRunner.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtime__shield_1_1detail_1_1FastDate.html">FastDate</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtime__shield_1_1detail_1_1IUdpTransport.html">IUdpTransport</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract UDP transport interface for NTP queries.  <a href="classtime__shield_1_1detail_1_1IUdpTransport.html#details">More...</a><br /></td></tr>
@@ -185,6 +195,39 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a6e01839da3cbd15ae7bc05bd4ac9858d" id="r_a6e01839da3cbd15ae7bc05bd4ac9858d"><td class="memItemLeft" align="right" valign="top">TIME_SHIELD_CONSTEXPR <a class="el" href="structtime__shield_1_1detail_1_1DaySplit.html">DaySplit</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e01839da3cbd15ae7bc05bd4ac9858d">split_unix_day</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> p_ts) noexcept</td></tr>
+<tr class="memdesc:a6e01839da3cbd15ae7bc05bd4ac9858d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Split UNIX seconds into whole days and seconds-of-day.  <br /></td></tr>
+<tr class="separator:a6e01839da3cbd15ae7bc05bd4ac9858d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7b07a465de5c2a498d609c9099bfb58" id="r_ae7b07a465de5c2a498d609c9099bfb58"><td class="memItemLeft" align="right" valign="top">TIME_SHIELD_CONSTEXPR int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae7b07a465de5c2a498d609c9099bfb58">fast_days_from_date_constexpr</a> (int64_t p_year, int p_month, int p_day) noexcept</td></tr>
+<tr class="memdesc:ae7b07a465de5c2a498d609c9099bfb58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert date to days since Unix epoch using a fast constexpr algorithm.  <br /></td></tr>
+<tr class="separator:ae7b07a465de5c2a498d609c9099bfb58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1f56d3148488a0028b175e63bae2d00" id="r_af1f56d3148488a0028b175e63bae2d00"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af1f56d3148488a0028b175e63bae2d00">fast_days_from_date</a> (int64_t p_year, int p_month, int p_day) noexcept</td></tr>
+<tr class="memdesc:af1f56d3148488a0028b175e63bae2d00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert date to days since Unix epoch using a fast algorithm.  <br /></td></tr>
+<tr class="separator:af1f56d3148488a0028b175e63bae2d00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a89f8fabdea556865c9b9abe0991a17" id="r_a5a89f8fabdea556865c9b9abe0991a17"><td class="memItemLeft" align="right" valign="top">TIME_SHIELD_CONSTEXPR <a class="el" href="structtime__shield_1_1detail_1_1FastDate.html">FastDate</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5a89f8fabdea556865c9b9abe0991a17">fast_date_from_days_constexpr</a> (int64_t p_days) noexcept</td></tr>
+<tr class="memdesc:a5a89f8fabdea556865c9b9abe0991a17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert days since Unix epoch to date using a fast constexpr algorithm.  <br /></td></tr>
+<tr class="separator:a5a89f8fabdea556865c9b9abe0991a17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8015908b646d7409a7b5fada9f5c075" id="r_ad8015908b646d7409a7b5fada9f5c075"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structtime__shield_1_1detail_1_1FastDate.html">FastDate</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad8015908b646d7409a7b5fada9f5c075">fast_date_from_days</a> (int64_t p_days) noexcept</td></tr>
+<tr class="memdesc:ad8015908b646d7409a7b5fada9f5c075"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert days since Unix epoch to date using a fast algorithm.  <br /></td></tr>
+<tr class="separator:ad8015908b646d7409a7b5fada9f5c075"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac37a65d82c36d9de43ab5e59bc437467" id="r_ac37a65d82c36d9de43ab5e59bc437467"><td class="memItemLeft" align="right" valign="top">TIME_SHIELD_CONSTEXPR int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac37a65d82c36d9de43ab5e59bc437467">fast_year_from_days_constexpr</a> (int64_t p_days) noexcept</td></tr>
+<tr class="memdesc:ac37a65d82c36d9de43ab5e59bc437467"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert days since Unix epoch to year using a fast constexpr algorithm.  <br /></td></tr>
+<tr class="separator:ac37a65d82c36d9de43ab5e59bc437467"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9526a97329d89f4c84b36c22792ff35a" id="r_a9526a97329d89f4c84b36c22792ff35a"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9526a97329d89f4c84b36c22792ff35a">fast_year_from_days</a> (int64_t p_days) noexcept</td></tr>
+<tr class="memdesc:a9526a97329d89f4c84b36c22792ff35a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert days since Unix epoch to year using a fast algorithm.  <br /></td></tr>
+<tr class="separator:a9526a97329d89f4c84b36c22792ff35a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e3de882b3ea0aecee3f5db51ce8c5a6" id="r_a5e3de882b3ea0aecee3f5db51ce8c5a6"><td class="memItemLeft" align="right" valign="top">TIME_SHIELD_CONSTEXPR uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e3de882b3ea0aecee3f5db51ce8c5a6">mul_hi_u64_constexpr</a> (uint64_t p_a, uint64_t p_b) noexcept</td></tr>
+<tr class="memdesc:a5e3de882b3ea0aecee3f5db51ce8c5a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the high 64 bits of a 64x64-bit multiplication (constexpr variant).  <br /></td></tr>
+<tr class="separator:a5e3de882b3ea0aecee3f5db51ce8c5a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68c2a273d69c3e128beccdfb5626f640" id="r_a68c2a273d69c3e128beccdfb5626f640"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a68c2a273d69c3e128beccdfb5626f640">mul_hi_u64</a> (uint64_t p_a, uint64_t p_b) noexcept</td></tr>
+<tr class="memdesc:a68c2a273d69c3e128beccdfb5626f640"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the high 64 bits of a 64x64-bit multiplication.  <br /></td></tr>
+<tr class="separator:a68c2a273d69c3e128beccdfb5626f640"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ab6dcd11256fecab0b344c57622ac61" id="r_a1ab6dcd11256fecab0b344c57622ac61"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ab6dcd11256fecab0b344c57622ac61">mul_shift_u64</a> (uint64_t p_x, uint64_t p_c) noexcept</td></tr>
+<tr class="memdesc:a1ab6dcd11256fecab0b344c57622ac61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for mul_hi_u64 used for shift-by-64 operations.  <br /></td></tr>
+<tr class="separator:a1ab6dcd11256fecab0b344c57622ac61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81b1741ca85a3c2fbe58d8021d4dc63d" id="r_a81b1741ca85a3c2fbe58d8021d4dc63d"><td class="memItemLeft" align="right" valign="top">TIME_SHIELD_CONSTEXPR uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81b1741ca85a3c2fbe58d8021d4dc63d">mul_shift_u64_constexpr</a> (uint64_t p_x, uint64_t p_c) noexcept</td></tr>
+<tr class="memdesc:a81b1741ca85a3c2fbe58d8021d4dc63d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for mul_hi_u64_constexpr used for shift-by-64 operations.  <br /></td></tr>
+<tr class="separator:a81b1741ca85a3c2fbe58d8021d4dc63d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32c9d9990baaee38adbd0afca3d579dc" id="r_a32c9d9990baaee38adbd0afca3d579dc"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a32c9d9990baaee38adbd0afca3d579dc">ntp_li</a> (uint8_t li_vn_mode) noexcept</td></tr>
 <tr class="memdesc:a32c9d9990baaee38adbd0afca3d579dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract leap indicator from LI/VN/Mode field.  <br /></td></tr>
 <tr class="separator:a32c9d9990baaee38adbd0afca3d579dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -349,6 +392,204 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="ad8015908b646d7409a7b5fada9f5c075" name="ad8015908b646d7409a7b5fada9f5c075"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8015908b646d7409a7b5fada9f5c075">&#9670;&#160;</a></span>fast_date_from_days()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structtime__shield_1_1detail_1_1FastDate.html">FastDate</a> time_shield::detail::fast_date_from_days </td>
+          <td>(</td>
+          <td class="paramtype">int64_t</td>          <td class="paramname"><span class="paramname"><em>p_days</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert days since Unix epoch to date using a fast algorithm. </p>
+<dl class="section note"><dt>Note</dt><dd>Inspired by the algorithm described in: <a href="https://www.benjoffe.com/fast-date-64">https://www.benjoffe.com/fast-date-64</a> This implementation is written from scratch (no code copied). </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="fast__date_8hpp_source.html#l00156">156</a> of file <a class="el" href="fast__date_8hpp_source.html">fast_date.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a5a89f8fabdea556865c9b9abe0991a17" name="a5a89f8fabdea556865c9b9abe0991a17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a89f8fabdea556865c9b9abe0991a17">&#9670;&#160;</a></span>fast_date_from_days_constexpr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TIME_SHIELD_CONSTEXPR <a class="el" href="structtime__shield_1_1detail_1_1FastDate.html">FastDate</a> time_shield::detail::fast_date_from_days_constexpr </td>
+          <td>(</td>
+          <td class="paramtype">int64_t</td>          <td class="paramname"><span class="paramname"><em>p_days</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert days since Unix epoch to date using a fast constexpr algorithm. </p>
+<dl class="section note"><dt>Note</dt><dd>Inspired by the algorithm described in: <a href="https://www.benjoffe.com/fast-date-64">https://www.benjoffe.com/fast-date-64</a> This implementation is written from scratch (no code copied). </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="fast__date_8hpp_source.html#l00118">118</a> of file <a class="el" href="fast__date_8hpp_source.html">fast_date.hpp</a>.</p>
+
+</div>
+</div>
+<a id="af1f56d3148488a0028b175e63bae2d00" name="af1f56d3148488a0028b175e63bae2d00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1f56d3148488a0028b175e63bae2d00">&#9670;&#160;</a></span>fast_days_from_date()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64_t time_shield::detail::fast_days_from_date </td>
+          <td>(</td>
+          <td class="paramtype">int64_t</td>          <td class="paramname"><span class="paramname"><em>p_year</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>p_month</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>p_day</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert date to days since Unix epoch using a fast algorithm. </p>
+<dl class="section note"><dt>Note</dt><dd>Inspired by the algorithm described in: <a href="https://www.benjoffe.com/fast-date-64">https://www.benjoffe.com/fast-date-64</a> This implementation is written from scratch (no code copied). </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="fast__date_8hpp_source.html#l00090">90</a> of file <a class="el" href="fast__date_8hpp_source.html">fast_date.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ae7b07a465de5c2a498d609c9099bfb58" name="ae7b07a465de5c2a498d609c9099bfb58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7b07a465de5c2a498d609c9099bfb58">&#9670;&#160;</a></span>fast_days_from_date_constexpr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TIME_SHIELD_CONSTEXPR int64_t time_shield::detail::fast_days_from_date_constexpr </td>
+          <td>(</td>
+          <td class="paramtype">int64_t</td>          <td class="paramname"><span class="paramname"><em>p_year</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>p_month</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>p_day</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert date to days since Unix epoch using a fast constexpr algorithm. </p>
+<dl class="section note"><dt>Note</dt><dd>Inspired by the algorithm described in: <a href="https://www.benjoffe.com/fast-date-64">https://www.benjoffe.com/fast-date-64</a> This implementation is written from scratch (no code copied). </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="fast__date_8hpp_source.html#l00059">59</a> of file <a class="el" href="fast__date_8hpp_source.html">fast_date.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a9526a97329d89f4c84b36c22792ff35a" name="a9526a97329d89f4c84b36c22792ff35a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9526a97329d89f4c84b36c22792ff35a">&#9670;&#160;</a></span>fast_year_from_days()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64_t time_shield::detail::fast_year_from_days </td>
+          <td>(</td>
+          <td class="paramtype">int64_t</td>          <td class="paramname"><span class="paramname"><em>p_days</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert days since Unix epoch to year using a fast algorithm. </p>
+<dl class="section note"><dt>Note</dt><dd>Inspired by the algorithm described in: <a href="https://www.benjoffe.com/fast-date-64">https://www.benjoffe.com/fast-date-64</a> This implementation is written from scratch (no code copied). </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="fast__date_8hpp_source.html#l00220">220</a> of file <a class="el" href="fast__date_8hpp_source.html">fast_date.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ac37a65d82c36d9de43ab5e59bc437467" name="ac37a65d82c36d9de43ab5e59bc437467"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac37a65d82c36d9de43ab5e59bc437467">&#9670;&#160;</a></span>fast_year_from_days_constexpr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TIME_SHIELD_CONSTEXPR int64_t time_shield::detail::fast_year_from_days_constexpr </td>
+          <td>(</td>
+          <td class="paramtype">int64_t</td>          <td class="paramname"><span class="paramname"><em>p_days</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert days since Unix epoch to year using a fast constexpr algorithm. </p>
+<dl class="section note"><dt>Note</dt><dd>Inspired by the algorithm described in: <a href="https://www.benjoffe.com/fast-date-64">https://www.benjoffe.com/fast-date-64</a> This implementation is written from scratch (no code copied). </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="fast__date_8hpp_source.html#l00194">194</a> of file <a class="el" href="fast__date_8hpp_source.html">fast_date.hpp</a>.</p>
+
+</div>
+</div>
 <a id="af660cd4c3b59a86868102cc8323d26fb" name="af660cd4c3b59a86868102cc8323d26fb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af660cd4c3b59a86868102cc8323d26fb">&#9670;&#160;</a></span>fill_client_packet()</h2>
 
@@ -437,6 +678,138 @@ Variables</h2></td></tr>
 <p>Check whether character is ASCII whitespace. </p>
 
 <p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00214">214</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a68c2a273d69c3e128beccdfb5626f640" name="a68c2a273d69c3e128beccdfb5626f640"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68c2a273d69c3e128beccdfb5626f640">&#9670;&#160;</a></span>mul_hi_u64()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t time_shield::detail::mul_hi_u64 </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t</td>          <td class="paramname"><span class="paramname"><em>p_a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t</td>          <td class="paramname"><span class="paramname"><em>p_b</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the high 64 bits of a 64x64-bit multiplication. </p>
+
+<p class="definition">Definition at line <a class="el" href="mul__hi_8hpp_source.html#l00035">35</a> of file <a class="el" href="mul__hi_8hpp_source.html">mul_hi.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a5e3de882b3ea0aecee3f5db51ce8c5a6" name="a5e3de882b3ea0aecee3f5db51ce8c5a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e3de882b3ea0aecee3f5db51ce8c5a6">&#9670;&#160;</a></span>mul_hi_u64_constexpr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TIME_SHIELD_CONSTEXPR uint64_t time_shield::detail::mul_hi_u64_constexpr </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t</td>          <td class="paramname"><span class="paramname"><em>p_a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t</td>          <td class="paramname"><span class="paramname"><em>p_b</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the high 64 bits of a 64x64-bit multiplication (constexpr variant). </p>
+
+<p class="definition">Definition at line <a class="el" href="mul__hi_8hpp_source.html#l00019">19</a> of file <a class="el" href="mul__hi_8hpp_source.html">mul_hi.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a1ab6dcd11256fecab0b344c57622ac61" name="a1ab6dcd11256fecab0b344c57622ac61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ab6dcd11256fecab0b344c57622ac61">&#9670;&#160;</a></span>mul_shift_u64()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t time_shield::detail::mul_shift_u64 </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t</td>          <td class="paramname"><span class="paramname"><em>p_x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t</td>          <td class="paramname"><span class="paramname"><em>p_c</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Alias for mul_hi_u64 used for shift-by-64 operations. </p>
+
+<p class="definition">Definition at line <a class="el" href="mul__hi_8hpp_source.html#l00047">47</a> of file <a class="el" href="mul__hi_8hpp_source.html">mul_hi.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a81b1741ca85a3c2fbe58d8021d4dc63d" name="a81b1741ca85a3c2fbe58d8021d4dc63d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81b1741ca85a3c2fbe58d8021d4dc63d">&#9670;&#160;</a></span>mul_shift_u64_constexpr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TIME_SHIELD_CONSTEXPR uint64_t time_shield::detail::mul_shift_u64_constexpr </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t</td>          <td class="paramname"><span class="paramname"><em>p_x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t</td>          <td class="paramname"><span class="paramname"><em>p_c</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Alias for mul_hi_u64_constexpr used for shift-by-64 operations. </p>
+
+<p class="definition">Definition at line <a class="el" href="mul__hi_8hpp_source.html#l00052">52</a> of file <a class="el" href="mul__hi_8hpp_source.html">mul_hi.hpp</a>.</p>
 
 </div>
 </div>
@@ -958,6 +1331,35 @@ Variables</h2></td></tr>
 <p>Skip ASCII whitespace. </p>
 
 <p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00224">224</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a6e01839da3cbd15ae7bc05bd4ac9858d" name="a6e01839da3cbd15ae7bc05bd4ac9858d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e01839da3cbd15ae7bc05bd4ac9858d">&#9670;&#160;</a></span>split_unix_day()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TIME_SHIELD_CONSTEXPR <a class="el" href="structtime__shield_1_1detail_1_1DaySplit.html">DaySplit</a> time_shield::detail::split_unix_day </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a></td>          <td class="paramname"><span class="paramname"><em>p_ts</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Split UNIX seconds into whole days and seconds-of-day. </p>
+
+<p class="definition">Definition at line <a class="el" href="fast__date_8hpp_source.html#l00039">39</a> of file <a class="el" href="fast__date_8hpp_source.html">fast_date.hpp</a>.</p>
 
 </div>
 </div>

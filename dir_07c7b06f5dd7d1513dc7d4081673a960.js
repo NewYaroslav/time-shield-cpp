@@ -1,5 +1,6 @@
 var dir_07c7b06f5dd7d1513dc7d4081673a960 =
 [
+    [ "detail", "dir_e54ce41abb4035070a2b7844082d8e61.html", "dir_e54ce41abb4035070a2b7844082d8e61" ],
     [ "ntp_client", "dir_f5910b02c33f121c56d84798d1ea4304.html", "dir_f5910b02c33f121c56d84798d1ea4304" ],
     [ "astronomy_conversions.hpp", "astronomy__conversions_8hpp.html", "astronomy__conversions_8hpp" ],
     [ "config.hpp", "config_8hpp.html", null ],

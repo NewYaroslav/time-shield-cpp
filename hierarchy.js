@@ -5,10 +5,12 @@ var hierarchy =
     [ "time_shield::DateStruct", "structtime__shield_1_1DateStruct.html", null ],
     [ "time_shield::DateTime", "classtime__shield_1_1DateTime.html", null ],
     [ "time_shield::DateTimeStruct", "structtime__shield_1_1DateTimeStruct.html", null ],
+    [ "time_shield::detail::DaySplit", "structtime__shield_1_1detail_1_1DaySplit.html", null ],
     [ "time_shield::DeadlineTimer", "classtime__shield_1_1DeadlineTimer.html", null ],
     [ "time_shield::detail::DueTimer", "structtime__shield_1_1detail_1_1DueTimer.html", null ],
     [ "time_shield::ElapsedTimer", "classtime__shield_1_1ElapsedTimer.html", null ],
     [ "time_shield::detail::FakeNtpRunner", "classtime__shield_1_1detail_1_1FakeNtpRunner.html", null ],
+    [ "time_shield::detail::FastDate", "structtime__shield_1_1detail_1_1FastDate.html", null ],
     [ "time_shield::IsoWeekDateStruct", "structtime__shield_1_1IsoWeekDateStruct.html", null ],
     [ "time_shield::detail::IUdpTransport", "classtime__shield_1_1detail_1_1IUdpTransport.html", [
       [ "time_shield::detail::UdpTransportPosix", "classtime__shield_1_1detail_1_1UdpTransportPosix.html", null ],

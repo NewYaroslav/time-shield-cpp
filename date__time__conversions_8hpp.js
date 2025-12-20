@@ -50,11 +50,15 @@ var date__time__conversions_8hpp =
     [ "time_shield::tm_to_ftimestamp", "group__time__structures.html#ga10b556c28469481aa02d613649134b0b", null ],
     [ "time_shield::tm_to_timestamp", "group__time__structures.html#ga02b17adbf75268840351b121c072658f", null ],
     [ "time_shield::tm_to_timestamp_ms", "group__time__structures.html#ga6a07825b979bbcd99d64822e55621df0", null ],
+    [ "time_shield::legacy::to_date_time", "group__time__structures.html#gab2f5d5f6dcbef50ff35c876ee4f0ca05", null ],
     [ "time_shield::to_date_time", "group__time__structures.html#gabac8bf6f17030312b53ebdff04a034a7", null ],
     [ "time_shield::to_date_time_ms", "group__time__structures.html#ga1b9ba156d542b58ce44197d0fbcc7e24", null ],
     [ "time_shield::to_ftimestamp", "group__time__structures.html#ga8c23d7f60ed6d2dd82ff310d5c21e1e5", null ],
+    [ "time_shield::legacy::to_timestamp", "namespacetime__shield_1_1legacy.html#a734ddbbe615eefa9d96e311034ad7f6c", null ],
     [ "time_shield::to_timestamp", "group__time__structures.html#gaa0d04ce5842219b3527561b9ff9aedeb", null ],
     [ "time_shield::to_timestamp_ms", "group__time__structures.html#gafbddf09c72c997a63ca23c4fbe2430be", null ],
+    [ "time_shield::legacy::to_timestamp_unchecked", "namespacetime__shield_1_1legacy.html#a8b90512e8c38558a2d4e75290aa2385e", null ],
+    [ "time_shield::to_timestamp_unchecked", "group__time__structures.html#ga1269508b746b372349cf3bfb374f7546", null ],
     [ "time_shield::weekday_of_ts", "group__time__structures.html#gac636c3ce16aa7fe399f7aac1fa3719c7", null ],
     [ "time_shield::weekday_of_ts_ms", "group__time__structures.html#ga305b9f95f3e40e2b18127034fd4b51ce", null ]
 ];

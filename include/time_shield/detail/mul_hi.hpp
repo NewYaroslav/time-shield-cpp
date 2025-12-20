@@ -16,7 +16,7 @@ namespace time_shield {
 namespace detail {
 
     /// \brief Return the high 64 bits of a 64x64-bit multiplication (constexpr variant).
-    TIME_SHIELD_CONSTEXPR uint64_t mul_hi_u64_constexpr(uint64_t p_a, uint64_t p_b) noexcept {
+    TIME_SHIELD_CONSTEXPR inline uint64_t mul_hi_u64_constexpr(uint64_t p_a, uint64_t p_b) noexcept {
         const uint64_t a_low = p_a & 0xFFFFFFFFULL;
         const uint64_t a_high = p_a >> 32;
         const uint64_t b_low = p_b & 0xFFFFFFFFULL;
@@ -49,7 +49,7 @@ namespace detail {
     }
 
     /// \brief Alias for mul_hi_u64_constexpr used for shift-by-64 operations.
-    constexpr uint64_t mul_shift_u64_constexpr(uint64_t p_x, uint64_t p_c) noexcept {
+    TIME_SHIELD_CONSTEXPR inline uint64_t mul_shift_u64_constexpr(uint64_t p_x, uint64_t p_c) noexcept {
         return mul_hi_u64_constexpr(p_x, p_c);
     }
 

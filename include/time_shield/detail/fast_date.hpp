@@ -56,7 +56,7 @@ namespace detail {
     /// \note Inspired by the algorithm described in:
     ///       https://www.benjoffe.com/fast-date-64
     ///       This implementation is written from scratch (no code copied).
-    TIME_SHIELD_CONSTEXPR int64_t fast_days_from_date_constexpr(
+    TIME_SHIELD_CONSTEXPR inline int64_t fast_days_from_date_constexpr(
             int64_t p_year,
             int p_month,
             int p_day) noexcept {
@@ -115,7 +115,7 @@ namespace detail {
     /// \note Inspired by the algorithm described in:
     ///       https://www.benjoffe.com/fast-date-64
     ///       This implementation is written from scratch (no code copied).
-    TIME_SHIELD_CONSTEXPR FastDate fast_date_from_days_constexpr(int64_t p_days) noexcept {
+    TIME_SHIELD_CONSTEXPR inline FastDate fast_date_from_days_constexpr(int64_t p_days) noexcept {
         constexpr uint64_t ERAS = 4726498270ULL;
         constexpr int64_t D_SHIFT = static_cast<int64_t>(146097ULL * ERAS - 719469ULL);
         constexpr int64_t Y_SHIFT = static_cast<int64_t>(400ULL * ERAS - 1ULL);
@@ -191,7 +191,7 @@ namespace detail {
     /// \note Inspired by the algorithm described in:
     ///       https://www.benjoffe.com/fast-date-64
     ///       This implementation is written from scratch (no code copied).
-    TIME_SHIELD_CONSTEXPR int64_t fast_year_from_days_constexpr(int64_t p_days) noexcept {
+    TIME_SHIELD_CONSTEXPR inline int64_t fast_year_from_days_constexpr(int64_t p_days) noexcept {
         constexpr uint64_t ERAS = 4726498270ULL;
         constexpr int64_t D_SHIFT = static_cast<int64_t>(146097ULL * ERAS - 719469ULL);
         constexpr int64_t Y_SHIFT = static_cast<int64_t>(400ULL * ERAS - 1ULL);

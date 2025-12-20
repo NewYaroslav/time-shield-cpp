@@ -106,8 +106,8 @@ Use `time_shield::` or `using namespace time_shield;` to access the API.
   magnitude; near the modern epoch it typically preserves microseconds, while
   very large |ts| values can lose lower bits.
 - `year_t` — signed 64-bit year.
-- `unixday_t` / `uday_t` — count of days since 1970-01-01. The signedness of the
-  type determines correctness for dates before the epoch.
+- `dse_t` / `unix_day_t` / `unixday_t` — count of days since 1970-01-01. The
+  signedness of the type determines correctness for dates before the epoch.
 - ISO 8601 utilities use the proleptic Gregorian calendar and do not account
   for leap seconds.
 - Core conversions and “hot” functions aim for `noexcept` and no dynamic

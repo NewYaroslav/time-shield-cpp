@@ -15,6 +15,7 @@ All notable changes to this project will be documented in this file.
 - Added short-form weekday and timestamp conversion aliases alongside new constexpr timezone offset helpers.
 - Expanded conversion coverage tests to exercise the renamed helpers and new wrappers across C++11/14/17 builds.
 - Documented first/last workday boundary helpers and their UTC semantics in README and Doxygen mainpage.
+- Renamed `uday_t` to `dse_t` and added `unix_day_t`/`unixday_t` aliases for backward compatibility.
 - Corrected unix-day millisecond alias helpers to reuse `days_since_epoch_ms` logic.
 - Added workday boundary coverage and alias verification to `time_conversions_test`.
 - Introduced UTC offset helpers (`to_utc`/`to_local`, seconds and milliseconds) and TimeZoneStruct offset extraction.

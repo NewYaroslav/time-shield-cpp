@@ -86,7 +86,7 @@ namespace time_shield {
         /// \param day Day component of the date.
         /// \return Number of days since the UNIX epoch.
         template<class Year, class Month, class Day>
-        TIME_SHIELD_CONSTEXPR inline uday_t date_to_unix_day(
+        TIME_SHIELD_CONSTEXPR inline dse_t date_to_unix_day(
                 Year year,
                 Month month,
                 Day day) noexcept {
@@ -98,7 +98,7 @@ namespace time_shield {
             const int64_t yoe = y - era * 400;
             const int64_t doy = (153 * m + 2) / 5 + static_cast<int64_t>(day) - 1;
             const int64_t doe = yoe * 365 + yoe / 4 - yoe / 100 + doy;
-            return static_cast<uday_t>(era * 146097 + doe - 719468);
+            return static_cast<dse_t>(era * 146097 + doe - 719468);
         }
 
     } // namespace legacy
@@ -119,11 +119,11 @@ namespace time_shield {
     /// \param day Day component of the date.
     /// \return Number of days since the UNIX epoch.
     template<class Year, class Month, class Day>
-    TIME_SHIELD_CONSTEXPR inline uday_t date_to_unix_day(
+    TIME_SHIELD_CONSTEXPR inline dse_t date_to_unix_day(
             Year year,
             Month month,
             Day day) noexcept {
-        return static_cast<uday_t>(
+        return static_cast<dse_t>(
             detail::fast_days_from_date_constexpr(
                 static_cast<int64_t>(year),
                 static_cast<int>(month),
@@ -137,7 +137,7 @@ namespace time_shield {
     /// \tparam T The return type of the function (default is unixday_t).
     /// \param ts Timestamp in seconds (default is current timestamp).
     /// \return Number of days since the UNIX epoch.
-    template<class T = uday_t>
+    template<class T = dse_t>
     constexpr T days_since_epoch(ts_t ts = time_shield::ts()) noexcept {
         return ts / SEC_PER_DAY;
     }
@@ -149,7 +149,7 @@ namespace time_shield {
     /// \tparam T The return type of the function (default is unixday_t).
     /// \param t_ms Timestamp in milliseconds (default is current timestamp in milliseconds).
     /// \return Number of days since the UNIX epoch.
-    template<class T = uday_t>
+    template<class T = dse_t>
     constexpr T days_since_epoch_ms(ts_ms_t t_ms = time_shield::ts_ms()) noexcept {
         return days_since_epoch<T>(ms_to_sec<ts_t>(t_ms));
     }
@@ -176,7 +176,7 @@ namespace time_shield {
     /// \param unix_day Number of days since the UNIX epoch.
     /// \return The timestamp in seconds representing the beginning of the specified UNIX day.
     template<class T = ts_t>
-    constexpr T unix_day_to_ts(uday_t unix_day) noexcept {
+    constexpr T unix_day_to_ts(dse_t unix_day) noexcept {
         return unix_day * SEC_PER_DAY;
     }
 
@@ -189,7 +189,7 @@ namespace time_shield {
     /// \param unix_day Number of days since the UNIX epoch.
     /// \return The timestamp in milliseconds representing the beginning of the specified UNIX day.
     template<class T = ts_t>
-    constexpr T unix_day_to_ts_ms(uday_t unix_day) noexcept {
+    constexpr T unix_day_to_ts_ms(dse_t unix_day) noexcept {
         return unix_day * MS_PER_DAY;
     }
 
@@ -202,7 +202,7 @@ namespace time_shield {
     /// \param unix_day The number of days since the UNIX epoch.
     /// \return The timestamp in seconds representing the end of the specified UNIX day.
     template<class T = ts_t>
-    constexpr T end_of_day_from_unix_day(uday_t unix_day) noexcept {
+    constexpr T end_of_day_from_unix_day(dse_t unix_day) noexcept {
         return unix_day * SEC_PER_DAY + SEC_PER_DAY - 1;
     }
 
@@ -215,7 +215,7 @@ namespace time_shield {
     /// \param unix_day The number of days since the UNIX epoch.
     /// \return The timestamp in milliseconds representing the end of the specified UNIX day.
     template<class T = ts_ms_t>
-    constexpr T end_of_day_from_unix_day_ms(uday_t unix_day) noexcept {
+    constexpr T end_of_day_from_unix_day_ms(dse_t unix_day) noexcept {
         return unix_day * MS_PER_DAY + MS_PER_DAY - 1;
     }
 
@@ -228,7 +228,7 @@ namespace time_shield {
     /// \param unix_day The number of days since the UNIX epoch.
     /// \return The timestamp in seconds representing the beginning of the next UNIX day.
     template<class T = ts_ms_t>
-    constexpr T start_of_next_day_from_unix_day(uday_t unix_day) noexcept {
+    constexpr T start_of_next_day_from_unix_day(dse_t unix_day) noexcept {
         return unix_day * SEC_PER_DAY + SEC_PER_DAY;
     }
 
@@ -241,7 +241,7 @@ namespace time_shield {
     /// \param unix_day The number of days since the UNIX epoch.
     /// \return The timestamp in milliseconds representing the beginning of the next UNIX day.
     template<class T = ts_ms_t>
-    constexpr T start_of_next_day_from_unix_day_ms(uday_t unix_day) noexcept {
+    constexpr T start_of_next_day_from_unix_day_ms(dse_t unix_day) noexcept {
         return unix_day * MS_PER_DAY + MS_PER_DAY;
     }
 

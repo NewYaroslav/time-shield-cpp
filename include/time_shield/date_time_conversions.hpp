@@ -389,7 +389,7 @@ namespace time_shield {
             return to_timestamp_unchecked((T1)day, month, (T2)year, hour, min, sec);
         }
 
-        const uday_t unix_day = date_to_unix_day(year, month, day);
+        const dse_t unix_day = date_to_unix_day(year, month, day);
         return static_cast<ts_t>(unix_day * SEC_PER_DAY
             + SEC_PER_HOUR * static_cast<int64_t>(hour)
             + SEC_PER_MIN * static_cast<int64_t>(min)

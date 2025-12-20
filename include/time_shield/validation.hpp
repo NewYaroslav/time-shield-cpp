@@ -334,7 +334,7 @@ namespace time_shield {
     /// which is either Saturday or Sunday.
     /// \param unix_day Day to check (number of days since Unix epoch).
     /// \return true if the day is a weekend day, false otherwise.
-    template<class T = uday_t>
+    template<class T = dse_t>
     TIME_SHIELD_CONSTEXPR inline bool is_day_off_unix_day(T unix_day) noexcept {
         int64_t wd = (static_cast<int64_t>(unix_day) + THU) % DAYS_PER_WEEK;
         wd += (wd < 0) ? DAYS_PER_WEEK : 0;
@@ -343,7 +343,7 @@ namespace time_shield {
 
     /// \brief Alias for is_day_off_unix_day function.
     /// \copydoc is_day_off_unix_day
-    template<class T = uday_t>
+    template<class T = dse_t>
     TIME_SHIELD_CONSTEXPR inline bool is_weekend_unix_day(T unix_day) noexcept {
         return is_day_off_unix_day(unix_day);
     }
@@ -385,7 +385,7 @@ namespace time_shield {
         const int64_t yoe = adj_y - era * 400;
         const int64_t doy = (153 * adj_m + 2) / 5 + static_cast<int64_t>(d) - 1;
         const int64_t doe = yoe * 365 + yoe / 4 - yoe / 100 + doy;
-        const uday_t unix_day = static_cast<uday_t>(era * 146097 + doe - 719468);
+        const dse_t unix_day = static_cast<dse_t>(era * 146097 + doe - 719468);
 
         return !is_day_off_unix_day(unix_day);
     }

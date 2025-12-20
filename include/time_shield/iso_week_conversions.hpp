@@ -54,15 +54,15 @@ namespace time_shield {
     template<class Y = year_t, class M = Month, class D = int>
     inline IsoWeekDateStruct to_iso_week_date(Y year, M month, D day) {
         const int iso_weekday = iso_weekday_of_date(year, month, day);
-        const uday_t unix_day = date_to_unix_day(year, month, day);
-        const uday_t thursday_day = unix_day + static_cast<uday_t>(4 - iso_weekday);
+        const dse_t unix_day = date_to_unix_day(year, month, day);
+        const dse_t thursday_day = unix_day + static_cast<dse_t>(4 - iso_weekday);
 
         const DateTimeStruct thursday_date = to_date_time<DateTimeStruct>(unix_day_to_ts(thursday_day));
         const year_t iso_year = thursday_date.year;
 
-        const uday_t jan4_day = date_to_unix_day(iso_year, 1, 4);
+        const dse_t jan4_day = date_to_unix_day(iso_year, 1, 4);
         const int jan4_iso_weekday = iso_weekday_of_date(iso_year, 1, 4);
-        const uday_t first_thursday = jan4_day + static_cast<uday_t>(4 - jan4_iso_weekday);
+        const dse_t first_thursday = jan4_day + static_cast<dse_t>(4 - jan4_iso_weekday);
 
         const int32_t week = static_cast<int32_t>((thursday_day - first_thursday) / DAYS_PER_WEEK + 1);
         return create_iso_week_date_struct(iso_year, week, static_cast<int32_t>(iso_weekday));
@@ -116,11 +116,11 @@ namespace time_shield {
             throw std::invalid_argument("Invalid ISO week date");
         }
 
-        const uday_t jan4_day = date_to_unix_day(iso_date.year, 1, 4);
+        const dse_t jan4_day = date_to_unix_day(iso_date.year, 1, 4);
         const int jan4_iso_weekday = iso_weekday_of_date(iso_date.year, 1, 4);
-        const uday_t first_thursday = jan4_day + static_cast<uday_t>(4 - jan4_iso_weekday);
-        const uday_t target_thursday = first_thursday + static_cast<uday_t>(iso_date.week - 1) * DAYS_PER_WEEK;
-        const uday_t target_day = target_thursday + static_cast<uday_t>(iso_date.weekday - 4);
+        const dse_t first_thursday = jan4_day + static_cast<dse_t>(4 - jan4_iso_weekday);
+        const dse_t target_thursday = first_thursday + static_cast<dse_t>(iso_date.week - 1) * DAYS_PER_WEEK;
+        const dse_t target_day = target_thursday + static_cast<dse_t>(iso_date.weekday - 4);
 
         const DateTimeStruct date_time = to_date_time<DateTimeStruct>(unix_day_to_ts(target_day));
         return create_date_struct(date_time.year, date_time.mon, date_time.day);

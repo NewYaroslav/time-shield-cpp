@@ -108,8 +108,8 @@ namespace {
 
     void assert_date_to_unix_day_match(int64_t year, int month, int day) {
         const int64_t ref_day = days_from_civil(year, month, day);
-        const time_shield::uday_t fast_day = time_shield::date_to_unix_day(year, month, day);
-        const time_shield::uday_t legacy_day = time_shield::legacy::date_to_unix_day(year, month, day);
+        const time_shield::dse_t fast_day = time_shield::date_to_unix_day(year, month, day);
+        const time_shield::dse_t legacy_day = time_shield::legacy::date_to_unix_day(year, month, day);
 
         assert(static_cast<int64_t>(fast_day) == ref_day);
         assert(static_cast<int64_t>(legacy_day) == ref_day);
@@ -276,7 +276,7 @@ namespace {
                 const int year = base_year + static_cast<int>(i % year_span);
                 const int month = 1 + static_cast<int>(i % month_cycle);
                 const int day = 1 + static_cast<int>(i % 28);
-                const time_shield::uday_t unix_day = time_shield::date_to_unix_day(year, month, day);
+                const time_shield::dse_t unix_day = time_shield::date_to_unix_day(year, month, day);
                 acc_day_fast += unix_day;
             }
             const auto end_day_fast_local = std::chrono::steady_clock::now();
@@ -286,7 +286,7 @@ namespace {
                 const int year = base_year + static_cast<int>(i % year_span);
                 const int month = 1 + static_cast<int>(i % month_cycle);
                 const int day = 1 + static_cast<int>(i % 28);
-                const time_shield::uday_t unix_day = time_shield::legacy::date_to_unix_day(year, month, day);
+                const time_shield::dse_t unix_day = time_shield::legacy::date_to_unix_day(year, month, day);
                 acc_day_legacy += unix_day;
             }
             const auto end_day_legacy_local = std::chrono::steady_clock::now();

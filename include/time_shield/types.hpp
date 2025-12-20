@@ -25,7 +25,7 @@ namespace time_shield {
 /// - **Unix-based timestamps**: `ts_t`, `ts_ms_t`, `ts_us_t`
 /// - **Fractional and floating-point time**: `fts_t`, `oadate_t`, `jd_t`
 /// - **Julian date types**: `jd_t`, `mjd_t`, `jdn_t`
-/// - **Utility units**: `year_t`, `uday_t`, `tz_t`
+/// - **Utility units**: `year_t`, `dse_t`, `tz_t`
 ///
 /// ### Example Usage
 /// ```cpp
@@ -39,8 +39,9 @@ namespace time_shield {
 
     // --- Calendar & Year Types ---
     typedef int64_t     year_t;     ///< Year as an integer (e.g., 2024).
-    typedef int64_t     uday_t;     ///< Unix day count since 1970‑01‑01 (days since epoch).
-    using unixday_t = uday_t;       ///< Alias for Unix day count type.
+    typedef int64_t     dse_t;     ///< Unix day count since 1970‑01‑01 (days since epoch).
+    using unix_day_t = dse_t;      ///< Alias for Unix day count type.
+    using unixday_t = dse_t;       ///< Alias for Unix day count type.
     typedef int32_t     iso_week_t; ///< ISO week number type (1-52/53).
     typedef int32_t     iso_weekday_t; ///< ISO weekday number type (1=Monday .. 7=Sunday).
 

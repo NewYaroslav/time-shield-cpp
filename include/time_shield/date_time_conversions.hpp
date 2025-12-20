@@ -11,9 +11,11 @@
 #include "date_conversions.hpp"
 #include "date_struct.hpp"
 #include "date_time_struct.hpp"
+#include "detail/fast_date.hpp"
 #include "enums.hpp"
 #include "time_unit_conversions.hpp"
 #include "time_utils.hpp"
+#include "types.hpp"
 #include "unix_time_conversions.hpp"
 #include "validation.hpp"
 
@@ -27,11 +29,126 @@ namespace time_shield {
 /// \ingroup time_conversions
 /// \{
 
+    namespace legacy {
+
+        /// \ingroup time_structures
+        /// \brief Converts a timestamp to a date-time structure.
+        ///
+        /// This function converts a timestamp (usually an integer representing seconds since epoch)
+        /// to a custom date-time structure. The default type for the timestamp is int64_t.
+        ///
+        /// \tparam T1 The date-time structure type to be returned.
+        /// \tparam T2 The type of the timestamp (default is int64_t).
+        /// \param ts The timestamp to be converted.
+        /// \return A date-time structure of type T1.
+        template<class T1 = DateTimeStruct, class T2 = ts_t>
+        T1 to_date_time(T2 ts) {
+            // 9223372029693630000 - значение на момент 292277024400 от 2000 года
+            // Такое значение приводит к неправильному вычислению умножения n_400_years * SEC_PER_400_YEARS
+            // Поэтому пришлось снизить до 9223371890843040000
+            constexpr int64_t BIAS_292277022000 = 9223371890843040000LL;
+            constexpr int64_t BIAS_2000 = 946684800LL;
+
+            int64_t y = MAX_YEAR;
+            int64_t secs = -((static_cast<int64_t>(ts) - BIAS_2000) - BIAS_292277022000);
+
+            const int64_t n_400_years = secs / SEC_PER_400_YEARS;
+            secs -= n_400_years * SEC_PER_400_YEARS;
+            y -= n_400_years * 400LL;
+
+            const int64_t n_100_years = secs / SEC_PER_100_YEARS;
+            secs -= n_100_years * SEC_PER_100_YEARS;
+            y -= n_100_years * 100LL;
+
+            const int64_t n_4_years = secs / SEC_PER_4_YEARS;
+            secs -= n_4_years * SEC_PER_4_YEARS;
+            y -= n_4_years * 4LL;
+
+            const int64_t n_1_years = secs / SEC_PER_YEAR;
+            secs -= n_1_years * SEC_PER_YEAR;
+            y -= n_1_years;
+
+            T1 date_time;
+
+            if (secs == 0) {
+                date_time.year = y;
+                date_time.mon = 1;
+                date_time.day = 1;
+                return date_time;
+            }
+
+            date_time.year = y - 1;
+            const bool is_leap_year = is_leap_year_date(date_time.year);
+            secs = is_leap_year ? SEC_PER_LEAP_YEAR - secs : SEC_PER_YEAR - secs;
+            const int days = static_cast<int>(secs / SEC_PER_DAY);
+
+            constexpr int JAN_AND_FEB_DAY_LEAP_YEAR = 60 - 1;
+            constexpr int TABLE_MONTH_OF_YEAR[] = {
+                1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,  // 31 январь
+                2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,        // 28 февраль
+                3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,  // 31 март
+                4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,    // 30 апрель
+                5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,
+                6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,
+                7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,
+                8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,
+                9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,
+                10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,
+                11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,
+                12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,
+            };
+            constexpr int TABLE_DAY_OF_YEAR[] = {
+                1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,    // 31 январь
+                1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,             // 28 февраль
+                1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,    // 31 март
+                1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,       // 30 апрель
+                1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,
+                1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,
+                1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,
+                1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,
+                1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,
+                1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,
+                1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,
+                1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,
+            };
+
+            if (is_leap_year) {
+                const int prev_days = days - 1;
+                date_time.day = days == JAN_AND_FEB_DAY_LEAP_YEAR ? (TABLE_DAY_OF_YEAR[prev_days] + 1) :
+                    (days > JAN_AND_FEB_DAY_LEAP_YEAR ? TABLE_DAY_OF_YEAR[prev_days] : TABLE_DAY_OF_YEAR[days]);
+                date_time.mon = days >= JAN_AND_FEB_DAY_LEAP_YEAR ? TABLE_MONTH_OF_YEAR[prev_days] : TABLE_MONTH_OF_YEAR[days];
+            } else {
+                date_time.day = TABLE_DAY_OF_YEAR[days];
+                date_time.mon = TABLE_MONTH_OF_YEAR[days];
+            }
+
+            ts_t day_secs = static_cast<ts_t>(secs % SEC_PER_DAY);
+            date_time.hour = static_cast<decltype(date_time.hour)>(day_secs / SEC_PER_HOUR);
+            ts_t min_secs = static_cast<ts_t>(day_secs - date_time.hour * SEC_PER_HOUR);
+            date_time.min = static_cast<decltype(date_time.min)>(min_secs / SEC_PER_MIN);
+            date_time.sec = static_cast<decltype(date_time.sec)>(min_secs - date_time.min * SEC_PER_MIN);
+#           ifdef TIME_SHIELD_CPP17
+            if TIME_SHIELD_IF_CONSTEXPR (std::is_floating_point<T2>::value) {
+                date_time.ms = static_cast<int>(std::round(std::fmod(static_cast<double>(ts), static_cast<double>(MS_PER_SEC))));
+            } else date_time.ms = 0;
+#           else
+            if (std::is_floating_point<T2>::value) {
+                date_time.ms = static_cast<int>(std::round(std::fmod(static_cast<double>(ts), static_cast<double>(MS_PER_SEC))));
+            } else date_time.ms = 0;
+#           endif
+            return date_time;
+        }
+
+    } // namespace legacy
+
     /// \ingroup time_structures
     /// \brief Converts a timestamp to a date-time structure.
     ///
     /// This function converts a timestamp (usually an integer representing seconds since epoch)
     /// to a custom date-time structure. The default type for the timestamp is int64_t.
+    /// \note Inspired by the algorithm described in:
+    ///       https://www.benjoffe.com/fast-date-64
+    ///       This implementation is written from scratch (no code copied).
     ///
     /// \tparam T1 The date-time structure type to be returned.
     /// \tparam T2 The type of the timestamp (default is int64_t).
@@ -39,88 +156,18 @@ namespace time_shield {
     /// \return A date-time structure of type T1.
     template<class T1 = DateTimeStruct, class T2 = ts_t>
     T1 to_date_time(T2 ts) {
-        // 9223372029693630000 - значение на момент 292277024400 от 2000 года
-        // Такое значение приводит к неправильному вычислению умножения n_400_years * SEC_PER_400_YEARS
-        // Поэтому пришлось снизить до 9223371890843040000
-        constexpr int64_t BIAS_292277022000 = 9223371890843040000LL;
-        constexpr int64_t BIAS_2000 = 946684800LL;
+        const int64_t whole_sec = static_cast<int64_t>(ts);
+        const detail::DaySplit split = detail::split_unix_day(whole_sec);
+        const detail::FastDate date = detail::fast_date_from_days(split.days);
 
-        int64_t y = MAX_YEAR;
-        int64_t secs = -((static_cast<int64_t>(ts) - BIAS_2000) - BIAS_292277022000);
+        T1 date_time{};
+        date_time.year = static_cast<decltype(date_time.year)>(date.year);
+        date_time.mon = static_cast<decltype(date_time.mon)>(date.month);
+        date_time.day = static_cast<decltype(date_time.day)>(date.day);
 
-        const int64_t n_400_years = secs / SEC_PER_400_YEARS;
-        secs -= n_400_years * SEC_PER_400_YEARS;
-        y -= n_400_years * 400LL;
-
-        const int64_t n_100_years = secs / SEC_PER_100_YEARS;
-        secs -= n_100_years * SEC_PER_100_YEARS;
-        y -= n_100_years * 100LL;
-
-        const int64_t n_4_years = secs / SEC_PER_4_YEARS;
-        secs -= n_4_years * SEC_PER_4_YEARS;
-        y -= n_4_years * 4LL;
-
-        const int64_t n_1_years = secs / SEC_PER_YEAR;
-        secs -= n_1_years * SEC_PER_YEAR;
-        y -= n_1_years;
-
-        T1 date_time;
-
-        if (secs == 0) {
-            date_time.year = y;
-            date_time.mon = 1;
-            date_time.day = 1;
-            return date_time;
-        }
-
-        date_time.year = y - 1;
-        const bool is_leap_year = is_leap_year_date(date_time.year);
-        secs = is_leap_year ? SEC_PER_LEAP_YEAR - secs : SEC_PER_YEAR - secs;
-        const int days = static_cast<int>(secs / SEC_PER_DAY);
-
-        constexpr int JAN_AND_FEB_DAY_LEAP_YEAR = 60 - 1;
-        constexpr int TABLE_MONTH_OF_YEAR[] = {
-            1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,  // 31 январь
-            2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,        // 28 февраль
-            3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,  // 31 март
-            4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,    // 30 апрель
-            5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,
-            6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,
-            7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,
-            8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,
-            9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,
-            10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,
-            11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,
-            12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,
-        };
-        constexpr int TABLE_DAY_OF_YEAR[] = {
-            1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,    // 31 январь
-            1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,             // 28 февраль
-            1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,    // 31 март
-            1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,       // 30 апрель
-            1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,
-            1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,
-            1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,
-            1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,
-            1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,
-            1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,
-            1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,
-            1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,
-        };
-
-        if (is_leap_year) {
-            const int prev_days = days - 1;
-            date_time.day = days == JAN_AND_FEB_DAY_LEAP_YEAR ? (TABLE_DAY_OF_YEAR[prev_days] + 1) :
-                (days > JAN_AND_FEB_DAY_LEAP_YEAR ? TABLE_DAY_OF_YEAR[prev_days] : TABLE_DAY_OF_YEAR[days]);
-            date_time.mon = days >= JAN_AND_FEB_DAY_LEAP_YEAR ? TABLE_MONTH_OF_YEAR[prev_days] : TABLE_MONTH_OF_YEAR[days];
-        } else {
-            date_time.day = TABLE_DAY_OF_YEAR[days];
-            date_time.mon = TABLE_MONTH_OF_YEAR[days];
-        }
-
-        ts_t day_secs = static_cast<ts_t>(secs % SEC_PER_DAY);
+        const ts_t day_secs = static_cast<ts_t>(split.sec_of_day);
         date_time.hour = static_cast<decltype(date_time.hour)>(day_secs / SEC_PER_HOUR);
-        ts_t min_secs = static_cast<ts_t>(day_secs - date_time.hour * SEC_PER_HOUR);
+        const ts_t min_secs = static_cast<ts_t>(day_secs - date_time.hour * SEC_PER_HOUR);
         date_time.min = static_cast<decltype(date_time.min)>(min_secs / SEC_PER_MIN);
         date_time.sec = static_cast<decltype(date_time.sec)>(min_secs - date_time.min * SEC_PER_MIN);
 #       ifdef TIME_SHIELD_CPP17
@@ -148,6 +195,207 @@ namespace time_shield {
         return date_time;
     }
 
+    namespace legacy {
+
+        /// \brief Converts a date and time to a timestamp.
+        ///
+        /// This function converts a given date and time to a timestamp, which is the number
+        /// of seconds since the Unix epoch (January 1, 1970).
+        ///
+        /// If the `day` is ≥ 1970 and `year` ≤ 31, parameters are assumed to be in DD-MM-YYYY order
+        /// and are automatically reordered.
+        ///
+        /// \tparam T1 The type of the year parameter (default is int64_t).
+        /// \tparam T2 The type of the other date and time parameters (default is int).
+        /// \param year The year value.
+        /// \param month The month value.
+        /// \param day   The day value.
+        /// \param hour  The hour value (default is 0).
+        /// \param min   The minute value (default is 0).
+        /// \param sec   The second value (default is 0).
+        /// \return Timestamp representing the given date and time.
+        /// \throws std::invalid_argument if the date-time combination is invalid.
+        ///
+        /// \par Aliases:
+        /// The following function names are provided as aliases:
+        /// - `ts(...)`
+        /// - `get_ts(...)`
+        /// - `get_timestamp(...)`
+        /// - `timestamp(...)`
+        /// - `to_ts(...)`
+        ///
+        /// These aliases are macro-generated and behave identically to `to_timestamp`.
+        ///
+        /// \sa ts() \sa get_ts() \sa get_timestamp() \sa timestamp() \sa to_ts()
+        template<class T1 = year_t, class T2 = int>
+        TIME_SHIELD_CONSTEXPR inline ts_t to_timestamp(
+                T1 year,
+                T2 month,
+                T2 day,
+                T2 hour  = 0,
+                T2 min   = 0,
+                T2 sec   = 0) {
+
+            if (day >= UNIX_EPOCH && year <= 31) {
+                return to_timestamp((T1)day, month, (T2)year, hour, min, sec);
+            }
+            if (!is_valid_date_time(year, month, day, hour, min, sec)) {
+                throw std::invalid_argument("Invalid date-time combination");
+            }
+
+            int64_t secs = 0;
+            int64_t years = (static_cast<int64_t>(MAX_YEAR) - year);
+
+            const int64_t n_400_years = years / 400LL;
+            secs += n_400_years * SEC_PER_400_YEARS;
+            years -= n_400_years * 400LL;
+
+            const int64_t n_100_years = years / 100LL;
+            secs += n_100_years * SEC_PER_100_YEARS;
+            years -= n_100_years * 100LL;
+
+            const int64_t n_4_years = years / 4LL;
+            secs += n_4_years * SEC_PER_4_YEARS;
+            years -= n_4_years * 4LL;
+
+            secs += years * SEC_PER_YEAR;
+
+            // 9223372029693630000 - значение на момент 292277024400 от 2000 года
+            // Такое значение приводит к неправильному вычислению умножения n_400_years * SEC_PER_400_YEARS
+            // Поэтому пришлось снизить до 9223371890843040000
+            constexpr int64_t BIAS_292277022000 = 9223371890843040000LL;
+            constexpr int64_t BIAS_2000 = 946684800LL;
+
+            secs = BIAS_292277022000 - secs;
+            secs += BIAS_2000;
+
+            if (month == 1 && day == 1 &&
+                hour == 0 && min == 0 &&
+                sec == 0) {
+                return secs;
+            }
+
+            constexpr int lmos[] = {0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335};
+            constexpr int mos[] = {0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334};
+
+            secs += (is_leap_year_date(year) ? (lmos[month - 1] + day - 1) : (mos[month - 1] + day - 1)) * SEC_PER_DAY;
+            secs += SEC_PER_HOUR * hour + SEC_PER_MIN * min + sec;
+            return secs;
+        }
+
+        /// \brief Converts a date and time to a timestamp without validation.
+        ///
+        /// This function converts a given date and time to a timestamp, which is the number
+        /// of seconds since the Unix epoch (January 1, 1970).
+        ///
+        /// If the `day` is ≥ 1970 and `year` ≤ 31, parameters are assumed to be in DD-MM-YYYY order
+        /// and are automatically reordered.
+        ///
+        /// \tparam T1 The type of the year parameter (default is int64_t).
+        /// \tparam T2 The type of the other date and time parameters (default is int).
+        /// \param year The year value.
+        /// \param month The month value.
+        /// \param day   The day value.
+        /// \param hour  The hour value (default is 0).
+        /// \param min   The minute value (default is 0).
+        /// \param sec   The second value (default is 0).
+        /// \return Timestamp representing the given date and time.
+        template<class T1 = year_t, class T2 = int>
+        TIME_SHIELD_CONSTEXPR inline ts_t to_timestamp_unchecked(
+                T1 year,
+                T2 month,
+                T2 day,
+                T2 hour  = 0,
+                T2 min   = 0,
+                T2 sec   = 0) noexcept {
+
+            if (day >= UNIX_EPOCH && year <= 31) {
+                return to_timestamp_unchecked((T1)day, month, (T2)year, hour, min, sec);
+            }
+
+            int64_t secs = 0;
+            int64_t years = (static_cast<int64_t>(MAX_YEAR) - year);
+
+            const int64_t n_400_years = years / 400LL;
+            secs += n_400_years * SEC_PER_400_YEARS;
+            years -= n_400_years * 400LL;
+
+            const int64_t n_100_years = years / 100LL;
+            secs += n_100_years * SEC_PER_100_YEARS;
+            years -= n_100_years * 100LL;
+
+            const int64_t n_4_years = years / 4LL;
+            secs += n_4_years * SEC_PER_4_YEARS;
+            years -= n_4_years * 4LL;
+
+            secs += years * SEC_PER_YEAR;
+
+            // 9223372029693630000 - значение на момент 292277024400 от 2000 года
+            // Такое значение приводит к неправильному вычислению умножения n_400_years * SEC_PER_400_YEARS
+            // Поэтому пришлось снизить до 9223371890843040000
+            constexpr int64_t BIAS_292277022000 = 9223371890843040000LL;
+            constexpr int64_t BIAS_2000 = 946684800LL;
+
+            secs = BIAS_292277022000 - secs;
+            secs += BIAS_2000;
+
+            if (month == 1 && day == 1 &&
+                hour == 0 && min == 0 &&
+                sec == 0) {
+                return secs;
+            }
+
+            constexpr int lmos[] = {0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335};
+            constexpr int mos[] = {0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334};
+
+            secs += (is_leap_year_date(year) ? (lmos[month - 1] + day - 1) : (mos[month - 1] + day - 1)) * SEC_PER_DAY;
+            secs += SEC_PER_HOUR * hour + SEC_PER_MIN * min + sec;
+            return secs;
+        }
+
+    } // namespace legacy
+
+    /// \brief Converts a date and time to a timestamp without validation.
+    ///
+    /// This function converts a given date and time to a timestamp, which is the number
+    /// of seconds since the Unix epoch (January 1, 1970).
+    ///
+    /// If the `day` is ≥ 1970 and `year` ≤ 31, parameters are assumed to be in DD-MM-YYYY order
+    /// and are automatically reordered.
+    ///
+    /// \note Inspired by the algorithm described in:
+    ///       https://www.benjoffe.com/fast-date-64
+    ///       This implementation is written from scratch (no code copied).
+    ///
+    /// \tparam T1 The type of the year parameter (default is int64_t).
+    /// \tparam T2 The type of the other date and time parameters (default is int).
+    /// \param year The year value.
+    /// \param month The month value.
+    /// \param day   The day value.
+    /// \param hour  The hour value (default is 0).
+    /// \param min   The minute value (default is 0).
+    /// \param sec   The second value (default is 0).
+    /// \return Timestamp representing the given date and time.
+    template<class T1 = year_t, class T2 = int>
+    TIME_SHIELD_CONSTEXPR inline ts_t to_timestamp_unchecked(
+            T1 year,
+            T2 month,
+            T2 day,
+            T2 hour  = 0,
+            T2 min   = 0,
+            T2 sec   = 0) noexcept {
+
+        if (day >= UNIX_EPOCH && year <= 31) {
+            return to_timestamp_unchecked((T1)day, month, (T2)year, hour, min, sec);
+        }
+
+        const uday_t unix_day = date_to_unix_day(year, month, day);
+        return static_cast<ts_t>(unix_day * SEC_PER_DAY
+            + SEC_PER_HOUR * static_cast<int64_t>(hour)
+            + SEC_PER_MIN * static_cast<int64_t>(min)
+            + static_cast<int64_t>(sec));
+    }
+
     /// \brief Converts a date and time to a timestamp.
     ///
     /// This function converts a given date and time to a timestamp, which is the number
@@ -155,6 +403,10 @@ namespace time_shield {
     ///
     /// If the `day` is ≥ 1970 and `year` ≤ 31, parameters are assumed to be in DD-MM-YYYY order
     /// and are automatically reordered.
+    ///
+    /// \note Inspired by the algorithm described in:
+    ///       https://www.benjoffe.com/fast-date-64
+    ///       This implementation is written from scratch (no code copied).
     ///
     /// \tparam T1 The type of the year parameter (default is int64_t).
     /// \tparam T2 The type of the other date and time parameters (default is int).
@@ -194,44 +446,7 @@ namespace time_shield {
             throw std::invalid_argument("Invalid date-time combination");
         }
 
-        int64_t secs = 0;
-        int64_t years = (static_cast<int64_t>(MAX_YEAR) - year);
-
-        const int64_t n_400_years = years / 400LL;
-        secs += n_400_years * SEC_PER_400_YEARS;
-        years -= n_400_years * 400LL;
-
-        const int64_t n_100_years = years / 100LL;
-        secs += n_100_years * SEC_PER_100_YEARS;
-        years -= n_100_years * 100LL;
-
-        const int64_t n_4_years = years / 4LL;
-        secs += n_4_years * SEC_PER_4_YEARS;
-        years -= n_4_years * 4LL;
-
-        secs += years * SEC_PER_YEAR;
-
-        // 9223372029693630000 - значение на момент 292277024400 от 2000 года
-        // Такое значение приводит к неправильному вычислению умножения n_400_years * SEC_PER_400_YEARS
-        // Поэтому пришлось снизить до 9223371890843040000
-        constexpr int64_t BIAS_292277022000 = 9223371890843040000LL;
-        constexpr int64_t BIAS_2000 = 946684800LL;
-
-        secs = BIAS_292277022000 - secs;
-        secs += BIAS_2000;
-
-        if (month == 1 && day == 1 &&
-            hour == 0 && min == 0 &&
-            sec == 0) {
-            return secs;
-        }
-
-        constexpr int lmos[] = {0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335};
-        constexpr int mos[] = {0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334};
-
-        secs += (is_leap_year_date(year) ? (lmos[month - 1] + day - 1) : (mos[month - 1] + day - 1)) * SEC_PER_DAY;
-        secs += SEC_PER_HOUR * hour + SEC_PER_MIN * min + sec;
-        return secs;
+        return to_timestamp_unchecked(year, month, day, hour, min, sec);
     }
 
     /// \ingroup time_structures

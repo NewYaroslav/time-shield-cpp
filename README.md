@@ -46,6 +46,8 @@ more academic solutions like `HowardHinnant/date`, the library:
   templates.
 - **Conversions**—translates between second, millisecond and floating time
   representations, `DateTimeStruct`, OLE Automation dates and time zones.
+- **Fast date conversions**—some timestamp-to-calendar helpers use a fast
+  algorithm inspired by https://www.benjoffe.com/fast-date-64.
 - **DateTime value type**—fixed-offset wrapper that stores UTC milliseconds,
   parses/prints ISO8601, exposes local/UTC components, and provides arithmetic
   helpers.

@@ -24,6 +24,8 @@ portable, and suitable for scenarios like logging, serialization, MQL5 usage, an
 - Validation of dates and times (including weekend and workday predicates)
 - Time and date formatting (standard and custom)
 - Time zone conversion functions
+- Some timestamp-to-calendar conversions use a fast algorithm inspired by
+  https://www.benjoffe.com/fast-date-64 (implemented from scratch).
 - `DateTime` value type storing UTC milliseconds with a fixed offset for
   ISO8601 round-trips, local/UTC components, arithmetic, and boundaries
 - ISO8601 string parsing

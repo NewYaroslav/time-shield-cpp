@@ -8,6 +8,7 @@
 
 #include "config.hpp"
 #include "constants.hpp"
+#include "detail/fast_date.hpp"
 #include "time_unit_conversions.hpp"
 #include "time_utils.hpp"
 #include "types.hpp"
@@ -17,45 +18,98 @@ namespace time_shield {
 /// \ingroup time_conversions
 /// \{
 
+    namespace legacy {
+
+        /// \brief Converts a UNIX timestamp to a year.
+        /// \tparam T The type of the year (default is year_t).
+        /// \param ts UNIX timestamp.
+        /// \return T Year corresponding to the given timestamp.
+        template<class T = year_t>
+        TIME_SHIELD_CONSTEXPR T years_since_epoch(ts_t ts) noexcept {
+            // 9223372029693630000 - значение на момент 292277024400 от 2000 года
+            // Такое значение приводит к неправильному вычислению умножения n_400_years * SEC_PER_400_YEARS
+            // Поэтому пришлось снизить до 9223371890843040000
+            constexpr int64_t BIAS_292277022000 = 9223371890843040000LL;
+            constexpr int64_t BIAS_2000 = 946684800LL;
+
+            int64_t y = MAX_YEAR;
+            int64_t secs = -((ts - BIAS_2000) - BIAS_292277022000);
+
+            const int64_t n_400_years = secs / SEC_PER_400_YEARS;
+            secs -= n_400_years * SEC_PER_400_YEARS;
+            y -= n_400_years * 400;
+
+            const int64_t n_100_years = secs / SEC_PER_100_YEARS;
+            secs -= n_100_years * SEC_PER_100_YEARS;
+            y -= n_100_years * 100;
+
+            const int64_t n_4_years = secs / SEC_PER_4_YEARS;
+            secs -= n_4_years * SEC_PER_4_YEARS;
+            y -= n_4_years * 4;
+
+            const int64_t n_1_years = secs / SEC_PER_YEAR;
+            secs -= n_1_years * SEC_PER_YEAR;
+            y -= n_1_years;
+
+            y = secs == 0 ? y : y - 1;
+            return y - UNIX_EPOCH;
+        }
+
+    } // namespace legacy
+
     /// \brief Converts a UNIX timestamp to a year.
     /// \tparam T The type of the year (default is year_t).
     /// \param ts UNIX timestamp.
     /// \return T Year corresponding to the given timestamp.
+    /// \note Inspired by the algorithm described in:
+    ///       https://www.benjoffe.com/fast-date-64
+    ///       This implementation is written from scratch (no code copied).
     template<class T = year_t>
     TIME_SHIELD_CONSTEXPR T years_since_epoch(ts_t ts) noexcept {
-        // 9223372029693630000 - значение на момент 292277024400 от 2000 года
-        // Такое значение приводит к неправильному вычислению умножения n_400_years * SEC_PER_400_YEARS
-        // Поэтому пришлось снизить до 9223371890843040000
-        constexpr int64_t BIAS_292277022000 = 9223371890843040000LL;
-        constexpr int64_t BIAS_2000 = 946684800LL;
-
-        int64_t y = MAX_YEAR;
-        int64_t secs = -((ts - BIAS_2000) - BIAS_292277022000);
-
-        const int64_t n_400_years = secs / SEC_PER_400_YEARS;
-        secs -= n_400_years * SEC_PER_400_YEARS;
-        y -= n_400_years * 400;
-
-        const int64_t n_100_years = secs / SEC_PER_100_YEARS;
-        secs -= n_100_years * SEC_PER_100_YEARS;
-        y -= n_100_years * 100;
-
-        const int64_t n_4_years = secs / SEC_PER_4_YEARS;
-        secs -= n_4_years * SEC_PER_4_YEARS;
-        y -= n_4_years * 4;
-
-        const int64_t n_1_years = secs / SEC_PER_YEAR;
-        secs -= n_1_years * SEC_PER_YEAR;
-        y -= n_1_years;
-
-        y = secs == 0 ? y : y - 1;
-        return y - UNIX_EPOCH;
+        const detail::DaySplit split = detail::split_unix_day(ts);
+        const int64_t year = detail::fast_year_from_days_constexpr(split.days);
+        return static_cast<T>(year - UNIX_EPOCH);
     }
+
+    namespace legacy {
+
+        /// \brief Convert a calendar date to UNIX day count.
+        ///
+        /// Calculates the number of days since the UNIX epoch (January 1, 1970)
+        /// for the provided calendar date components.
+        ///
+        /// \tparam Year Type of the year component.
+        /// \tparam Month Type of the month component.
+        /// \tparam Day Type of the day component.
+        /// \param year Year component of the date.
+        /// \param month Month component of the date.
+        /// \param day Day component of the date.
+        /// \return Number of days since the UNIX epoch.
+        template<class Year, class Month, class Day>
+        TIME_SHIELD_CONSTEXPR inline uday_t date_to_unix_day(
+                Year year,
+                Month month,
+                Day day) noexcept {
+            const int64_t y = static_cast<int64_t>(year) - (static_cast<int64_t>(month) <= 2 ? 1 : 0);
+            const int64_t m = static_cast<int64_t>(month) <= 2
+                    ? static_cast<int64_t>(month) + 9
+                    : static_cast<int64_t>(month) - 3;
+            const int64_t era = (y >= 0 ? y : y - 399) / 400;
+            const int64_t yoe = y - era * 400;
+            const int64_t doy = (153 * m + 2) / 5 + static_cast<int64_t>(day) - 1;
+            const int64_t doe = yoe * 365 + yoe / 4 - yoe / 100 + doy;
+            return static_cast<uday_t>(era * 146097 + doe - 719468);
+        }
+
+    } // namespace legacy
 
     /// \brief Convert a calendar date to UNIX day count.
     ///
     /// Calculates the number of days since the UNIX epoch (January 1, 1970)
     /// for the provided calendar date components.
+    /// \note Inspired by the algorithm described in:
+    ///       https://www.benjoffe.com/fast-date-64
+    ///       This implementation is written from scratch (no code copied).
     ///
     /// \tparam Year Type of the year component.
     /// \tparam Month Type of the month component.
@@ -69,15 +123,11 @@ namespace time_shield {
             Year year,
             Month month,
             Day day) noexcept {
-        const int64_t y = static_cast<int64_t>(year) - (static_cast<int64_t>(month) <= 2 ? 1 : 0);
-        const int64_t m = static_cast<int64_t>(month) <= 2
-                ? static_cast<int64_t>(month) + 9
-                : static_cast<int64_t>(month) - 3;
-        const int64_t era = (y >= 0 ? y : y - 399) / 400;
-        const int64_t yoe = y - era * 400;
-        const int64_t doy = (153 * m + 2) / 5 + static_cast<int64_t>(day) - 1;
-        const int64_t doe = yoe * 365 + yoe / 4 - yoe / 100 + doy;
-        return static_cast<uday_t>(era * 146097 + doe - 719468);
+        return static_cast<uday_t>(
+            detail::fast_days_from_date_constexpr(
+                static_cast<int64_t>(year),
+                static_cast<int>(month),
+                static_cast<int>(day)));
     }
 
     /// \brief Get UNIX day.

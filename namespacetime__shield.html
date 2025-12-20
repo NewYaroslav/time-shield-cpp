@@ -219,12 +219,15 @@ Typedefs</h2></td></tr>
 <tr class="memitem:gab9f26871d6521b013bea4c65e6697ad9" id="r_gab9f26871d6521b013bea4c65e6697ad9"><td class="memItemLeft" align="right" valign="top">typedef int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9">year_t</a></td></tr>
 <tr class="memdesc:gab9f26871d6521b013bea4c65e6697ad9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Year as an integer (e.g., 2024).  <br /></td></tr>
 <tr class="separator:gab9f26871d6521b013bea4c65e6697ad9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga63a3e5f64aa9c168fc51dc05a7014f37" id="r_ga63a3e5f64aa9c168fc51dc05a7014f37"><td class="memItemLeft" align="right" valign="top">typedef int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__time__types.html#ga63a3e5f64aa9c168fc51dc05a7014f37">uday_t</a></td></tr>
-<tr class="memdesc:ga63a3e5f64aa9c168fc51dc05a7014f37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unix day count since 1970‑01‑01 (days since epoch).  <br /></td></tr>
-<tr class="separator:ga63a3e5f64aa9c168fc51dc05a7014f37"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga391046d8662dee26a659793b8c0daf6a" id="r_ga391046d8662dee26a659793b8c0daf6a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__time__types.html#ga391046d8662dee26a659793b8c0daf6a">unixday_t</a> = <a class="el" href="group__time__types.html#ga63a3e5f64aa9c168fc51dc05a7014f37">uday_t</a></td></tr>
-<tr class="memdesc:ga391046d8662dee26a659793b8c0daf6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for Unix day count type.  <br /></td></tr>
-<tr class="separator:ga391046d8662dee26a659793b8c0daf6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga319622840d55a0c7d16c92776a79e3bf" id="r_ga319622840d55a0c7d16c92776a79e3bf"><td class="memItemLeft" align="right" valign="top">typedef int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__time__types.html#ga319622840d55a0c7d16c92776a79e3bf">dse_t</a></td></tr>
+<tr class="memdesc:ga319622840d55a0c7d16c92776a79e3bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unix day count since 1970‑01‑01 (days since epoch).  <br /></td></tr>
+<tr class="separator:ga319622840d55a0c7d16c92776a79e3bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga67ba5c77ef4b8dd7640028e45c7eb4b0" id="r_ga67ba5c77ef4b8dd7640028e45c7eb4b0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__time__types.html#ga67ba5c77ef4b8dd7640028e45c7eb4b0">unix_day_t</a> = <a class="el" href="group__time__types.html#ga319622840d55a0c7d16c92776a79e3bf">dse_t</a></td></tr>
+<tr class="memdesc:ga67ba5c77ef4b8dd7640028e45c7eb4b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for Unix day count type.  <br /></td></tr>
+<tr class="separator:ga67ba5c77ef4b8dd7640028e45c7eb4b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7db434c3390f0eb6314520fc170b1dfe" id="r_ga7db434c3390f0eb6314520fc170b1dfe"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__time__types.html#ga7db434c3390f0eb6314520fc170b1dfe">unixday_t</a> = <a class="el" href="group__time__types.html#ga319622840d55a0c7d16c92776a79e3bf">dse_t</a></td></tr>
+<tr class="memdesc:ga7db434c3390f0eb6314520fc170b1dfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for Unix day count type.  <br /></td></tr>
+<tr class="separator:ga7db434c3390f0eb6314520fc170b1dfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gacb5a40be07fa50768db103565b4498fc" id="r_gacb5a40be07fa50768db103565b4498fc"><td class="memItemLeft" align="right" valign="top">typedef int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__time__types.html#gacb5a40be07fa50768db103565b4498fc">iso_week_t</a></td></tr>
 <tr class="memdesc:gacb5a40be07fa50768db103565b4498fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">ISO week number type (1-52/53).  <br /></td></tr>
 <tr class="separator:gacb5a40be07fa50768db103565b4498fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -875,11 +878,11 @@ Functions</h2></td></tr>
 <tr class="memitem:ga4df5c8c2b2f21187ee739aaed6c65afc" id="r_ga4df5c8c2b2f21187ee739aaed6c65afc"><td class="memItemLeft" align="right" valign="top">TIME_SHIELD_CONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__time__validation.html#ga4df5c8c2b2f21187ee739aaed6c65afc">is_weekend</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>) noexcept</td></tr>
 <tr class="memdesc:ga4df5c8c2b2f21187ee739aaed6c65afc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for is_day_off function.  <br /></td></tr>
 <tr class="separator:ga4df5c8c2b2f21187ee739aaed6c65afc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaaa13c138e194eff2a8868cda6bf4791b" id="r_gaaa13c138e194eff2a8868cda6bf4791b"><td class="memTemplParams" colspan="2">template&lt;class T = uday_t&gt; </td></tr>
+<tr class="memitem:gaaa13c138e194eff2a8868cda6bf4791b" id="r_gaaa13c138e194eff2a8868cda6bf4791b"><td class="memTemplParams" colspan="2">template&lt;class T = dse_t&gt; </td></tr>
 <tr class="memitem:gaaa13c138e194eff2a8868cda6bf4791b"><td class="memTemplItemLeft" align="right" valign="top">TIME_SHIELD_CONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__time__validation.html#gaaa13c138e194eff2a8868cda6bf4791b">is_day_off_unix_day</a> (T <a class="el" href="group__time__conversions.html#ga0aa3eab8489bde9d3004e15461f8b925">unix_day</a>) noexcept</td></tr>
 <tr class="memdesc:gaaa13c138e194eff2a8868cda6bf4791b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a given day (since Unix epoch) corresponds to a weekend day (Saturday or Sunday). This function checks if the given day (number of days since Unix epoch) falls on a weekend day, which is either Saturday or Sunday.  <br /></td></tr>
 <tr class="separator:gaaa13c138e194eff2a8868cda6bf4791b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa5c72c3a49ed1baaa84ce5f0f50e6fb1" id="r_gaa5c72c3a49ed1baaa84ce5f0f50e6fb1"><td class="memTemplParams" colspan="2">template&lt;class T = uday_t&gt; </td></tr>
+<tr class="memitem:gaa5c72c3a49ed1baaa84ce5f0f50e6fb1" id="r_gaa5c72c3a49ed1baaa84ce5f0f50e6fb1"><td class="memTemplParams" colspan="2">template&lt;class T = dse_t&gt; </td></tr>
 <tr class="memitem:gaa5c72c3a49ed1baaa84ce5f0f50e6fb1"><td class="memTemplItemLeft" align="right" valign="top">TIME_SHIELD_CONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__time__validation.html#gaa5c72c3a49ed1baaa84ce5f0f50e6fb1">is_weekend_unix_day</a> (T <a class="el" href="group__time__conversions.html#ga0aa3eab8489bde9d3004e15461f8b925">unix_day</a>) noexcept</td></tr>
 <tr class="memdesc:gaa5c72c3a49ed1baaa84ce5f0f50e6fb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for is_day_off_unix_day function.  <br /></td></tr>
 <tr class="separator:gaa5c72c3a49ed1baaa84ce5f0f50e6fb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2068,102 +2071,102 @@ Functions</h2></td></tr>
 <tr class="memitem:gab0c5de3418e8bc69ac0cfb9b5dc396f3"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__time__conversions.html#gab0c5de3418e8bc69ac0cfb9b5dc396f3">get_unix_year</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>) noexcept</td></tr>
 <tr class="memdesc:gab0c5de3418e8bc69ac0cfb9b5dc396f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for years_since_epoch function.  <br /></td></tr>
 <tr class="separator:gab0c5de3418e8bc69ac0cfb9b5dc396f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga15b52a583349139e7dcd47c98b29ebb6" id="r_ga15b52a583349139e7dcd47c98b29ebb6"><td class="memTemplParams" colspan="2">template&lt;class T = uday_t&gt; </td></tr>
+<tr class="memitem:ga15b52a583349139e7dcd47c98b29ebb6" id="r_ga15b52a583349139e7dcd47c98b29ebb6"><td class="memTemplParams" colspan="2">template&lt;class T = dse_t&gt; </td></tr>
 <tr class="memitem:ga15b52a583349139e7dcd47c98b29ebb6"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__time__conversions.html#ga15b52a583349139e7dcd47c98b29ebb6">get_unixday</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>=<a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>()) noexcept</td></tr>
 <tr class="memdesc:ga15b52a583349139e7dcd47c98b29ebb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for get_unix_day function.  <br /></td></tr>
 <tr class="separator:ga15b52a583349139e7dcd47c98b29ebb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0aa3eab8489bde9d3004e15461f8b925" id="r_ga0aa3eab8489bde9d3004e15461f8b925"><td class="memTemplParams" colspan="2">template&lt;class T = uday_t&gt; </td></tr>
+<tr class="memitem:ga0aa3eab8489bde9d3004e15461f8b925" id="r_ga0aa3eab8489bde9d3004e15461f8b925"><td class="memTemplParams" colspan="2">template&lt;class T = dse_t&gt; </td></tr>
 <tr class="memitem:ga0aa3eab8489bde9d3004e15461f8b925"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__time__conversions.html#ga0aa3eab8489bde9d3004e15461f8b925">unix_day</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>=<a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>()) noexcept</td></tr>
 <tr class="memdesc:ga0aa3eab8489bde9d3004e15461f8b925"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for days_since_epoch function.  <br /></td></tr>
 <tr class="separator:ga0aa3eab8489bde9d3004e15461f8b925"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac04c642d72f3ac94c9f88adacfcb5922" id="r_gac04c642d72f3ac94c9f88adacfcb5922"><td class="memTemplParams" colspan="2">template&lt;class T = uday_t&gt; </td></tr>
+<tr class="memitem:gac04c642d72f3ac94c9f88adacfcb5922" id="r_gac04c642d72f3ac94c9f88adacfcb5922"><td class="memTemplParams" colspan="2">template&lt;class T = dse_t&gt; </td></tr>
 <tr class="memitem:gac04c642d72f3ac94c9f88adacfcb5922"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__time__conversions.html#gac04c642d72f3ac94c9f88adacfcb5922">unixday</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>=<a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>()) noexcept</td></tr>
 <tr class="memdesc:gac04c642d72f3ac94c9f88adacfcb5922"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for days_since_epoch function.  <br /></td></tr>
 <tr class="separator:gac04c642d72f3ac94c9f88adacfcb5922"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf9844293db43a81fb0bcf1ff67dd0d33" id="r_gaf9844293db43a81fb0bcf1ff67dd0d33"><td class="memTemplParams" colspan="2">template&lt;class T = uday_t&gt; </td></tr>
+<tr class="memitem:gaf9844293db43a81fb0bcf1ff67dd0d33" id="r_gaf9844293db43a81fb0bcf1ff67dd0d33"><td class="memTemplParams" colspan="2">template&lt;class T = dse_t&gt; </td></tr>
 <tr class="memitem:gaf9844293db43a81fb0bcf1ff67dd0d33"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__time__conversions.html#gaf9844293db43a81fb0bcf1ff67dd0d33">uday</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>=<a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>()) noexcept</td></tr>
 <tr class="memdesc:gaf9844293db43a81fb0bcf1ff67dd0d33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for days_since_epoch function.  <br /></td></tr>
 <tr class="separator:gaf9844293db43a81fb0bcf1ff67dd0d33"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2140d9f0c139a8f50bb870752f1e6bbe" id="r_ga2140d9f0c139a8f50bb870752f1e6bbe"><td class="memTemplParams" colspan="2">template&lt;class T = uday_t&gt; </td></tr>
+<tr class="memitem:ga2140d9f0c139a8f50bb870752f1e6bbe" id="r_ga2140d9f0c139a8f50bb870752f1e6bbe"><td class="memTemplParams" colspan="2">template&lt;class T = dse_t&gt; </td></tr>
 <tr class="memitem:ga2140d9f0c139a8f50bb870752f1e6bbe"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__time__conversions.html#ga2140d9f0c139a8f50bb870752f1e6bbe">get_unix_day</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>=<a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>()) noexcept</td></tr>
 <tr class="memdesc:ga2140d9f0c139a8f50bb870752f1e6bbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for days_since_epoch function.  <br /></td></tr>
 <tr class="separator:ga2140d9f0c139a8f50bb870752f1e6bbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf85f8e2b5f1be3d4d05d739aec4a30b2" id="r_gaf85f8e2b5f1be3d4d05d739aec4a30b2"><td class="memTemplParams" colspan="2">template&lt;class T = uday_t&gt; </td></tr>
+<tr class="memitem:gaf85f8e2b5f1be3d4d05d739aec4a30b2" id="r_gaf85f8e2b5f1be3d4d05d739aec4a30b2"><td class="memTemplParams" colspan="2">template&lt;class T = dse_t&gt; </td></tr>
 <tr class="memitem:gaf85f8e2b5f1be3d4d05d739aec4a30b2"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__time__conversions.html#gaf85f8e2b5f1be3d4d05d739aec4a30b2">get_unixday_ms</a> (<a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> t_ms=<a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">time_shield::ts_ms</a>()) noexcept</td></tr>
 <tr class="memdesc:gaf85f8e2b5f1be3d4d05d739aec4a30b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for days_since_epoch function.  <br /></td></tr>
 <tr class="separator:gaf85f8e2b5f1be3d4d05d739aec4a30b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga51307e653199005162db2eb89dcd849e" id="r_ga51307e653199005162db2eb89dcd849e"><td class="memTemplParams" colspan="2">template&lt;class T = uday_t&gt; </td></tr>
+<tr class="memitem:ga51307e653199005162db2eb89dcd849e" id="r_ga51307e653199005162db2eb89dcd849e"><td class="memTemplParams" colspan="2">template&lt;class T = dse_t&gt; </td></tr>
 <tr class="memitem:ga51307e653199005162db2eb89dcd849e"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__time__conversions.html#ga51307e653199005162db2eb89dcd849e">unix_day_ms</a> (<a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> t_ms=<a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">time_shield::ts_ms</a>()) noexcept</td></tr>
 <tr class="memdesc:ga51307e653199005162db2eb89dcd849e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for days_since_epoch function.  <br /></td></tr>
 <tr class="separator:ga51307e653199005162db2eb89dcd849e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga33a36c9e76a61018e6c99610ce1b2d95" id="r_ga33a36c9e76a61018e6c99610ce1b2d95"><td class="memTemplParams" colspan="2">template&lt;class T = uday_t&gt; </td></tr>
+<tr class="memitem:ga33a36c9e76a61018e6c99610ce1b2d95" id="r_ga33a36c9e76a61018e6c99610ce1b2d95"><td class="memTemplParams" colspan="2">template&lt;class T = dse_t&gt; </td></tr>
 <tr class="memitem:ga33a36c9e76a61018e6c99610ce1b2d95"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__time__conversions.html#ga33a36c9e76a61018e6c99610ce1b2d95">unixday_ms</a> (<a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> t_ms=<a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">time_shield::ts_ms</a>()) noexcept</td></tr>
 <tr class="memdesc:ga33a36c9e76a61018e6c99610ce1b2d95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for days_since_epoch function.  <br /></td></tr>
 <tr class="separator:ga33a36c9e76a61018e6c99610ce1b2d95"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5a4959bc5607b5b7637cd7d2fd543976" id="r_ga5a4959bc5607b5b7637cd7d2fd543976"><td class="memTemplParams" colspan="2">template&lt;class T = uday_t&gt; </td></tr>
+<tr class="memitem:ga5a4959bc5607b5b7637cd7d2fd543976" id="r_ga5a4959bc5607b5b7637cd7d2fd543976"><td class="memTemplParams" colspan="2">template&lt;class T = dse_t&gt; </td></tr>
 <tr class="memitem:ga5a4959bc5607b5b7637cd7d2fd543976"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__time__conversions.html#ga5a4959bc5607b5b7637cd7d2fd543976">uday_ms</a> (<a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> t_ms=<a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">time_shield::ts_ms</a>()) noexcept</td></tr>
 <tr class="memdesc:ga5a4959bc5607b5b7637cd7d2fd543976"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for days_since_epoch function.  <br /></td></tr>
 <tr class="separator:ga5a4959bc5607b5b7637cd7d2fd543976"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4d67cf04520f07c804d41709fc124dc4" id="r_ga4d67cf04520f07c804d41709fc124dc4"><td class="memTemplParams" colspan="2">template&lt;class T = uday_t&gt; </td></tr>
+<tr class="memitem:ga4d67cf04520f07c804d41709fc124dc4" id="r_ga4d67cf04520f07c804d41709fc124dc4"><td class="memTemplParams" colspan="2">template&lt;class T = dse_t&gt; </td></tr>
 <tr class="memitem:ga4d67cf04520f07c804d41709fc124dc4"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__time__conversions.html#ga4d67cf04520f07c804d41709fc124dc4">get_unix_day_ms</a> (<a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> t_ms=<a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">time_shield::ts_ms</a>()) noexcept</td></tr>
 <tr class="memdesc:ga4d67cf04520f07c804d41709fc124dc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for days_since_epoch function.  <br /></td></tr>
 <tr class="separator:ga4d67cf04520f07c804d41709fc124dc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5e211407327ef9ca48add0b5c5826d5b" id="r_ga5e211407327ef9ca48add0b5c5826d5b"><td class="memTemplParams" colspan="2">template&lt;class T = ts_t&gt; </td></tr>
-<tr class="memitem:ga5e211407327ef9ca48add0b5c5826d5b"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__time__conversions.html#ga5e211407327ef9ca48add0b5c5826d5b">unix_day_to_timestamp</a> (<a class="el" href="group__time__types.html#ga63a3e5f64aa9c168fc51dc05a7014f37">uday_t</a> <a class="el" href="group__time__conversions.html#ga0aa3eab8489bde9d3004e15461f8b925">unix_day</a>) noexcept</td></tr>
-<tr class="memdesc:ga5e211407327ef9ca48add0b5c5826d5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for unix_day_to_ts function.  <br /></td></tr>
-<tr class="separator:ga5e211407327ef9ca48add0b5c5826d5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf351958fad11ad1632d4b02973da3561" id="r_gaf351958fad11ad1632d4b02973da3561"><td class="memTemplParams" colspan="2">template&lt;class T = ts_t&gt; </td></tr>
-<tr class="memitem:gaf351958fad11ad1632d4b02973da3561"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__time__conversions.html#gaf351958fad11ad1632d4b02973da3561">unixday_to_ts</a> (<a class="el" href="group__time__types.html#ga63a3e5f64aa9c168fc51dc05a7014f37">uday_t</a> <a class="el" href="group__time__conversions.html#ga0aa3eab8489bde9d3004e15461f8b925">unix_day</a>) noexcept</td></tr>
-<tr class="memdesc:gaf351958fad11ad1632d4b02973da3561"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for unix_day_to_ts function.  <br /></td></tr>
-<tr class="separator:gaf351958fad11ad1632d4b02973da3561"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9efce625260b82fed763ba0afd2bf2de" id="r_ga9efce625260b82fed763ba0afd2bf2de"><td class="memTemplParams" colspan="2">template&lt;class T = ts_t&gt; </td></tr>
-<tr class="memitem:ga9efce625260b82fed763ba0afd2bf2de"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__time__conversions.html#ga9efce625260b82fed763ba0afd2bf2de">uday_to_ts</a> (<a class="el" href="group__time__types.html#ga63a3e5f64aa9c168fc51dc05a7014f37">uday_t</a> <a class="el" href="group__time__conversions.html#ga0aa3eab8489bde9d3004e15461f8b925">unix_day</a>) noexcept</td></tr>
-<tr class="memdesc:ga9efce625260b82fed763ba0afd2bf2de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for unix_day_to_ts function.  <br /></td></tr>
-<tr class="separator:ga9efce625260b82fed763ba0afd2bf2de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8d55caa4b34c72c51b21f008dad5c185" id="r_ga8d55caa4b34c72c51b21f008dad5c185"><td class="memTemplParams" colspan="2">template&lt;class T = ts_t&gt; </td></tr>
-<tr class="memitem:ga8d55caa4b34c72c51b21f008dad5c185"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__time__conversions.html#ga8d55caa4b34c72c51b21f008dad5c185">start_of_day_from_unix_day</a> (<a class="el" href="group__time__types.html#ga63a3e5f64aa9c168fc51dc05a7014f37">uday_t</a> <a class="el" href="group__time__conversions.html#ga0aa3eab8489bde9d3004e15461f8b925">unix_day</a>) noexcept</td></tr>
-<tr class="memdesc:ga8d55caa4b34c72c51b21f008dad5c185"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for unix_day_to_ts function.  <br /></td></tr>
-<tr class="separator:ga8d55caa4b34c72c51b21f008dad5c185"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab91209b45dddc3d97e5cae455a427b16" id="r_gab91209b45dddc3d97e5cae455a427b16"><td class="memTemplParams" colspan="2">template&lt;class T = ts_t&gt; </td></tr>
-<tr class="memitem:gab91209b45dddc3d97e5cae455a427b16"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__time__conversions.html#gab91209b45dddc3d97e5cae455a427b16">unix_day_to_timestamp_ms</a> (<a class="el" href="group__time__types.html#ga63a3e5f64aa9c168fc51dc05a7014f37">uday_t</a> <a class="el" href="group__time__conversions.html#ga0aa3eab8489bde9d3004e15461f8b925">unix_day</a>) noexcept</td></tr>
-<tr class="memdesc:gab91209b45dddc3d97e5cae455a427b16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for unix_day_to_ts_ms function.  <br /></td></tr>
-<tr class="separator:gab91209b45dddc3d97e5cae455a427b16"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3d3f3ffd4d37343fed75fb5dc9f85292" id="r_ga3d3f3ffd4d37343fed75fb5dc9f85292"><td class="memTemplParams" colspan="2">template&lt;class T = ts_t&gt; </td></tr>
-<tr class="memitem:ga3d3f3ffd4d37343fed75fb5dc9f85292"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__time__conversions.html#ga3d3f3ffd4d37343fed75fb5dc9f85292">unixday_to_ts_ms</a> (<a class="el" href="group__time__types.html#ga63a3e5f64aa9c168fc51dc05a7014f37">uday_t</a> <a class="el" href="group__time__conversions.html#ga0aa3eab8489bde9d3004e15461f8b925">unix_day</a>) noexcept</td></tr>
-<tr class="memdesc:ga3d3f3ffd4d37343fed75fb5dc9f85292"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for unix_day_to_ts_ms function.  <br /></td></tr>
-<tr class="separator:ga3d3f3ffd4d37343fed75fb5dc9f85292"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3e6ad76c25e5dc44e5cf0e5bcaf21a50" id="r_ga3e6ad76c25e5dc44e5cf0e5bcaf21a50"><td class="memTemplParams" colspan="2">template&lt;class T = ts_t&gt; </td></tr>
-<tr class="memitem:ga3e6ad76c25e5dc44e5cf0e5bcaf21a50"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__time__conversions.html#ga3e6ad76c25e5dc44e5cf0e5bcaf21a50">uday_to_ts_ms</a> (<a class="el" href="group__time__types.html#ga63a3e5f64aa9c168fc51dc05a7014f37">uday_t</a> <a class="el" href="group__time__conversions.html#ga0aa3eab8489bde9d3004e15461f8b925">unix_day</a>) noexcept</td></tr>
-<tr class="memdesc:ga3e6ad76c25e5dc44e5cf0e5bcaf21a50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for unix_day_to_ts_ms function.  <br /></td></tr>
-<tr class="separator:ga3e6ad76c25e5dc44e5cf0e5bcaf21a50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0140bc28bbd9afcc9eb57fc75ea9c3d8" id="r_ga0140bc28bbd9afcc9eb57fc75ea9c3d8"><td class="memTemplParams" colspan="2">template&lt;class T = ts_t&gt; </td></tr>
-<tr class="memitem:ga0140bc28bbd9afcc9eb57fc75ea9c3d8"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__time__conversions.html#ga0140bc28bbd9afcc9eb57fc75ea9c3d8">start_of_day_from_unix_day_ms</a> (<a class="el" href="group__time__types.html#ga63a3e5f64aa9c168fc51dc05a7014f37">uday_t</a> <a class="el" href="group__time__conversions.html#ga0aa3eab8489bde9d3004e15461f8b925">unix_day</a>) noexcept</td></tr>
-<tr class="memdesc:ga0140bc28bbd9afcc9eb57fc75ea9c3d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for unix_day_to_ts_ms function.  <br /></td></tr>
-<tr class="separator:ga0140bc28bbd9afcc9eb57fc75ea9c3d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3f2d3d372a503217a51a1da539a9ebab" id="r_ga3f2d3d372a503217a51a1da539a9ebab"><td class="memTemplParams" colspan="2">template&lt;class T = ts_t&gt; </td></tr>
-<tr class="memitem:ga3f2d3d372a503217a51a1da539a9ebab"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__time__conversions.html#ga3f2d3d372a503217a51a1da539a9ebab">next_day_from_unix_day</a> (<a class="el" href="group__time__types.html#ga63a3e5f64aa9c168fc51dc05a7014f37">uday_t</a> <a class="el" href="group__time__conversions.html#ga0aa3eab8489bde9d3004e15461f8b925">unix_day</a>) noexcept</td></tr>
-<tr class="memdesc:ga3f2d3d372a503217a51a1da539a9ebab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for start_of_next_day_from_unix_day function.  <br /></td></tr>
-<tr class="separator:ga3f2d3d372a503217a51a1da539a9ebab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6cc0a238f474d5f2f2cc47f970382d91" id="r_ga6cc0a238f474d5f2f2cc47f970382d91"><td class="memTemplParams" colspan="2">template&lt;class T = ts_t&gt; </td></tr>
-<tr class="memitem:ga6cc0a238f474d5f2f2cc47f970382d91"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__time__conversions.html#ga6cc0a238f474d5f2f2cc47f970382d91">next_day_unix_day</a> (<a class="el" href="group__time__types.html#ga63a3e5f64aa9c168fc51dc05a7014f37">uday_t</a> <a class="el" href="group__time__conversions.html#ga0aa3eab8489bde9d3004e15461f8b925">unix_day</a>) noexcept</td></tr>
-<tr class="memdesc:ga6cc0a238f474d5f2f2cc47f970382d91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for start_of_next_day_from_unix_day function.  <br /></td></tr>
-<tr class="separator:ga6cc0a238f474d5f2f2cc47f970382d91"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf5dfb3012a4b1a8800ad0aa40768d8a8" id="r_gaf5dfb3012a4b1a8800ad0aa40768d8a8"><td class="memTemplParams" colspan="2">template&lt;class T = ts_t&gt; </td></tr>
-<tr class="memitem:gaf5dfb3012a4b1a8800ad0aa40768d8a8"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__time__conversions.html#gaf5dfb3012a4b1a8800ad0aa40768d8a8">next_day_unixday</a> (<a class="el" href="group__time__types.html#ga63a3e5f64aa9c168fc51dc05a7014f37">uday_t</a> <a class="el" href="group__time__conversions.html#ga0aa3eab8489bde9d3004e15461f8b925">unix_day</a>) noexcept</td></tr>
-<tr class="memdesc:gaf5dfb3012a4b1a8800ad0aa40768d8a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for start_of_next_day_from_unix_day function.  <br /></td></tr>
-<tr class="separator:gaf5dfb3012a4b1a8800ad0aa40768d8a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga16898a8e0db7fc14bcada1b47f7fe9ab" id="r_ga16898a8e0db7fc14bcada1b47f7fe9ab"><td class="memTemplParams" colspan="2">template&lt;class T = ts_ms_t&gt; </td></tr>
-<tr class="memitem:ga16898a8e0db7fc14bcada1b47f7fe9ab"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__time__conversions.html#ga16898a8e0db7fc14bcada1b47f7fe9ab">next_day_from_unix_day_ms</a> (<a class="el" href="group__time__types.html#ga63a3e5f64aa9c168fc51dc05a7014f37">uday_t</a> <a class="el" href="group__time__conversions.html#ga0aa3eab8489bde9d3004e15461f8b925">unix_day</a>) noexcept</td></tr>
-<tr class="memdesc:ga16898a8e0db7fc14bcada1b47f7fe9ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for start_of_next_day_from_unix_day_ms function.  <br /></td></tr>
-<tr class="separator:ga16898a8e0db7fc14bcada1b47f7fe9ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa30cb93ce53edc509bae10632cacd63c" id="r_gaa30cb93ce53edc509bae10632cacd63c"><td class="memTemplParams" colspan="2">template&lt;class T = ts_ms_t&gt; </td></tr>
-<tr class="memitem:gaa30cb93ce53edc509bae10632cacd63c"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__time__conversions.html#gaa30cb93ce53edc509bae10632cacd63c">next_day_unix_day_ms</a> (<a class="el" href="group__time__types.html#ga63a3e5f64aa9c168fc51dc05a7014f37">uday_t</a> <a class="el" href="group__time__conversions.html#ga0aa3eab8489bde9d3004e15461f8b925">unix_day</a>) noexcept</td></tr>
-<tr class="memdesc:gaa30cb93ce53edc509bae10632cacd63c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for start_of_next_day_from_unix_day_ms function.  <br /></td></tr>
-<tr class="separator:gaa30cb93ce53edc509bae10632cacd63c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2162ce76939757d02b3214a4b75e8c37" id="r_ga2162ce76939757d02b3214a4b75e8c37"><td class="memTemplParams" colspan="2">template&lt;class T = ts_ms_t&gt; </td></tr>
-<tr class="memitem:ga2162ce76939757d02b3214a4b75e8c37"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__time__conversions.html#ga2162ce76939757d02b3214a4b75e8c37">next_day_unixday_ms</a> (<a class="el" href="group__time__types.html#ga63a3e5f64aa9c168fc51dc05a7014f37">uday_t</a> <a class="el" href="group__time__conversions.html#ga0aa3eab8489bde9d3004e15461f8b925">unix_day</a>) noexcept</td></tr>
-<tr class="memdesc:ga2162ce76939757d02b3214a4b75e8c37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for start_of_next_day_from_unix_day_ms function.  <br /></td></tr>
-<tr class="separator:ga2162ce76939757d02b3214a4b75e8c37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac29b1a437aa70c1759533a52705f8fa4" id="r_gac29b1a437aa70c1759533a52705f8fa4"><td class="memTemplParams" colspan="2">template&lt;class T = ts_t&gt; </td></tr>
+<tr class="memitem:gac29b1a437aa70c1759533a52705f8fa4"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__time__conversions.html#gac29b1a437aa70c1759533a52705f8fa4">unix_day_to_timestamp</a> (<a class="el" href="group__time__types.html#ga319622840d55a0c7d16c92776a79e3bf">dse_t</a> <a class="el" href="group__time__conversions.html#ga0aa3eab8489bde9d3004e15461f8b925">unix_day</a>) noexcept</td></tr>
+<tr class="memdesc:gac29b1a437aa70c1759533a52705f8fa4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for unix_day_to_ts function.  <br /></td></tr>
+<tr class="separator:gac29b1a437aa70c1759533a52705f8fa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacc95093c087c0f783674fbb0fa2704e0" id="r_gacc95093c087c0f783674fbb0fa2704e0"><td class="memTemplParams" colspan="2">template&lt;class T = ts_t&gt; </td></tr>
+<tr class="memitem:gacc95093c087c0f783674fbb0fa2704e0"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__time__conversions.html#gacc95093c087c0f783674fbb0fa2704e0">unixday_to_ts</a> (<a class="el" href="group__time__types.html#ga319622840d55a0c7d16c92776a79e3bf">dse_t</a> <a class="el" href="group__time__conversions.html#ga0aa3eab8489bde9d3004e15461f8b925">unix_day</a>) noexcept</td></tr>
+<tr class="memdesc:gacc95093c087c0f783674fbb0fa2704e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for unix_day_to_ts function.  <br /></td></tr>
+<tr class="separator:gacc95093c087c0f783674fbb0fa2704e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6157da842394303a82c7541962182ae4" id="r_ga6157da842394303a82c7541962182ae4"><td class="memTemplParams" colspan="2">template&lt;class T = ts_t&gt; </td></tr>
+<tr class="memitem:ga6157da842394303a82c7541962182ae4"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__time__conversions.html#ga6157da842394303a82c7541962182ae4">uday_to_ts</a> (<a class="el" href="group__time__types.html#ga319622840d55a0c7d16c92776a79e3bf">dse_t</a> <a class="el" href="group__time__conversions.html#ga0aa3eab8489bde9d3004e15461f8b925">unix_day</a>) noexcept</td></tr>
+<tr class="memdesc:ga6157da842394303a82c7541962182ae4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for unix_day_to_ts function.  <br /></td></tr>
+<tr class="separator:ga6157da842394303a82c7541962182ae4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga540fc552b9ec452380886a615532d9db" id="r_ga540fc552b9ec452380886a615532d9db"><td class="memTemplParams" colspan="2">template&lt;class T = ts_t&gt; </td></tr>
+<tr class="memitem:ga540fc552b9ec452380886a615532d9db"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__time__conversions.html#ga540fc552b9ec452380886a615532d9db">start_of_day_from_unix_day</a> (<a class="el" href="group__time__types.html#ga319622840d55a0c7d16c92776a79e3bf">dse_t</a> <a class="el" href="group__time__conversions.html#ga0aa3eab8489bde9d3004e15461f8b925">unix_day</a>) noexcept</td></tr>
+<tr class="memdesc:ga540fc552b9ec452380886a615532d9db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for unix_day_to_ts function.  <br /></td></tr>
+<tr class="separator:ga540fc552b9ec452380886a615532d9db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabcb6e3d8dc5229d9d4bf969da557848d" id="r_gabcb6e3d8dc5229d9d4bf969da557848d"><td class="memTemplParams" colspan="2">template&lt;class T = ts_t&gt; </td></tr>
+<tr class="memitem:gabcb6e3d8dc5229d9d4bf969da557848d"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__time__conversions.html#gabcb6e3d8dc5229d9d4bf969da557848d">unix_day_to_timestamp_ms</a> (<a class="el" href="group__time__types.html#ga319622840d55a0c7d16c92776a79e3bf">dse_t</a> <a class="el" href="group__time__conversions.html#ga0aa3eab8489bde9d3004e15461f8b925">unix_day</a>) noexcept</td></tr>
+<tr class="memdesc:gabcb6e3d8dc5229d9d4bf969da557848d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for unix_day_to_ts_ms function.  <br /></td></tr>
+<tr class="separator:gabcb6e3d8dc5229d9d4bf969da557848d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaec2bf1409a4ad5c5a8e489d8ccd1e461" id="r_gaec2bf1409a4ad5c5a8e489d8ccd1e461"><td class="memTemplParams" colspan="2">template&lt;class T = ts_t&gt; </td></tr>
+<tr class="memitem:gaec2bf1409a4ad5c5a8e489d8ccd1e461"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__time__conversions.html#gaec2bf1409a4ad5c5a8e489d8ccd1e461">unixday_to_ts_ms</a> (<a class="el" href="group__time__types.html#ga319622840d55a0c7d16c92776a79e3bf">dse_t</a> <a class="el" href="group__time__conversions.html#ga0aa3eab8489bde9d3004e15461f8b925">unix_day</a>) noexcept</td></tr>
+<tr class="memdesc:gaec2bf1409a4ad5c5a8e489d8ccd1e461"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for unix_day_to_ts_ms function.  <br /></td></tr>
+<tr class="separator:gaec2bf1409a4ad5c5a8e489d8ccd1e461"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga112579b7de24fa492c7056348b3e7cac" id="r_ga112579b7de24fa492c7056348b3e7cac"><td class="memTemplParams" colspan="2">template&lt;class T = ts_t&gt; </td></tr>
+<tr class="memitem:ga112579b7de24fa492c7056348b3e7cac"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__time__conversions.html#ga112579b7de24fa492c7056348b3e7cac">uday_to_ts_ms</a> (<a class="el" href="group__time__types.html#ga319622840d55a0c7d16c92776a79e3bf">dse_t</a> <a class="el" href="group__time__conversions.html#ga0aa3eab8489bde9d3004e15461f8b925">unix_day</a>) noexcept</td></tr>
+<tr class="memdesc:ga112579b7de24fa492c7056348b3e7cac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for unix_day_to_ts_ms function.  <br /></td></tr>
+<tr class="separator:ga112579b7de24fa492c7056348b3e7cac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabda0d278b4734596a3a5da7ffd275a5e" id="r_gabda0d278b4734596a3a5da7ffd275a5e"><td class="memTemplParams" colspan="2">template&lt;class T = ts_t&gt; </td></tr>
+<tr class="memitem:gabda0d278b4734596a3a5da7ffd275a5e"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__time__conversions.html#gabda0d278b4734596a3a5da7ffd275a5e">start_of_day_from_unix_day_ms</a> (<a class="el" href="group__time__types.html#ga319622840d55a0c7d16c92776a79e3bf">dse_t</a> <a class="el" href="group__time__conversions.html#ga0aa3eab8489bde9d3004e15461f8b925">unix_day</a>) noexcept</td></tr>
+<tr class="memdesc:gabda0d278b4734596a3a5da7ffd275a5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for unix_day_to_ts_ms function.  <br /></td></tr>
+<tr class="separator:gabda0d278b4734596a3a5da7ffd275a5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga900e6f31419652256b9f33901466b7b3" id="r_ga900e6f31419652256b9f33901466b7b3"><td class="memTemplParams" colspan="2">template&lt;class T = ts_t&gt; </td></tr>
+<tr class="memitem:ga900e6f31419652256b9f33901466b7b3"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__time__conversions.html#ga900e6f31419652256b9f33901466b7b3">next_day_from_unix_day</a> (<a class="el" href="group__time__types.html#ga319622840d55a0c7d16c92776a79e3bf">dse_t</a> <a class="el" href="group__time__conversions.html#ga0aa3eab8489bde9d3004e15461f8b925">unix_day</a>) noexcept</td></tr>
+<tr class="memdesc:ga900e6f31419652256b9f33901466b7b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for start_of_next_day_from_unix_day function.  <br /></td></tr>
+<tr class="separator:ga900e6f31419652256b9f33901466b7b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8d3099ac7d92ed9da816813837b7f736" id="r_ga8d3099ac7d92ed9da816813837b7f736"><td class="memTemplParams" colspan="2">template&lt;class T = ts_t&gt; </td></tr>
+<tr class="memitem:ga8d3099ac7d92ed9da816813837b7f736"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__time__conversions.html#ga8d3099ac7d92ed9da816813837b7f736">next_day_unix_day</a> (<a class="el" href="group__time__types.html#ga319622840d55a0c7d16c92776a79e3bf">dse_t</a> <a class="el" href="group__time__conversions.html#ga0aa3eab8489bde9d3004e15461f8b925">unix_day</a>) noexcept</td></tr>
+<tr class="memdesc:ga8d3099ac7d92ed9da816813837b7f736"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for start_of_next_day_from_unix_day function.  <br /></td></tr>
+<tr class="separator:ga8d3099ac7d92ed9da816813837b7f736"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa01b59480327b70890cc0f1107218c76" id="r_gaa01b59480327b70890cc0f1107218c76"><td class="memTemplParams" colspan="2">template&lt;class T = ts_t&gt; </td></tr>
+<tr class="memitem:gaa01b59480327b70890cc0f1107218c76"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__time__conversions.html#gaa01b59480327b70890cc0f1107218c76">next_day_unixday</a> (<a class="el" href="group__time__types.html#ga319622840d55a0c7d16c92776a79e3bf">dse_t</a> <a class="el" href="group__time__conversions.html#ga0aa3eab8489bde9d3004e15461f8b925">unix_day</a>) noexcept</td></tr>
+<tr class="memdesc:gaa01b59480327b70890cc0f1107218c76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for start_of_next_day_from_unix_day function.  <br /></td></tr>
+<tr class="separator:gaa01b59480327b70890cc0f1107218c76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga57e2096f380f93fe437dc2c836134dab" id="r_ga57e2096f380f93fe437dc2c836134dab"><td class="memTemplParams" colspan="2">template&lt;class T = ts_ms_t&gt; </td></tr>
+<tr class="memitem:ga57e2096f380f93fe437dc2c836134dab"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__time__conversions.html#ga57e2096f380f93fe437dc2c836134dab">next_day_from_unix_day_ms</a> (<a class="el" href="group__time__types.html#ga319622840d55a0c7d16c92776a79e3bf">dse_t</a> <a class="el" href="group__time__conversions.html#ga0aa3eab8489bde9d3004e15461f8b925">unix_day</a>) noexcept</td></tr>
+<tr class="memdesc:ga57e2096f380f93fe437dc2c836134dab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for start_of_next_day_from_unix_day_ms function.  <br /></td></tr>
+<tr class="separator:ga57e2096f380f93fe437dc2c836134dab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga57940b010de9c58bf84d6035aeb3ba48" id="r_ga57940b010de9c58bf84d6035aeb3ba48"><td class="memTemplParams" colspan="2">template&lt;class T = ts_ms_t&gt; </td></tr>
+<tr class="memitem:ga57940b010de9c58bf84d6035aeb3ba48"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__time__conversions.html#ga57940b010de9c58bf84d6035aeb3ba48">next_day_unix_day_ms</a> (<a class="el" href="group__time__types.html#ga319622840d55a0c7d16c92776a79e3bf">dse_t</a> <a class="el" href="group__time__conversions.html#ga0aa3eab8489bde9d3004e15461f8b925">unix_day</a>) noexcept</td></tr>
+<tr class="memdesc:ga57940b010de9c58bf84d6035aeb3ba48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for start_of_next_day_from_unix_day_ms function.  <br /></td></tr>
+<tr class="separator:ga57940b010de9c58bf84d6035aeb3ba48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga62dad67fe588c9b68a5e4878fd1cc16e" id="r_ga62dad67fe588c9b68a5e4878fd1cc16e"><td class="memTemplParams" colspan="2">template&lt;class T = ts_ms_t&gt; </td></tr>
+<tr class="memitem:ga62dad67fe588c9b68a5e4878fd1cc16e"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__time__conversions.html#ga62dad67fe588c9b68a5e4878fd1cc16e">next_day_unixday_ms</a> (<a class="el" href="group__time__types.html#ga319622840d55a0c7d16c92776a79e3bf">dse_t</a> <a class="el" href="group__time__conversions.html#ga0aa3eab8489bde9d3004e15461f8b925">unix_day</a>) noexcept</td></tr>
+<tr class="memdesc:ga62dad67fe588c9b68a5e4878fd1cc16e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for start_of_next_day_from_unix_day_ms function.  <br /></td></tr>
+<tr class="separator:ga62dad67fe588c9b68a5e4878fd1cc16e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga782885bc3c550fdce552a27a5e9cf605" id="r_ga782885bc3c550fdce552a27a5e9cf605"><td class="memTemplParams" colspan="2">template&lt;class T = int64_t&gt; </td></tr>
 <tr class="memitem:ga782885bc3c550fdce552a27a5e9cf605"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__time__conversions.html#ga782885bc3c550fdce552a27a5e9cf605">minutes_since_epoch</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>=<a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>())</td></tr>
 <tr class="memdesc:ga782885bc3c550fdce552a27a5e9cf605"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for min_since_epoch function.  <br /></td></tr>
@@ -3029,15 +3032,15 @@ Functions</h2></td></tr>
 <tr class="memitem:a40ef0f060775d17045700553841865e5"><td class="memTemplItemLeft" align="right" valign="top">TIME_SHIELD_CONSTEXPR T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a40ef0f060775d17045700553841865e5">years_since_epoch</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>) noexcept</td></tr>
 <tr class="memdesc:a40ef0f060775d17045700553841865e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a UNIX timestamp to a year.  <br /></td></tr>
 <tr class="separator:a40ef0f060775d17045700553841865e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41e7701cd4b5c73aa96c547a1e4b03a3" id="r_a41e7701cd4b5c73aa96c547a1e4b03a3"><td class="memTemplParams" colspan="2">template&lt;class Year, class <a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a>, class Day&gt; </td></tr>
-<tr class="memitem:a41e7701cd4b5c73aa96c547a1e4b03a3"><td class="memTemplItemLeft" align="right" valign="top">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga63a3e5f64aa9c168fc51dc05a7014f37">uday_t</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a41e7701cd4b5c73aa96c547a1e4b03a3">date_to_unix_day</a> (Year <a class="el" href="group__time__conversions.html#gadd68b9e632d1b5a43c18b116bbf105a4">year</a>, <a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a> month, Day day) noexcept</td></tr>
-<tr class="memdesc:a41e7701cd4b5c73aa96c547a1e4b03a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a calendar date to UNIX day count.  <br /></td></tr>
-<tr class="separator:a41e7701cd4b5c73aa96c547a1e4b03a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afbe4e9ea57b4a4ebc83ab13e05ac2d25" id="r_afbe4e9ea57b4a4ebc83ab13e05ac2d25"><td class="memTemplParams" colspan="2">template&lt;class T = uday_t&gt; </td></tr>
+<tr class="memitem:ad882dd809ed49f7b48ac3483dcd30679" id="r_ad882dd809ed49f7b48ac3483dcd30679"><td class="memTemplParams" colspan="2">template&lt;class Year, class <a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a>, class Day&gt; </td></tr>
+<tr class="memitem:ad882dd809ed49f7b48ac3483dcd30679"><td class="memTemplItemLeft" align="right" valign="top">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga319622840d55a0c7d16c92776a79e3bf">dse_t</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ad882dd809ed49f7b48ac3483dcd30679">date_to_unix_day</a> (Year <a class="el" href="group__time__conversions.html#gadd68b9e632d1b5a43c18b116bbf105a4">year</a>, <a class="el" href="group__time__enums.html#gac2ffd79e06ab94cf1bb50fec432c68a8">Month</a> month, Day day) noexcept</td></tr>
+<tr class="memdesc:ad882dd809ed49f7b48ac3483dcd30679"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a calendar date to UNIX day count.  <br /></td></tr>
+<tr class="separator:ad882dd809ed49f7b48ac3483dcd30679"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbe4e9ea57b4a4ebc83ab13e05ac2d25" id="r_afbe4e9ea57b4a4ebc83ab13e05ac2d25"><td class="memTemplParams" colspan="2">template&lt;class T = dse_t&gt; </td></tr>
 <tr class="memitem:afbe4e9ea57b4a4ebc83ab13e05ac2d25"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#afbe4e9ea57b4a4ebc83ab13e05ac2d25">days_since_epoch</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>=<a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>()) noexcept</td></tr>
 <tr class="memdesc:afbe4e9ea57b4a4ebc83ab13e05ac2d25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get UNIX day.  <br /></td></tr>
 <tr class="separator:afbe4e9ea57b4a4ebc83ab13e05ac2d25"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad2730d1019c6163cfb9188b790dc3ffb" id="r_ad2730d1019c6163cfb9188b790dc3ffb"><td class="memTemplParams" colspan="2">template&lt;class T = uday_t&gt; </td></tr>
+<tr class="memitem:ad2730d1019c6163cfb9188b790dc3ffb" id="r_ad2730d1019c6163cfb9188b790dc3ffb"><td class="memTemplParams" colspan="2">template&lt;class T = dse_t&gt; </td></tr>
 <tr class="memitem:ad2730d1019c6163cfb9188b790dc3ffb"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ad2730d1019c6163cfb9188b790dc3ffb">days_since_epoch_ms</a> (<a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> t_ms=<a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">time_shield::ts_ms</a>()) noexcept</td></tr>
 <tr class="memdesc:ad2730d1019c6163cfb9188b790dc3ffb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get UNIX day from milliseconds timestamp.  <br /></td></tr>
 <tr class="separator:ad2730d1019c6163cfb9188b790dc3ffb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -3045,30 +3048,30 @@ Functions</h2></td></tr>
 <tr class="memitem:a2288d8567ef5fe32edb533612171f3f9"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a2288d8567ef5fe32edb533612171f3f9">days_between</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> start, <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> stop) noexcept</td></tr>
 <tr class="memdesc:a2288d8567ef5fe32edb533612171f3f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of days between two timestamps.  <br /></td></tr>
 <tr class="separator:a2288d8567ef5fe32edb533612171f3f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea15fa45a52cdbde3a9e06644a87cfac" id="r_aea15fa45a52cdbde3a9e06644a87cfac"><td class="memTemplParams" colspan="2">template&lt;class T = ts_t&gt; </td></tr>
-<tr class="memitem:aea15fa45a52cdbde3a9e06644a87cfac"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aea15fa45a52cdbde3a9e06644a87cfac">unix_day_to_ts</a> (<a class="el" href="group__time__types.html#ga63a3e5f64aa9c168fc51dc05a7014f37">uday_t</a> <a class="el" href="group__time__conversions.html#ga0aa3eab8489bde9d3004e15461f8b925">unix_day</a>) noexcept</td></tr>
-<tr class="memdesc:aea15fa45a52cdbde3a9e06644a87cfac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a UNIX day to a timestamp in seconds.  <br /></td></tr>
-<tr class="separator:aea15fa45a52cdbde3a9e06644a87cfac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec533d5bb3270f12bd2052c3bae95a6e" id="r_aec533d5bb3270f12bd2052c3bae95a6e"><td class="memTemplParams" colspan="2">template&lt;class T = ts_t&gt; </td></tr>
-<tr class="memitem:aec533d5bb3270f12bd2052c3bae95a6e"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aec533d5bb3270f12bd2052c3bae95a6e">unix_day_to_ts_ms</a> (<a class="el" href="group__time__types.html#ga63a3e5f64aa9c168fc51dc05a7014f37">uday_t</a> <a class="el" href="group__time__conversions.html#ga0aa3eab8489bde9d3004e15461f8b925">unix_day</a>) noexcept</td></tr>
-<tr class="memdesc:aec533d5bb3270f12bd2052c3bae95a6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a UNIX day to a timestamp in milliseconds.  <br /></td></tr>
-<tr class="separator:aec533d5bb3270f12bd2052c3bae95a6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acef72061566d1b88fd191abe918387e8" id="r_acef72061566d1b88fd191abe918387e8"><td class="memTemplParams" colspan="2">template&lt;class T = ts_t&gt; </td></tr>
-<tr class="memitem:acef72061566d1b88fd191abe918387e8"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#acef72061566d1b88fd191abe918387e8">end_of_day_from_unix_day</a> (<a class="el" href="group__time__types.html#ga63a3e5f64aa9c168fc51dc05a7014f37">uday_t</a> <a class="el" href="group__time__conversions.html#ga0aa3eab8489bde9d3004e15461f8b925">unix_day</a>) noexcept</td></tr>
-<tr class="memdesc:acef72061566d1b88fd191abe918387e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a UNIX day to a timestamp representing the end of the day in seconds.  <br /></td></tr>
-<tr class="separator:acef72061566d1b88fd191abe918387e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b2e58c70c04fef189a3bb65fe27ba8d" id="r_a0b2e58c70c04fef189a3bb65fe27ba8d"><td class="memTemplParams" colspan="2">template&lt;class T = ts_ms_t&gt; </td></tr>
-<tr class="memitem:a0b2e58c70c04fef189a3bb65fe27ba8d"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a0b2e58c70c04fef189a3bb65fe27ba8d">end_of_day_from_unix_day_ms</a> (<a class="el" href="group__time__types.html#ga63a3e5f64aa9c168fc51dc05a7014f37">uday_t</a> <a class="el" href="group__time__conversions.html#ga0aa3eab8489bde9d3004e15461f8b925">unix_day</a>) noexcept</td></tr>
-<tr class="memdesc:a0b2e58c70c04fef189a3bb65fe27ba8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a UNIX day to a timestamp representing the end of the day in milliseconds.  <br /></td></tr>
-<tr class="separator:a0b2e58c70c04fef189a3bb65fe27ba8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37d80a29a2683f3a26a3f6f49faf22b0" id="r_a37d80a29a2683f3a26a3f6f49faf22b0"><td class="memTemplParams" colspan="2">template&lt;class T = ts_ms_t&gt; </td></tr>
-<tr class="memitem:a37d80a29a2683f3a26a3f6f49faf22b0"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a37d80a29a2683f3a26a3f6f49faf22b0">start_of_next_day_from_unix_day</a> (<a class="el" href="group__time__types.html#ga63a3e5f64aa9c168fc51dc05a7014f37">uday_t</a> <a class="el" href="group__time__conversions.html#ga0aa3eab8489bde9d3004e15461f8b925">unix_day</a>) noexcept</td></tr>
-<tr class="memdesc:a37d80a29a2683f3a26a3f6f49faf22b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a UNIX day to a timestamp representing the start of the next day in seconds.  <br /></td></tr>
-<tr class="separator:a37d80a29a2683f3a26a3f6f49faf22b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8b01fcae98d98b70bd70ba912e4b7ca" id="r_ad8b01fcae98d98b70bd70ba912e4b7ca"><td class="memTemplParams" colspan="2">template&lt;class T = ts_ms_t&gt; </td></tr>
-<tr class="memitem:ad8b01fcae98d98b70bd70ba912e4b7ca"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ad8b01fcae98d98b70bd70ba912e4b7ca">start_of_next_day_from_unix_day_ms</a> (<a class="el" href="group__time__types.html#ga63a3e5f64aa9c168fc51dc05a7014f37">uday_t</a> <a class="el" href="group__time__conversions.html#ga0aa3eab8489bde9d3004e15461f8b925">unix_day</a>) noexcept</td></tr>
-<tr class="memdesc:ad8b01fcae98d98b70bd70ba912e4b7ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a UNIX day to a timestamp representing the start of the next day in milliseconds.  <br /></td></tr>
-<tr class="separator:ad8b01fcae98d98b70bd70ba912e4b7ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aceddde7cd649f492fa7f76ffaa60cf88" id="r_aceddde7cd649f492fa7f76ffaa60cf88"><td class="memTemplParams" colspan="2">template&lt;class T = ts_t&gt; </td></tr>
+<tr class="memitem:aceddde7cd649f492fa7f76ffaa60cf88"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aceddde7cd649f492fa7f76ffaa60cf88">unix_day_to_ts</a> (<a class="el" href="group__time__types.html#ga319622840d55a0c7d16c92776a79e3bf">dse_t</a> <a class="el" href="group__time__conversions.html#ga0aa3eab8489bde9d3004e15461f8b925">unix_day</a>) noexcept</td></tr>
+<tr class="memdesc:aceddde7cd649f492fa7f76ffaa60cf88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a UNIX day to a timestamp in seconds.  <br /></td></tr>
+<tr class="separator:aceddde7cd649f492fa7f76ffaa60cf88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a5f6d73b17fd7b7b6a81f4a5b1d61fa" id="r_a2a5f6d73b17fd7b7b6a81f4a5b1d61fa"><td class="memTemplParams" colspan="2">template&lt;class T = ts_t&gt; </td></tr>
+<tr class="memitem:a2a5f6d73b17fd7b7b6a81f4a5b1d61fa"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a2a5f6d73b17fd7b7b6a81f4a5b1d61fa">unix_day_to_ts_ms</a> (<a class="el" href="group__time__types.html#ga319622840d55a0c7d16c92776a79e3bf">dse_t</a> <a class="el" href="group__time__conversions.html#ga0aa3eab8489bde9d3004e15461f8b925">unix_day</a>) noexcept</td></tr>
+<tr class="memdesc:a2a5f6d73b17fd7b7b6a81f4a5b1d61fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a UNIX day to a timestamp in milliseconds.  <br /></td></tr>
+<tr class="separator:a2a5f6d73b17fd7b7b6a81f4a5b1d61fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9f5e09a5dcd08f16f8d0e0f1d1322ba" id="r_ac9f5e09a5dcd08f16f8d0e0f1d1322ba"><td class="memTemplParams" colspan="2">template&lt;class T = ts_t&gt; </td></tr>
+<tr class="memitem:ac9f5e09a5dcd08f16f8d0e0f1d1322ba"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ac9f5e09a5dcd08f16f8d0e0f1d1322ba">end_of_day_from_unix_day</a> (<a class="el" href="group__time__types.html#ga319622840d55a0c7d16c92776a79e3bf">dse_t</a> <a class="el" href="group__time__conversions.html#ga0aa3eab8489bde9d3004e15461f8b925">unix_day</a>) noexcept</td></tr>
+<tr class="memdesc:ac9f5e09a5dcd08f16f8d0e0f1d1322ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a UNIX day to a timestamp representing the end of the day in seconds.  <br /></td></tr>
+<tr class="separator:ac9f5e09a5dcd08f16f8d0e0f1d1322ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad258e33e959896c133f1e45ca4922452" id="r_ad258e33e959896c133f1e45ca4922452"><td class="memTemplParams" colspan="2">template&lt;class T = ts_ms_t&gt; </td></tr>
+<tr class="memitem:ad258e33e959896c133f1e45ca4922452"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ad258e33e959896c133f1e45ca4922452">end_of_day_from_unix_day_ms</a> (<a class="el" href="group__time__types.html#ga319622840d55a0c7d16c92776a79e3bf">dse_t</a> <a class="el" href="group__time__conversions.html#ga0aa3eab8489bde9d3004e15461f8b925">unix_day</a>) noexcept</td></tr>
+<tr class="memdesc:ad258e33e959896c133f1e45ca4922452"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a UNIX day to a timestamp representing the end of the day in milliseconds.  <br /></td></tr>
+<tr class="separator:ad258e33e959896c133f1e45ca4922452"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9db774da9f911a29cfcb30312f2f46fb" id="r_a9db774da9f911a29cfcb30312f2f46fb"><td class="memTemplParams" colspan="2">template&lt;class T = ts_ms_t&gt; </td></tr>
+<tr class="memitem:a9db774da9f911a29cfcb30312f2f46fb"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a9db774da9f911a29cfcb30312f2f46fb">start_of_next_day_from_unix_day</a> (<a class="el" href="group__time__types.html#ga319622840d55a0c7d16c92776a79e3bf">dse_t</a> <a class="el" href="group__time__conversions.html#ga0aa3eab8489bde9d3004e15461f8b925">unix_day</a>) noexcept</td></tr>
+<tr class="memdesc:a9db774da9f911a29cfcb30312f2f46fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a UNIX day to a timestamp representing the start of the next day in seconds.  <br /></td></tr>
+<tr class="separator:a9db774da9f911a29cfcb30312f2f46fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90fa1e4e848179a61cd0fa74e8ecc75f" id="r_a90fa1e4e848179a61cd0fa74e8ecc75f"><td class="memTemplParams" colspan="2">template&lt;class T = ts_ms_t&gt; </td></tr>
+<tr class="memitem:a90fa1e4e848179a61cd0fa74e8ecc75f"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a90fa1e4e848179a61cd0fa74e8ecc75f">start_of_next_day_from_unix_day_ms</a> (<a class="el" href="group__time__types.html#ga319622840d55a0c7d16c92776a79e3bf">dse_t</a> <a class="el" href="group__time__conversions.html#ga0aa3eab8489bde9d3004e15461f8b925">unix_day</a>) noexcept</td></tr>
+<tr class="memdesc:a90fa1e4e848179a61cd0fa74e8ecc75f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a UNIX day to a timestamp representing the start of the next day in milliseconds.  <br /></td></tr>
+<tr class="separator:a90fa1e4e848179a61cd0fa74e8ecc75f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe93fcf253ad0f4485beb1a05af697b5" id="r_abe93fcf253ad0f4485beb1a05af697b5"><td class="memTemplParams" colspan="2">template&lt;class T = int64_t&gt; </td></tr>
 <tr class="memitem:abe93fcf253ad0f4485beb1a05af697b5"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#abe93fcf253ad0f4485beb1a05af697b5">min_since_epoch</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>=<a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>())</td></tr>
 <tr class="memdesc:abe93fcf253ad0f4485beb1a05af697b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get UNIX minute.  <br /></td></tr>
@@ -3821,8 +3824,8 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a41e7701cd4b5c73aa96c547a1e4b03a3" name="a41e7701cd4b5c73aa96c547a1e4b03a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a41e7701cd4b5c73aa96c547a1e4b03a3">&#9670;&#160;</a></span>date_to_unix_day()</h2>
+<a id="ad882dd809ed49f7b48ac3483dcd30679" name="ad882dd809ed49f7b48ac3483dcd30679"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad882dd809ed49f7b48ac3483dcd30679">&#9670;&#160;</a></span>date_to_unix_day()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3833,7 +3836,7 @@ template&lt;class Year, class <a class="el" href="group__time__enums.html#gac2ff
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga63a3e5f64aa9c168fc51dc05a7014f37">uday_t</a> time_shield::date_to_unix_day </td>
+          <td class="memname">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga319622840d55a0c7d16c92776a79e3bf">dse_t</a> time_shield::date_to_unix_day </td>
           <td>(</td>
           <td class="paramtype">Year</td>          <td class="paramname"><span class="paramname"><em>year</em></span>, </td>
         </tr>
@@ -3935,7 +3938,7 @@ template&lt;class T = int&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T = uday_t&gt; </div>
+template&lt;class T = dse_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3958,7 +3961,7 @@ template&lt;class T = uday_t&gt; </div>
 <p>This function returns the number of days elapsed since the UNIX epoch.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga391046d8662dee26a659793b8c0daf6a" title="Alias for Unix day count type.">unixday_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga7db434c3390f0eb6314520fc170b1dfe" title="Alias for Unix day count type.">unixday_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -3980,7 +3983,7 @@ template&lt;class T = uday_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T = uday_t&gt; </div>
+template&lt;class T = dse_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4003,7 +4006,7 @@ template&lt;class T = uday_t&gt; </div>
 <p>This function returns the number of days elapsed since the UNIX epoch, given a timestamp in milliseconds.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga391046d8662dee26a659793b8c0daf6a" title="Alias for Unix day count type.">unixday_t</a>). </td></tr>
+    <tr><td class="paramname">T</td><td>The return type of the function (default is <a class="el" href="group__time__types.html#ga7db434c3390f0eb6314520fc170b1dfe" title="Alias for Unix day count type.">unixday_t</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -4019,8 +4022,8 @@ template&lt;class T = uday_t&gt; </div>
 
 </div>
 </div>
-<a id="acef72061566d1b88fd191abe918387e8" name="acef72061566d1b88fd191abe918387e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acef72061566d1b88fd191abe918387e8">&#9670;&#160;</a></span>end_of_day_from_unix_day()</h2>
+<a id="ac9f5e09a5dcd08f16f8d0e0f1d1322ba" name="ac9f5e09a5dcd08f16f8d0e0f1d1322ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9f5e09a5dcd08f16f8d0e0f1d1322ba">&#9670;&#160;</a></span>end_of_day_from_unix_day()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4033,7 +4036,7 @@ template&lt;class T = ts_t&gt; </div>
         <tr>
           <td class="memname">T time_shield::end_of_day_from_unix_day </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__time__types.html#ga63a3e5f64aa9c168fc51dc05a7014f37">uday_t</a></td>          <td class="paramname"><span class="paramname"><em>unix_day</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#ga319622840d55a0c7d16c92776a79e3bf">dse_t</a></td>          <td class="paramname"><span class="paramname"><em>unix_day</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -4064,8 +4067,8 @@ template&lt;class T = ts_t&gt; </div>
 
 </div>
 </div>
-<a id="a0b2e58c70c04fef189a3bb65fe27ba8d" name="a0b2e58c70c04fef189a3bb65fe27ba8d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0b2e58c70c04fef189a3bb65fe27ba8d">&#9670;&#160;</a></span>end_of_day_from_unix_day_ms()</h2>
+<a id="ad258e33e959896c133f1e45ca4922452" name="ad258e33e959896c133f1e45ca4922452"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad258e33e959896c133f1e45ca4922452">&#9670;&#160;</a></span>end_of_day_from_unix_day_ms()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4078,7 +4081,7 @@ template&lt;class T = ts_ms_t&gt; </div>
         <tr>
           <td class="memname">T time_shield::end_of_day_from_unix_day_ms </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__time__types.html#ga63a3e5f64aa9c168fc51dc05a7014f37">uday_t</a></td>          <td class="paramname"><span class="paramname"><em>unix_day</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#ga319622840d55a0c7d16c92776a79e3bf">dse_t</a></td>          <td class="paramname"><span class="paramname"><em>unix_day</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -5156,8 +5159,8 @@ template&lt;class T = int&gt; </div>
 
 </div>
 </div>
-<a id="a37d80a29a2683f3a26a3f6f49faf22b0" name="a37d80a29a2683f3a26a3f6f49faf22b0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a37d80a29a2683f3a26a3f6f49faf22b0">&#9670;&#160;</a></span>start_of_next_day_from_unix_day()</h2>
+<a id="a9db774da9f911a29cfcb30312f2f46fb" name="a9db774da9f911a29cfcb30312f2f46fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9db774da9f911a29cfcb30312f2f46fb">&#9670;&#160;</a></span>start_of_next_day_from_unix_day()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -5170,7 +5173,7 @@ template&lt;class T = ts_ms_t&gt; </div>
         <tr>
           <td class="memname">T time_shield::start_of_next_day_from_unix_day </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__time__types.html#ga63a3e5f64aa9c168fc51dc05a7014f37">uday_t</a></td>          <td class="paramname"><span class="paramname"><em>unix_day</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#ga319622840d55a0c7d16c92776a79e3bf">dse_t</a></td>          <td class="paramname"><span class="paramname"><em>unix_day</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -5201,8 +5204,8 @@ template&lt;class T = ts_ms_t&gt; </div>
 
 </div>
 </div>
-<a id="ad8b01fcae98d98b70bd70ba912e4b7ca" name="ad8b01fcae98d98b70bd70ba912e4b7ca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad8b01fcae98d98b70bd70ba912e4b7ca">&#9670;&#160;</a></span>start_of_next_day_from_unix_day_ms()</h2>
+<a id="a90fa1e4e848179a61cd0fa74e8ecc75f" name="a90fa1e4e848179a61cd0fa74e8ecc75f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90fa1e4e848179a61cd0fa74e8ecc75f">&#9670;&#160;</a></span>start_of_next_day_from_unix_day_ms()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -5215,7 +5218,7 @@ template&lt;class T = ts_ms_t&gt; </div>
         <tr>
           <td class="memname">T time_shield::start_of_next_day_from_unix_day_ms </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__time__types.html#ga63a3e5f64aa9c168fc51dc05a7014f37">uday_t</a></td>          <td class="paramname"><span class="paramname"><em>unix_day</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#ga319622840d55a0c7d16c92776a79e3bf">dse_t</a></td>          <td class="paramname"><span class="paramname"><em>unix_day</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -5481,8 +5484,8 @@ template&lt;class T1, class T2, class T3&gt; </div>
 
 </div>
 </div>
-<a id="aea15fa45a52cdbde3a9e06644a87cfac" name="aea15fa45a52cdbde3a9e06644a87cfac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aea15fa45a52cdbde3a9e06644a87cfac">&#9670;&#160;</a></span>unix_day_to_ts()</h2>
+<a id="aceddde7cd649f492fa7f76ffaa60cf88" name="aceddde7cd649f492fa7f76ffaa60cf88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aceddde7cd649f492fa7f76ffaa60cf88">&#9670;&#160;</a></span>unix_day_to_ts()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -5495,7 +5498,7 @@ template&lt;class T = ts_t&gt; </div>
         <tr>
           <td class="memname">T time_shield::unix_day_to_ts </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__time__types.html#ga63a3e5f64aa9c168fc51dc05a7014f37">uday_t</a></td>          <td class="paramname"><span class="paramname"><em>unix_day</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#ga319622840d55a0c7d16c92776a79e3bf">dse_t</a></td>          <td class="paramname"><span class="paramname"><em>unix_day</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -5526,8 +5529,8 @@ template&lt;class T = ts_t&gt; </div>
 
 </div>
 </div>
-<a id="aec533d5bb3270f12bd2052c3bae95a6e" name="aec533d5bb3270f12bd2052c3bae95a6e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aec533d5bb3270f12bd2052c3bae95a6e">&#9670;&#160;</a></span>unix_day_to_ts_ms()</h2>
+<a id="a2a5f6d73b17fd7b7b6a81f4a5b1d61fa" name="a2a5f6d73b17fd7b7b6a81f4a5b1d61fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a5f6d73b17fd7b7b6a81f4a5b1d61fa">&#9670;&#160;</a></span>unix_day_to_ts_ms()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -5540,7 +5543,7 @@ template&lt;class T = ts_t&gt; </div>
         <tr>
           <td class="memname">T time_shield::unix_day_to_ts_ms </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__time__types.html#ga63a3e5f64aa9c168fc51dc05a7014f37">uday_t</a></td>          <td class="paramname"><span class="paramname"><em>unix_day</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#ga319622840d55a0c7d16c92776a79e3bf">dse_t</a></td>          <td class="paramname"><span class="paramname"><em>unix_day</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>

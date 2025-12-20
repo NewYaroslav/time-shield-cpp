@@ -1,5 +1,6 @@
 var types_8hpp =
 [
+    [ "time_shield::dse_t", "group__time__types.html#ga319622840d55a0c7d16c92776a79e3bf", null ],
     [ "time_shield::fts_t", "group__time__types.html#ga922ce1d0bc31869e531512c233b7633f", null ],
     [ "time_shield::iso_week_t", "group__time__types.html#gacb5a40be07fa50768db103565b4498fc", null ],
     [ "time_shield::iso_weekday_t", "group__time__types.html#gacd570fd6d032e2f1e01d4eaf83929e79", null ],
@@ -11,7 +12,7 @@ var types_8hpp =
     [ "time_shield::ts_t", "group__time__types.html#ga183c70b9c541a395d47690a82cdad282", null ],
     [ "time_shield::ts_us_t", "group__time__types.html#gaa09dd8f85dd996be93d7250acea4f638", null ],
     [ "time_shield::tz_t", "group__time__types.html#ga467db13fb99208bd078b5abff59866fb", null ],
-    [ "time_shield::uday_t", "group__time__types.html#ga63a3e5f64aa9c168fc51dc05a7014f37", null ],
-    [ "time_shield::unixday_t", "group__time__types.html#ga391046d8662dee26a659793b8c0daf6a", null ],
+    [ "time_shield::unix_day_t", "group__time__types.html#ga67ba5c77ef4b8dd7640028e45c7eb4b0", null ],
+    [ "time_shield::unixday_t", "group__time__types.html#ga7db434c3390f0eb6314520fc170b1dfe", null ],
     [ "time_shield::year_t", "group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9", null ]
 ];

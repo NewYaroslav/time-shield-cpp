@@ -1,5 +1,6 @@
 var NAVTREEINDEX10 =
 {
+"structtime__shield_1_1detail_1_1NtpPacket.html#ae4b91495246cbcfc40a062178368aadf":[12,2,3,6],
 "structtime__shield_1_1detail_1_1RunningTimerScope.html":[13,0,0,1,8],
 "structtime__shield_1_1detail_1_1RunningTimerScope.html":[14,0,0,1,7],
 "structtime__shield_1_1detail_1_1RunningTimerScope.html#a5fb24d1c5d9e86e75609047677980e79":[13,0,0,1,8,0],

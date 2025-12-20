@@ -371,15 +371,15 @@ namespace {
             }
             const auto end_legacy_local = std::chrono::steady_clock::now();
 
-            const auto fast_ns = std::chrono::duration_cast<std::chrono::nanoseconds>(
+            const auto unchecked_fast_ns = std::chrono::duration_cast<std::chrono::nanoseconds>(
                 end_fast_local - start_fast_local).count();
-            const auto legacy_ns = std::chrono::duration_cast<std::chrono::nanoseconds>(
+            const auto unchecked_legacy_ns = std::chrono::duration_cast<std::chrono::nanoseconds>(
                 end_legacy_local - start_legacy_local).count();
 
             std::cout << "to_timestamp unchecked benchmark (" << label << ")\n";
-            std::cout << "fast_ns: " << fast_ns << " legacy_ns: " << legacy_ns << '\n';
-            if (fast_ns > 0) {
-                const double ratio = static_cast<double>(legacy_ns) / static_cast<double>(fast_ns);
+            std::cout << "fast_ns: " << unchecked_fast_ns << " legacy_ns: " << unchecked_legacy_ns << '\n';
+            if (unchecked_fast_ns > 0) {
+                const double ratio = static_cast<double>(unchecked_legacy_ns) / static_cast<double>(unchecked_fast_ns);
                 std::cout << "legacy/fast ratio: " << ratio << '\n';
             }
             std::cout << "accumulators: " << acc_fast << " " << acc_legacy << '\n';

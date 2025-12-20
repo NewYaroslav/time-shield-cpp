@@ -1,5 +1,14 @@
 #include <time_shield/time_conversions.hpp>
 
+#if defined(_WIN32)
+#   ifdef min
+#       undef min
+#   endif
+#   ifdef max
+#       undef max
+#   endif
+#endif
+
 #include <cassert>
 #include <chrono>
 #include <cstdint>
@@ -81,6 +90,8 @@ namespace {
         assert(dt.hour == ref.hour);
         assert(dt.min == ref.minute);
         assert(dt.sec == ref.second);
+        (void)dt;
+        (void)ref;
     }
 
     void assert_reference_match(int64_t ts) {
@@ -91,6 +102,8 @@ namespace {
         const int64_t year_ref = ref.year - time_shield::UNIX_EPOCH;
         const int64_t year_fast = time_shield::years_since_epoch<int64_t>(ts);
         assert(year_fast == year_ref);
+        (void)year_ref;
+        (void)year_fast;
     }
 
     void assert_date_to_unix_day_match(int64_t year, int month, int day) {
@@ -100,6 +113,9 @@ namespace {
 
         assert(static_cast<int64_t>(fast_day) == ref_day);
         assert(static_cast<int64_t>(legacy_day) == ref_day);
+        (void)ref_day;
+        (void)fast_day;
+        (void)legacy_day;
     }
 
     void assert_to_timestamp_match(int64_t year, int month, int day, int hour, int minute, int second) {
@@ -114,6 +130,9 @@ namespace {
 
         assert(static_cast<int64_t>(fast_ts) == ref_ts);
         assert(static_cast<int64_t>(legacy_ts) == ref_ts);
+        (void)ref_ts;
+        (void)fast_ts;
+        (void)legacy_ts;
     }
 
     void test_known_cases() {
@@ -252,7 +271,7 @@ namespace {
         auto bench_date_range = [&](const char* label, int base_year, int year_span, int month_cycle) {
             int64_t acc_day_fast = 0;
             int64_t acc_day_legacy = 0;
-            const auto start_day_fast = std::chrono::steady_clock::now();
+            const auto start_day_fast_local = std::chrono::steady_clock::now();
             for (int64_t i = 0; i < iterations; ++i) {
                 const int year = base_year + static_cast<int>(i % year_span);
                 const int month = 1 + static_cast<int>(i % month_cycle);
@@ -260,9 +279,9 @@ namespace {
                 const time_shield::uday_t unix_day = time_shield::date_to_unix_day(year, month, day);
                 acc_day_fast += unix_day;
             }
-            const auto end_day_fast = std::chrono::steady_clock::now();
+            const auto end_day_fast_local = std::chrono::steady_clock::now();
 
-            const auto start_day_legacy = std::chrono::steady_clock::now();
+            const auto start_day_legacy_local = std::chrono::steady_clock::now();
             for (int64_t i = 0; i < iterations; ++i) {
                 const int year = base_year + static_cast<int>(i % year_span);
                 const int month = 1 + static_cast<int>(i % month_cycle);
@@ -270,10 +289,12 @@ namespace {
                 const time_shield::uday_t unix_day = time_shield::legacy::date_to_unix_day(year, month, day);
                 acc_day_legacy += unix_day;
             }
-            const auto end_day_legacy = std::chrono::steady_clock::now();
+            const auto end_day_legacy_local = std::chrono::steady_clock::now();
 
-            const auto day_fast_ns = std::chrono::duration_cast<std::chrono::nanoseconds>(end_day_fast - start_day_fast).count();
-            const auto day_legacy_ns = std::chrono::duration_cast<std::chrono::nanoseconds>(end_day_legacy - start_day_legacy).count();
+            const auto day_fast_ns = std::chrono::duration_cast<std::chrono::nanoseconds>(
+                end_day_fast_local - start_day_fast_local).count();
+            const auto day_legacy_ns = std::chrono::duration_cast<std::chrono::nanoseconds>(
+                end_day_legacy_local - start_day_legacy_local).count();
 
             std::cout << "date_to_unix_day benchmark (" << label << ")\n";
             std::cout << "fast_ns: " << day_fast_ns << " legacy_ns: " << day_legacy_ns << '\n';
@@ -285,7 +306,7 @@ namespace {
 
             int64_t acc_ts_fast = 0;
             int64_t acc_ts_legacy = 0;
-            const auto start_ts_fast = std::chrono::steady_clock::now();
+            const auto start_ts_fast_local = std::chrono::steady_clock::now();
             for (int64_t i = 0; i < iterations; ++i) {
                 const int year = base_year + static_cast<int>(i % year_span);
                 const int month = 1 + static_cast<int>(i % month_cycle);
@@ -295,9 +316,9 @@ namespace {
                 const int second = static_cast<int>(i % 60);
                 acc_ts_fast += time_shield::to_timestamp(year, month, day, hour, minute, second);
             }
-            const auto end_ts_fast = std::chrono::steady_clock::now();
+            const auto end_ts_fast_local = std::chrono::steady_clock::now();
 
-            const auto start_ts_legacy = std::chrono::steady_clock::now();
+            const auto start_ts_legacy_local = std::chrono::steady_clock::now();
             for (int64_t i = 0; i < iterations; ++i) {
                 const int year = base_year + static_cast<int>(i % year_span);
                 const int month = 1 + static_cast<int>(i % month_cycle);
@@ -307,10 +328,12 @@ namespace {
                 const int second = static_cast<int>(i % 60);
                 acc_ts_legacy += time_shield::legacy::to_timestamp(year, month, day, hour, minute, second);
             }
-            const auto end_ts_legacy = std::chrono::steady_clock::now();
+            const auto end_ts_legacy_local = std::chrono::steady_clock::now();
 
-            const auto ts_fast_ns = std::chrono::duration_cast<std::chrono::nanoseconds>(end_ts_fast - start_ts_fast).count();
-            const auto ts_legacy_ns = std::chrono::duration_cast<std::chrono::nanoseconds>(end_ts_legacy - start_ts_legacy).count();
+            const auto ts_fast_ns = std::chrono::duration_cast<std::chrono::nanoseconds>(
+                end_ts_fast_local - start_ts_fast_local).count();
+            const auto ts_legacy_ns = std::chrono::duration_cast<std::chrono::nanoseconds>(
+                end_ts_legacy_local - start_ts_legacy_local).count();
 
             std::cout << "to_timestamp benchmark (" << label << ")\n";
             std::cout << "fast_ns: " << ts_fast_ns << " legacy_ns: " << ts_legacy_ns << '\n';
@@ -324,7 +347,7 @@ namespace {
         auto bench_timestamp_math_range = [&](const char* label, int base_year, int year_span, int month_cycle) {
             int64_t acc_fast = 0;
             int64_t acc_legacy = 0;
-            const auto start_fast = std::chrono::steady_clock::now();
+            const auto start_fast_local = std::chrono::steady_clock::now();
             for (int64_t i = 0; i < iterations; ++i) {
                 const int year = base_year + static_cast<int>(i % year_span);
                 const int month = 1 + static_cast<int>(i % month_cycle);
@@ -334,9 +357,9 @@ namespace {
                 const int second = static_cast<int>(i % 60);
                 acc_fast += time_shield::to_timestamp_unchecked(year, month, day, hour, minute, second);
             }
-            const auto end_fast = std::chrono::steady_clock::now();
+            const auto end_fast_local = std::chrono::steady_clock::now();
 
-            const auto start_legacy = std::chrono::steady_clock::now();
+            const auto start_legacy_local = std::chrono::steady_clock::now();
             for (int64_t i = 0; i < iterations; ++i) {
                 const int year = base_year + static_cast<int>(i % year_span);
                 const int month = 1 + static_cast<int>(i % month_cycle);
@@ -346,10 +369,12 @@ namespace {
                 const int second = static_cast<int>(i % 60);
                 acc_legacy += time_shield::legacy::to_timestamp_unchecked(year, month, day, hour, minute, second);
             }
-            const auto end_legacy = std::chrono::steady_clock::now();
+            const auto end_legacy_local = std::chrono::steady_clock::now();
 
-            const auto fast_ns = std::chrono::duration_cast<std::chrono::nanoseconds>(end_fast - start_fast).count();
-            const auto legacy_ns = std::chrono::duration_cast<std::chrono::nanoseconds>(end_legacy - start_legacy).count();
+            const auto fast_ns = std::chrono::duration_cast<std::chrono::nanoseconds>(
+                end_fast_local - start_fast_local).count();
+            const auto legacy_ns = std::chrono::duration_cast<std::chrono::nanoseconds>(
+                end_legacy_local - start_legacy_local).count();
 
             std::cout << "to_timestamp unchecked benchmark (" << label << ")\n";
             std::cout << "fast_ns: " << fast_ns << " legacy_ns: " << legacy_ns << '\n';

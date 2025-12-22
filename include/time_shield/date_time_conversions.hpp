@@ -12,6 +12,7 @@
 #include "date_struct.hpp"
 #include "date_time_struct.hpp"
 #include "detail/fast_date.hpp"
+#include "detail/floor_math.hpp"
 #include "enums.hpp"
 #include "time_unit_conversions.hpp"
 #include "time_utils.hpp"
@@ -21,6 +22,7 @@
 
 #include <cmath>
 #include <ctime>
+#include <limits>
 #include <stdexcept>
 #include <type_traits>
 
@@ -122,7 +124,7 @@ namespace time_shield {
                 date_time.mon = TABLE_MONTH_OF_YEAR[days];
             }
 
-            ts_t day_secs = static_cast<ts_t>(secs % SEC_PER_DAY);
+            ts_t day_secs = static_cast<ts_t>(detail::floor_mod(secs, SEC_PER_DAY));
             date_time.hour = static_cast<decltype(date_time.hour)>(day_secs / SEC_PER_HOUR);
             ts_t min_secs = static_cast<ts_t>(day_secs - date_time.hour * SEC_PER_HOUR);
             date_time.min = static_cast<decltype(date_time.min)>(min_secs / SEC_PER_MIN);
@@ -518,7 +520,17 @@ namespace time_shield {
             T2 min  = 0,
             T2 sec  = 0,
             T2 ms   = 0) {
-        return sec_to_ms(to_timestamp<T1, T2>(year, month, day, hour, min, sec)) + ms;
+        int64_t sec_value = static_cast<int64_t>(to_timestamp<T1, T2>(year, month, day, hour, min, sec));
+        int64_t ms_value = static_cast<int64_t>(ms);
+        sec_value += detail::floor_div(ms_value, static_cast<int64_t>(MS_PER_SEC));
+        ms_value = detail::floor_mod(ms_value, static_cast<int64_t>(MS_PER_SEC));
+        if ((sec_value > 0 &&
+             sec_value > ((std::numeric_limits<int64_t>::max)() - ms_value) / MS_PER_SEC) ||
+            (sec_value < 0 &&
+             sec_value < (std::numeric_limits<int64_t>::min)() / MS_PER_SEC)) {
+            return ERROR_TIMESTAMP;
+        }
+        return static_cast<ts_ms_t>(sec_value * MS_PER_SEC + ms_value);
     }
 
     /// \ingroup time_structures
@@ -532,9 +544,19 @@ namespace time_shield {
     /// \return Timestamp in milliseconds representing the given date and time.
     /// \throws std::invalid_argument if the date-time combination is invalid.
     template<class T>
-    TIME_SHIELD_CONSTEXPR inline ts_t dt_to_timestamp_ms(
+    TIME_SHIELD_CONSTEXPR inline ts_ms_t dt_to_timestamp_ms(
             const T& date_time) {
-        return sec_to_ms(dt_to_timestamp(date_time)) + date_time.ms;
+        int64_t sec_value = static_cast<int64_t>(dt_to_timestamp(date_time));
+        int64_t ms_value = static_cast<int64_t>(date_time.ms);
+        sec_value += detail::floor_div(ms_value, static_cast<int64_t>(MS_PER_SEC));
+        ms_value = detail::floor_mod(ms_value, static_cast<int64_t>(MS_PER_SEC));
+        if ((sec_value > 0 &&
+             sec_value > ((std::numeric_limits<int64_t>::max)() - ms_value) / MS_PER_SEC) ||
+            (sec_value < 0 &&
+             sec_value < (std::numeric_limits<int64_t>::min)() / MS_PER_SEC)) {
+            return ERROR_TIMESTAMP;
+        }
+        return static_cast<ts_ms_t>(sec_value * MS_PER_SEC + ms_value);
     }
 
     /// \ingroup time_structures
@@ -577,8 +599,12 @@ namespace time_shield {
             T2 min   = 0,
             T2 sec   = 0,
             T3 ms    = 0) {
-        return static_cast<fts_t>(to_timestamp(year, month, day, hour, min, sec)) +
-            static_cast<fts_t>(ms)/static_cast<fts_t>(MS_PER_SEC);
+        int64_t sec_value = static_cast<int64_t>(to_timestamp(year, month, day, hour, min, sec));
+        int64_t ms_value = static_cast<int64_t>(ms);
+        sec_value += detail::floor_div(ms_value, static_cast<int64_t>(MS_PER_SEC));
+        ms_value = detail::floor_mod(ms_value, static_cast<int64_t>(MS_PER_SEC));
+        return static_cast<fts_t>(sec_value) +
+            static_cast<fts_t>(ms_value) / static_cast<fts_t>(MS_PER_SEC);
     }
 
     /// \ingroup time_structures
@@ -595,8 +621,12 @@ namespace time_shield {
     template<class T>
     TIME_SHIELD_CONSTEXPR inline fts_t dt_to_ftimestamp(
             const T& date_time) {
-        return static_cast<fts_t>(to_timestamp(date_time)) +
-            static_cast<fts_t>(date_time.ms)/static_cast<fts_t>(MS_PER_SEC);
+        int64_t sec_value = static_cast<int64_t>(to_timestamp(date_time));
+        int64_t ms_value = static_cast<int64_t>(date_time.ms);
+        sec_value += detail::floor_div(ms_value, static_cast<int64_t>(MS_PER_SEC));
+        ms_value = detail::floor_mod(ms_value, static_cast<int64_t>(MS_PER_SEC));
+        return static_cast<fts_t>(sec_value) +
+            static_cast<fts_t>(ms_value) / static_cast<fts_t>(MS_PER_SEC);
     }
 
     /// \brief Converts a std::tm structure to a floating-point timestamp.
@@ -621,7 +651,7 @@ namespace time_shield {
     /// \param ts Timestamp.
     /// \return Start of the day timestamp.
     constexpr ts_t start_of_day(ts_t ts = time_shield::ts()) noexcept {
-        return ts - (ts % SEC_PER_DAY);
+        return ts - detail::floor_mod(ts, SEC_PER_DAY);
     }
 
     /// \brief Get timestamp of the start of the previous day.
@@ -633,7 +663,7 @@ namespace time_shield {
     /// \return Timestamp of the start of the previous day.
     template<class T = int>
     constexpr ts_t start_of_prev_day(ts_t ts = time_shield::ts(), T days = 1) noexcept {
-        return ts - (ts % SEC_PER_DAY) - SEC_PER_DAY * days;
+        return ts - detail::floor_mod(ts, SEC_PER_DAY) - SEC_PER_DAY * days;
     }
 
     /// \brief Get the start of the day timestamp in seconds.
@@ -655,7 +685,7 @@ namespace time_shield {
     /// \param ts_ms Timestamp in milliseconds.
     /// \return Start of the day timestamp in milliseconds.
     constexpr ts_ms_t start_of_day_ms(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
-        return ts_ms - (ts_ms % MS_PER_DAY);
+        return ts_ms - detail::floor_mod(ts_ms, MS_PER_DAY);
     }
 
     /// \brief Get the timestamp of the start of the day after a specified number of days.
@@ -715,7 +745,7 @@ namespace time_shield {
     /// \param ts Timestamp.
     /// \return Timestamp at the end of the day.
     constexpr ts_t end_of_day(ts_t ts = time_shield::ts()) noexcept {
-        return ts - (ts % SEC_PER_DAY) + SEC_PER_DAY - 1;
+        return ts - detail::floor_mod(ts, SEC_PER_DAY) + SEC_PER_DAY - 1;
     }
 
     /// \brief Get the timestamp at the end of the day in seconds.
@@ -735,7 +765,7 @@ namespace time_shield {
     /// \param ts_ms Timestamp in milliseconds.
     /// \return Timestamp at the end of the day in milliseconds.
     constexpr ts_ms_t end_of_day_ms(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
-        return ts_ms - (ts_ms % MS_PER_DAY) + MS_PER_DAY - 1;
+        return ts_ms - detail::floor_mod(ts_ms, MS_PER_DAY) + MS_PER_DAY - 1;
     }
 
     /// \brief Get the timestamp of the start of the year.
@@ -769,16 +799,14 @@ namespace time_shield {
     /// \return Start of the year timestamp.
     TIME_SHIELD_CONSTEXPR inline ts_t start_of_year(ts_t ts) noexcept {
         constexpr ts_t BIAS_2100 = 4102444800;
-        if (ts < BIAS_2100) {
+        if (ts >= 0 && ts < BIAS_2100) {
             constexpr ts_t SEC_PER_YEAR_X2 = SEC_PER_YEAR * 2;
-            ts_t year_start_ts = ts % SEC_PER_4_YEARS;
+            ts_t year_start_ts = detail::floor_mod(ts, SEC_PER_4_YEARS);
             if (year_start_ts < SEC_PER_YEAR) {
                 return ts - year_start_ts;
-            } else
-            if (year_start_ts < SEC_PER_YEAR_X2) {
+            } else if (year_start_ts < SEC_PER_YEAR_X2) {
                 return ts + SEC_PER_YEAR - year_start_ts;
-            } else
-            if (year_start_ts < (SEC_PER_YEAR_X2 + SEC_PER_LEAP_YEAR)) {
+            } else if (year_start_ts < (SEC_PER_YEAR_X2 + SEC_PER_LEAP_YEAR)) {
                 return ts + SEC_PER_YEAR_X2 - year_start_ts;
             }
             return ts + (SEC_PER_YEAR_X2 + SEC_PER_LEAP_YEAR) - year_start_ts;
@@ -787,7 +815,7 @@ namespace time_shield {
         constexpr ts_t BIAS_2000 = 946684800;
         ts_t secs = ts - BIAS_2000;
 
-        ts_t offset_y400 = secs % SEC_PER_400_YEARS;
+        ts_t offset_y400 = detail::floor_mod(secs, SEC_PER_400_YEARS);
         ts_t start_ts = secs - offset_y400 + BIAS_2000;
         secs = offset_y400;
 
@@ -804,36 +832,24 @@ namespace time_shield {
                 secs -= SEC_PER_4_YEARS_V2;
                 start_ts += SEC_PER_4_YEARS_V2;
             } else {
-                start_ts += secs - secs % SEC_PER_YEAR;
+                start_ts += secs - detail::floor_mod(secs, SEC_PER_YEAR);
                 return start_ts;
             }
         }
 
-        ts_t offset_4y = secs % SEC_PER_4_YEARS;
+        ts_t offset_4y = detail::floor_mod(secs, SEC_PER_4_YEARS);
         start_ts += secs - offset_4y;
         secs = offset_4y;
 
         if (secs >= SEC_PER_LEAP_YEAR) {
             secs -= SEC_PER_LEAP_YEAR;
             start_ts += SEC_PER_LEAP_YEAR;
-            start_ts += secs - secs % SEC_PER_YEAR;
-        }
-        else {
-            start_ts += secs - secs % SEC_PER_YEAR;
+            start_ts += secs - detail::floor_mod(secs, SEC_PER_YEAR);
             return start_ts;
         }
 
-        ts_t offset_y = secs % SEC_PER_YEAR;
-        ts_t year_start_ts = start_ts + secs - offset_y;
-        if (offset_y <  SEC_PER_YEAR * 2) {
-            return year_start_ts;
-        }
-        else
-        if (offset_y < (SEC_PER_YEAR * 3)) {
-            return year_start_ts + SEC_PER_YEAR;
-        }
-
-        return start_ts + SEC_PER_LEAP_YEAR;
+        start_ts += secs - detail::floor_mod(secs, SEC_PER_YEAR);
+        return start_ts;
     }
 
     /// \brief Get the timestamp at the start of the year in milliseconds.
@@ -850,73 +866,20 @@ namespace time_shield {
     /// \param ts Timestamp.
     /// \return End-of-year timestamp.
     TIME_SHIELD_CONSTEXPR inline ts_t end_of_year(ts_t ts = time_shield::ts()) {
-        constexpr ts_t BIAS_2100 = 4102444800;
-        if (ts < BIAS_2100) {
-            constexpr ts_t SEC_PER_YEAR_X2 = SEC_PER_YEAR * 2;
-            constexpr ts_t SEC_PER_YEAR_X3 = SEC_PER_YEAR * 3;
-            constexpr ts_t SEC_PER_YEAR_X3_V2 = SEC_PER_YEAR_X2 + SEC_PER_LEAP_YEAR;
-            ts_t year_end_ts = ts % SEC_PER_4_YEARS;
-            if (year_end_ts < SEC_PER_YEAR) {
-                return ts + SEC_PER_YEAR - year_end_ts - 1;
-            } else
-            if (year_end_ts < SEC_PER_YEAR_X2) {
-                return ts + SEC_PER_YEAR_X2 - year_end_ts - 1;
-            } else
-            if (year_end_ts < SEC_PER_YEAR_X3_V2) {
-                return ts + SEC_PER_YEAR_X3_V2 - year_end_ts - 1;
-            }
-            return ts + (SEC_PER_YEAR_X3 + SEC_PER_LEAP_YEAR) - year_end_ts - 1;
-        }
-
-        constexpr ts_t BIAS_2000 = 946684800;
-        ts_t secs = ts - BIAS_2000;
-
-        ts_t offset_y400 = secs % SEC_PER_400_YEARS;
-        ts_t end_ts = secs - offset_y400 + BIAS_2000;
-        secs = offset_y400;
-
-        if (secs >= SEC_PER_FIRST_100_YEARS) {
-            secs -= SEC_PER_FIRST_100_YEARS;
-            end_ts += SEC_PER_FIRST_100_YEARS;
-            while (secs >= SEC_PER_100_YEARS) {
-                secs -= SEC_PER_100_YEARS;
-                end_ts += SEC_PER_100_YEARS;
-            }
-
-            constexpr ts_t SEC_PER_4_YEARS_V2 = 4 * SEC_PER_YEAR;
-            if (secs >= SEC_PER_4_YEARS_V2) {
-                secs -= SEC_PER_4_YEARS_V2;
-                end_ts += SEC_PER_4_YEARS_V2;
-            } else {
-                end_ts += secs - secs % SEC_PER_YEAR;
-                return end_ts + SEC_PER_YEAR - 1;
-            }
-        }
-
-        ts_t offset_4y = secs % SEC_PER_4_YEARS;
-        end_ts += secs - offset_4y;
-        secs = offset_4y;
-
-        if (secs >= SEC_PER_LEAP_YEAR) {
-            secs -= SEC_PER_LEAP_YEAR;
-            end_ts += SEC_PER_LEAP_YEAR;
-            end_ts += secs - secs % SEC_PER_YEAR;
-            end_ts += SEC_PER_YEAR;
-        } else {
-            end_ts += SEC_PER_LEAP_YEAR;
-        }
-        return end_ts - 1;
+        const ts_t year_start = start_of_year(ts);
+        const ts_t year_days = static_cast<ts_t>(num_days_in_year_ts(ts));
+        return year_start + year_days * SEC_PER_DAY - 1;
     }
 
     /// \brief Get the timestamp in milliseconds of the end of the year.
     ///
-    /// This function finds the last timestamp of the current year in milliseconds.
+    /// This function finds the last millisecond of the current year in milliseconds.
     ///
     /// \param ts_ms Timestamp in milliseconds.
     /// \return End-of-year timestamp in milliseconds.
     template<class T = year_t>
     TIME_SHIELD_CONSTEXPR inline ts_ms_t end_of_year_ms(ts_ms_t ts_ms = time_shield::ts_ms()) {
-        return sec_to_ms(end_of_year(ms_to_sec<ts_t>(ts_ms)));
+        return sec_to_ms(end_of_year(ms_to_sec<ts_t>(ts_ms))) + (MS_PER_SEC - 1);
     }
 
     /// \brief Get the day of the year.
@@ -1027,7 +990,8 @@ namespace time_shield {
     /// \return Weekday (SUN = 0, MON = 1, ... SAT = 6).
     template<class T = Weekday>
     constexpr T weekday_of_ts(ts_t ts) noexcept {
-        return static_cast<T>((ts / SEC_PER_DAY + THU) % DAYS_PER_WEEK);
+        const ts_t days = detail::floor_div(ts, SEC_PER_DAY);
+        return static_cast<T>(detail::floor_mod(days + THU, DAYS_PER_WEEK));
     }
 
     /// \brief Get the weekday from a timestamp in milliseconds.
@@ -1139,7 +1103,7 @@ namespace time_shield {
     /// \param ts Timestamp (default: current timestamp).
     /// \return Timestamp at the start of the hour.
     constexpr ts_t start_of_hour(ts_t ts = time_shield::ts()) noexcept {
-        return ts - (ts % SEC_PER_HOUR);
+        return ts - detail::floor_mod(ts, SEC_PER_HOUR);
     }
 
     /// \brief Get the timestamp at the start of the hour.
@@ -1157,14 +1121,14 @@ namespace time_shield {
     /// \param ts_ms Timestamp in milliseconds (default: current timestamp in milliseconds).
     /// \return Timestamp at the start of the hour in milliseconds.
     constexpr ts_ms_t start_of_hour_ms(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
-        return ts_ms - (ts_ms % MS_PER_HOUR);
+        return ts_ms - detail::floor_mod(ts_ms, MS_PER_HOUR);
     }
 
     /// \brief Get the timestamp at the end of the hour.
     /// \param ts Timestamp (default: current timestamp).
     /// \return Returns the timestamp of the end of the hour.
     constexpr ts_t end_of_hour(ts_t ts = time_shield::ts()) noexcept {
-        return ts - (ts % SEC_PER_HOUR) + SEC_PER_HOUR - 1;
+        return ts - detail::floor_mod(ts, SEC_PER_HOUR) + SEC_PER_HOUR - 1;
     }
 
     /// \brief Get the timestamp at the end of the hour in seconds.
@@ -1178,21 +1142,21 @@ namespace time_shield {
     /// \param ts_ms Timestamp in milliseconds (default: current timestamp).
     /// \return Returns the timestamp of the end of the hour in milliseconds.
     constexpr ts_ms_t end_of_hour_ms(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
-        return ts_ms - (ts_ms % MS_PER_HOUR) + MS_PER_HOUR - 1;
+        return ts_ms - detail::floor_mod(ts_ms, MS_PER_HOUR) + MS_PER_HOUR - 1;
     }
 
     /// \brief Get the timestamp of the beginning of the minute.
     /// \param ts Timestamp (default: current timestamp).
     /// \return Returns the timestamp of the beginning of the minute.
     constexpr ts_t start_of_min(ts_t ts = time_shield::ts()) noexcept {
-        return ts - (ts % SEC_PER_MIN);
+        return ts - detail::floor_mod(ts, SEC_PER_MIN);
     }
 
     /// \brief Get the timestamp of the end of the minute.
     /// \param ts Timestamp (default: current timestamp).
     /// \return Returns the timestamp of the end of the minute.
     constexpr ts_t end_of_min(ts_t ts = time_shield::ts()) noexcept {
-        return ts - (ts % SEC_PER_MIN) + SEC_PER_MIN - 1;
+        return ts - detail::floor_mod(ts, SEC_PER_MIN) + SEC_PER_MIN - 1;
     }
 
     /// \brief Get minute of day.
@@ -1201,7 +1165,8 @@ namespace time_shield {
     /// \return Minute of day.
     template<class T = int>
     constexpr T min_of_day(ts_t ts = time_shield::ts()) noexcept {
-        return static_cast<T>((ts / SEC_PER_MIN) % MIN_PER_DAY);
+        const ts_t minutes = detail::floor_div(ts, SEC_PER_MIN);
+        return static_cast<T>(detail::floor_mod(minutes, MIN_PER_DAY));
     }
 
     /// \brief Get hour of day.
@@ -1210,7 +1175,8 @@ namespace time_shield {
     /// \return Hour of day.
     template<class T = int>
     constexpr T hour_of_day(ts_t ts = time_shield::ts()) noexcept {
-        return static_cast<T>((ts / SEC_PER_HOUR) % HOURS_PER_DAY);
+        const ts_t hours = detail::floor_div(ts, SEC_PER_HOUR);
+        return static_cast<T>(detail::floor_mod(hours, HOURS_PER_DAY));
     }
 
     /// \brief Get minute of hour.
@@ -1219,7 +1185,8 @@ namespace time_shield {
     /// \return Minute of hour.
     template<class T = int>
     constexpr T min_of_hour(ts_t ts = time_shield::ts()) noexcept {
-        return static_cast<T>((ts / SEC_PER_MIN) % MIN_PER_HOUR);
+        const ts_t minutes = detail::floor_div(ts, SEC_PER_MIN);
+        return static_cast<T>(detail::floor_mod(minutes, MIN_PER_HOUR));
     }
 
     /// \brief Get the timestamp of the start of the period.
@@ -1228,7 +1195,7 @@ namespace time_shield {
     /// \return Returns the timestamp of the start of the period.
     template<class T = int>
     constexpr ts_t start_of_period(T p, ts_t ts = time_shield::ts()) {
-        return ts - (ts % p);
+        return ts - detail::floor_mod(ts, static_cast<ts_t>(p));
     }
 
     /// \brief Get the timestamp of the end of the period.
@@ -1237,7 +1204,7 @@ namespace time_shield {
     /// \return Returns the timestamp of the end of the period.
     template<class T = int>
     constexpr ts_t end_of_period(T p, ts_t ts = time_shield::ts()) {
-        return ts - (ts % p) + p - 1;
+        return ts - detail::floor_mod(ts, static_cast<ts_t>(p)) + p - 1;
     }
 
 /// \}

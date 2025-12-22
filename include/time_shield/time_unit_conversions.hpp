@@ -8,6 +8,7 @@
 
 #include "config.hpp"
 #include "constants.hpp"
+#include "detail/floor_math.hpp"
 #include "types.hpp"
 
 #include <cmath>
@@ -24,8 +25,8 @@ namespace time_shield {
     /// \return T Nanosecond part of the second.
     template<class T = int>
     TIME_SHIELD_CONSTEXPR T ns_of_sec(fts_t ts) noexcept {
-        fts_t temp = 0;
-        return static_cast<T>(std::round(std::modf(ts, &temp) * static_cast<fts_t>(NS_PER_SEC)));
+        const int64_t ns = static_cast<int64_t>(std::floor(ts * static_cast<fts_t>(NS_PER_SEC)));
+        return static_cast<T>(detail::floor_mod<int64_t>(ns, NS_PER_SEC));
     }
 
     /// \brief Get the microsecond part of the second from a floating-point timestamp.
@@ -34,8 +35,8 @@ namespace time_shield {
     /// \return T Microsecond part of the second.
     template<class T = int>
     TIME_SHIELD_CONSTEXPR T us_of_sec(fts_t ts) noexcept {
-        fts_t temp = 0;
-        return static_cast<T>(std::round(std::modf(ts, &temp) * static_cast<fts_t>(US_PER_SEC)));
+        const int64_t us = static_cast<int64_t>(std::floor(ts * static_cast<fts_t>(US_PER_SEC)));
+        return static_cast<T>(detail::floor_mod<int64_t>(us, US_PER_SEC));
     }
 
     /// \brief Get the millisecond part of the second from a floating-point timestamp.
@@ -44,6 +45,36 @@ namespace time_shield {
     /// \return T Millisecond part of the second.
     template<class T = int>
     TIME_SHIELD_CONSTEXPR T ms_of_sec(fts_t ts) noexcept {
+        const int64_t ms = static_cast<int64_t>(std::floor(ts * static_cast<fts_t>(MS_PER_SEC)));
+        return static_cast<T>(detail::floor_mod<int64_t>(ms, MS_PER_SEC));
+    }
+
+    /// \brief Get the nanosecond part of the second from a floating-point timestamp (truncating).
+    /// \tparam T Type of the returned value (default is int).
+    /// \param ts Timestamp in floating-point seconds.
+    /// \return T Nanosecond part of the second, truncating toward zero.
+    template<class T = int>
+    TIME_SHIELD_CONSTEXPR T ns_of_sec_signed(fts_t ts) noexcept {
+        fts_t temp = 0;
+        return static_cast<T>(std::round(std::modf(ts, &temp) * static_cast<fts_t>(NS_PER_SEC)));
+    }
+
+    /// \brief Get the microsecond part of the second from a floating-point timestamp (truncating).
+    /// \tparam T Type of the returned value (default is int).
+    /// \param ts Timestamp in floating-point seconds.
+    /// \return T Microsecond part of the second, truncating toward zero.
+    template<class T = int>
+    TIME_SHIELD_CONSTEXPR T us_of_sec_signed(fts_t ts) noexcept {
+        fts_t temp = 0;
+        return static_cast<T>(std::round(std::modf(ts, &temp) * static_cast<fts_t>(US_PER_SEC)));
+    }
+
+    /// \brief Get the millisecond part of the second from a floating-point timestamp (truncating).
+    /// \tparam T Type of the returned value (default is int).
+    /// \param ts Timestamp in floating-point seconds.
+    /// \return T Millisecond part of the second, truncating toward zero.
+    template<class T = int>
+    TIME_SHIELD_CONSTEXPR T ms_of_sec_signed(fts_t ts) noexcept {
         fts_t temp = 0;
         return static_cast<T>(std::round(std::modf(ts, &temp) * static_cast<fts_t>(MS_PER_SEC)));
     }
@@ -53,8 +84,44 @@ namespace time_shield {
     /// \param ts Timestamp in milliseconds.
     /// \return T Millisecond part of the timestamp.
     template<class T = int>
+    constexpr T ms_part(ts_ms_t ts) noexcept {
+        return static_cast<T>(detail::floor_mod<int64_t>(static_cast<int64_t>(ts), MS_PER_SEC));
+    }
+
+    /// \brief Alias for ms_part.
+    /// \tparam T Type of the returned value (default is int).
+    /// \param ts Timestamp in milliseconds.
+    /// \return T Millisecond part of the timestamp.
+    template<class T = int>
     constexpr T ms_of_ts(ts_ms_t ts) noexcept {
-        return static_cast<T>(ts % MS_PER_SEC);
+        return ms_part<T>(ts);
+    }
+
+    /// \brief Get the microsecond part of the timestamp.
+    /// \tparam T Type of the returned value (default is int).
+    /// \param ts Timestamp in microseconds.
+    /// \return T Microsecond part of the timestamp.
+    template<class T = int>
+    constexpr T us_part(ts_us_t ts) noexcept {
+        return static_cast<T>(detail::floor_mod<int64_t>(static_cast<int64_t>(ts), US_PER_SEC));
+    }
+
+    /// \brief Alias for us_part.
+    /// \tparam T Type of the returned value (default is int).
+    /// \param ts Timestamp in microseconds.
+    /// \return T Microsecond part of the timestamp.
+    template<class T = int>
+    constexpr T us_of_ts(ts_us_t ts) noexcept {
+        return us_part<T>(ts);
+    }
+
+    /// \brief Get the nanosecond part of the timestamp.
+    /// \tparam T Type of the returned value (default is int).
+    /// \param ts Timestamp in nanoseconds.
+    /// \return T Nanosecond part of the timestamp.
+    template<class T = int, class T2 = int64_t>
+    constexpr T ns_part(T2 ts) noexcept {
+        return static_cast<T>(detail::floor_mod<int64_t>(static_cast<int64_t>(ts), NS_PER_SEC));
     }
 
 #   ifndef TIME_SHIELD_CPP17
@@ -115,7 +182,9 @@ namespace time_shield {
     /// \return T1 Timestamp in seconds.
     template<class T1 = ts_t, class T2 = ts_ms_t>
     constexpr T1 ms_to_sec(T2 ts_ms) noexcept {
-        return static_cast<T1>(ts_ms) / static_cast<T1>(MS_PER_SEC);
+        return static_cast<T1>(detail::floor_div(
+            static_cast<int64_t>(ts_ms),
+            static_cast<int64_t>(MS_PER_SEC)));
     }
 
     /// \brief Converts a timestamp from milliseconds to floating-point seconds.
@@ -181,7 +250,9 @@ namespace time_shield {
     /// \return T1 Timestamp in minutes.
     template<class T1 = int, class T2 = ts_ms_t>
     constexpr T1 ms_to_min(T2 ts) noexcept {
-        return static_cast<T1>(ts) / static_cast<T1>(MS_PER_MIN);
+        return static_cast<T1>(detail::floor_div(
+            static_cast<int64_t>(ts),
+            static_cast<int64_t>(MS_PER_MIN)));
     }
 
 //----------------------------------------------------------------------------//
@@ -238,7 +309,9 @@ namespace time_shield {
     /// \return T1 Timestamp in minutes.
     template<class T1 = int, class T2 = ts_t>
     constexpr T1 sec_to_min(T2 ts) noexcept {
-        return static_cast<T1>(ts) / static_cast<T1>(SEC_PER_MIN);
+        return static_cast<T1>(detail::floor_div(
+            static_cast<int64_t>(ts),
+            static_cast<int64_t>(SEC_PER_MIN)));
     }
 
     /// \brief Converts a timestamp from minutes to floating-point seconds.
@@ -314,7 +387,9 @@ namespace time_shield {
     /// \return T1 Timestamp in hours.
     template<class T1 = int, class T2 = ts_ms_t>
     constexpr T1 ms_to_hour(T2 ts) noexcept {
-        return static_cast<T1>(ts) / static_cast<T1>(MS_PER_HOUR);
+        return static_cast<T1>(detail::floor_div(
+            static_cast<int64_t>(ts),
+            static_cast<int64_t>(MS_PER_HOUR)));
     }
 
 //----------------------------------------------------------------------------//
@@ -372,7 +447,9 @@ namespace time_shield {
     /// \return T1 Timestamp in hours.
     template<class T1 = int, class T2 = ts_t>
     constexpr T1 sec_to_hour(T2 ts) noexcept {
-        return static_cast<T1>(ts) / static_cast<T1>(SEC_PER_HOUR);
+        return static_cast<T1>(detail::floor_div(
+            static_cast<int64_t>(ts),
+            static_cast<int64_t>(SEC_PER_HOUR)));
     }
 
     /// \brief Converts a timestamp from hours to floating-point seconds.

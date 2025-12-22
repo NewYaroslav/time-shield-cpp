@@ -17,12 +17,16 @@ var time__unit__conversions_8hpp =
     [ "time_shield::min_to_sec_impl", "group__time__conversions.html#ga9b02779cdb89606ff730a63b2272ce4e", null ],
     [ "time_shield::min_to_sec_impl", "group__time__conversions.html#gaa2a94d9339984f6462f07d17acae0a27", null ],
     [ "time_shield::ms_of_sec", "group__time__conversions.html#ga60aa242e432306de46f51eb40872237a", null ],
+    [ "time_shield::ms_of_sec_signed", "group__time__conversions.html#ga1ff18a1bf031804c01a353cd4afeddb5", null ],
     [ "time_shield::ms_of_ts", "group__time__conversions.html#ga48b28eda9acfde440cdfe6b5d3559792", null ],
+    [ "time_shield::ms_part", "group__time__conversions.html#ga327de312328161f481e15fde3897d138", null ],
     [ "time_shield::ms_to_fsec", "group__time__conversions.html#gaf1490609cf8c76b0cf85258bd588e571", null ],
     [ "time_shield::ms_to_hour", "group__time__conversions.html#ga54442ebba26c24efd77a25b40fa0a1c9", null ],
     [ "time_shield::ms_to_min", "group__time__conversions.html#gab4808e2e1eaa06f326c02132be12e1ac", null ],
     [ "time_shield::ms_to_sec", "group__time__conversions.html#ga8bdfa7cf98881054cbcfb01213ab6c53", null ],
     [ "time_shield::ns_of_sec", "group__time__conversions.html#ga568417ceb2e86586bf56b74bfec116ec", null ],
+    [ "time_shield::ns_of_sec_signed", "group__time__conversions.html#ga2233c36ca5997215c27c594b0263e002", null ],
+    [ "time_shield::ns_part", "group__time__conversions.html#ga34c2fa8c4b9e6b7e0ca4f3ba4982a1e5", null ],
     [ "time_shield::sec_to_fhour", "group__time__conversions.html#ga4e7f31ee0526f70980958cda7369dd87", null ],
     [ "time_shield::sec_to_fmin", "group__time__conversions.html#ga6ab91fdac1a794680ec64fa77ca8f668", null ],
     [ "time_shield::sec_to_hour", "group__time__conversions.html#gac2db906f9fe6330c30021e80b7e476e4", null ],
@@ -30,5 +34,8 @@ var time__unit__conversions_8hpp =
     [ "time_shield::sec_to_ms", "group__time__conversions.html#gacf399fc904a25ad11845fffcf161cb87", null ],
     [ "time_shield::sec_to_ms_impl", "group__time__conversions.html#ga7cb74f5da9e42242545c01417c95047d", null ],
     [ "time_shield::sec_to_ms_impl", "group__time__conversions.html#ga25374efdf585f171d2166d26d73ed0c8", null ],
-    [ "time_shield::us_of_sec", "group__time__conversions.html#ga8962d091c0dab7f893f346d9f9af4590", null ]
+    [ "time_shield::us_of_sec", "group__time__conversions.html#ga8962d091c0dab7f893f346d9f9af4590", null ],
+    [ "time_shield::us_of_sec_signed", "group__time__conversions.html#ga308ae58b34d6f795e821ace4460d8be3", null ],
+    [ "time_shield::us_of_ts", "group__time__conversions.html#gad693a4e8128f5f6900bb33760e7218ef", null ],
+    [ "time_shield::us_part", "group__time__conversions.html#gaf563ea7096a24df006b4a4f2fdc531b1", null ]
 ];

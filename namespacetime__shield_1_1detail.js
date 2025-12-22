@@ -38,6 +38,8 @@ var namespacetime__shield_1_1detail =
     [ "fast_year_from_days", "namespacetime__shield_1_1detail.html#a9526a97329d89f4c84b36c22792ff35a", null ],
     [ "fast_year_from_days_constexpr", "namespacetime__shield_1_1detail.html#ac37a65d82c36d9de43ab5e59bc437467", null ],
     [ "fill_client_packet", "namespacetime__shield_1_1detail.html#af660cd4c3b59a86868102cc8323d26fb", null ],
+    [ "floor_div", "namespacetime__shield_1_1detail.html#a7feb3415dcece49bf82e7a554fff854a", null ],
+    [ "floor_mod", "namespacetime__shield_1_1detail.html#a0b958a2e7fb65f29de3af00f0811cfb7", null ],
     [ "is_ascii_digit", "namespacetime__shield_1_1detail.html#a30bd76de8e4ab15d80d93032c4216245", null ],
     [ "is_ascii_space", "namespacetime__shield_1_1detail.html#a4c4e74dd641a830641fdb33e3d225944", null ],
     [ "mul_hi_u64", "namespacetime__shield_1_1detail.html#a68c2a273d69c3e128beccdfb5626f640", null ],

@@ -1223,7 +1223,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:gafbea484cce931e1117533712a21a2202"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for dt_to_timestamp_ms function.  <br /></td></tr>
 <tr class="separator:gafbea484cce931e1117533712a21a2202"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5fa45709acca4fa6465b1cff82850b95" id="r_ga5fa45709acca4fa6465b1cff82850b95"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
-<tr class="memitem:ga5fa45709acca4fa6465b1cff82850b95"><td class="memTemplItemLeft" align="right" valign="top">TIME_SHIELD_CONSTEXPR auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga5fa45709acca4fa6465b1cff82850b95">time_shield::dt_to_ts_ms</a> (const T &amp;date_time) -&gt; decltype(<a class="el" href="group__time__structures.html#gabc961de903c3270d3fa011d94345aa6e">dt_to_timestamp_ms</a>(date_time))</td></tr>
+<tr class="memitem:ga5fa45709acca4fa6465b1cff82850b95"><td class="memTemplItemLeft" align="right" valign="top">TIME_SHIELD_CONSTEXPR auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga5fa45709acca4fa6465b1cff82850b95">time_shield::dt_to_ts_ms</a> (const T &amp;date_time) -&gt; decltype(<a class="el" href="group__time__structures.html#ga818faf13409d9674ed53867a71b64a9c">dt_to_timestamp_ms</a>(date_time))</td></tr>
 <tr class="memdesc:ga5fa45709acca4fa6465b1cff82850b95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for dt_to_timestamp_ms function.  <br /></td></tr>
 <tr class="separator:ga5fa45709acca4fa6465b1cff82850b95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae9575878a0ee36a3918651b10a9c0b1c" id="r_gae9575878a0ee36a3918651b10a9c0b1c"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
@@ -1600,10 +1600,38 @@ Functions</h2></td></tr>
 <tr class="memitem:ga60aa242e432306de46f51eb40872237a"><td class="memTemplItemLeft" align="right" valign="top">TIME_SHIELD_CONSTEXPR T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga60aa242e432306de46f51eb40872237a">time_shield::ms_of_sec</a> (<a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f">fts_t</a> <a class="el" href="#ga4701e4f2553acb70bf28ada865531a03">ts</a>) noexcept</td></tr>
 <tr class="memdesc:ga60aa242e432306de46f51eb40872237a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the millisecond part of the second from a floating-point timestamp.  <br /></td></tr>
 <tr class="separator:ga60aa242e432306de46f51eb40872237a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2233c36ca5997215c27c594b0263e002" id="r_ga2233c36ca5997215c27c594b0263e002"><td class="memTemplParams" colspan="2">template&lt;class T = int&gt; </td></tr>
+<tr class="memitem:ga2233c36ca5997215c27c594b0263e002"><td class="memTemplItemLeft" align="right" valign="top">TIME_SHIELD_CONSTEXPR T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga2233c36ca5997215c27c594b0263e002">time_shield::ns_of_sec_signed</a> (<a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f">fts_t</a> <a class="el" href="#ga4701e4f2553acb70bf28ada865531a03">ts</a>) noexcept</td></tr>
+<tr class="memdesc:ga2233c36ca5997215c27c594b0263e002"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the nanosecond part of the second from a floating-point timestamp (truncating).  <br /></td></tr>
+<tr class="separator:ga2233c36ca5997215c27c594b0263e002"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga308ae58b34d6f795e821ace4460d8be3" id="r_ga308ae58b34d6f795e821ace4460d8be3"><td class="memTemplParams" colspan="2">template&lt;class T = int&gt; </td></tr>
+<tr class="memitem:ga308ae58b34d6f795e821ace4460d8be3"><td class="memTemplItemLeft" align="right" valign="top">TIME_SHIELD_CONSTEXPR T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga308ae58b34d6f795e821ace4460d8be3">time_shield::us_of_sec_signed</a> (<a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f">fts_t</a> <a class="el" href="#ga4701e4f2553acb70bf28ada865531a03">ts</a>) noexcept</td></tr>
+<tr class="memdesc:ga308ae58b34d6f795e821ace4460d8be3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the microsecond part of the second from a floating-point timestamp (truncating).  <br /></td></tr>
+<tr class="separator:ga308ae58b34d6f795e821ace4460d8be3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1ff18a1bf031804c01a353cd4afeddb5" id="r_ga1ff18a1bf031804c01a353cd4afeddb5"><td class="memTemplParams" colspan="2">template&lt;class T = int&gt; </td></tr>
+<tr class="memitem:ga1ff18a1bf031804c01a353cd4afeddb5"><td class="memTemplItemLeft" align="right" valign="top">TIME_SHIELD_CONSTEXPR T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga1ff18a1bf031804c01a353cd4afeddb5">time_shield::ms_of_sec_signed</a> (<a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f">fts_t</a> <a class="el" href="#ga4701e4f2553acb70bf28ada865531a03">ts</a>) noexcept</td></tr>
+<tr class="memdesc:ga1ff18a1bf031804c01a353cd4afeddb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the millisecond part of the second from a floating-point timestamp (truncating).  <br /></td></tr>
+<tr class="separator:ga1ff18a1bf031804c01a353cd4afeddb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga327de312328161f481e15fde3897d138" id="r_ga327de312328161f481e15fde3897d138"><td class="memTemplParams" colspan="2">template&lt;class T = int&gt; </td></tr>
+<tr class="memitem:ga327de312328161f481e15fde3897d138"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga327de312328161f481e15fde3897d138">time_shield::ms_part</a> (<a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> <a class="el" href="#ga4701e4f2553acb70bf28ada865531a03">ts</a>) noexcept</td></tr>
+<tr class="memdesc:ga327de312328161f481e15fde3897d138"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the millisecond part of the timestamp.  <br /></td></tr>
+<tr class="separator:ga327de312328161f481e15fde3897d138"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga48b28eda9acfde440cdfe6b5d3559792" id="r_ga48b28eda9acfde440cdfe6b5d3559792"><td class="memTemplParams" colspan="2">template&lt;class T = int&gt; </td></tr>
 <tr class="memitem:ga48b28eda9acfde440cdfe6b5d3559792"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga48b28eda9acfde440cdfe6b5d3559792">time_shield::ms_of_ts</a> (<a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> <a class="el" href="#ga4701e4f2553acb70bf28ada865531a03">ts</a>) noexcept</td></tr>
-<tr class="memdesc:ga48b28eda9acfde440cdfe6b5d3559792"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the millisecond part of the timestamp.  <br /></td></tr>
+<tr class="memdesc:ga48b28eda9acfde440cdfe6b5d3559792"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for ms_part.  <br /></td></tr>
 <tr class="separator:ga48b28eda9acfde440cdfe6b5d3559792"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf563ea7096a24df006b4a4f2fdc531b1" id="r_gaf563ea7096a24df006b4a4f2fdc531b1"><td class="memTemplParams" colspan="2">template&lt;class T = int&gt; </td></tr>
+<tr class="memitem:gaf563ea7096a24df006b4a4f2fdc531b1"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#gaf563ea7096a24df006b4a4f2fdc531b1">time_shield::us_part</a> (<a class="el" href="group__time__types.html#gaa09dd8f85dd996be93d7250acea4f638">ts_us_t</a> <a class="el" href="#ga4701e4f2553acb70bf28ada865531a03">ts</a>) noexcept</td></tr>
+<tr class="memdesc:gaf563ea7096a24df006b4a4f2fdc531b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the microsecond part of the timestamp.  <br /></td></tr>
+<tr class="separator:gaf563ea7096a24df006b4a4f2fdc531b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad693a4e8128f5f6900bb33760e7218ef" id="r_gad693a4e8128f5f6900bb33760e7218ef"><td class="memTemplParams" colspan="2">template&lt;class T = int&gt; </td></tr>
+<tr class="memitem:gad693a4e8128f5f6900bb33760e7218ef"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#gad693a4e8128f5f6900bb33760e7218ef">time_shield::us_of_ts</a> (<a class="el" href="group__time__types.html#gaa09dd8f85dd996be93d7250acea4f638">ts_us_t</a> <a class="el" href="#ga4701e4f2553acb70bf28ada865531a03">ts</a>) noexcept</td></tr>
+<tr class="memdesc:gad693a4e8128f5f6900bb33760e7218ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for us_part.  <br /></td></tr>
+<tr class="separator:gad693a4e8128f5f6900bb33760e7218ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga34c2fa8c4b9e6b7e0ca4f3ba4982a1e5" id="r_ga34c2fa8c4b9e6b7e0ca4f3ba4982a1e5"><td class="memTemplParams" colspan="2">template&lt;class T = int, class T2 = int64_t&gt; </td></tr>
+<tr class="memitem:ga34c2fa8c4b9e6b7e0ca4f3ba4982a1e5"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga34c2fa8c4b9e6b7e0ca4f3ba4982a1e5">time_shield::ns_part</a> (T2 <a class="el" href="#ga4701e4f2553acb70bf28ada865531a03">ts</a>) noexcept</td></tr>
+<tr class="memdesc:ga34c2fa8c4b9e6b7e0ca4f3ba4982a1e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the nanosecond part of the timestamp.  <br /></td></tr>
+<tr class="separator:ga34c2fa8c4b9e6b7e0ca4f3ba4982a1e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga25374efdf585f171d2166d26d73ed0c8" id="r_ga25374efdf585f171d2166d26d73ed0c8"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
 <tr class="memitem:ga25374efdf585f171d2166d26d73ed0c8"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga25374efdf585f171d2166d26d73ed0c8">time_shield::sec_to_ms_impl</a> (T t, std::true_type) noexcept</td></tr>
 <tr class="memdesc:ga25374efdf585f171d2166d26d73ed0c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function for converting seconds to milliseconds (floating-point version).  <br /></td></tr>
@@ -1842,12 +1870,12 @@ Usage Examples:</h3>
 <div class="ttc" id="agroup__time__utils_html_ga8de184eb4e3279be0b1e8e45ddcd1d27"><div class="ttname"><a href="group__time__utils.html#ga8de184eb4e3279be0b1e8e45ddcd1d27">time_shield::ms_of_sec</a></div><div class="ttdeci">T ms_of_sec() noexcept</div><div class="ttdoc">Get the millisecond part of the current second.</div><div class="ttdef"><b>Definition</b> <a href="time__utils_8hpp_source.html#l00166">time_utils.hpp:166</a></div></div>
 </div><!-- fragment --></li>
 <li>Convert a date-time structure to a timestamp: <div class="fragment"><div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="group__time__utils.html#ga1d1c996fff6a55bf6a064991fec1f819">ts</a> = <a class="code hl_function" href="group__time__structures.html#gaa0d04ce5842219b3527561b9ff9aedeb">time_shield::to_timestamp</a>(2024, 11, 25, 14, 30, 0);</div>
-<div class="ttc" id="agroup__time__structures_html_gaa0d04ce5842219b3527561b9ff9aedeb"><div class="ttname"><a href="group__time__structures.html#gaa0d04ce5842219b3527561b9ff9aedeb">time_shield::to_timestamp</a></div><div class="ttdeci">TIME_SHIELD_CONSTEXPR ts_t to_timestamp(T1 year, T2 month, T2 day, T2 hour=0, T2 min=0, T2 sec=0)</div><div class="ttdoc">Converts a date and time to a timestamp.</div><div class="ttdef"><b>Definition</b> <a href="date__time__conversions_8hpp_source.html#l00434">date_time_conversions.hpp:434</a></div></div>
+<div class="ttc" id="agroup__time__structures_html_gaa0d04ce5842219b3527561b9ff9aedeb"><div class="ttname"><a href="group__time__structures.html#gaa0d04ce5842219b3527561b9ff9aedeb">time_shield::to_timestamp</a></div><div class="ttdeci">TIME_SHIELD_CONSTEXPR ts_t to_timestamp(T1 year, T2 month, T2 day, T2 hour=0, T2 min=0, T2 sec=0)</div><div class="ttdoc">Converts a date and time to a timestamp.</div><div class="ttdef"><b>Definition</b> <a href="date__time__conversions_8hpp_source.html#l00436">date_time_conversions.hpp:436</a></div></div>
 <div class="ttc" id="agroup__time__utils_html_ga1d1c996fff6a55bf6a064991fec1f819"><div class="ttname"><a href="group__time__utils.html#ga1d1c996fff6a55bf6a064991fec1f819">time_shield::ts</a></div><div class="ttdeci">ts_t ts() noexcept</div><div class="ttdoc">Get the current UTC timestamp in seconds.</div><div class="ttdef"><b>Definition</b> <a href="time__utils_8hpp_source.html#l00173">time_utils.hpp:173</a></div></div>
 </div><!-- fragment --></li>
 <li>Determine the start of the current year: <div class="fragment"><div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#ga8b38d3c0876842f3c82ddeb4d606562a">year_start</a> = <a class="code hl_function" href="group__time__structures.html#ga640c300de87bfdee848948c354e9b66c">time_shield::start_of_year</a>(current_timestamp());</div>
 <div class="ttc" id="agroup__time__conversions_html_ga8b38d3c0876842f3c82ddeb4d606562a"><div class="ttname"><a href="#ga8b38d3c0876842f3c82ddeb4d606562a">time_shield::year_start</a></div><div class="ttdeci">TIME_SHIELD_CONSTEXPR ts_t year_start(ts_t ts=time_shield::ts())</div><div class="ttdoc">Alias for start_of_year function.</div><div class="ttdef"><b>Definition</b> <a href="time__conversion__aliases_8hpp_source.html#l01636">time_conversion_aliases.hpp:1636</a></div></div>
-<div class="ttc" id="agroup__time__structures_html_ga640c300de87bfdee848948c354e9b66c"><div class="ttname"><a href="group__time__structures.html#ga640c300de87bfdee848948c354e9b66c">time_shield::start_of_year</a></div><div class="ttdeci">TIME_SHIELD_CONSTEXPR ts_t start_of_year(ts_t ts) noexcept</div><div class="ttdoc">Get the start of the year timestamp.</div><div class="ttdef"><b>Definition</b> <a href="date__time__conversions_8hpp_source.html#l00770">date_time_conversions.hpp:770</a></div></div>
+<div class="ttc" id="agroup__time__structures_html_ga640c300de87bfdee848948c354e9b66c"><div class="ttname"><a href="group__time__structures.html#ga640c300de87bfdee848948c354e9b66c">time_shield::start_of_year</a></div><div class="ttdeci">TIME_SHIELD_CONSTEXPR ts_t start_of_year(ts_t ts) noexcept</div><div class="ttdoc">Get the start of the year timestamp.</div><div class="ttdef"><b>Definition</b> <a href="date__time__conversions_8hpp_source.html#l00800">date_time_conversions.hpp:800</a></div></div>
 </div><!-- fragment --> </li>
 </ul>
 <h2 class="groupheader">Function Documentation</h2>
@@ -3996,7 +4024,7 @@ template&lt;class T&gt; </div>
           <td class="memname">TIME_SHIELD_CONSTEXPR auto time_shield::dt_to_ts_ms </td>
           <td>(</td>
           <td class="paramtype">const T &amp;</td>          <td class="paramname"><span class="paramname"><em>date_time</em></span></td><td>)</td>
-          <td> -&gt; decltype(<a class="el" href="group__time__structures.html#gabc961de903c3270d3fa011d94345aa6e">dt_to_timestamp_ms</a>(date_time)) </td>
+          <td> -&gt; decltype(<a class="el" href="group__time__structures.html#ga818faf13409d9674ed53867a71b64a9c">dt_to_timestamp_ms</a>(date_time)) </td>
         </tr>
       </table>
   </td>
@@ -5682,7 +5710,7 @@ template&lt;class T1 = int, class T2 = year_t, class T3 = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Unix timestamp in milliseconds since epoch.">ts_ms_t</a> Timestamp in milliseconds. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00107">107</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00174">174</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -8757,7 +8785,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The hour in 12-hour format. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00401">401</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00478">478</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -9127,7 +9155,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f" title="Floating-point timestamp (fractional seconds since epoch).">fts_t</a> Timestamp in floating-point seconds. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00383">383</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00460">460</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -9200,7 +9228,7 @@ template&lt;class T1 = ts_ms_t, class T2&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>T1 Timestamp in milliseconds. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00294">294</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00367">367</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -9249,7 +9277,7 @@ template&lt;class T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Unix timestamp in milliseconds since epoch.">ts_ms_t</a> Timestamp in milliseconds. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00283">283</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00356">356</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -9298,7 +9326,7 @@ template&lt;class T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Unix timestamp in milliseconds since epoch.">ts_ms_t</a> Timestamp in milliseconds. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00273">273</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00346">346</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -9371,7 +9399,7 @@ template&lt;class T1 = ts_t, class T2&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>T1 Timestamp in seconds. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00352">352</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00427">427</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -9420,7 +9448,7 @@ template&lt;class T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Unix timestamp in seconds since 1970‑01‑01T00:00:00Z.">ts_t</a> Timestamp in seconds. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00341">341</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00416">416</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -9469,7 +9497,7 @@ template&lt;class T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Unix timestamp in seconds since 1970‑01‑01T00:00:00Z.">ts_t</a> Timestamp in seconds. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00331">331</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00406">406</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -10910,7 +10938,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f" title="Floating-point timestamp (fractional seconds since epoch).">fts_t</a> Timestamp in floating-point seconds. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00249">249</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00322">322</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -10983,7 +11011,7 @@ template&lt;class T1 = ts_ms_t, class T2&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>T1 Timestamp in milliseconds. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00161">161</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00230">230</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -11032,7 +11060,7 @@ template&lt;class T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Unix timestamp in milliseconds since epoch.">ts_ms_t</a> Timestamp in milliseconds. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00150">150</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00219">219</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -11081,7 +11109,7 @@ template&lt;class T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Unix timestamp in milliseconds since epoch.">ts_ms_t</a> Timestamp in milliseconds. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00140">140</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00209">209</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -11154,7 +11182,7 @@ template&lt;class T1 = ts_t, class T2&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>T1 Timestamp in seconds. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00218">218</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00289">289</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -11203,7 +11231,7 @@ template&lt;class T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Unix timestamp in seconds since 1970‑01‑01T00:00:00Z.">ts_t</a> Timestamp in seconds. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00207">207</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00278">278</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -11252,7 +11280,7 @@ template&lt;class T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Unix timestamp in seconds since 1970‑01‑01T00:00:00Z.">ts_t</a> Timestamp in seconds. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00197">197</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00268">268</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -11466,7 +11494,51 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>T Millisecond part of the second. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00046">46</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00047">47</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga1ff18a1bf031804c01a353cd4afeddb5" name="ga1ff18a1bf031804c01a353cd4afeddb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1ff18a1bf031804c01a353cd4afeddb5">&#9670;&#160;</a></span>ms_of_sec_signed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T = int&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TIME_SHIELD_CONSTEXPR T time_shield::ms_of_sec_signed </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f">fts_t</a></td>          <td class="paramname"><span class="paramname"><em>ts</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the millisecond part of the second from a floating-point timestamp (truncating). </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Type of the returned value (default is int). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ts</td><td>Timestamp in floating-point seconds. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>T Millisecond part of the second, truncating toward zero. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00077">77</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -11523,6 +11595,50 @@ template&lt;class T = int&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Alias for ms_part. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Type of the returned value (default is int). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ts</td><td>Timestamp in milliseconds. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>T Millisecond part of the timestamp. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00096">96</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga327de312328161f481e15fde3897d138" name="ga327de312328161f481e15fde3897d138"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga327de312328161f481e15fde3897d138">&#9670;&#160;</a></span>ms_part()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T = int&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T time_shield::ms_part </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a></td>          <td class="paramname"><span class="paramname"><em>ts</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
 <p>Get the millisecond part of the timestamp. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
@@ -11538,7 +11654,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>T Millisecond part of the timestamp. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00056">56</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00087">87</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -11610,7 +11726,7 @@ template&lt;class T = ts_ms_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f" title="Floating-point timestamp (fractional seconds since epoch).">fts_t</a> Timestamp in floating-point seconds. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00126">126</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00195">195</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -11683,7 +11799,7 @@ template&lt;class T1 = int, class T2 = ts_ms_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>T1 Timestamp in hours. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00316">316</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00389">389</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -11756,7 +11872,7 @@ template&lt;class T1 = int, class T2 = ts_ms_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>T1 Timestamp in minutes. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00183">183</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00252">252</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -11829,7 +11945,7 @@ template&lt;class T1 = ts_t, class T2 = ts_ms_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>T1 Timestamp in seconds. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00117">117</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00184">184</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -12548,7 +12664,95 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>T Nanosecond part of the second. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00026">26</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00027">27</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga2233c36ca5997215c27c594b0263e002" name="ga2233c36ca5997215c27c594b0263e002"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2233c36ca5997215c27c594b0263e002">&#9670;&#160;</a></span>ns_of_sec_signed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T = int&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TIME_SHIELD_CONSTEXPR T time_shield::ns_of_sec_signed </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f">fts_t</a></td>          <td class="paramname"><span class="paramname"><em>ts</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the nanosecond part of the second from a floating-point timestamp (truncating). </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Type of the returned value (default is int). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ts</td><td>Timestamp in floating-point seconds. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>T Nanosecond part of the second, truncating toward zero. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00057">57</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga34c2fa8c4b9e6b7e0ca4f3ba4982a1e5" name="ga34c2fa8c4b9e6b7e0ca4f3ba4982a1e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga34c2fa8c4b9e6b7e0ca4f3ba4982a1e5">&#9670;&#160;</a></span>ns_part()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T = int, class T2 = int64_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T time_shield::ns_part </td>
+          <td>(</td>
+          <td class="paramtype">T2</td>          <td class="paramname"><span class="paramname"><em>ts</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the nanosecond part of the timestamp. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Type of the returned value (default is int). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ts</td><td>Timestamp in nanoseconds. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>T Nanosecond part of the timestamp. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00123">123</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -13256,7 +13460,7 @@ template&lt;class T = ts_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>double Timestamp in floating-point hours. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00392">392</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00469">469</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -13328,7 +13532,7 @@ template&lt;class T = ts_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>double Timestamp in floating-point minutes. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00258">258</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00331">331</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -13401,7 +13605,7 @@ template&lt;class T1 = int, class T2 = ts_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>T1 Timestamp in hours. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00374">374</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00449">449</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -13474,7 +13678,7 @@ template&lt;class T1 = int, class T2 = ts_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>T1 Timestamp in minutes. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00240">240</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00311">311</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -13547,7 +13751,7 @@ template&lt;class T1 = ts_ms_t, class T2&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>T1 Timestamp in milliseconds. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00088">88</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00155">155</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -13596,7 +13800,7 @@ template&lt;class T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Unix timestamp in milliseconds since epoch.">ts_ms_t</a> Timestamp in milliseconds. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00077">77</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00144">144</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -13645,7 +13849,7 @@ template&lt;class T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad" title="Unix timestamp in milliseconds since epoch.">ts_ms_t</a> Timestamp in milliseconds. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00067">67</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00134">134</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -20985,7 +21189,139 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>T Microsecond part of the second. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00036">36</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00037">37</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga308ae58b34d6f795e821ace4460d8be3" name="ga308ae58b34d6f795e821ace4460d8be3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga308ae58b34d6f795e821ace4460d8be3">&#9670;&#160;</a></span>us_of_sec_signed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T = int&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TIME_SHIELD_CONSTEXPR T time_shield::us_of_sec_signed </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f">fts_t</a></td>          <td class="paramname"><span class="paramname"><em>ts</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the microsecond part of the second from a floating-point timestamp (truncating). </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Type of the returned value (default is int). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ts</td><td>Timestamp in floating-point seconds. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>T Microsecond part of the second, truncating toward zero. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00067">67</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gad693a4e8128f5f6900bb33760e7218ef" name="gad693a4e8128f5f6900bb33760e7218ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad693a4e8128f5f6900bb33760e7218ef">&#9670;&#160;</a></span>us_of_ts()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T = int&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T time_shield::us_of_ts </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#gaa09dd8f85dd996be93d7250acea4f638">ts_us_t</a></td>          <td class="paramname"><span class="paramname"><em>ts</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Alias for us_part. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Type of the returned value (default is int). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ts</td><td>Timestamp in microseconds. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>T Microsecond part of the timestamp. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00114">114</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gaf563ea7096a24df006b4a4f2fdc531b1" name="gaf563ea7096a24df006b4a4f2fdc531b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf563ea7096a24df006b4a4f2fdc531b1">&#9670;&#160;</a></span>us_part()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T = int&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T time_shield::us_part </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#gaa09dd8f85dd996be93d7250acea4f638">ts_us_t</a></td>          <td class="paramname"><span class="paramname"><em>ts</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the microsecond part of the timestamp. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Type of the returned value (default is int). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ts</td><td>Timestamp in microseconds. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>T Microsecond part of the timestamp. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="time__unit__conversions_8hpp_source.html#l00105">105</a> of file <a class="el" href="time__unit__conversions_8hpp_source.html">time_unit_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -22061,7 +22397,7 @@ template&lt;class T = year_t&gt; </div>
 
 <p>Alias for end_of_year_ms. </p>
 <p>Get the timestamp in milliseconds of the end of the year.   </p>
-<p>This function finds the last timestamp of the current year in milliseconds.</p>
+<p>This function finds the last millisecond of the current year in milliseconds.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ts_ms</td><td>Timestamp in milliseconds. </td></tr>
@@ -22099,7 +22435,7 @@ template&lt;class T = year_t&gt; </div>
 
 <p>Alias for end_of_year_ms function. </p>
 <p>Get the timestamp in milliseconds of the end of the year.   </p>
-<p>This function finds the last timestamp of the current year in milliseconds.</p>
+<p>This function finds the last millisecond of the current year in milliseconds.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ts_ms</td><td>Timestamp in milliseconds. </td></tr>

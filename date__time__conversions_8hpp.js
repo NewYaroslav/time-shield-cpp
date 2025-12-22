@@ -4,7 +4,7 @@ var date__time__conversions_8hpp =
     [ "time_shield::day_of_year", "group__time__structures.html#ga66b499223d2a8fb979d100a50518a79e", null ],
     [ "time_shield::dt_to_ftimestamp", "group__time__structures.html#ga0cf44698c7145d5d7476e533e4a3db8d", null ],
     [ "time_shield::dt_to_timestamp", "group__time__structures.html#ga8498212ff626ec46a7a4a2df26f83734", null ],
-    [ "time_shield::dt_to_timestamp_ms", "group__time__structures.html#gabc961de903c3270d3fa011d94345aa6e", null ],
+    [ "time_shield::dt_to_timestamp_ms", "group__time__structures.html#ga818faf13409d9674ed53867a71b64a9c", null ],
     [ "time_shield::end_of_day", "group__time__structures.html#ga6652d1b0777fce93ca2beb4f4589c684", null ],
     [ "time_shield::end_of_day_ms", "group__time__structures.html#ga38caa64a9fbc211fd0b647e1c4215aef", null ],
     [ "time_shield::end_of_day_sec", "group__time__structures.html#gafb9ac12a0e5b1c5195f6932c61e0f799", null ],

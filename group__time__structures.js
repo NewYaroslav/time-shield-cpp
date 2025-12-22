@@ -57,7 +57,7 @@ var group__time__structures =
     [ "time_shield::dt_to_ftimestamp", "group__time__structures.html#ga0cf44698c7145d5d7476e533e4a3db8d", null ],
     [ "time_shield::dt_to_fts", "group__time__conversions.html#gad3b6001991fa8e4e82b17cad8b5c8084", null ],
     [ "time_shield::dt_to_timestamp", "group__time__structures.html#ga8498212ff626ec46a7a4a2df26f83734", null ],
-    [ "time_shield::dt_to_timestamp_ms", "group__time__structures.html#gabc961de903c3270d3fa011d94345aa6e", null ],
+    [ "time_shield::dt_to_timestamp_ms", "group__time__structures.html#ga818faf13409d9674ed53867a71b64a9c", null ],
     [ "time_shield::dt_to_ts", "group__time__conversions.html#gadd1eb6198dacedad6b9c0251f2269b44", null ],
     [ "time_shield::dt_to_ts_ms", "group__time__conversions.html#ga5fa45709acca4fa6465b1cff82850b95", null ],
     [ "time_shield::end_of_day", "group__time__structures.html#ga6652d1b0777fce93ca2beb4f4589c684", null ],

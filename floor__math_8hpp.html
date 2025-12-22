@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Time Shield Library: include/time_shield/detail Directory Reference</title>
+<title>Time Shield Library: include/time_shield/detail/floor_math.hpp File Reference</title>
 <link rel="icon" href="icon-64x64.png" type="image/x-icon" />
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -82,7 +82,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){initNavTree('dir_e54ce41abb4035070a2b7844082d8e61.html',''); initResizable(true); });
+$(function(){initNavTree('floor__math_8hpp.html',''); initResizable(true); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -108,28 +108,47 @@ $(function(){initNavTree('dir_e54ce41abb4035070a2b7844082d8e61.html',''); initRe
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">detail Directory Reference</div></div>
+  <div class="summary">
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle"><div class="title">floor_math.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Floor division and modulus helpers.  
+<a href="#details">More...</a></p>
+
+<p><a href="floor__math_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
-Files</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="fast__date_8hpp_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fast__date_8hpp.html">fast_date.hpp</a></td></tr>
-<tr class="memdesc:fast__date_8hpp"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fast date conversion helpers. <br /></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetime__shield.html">time_shield</a></td></tr>
+<tr class="memdesc:namespacetime__shield"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main namespace for the Time Shield library. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="floor__math_8hpp_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="floor__math_8hpp.html">floor_math.hpp</a></td></tr>
-<tr class="memdesc:floor__math_8hpp"><td class="mdescLeft">&#160;</td><td class="mdescRight">Floor division and modulus helpers. <br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetime__shield_1_1detail.html">time_shield::detail</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="mul__hi_8hpp_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mul__hi_8hpp.html">mul_hi.hpp</a></td></tr>
-<tr class="memdesc:mul__hi_8hpp"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helpers for 64-bit multiply-high operations. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a7feb3415dcece49bf82e7a554fff854a" id="r_a7feb3415dcece49bf82e7a554fff854a"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
+<tr class="memitem:a7feb3415dcece49bf82e7a554fff854a"><td class="memTemplItemLeft" align="right" valign="top">TIME_SHIELD_CONSTEXPR T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetime__shield_1_1detail.html#a7feb3415dcece49bf82e7a554fff854a">time_shield::detail::floor_div</a> (T a, T b) noexcept</td></tr>
+<tr class="memdesc:a7feb3415dcece49bf82e7a554fff854a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Floor division for positive divisor.  <br /></td></tr>
+<tr class="separator:a7feb3415dcece49bf82e7a554fff854a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b958a2e7fb65f29de3af00f0811cfb7" id="r_a0b958a2e7fb65f29de3af00f0811cfb7"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
+<tr class="memitem:a0b958a2e7fb65f29de3af00f0811cfb7"><td class="memTemplItemLeft" align="right" valign="top">TIME_SHIELD_CONSTEXPR T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetime__shield_1_1detail.html#a0b958a2e7fb65f29de3af00f0811cfb7">time_shield::detail::floor_mod</a> (T a, T b) noexcept</td></tr>
+<tr class="memdesc:a0b958a2e7fb65f29de3af00f0811cfb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Floor-mod for positive modulus (returns r in [0..b)).  <br /></td></tr>
+<tr class="separator:a0b958a2e7fb65f29de3af00f0811cfb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Floor division and modulus helpers. </p>
+
+<p class="definition">Definition in file <a class="el" href="floor__math_8hpp_source.html">floor_math.hpp</a>.</p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_07c7b06f5dd7d1513dc7d4081673a960.html">time_shield</a></li><li class="navelem"><a class="el" href="dir_e54ce41abb4035070a2b7844082d8e61.html">detail</a></li>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_07c7b06f5dd7d1513dc7d4081673a960.html">time_shield</a></li><li class="navelem"><a class="el" href="dir_e54ce41abb4035070a2b7844082d8e61.html">detail</a></li><li class="navelem"><a class="el" href="floor__math_8hpp.html">floor_math.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>

@@ -428,9 +428,18 @@ Variables</h2></td></tr>
 <tr class="memitem:ga00d48741b41d0ebe330adaf07fcb51bf" id="r_ga00d48741b41d0ebe330adaf07fcb51bf"><td class="memItemLeft" align="right" valign="top">constexpr int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga00d48741b41d0ebe330adaf07fcb51bf">time_shield::ERROR_YEAR</a> = 9223372036854770000LL</td></tr>
 <tr class="memdesc:ga00d48741b41d0ebe330adaf07fcb51bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error year value.  <br /></td></tr>
 <tr class="separator:ga00d48741b41d0ebe330adaf07fcb51bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaebd55880aa6a9a9430f1d8e2fd520cf5" id="r_gaebd55880aa6a9a9430f1d8e2fd520cf5"><td class="memItemLeft" align="right" valign="top">constexpr int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaebd55880aa6a9a9430f1d8e2fd520cf5">time_shield::MAX_TIMESTAMP</a> = 9223371891821347199LL</td></tr>
+<tr class="memitem:gaebd55880aa6a9a9430f1d8e2fd520cf5" id="r_gaebd55880aa6a9a9430f1d8e2fd520cf5"><td class="memItemLeft" align="right" valign="top">constexpr int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaebd55880aa6a9a9430f1d8e2fd520cf5">time_shield::MAX_TIMESTAMP</a> = (((std::numeric_limits&lt;int64_t&gt;::max)() - (<a class="el" href="#gabaf40317533449bec18a7b5f64fe953a">MS_PER_SEC</a> - 1)) / <a class="el" href="#gabaf40317533449bec18a7b5f64fe953a">MS_PER_SEC</a>) - (<a class="el" href="#ga2b67c7af7ba4c1638bae4f2ecb86c0b0">SEC_PER_YEAR</a> - 1)</td></tr>
 <tr class="memdesc:gaebd55880aa6a9a9430f1d8e2fd520cf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum timestamp value.  <br /></td></tr>
 <tr class="separator:gaebd55880aa6a9a9430f1d8e2fd520cf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga21c563f71dc59720ac38215f4b6b82dd" id="r_ga21c563f71dc59720ac38215f4b6b82dd"><td class="memItemLeft" align="right" valign="top">constexpr int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga21c563f71dc59720ac38215f4b6b82dd">time_shield::MIN_TIMESTAMP</a> = -<a class="el" href="#gaebd55880aa6a9a9430f1d8e2fd520cf5">MAX_TIMESTAMP</a></td></tr>
+<tr class="memdesc:ga21c563f71dc59720ac38215f4b6b82dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimum timestamp value.  <br /></td></tr>
+<tr class="separator:ga21c563f71dc59720ac38215f4b6b82dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaac2ef4e765437a3457832b1cc464113e" id="r_gaac2ef4e765437a3457832b1cc464113e"><td class="memItemLeft" align="right" valign="top">constexpr int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaac2ef4e765437a3457832b1cc464113e">time_shield::MAX_TIMESTAMP_MS</a> = <a class="el" href="#gaebd55880aa6a9a9430f1d8e2fd520cf5">MAX_TIMESTAMP</a> * <a class="el" href="#gabaf40317533449bec18a7b5f64fe953a">MS_PER_SEC</a> + (<a class="el" href="#gabaf40317533449bec18a7b5f64fe953a">MS_PER_SEC</a> - 1)</td></tr>
+<tr class="memdesc:gaac2ef4e765437a3457832b1cc464113e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum timestamp value in milliseconds.  <br /></td></tr>
+<tr class="separator:gaac2ef4e765437a3457832b1cc464113e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3c4fe0d55313653d8de4ebfb0dc3c8be" id="r_ga3c4fe0d55313653d8de4ebfb0dc3c8be"><td class="memItemLeft" align="right" valign="top">constexpr int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3c4fe0d55313653d8de4ebfb0dc3c8be">time_shield::MIN_TIMESTAMP_MS</a> = <a class="el" href="#ga21c563f71dc59720ac38215f4b6b82dd">MIN_TIMESTAMP</a> * <a class="el" href="#gabaf40317533449bec18a7b5f64fe953a">MS_PER_SEC</a></td></tr>
+<tr class="memdesc:ga3c4fe0d55313653d8de4ebfb0dc3c8be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimum timestamp value in milliseconds.  <br /></td></tr>
+<tr class="separator:ga3c4fe0d55313653d8de4ebfb0dc3c8be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1844be7ac6c1c9af10a78f801eae3dca" id="r_ga1844be7ac6c1c9af10a78f801eae3dca"><td class="memItemLeft" align="right" valign="top">constexpr int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1844be7ac6c1c9af10a78f801eae3dca">time_shield::ERROR_TIMESTAMP</a> = 9223372036854770000LL</td></tr>
 <tr class="memdesc:ga1844be7ac6c1c9af10a78f801eae3dca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error timestamp value.  <br /></td></tr>
 <tr class="separator:ga1844be7ac6c1c9af10a78f801eae3dca"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -487,7 +496,7 @@ Example Usage:</h3>
 
 <p>Average days per year. </p>
 
-<p class="definition">Definition at line <a class="el" href="constants_8hpp_source.html#l00160">160</a> of file <a class="el" href="constants_8hpp_source.html">constants.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="constants_8hpp_source.html#l00163">163</a> of file <a class="el" href="constants_8hpp_source.html">constants.hpp</a>.</p>
 
 </div>
 </div>
@@ -643,7 +652,7 @@ Example Usage:</h3>
 
 <p>Error timestamp value. </p>
 
-<p class="definition">Definition at line <a class="el" href="constants_8hpp_source.html#l00158">158</a> of file <a class="el" href="constants_8hpp_source.html">constants.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="constants_8hpp_source.html#l00161">161</a> of file <a class="el" href="constants_8hpp_source.html">constants.hpp</a>.</p>
 
 </div>
 </div>
@@ -1009,7 +1018,7 @@ Example Usage:</h3>
 
 <p>Maximum OLE automation date. </p>
 
-<p class="definition">Definition at line <a class="el" href="constants_8hpp_source.html#l00159">159</a> of file <a class="el" href="constants_8hpp_source.html">constants.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="constants_8hpp_source.html#l00162">162</a> of file <a class="el" href="constants_8hpp_source.html">constants.hpp</a>.</p>
 
 </div>
 </div>
@@ -1049,7 +1058,7 @@ Example Usage:</h3>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const long time_shield::MAX_TIMESTAMP = 9223371891821347199LL</td>
+          <td class="memname">const long time_shield::MAX_TIMESTAMP = (((std::numeric_limits&lt;int64_t&gt;::max)() - (<a class="el" href="#gabaf40317533449bec18a7b5f64fe953a">MS_PER_SEC</a> - 1)) / <a class="el" href="#gabaf40317533449bec18a7b5f64fe953a">MS_PER_SEC</a>) - (<a class="el" href="#ga2b67c7af7ba4c1638bae4f2ecb86c0b0">SEC_PER_YEAR</a> - 1)</td>
         </tr>
       </table>
   </td>
@@ -1062,6 +1071,32 @@ Example Usage:</h3>
 <p>Maximum timestamp value. </p>
 
 <p class="definition">Definition at line <a class="el" href="constants_8hpp_source.html#l00157">157</a> of file <a class="el" href="constants_8hpp_source.html">constants.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gaac2ef4e765437a3457832b1cc464113e" name="gaac2ef4e765437a3457832b1cc464113e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaac2ef4e765437a3457832b1cc464113e">&#9670;&#160;</a></span>MAX_TIMESTAMP_MS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64_t time_shield::MAX_TIMESTAMP_MS = <a class="el" href="#gaebd55880aa6a9a9430f1d8e2fd520cf5">MAX_TIMESTAMP</a> * <a class="el" href="#gabaf40317533449bec18a7b5f64fe953a">MS_PER_SEC</a> + (<a class="el" href="#gabaf40317533449bec18a7b5f64fe953a">MS_PER_SEC</a> - 1)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Maximum timestamp value in milliseconds. </p>
+
+<p class="definition">Definition at line <a class="el" href="constants_8hpp_source.html#l00159">159</a> of file <a class="el" href="constants_8hpp_source.html">constants.hpp</a>.</p>
 
 </div>
 </div>
@@ -1530,6 +1565,58 @@ Example Usage:</h3>
 <p>Minutes per week. </p>
 
 <p class="definition">Definition at line <a class="el" href="constants_8hpp_source.html#l00131">131</a> of file <a class="el" href="constants_8hpp_source.html">constants.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga21c563f71dc59720ac38215f4b6b82dd" name="ga21c563f71dc59720ac38215f4b6b82dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga21c563f71dc59720ac38215f4b6b82dd">&#9670;&#160;</a></span>MIN_TIMESTAMP</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64_t time_shield::MIN_TIMESTAMP = -<a class="el" href="#gaebd55880aa6a9a9430f1d8e2fd520cf5">MAX_TIMESTAMP</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Minimum timestamp value. </p>
+
+<p class="definition">Definition at line <a class="el" href="constants_8hpp_source.html#l00158">158</a> of file <a class="el" href="constants_8hpp_source.html">constants.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga3c4fe0d55313653d8de4ebfb0dc3c8be" name="ga3c4fe0d55313653d8de4ebfb0dc3c8be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3c4fe0d55313653d8de4ebfb0dc3c8be">&#9670;&#160;</a></span>MIN_TIMESTAMP_MS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64_t time_shield::MIN_TIMESTAMP_MS = <a class="el" href="#ga21c563f71dc59720ac38215f4b6b82dd">MIN_TIMESTAMP</a> * <a class="el" href="#gabaf40317533449bec18a7b5f64fe953a">MS_PER_SEC</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Minimum timestamp value in milliseconds. </p>
+
+<p class="definition">Definition at line <a class="el" href="constants_8hpp_source.html#l00160">160</a> of file <a class="el" href="constants_8hpp_source.html">constants.hpp</a>.</p>
 
 </div>
 </div>

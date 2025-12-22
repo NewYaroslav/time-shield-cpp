@@ -216,6 +216,14 @@ Functions</h2></td></tr>
 <tr class="memitem:a9526a97329d89f4c84b36c22792ff35a" id="r_a9526a97329d89f4c84b36c22792ff35a"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9526a97329d89f4c84b36c22792ff35a">fast_year_from_days</a> (int64_t p_days) noexcept</td></tr>
 <tr class="memdesc:a9526a97329d89f4c84b36c22792ff35a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert days since Unix epoch to year using a fast algorithm.  <br /></td></tr>
 <tr class="separator:a9526a97329d89f4c84b36c22792ff35a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7feb3415dcece49bf82e7a554fff854a" id="r_a7feb3415dcece49bf82e7a554fff854a"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
+<tr class="memitem:a7feb3415dcece49bf82e7a554fff854a"><td class="memTemplItemLeft" align="right" valign="top">TIME_SHIELD_CONSTEXPR T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a7feb3415dcece49bf82e7a554fff854a">floor_div</a> (T a, T b) noexcept</td></tr>
+<tr class="memdesc:a7feb3415dcece49bf82e7a554fff854a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Floor division for positive divisor.  <br /></td></tr>
+<tr class="separator:a7feb3415dcece49bf82e7a554fff854a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b958a2e7fb65f29de3af00f0811cfb7" id="r_a0b958a2e7fb65f29de3af00f0811cfb7"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
+<tr class="memitem:a0b958a2e7fb65f29de3af00f0811cfb7"><td class="memTemplItemLeft" align="right" valign="top">TIME_SHIELD_CONSTEXPR T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a0b958a2e7fb65f29de3af00f0811cfb7">floor_mod</a> (T a, T b) noexcept</td></tr>
+<tr class="memdesc:a0b958a2e7fb65f29de3af00f0811cfb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Floor-mod for positive modulus (returns r in [0..b)).  <br /></td></tr>
+<tr class="separator:a0b958a2e7fb65f29de3af00f0811cfb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e3de882b3ea0aecee3f5db51ce8c5a6" id="r_a5e3de882b3ea0aecee3f5db51ce8c5a6"><td class="memItemLeft" align="right" valign="top">TIME_SHIELD_CONSTEXPR uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e3de882b3ea0aecee3f5db51ce8c5a6">mul_hi_u64_constexpr</a> (uint64_t p_a, uint64_t p_b) noexcept</td></tr>
 <tr class="memdesc:a5e3de882b3ea0aecee3f5db51ce8c5a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the high 64 bits of a 64x64-bit multiplication (constexpr variant).  <br /></td></tr>
 <tr class="separator:a5e3de882b3ea0aecee3f5db51ce8c5a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -620,6 +628,76 @@ Variables</h2></td></tr>
 <p>Fill an NTP client request packet using local time. </p>
 
 <p class="definition">Definition at line <a class="el" href="ntp__packet_8hpp_source.html#l00083">83</a> of file <a class="el" href="ntp__packet_8hpp_source.html">ntp_packet.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a7feb3415dcece49bf82e7a554fff854a" name="a7feb3415dcece49bf82e7a554fff854a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7feb3415dcece49bf82e7a554fff854a">&#9670;&#160;</a></span>floor_div()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TIME_SHIELD_CONSTEXPR T time_shield::detail::floor_div </td>
+          <td>(</td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Floor division for positive divisor. </p>
+
+<p class="definition">Definition at line <a class="el" href="floor__math_8hpp_source.html#l00014">14</a> of file <a class="el" href="floor__math_8hpp_source.html">floor_math.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a0b958a2e7fb65f29de3af00f0811cfb7" name="a0b958a2e7fb65f29de3af00f0811cfb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b958a2e7fb65f29de3af00f0811cfb7">&#9670;&#160;</a></span>floor_mod()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TIME_SHIELD_CONSTEXPR T time_shield::detail::floor_mod </td>
+          <td>(</td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Floor-mod for positive modulus (returns r in [0..b)). </p>
+
+<p class="definition">Definition at line <a class="el" href="floor__math_8hpp_source.html#l00023">23</a> of file <a class="el" href="floor__math_8hpp_source.html">floor_math.hpp</a>.</p>
 
 </div>
 </div>

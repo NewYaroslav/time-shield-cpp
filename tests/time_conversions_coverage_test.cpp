@@ -1,4 +1,5 @@
 #include <time_shield/time_conversions.hpp>
+#include <time_shield/time_unit_conversions.hpp>
 
 #include <cassert>
 #include <cmath>
@@ -118,15 +119,15 @@ int main() {
             const ts_ms_t d0 = start_of_day_ms(t);
             const ts_ms_t d1 = end_of_day_ms(t);
             assert(d0 <= t && t <= d1);
-            assert((d0 % MS_PER_SEC) == 0);
-            assert((d1 % MS_PER_SEC) == (MS_PER_SEC - 1));
+            assert(ms_part(d0) == 0);
+            assert(ms_part(d1) == (MS_PER_SEC - 1));
     
             // Year boundaries in ms:
             const ts_ms_t y0 = start_of_year_ms(t);
             const ts_ms_t y1 = end_of_year_ms(t);
             assert(y0 <= t && t <= y1);
-            assert((y0 % MS_PER_SEC) == 0);
-            assert((y1 % MS_PER_SEC) == (MS_PER_SEC - 1));
+            assert(ms_part(y0) == 0);
+            assert(ms_part(y1) == (MS_PER_SEC - 1));
         }
     }
     const ts_t sample_ts = to_timestamp(2024, 6, 30, 12, 0, 0);

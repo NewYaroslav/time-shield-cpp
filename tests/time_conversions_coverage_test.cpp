@@ -102,6 +102,33 @@ int main() {
     assert(sec_of_hour(SEC_PER_HOUR + 15) == 15);
 
     // date_conversions and aliases
+    {
+        const ts_ms_t points[] = {
+            static_cast<ts_ms_t>(-2001), static_cast<ts_ms_t>(-2000), static_cast<ts_ms_t>(-1999),
+            static_cast<ts_ms_t>(-1001), static_cast<ts_ms_t>(-1000), static_cast<ts_ms_t>(-999),
+            static_cast<ts_ms_t>(-2),    static_cast<ts_ms_t>(-1),    static_cast<ts_ms_t>(0),
+            static_cast<ts_ms_t>(1),     static_cast<ts_ms_t>(999),   static_cast<ts_ms_t>(1000),
+            static_cast<ts_ms_t>(1001)
+        };
+    
+        for (size_t i = 0; i < sizeof(points)/sizeof(points[0]); ++i) {
+            const ts_ms_t t = points[i];
+    
+            // Day boundaries in ms:
+            const ts_ms_t d0 = start_of_day_ms(t);
+            const ts_ms_t d1 = end_of_day_ms(t);
+            assert(d0 <= t && t <= d1);
+            assert((d0 % MS_PER_SEC) == 0);
+            assert((d1 % MS_PER_SEC) == (MS_PER_SEC - 1));
+    
+            // Year boundaries in ms:
+            const ts_ms_t y0 = start_of_year_ms(t);
+            const ts_ms_t y1 = end_of_year_ms(t);
+            assert(y0 <= t && t <= y1);
+            assert((y0 % MS_PER_SEC) == 0);
+            assert((y1 % MS_PER_SEC) == (MS_PER_SEC - 1));
+        }
+    }
     const ts_t sample_ts = to_timestamp(2024, 6, 30, 12, 0, 0);
     DateStruct sample_date{2024, 6, 30};
     assert(to_date_time(sample_ts).year == 2024);
@@ -131,7 +158,16 @@ int main() {
     assert(start_of_year_date_ms(2024) == sec_to_ms(to_timestamp(2024, 1, 1)));
     assert(end_of_year(sample_ts) == to_timestamp(2024, 12, 31, 23, 59, 59));
     assert(end_of_year_ms(sec_to_ms(sample_ts)) == sec_to_ms(to_timestamp(2024, 12, 31, 23, 59, 59)) + (MS_PER_SEC - 1));
-    assert(start_of_year_ms(-1) == sec_to_ms(start_of_year(-1)));
+    {
+        const ts_ms_t t = -1;
+        const ts_ms_t y0 = start_of_year_ms(t);
+        const ts_ms_t y1 = end_of_year_ms(t);
+    
+        // Calendar invariants for ms boundaries:
+        assert(y0 <= t && t <= y1);
+        assert((y0 % MS_PER_SEC) == 0);
+        assert((y1 % MS_PER_SEC) == (MS_PER_SEC - 1));
+    }
     const ts_t before_epoch = to_timestamp(1969, 12, 31, 23, 59, 59);
     assert(start_of_year(before_epoch) == to_timestamp(1969, 1, 1));
     assert(end_of_year(before_epoch) == to_timestamp(1969, 12, 31, 23, 59, 59));
@@ -208,6 +244,13 @@ int main() {
     assert(end_of_day(day_start) == to_timestamp(2024, 6, 30, 23, 59, 59));
     assert(end_of_day_sec(sec_to_ms(day_start)) == to_timestamp(2024, 6, 30, 23, 59, 59));
     assert(end_of_day_ms(sec_to_ms(day_start)) == sec_to_ms(to_timestamp(2024, 6, 30, 23, 59, 59)) + 999);
+    {
+        const ts_ms_t t = sec_to_ms(day_start);
+        const ts_ms_t d0 = start_of_day_ms(t);
+        const ts_ms_t d1 = end_of_day_ms(t);
+        assert(d0 == t);
+        assert(d1 == t + MS_PER_DAY - 1);
+    }
 
     assert(day_of_year(day_start) == 182);
     assert(month_of_year<int>(day_start) == 6);

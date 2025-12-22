@@ -11,6 +11,7 @@
 #include "config.hpp"
 #include "types.hpp"
 #include "constants.hpp"
+#include "enums.hpp"
 #include "time_zone_struct.hpp"
 
 namespace time_shield {
@@ -233,6 +234,7 @@ namespace time_shield {
         if (day > 31 && year <= 31) {
             return is_valid_date((T1)day, month, (T2)year);
         }
+        if (year < MIN_YEAR) return false;
         if (year > MAX_YEAR) return false;
         if (month < 1 || month > 12) return false;
         if (day < 1 || day > 31) return false;
@@ -312,7 +314,10 @@ namespace time_shield {
     /// \param ts Timestamp to check (default: current timestamp).
     /// \return true if the day is a weekend day, false otherwise.
     TIME_SHIELD_CONSTEXPR inline bool is_day_off(ts_t ts) noexcept {
-        const int wd = ((ts / SEC_PER_DAY + THU) % DAYS_PER_WEEK);
+        const int64_t day = static_cast<int64_t>(ts) / static_cast<int64_t>(SEC_PER_DAY);
+        int64_t wd64 = (day + static_cast<int64_t>(THU)) % static_cast<int64_t>(DAYS_PER_WEEK);
+        if (wd64 < 0) wd64 += static_cast<int64_t>(DAYS_PER_WEEK); // for ts < 0
+        const int wd = static_cast<int>(wd64);
         return (wd == SUN || wd == SAT);
     }
 
@@ -329,21 +334,64 @@ namespace time_shield {
     /// which is either Saturday or Sunday.
     /// \param unix_day Day to check (number of days since Unix epoch).
     /// \return true if the day is a weekend day, false otherwise.
-    template<class T = uday_t>
+    template<class T = dse_t>
     TIME_SHIELD_CONSTEXPR inline bool is_day_off_unix_day(T unix_day) noexcept {
-        const int wd = (unix_day + THU) % DAYS_PER_WEEK;
+        int64_t wd = (static_cast<int64_t>(unix_day) + THU) % DAYS_PER_WEEK;
+        wd += (wd < 0) ? DAYS_PER_WEEK : 0;
         return (wd == SUN || wd == SAT);
     }
 
     /// \brief Alias for is_day_off_unix_day function.
     /// \copydoc is_day_off_unix_day
-    template<class T = uday_t>
+    template<class T = dse_t>
     TIME_SHIELD_CONSTEXPR inline bool is_weekend_unix_day(T unix_day) noexcept {
         return is_day_off_unix_day(unix_day);
     }
 
+//------------------------------------------------------------------------------
+
+    /// \brief Check if a given timestamp corresponds to a workday (Monday to Friday).
+    /// \param ts Timestamp to check.
+    /// \return true if the day is a workday, false otherwise.
+    TIME_SHIELD_CONSTEXPR inline bool is_workday(ts_t ts) noexcept {
+        return !is_day_off(ts);
+    }
+
+    /// \brief Check if a given timestamp in milliseconds corresponds to a workday (Monday to Friday).
+    /// \param ts_ms Timestamp in milliseconds to check.
+    /// \return true if the day is a workday, false otherwise.
+    TIME_SHIELD_CONSTEXPR inline bool is_workday_ms(ts_ms_t ts_ms) noexcept {
+        return is_workday(static_cast<ts_t>(ts_ms / MS_PER_SEC));
+    }
+
+    /// \brief Check if a calendar date corresponds to a workday (Monday to Friday).
+    /// \param year Year component of the date.
+    /// \param month Month component of the date.
+    /// \param day Day component of the date.
+    /// \return true if the date is valid and a workday, false otherwise.
+    TIME_SHIELD_CONSTEXPR inline bool is_workday(year_t year, int month, int day) noexcept {
+        const auto y = static_cast<year_t>(year);
+        const auto m = static_cast<int>(month);
+        const auto d = static_cast<int>(day);
+        if (!is_valid_date(y, m, d)) {
+            return false;
+        }
+
+        const int64_t adj_y = static_cast<int64_t>(y) - (static_cast<int64_t>(m) <= 2 ? 1 : 0);
+        const int64_t adj_m = static_cast<int64_t>(m) <= 2
+                ? static_cast<int64_t>(m) + 9
+                : static_cast<int64_t>(m) - 3;
+        const int64_t era = (adj_y >= 0 ? adj_y : adj_y - 399) / 400;
+        const int64_t yoe = adj_y - era * 400;
+        const int64_t doy = (153 * adj_m + 2) / 5 + static_cast<int64_t>(d) - 1;
+        const int64_t doe = yoe * 365 + yoe / 4 - yoe / 100 + doy;
+        const dse_t unix_day = static_cast<dse_t>(era * 146097 + doe - 719468);
+
+        return !is_day_off_unix_day(unix_day);
+    }
+
 /// \}
 
-}; // namespace time_shield
+} // namespace time_shield
 
 #endif // _TIME_SHIELD_VALIDATION_HPP_INCLUDED

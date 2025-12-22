@@ -21,11 +21,17 @@ portable, and suitable for scenarios like logging, serialization, MQL5 usage, an
 
 \section features_sec Features
 
-- Validation of dates and times
+- Validation of dates and times (including weekend and workday predicates)
 - Time and date formatting (standard and custom)
 - Time zone conversion functions
+- Some timestamp-to-calendar conversions use a fast algorithm inspired by
+  https://www.benjoffe.com/fast-date-64 (implemented from scratch).
+- `DateTime` value type storing UTC milliseconds with a fixed offset for
+  ISO8601 round-trips, local/UTC components, arithmetic, and boundaries
 - ISO8601 string parsing
 - Utilities for time manipulation and conversion
+- ISO 8601 week-date helpers for conversion, formatting, and parsing
+- OLE Automation date conversions and astronomy helpers (JD/MJD/JDN, lunar phase, geocentric MoonPhase calculator)
 
 \section config_sec Configuration
 
@@ -80,9 +86,141 @@ Additional example files are located in the `examples/` folder:
 - `time_utils_example.cpp` — get timestamps and parts
 - `time_formatting_example.cpp` — to_string, ISO8601, MQL5
 - `time_parser_example.cpp` — parse ISO8601
+- `date_time_example.cpp` — fixed-offset `DateTime` parsing, formatting, and arithmetic helpers
 - `time_conversions_example.cpp` — convert between formats
 - `time_zone_conversions_example.cpp` — CET/EET ↔ GMT
-- `ntp_client_example.cpp` — NTP sync (Windows-only)
+- `ntp_client_example.cpp` — NTP sync (sockets)
+
+\section ntp_sec NTP client, pool, and time service
+
+Time Shield provides an optional NTP stack (`TIME_SHIELD_ENABLE_NTP_CLIENT`)
+that can query remote servers and compute a local offset for UTC time.
+
+### Components
+- `NtpClient` performs a single NTP request to one server.
+- `NtpClientPool` samples multiple servers with rate limiting and backoff.
+- `NtpClientPoolRunner` runs the pool periodically in a background thread.
+- `NtpTimeService` exposes a singleton interface with cached offset/UTC time.
+
+### Offset computation
+Each response is parsed using the standard four-timestamp method:
+`offset = ((t2 - t1) + (t3 - t4)) / 2`,
+`delay = (t4 - t1) - (t3 - t2)`,
+where `t1` is client transmit, `t2` is server receive, `t3` is server transmit,
+and `t4` is client receive time. Pool aggregation uses median or best-delay
+selection with optional MAD trimming and exponential smoothing.
+
+### Basic usage
+\code{.cpp}
+#include <time_shield/ntp_client.hpp>
+#include <time_shield/ntp_time_service.hpp>
+
+using namespace time_shield;
+
+NtpClient client("pool.ntp.org");
+if (client.query()) {
+    int64_t offset = client.offset_us();
+    int64_t utc_ms = client.utc_time_ms();
+}
+
+auto& service = NtpTimeService::instance();
+service.init(std::chrono::seconds(30));
+int64_t now_ms = service.utc_time_ms();
+service.shutdown();
+\endcode
+
+\subsection oa_and_astronomy OA date and astronomy helpers
+
+Convert between Unix timestamps and Excel/COM OA dates, or derive basic
+astronomical values from calendar inputs:
+
+\code{.cpp}
+#include <time_shield/ole_automation_conversions.hpp>
+#include <time_shield/astronomy_conversions.hpp>
+
+using namespace time_shield;
+
+oadate_t oa = ts_to_oadate(1714608000);               // OA date for 2024-05-02
+ts_t ts_from_oa = oadate_to_ts(oa);
+
+jd_t jd = gregorian_to_jd(2, 5, 2024, 12, 0);         // Julian Date with time
+mjd_t mjd = ts_to_mjd(1714608000);                    // Modified Julian Date
+double phase = moon_phase(fts());                     // lunar phase [0..1)
+double age = moon_age_days(fts());                    // lunar age in days
+MoonPhaseSineCosine signal = moon_phase_sincos(fts()); // sin/cos of the phase angle
+MoonQuarterInstants quarters = moon_quarters(fts());   // nearest quarter instants (Unix seconds, double)
+bool near_new = is_new_moon_window(fts());             // +/-12h new moon window
+\endcode
+
+The `MoonPhaseCalculator` class (`time_shield::astronomy::MoonPhase`) builds on these helpers to return illumination, distances, phase angles, continuous sin/cos for the phase, quarter instants, and “event windows” around new/full/quarter phases. Calculations are geocentric (no observer latitude/longitude or parallax corrections). Phase and illumination are therefore global for a given moment; what changes locally are timezone-adjusted date/time, the apparent orientation of the lit part (flipped between hemispheres), and visibility, which depends on horizon/atmosphere.
+
+Basic class usage for bespoke calculations:
+
+\code{.cpp}
+#include <time_shield/MoonPhase.hpp>
+
+using namespace time_shield;
+
+MoonPhase calculator{};
+double ts = 1704067200.0; // 2024-01-01T00:00:00Z
+
+MoonPhaseResult res = calculator.compute(ts);               // illumination, distance, angles, sin/cos
+MoonPhase::quarters_unix_s_t quarters = calculator.quarter_times_unix(ts); // Unix seconds as double
+MoonQuarterInstants structured = calculator.quarter_instants_unix(ts);     // structured view
+bool near_new = calculator.is_new_moon_window(ts, 3600.0);  // +/-1h window around the event
+bool near_full = calculator.is_full_moon_window(ts, 3600.0);
+\endcode
+
+\subsection workday_helpers Workday helpers
+
+Check whether a moment falls on a business day using timestamps, calendar components, or ISO8601 strings:
+
+\code{.cpp}
+#include <time_shield/validation.hpp>
+#include <time_shield/time_parser.hpp>
+
+using namespace time_shield;
+
+bool monday = is_workday(1710720000);                    // Unix seconds (2024-03-18)
+bool monday_ms = is_workday_ms("2024-03-18T09:00:00.250Z"); // ISO8601 with milliseconds
+bool from_date = is_workday(2024, 3, 18);                 // year, month, day components
+
+// Parsing failure or a weekend evaluates to false
+bool saturday = is_workday("2024-03-16T10:00:00Z");
+bool invalid = is_workday("not-a-date");
+\endcode
+
+Locate the first and last trading days for a month and constrain schedules to the opening or closing workdays:
+
+\code{.cpp}
+using namespace time_shield;
+
+ts_t june28 = to_timestamp(2024, 6, 28);
+bool is_last = is_last_workday_of_month(june28);                 // true (Friday before a weekend)
+bool in_last_two = is_within_last_workdays_of_month(june28, 2);  // true for the final two workdays
+bool in_first_two = is_within_first_workdays_of_month(june28, 2);// false, trailing end of month
+
+bool first_from_str = is_first_workday_of_month("2024-09-02T09:00:00Z");
+bool window_from_str = is_within_first_workdays_of_month_ms(
+    "2024-09-03T09:00:00.250Z", 2);
+\endcode
+
+The string overloads recognise the same ISO8601 formats handled by \ref time_shield::str_to_ts "str_to_ts" and \ref time_shield::str_to_ts_ms "str_to_ts_ms".
+
+Locate the boundaries of the first and last workdays when preparing trading windows or settlement cutoffs:
+
+\code{.cpp}
+#include <time_shield/time_conversions.hpp>
+
+using namespace time_shield;
+
+ts_t first_open = start_of_first_workday_month(2024, Month::JUN);    // 2024-06-03T00:00:00Z
+ts_t first_close = end_of_first_workday_month(2024, 6);              // 2024-06-03T23:59:59Z
+ts_t last_open = start_of_last_workday_month(2024, 3);               // 2024-03-29T00:00:00Z
+ts_ms_t last_close_ms = end_of_last_workday_month_ms(2024, Month::MAR); // 2024-03-29T23:59:59.999Z
+\endcode
+
+These helpers follow the same semantics as \ref time_shield::start_of_day "start_of_day" and \ref time_shield::end_of_day "end_of_day", returning UTC timestamps. Invalid month inputs or months without workdays yield \ref time_shield::ERROR_TIMESTAMP "ERROR_TIMESTAMP" to simplify validation.
 
 \section install_sec Installation
 \subsection install_pkg Install and `find_package`

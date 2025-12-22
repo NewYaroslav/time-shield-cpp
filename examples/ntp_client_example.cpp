@@ -9,7 +9,8 @@
 #include <iomanip>
 #include <chrono>
 #include <ctime>
-#if defined(_WIN32)
+#include <time_shield/config.hpp>
+#if TIME_SHIELD_ENABLE_NTP_CLIENT
 #   include <time_shield/initialization.hpp>
 #   include <time_shield/ntp_client.hpp>
 
@@ -23,11 +24,11 @@ int main() {
     std::cout << "Querying NTP server..." << std::endl;
     if (!client.query()) {
         std::cerr << "Failed to query NTP server. Error code: "
-                  << client.get_last_error_code() << std::endl;
+                  << client.last_error_code() << std::endl;
         return 1;
     }
 
-    const int64_t offset_us = client.get_offset_us();
+    const int64_t offset_us = client.offset_us();
 
     // Current local system time
     auto now = std::chrono::system_clock::now();
@@ -38,7 +39,7 @@ int main() {
 
     // Corrected time using the offset from the NTP server
     auto corrected = std::chrono::system_clock::time_point(
-        std::chrono::microseconds(client.get_utc_time_us()));
+        std::chrono::microseconds(client.utc_time_us()));
     auto corrected_time_t = std::chrono::system_clock::to_time_t(corrected);
     std::cout << "Corrected time: "
               << std::put_time(std::gmtime(&corrected_time_t), "%Y-%m-%d %H:%M:%S")
@@ -53,7 +54,7 @@ int main() {
 
 #else
 int main() {
-    std::cout << "NtpClient is supported only on Windows." << std::endl;
+    std::cout << "NtpClient is disabled in this build." << std::endl;
     return 0;
 }
 #endif

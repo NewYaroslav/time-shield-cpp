@@ -8,6 +8,8 @@ int main() {
     const int64_t start = now_realtime_us();
     const int64_t end = now_realtime_us();
     assert(end >= start);
+    (void)start;
+    (void)end;
 #endif
     return 0;
 }

@@ -826,6 +826,248 @@ double sec_to_fhour(long sec) {
     /// \copydoc num_days_in_month_ts
     int days_in_month(long ts) { return num_days_in_month_ts(ts); }
 
+    //----------------------------------------------------------------------
+    // Workday boundary helpers
+    //----------------------------------------------------------------------
+
+    int first_workday_day(long year, int month) {
+       int days = num_days_in_month(year, month);
+       if(days <= 0) return 0;
+       for(int day = 1; day <= days; ++day) {
+          if(is_workday(year, month, day)) return day;
+       }
+       return 0;
+    }
+
+    int last_workday_day(long year, int month) {
+       int days = num_days_in_month(year, month);
+       if(days <= 0) return 0;
+       for(int day = days; day >= 1; --day) {
+          if(is_workday(year, month, day)) return day;
+       }
+       return 0;
+    }
+
+    int count_workdays_in_month(long year, int month) {
+       int days = num_days_in_month(year, month);
+       if(days <= 0) return 0;
+       int total = 0;
+       for(int day = 1; day <= days; ++day) {
+          if(is_workday(year, month, day)) ++total;
+       }
+       return total;
+    }
+
+    /// \brief Get start timestamp of the first workday of a month.
+    /// \param year Year value.
+    /// \param month Month value.
+    /// \return Timestamp at 00:00:00 of the first workday or ERROR_TIMESTAMP.
+    long start_of_first_workday_month(long year, int month) {
+       int day = first_workday_day(year, month);
+       if(day <= 0) return ERROR_TIMESTAMP;
+       return to_timestamp(year, month, day);
+    }
+
+    /// \brief Get start timestamp in milliseconds of the first workday of a month.
+    /// \param year Year value.
+    /// \param month Month value.
+    /// \return Timestamp at 00:00:00.000 of the first workday or ERROR_TIMESTAMP.
+    long start_of_first_workday_month_ms(long year, int month) {
+       int day = first_workday_day(year, month);
+       if(day <= 0) return ERROR_TIMESTAMP;
+       return sec_to_ms(to_timestamp(year, month, day));
+    }
+
+    /// \brief Get start timestamp of the first workday of the month containing timestamp.
+    /// \param ts Timestamp in seconds.
+    /// \return Timestamp at 00:00:00 of the first workday or ERROR_TIMESTAMP.
+    long start_of_first_workday_month(long ts) {
+       return start_of_first_workday_month(get_year(ts), (int)month_of_year(ts));
+    }
+
+    /// \brief Get start timestamp in milliseconds of the first workday of the month containing timestamp.
+    /// \param ts_ms Timestamp in milliseconds.
+    /// \return Timestamp at 00:00:00.000 of the first workday or ERROR_TIMESTAMP.
+    long start_of_first_workday_month_ms(long ts_ms) {
+       return start_of_first_workday_month_ms(get_year_ms(ts_ms), (int)month_of_year(ms_to_sec(ts_ms)));
+    }
+
+    /// \brief Get end timestamp of the first workday of a month.
+    /// \param year Year value.
+    /// \param month Month value.
+    /// \return Timestamp at 23:59:59 of the first workday or ERROR_TIMESTAMP.
+    long end_of_first_workday_month(long year, int month) {
+       int day = first_workday_day(year, month);
+       if(day <= 0) return ERROR_TIMESTAMP;
+       return end_of_day(to_timestamp(year, month, day));
+    }
+
+    /// \brief Get end timestamp in milliseconds of the first workday of a month.
+    /// \param year Year value.
+    /// \param month Month value.
+    /// \return Timestamp at 23:59:59.999 of the first workday or ERROR_TIMESTAMP.
+    long end_of_first_workday_month_ms(long year, int month) {
+       int day = first_workday_day(year, month);
+       if(day <= 0) return ERROR_TIMESTAMP;
+       return end_of_day_ms(sec_to_ms(to_timestamp(year, month, day)));
+    }
+
+    /// \brief Get end timestamp of the first workday of the month containing timestamp.
+    /// \param ts Timestamp in seconds.
+    /// \return Timestamp at 23:59:59 of the first workday or ERROR_TIMESTAMP.
+    long end_of_first_workday_month(long ts) {
+       return end_of_first_workday_month(get_year(ts), (int)month_of_year(ts));
+    }
+
+    /// \brief Get end timestamp in milliseconds of the first workday of the month containing timestamp.
+    /// \param ts_ms Timestamp in milliseconds.
+    /// \return Timestamp at 23:59:59.999 of the first workday or ERROR_TIMESTAMP.
+    long end_of_first_workday_month_ms(long ts_ms) {
+       return end_of_first_workday_month_ms(get_year_ms(ts_ms), (int)month_of_year(ms_to_sec(ts_ms)));
+    }
+
+    /// \brief Get start timestamp of the last workday of a month.
+    /// \param year Year value.
+    /// \param month Month value.
+    /// \return Timestamp at 00:00:00 of the last workday or ERROR_TIMESTAMP.
+    long start_of_last_workday_month(long year, int month) {
+       int day = last_workday_day(year, month);
+       if(day <= 0) return ERROR_TIMESTAMP;
+       return to_timestamp(year, month, day);
+    }
+
+    /// \brief Get start timestamp in milliseconds of the last workday of a month.
+    /// \param year Year value.
+    /// \param month Month value.
+    /// \return Timestamp at 00:00:00.000 of the last workday or ERROR_TIMESTAMP.
+    long start_of_last_workday_month_ms(long year, int month) {
+       int day = last_workday_day(year, month);
+       if(day <= 0) return ERROR_TIMESTAMP;
+       return sec_to_ms(to_timestamp(year, month, day));
+    }
+
+    /// \brief Get start timestamp of the last workday of the month containing timestamp.
+    /// \param ts Timestamp in seconds.
+    /// \return Timestamp at 00:00:00 of the last workday or ERROR_TIMESTAMP.
+    long start_of_last_workday_month(long ts) {
+       return start_of_last_workday_month(get_year(ts), (int)month_of_year(ts));
+    }
+
+    /// \brief Get start timestamp in milliseconds of the last workday of the month containing timestamp.
+    /// \param ts_ms Timestamp in milliseconds.
+    /// \return Timestamp at 00:00:00.000 of the last workday or ERROR_TIMESTAMP.
+    long start_of_last_workday_month_ms(long ts_ms) {
+       return start_of_last_workday_month_ms(get_year_ms(ts_ms), (int)month_of_year(ms_to_sec(ts_ms)));
+    }
+
+    /// \brief Get end timestamp of the last workday of a month.
+    /// \param year Year value.
+    /// \param month Month value.
+    /// \return Timestamp at 23:59:59 of the last workday or ERROR_TIMESTAMP.
+    long end_of_last_workday_month(long year, int month) {
+       int day = last_workday_day(year, month);
+       if(day <= 0) return ERROR_TIMESTAMP;
+       return end_of_day(to_timestamp(year, month, day));
+    }
+
+    /// \brief Get end timestamp in milliseconds of the last workday of a month.
+    /// \param year Year value.
+    /// \param month Month value.
+    /// \return Timestamp at 23:59:59.999 of the last workday or ERROR_TIMESTAMP.
+    long end_of_last_workday_month_ms(long year, int month) {
+       int day = last_workday_day(year, month);
+       if(day <= 0) return ERROR_TIMESTAMP;
+       return end_of_day_ms(sec_to_ms(to_timestamp(year, month, day)));
+    }
+
+    /// \brief Get end timestamp of the last workday of the month containing timestamp.
+    /// \param ts Timestamp in seconds.
+    /// \return Timestamp at 23:59:59 of the last workday or ERROR_TIMESTAMP.
+    long end_of_last_workday_month(long ts) {
+       return end_of_last_workday_month(get_year(ts), (int)month_of_year(ts));
+    }
+
+    /// \brief Get end timestamp in milliseconds of the last workday of the month containing timestamp.
+    /// \param ts_ms Timestamp in milliseconds.
+    /// \return Timestamp at 23:59:59.999 of the last workday or ERROR_TIMESTAMP.
+    long end_of_last_workday_month_ms(long ts_ms) {
+       return end_of_last_workday_month_ms(get_year_ms(ts_ms), (int)month_of_year(ms_to_sec(ts_ms)));
+    }
+
+    int workday_index_in_month(long year, int month, int day) {
+       if(!is_workday(year, month, day)) return 0;
+       int days = num_days_in_month(year, month);
+       if(days <= 0) return 0;
+       int index = 0;
+       for(int current = 1; current <= days; ++current) {
+          if(is_workday(year, month, current)) {
+             ++index;
+             if(current == day) return index;
+          }
+       }
+       return 0;
+    }
+
+    //----------------------------------------------------------------------
+    // Workday boundary predicates
+    //----------------------------------------------------------------------
+
+    bool is_first_workday_of_month(long year, int month, int day) {
+       return is_workday(year, month, day) && first_workday_day(year, month) == day;
+    }
+
+    bool is_within_first_workdays_of_month(long year, int month, int day, int count) {
+       if(count <= 0) return false;
+       int total = count_workdays_in_month(year, month);
+       if(count > total) return false;
+       int index = workday_index_in_month(year, month, day);
+       return index > 0 && index <= count;
+    }
+
+    bool is_last_workday_of_month(long year, int month, int day) {
+       return is_workday(year, month, day) && last_workday_day(year, month) == day;
+    }
+
+    bool is_within_last_workdays_of_month(long year, int month, int day, int count) {
+       if(count <= 0) return false;
+       int total = count_workdays_in_month(year, month);
+       if(count > total) return false;
+       int index = workday_index_in_month(year, month, day);
+       return index > 0 && index >= (total - count + 1);
+    }
+
+    bool is_first_workday_of_month(const long ts) {
+       return is_first_workday_of_month(get_year(ts), (int)month_of_year(ts), day_of_month(ts));
+    }
+
+    bool is_within_first_workdays_of_month(const long ts, int count) {
+       return is_within_first_workdays_of_month(get_year(ts), (int)month_of_year(ts), day_of_month(ts), count);
+    }
+
+    bool is_last_workday_of_month(const long ts) {
+       return is_last_workday_of_month(get_year(ts), (int)month_of_year(ts), day_of_month(ts));
+    }
+
+    bool is_within_last_workdays_of_month(const long ts, int count) {
+       return is_within_last_workdays_of_month(get_year(ts), (int)month_of_year(ts), day_of_month(ts), count);
+    }
+
+    bool is_first_workday_of_month_ms(const long ts_ms) {
+       return is_first_workday_of_month(ms_to_sec(ts_ms));
+    }
+
+    bool is_within_first_workdays_of_month_ms(const long ts_ms, int count) {
+       return is_within_first_workdays_of_month(ms_to_sec(ts_ms), count);
+    }
+
+    bool is_last_workday_of_month_ms(const long ts_ms) {
+       return is_last_workday_of_month(ms_to_sec(ts_ms));
+    }
+
+    bool is_within_last_workdays_of_month_ms(const long ts_ms, int count) {
+       return is_within_last_workdays_of_month(ms_to_sec(ts_ms), count);
+    }
+
     /// \brief Get number of days in a year.
     /// \param year Year value.
     /// \return Days in the year.
@@ -1065,6 +1307,21 @@ double sec_to_fhour(long sec) {
     //----------------------------------------------------------------------
     // UNIX day and minute helpers
     //----------------------------------------------------------------------
+
+    /// \brief Convert calendar date to UNIX day.
+    /// \param year Year component.
+    /// \param month Month component.
+    /// \param day Day component.
+    /// \return Number of days since UNIX epoch.
+    long date_to_unix_day(const long year, const int month, const int day) {
+       const long adj_y = year - (month <= 2 ? 1 : 0);
+       const long adj_m = month <= 2 ? month + 9 : month - 3;
+       const long era = (adj_y >= 0 ? adj_y : adj_y - 399) / 400;
+       const long yoe = adj_y - era * 400;
+       const long doy = (153 * adj_m + 2) / 5 + day - 1;
+       const long doe = yoe * 365 + yoe / 4 - yoe / 100 + doy;
+       return era * 146097 + doe - 719468;
+    }
 
     /// \brief Get UNIX day from timestamp.
     /// \param ts Timestamp in seconds.

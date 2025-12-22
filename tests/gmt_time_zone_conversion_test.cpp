@@ -42,6 +42,25 @@ int main() {
         ts_t eet_end_after = to_timestamp(year, int(OCT), end_day, 4, 0, 0);
         ts_t gmt_from_eet_end_after = eet_to_gmt(eet_end_after);
         assert(gmt_to_eet(gmt_from_eet_end_after) == eet_end_after);
+
+        (void)start_day;
+        (void)cet_start_before;
+        (void)gmt_from_cet_before;
+        (void)cet_start_after;
+        (void)gmt_from_cet_after;
+        (void)eet_start_before;
+        (void)gmt_from_eet_before;
+        (void)eet_start_after;
+        (void)gmt_from_eet_after;
+        (void)end_day;
+        (void)cet_end_before;
+        (void)gmt_from_cet_end_before;
+        (void)cet_end_after;
+        (void)gmt_from_cet_end_after;
+        (void)eet_end_before;
+        (void)gmt_from_eet_end_before;
+        (void)eet_end_after;
+        (void)gmt_from_eet_end_after;
     }
 
     return 0;

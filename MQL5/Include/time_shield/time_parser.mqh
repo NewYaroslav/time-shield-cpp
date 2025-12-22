@@ -138,6 +138,9 @@ namespace time_shield {
        dt.mon =(int)StringToInteger(parts[1]);
        dt.day =(int)StringToInteger(parts[2]);
 
+       if(!is_valid_date(dt))
+          return false;
+
        if (StringLen(time_part)>0) {
           string tz_str = "";
           int zpos = StringFind(time_part,"Z");
@@ -192,6 +195,198 @@ namespace time_shield {
        if(!parse_iso8601(str, dt, tz)) return false;
        ts = to_timestamp_ms(dt) + sec_to_ms(to_offset(tz));
        return true;
+    }
+
+    /// \brief Parse ISO8601 string and check for workday using second precision.
+    /// \param str ISO8601 formatted string.
+    /// \return true when parsed timestamp is Monday through Friday.
+    bool is_workday(string str) {
+       long ts = 0;
+       if(!str_to_ts(str, ts))
+          return false;
+       return is_workday(ts);
+    }
+
+    /// \brief Alias for is_workday.
+    /// \copydoc is_workday(string)
+    bool workday(string str) { return is_workday(str); }
+
+    /// \brief Parse ISO8601 string and check for workday using millisecond precision.
+    /// \param str ISO8601 formatted string.
+    /// \return true when parsed timestamp is Monday through Friday.
+    bool is_workday_ms(string str) {
+       long ts = 0;
+       if(!str_to_ts_ms(str, ts))
+          return false;
+       return is_workday_ms(ts);
+    }
+
+    /// \brief Alias for is_workday_ms.
+    /// \copydoc is_workday_ms(string)
+    bool workday_ms(string str) { return is_workday_ms(str); }
+
+    /// \brief Parse ISO8601 string and check for the first workday of the month using second precision.
+    /// \param str ISO8601 formatted string.
+    /// \return true when the parsed timestamp is the first workday of its month.
+    bool is_first_workday_of_month(string str) {
+       long ts = 0;
+       if(!str_to_ts(str, ts))
+          return false;
+       return is_first_workday_of_month(ts);
+    }
+
+    /// \brief Parse ISO8601 string and check for the first workday of the month using millisecond precision.
+    /// \param str ISO8601 formatted string.
+    /// \return true when the parsed timestamp is the first workday of its month.
+    bool is_first_workday_of_month_ms(string str) {
+       long ts = 0;
+       if(!str_to_ts_ms(str, ts))
+          return false;
+       return is_first_workday_of_month_ms(ts);
+    }
+
+    /// \brief Parse ISO8601 string and check if it falls within the first N workdays of the month using second precision.
+    /// \param str ISO8601 formatted string.
+    /// \param count Number of leading workdays to test.
+    /// \return true when the parsed timestamp is within the requested range.
+    bool is_within_first_workdays_of_month(string str, int count) {
+       long ts = 0;
+       if(!str_to_ts(str, ts))
+          return false;
+       return is_within_first_workdays_of_month(ts, count);
+    }
+
+    /// \brief Parse ISO8601 string and check if it falls within the first N workdays of the month using millisecond precision.
+    /// \param str ISO8601 formatted string.
+    /// \param count Number of leading workdays to test.
+    /// \return true when the parsed timestamp is within the requested range.
+    bool is_within_first_workdays_of_month_ms(string str, int count) {
+       long ts = 0;
+       if(!str_to_ts_ms(str, ts))
+          return false;
+       return is_within_first_workdays_of_month_ms(ts, count);
+    }
+
+    /// \brief Parse ISO8601 string and check for the last workday of the month using second precision.
+    /// \param str ISO8601 formatted string.
+    /// \return true when the parsed timestamp is the last workday of its month.
+    bool is_last_workday_of_month(string str) {
+       long ts = 0;
+       if(!str_to_ts(str, ts))
+          return false;
+       return is_last_workday_of_month(ts);
+    }
+
+    /// \brief Parse ISO8601 string and check for the last workday of the month using millisecond precision.
+    /// \param str ISO8601 formatted string.
+    /// \return true when the parsed timestamp is the last workday of its month.
+    bool is_last_workday_of_month_ms(string str) {
+       long ts = 0;
+       if(!str_to_ts_ms(str, ts))
+          return false;
+       return is_last_workday_of_month_ms(ts);
+    }
+
+    /// \brief Parse ISO8601 string and check if it falls within the last N workdays of the month using second precision.
+    /// \param str ISO8601 formatted string.
+    /// \param count Number of trailing workdays to test.
+    /// \return true when the parsed timestamp is within the requested range.
+    bool is_within_last_workdays_of_month(string str, int count) {
+       long ts = 0;
+       if(!str_to_ts(str, ts))
+          return false;
+       return is_within_last_workdays_of_month(ts, count);
+    }
+
+    /// \brief Parse ISO8601 string and check if it falls within the last N workdays of the month using millisecond precision.
+    /// \param str ISO8601 formatted string.
+    /// \param count Number of trailing workdays to test.
+    /// \return true when the parsed timestamp is within the requested range.
+    bool is_within_last_workdays_of_month_ms(string str, int count) {
+       long ts = 0;
+       if(!str_to_ts_ms(str, ts))
+          return false;
+       return is_within_last_workdays_of_month_ms(ts, count);
+    }
+
+    /// \brief Parse ISO8601 string and return start of the first workday of that month in seconds.
+    /// \param str ISO8601 formatted string.
+    /// \return Timestamp at 00:00:00 of the first workday or ERROR_TIMESTAMP on failure.
+    long start_of_first_workday_month(string str) {
+       long ts = 0;
+       if(!str_to_ts(str, ts))
+          return ERROR_TIMESTAMP;
+       return start_of_first_workday_month(ts);
+    }
+
+    /// \brief Parse ISO8601 string and return start of the first workday of that month in milliseconds.
+    /// \param str ISO8601 formatted string.
+    /// \return Timestamp at 00:00:00.000 of the first workday or ERROR_TIMESTAMP on failure.
+    long start_of_first_workday_month_ms(string str) {
+       long ts = 0;
+       if(!str_to_ts_ms(str, ts))
+          return ERROR_TIMESTAMP;
+       return start_of_first_workday_month_ms(ts);
+    }
+
+    /// \brief Parse ISO8601 string and return end of the first workday of that month in seconds.
+    /// \param str ISO8601 formatted string.
+    /// \return Timestamp at 23:59:59 of the first workday or ERROR_TIMESTAMP on failure.
+    long end_of_first_workday_month(string str) {
+       long ts = 0;
+       if(!str_to_ts(str, ts))
+          return ERROR_TIMESTAMP;
+       return end_of_first_workday_month(ts);
+    }
+
+    /// \brief Parse ISO8601 string and return end of the first workday of that month in milliseconds.
+    /// \param str ISO8601 formatted string.
+    /// \return Timestamp at 23:59:59.999 of the first workday or ERROR_TIMESTAMP on failure.
+    long end_of_first_workday_month_ms(string str) {
+       long ts = 0;
+       if(!str_to_ts_ms(str, ts))
+          return ERROR_TIMESTAMP;
+       return end_of_first_workday_month_ms(ts);
+    }
+
+    /// \brief Parse ISO8601 string and return start of the last workday of that month in seconds.
+    /// \param str ISO8601 formatted string.
+    /// \return Timestamp at 00:00:00 of the last workday or ERROR_TIMESTAMP on failure.
+    long start_of_last_workday_month(string str) {
+       long ts = 0;
+       if(!str_to_ts(str, ts))
+          return ERROR_TIMESTAMP;
+       return start_of_last_workday_month(ts);
+    }
+
+    /// \brief Parse ISO8601 string and return start of the last workday of that month in milliseconds.
+    /// \param str ISO8601 formatted string.
+    /// \return Timestamp at 00:00:00.000 of the last workday or ERROR_TIMESTAMP on failure.
+    long start_of_last_workday_month_ms(string str) {
+       long ts = 0;
+       if(!str_to_ts_ms(str, ts))
+          return ERROR_TIMESTAMP;
+       return start_of_last_workday_month_ms(ts);
+    }
+
+    /// \brief Parse ISO8601 string and return end of the last workday of that month in seconds.
+    /// \param str ISO8601 formatted string.
+    /// \return Timestamp at 23:59:59 of the last workday or ERROR_TIMESTAMP on failure.
+    long end_of_last_workday_month(string str) {
+       long ts = 0;
+       if(!str_to_ts(str, ts))
+          return ERROR_TIMESTAMP;
+       return end_of_last_workday_month(ts);
+    }
+
+    /// \brief Parse ISO8601 string and return end of the last workday of that month in milliseconds.
+    /// \param str ISO8601 formatted string.
+    /// \return Timestamp at 23:59:59.999 of the last workday or ERROR_TIMESTAMP on failure.
+    long end_of_last_workday_month_ms(string str) {
+       long ts = 0;
+       if(!str_to_ts_ms(str, ts))
+          return ERROR_TIMESTAMP;
+       return end_of_last_workday_month_ms(ts);
     }
 
     /// \brief Convert an ISO8601 string to a floating-point timestamp (fts_t).

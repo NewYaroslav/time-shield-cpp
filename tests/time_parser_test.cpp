@@ -18,5 +18,8 @@ int main() {
     assert(ts("1970-01-01T00:00:00Z") == 0);
     assert(ts_ms("1970-01-01T00:00:01.500Z") == 1500);
 
+    (void)m;
+    (void)sec;
+
     return 0;
 }

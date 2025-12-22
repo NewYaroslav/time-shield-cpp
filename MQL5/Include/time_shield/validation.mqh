@@ -158,6 +158,7 @@ namespace time_shield {
     bool is_valid_date(const long year, const int month, const int day) {
        if (day > 31 && year <= 31)
           return is_valid_date((long)day, month, (int)year);
+       if (year < MIN_YEAR) return false;
        if (year > MAX_YEAR) return false;
        if (month < 1 || month > 12) return false;
        if (day < 1 || day > 31) return false;
@@ -244,6 +245,58 @@ namespace time_shield {
     /// \copydoc is_day_off_unix_day
     bool is_weekend_unix_day(const long unix_day) {
        return is_day_off_unix_day(unix_day);
+    }
+
+    /// \brief Check if the timestamp corresponds to a workday.
+    /// \param ts Timestamp in seconds.
+    /// \return true when the date is Monday through Friday.
+    bool is_workday(const long ts) {
+       return !is_day_off(ts);
+    }
+
+    /// \brief Alias for is_workday.
+    /// \copydoc is_workday(const long)
+    bool workday(const long ts) {
+       return is_workday(ts);
+    }
+
+    /// \brief Check if the millisecond timestamp corresponds to a workday.
+    /// \param ts_ms Timestamp in milliseconds.
+    /// \return true when the date is Monday through Friday.
+    bool is_workday_ms(const long ts_ms) {
+       return is_workday(ts_ms / MS_PER_SEC);
+    }
+
+    /// \brief Alias for is_workday_ms.
+    /// \copydoc is_workday_ms(const long)
+    bool workday_ms(const long ts_ms) {
+       return is_workday_ms(ts_ms);
+    }
+
+    /// \brief Check if the provided date represents a workday.
+    /// \param year Year component.
+    /// \param month Month component.
+    /// \param day Day component.
+    /// \return true when the date is valid and is Monday through Friday.
+    bool is_workday(const long year, const int month, const int day) {
+       if (!is_valid_date(year, month, day))
+          return false;
+
+       const long adj_y = year - (month <= 2 ? 1 : 0);
+       const long adj_m = month <= 2 ? month + 9 : month - 3;
+       const long era = (adj_y >= 0 ? adj_y : adj_y - 399) / 400;
+       const long yoe = adj_y - era * 400;
+       const long doy = (153 * adj_m + 2) / 5 + day - 1;
+       const long doe = yoe * 365 + yoe / 4 - yoe / 100 + doy;
+       const long unix_day = era * 146097 + doe - 719468;
+
+       return !is_day_off_unix_day(unix_day);
+    }
+
+    /// \brief Alias for is_workday.
+    /// \copydoc is_workday(const long, const int, const int)
+    bool workday(const long year, const int month, const int day) {
+       return is_workday(year, month, day);
     }
 
     /// \}

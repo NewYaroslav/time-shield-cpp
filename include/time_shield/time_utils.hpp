@@ -48,49 +48,94 @@ namespace time_shield {
     }
     
     /// \ingroup time_utils
-    /// \brief Get current real time in microseconds using a hybrid method.
+    /// \brief Get current real time in microseconds using a platform-specific method.
     ///
-    /// This function combines `QueryPerformanceCounter` (high-resolution monotonic clock)
-    /// with `GetSystemTimeAsFileTime` to compute an accurate, stable UTC timestamp.
-    /// The base time is initialized only once per process (lazy init).
+    /// On Windows this function combines `QueryPerformanceCounter`
+    /// (high-resolution monotonic clock) with `GetSystemTimeAsFileTime` to compute an accurate,
+    /// stable UTC timestamp. The base time is initialized only once per process (lazy init).
+    /// On Unix-like systems a realtime anchor is captured once and combined with a
+    /// high-resolution monotonic clock to compute stable timestamps.
     ///
     /// \return Current UTC timestamp in microseconds.
-    /// \note Windows only. Not available on Unix-like systems.
     inline int64_t now_realtime_us() {
-#   if TIME_SHIELD_PLATFORM_WINDOWS
+#       if TIME_SHIELD_PLATFORM_WINDOWS
         static std::once_flag init_flag;
         static int64_t s_perf_freq = 0;
         static int64_t s_anchor_perf = 0;
         static int64_t s_anchor_realtime_us = 0;
 
-        std::call_once(init_flag, [] {
-            LARGE_INTEGER freq, counter;
-            QueryPerformanceFrequency(&freq);
-            QueryPerformanceCounter(&counter);
+        std::call_once(init_flag, []() {
+            LARGE_INTEGER freq = {};
+            LARGE_INTEGER counter = {};
+            ::QueryPerformanceFrequency(&freq);
+            ::QueryPerformanceCounter(&counter);
 
-            s_perf_freq = freq.QuadPart;
-            s_anchor_perf = counter.QuadPart;
+            s_perf_freq   = static_cast<int64_t>(freq.QuadPart);
+            s_anchor_perf = static_cast<int64_t>(counter.QuadPart);
 
             FILETIME ft;
-            GetSystemTimeAsFileTime(&ft);
+            ::GetSystemTimeAsFileTime(&ft);
+
             ULARGE_INTEGER uli;
-            uli.LowPart = ft.dwLowDateTime;
+            uli.LowPart  = ft.dwLowDateTime;
             uli.HighPart = ft.dwHighDateTime;
-            // Convert from 100ns since 1601 to microseconds since 1970
-            s_anchor_realtime_us = (uli.QuadPart - 116444736000000000ULL) / 10;
+
+            // 100ns ticks since 1601-01-01 to 1970-01-01 (signed constant!)
+            const int64_t k_epoch_diff_100ns = 116444736000000000LL;
+
+            const int64_t filetime_100ns = static_cast<int64_t>(uli.QuadPart);
+            // Convert 100ns since 1601 -> us since 1970
+            s_anchor_realtime_us = (filetime_100ns - k_epoch_diff_100ns) / 10;
         });
 
-        LARGE_INTEGER now;
-        QueryPerformanceCounter(&now);
+        LARGE_INTEGER now = {};
+        ::QueryPerformanceCounter(&now);
 
-        int64_t delta_ticks = now.QuadPart - s_anchor_perf;
-        int64_t delta_us = (delta_ticks * 1000000) / s_perf_freq;
+        const int64_t now_ticks   = static_cast<int64_t>(now.QuadPart);
+        const int64_t delta_ticks = now_ticks - s_anchor_perf;
+
+        // Avoid overflow of (delta_ticks * 1000000)
+        const int64_t q = delta_ticks / s_perf_freq;
+        const int64_t r = delta_ticks % s_perf_freq;
+
+        const int64_t delta_us =
+            q * 1000000LL + (r * 1000000LL) / s_perf_freq;
 
         return s_anchor_realtime_us + delta_us;
-#   else
-        // Stub implementation for non-Windows platforms.
-        return 0;
-#   endif
+#       else
+        static std::once_flag init_flag;
+        static int64_t s_anchor_realtime_us = 0;
+        static int64_t s_anchor_mono_ns = 0;
+
+        std::call_once(init_flag, []() {
+            struct timespec realtime_ts{};
+            struct timespec mono_ts{};
+
+#           if defined(CLOCK_MONOTONIC_RAW)
+            clock_gettime(CLOCK_MONOTONIC_RAW, &mono_ts);
+#           else
+            clock_gettime(CLOCK_MONOTONIC, &mono_ts);
+#           endif
+            clock_gettime(CLOCK_REALTIME, &realtime_ts);
+
+            s_anchor_realtime_us = static_cast<int64_t>(realtime_ts.tv_sec) * 1000000LL
+                                 + realtime_ts.tv_nsec / 1000;
+            s_anchor_mono_ns = static_cast<int64_t>(mono_ts.tv_sec) * 1000000000LL
+                             + mono_ts.tv_nsec;
+        });
+
+        struct timespec mono_now_ts{};
+#       if defined(CLOCK_MONOTONIC_RAW)
+        clock_gettime(CLOCK_MONOTONIC_RAW, &mono_now_ts);
+#       else
+        clock_gettime(CLOCK_MONOTONIC, &mono_now_ts);
+#       endif
+
+        const int64_t mono_now_ns = static_cast<int64_t>(mono_now_ts.tv_sec) * 1000000000LL
+                                  + mono_now_ts.tv_nsec;
+        const int64_t delta_ns = mono_now_ns - s_anchor_mono_ns;
+        return s_anchor_realtime_us + delta_ns / 1000;
+#       endif
     }
 
     /// \ingroup time_utils
@@ -108,9 +153,9 @@ namespace time_shield {
     /// \tparam T Type of the returned value (default is int).
     /// \return T Microsecond part of the current second.
     template<class T = int>
-    T us_of_sec() noexcept {
+    inline T us_of_sec() noexcept {
         const struct timespec ts = get_timespec_impl();
-        return ts.tv_nsec / NS_PER_US;
+        return static_cast<T>(ts.tv_nsec / NS_PER_US);
     }
 
     /// \ingroup time_utils
@@ -118,9 +163,9 @@ namespace time_shield {
     /// \tparam T Type of the returned value (default is int).
     /// \return T Millisecond part of the current second.
     template<class T = int>
-    T ms_of_sec() noexcept {
+    inline T ms_of_sec() noexcept {
         const struct timespec ts = get_timespec_impl();
-        return ts.tv_nsec / NS_PER_MS;
+        return static_cast<T>(ts.tv_nsec / NS_PER_MS);
     }
 
     /// \brief Get the current UTC timestamp in seconds.
@@ -143,7 +188,7 @@ namespace time_shield {
     /// \return fts_t Current UTC timestamp in floating-point seconds.
     inline fts_t fts() noexcept {
         const struct timespec ts = get_timespec_impl();
-        return ts.tv_sec + static_cast<fts_t>(ts.tv_nsec) / static_cast<fts_t>(NS_PER_SEC);
+        return static_cast<fts_t>(ts.tv_sec) + static_cast<fts_t>(ts.tv_nsec) / static_cast<fts_t>(NS_PER_SEC);
     }
 
     /// \ingroup time_utils
@@ -151,7 +196,7 @@ namespace time_shield {
     /// \return fts_t Current UTC timestamp in floating-point seconds.
     inline fts_t ftimestamp() noexcept {
         const struct timespec ts = get_timespec_impl();
-        return ts.tv_sec + static_cast<fts_t>(ts.tv_nsec) / static_cast<fts_t>(NS_PER_SEC);
+        return static_cast<fts_t>(ts.tv_sec) + static_cast<fts_t>(ts.tv_nsec) / static_cast<fts_t>(NS_PER_SEC);
     }
 
     /// \ingroup time_utils

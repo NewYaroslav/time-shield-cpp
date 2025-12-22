@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.15)
-project(TimeShield VERSION 1.0.4 LANGUAGES CXX)
+project(TimeShield VERSION 1.0.5 LANGUAGES CXX)
 
 if(NOT DEFINED CMAKE_CXX_STANDARD)
     set(CMAKE_CXX_STANDARD 11)
@@ -21,11 +21,7 @@ target_include_directories(
 include(GNUInstallDirs)
 include(CMakePackageConfigHelpers)
 
-if(WIN32)
-    set(TIME_SHIELD_ENABLE_NTP_CLIENT_DEFAULT ON)
-else()
-    set(TIME_SHIELD_ENABLE_NTP_CLIENT_DEFAULT OFF)
-endif()
+set(TIME_SHIELD_ENABLE_NTP_CLIENT_DEFAULT ON)
 option(TIME_SHIELD_ENABLE_NTP_CLIENT "Enable NTP client" ${TIME_SHIELD_ENABLE_NTP_CLIENT_DEFAULT})
 
 target_compile_definitions(
@@ -110,6 +106,9 @@ if(TIME_SHIELD_CPP_BUILD_TESTS)
         get_filename_component(test_name ${test_src} NAME_WE)
         add_executable(${test_name} ${test_src})
         target_link_libraries(${test_name} PRIVATE time_shield::time_shield)
+        if(WIN32)
+            target_link_libraries(${test_name} PRIVATE ws2_32)
+        endif()
         if(COMMON_WARN_FLAGS)
             target_compile_options(${test_name} PRIVATE ${COMMON_WARN_FLAGS})
         endif()

@@ -11,6 +11,8 @@
 /// enable or disable parts of the library depending on the target platform or
 /// user preferences.
 
+#include <atomic>
+
 #if defined(_MSVC_LANG)
 #   define TIME_SHIELD_CXX_VERSION _MSVC_LANG
 #else
@@ -44,6 +46,40 @@
 #endif
 #endif
 
+// Configure nodiscard attribute support while keeping compatibility with C++11 compilers
+#if defined(__has_cpp_attribute)
+#   if __has_cpp_attribute(nodiscard) && defined(TIME_SHIELD_CPP17)
+#       define TIME_SHIELD_NODISCARD [[nodiscard]]
+#   else
+#       define TIME_SHIELD_NODISCARD
+#   endif
+#else
+#   if defined(TIME_SHIELD_CPP17)
+#       define TIME_SHIELD_NODISCARD [[nodiscard]]
+#   else
+#       define TIME_SHIELD_NODISCARD
+#   endif
+#endif
+
+// Attribute helpers
+#if defined(TIME_SHIELD_CPP17)
+#   define TIME_SHIELD_MAYBE_UNUSED [[maybe_unused]]
+#else
+#   define TIME_SHIELD_MAYBE_UNUSED
+#endif
+
+// Configure thread-local storage handling for compilers with partial support
+#if defined(__cpp_thread_local)
+#   define TIME_SHIELD_THREAD_LOCAL thread_local
+#elif defined(_MSC_VER)
+#   define TIME_SHIELD_THREAD_LOCAL __declspec(thread)
+#elif defined(__GNUC__)
+#   define TIME_SHIELD_THREAD_LOCAL __thread
+#else
+#   define TIME_SHIELD_THREAD_LOCAL
+#endif
+
+
 /// \name Platform detection
 ///@{
 #if defined(_WIN32)
@@ -72,7 +108,7 @@
 /// \name Optional features
 ///@{
 #ifndef TIME_SHIELD_ENABLE_NTP_CLIENT
-#   if TIME_SHIELD_HAS_WINSOCK
+#   if TIME_SHIELD_HAS_WINSOCK || TIME_SHIELD_PLATFORM_UNIX
 #       define TIME_SHIELD_ENABLE_NTP_CLIENT 1
 #   else
 #       define TIME_SHIELD_ENABLE_NTP_CLIENT 0

@@ -6,8 +6,6 @@
 
 #include <iostream>
 
-/// \def _WIN32
-#if defined(_WIN32)
 #include <time_shield/time_utils.hpp>
 
 int main() {
@@ -24,15 +22,9 @@ int main() {
     std::cout << "Millisecond part: " << ms_of_sec() << '\n';
 
     std::cout << "CPU time used: " << get_cpu_time() << " s" << '\n';
-    std::cout << "Realtime (us) via QPC: " << now_realtime_us() << '\n';
-    
+    std::cout << "Realtime (us): " << now_realtime_us() << '\n';
+
     std::cout << "Press Enter to exit..." << std::endl;
     std::cin.get();
     return 0;
 }
-#else
-int main() {
-    std::cout << "time_utils.hpp requires Windows for now_realtime_us()" << std::endl;
-    return 0;
-}
-#endif

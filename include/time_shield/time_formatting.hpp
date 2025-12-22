@@ -10,9 +10,12 @@
 /// It provides utilities for custom formatting based on user-defined patterns
 /// and for standard date-time string representations.
 
+#include "config.hpp"
 #include "date_time_struct.hpp"
 #include "time_zone_struct.hpp"
 #include "time_conversions.hpp"
+
+#include <inttypes.h>
 
 namespace time_shield {
 
@@ -56,8 +59,10 @@ namespace time_shield {
                 result += std::string(buffer);
                 break;
             }
-            // %h: Equivalent to %b
+
+            // fallthrough
         case 'b':
+            // %h: Equivalent to %b
             if (repeat_count > 1) break;
             result += to_str(static_cast<Month>(dt.mon), FormatType::SHORT_NAME);
             break;
@@ -125,13 +130,13 @@ namespace time_shield {
             if (repeat_count == 1) {
                 // %Y-%m-%d ISO 8601 date format
                 char buffer[32] = {0};
-                if (dt.year <= 9999 || dt.year >= 0) {
+                if (dt.year <= 9999 && dt.year >= 0) {
                     snprintf(buffer, sizeof(buffer), "%.4d-%.2d-%.2d", (int)dt.year, dt.mon, dt.day);
                 } else
                 if (dt.year < 0) {
-                    snprintf(buffer, sizeof(buffer), "-%lld-%.2d-%.2d", dt.year, dt.mon, dt.day);
+                    snprintf(buffer, sizeof(buffer), "-%" PRId64 "-%.2d-%.2d", dt.year, dt.mon, dt.day);
                 } else {
-                    snprintf(buffer, sizeof(buffer), "+%lld-%.2d-%.2d", dt.year, dt.mon, dt.day);
+                    snprintf(buffer, sizeof(buffer), "+%" PRId64 "-%.2d-%.2d", dt.year, dt.mon, dt.day);
                 }
                 result += std::string(buffer);
             }
@@ -228,8 +233,10 @@ namespace time_shield {
             if (repeat_count == 3) {
                 result += std::to_string(dt.ms);
                 break;
-            }
+            } 
             // to '%ss'
+
+            // fallthrough
         case 'S':
             if (repeat_count <= 2) {
                 char buffer[4] = {0};
@@ -304,15 +311,31 @@ namespace time_shield {
                 const int64_t centuries = dt.year - mega_years * 1000000 - millennia * 1000;
                 if (mega_years) {
                     if (millennia) {
-                        snprintf(buffer, sizeof(buffer), "%lldM%lldK%.3lld", mega_years, std::abs(millennia), std::abs(centuries));
+                        snprintf(
+                                buffer,
+                                sizeof(buffer),
+                                "%" PRId64 "M%" PRId64 "K%.3" PRId64,
+                                mega_years,
+                                static_cast<int64_t>(std::abs(millennia)),
+                                static_cast<int64_t>(std::abs(centuries)));
                     } else {
-                        snprintf(buffer, sizeof(buffer), "%lldM%.3lld", mega_years, std::abs(centuries));
+                        snprintf(
+                                buffer,
+                                sizeof(buffer),
+                                "%" PRId64 "M%.3" PRId64,
+                                mega_years,
+                                static_cast<int64_t>(std::abs(centuries)));
                     }
                 } else
                 if (millennia) {
-                    snprintf(buffer, sizeof(buffer), "%lldK%.3lld", millennia, std::abs(centuries));
+                    snprintf(
+                            buffer,
+                            sizeof(buffer),
+                            "%" PRId64 "K%.3" PRId64,
+                            millennia,
+                            static_cast<int64_t>(std::abs(centuries)));
                 } else {
-                    snprintf(buffer, sizeof(buffer), "%.4lld", dt.year);
+                    snprintf(buffer, sizeof(buffer), "%.4" PRId64, dt.year);
                 }
                 result += std::string(buffer);
             } else
@@ -527,9 +550,28 @@ namespace time_shield {
         DateTimeStruct dt = to_date_time<DateTimeStruct>(ts);
         char buffer[32] = {0};
         if TIME_SHIELD_IF_CONSTEXPR (std::is_floating_point<T>::value) {
-            snprintf(buffer, sizeof(buffer), "%lld-%.2d-%.2dT%.2d:%.2d:%.2d.%.3d", dt.year, dt.mon, dt.day, dt.hour, dt.min, dt.sec, dt.ms);
+            snprintf(
+                    buffer,
+                    sizeof(buffer),
+                    "%" PRId64 "-%.2d-%.2dT%.2d:%.2d:%.2d.%.3d",
+                    dt.year,
+                    dt.mon,
+                    dt.day,
+                    dt.hour,
+                    dt.min,
+                    dt.sec,
+                    dt.ms);
         } else {
-            snprintf(buffer, sizeof(buffer), "%lld-%.2d-%.2dT%.2d:%.2d:%.2d", dt.year, dt.mon, dt.day, dt.hour, dt.min, dt.sec);
+            snprintf(
+                    buffer,
+                    sizeof(buffer),
+                    "%" PRId64 "-%.2d-%.2dT%.2d:%.2d:%.2d",
+                    dt.year,
+                    dt.mon,
+                    dt.day,
+                    dt.hour,
+                    dt.min,
+                    dt.sec);
         }
         return std::string(buffer);
     }
@@ -545,7 +587,13 @@ namespace time_shield {
     inline const std::string to_iso8601_date(T ts) {
         DateTimeStruct dt = to_date_time<DateTimeStruct>(ts);
         char buffer[32] = {0};
-        snprintf(buffer, sizeof(buffer), "%lld-%.2d-%.2d", dt.year, dt.mon, dt.day);
+        snprintf(
+                buffer,
+                sizeof(buffer),
+                "%" PRId64 "-%.2d-%.2d",
+                dt.year,
+                dt.mon,
+                dt.day);
         return std::string(buffer);
     }
 
@@ -599,9 +647,28 @@ namespace time_shield {
         DateTimeStruct dt = to_date_time<DateTimeStruct>(ts);
         char buffer[32] = {0};
         if TIME_SHIELD_IF_CONSTEXPR (std::is_floating_point<T>::value) {
-            snprintf(buffer, sizeof(buffer), "%lld-%.2d-%.2dT%.2d:%.2d:%.2d.%.3dZ", dt.year, dt.mon, dt.day, dt.hour, dt.min, dt.sec, dt.ms);
+            snprintf(
+                    buffer,
+                    sizeof(buffer),
+                    "%" PRId64 "-%.2d-%.2dT%.2d:%.2d:%.2d.%.3dZ",
+                    dt.year,
+                    dt.mon,
+                    dt.day,
+                    dt.hour,
+                    dt.min,
+                    dt.sec,
+                    dt.ms);
         } else {
-            snprintf(buffer, sizeof(buffer), "%lld-%.2d-%.2dT%.2d:%.2d:%.2dZ", dt.year, dt.mon, dt.day, dt.hour, dt.min, dt.sec);
+            snprintf(
+                    buffer,
+                    sizeof(buffer),
+                    "%" PRId64 "-%.2d-%.2dT%.2d:%.2d:%.2dZ",
+                    dt.year,
+                    dt.mon,
+                    dt.day,
+                    dt.hour,
+                    dt.min,
+                    dt.sec);
         }
         return std::string(buffer);
     }
@@ -615,7 +682,17 @@ namespace time_shield {
     inline const std::string to_iso8601_utc_ms(ts_ms_t ts_ms) {
         DateTimeStruct dt = to_date_time_ms<DateTimeStruct>(ts_ms);
         char buffer[32] = {0};
-        snprintf(buffer, sizeof(buffer), "%lld-%.2d-%.2dT%.2d:%.2d:%.2d.%.3dZ", dt.year, dt.mon, dt.day, dt.hour, dt.min, dt.sec, dt.ms);
+        snprintf(
+                buffer,
+                sizeof(buffer),
+                "%" PRId64 "-%.2d-%.2dT%.2d:%.2d:%.2d.%.3dZ",
+                dt.year,
+                dt.mon,
+                dt.day,
+                dt.hour,
+                dt.min,
+                dt.sec,
+                dt.ms);
         return std::string(buffer);
     }
 
@@ -628,7 +705,17 @@ namespace time_shield {
     inline const std::string to_iso8601_ms(ts_ms_t ts_ms) {
         DateTimeStruct dt = to_date_time_ms<DateTimeStruct>(ts_ms);
         char buffer[32] = {0};
-        snprintf(buffer, sizeof(buffer), "%lld-%.2d-%.2dT%.2d:%.2d:%.2d.%.3d", dt.year, dt.mon, dt.day, dt.hour, dt.min, dt.sec, dt.ms);
+        snprintf(
+                buffer,
+                sizeof(buffer),
+                "%" PRId64 "-%.2d-%.2dT%.2d:%.2d:%.2d.%.3d",
+                dt.year,
+                dt.mon,
+                dt.day,
+                dt.hour,
+                dt.min,
+                dt.sec,
+                dt.ms);
         return std::string(buffer);
     }
 
@@ -647,15 +734,61 @@ namespace time_shield {
         char buffer[32] = {0};
         if TIME_SHIELD_IF_CONSTEXPR (std::is_floating_point<T>::value) {
             if (tz.is_positive) {
-                snprintf(buffer, sizeof(buffer), "%lld-%.2d-%.2dT%.2d:%.2d:%.2d.%.3d+%.2d:%.2d", dt.year, dt.mon, dt.day, dt.hour, dt.min, dt.sec, dt.ms, tz.hour, tz.min);
+                snprintf(
+                        buffer,
+                        sizeof(buffer),
+                        "%" PRId64 "-%.2d-%.2dT%.2d:%.2d:%.2d.%.3d+%.2d:%.2d",
+                        dt.year,
+                        dt.mon,
+                        dt.day,
+                        dt.hour,
+                        dt.min,
+                        dt.sec,
+                        dt.ms,
+                        tz.hour,
+                        tz.min);
             } else {
-                snprintf(buffer, sizeof(buffer), "%lld-%.2d-%.2dT%.2d:%.2d:%.2d.%.3d-%.2d:%.2d", dt.year, dt.mon, dt.day, dt.hour, dt.min, dt.sec, dt.ms, tz.hour, tz.min);
+                snprintf(
+                        buffer,
+                        sizeof(buffer),
+                        "%" PRId64 "-%.2d-%.2dT%.2d:%.2d:%.2d.%.3d-%.2d:%.2d",
+                        dt.year,
+                        dt.mon,
+                        dt.day,
+                        dt.hour,
+                        dt.min,
+                        dt.sec,
+                        dt.ms,
+                        tz.hour,
+                        tz.min);
             }
         } else {
             if (tz.is_positive) {
-                snprintf(buffer, sizeof(buffer), "%lld-%.2d-%.2dT%.2d:%.2d:%.2d+%.2d:%.2d", dt.year, dt.mon, dt.day, dt.hour, dt.min, dt.sec, tz.hour, tz.min);
+                snprintf(
+                        buffer,
+                        sizeof(buffer),
+                        "%" PRId64 "-%.2d-%.2dT%.2d:%.2d:%.2d+%.2d:%.2d",
+                        dt.year,
+                        dt.mon,
+                        dt.day,
+                        dt.hour,
+                        dt.min,
+                        dt.sec,
+                        tz.hour,
+                        tz.min);
             } else {
-                snprintf(buffer, sizeof(buffer), "%lld-%.2d-%.2dT%.2d:%.2d:%.2d-%.2d:%.2d", dt.year, dt.mon, dt.day, dt.hour, dt.min, dt.sec, tz.hour, tz.min);
+                snprintf(
+                        buffer,
+                        sizeof(buffer),
+                        "%" PRId64 "-%.2d-%.2dT%.2d:%.2d:%.2d-%.2d:%.2d",
+                        dt.year,
+                        dt.mon,
+                        dt.day,
+                        dt.hour,
+                        dt.min,
+                        dt.sec,
+                        tz.hour,
+                        tz.min);
             }
         }
         return std::string(buffer);
@@ -673,9 +806,33 @@ namespace time_shield {
         DateTimeStruct dt = to_date_time_ms<DateTimeStruct>(ts_ms);
         char buffer[32] = {0};
         if (tz.is_positive) {
-            snprintf(buffer, sizeof(buffer), "%lld-%.2d-%.2dT%.2d:%.2d:%.2d.%.3d+%.2d:%.2d", dt.year, dt.mon, dt.day, dt.hour, dt.min, dt.sec, dt.ms, tz.hour, tz.min);
+            snprintf(
+                    buffer,
+                    sizeof(buffer),
+                    "%" PRId64 "-%.2d-%.2dT%.2d:%.2d:%.2d.%.3d+%.2d:%.2d",
+                    dt.year,
+                    dt.mon,
+                    dt.day,
+                    dt.hour,
+                    dt.min,
+                    dt.sec,
+                    dt.ms,
+                    tz.hour,
+                    tz.min);
         } else {
-            snprintf(buffer, sizeof(buffer), "%lld-%.2d-%.2dT%.2d:%.2d:%.2d.%.3d-%.2d:%.2d", dt.year, dt.mon, dt.day, dt.hour, dt.min, dt.sec, dt.ms, tz.hour, tz.min);
+            snprintf(
+                    buffer,
+                    sizeof(buffer),
+                    "%" PRId64 "-%.2d-%.2dT%.2d:%.2d:%.2d.%.3d-%.2d:%.2d",
+                    dt.year,
+                    dt.mon,
+                    dt.day,
+                    dt.hour,
+                    dt.min,
+                    dt.sec,
+                    dt.ms,
+                    tz.hour,
+                    tz.min);
         }
         return std::string(buffer);
     }
@@ -689,7 +846,16 @@ namespace time_shield {
     inline const std::string to_mql5_date_time(ts_t ts) {
         DateTimeStruct dt = to_date_time<DateTimeStruct>(ts);
         char buffer[32] = {0};
-        snprintf(buffer, sizeof(buffer), "%lld.%.2d.%.2d %.2d:%.2d:%.2d", dt.year, dt.mon, dt.day, dt.hour, dt.min, dt.sec);
+        snprintf(
+                buffer,
+                sizeof(buffer),
+                "%" PRId64 ".%.2d.%.2d %.2d:%.2d:%.2d",
+                dt.year,
+                dt.mon,
+                dt.day,
+                dt.hour,
+                dt.min,
+                dt.sec);
         return std::string(buffer);
     }
 
@@ -708,7 +874,13 @@ namespace time_shield {
     inline const std::string to_mql5_date(ts_t ts) {
         DateTimeStruct dt = to_date_time<DateTimeStruct>(ts);
         char buffer[32] = {0};
-        snprintf(buffer, sizeof(buffer), "%lld.%.2d.%.2d", dt.year, dt.mon, dt.day);
+        snprintf(
+                buffer,
+                sizeof(buffer),
+                "%" PRId64 ".%.2d.%.2d",
+                dt.year,
+                dt.mon,
+                dt.day);
         return std::string(buffer);
     }
 
@@ -731,7 +903,16 @@ namespace time_shield {
     inline const std::string to_windows_filename(ts_t ts) {
         DateTimeStruct dt = to_date_time<DateTimeStruct>(ts);
         char buffer[32] = {0};
-        snprintf(buffer, sizeof(buffer), "%lld-%.2d-%.2d_%.2d-%.2d-%.2d", dt.year, dt.mon, dt.day, dt.hour, dt.min, dt.sec);
+        snprintf(
+                buffer,
+                sizeof(buffer),
+                "%" PRId64 "-%.2d-%.2d_%.2d-%.2d-%.2d",
+                dt.year,
+                dt.mon,
+                dt.day,
+                dt.hour,
+                dt.min,
+                dt.sec);
         return std::string(buffer);
     }
 
@@ -741,7 +922,17 @@ namespace time_shield {
     inline const std::string to_windows_filename_ms(ts_ms_t ts) {
         DateTimeStruct dt = to_date_time_ms<DateTimeStruct>(ts);
         char buffer[32] = {0};
-        snprintf(buffer, sizeof(buffer), "%lld-%.2d-%.2d_%.2d-%.2d-%.2d-%.3d", dt.year, dt.mon, dt.day, dt.hour, dt.min, dt.sec, dt.ms);
+        snprintf(
+                buffer,
+                sizeof(buffer),
+                "%" PRId64 "-%.2d-%.2d_%.2d-%.2d-%.2d-%.3d",
+                dt.year,
+                dt.mon,
+                dt.day,
+                dt.hour,
+                dt.min,
+                dt.sec,
+                dt.ms);
         return std::string(buffer);
     }
 
@@ -751,7 +942,16 @@ namespace time_shield {
     inline std::string to_human_readable(ts_t ts) {
         DateTimeStruct dt = to_date_time_ms<DateTimeStruct>(ts);
         char buffer[32] = {0};
-        snprintf(buffer, sizeof(buffer), "%lld-%.2d-%.2d %.2d:%.2d:%.2d", dt.year, dt.mon, dt.day, dt.hour, dt.min, dt.sec);
+        snprintf(
+                buffer,
+                sizeof(buffer),
+                "%" PRId64 "-%.2d-%.2d %.2d:%.2d:%.2d",
+                dt.year,
+                dt.mon,
+                dt.day,
+                dt.hour,
+                dt.min,
+                dt.sec);
         return std::string(buffer);
     }
 
@@ -761,7 +961,17 @@ namespace time_shield {
     inline std::string to_human_readable_ms(ts_ms_t ts) {
         DateTimeStruct dt = to_date_time_ms<DateTimeStruct>(ts);
         char buffer[32] = {0};
-        snprintf(buffer, sizeof(buffer), "%lld-%.2d-%.2d %.2d:%.2d:%.2d.%.3d", dt.year, dt.mon, dt.day, dt.hour, dt.min, dt.sec, dt.ms);
+        snprintf(
+                buffer,
+                sizeof(buffer),
+                "%" PRId64 "-%.2d-%.2d %.2d:%.2d:%.2d.%.3d",
+                dt.year,
+                dt.mon,
+                dt.day,
+                dt.hour,
+                dt.min,
+                dt.sec,
+                dt.ms);
         return std::string(buffer);
     }
 

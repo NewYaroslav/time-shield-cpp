@@ -525,9 +525,9 @@ namespace time_shield {
         sec_value += detail::floor_div(ms_value, static_cast<int64_t>(MS_PER_SEC));
         ms_value = detail::floor_mod(ms_value, static_cast<int64_t>(MS_PER_SEC));
         if ((sec_value > 0 &&
-             sec_value > (std::numeric_limits<int64_t>::max() - ms_value) / MS_PER_SEC) ||
+             sec_value > ((std::numeric_limits<int64_t>::max)() - ms_value) / MS_PER_SEC) ||
             (sec_value < 0 &&
-             sec_value < std::numeric_limits<int64_t>::min() / MS_PER_SEC)) {
+             sec_value < (std::numeric_limits<int64_t>::min)() / MS_PER_SEC)) {
             return ERROR_TIMESTAMP;
         }
         return static_cast<ts_ms_t>(sec_value * MS_PER_SEC + ms_value);
@@ -551,9 +551,9 @@ namespace time_shield {
         sec_value += detail::floor_div(ms_value, static_cast<int64_t>(MS_PER_SEC));
         ms_value = detail::floor_mod(ms_value, static_cast<int64_t>(MS_PER_SEC));
         if ((sec_value > 0 &&
-             sec_value > (std::numeric_limits<int64_t>::max() - ms_value) / MS_PER_SEC) ||
+             sec_value > ((std::numeric_limits<int64_t>::max)() - ms_value) / MS_PER_SEC) ||
             (sec_value < 0 &&
-             sec_value < std::numeric_limits<int64_t>::min() / MS_PER_SEC)) {
+             sec_value < (std::numeric_limits<int64_t>::min)() / MS_PER_SEC)) {
             return ERROR_TIMESTAMP;
         }
         return static_cast<ts_ms_t>(sec_value * MS_PER_SEC + ms_value);

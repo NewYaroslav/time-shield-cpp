@@ -166,8 +166,8 @@ int main() {
     
         // Calendar invariants for ms boundaries:
         assert(y0 <= t && t <= y1);
-        assert((y0 % MS_PER_SEC) == 0);
-        assert((y1 % MS_PER_SEC) == (MS_PER_SEC - 1));
+        assert(ms_part(y0) == 0);
+        assert(ms_part(y1) == (MS_PER_SEC - 1));
     }
     const ts_t before_epoch = to_timestamp(1969, 12, 31, 23, 59, 59);
     assert(start_of_year(before_epoch) == to_timestamp(1969, 1, 1));

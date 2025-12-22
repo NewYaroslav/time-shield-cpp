@@ -1,27 +1,16 @@
 #include <time_shield/time_conversions.hpp>
+#include <time_shield/detail/floor_math.hpp>
 
 #include <array>
 #include <cassert>
 #include <cstdint>
 
-namespace {
-    static constexpr int64_t floor_div(int64_t a, int64_t b) noexcept {
-        int64_t q = a / b;
-        int64_t r = a % b;
-        if (r != 0 && ((r < 0) != (b < 0))) --q;
-        return q;
-    }
-
-    static constexpr int64_t floor_mod(int64_t a, int64_t b) noexcept {
-        return a - floor_div(a, b) * b;
-    }
-}
-
 int main() {
     using namespace time_shield;
 
     const auto check_ms = [](ts_ms_t ts_ms) {
-        const int64_t sec_floor = floor_div(static_cast<int64_t>(ts_ms), MS_PER_SEC);
+        const int64_t sec_floor = detail::floor_div<int64_t>(
+            static_cast<int64_t>(ts_ms), MS_PER_SEC);
         const ts_t start_sec = start_of_year(static_cast<ts_t>(sec_floor));
         const ts_t end_sec = end_of_year(static_cast<ts_t>(sec_floor));
         const ts_ms_t ref_start_ms = static_cast<ts_ms_t>(start_sec * MS_PER_SEC);
@@ -83,6 +72,6 @@ int main() {
         check_ms(ts_ms);
     }
 
-    (void)floor_mod(0, 1);
+    (void)detail::floor_mod<int64_t>(0, 1);
     return 0;
 }

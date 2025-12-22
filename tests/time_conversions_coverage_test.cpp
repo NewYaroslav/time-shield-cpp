@@ -130,7 +130,7 @@ int main() {
     assert(start_of_year_date(2024) == to_timestamp(2024, 1, 1));
     assert(start_of_year_date_ms(2024) == sec_to_ms(to_timestamp(2024, 1, 1)));
     assert(end_of_year(sample_ts) == to_timestamp(2024, 12, 31, 23, 59, 59));
-    assert(end_of_year_ms(sec_to_ms(sample_ts)) == sec_to_ms(to_timestamp(2024, 12, 31, 23, 59, 59)));
+    assert(end_of_year_ms(sec_to_ms(sample_ts)) == sec_to_ms(to_timestamp(2024, 12, 31, 23, 59, 59)) + (MS_PER_SEC - 1));
     assert(start_of_year_ms(-1) == sec_to_ms(start_of_year(-1)));
     const ts_t before_epoch = to_timestamp(1969, 12, 31, 23, 59, 59);
     assert(start_of_year(before_epoch) == to_timestamp(1969, 1, 1));

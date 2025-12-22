@@ -525,9 +525,9 @@ namespace time_shield {
         sec_value += detail::floor_div(ms_value, static_cast<int64_t>(MS_PER_SEC));
         ms_value = detail::floor_mod(ms_value, static_cast<int64_t>(MS_PER_SEC));
         if ((sec_value > 0 &&
-             sec_value > (std::numeric_limits<int64_t>::max() - ms_value) / MS_PER_SEC) ||
+             sec_value > ((std::numeric_limits<int64_t>::max)() - ms_value) / MS_PER_SEC) ||
             (sec_value < 0 &&
-             sec_value < std::numeric_limits<int64_t>::min() / MS_PER_SEC)) {
+             sec_value < (std::numeric_limits<int64_t>::min)() / MS_PER_SEC)) {
             return ERROR_TIMESTAMP;
         }
         return static_cast<ts_ms_t>(sec_value * MS_PER_SEC + ms_value);
@@ -551,9 +551,9 @@ namespace time_shield {
         sec_value += detail::floor_div(ms_value, static_cast<int64_t>(MS_PER_SEC));
         ms_value = detail::floor_mod(ms_value, static_cast<int64_t>(MS_PER_SEC));
         if ((sec_value > 0 &&
-             sec_value > (std::numeric_limits<int64_t>::max() - ms_value) / MS_PER_SEC) ||
+             sec_value > ((std::numeric_limits<int64_t>::max)() - ms_value) / MS_PER_SEC) ||
             (sec_value < 0 &&
-             sec_value < std::numeric_limits<int64_t>::min() / MS_PER_SEC)) {
+             sec_value < (std::numeric_limits<int64_t>::min)() / MS_PER_SEC)) {
             return ERROR_TIMESTAMP;
         }
         return static_cast<ts_ms_t>(sec_value * MS_PER_SEC + ms_value);
@@ -873,13 +873,13 @@ namespace time_shield {
 
     /// \brief Get the timestamp in milliseconds of the end of the year.
     ///
-    /// This function finds the last timestamp of the current year in milliseconds.
+    /// This function finds the last millisecond of the current year in milliseconds.
     ///
     /// \param ts_ms Timestamp in milliseconds.
     /// \return End-of-year timestamp in milliseconds.
     template<class T = year_t>
     TIME_SHIELD_CONSTEXPR inline ts_ms_t end_of_year_ms(ts_ms_t ts_ms = time_shield::ts_ms()) {
-        return sec_to_ms(end_of_year(ms_to_sec<ts_t>(ts_ms)));
+        return sec_to_ms(end_of_year(ms_to_sec<ts_t>(ts_ms))) + (MS_PER_SEC - 1);
     }
 
     /// \brief Get the day of the year.

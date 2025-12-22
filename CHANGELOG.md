@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [v1.0.5] - 2025-10-05
+## [v1.0.5] - 2025-12-22
 - Added fast date conversion paths for timestamp-to-calendar helpers, along with unchecked timestamp math to reduce validation overhead in hot paths (legacy fallbacks remain for comparison).
 - Added reference tests and micro-benchmarks for fast vs legacy date conversions with averaged performance measurements across pre/post-epoch ranges.
 - Averaged performance gains (legacy/fast, 5 runs): `to_date_time` ~5.68×, `date_to_unix_day` ~1.25×, `to_timestamp` ~1.14×, `to_timestamp_unchecked` ~1.53× (range-dependent).

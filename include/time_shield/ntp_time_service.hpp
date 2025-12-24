@@ -15,6 +15,7 @@
 #include <chrono>
 #include <condition_variable>
 #include <cstdint>
+#include <cstdlib>
 #include <memory>
 #include <mutex>
 #include <thread>
@@ -179,15 +180,69 @@ namespace time_shield {
         };
 #endif // _TIME_SHIELD_TEST_FAKE_NTP
 
-#ifndef TIME_SHIELD_CPP17
 #if defined(TIME_SHIELD_TEST_FAKE_NTP)
         using RunnerAlias = detail::FakeNtpRunner;
 #else
         using RunnerAlias = NtpClientPoolRunner;
 #endif
 
-        extern NtpTimeServiceT<RunnerAlias> g_ntp_time_service;
-#endif // !TIME_SHIELD_CPP17
+#if defined(TIME_SHIELD_NTP_TIME_SERVICE_USE_DLL_SINGLETON)
+#if defined(_WIN32) || defined(__CYGWIN__)
+#ifdef TIME_SHIELD_NTP_TIME_SERVICE_DLL_EXPORTS
+#define TIME_SHIELD_NTP_TIME_SERVICE_API __declspec(dllexport)
+#else
+#define TIME_SHIELD_NTP_TIME_SERVICE_API __declspec(dllimport)
+#endif
+#else
+#define TIME_SHIELD_NTP_TIME_SERVICE_API
+#endif
+
+        /// \brief Return the process-wide singleton instance from a DLL export.
+        /// \note All modules must use the same configuration macros to keep ABI consistent.
+        /// \note Call ntp::shutdown() explicitly when unloading a DLL or plugin.
+        extern "C" TIME_SHIELD_NTP_TIME_SERVICE_API NtpTimeServiceT<RunnerAlias>& time_shield_ntp_time_service_instance() noexcept;
+#endif
+
+        template <class RunnerT>
+        NtpTimeServiceT<RunnerT>*& shutdown_instance_ptr() noexcept {
+            static NtpTimeServiceT<RunnerT>* instance_ptr = nullptr;
+            return instance_ptr;
+        }
+
+        template <class RunnerT>
+        void shutdown_at_exit() noexcept {
+            auto* instance_ptr = shutdown_instance_ptr<RunnerT>();
+            if (!instance_ptr) {
+                return;
+            }
+            try {
+                instance_ptr->shutdown();
+            } catch (...) {
+            }
+        }
+
+        template <class RunnerT>
+        struct NtpTimeServiceSingleton final {
+            static NtpTimeServiceT<RunnerT>& instance() noexcept {
+                static NtpTimeServiceT<RunnerT>* p_instance = new NtpTimeServiceT<RunnerT>{};
+                static bool is_registered = []() noexcept {
+                    shutdown_instance_ptr<RunnerT>() = p_instance;
+                    std::atexit(&shutdown_at_exit<RunnerT>);
+                    return true;
+                }();
+                (void)is_registered;
+                return *p_instance;
+            }
+        };
+
+#if defined(TIME_SHIELD_NTP_TIME_SERVICE_USE_DLL_SINGLETON)
+        template <>
+        struct NtpTimeServiceSingleton<RunnerAlias> final {
+            static NtpTimeServiceT<RunnerAlias>& instance() noexcept {
+                return time_shield_ntp_time_service_instance();
+            }
+        };
+#endif
     } // namespace detail
 
     /// \ingroup ntp
@@ -202,18 +257,14 @@ namespace time_shield {
         /// \brief Return the singleton instance.
         /// \return Singleton instance.
         static NtpTimeServiceT& instance() noexcept {
-#ifdef TIME_SHIELD_CPP17
-            return m_instance;
-#else
-            return detail::g_ntp_time_service;
-#endif
+            return detail::NtpTimeServiceSingleton<RunnerT>::instance();
         }
 
         NtpTimeServiceT(const NtpTimeServiceT&) = delete;
         NtpTimeServiceT& operator=(const NtpTimeServiceT&) = delete;
 
         /// \brief Start background measurements using stored interval.
-        /// \return True when background runner started.
+        /// \return True when background runner started and initial measurement succeeded.
         bool init() {
             return init(m_interval, m_measure_immediately);
         }
@@ -221,41 +272,65 @@ namespace time_shield {
         /// \brief Start background measurements with interval and immediate flag.
         /// \param interval Measurement interval.
         /// \param measure_immediately Measure before first sleep if true.
-        /// \return True when background runner started.
+        /// \return True when background runner started and initial measurement succeeded.
         bool init(std::chrono::milliseconds interval, bool measure_immediately = true) {
-            std::unique_ptr<RunnerT> local_runner;
             {
-                std::lock_guard<std::mutex> lk(m_mtx);
-                if (is_running_locked()) {
+                std::unique_lock<std::mutex> lk(m_mtx);
+                while (m_state == State::starting) {
+                    m_cv.wait(lk);
+                }
+                if (m_state == State::running && is_running_locked()) {
                     return true;
                 }
+                m_state = State::starting;
                 if (interval.count() <= 0) {
                     interval = std::chrono::milliseconds(1);
                 }
                 m_interval = interval;
                 m_measure_immediately = measure_immediately;
+            }
 
+            std::unique_ptr<RunnerT> local_runner;
+            {
+                std::lock_guard<std::mutex> lk(m_mtx);
                 local_runner = build_runner_locked();
                 if (!local_runner) {
+                    m_state = State::stopped;
+                    m_cv.notify_all();
                     return false;
                 }
             }
 
-            if (!local_runner->start(m_interval, m_measure_immediately)) {
-                return false;
-            }
-
             bool is_ok = false;
+            bool has_started = false;
             try {
-                is_ok = local_runner->measure_now();
+                has_started = local_runner->start(m_interval, m_measure_immediately);
+                if (has_started) {
+                    is_ok = local_runner->measure_now();
+                }
             } catch (...) {
                 is_ok = false;
             }
 
             {
                 std::lock_guard<std::mutex> lk(m_mtx);
-                m_runner = std::move(local_runner);
+                if (!has_started) {
+                    try {
+                        local_runner->stop();
+                    } catch (...) {
+                    }
+                    local_runner.reset();
+                }
+                if (has_started && is_ok) {
+                    m_runner = std::move(local_runner);
+                    m_state = State::running;
+                    m_last_offset_us.store(m_runner->offset_us());
+                } else {
+                    m_runner.reset();
+                    m_state = State::stopped;
+                }
             }
+            m_cv.notify_all();
             return is_ok;
         }
 
@@ -263,12 +338,17 @@ namespace time_shield {
         void shutdown() {
             std::unique_ptr<RunnerT> local_runner;
             {
-                std::lock_guard<std::mutex> lk(m_mtx);
-                if (!m_runner) {
+                std::unique_lock<std::mutex> lk(m_mtx);
+                while (m_state == State::starting) {
+                    m_cv.wait(lk);
+                }
+                if (m_state == State::stopped || !m_runner) {
                     return;
                 }
+                m_state = State::stopped;
                 local_runner = std::move(m_runner);
             }
+            m_cv.notify_all();
             try {
                 local_runner->stop();
             } catch (...) {
@@ -280,7 +360,7 @@ namespace time_shield {
         /// \return True when background runner is active.
         bool running() const noexcept {
             std::lock_guard<std::mutex> lk(m_mtx);
-            return is_running_locked();
+            return m_state == State::running && is_running_locked();
         }
 
         /// \brief Ensure background runner is started with current config.
@@ -294,19 +374,21 @@ namespace time_shield {
         /// \brief Return last estimated offset in microseconds.
         /// \return Offset in microseconds (UTC - local realtime).
         int64_t offset_us() noexcept {
-            ensure_started();
+            const int64_t cached = m_last_offset_us.load(std::memory_order_relaxed);
             std::lock_guard<std::mutex> lk(m_mtx);
-            if (!m_runner) return 0;
-            return m_runner->offset_us();
+            if (!m_runner) {
+                return cached;
+            }
+            const int64_t current = m_runner->offset_us();
+            m_last_offset_us.store(current, std::memory_order_relaxed);
+            return current;
         }
 
         /// \brief Return current UTC time in microseconds based on offset.
+        /// \note Returns realtime time when the service has never been started.
         /// \return UTC time in microseconds using last offset.
         int64_t utc_time_us() noexcept {
-            ensure_started();
-            std::lock_guard<std::mutex> lk(m_mtx);
-            if (!m_runner) return now_realtime_us();
-            return m_runner->utc_time_us();
+            return now_realtime_us() + offset_us();
         }
 
         /// \brief Return current UTC time in milliseconds based on offset.
@@ -370,7 +452,7 @@ namespace time_shield {
                 return true;
             }
             const int64_t age = now_realtime_us() - last;
-            return age > max_age.count() * 1000;
+            return age > static_cast<int64_t>(max_age.count()) * 1000;
         }
 
         /// \brief Replace server list used for new runner instances.
@@ -451,6 +533,15 @@ namespace time_shield {
         /// \brief Apply current config by rebuilding the runner.
         /// \return True when runner restarted successfully.
         bool apply_config_now() {
+            bool was_running = false;
+            {
+                std::unique_lock<std::mutex> lk(m_mtx);
+                while (m_state == State::starting) {
+                    m_cv.wait(lk);
+                }
+                was_running = m_runner && is_running_locked();
+                m_state = State::starting;
+            }
             std::unique_ptr<RunnerT> new_runner;
             std::unique_ptr<RunnerT> old_runner;
             std::chrono::milliseconds interval;
@@ -459,6 +550,8 @@ namespace time_shield {
                 std::lock_guard<std::mutex> lk(m_mtx);
                 new_runner = build_runner_locked();
                 if (!new_runner) {
+                    m_state = was_running ? State::running : State::stopped;
+                    m_cv.notify_all();
                     return false;
                 }
                 interval = m_interval;
@@ -473,25 +566,47 @@ namespace time_shield {
                 }
             }
 
-            if (!new_runner->start(interval, measure_immediately)) {
-                return false;
-            }
-
             bool is_ok = false;
+            bool has_started = false;
             try {
-                is_ok = new_runner->measure_now();
+                has_started = new_runner->start(interval, measure_immediately);
+                if (has_started) {
+                    is_ok = new_runner->measure_now();
+                }
             } catch (...) {
                 is_ok = false;
             }
 
             {
                 std::lock_guard<std::mutex> lk(m_mtx);
-                m_runner = std::move(new_runner);
+                if (!has_started) {
+                    try {
+                        new_runner->stop();
+                    } catch (...) {
+                    }
+                    new_runner.reset();
+                }
+                if (has_started && is_ok) {
+                    m_runner = std::move(new_runner);
+                    m_state = State::running;
+                    m_last_offset_us.store(m_runner->offset_us());
+                } else {
+                    m_runner.reset();
+                    m_state = State::stopped;
+                }
             }
+            m_cv.notify_all();
             return is_ok;
         }
 
     private:
+        /// \brief Service state for coordination.
+        enum class State : uint8_t {
+            stopped,
+            starting,
+            running
+        };
+
         /// \brief Check runner status under lock.
         bool is_running_locked() const noexcept {
             return m_runner && m_runner->running();
@@ -521,6 +636,8 @@ namespace time_shield {
 
     private:
         mutable std::mutex m_mtx;
+        std::condition_variable m_cv;
+        State m_state{State::stopped};
         std::chrono::milliseconds m_interval{std::chrono::seconds(30)};
         bool m_measure_immediately{true};
 
@@ -531,22 +648,22 @@ namespace time_shield {
         NtpPoolConfig m_pool_cfg{};
 
         std::unique_ptr<RunnerT> m_runner;
+        std::atomic<int64_t> m_last_offset_us{0};
 
-#ifdef TIME_SHIELD_CPP17
-        static NtpTimeServiceT m_instance;
-#endif
     };
 
-#ifdef TIME_SHIELD_CPP17
-    template <class RunnerT>
-    inline NtpTimeServiceT<RunnerT> NtpTimeServiceT<RunnerT>::m_instance{};
-#endif
-
-#ifndef TIME_SHIELD_CPP17
+#if defined(TIME_SHIELD_NTP_TIME_SERVICE_USE_DLL_SINGLETON) && defined(TIME_SHIELD_NTP_TIME_SERVICE_DLL_IMPLEMENTATION)
 namespace detail {
-#if defined(TIME_SHIELD_NTP_TIME_SERVICE_DEFINE)
-    NtpTimeServiceT<RunnerAlias> g_ntp_time_service;
-#endif
+    extern "C" TIME_SHIELD_NTP_TIME_SERVICE_API NtpTimeServiceT<RunnerAlias>& time_shield_ntp_time_service_instance() noexcept {
+        static NtpTimeServiceT<RunnerAlias>* p_instance = new NtpTimeServiceT<RunnerAlias>{};
+        static bool is_registered = []() noexcept {
+            shutdown_instance_ptr<RunnerAlias>() = p_instance;
+            std::atexit(&shutdown_at_exit<RunnerAlias>);
+            return true;
+        }();
+        (void)is_registered;
+        return *p_instance;
+    }
 } // namespace detail
 #endif
 
@@ -675,6 +792,6 @@ namespace time_shield {
     };
 } // namespace time_shield
 
-#endif // _TIME_SHIELD_ENABLE_NTP_CLIENT
+#endif // TIME_SHIELD_ENABLE_NTP_CLIENT
 
 #endif // _TIME_SHIELD_NTP_TIME_SERVICE_HPP_INCLUDED

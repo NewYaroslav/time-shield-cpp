@@ -2,7 +2,6 @@
 
 #if TIME_SHIELD_ENABLE_NTP_CLIENT
 #define TIME_SHIELD_TEST_FAKE_NTP
-#define TIME_SHIELD_NTP_TIME_SERVICE_DEFINE
 #include <time_shield/ntp_time_service.hpp>
 
 #include <cassert>
@@ -16,7 +15,7 @@ int main() {
 
     service.shutdown();
     assert(!service.running());
-    (void)service.utc_time_ms();
+    assert(service.init());
     assert(service.running());
 
     service.shutdown();

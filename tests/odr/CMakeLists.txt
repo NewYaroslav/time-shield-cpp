@@ -14,3 +14,14 @@ target_link_libraries(odr_cxx17 PRIVATE time_shield::time_shield)
 set_target_properties(odr_cxx17 PROPERTIES CXX_STANDARD 17 CXX_STANDARD_REQUIRED YES)
 
 add_test(NAME odr_cxx17 COMMAND odr_cxx17)
+
+set(NTP_TIME_SERVICE_DLL_SOURCES
+    ntp_time_service_dll_a.cpp
+    ntp_time_service_dll_b.cpp
+)
+
+add_executable(ntp_time_service_dll_odr ${NTP_TIME_SERVICE_DLL_SOURCES})
+target_link_libraries(ntp_time_service_dll_odr PRIVATE time_shield::time_shield)
+set_target_properties(ntp_time_service_dll_odr PROPERTIES CXX_STANDARD 11 CXX_STANDARD_REQUIRED YES)
+
+add_test(NAME ntp_time_service_dll_odr COMMAND ntp_time_service_dll_odr)

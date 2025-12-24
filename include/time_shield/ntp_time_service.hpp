@@ -246,39 +246,62 @@ namespace time_shield {
         /// \param measure_immediately Measure before first sleep if true.
         /// \return True when background runner started.
         bool init(std::chrono::milliseconds interval, bool measure_immediately = true) {
-            std::unique_ptr<RunnerT> local_runner;
             {
-                std::lock_guard<std::mutex> lk(m_mtx);
-                if (is_running_locked()) {
+                std::unique_lock<std::mutex> lk(m_mtx);
+                while (m_state == State::starting) {
+                    m_cv.wait(lk);
+                }
+                if (m_state == State::running && is_running_locked()) {
                     return true;
                 }
+                m_state = State::starting;
                 if (interval.count() <= 0) {
                     interval = std::chrono::milliseconds(1);
                 }
                 m_interval = interval;
                 m_measure_immediately = measure_immediately;
+            }
 
+            std::unique_ptr<RunnerT> local_runner;
+            {
+                std::lock_guard<std::mutex> lk(m_mtx);
                 local_runner = build_runner_locked();
                 if (!local_runner) {
+                    m_state = State::stopped;
+                    m_cv.notify_all();
                     return false;
                 }
             }
 
-            if (!local_runner->start(m_interval, m_measure_immediately)) {
-                return false;
-            }
-
             bool is_ok = false;
+            bool has_started = false;
             try {
-                is_ok = local_runner->measure_now();
+                has_started = local_runner->start(m_interval, m_measure_immediately);
+                if (has_started) {
+                    is_ok = local_runner->measure_now();
+                }
             } catch (...) {
                 is_ok = false;
             }
 
             {
                 std::lock_guard<std::mutex> lk(m_mtx);
-                m_runner = std::move(local_runner);
+                if (!has_started) {
+                    try {
+                        local_runner->stop();
+                    } catch (...) {
+                    }
+                    local_runner.reset();
+                }
+                if (has_started && is_ok) {
+                    m_runner = std::move(local_runner);
+                    m_state = State::running;
+                } else {
+                    m_runner.reset();
+                    m_state = State::stopped;
+                }
             }
+            m_cv.notify_all();
             return is_ok;
         }
 
@@ -286,12 +309,17 @@ namespace time_shield {
         void shutdown() {
             std::unique_ptr<RunnerT> local_runner;
             {
-                std::lock_guard<std::mutex> lk(m_mtx);
-                if (!m_runner) {
+                std::unique_lock<std::mutex> lk(m_mtx);
+                while (m_state == State::starting) {
+                    m_cv.wait(lk);
+                }
+                if (m_state == State::stopped || !m_runner) {
                     return;
                 }
+                m_state = State::stopped;
                 local_runner = std::move(m_runner);
             }
+            m_cv.notify_all();
             try {
                 local_runner->stop();
             } catch (...) {
@@ -303,7 +331,7 @@ namespace time_shield {
         /// \return True when background runner is active.
         bool running() const noexcept {
             std::lock_guard<std::mutex> lk(m_mtx);
-            return is_running_locked();
+            return m_state == State::running && is_running_locked();
         }
 
         /// \brief Ensure background runner is started with current config.
@@ -474,6 +502,15 @@ namespace time_shield {
         /// \brief Apply current config by rebuilding the runner.
         /// \return True when runner restarted successfully.
         bool apply_config_now() {
+            bool was_running = false;
+            {
+                std::unique_lock<std::mutex> lk(m_mtx);
+                while (m_state == State::starting) {
+                    m_cv.wait(lk);
+                }
+                was_running = m_state == State::running && is_running_locked();
+                m_state = State::starting;
+            }
             std::unique_ptr<RunnerT> new_runner;
             std::unique_ptr<RunnerT> old_runner;
             std::chrono::milliseconds interval;
@@ -482,6 +519,8 @@ namespace time_shield {
                 std::lock_guard<std::mutex> lk(m_mtx);
                 new_runner = build_runner_locked();
                 if (!new_runner) {
+                    m_state = was_running ? State::running : State::stopped;
+                    m_cv.notify_all();
                     return false;
                 }
                 interval = m_interval;
@@ -496,25 +535,46 @@ namespace time_shield {
                 }
             }
 
-            if (!new_runner->start(interval, measure_immediately)) {
-                return false;
-            }
-
             bool is_ok = false;
+            bool has_started = false;
             try {
-                is_ok = new_runner->measure_now();
+                has_started = new_runner->start(interval, measure_immediately);
+                if (has_started) {
+                    is_ok = new_runner->measure_now();
+                }
             } catch (...) {
                 is_ok = false;
             }
 
             {
                 std::lock_guard<std::mutex> lk(m_mtx);
-                m_runner = std::move(new_runner);
+                if (!has_started) {
+                    try {
+                        new_runner->stop();
+                    } catch (...) {
+                    }
+                    new_runner.reset();
+                }
+                if (has_started && is_ok) {
+                    m_runner = std::move(new_runner);
+                    m_state = State::running;
+                } else {
+                    m_runner.reset();
+                    m_state = State::stopped;
+                }
             }
+            m_cv.notify_all();
             return is_ok;
         }
 
     private:
+        /// \brief Service state for coordination.
+        enum class State : uint8_t {
+            stopped,
+            starting,
+            running
+        };
+
         /// \brief Check runner status under lock.
         bool is_running_locked() const noexcept {
             return m_runner && m_runner->running();
@@ -544,6 +604,8 @@ namespace time_shield {
 
     private:
         mutable std::mutex m_mtx;
+        std::condition_variable m_cv;
+        State m_state{State::stopped};
         std::chrono::milliseconds m_interval{std::chrono::seconds(30)};
         bool m_measure_immediately{true};
 

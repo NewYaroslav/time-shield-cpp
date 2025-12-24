@@ -199,6 +199,7 @@ namespace time_shield {
 
         /// \brief Return the process-wide singleton instance from a DLL export.
         /// \note All modules must use the same configuration macros to keep ABI consistent.
+        /// \note Call ntp::shutdown() explicitly when unloading a DLL or plugin.
         extern "C" TIME_SHIELD_NTP_TIME_SERVICE_API NtpTimeServiceT<RunnerAlias>& time_shield_ntp_time_service_instance() noexcept;
 #endif
 
@@ -271,8 +272,9 @@ namespace time_shield {
         /// \brief Start background measurements with interval and immediate flag.
         /// \param interval Measurement interval.
         /// \param measure_immediately Measure before first sleep if true.
-        /// \return True when background runner started.
+        /// \return True when background runner started and initial measurement succeeded.
         bool init(std::chrono::milliseconds interval, bool measure_immediately = true) {
+            bool should_notify = false;
             {
                 std::unique_lock<std::mutex> lk(m_mtx);
                 while (m_state == State::starting) {
@@ -295,9 +297,14 @@ namespace time_shield {
                 local_runner = build_runner_locked();
                 if (!local_runner) {
                     m_state = State::stopped;
-                    m_cv.notify_all();
-                    return false;
+                    should_notify = true;
                 }
+            }
+            if (!local_runner) {
+                if (should_notify) {
+                    m_cv.notify_all();
+                }
+                return false;
             }
 
             bool is_ok = false;
@@ -329,7 +336,10 @@ namespace time_shield {
                     m_state = State::stopped;
                 }
             }
-            m_cv.notify_all();
+            should_notify = true;
+            if (should_notify) {
+                m_cv.notify_all();
+            }
             return is_ok;
         }
 
@@ -373,14 +383,16 @@ namespace time_shield {
         /// \brief Return last estimated offset in microseconds.
         /// \return Offset in microseconds (UTC - local realtime).
         int64_t offset_us() noexcept {
+            const int64_t cached = m_last_offset_us.load();
             std::lock_guard<std::mutex> lk(m_mtx);
             if (m_runner) {
                 m_last_offset_us.store(m_runner->offset_us());
             }
-            return m_last_offset_us.load();
+            return m_runner ? m_last_offset_us.load() : cached;
         }
 
         /// \brief Return current UTC time in microseconds based on offset.
+        /// \note Returns realtime time when the service has never been started.
         /// \return UTC time in microseconds using last offset.
         int64_t utc_time_us() noexcept {
             return now_realtime_us() + offset_us();
@@ -529,12 +541,13 @@ namespace time_shield {
         /// \return True when runner restarted successfully.
         bool apply_config_now() {
             bool was_running = false;
+            bool should_notify = false;
             {
                 std::unique_lock<std::mutex> lk(m_mtx);
                 while (m_state == State::starting) {
                     m_cv.wait(lk);
                 }
-                was_running = m_state == State::running && is_running_locked();
+                was_running = m_runner && is_running_locked();
                 m_state = State::starting;
             }
             std::unique_ptr<RunnerT> new_runner;
@@ -546,12 +559,17 @@ namespace time_shield {
                 new_runner = build_runner_locked();
                 if (!new_runner) {
                     m_state = was_running ? State::running : State::stopped;
-                    m_cv.notify_all();
-                    return false;
+                    should_notify = true;
                 }
                 interval = m_interval;
                 measure_immediately = m_measure_immediately;
                 old_runner = std::move(m_runner);
+            }
+            if (!new_runner) {
+                if (should_notify) {
+                    m_cv.notify_all();
+                }
+                return false;
             }
 
             if (old_runner) {
@@ -590,7 +608,10 @@ namespace time_shield {
                     m_state = State::stopped;
                 }
             }
-            m_cv.notify_all();
+            should_notify = true;
+            if (should_notify) {
+                m_cv.notify_all();
+            }
             return is_ok;
         }
 

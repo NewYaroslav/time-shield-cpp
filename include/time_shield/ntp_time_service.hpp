@@ -179,7 +179,7 @@ namespace time_shield {
         };
 #endif // _TIME_SHIELD_TEST_FAKE_NTP
 
-#ifndef _TIME_SHIELD_CPP17
+#ifndef TIME_SHIELD_CPP17
 #if defined(TIME_SHIELD_TEST_FAKE_NTP)
         using RunnerAlias = detail::FakeNtpRunner;
 #else
@@ -542,7 +542,7 @@ namespace time_shield {
     inline NtpTimeServiceT<RunnerT> NtpTimeServiceT<RunnerT>::m_instance{};
 #endif
 
-#ifndef _TIME_SHIELD_CPP17
+#ifndef TIME_SHIELD_CPP17
 namespace detail {
 #if defined(TIME_SHIELD_NTP_TIME_SERVICE_DEFINE)
     NtpTimeServiceT<RunnerAlias> g_ntp_time_service;

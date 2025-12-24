@@ -595,10 +595,7 @@ namespace time_shield {
                     m_state = State::stopped;
                 }
             }
-            should_notify = true;
-            if (should_notify) {
-                m_cv.notify_all();
-            }
+            m_cv.notify_all();
             return is_ok;
         }
 

@@ -15,6 +15,7 @@
 #include <chrono>
 #include <condition_variable>
 #include <cstdint>
+#include <cstdlib>
 #include <memory>
 #include <mutex>
 #include <thread>
@@ -200,9 +201,33 @@ namespace time_shield {
 #endif
 
         template <class RunnerT>
+        NtpTimeServiceT<RunnerT>*& shutdown_instance_ptr() noexcept {
+            static NtpTimeServiceT<RunnerT>* instance_ptr = nullptr;
+            return instance_ptr;
+        }
+
+        template <class RunnerT>
+        void shutdown_at_exit() noexcept {
+            auto* instance_ptr = shutdown_instance_ptr<RunnerT>();
+            if (!instance_ptr) {
+                return;
+            }
+            try {
+                instance_ptr->shutdown();
+            } catch (...) {
+            }
+        }
+
+        template <class RunnerT>
         struct NtpTimeServiceSingleton final {
             static NtpTimeServiceT<RunnerT>& instance() noexcept {
                 static NtpTimeServiceT<RunnerT>* p_instance = new NtpTimeServiceT<RunnerT>{};
+                static bool is_registered = []() noexcept {
+                    shutdown_instance_ptr<RunnerT>() = p_instance;
+                    std::atexit(&shutdown_at_exit<RunnerT>);
+                    return true;
+                }();
+                (void)is_registered;
                 return *p_instance;
             }
         };
@@ -296,6 +321,7 @@ namespace time_shield {
                 if (has_started && is_ok) {
                     m_runner = std::move(local_runner);
                     m_state = State::running;
+                    m_last_offset_us.store(m_runner->offset_us());
                 } else {
                     m_runner.reset();
                     m_state = State::stopped;
@@ -345,19 +371,17 @@ namespace time_shield {
         /// \brief Return last estimated offset in microseconds.
         /// \return Offset in microseconds (UTC - local realtime).
         int64_t offset_us() noexcept {
-            ensure_started();
             std::lock_guard<std::mutex> lk(m_mtx);
-            if (!m_runner) return 0;
-            return m_runner->offset_us();
+            if (m_runner) {
+                m_last_offset_us.store(m_runner->offset_us());
+            }
+            return m_last_offset_us.load();
         }
 
         /// \brief Return current UTC time in microseconds based on offset.
         /// \return UTC time in microseconds using last offset.
         int64_t utc_time_us() noexcept {
-            ensure_started();
-            std::lock_guard<std::mutex> lk(m_mtx);
-            if (!m_runner) return now_realtime_us();
-            return m_runner->utc_time_us();
+            return now_realtime_us() + offset_us();
         }
 
         /// \brief Return current UTC time in milliseconds based on offset.
@@ -558,6 +582,7 @@ namespace time_shield {
                 if (has_started && is_ok) {
                     m_runner = std::move(new_runner);
                     m_state = State::running;
+                    m_last_offset_us.store(m_runner->offset_us());
                 } else {
                     m_runner.reset();
                     m_state = State::stopped;
@@ -616,6 +641,7 @@ namespace time_shield {
         NtpPoolConfig m_pool_cfg{};
 
         std::unique_ptr<RunnerT> m_runner;
+        std::atomic<int64_t> m_last_offset_us{0};
 
     };
 
@@ -623,6 +649,12 @@ namespace time_shield {
 namespace detail {
     extern "C" TIME_SHIELD_NTP_TIME_SERVICE_API NtpTimeServiceT<RunnerAlias>& ntp_time_service_instance() noexcept {
         static NtpTimeServiceT<RunnerAlias>* p_instance = new NtpTimeServiceT<RunnerAlias>{};
+        static bool is_registered = []() noexcept {
+            shutdown_instance_ptr<RunnerAlias>() = p_instance;
+            std::atexit(&shutdown_at_exit<RunnerAlias>);
+            return true;
+        }();
+        (void)is_registered;
         return *p_instance;
     }
 } // namespace detail

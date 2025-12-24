@@ -15,7 +15,7 @@ int main() {
 
     service.shutdown();
     assert(!service.running());
-    (void)service.utc_time_ms();
+    assert(service.init());
     assert(service.running());
 
     service.shutdown();

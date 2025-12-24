@@ -197,7 +197,9 @@ namespace time_shield {
 #define TIME_SHIELD_NTP_TIME_SERVICE_API
 #endif
 
-        extern "C" TIME_SHIELD_NTP_TIME_SERVICE_API NtpTimeServiceT<RunnerAlias>& ntp_time_service_instance() noexcept;
+        /// \brief Return the process-wide singleton instance from a DLL export.
+        /// \note All modules must use the same configuration macros to keep ABI consistent.
+        extern "C" TIME_SHIELD_NTP_TIME_SERVICE_API NtpTimeServiceT<RunnerAlias>& time_shield_ntp_time_service_instance() noexcept;
 #endif
 
         template <class RunnerT>
@@ -236,7 +238,7 @@ namespace time_shield {
         template <>
         struct NtpTimeServiceSingleton<RunnerAlias> final {
             static NtpTimeServiceT<RunnerAlias>& instance() noexcept {
-                return ntp_time_service_instance();
+                return time_shield_ntp_time_service_instance();
             }
         };
 #endif
@@ -261,7 +263,7 @@ namespace time_shield {
         NtpTimeServiceT& operator=(const NtpTimeServiceT&) = delete;
 
         /// \brief Start background measurements using stored interval.
-        /// \return True when background runner started.
+        /// \return True when background runner started and initial measurement succeeded.
         bool init() {
             return init(m_interval, m_measure_immediately);
         }
@@ -445,7 +447,7 @@ namespace time_shield {
                 return true;
             }
             const int64_t age = now_realtime_us() - last;
-            return age > max_age.count() * 1000;
+            return age > static_cast<int64_t>(max_age.count()) * 1000;
         }
 
         /// \brief Replace server list used for new runner instances.
@@ -647,7 +649,7 @@ namespace time_shield {
 
 #if defined(TIME_SHIELD_NTP_TIME_SERVICE_USE_DLL_SINGLETON) && defined(TIME_SHIELD_NTP_TIME_SERVICE_DLL_IMPLEMENTATION)
 namespace detail {
-    extern "C" TIME_SHIELD_NTP_TIME_SERVICE_API NtpTimeServiceT<RunnerAlias>& ntp_time_service_instance() noexcept {
+    extern "C" TIME_SHIELD_NTP_TIME_SERVICE_API NtpTimeServiceT<RunnerAlias>& time_shield_ntp_time_service_instance() noexcept {
         static NtpTimeServiceT<RunnerAlias>* p_instance = new NtpTimeServiceT<RunnerAlias>{};
         static bool is_registered = []() noexcept {
             shutdown_instance_ptr<RunnerAlias>() = p_instance;
@@ -785,6 +787,6 @@ namespace time_shield {
     };
 } // namespace time_shield
 
-#endif // _TIME_SHIELD_ENABLE_NTP_CLIENT
+#endif // TIME_SHIELD_ENABLE_NTP_CLIENT
 
 #endif // _TIME_SHIELD_NTP_TIME_SERVICE_HPP_INCLUDED

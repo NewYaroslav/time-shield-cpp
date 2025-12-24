@@ -179,15 +179,42 @@ namespace time_shield {
         };
 #endif // _TIME_SHIELD_TEST_FAKE_NTP
 
-#ifndef TIME_SHIELD_CPP17
 #if defined(TIME_SHIELD_TEST_FAKE_NTP)
         using RunnerAlias = detail::FakeNtpRunner;
 #else
         using RunnerAlias = NtpClientPoolRunner;
 #endif
 
-        extern NtpTimeServiceT<RunnerAlias> g_ntp_time_service;
-#endif // !TIME_SHIELD_CPP17
+#if defined(TIME_SHIELD_NTP_TIME_SERVICE_USE_DLL_SINGLETON)
+#if defined(_WIN32) || defined(__CYGWIN__)
+#ifdef TIME_SHIELD_NTP_TIME_SERVICE_DLL_EXPORTS
+#define TIME_SHIELD_NTP_TIME_SERVICE_API __declspec(dllexport)
+#else
+#define TIME_SHIELD_NTP_TIME_SERVICE_API __declspec(dllimport)
+#endif
+#else
+#define TIME_SHIELD_NTP_TIME_SERVICE_API
+#endif
+
+        extern "C" TIME_SHIELD_NTP_TIME_SERVICE_API NtpTimeServiceT<RunnerAlias>& ntp_time_service_instance() noexcept;
+#endif
+
+        template <class RunnerT>
+        struct NtpTimeServiceSingleton final {
+            static NtpTimeServiceT<RunnerT>& instance() noexcept {
+                static NtpTimeServiceT<RunnerT>* p_instance = new NtpTimeServiceT<RunnerT>{};
+                return *p_instance;
+            }
+        };
+
+#if defined(TIME_SHIELD_NTP_TIME_SERVICE_USE_DLL_SINGLETON)
+        template <>
+        struct NtpTimeServiceSingleton<RunnerAlias> final {
+            static NtpTimeServiceT<RunnerAlias>& instance() noexcept {
+                return ntp_time_service_instance();
+            }
+        };
+#endif
     } // namespace detail
 
     /// \ingroup ntp
@@ -202,11 +229,7 @@ namespace time_shield {
         /// \brief Return the singleton instance.
         /// \return Singleton instance.
         static NtpTimeServiceT& instance() noexcept {
-#ifdef TIME_SHIELD_CPP17
-            return m_instance;
-#else
-            return detail::g_ntp_time_service;
-#endif
+            return detail::NtpTimeServiceSingleton<RunnerT>::instance();
         }
 
         NtpTimeServiceT(const NtpTimeServiceT&) = delete;
@@ -532,21 +555,14 @@ namespace time_shield {
 
         std::unique_ptr<RunnerT> m_runner;
 
-#ifdef TIME_SHIELD_CPP17
-        static NtpTimeServiceT m_instance;
-#endif
     };
 
-#ifdef TIME_SHIELD_CPP17
-    template <class RunnerT>
-    inline NtpTimeServiceT<RunnerT> NtpTimeServiceT<RunnerT>::m_instance{};
-#endif
-
-#ifndef TIME_SHIELD_CPP17
+#if defined(TIME_SHIELD_NTP_TIME_SERVICE_USE_DLL_SINGLETON) && defined(TIME_SHIELD_NTP_TIME_SERVICE_DLL_IMPLEMENTATION)
 namespace detail {
-#if defined(TIME_SHIELD_NTP_TIME_SERVICE_DEFINE)
-    NtpTimeServiceT<RunnerAlias> g_ntp_time_service;
-#endif
+    extern "C" TIME_SHIELD_NTP_TIME_SERVICE_API NtpTimeServiceT<RunnerAlias>& ntp_time_service_instance() noexcept {
+        static NtpTimeServiceT<RunnerAlias>* p_instance = new NtpTimeServiceT<RunnerAlias>{};
+        return *p_instance;
+    }
 } // namespace detail
 #endif
 

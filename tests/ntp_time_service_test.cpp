@@ -2,7 +2,6 @@
 
 #if TIME_SHIELD_ENABLE_NTP_CLIENT
 #define TIME_SHIELD_TEST_FAKE_NTP
-#define TIME_SHIELD_NTP_TIME_SERVICE_DEFINE
 #include <time_shield/ntp_time_service.hpp>
 
 #include <cassert>

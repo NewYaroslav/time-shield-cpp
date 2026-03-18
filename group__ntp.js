@@ -83,7 +83,7 @@ var group__ntp =
       [ "sample_servers", "structtime__shield_1_1NtpPoolConfig.html#af669f7df5c819a41ffb04ed521d4c82a", null ],
       [ "smoothing_alpha", "structtime__shield_1_1NtpPoolConfig.html#af4e9f83fd5baa37cab2549a5eed3d4a6", null ]
     ] ],
-    [ "time_shield::NtpClientPoolT< ClientT >", "classtime__shield_1_1NtpClientPoolT.html", [
+    [ "time_shield::NtpClientPoolT&lt; ClientT &gt;", "classtime__shield_1_1NtpClientPoolT.html", [
       [ "ServerState", "structtime__shield_1_1NtpClientPoolT_1_1ServerState.html", [
         [ "backoff", "structtime__shield_1_1NtpClientPoolT_1_1ServerState.html#ae3a8b33098e85efa052753a506a58cf6", null ],
         [ "cfg", "structtime__shield_1_1NtpClientPoolT_1_1ServerState.html#a357b6d6e91515792d85b02e31d5b4cc2", null ],
@@ -129,7 +129,7 @@ var group__ntp =
       [ "m_rng", "classtime__shield_1_1NtpClientPoolT.html#aa2a36afc59442bcc3eaf0d9b3e9bc29d", null ],
       [ "m_servers", "classtime__shield_1_1NtpClientPoolT.html#a9255b2b696a33a6cdde68f69c6797347", null ]
     ] ],
-    [ "time_shield::BasicPoolRunner< PoolT >", "classtime__shield_1_1BasicPoolRunner.html", [
+    [ "time_shield::BasicPoolRunner&lt; PoolT &gt;", "classtime__shield_1_1BasicPoolRunner.html", [
       [ "BasicPoolRunner", "classtime__shield_1_1BasicPoolRunner.html#aaf63841c1d0dd73110cd1233129b8706", null ],
       [ "~BasicPoolRunner", "classtime__shield_1_1BasicPoolRunner.html#a226548e89fa1fef571c4d6ea87393437", null ],
       [ "do_measure", "classtime__shield_1_1BasicPoolRunner.html#af3bf4c339a611ae8a7ffbc0581527bda", null ],
@@ -164,7 +164,7 @@ var group__ntp =
       [ "m_pool_mtx", "classtime__shield_1_1BasicPoolRunner.html#aa03206618f4509b869b1fcb2b7223bfe", null ],
       [ "m_thread", "classtime__shield_1_1BasicPoolRunner.html#afef2ed9c35bd4e7c644cac69a46e298d", null ]
     ] ],
-    [ "time_shield::NtpTimeServiceT< RunnerT >", "classtime__shield_1_1NtpTimeServiceT.html", [
+    [ "time_shield::NtpTimeServiceT&lt; RunnerT &gt;", "classtime__shield_1_1NtpTimeServiceT.html", [
       [ "NtpTimeServiceT", "classtime__shield_1_1NtpTimeServiceT.html#a12fcd3e64555a177a8d51391c20d6262", null ],
       [ "NtpTimeServiceT", "classtime__shield_1_1NtpTimeServiceT.html#a12b6176dcb5e8582c77d85ad53fafc65", null ],
       [ "~NtpTimeServiceT", "classtime__shield_1_1NtpTimeServiceT.html#a3561120bf76a7e5982c5063f12808a9b", null ],

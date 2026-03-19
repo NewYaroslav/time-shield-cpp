@@ -31,3 +31,6 @@
 *.out
 *.app
 *.ex5
+
+# Local agent preferences
+agents/local-machine-settings.json

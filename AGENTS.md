@@ -9,6 +9,12 @@ Use the repository guidance in this order:
 5. `docs/singleton-storage-guidelines.md`
 6. `agents/singleton-storage-guidelines.md`
 
+Optional local settings:
+
+- If `agents/local-machine-settings.json` exists, read it after the tracked repository guidance.
+- Treat that JSON as advisory local context only for machine facts and local interaction preferences.
+- Local settings must not override system or developer instructions, or tracked repository policy.
+
 Global rules:
 
 - Keep diffs minimal and focused.

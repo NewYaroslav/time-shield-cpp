@@ -14,6 +14,7 @@
 #include <atomic>
 #include <chrono>
 #include <condition_variable>
+#include <cstdlib>
 #include <cstdint>
 #include <memory>
 #include <mutex>
@@ -27,6 +28,12 @@ namespace time_shield {
     class NtpTimeServiceT;
 
     namespace detail {
+        template <class RunnerT>
+        struct NtpTimeServiceSingleton;
+
+        template <class RunnerT>
+        struct NtpTimeServiceTestAccess;
+
 #ifdef TIME_SHIELD_TEST_FAKE_NTP
         /// \brief Fake runner for tests without network access.
         class FakeNtpRunner {
@@ -178,16 +185,6 @@ namespace time_shield {
             std::atomic<int64_t> m_offset_us{0};
         };
 #endif // _TIME_SHIELD_TEST_FAKE_NTP
-
-#ifndef TIME_SHIELD_CPP17
-#if defined(TIME_SHIELD_TEST_FAKE_NTP)
-        using RunnerAlias = detail::FakeNtpRunner;
-#else
-        using RunnerAlias = NtpClientPoolRunner;
-#endif
-
-        extern NtpTimeServiceT<RunnerAlias> g_ntp_time_service;
-#endif // !TIME_SHIELD_CPP17
     } // namespace detail
 
     /// \ingroup ntp
@@ -195,18 +192,19 @@ namespace time_shield {
     ///
     /// Uses an internal runner to keep offset updated. It exposes UTC time
     /// computed as realtime clock plus the latest offset. Configure pool
-    /// servers and sampling before starting the service.
+    /// servers and sampling before starting the service. During process
+    /// shutdown, the singleton stops background work and falls back to the
+    /// last cached offset without restarting the runner.
     template <class RunnerT>
     class NtpTimeServiceT {
+        friend struct detail::NtpTimeServiceSingleton<RunnerT>;
+        friend struct detail::NtpTimeServiceTestAccess<RunnerT>;
+
     public:
         /// \brief Return the singleton instance.
         /// \return Singleton instance.
         static NtpTimeServiceT& instance() noexcept {
-#ifdef TIME_SHIELD_CPP17
-            return m_instance;
-#else
-            return detail::g_ntp_time_service;
-#endif
+            return detail::NtpTimeServiceSingleton<RunnerT>::instance();
         }
 
         NtpTimeServiceT(const NtpTimeServiceT&) = delete;
@@ -223,50 +221,97 @@ namespace time_shield {
         /// \param measure_immediately Measure before first sleep if true.
         /// \return True when background runner started.
         bool init(std::chrono::milliseconds interval, bool measure_immediately = true) {
+            if (is_process_shutting_down()) {
+                return false;
+            }
+
             std::unique_ptr<RunnerT> local_runner;
+            std::chrono::milliseconds start_interval = interval;
+            bool use_measure_immediately = measure_immediately;
             {
-                std::lock_guard<std::mutex> lk(m_mtx);
-                if (is_running_locked()) {
+                std::unique_lock<std::mutex> lk(m_mtx);
+                while (is_transitioning_locked()) {
+                    m_cv.wait(lk);
+                }
+                if (is_process_shutting_down_locked()) {
+                    return false;
+                }
+                if (m_state == State::running && is_running_locked()) {
                     return true;
                 }
-                if (interval.count() <= 0) {
-                    interval = std::chrono::milliseconds(1);
+                if (start_interval.count() <= 0) {
+                    start_interval = std::chrono::milliseconds(1);
                 }
-                m_interval = interval;
-                m_measure_immediately = measure_immediately;
+                m_interval = start_interval;
+                m_measure_immediately = use_measure_immediately;
+                m_state = State::starting;
 
                 local_runner = build_runner_locked();
                 if (!local_runner) {
+                    m_state = State::stopped;
+                    lk.unlock();
+                    m_cv.notify_all();
                     return false;
                 }
             }
 
-            if (!local_runner->start(m_interval, m_measure_immediately)) {
-                return false;
-            }
-
+            bool has_started = false;
             bool is_ok = false;
             try {
-                is_ok = local_runner->measure_now();
+                has_started = local_runner->start(start_interval, use_measure_immediately);
+                if (has_started) {
+                    is_ok = local_runner->measure_now();
+                }
             } catch (...) {
                 is_ok = false;
             }
 
+            if (!has_started || !is_ok || is_process_shutting_down()) {
+                try {
+                    if (has_started) {
+                        local_runner->stop();
+                    }
+                } catch (...) {
+                    // no-throw
+                }
+                local_runner.reset();
+            }
+
             {
                 std::lock_guard<std::mutex> lk(m_mtx);
-                m_runner = std::move(local_runner);
+                if (local_runner) {
+                    m_last_offset_us.store(local_runner->offset_us(), std::memory_order_relaxed);
+                    m_runner = std::move(local_runner);
+                    m_state = State::running;
+                } else {
+                    m_runner.reset();
+                    m_state = State::stopped;
+                }
             }
+            m_cv.notify_all();
             return is_ok;
+        }
+
+        /// \brief Start background measurements using milliseconds.
+        /// \param interval_ms Measurement interval in milliseconds.
+        /// \param measure_immediately Measure before first sleep if true.
+        /// \return True when background runner started.
+        bool init(int interval_ms, bool measure_immediately = true) {
+            return init(std::chrono::milliseconds(interval_ms), measure_immediately);
         }
 
         /// \brief Stop background measurements and release resources.
         void shutdown() {
             std::unique_ptr<RunnerT> local_runner;
             {
-                std::lock_guard<std::mutex> lk(m_mtx);
-                if (!m_runner) {
+                std::unique_lock<std::mutex> lk(m_mtx);
+                while (is_transitioning_locked()) {
+                    m_cv.wait(lk);
+                }
+                if (m_state == State::stopped || !m_runner) {
                     return;
                 }
+                m_state = State::stopping;
                 local_runner = std::move(m_runner);
             }
             try {
@@ -274,17 +319,25 @@ namespace time_shield {
             } catch (...) {
                 // no-throw
             }
+            {
+                std::lock_guard<std::mutex> lk(m_mtx);
+                m_state = State::stopped;
+            }
+            m_cv.notify_all();
         }
 
         /// \brief Return true when background runner is active.
         /// \return True when background runner is active.
         bool running() const noexcept {
             std::lock_guard<std::mutex> lk(m_mtx);
-            return is_running_locked();
+            return m_state == State::running && is_running_locked();
         }
 
         /// \brief Ensure background runner is started with current config.
         void ensure_started() noexcept {
+            if (is_process_shutting_down()) {
+                return;
+            }
             if (running()) {
                 return;
             }
@@ -292,20 +345,33 @@ namespace time_shield {
         }
 
         /// \brief Return last estimated offset in microseconds.
+        /// \note During process shutdown, returns the last cached offset without
+        ///       restarting the background runner.
         /// \return Offset in microseconds (UTC - local realtime).
         int64_t offset_us() noexcept {
+            if (is_process_shutting_down()) {
+                return m_last_offset_us.load(std::memory_order_relaxed);
+            }
             ensure_started();
             std::lock_guard<std::mutex> lk(m_mtx);
             if (!m_runner) return 0;
-            return m_runner->offset_us();
+            const int64_t offset = m_runner->offset_us();
+            m_last_offset_us.store(offset, std::memory_order_relaxed);
+            return offset;
         }
 
         /// \brief Return current UTC time in microseconds based on offset.
+        /// \note During process shutdown, returns realtime plus the last cached
+        ///       offset without restarting the background runner.
         /// \return UTC time in microseconds using last offset.
         int64_t utc_time_us() noexcept {
+            if (is_process_shutting_down()) {
+                return now_realtime_us() + m_last_offset_us.load(std::memory_order_relaxed);
+            }
             ensure_started();
             std::lock_guard<std::mutex> lk(m_mtx);
             if (!m_runner) return now_realtime_us();
+            m_last_offset_us.store(m_runner->offset_us(), std::memory_order_relaxed);
             return m_runner->utc_time_us();
         }
 
@@ -370,7 +436,14 @@ namespace time_shield {
                 return true;
             }
             const int64_t age = now_realtime_us() - last;
-            return age > max_age.count() * 1000;
+            return age > static_cast<int64_t>(max_age.count()) * 1000;
+        }
+
+        /// \brief Return true when last measurement is older than max_age_ms.
+        /// \param max_age_ms Maximum allowed age in milliseconds.
+        /// \return True when last measurement age exceeds max_age_ms.
+        bool stale(int max_age_ms) const noexcept {
+            return stale(std::chrono::milliseconds(max_age_ms));
         }
 
         /// \brief Replace server list used for new runner instances.
@@ -378,7 +451,7 @@ namespace time_shield {
         /// \return False when service is already running.
         bool set_servers(std::vector<NtpServerConfig> servers) {
             std::lock_guard<std::mutex> lk(m_mtx);
-            if (is_running_locked()) {
+            if (!is_reconfigurable_locked()) {
                 return false;
             }
             m_has_custom_servers = true;
@@ -390,7 +463,7 @@ namespace time_shield {
         /// \return False when service is already running.
         bool set_default_servers() {
             std::lock_guard<std::mutex> lk(m_mtx);
-            if (is_running_locked()) {
+            if (!is_reconfigurable_locked()) {
                 return false;
             }
             m_has_custom_servers = true;
@@ -402,7 +475,7 @@ namespace time_shield {
         /// \return False when service is already running.
         bool clear_servers() {
             std::lock_guard<std::mutex> lk(m_mtx);
-            if (is_running_locked()) {
+            if (!is_reconfigurable_locked()) {
                 return false;
             }
             m_has_custom_servers = false;
@@ -415,7 +488,7 @@ namespace time_shield {
         /// \return False when service is already running.
         bool set_pool_config(NtpPoolConfig cfg) {
             std::lock_guard<std::mutex> lk(m_mtx);
-            if (is_running_locked()) {
+            if (!is_reconfigurable_locked()) {
                 return false;
             }
             m_has_custom_pool_cfg = true;
@@ -443,22 +516,36 @@ namespace time_shield {
 
         /// \brief Construct service.
         NtpTimeServiceT() = default;
-        /// \brief Stop background runner on destruction.
-        ~NtpTimeServiceT() {
-            shutdown();
-        }
+        /// \brief Immortal singleton is stopped via process-shutdown handler.
+        ~NtpTimeServiceT() = default;
 
         /// \brief Apply current config by rebuilding the runner.
         /// \return True when runner restarted successfully.
         bool apply_config_now() {
+            if (is_process_shutting_down()) {
+                return false;
+            }
+
             std::unique_ptr<RunnerT> new_runner;
             std::unique_ptr<RunnerT> old_runner;
             std::chrono::milliseconds interval;
             bool measure_immediately = true;
+            bool was_running = false;
             {
-                std::lock_guard<std::mutex> lk(m_mtx);
+                std::unique_lock<std::mutex> lk(m_mtx);
+                while (is_transitioning_locked()) {
+                    m_cv.wait(lk);
+                }
+                if (is_process_shutting_down_locked()) {
+                    return false;
+                }
+                was_running = m_state == State::running && is_running_locked();
+                m_state = State::starting;
                 new_runner = build_runner_locked();
                 if (!new_runner) {
+                    m_state = was_running ? State::running : State::stopped;
+                    lk.unlock();
+                    m_cv.notify_all();
                     return false;
                 }
                 interval = m_interval;
@@ -473,28 +560,127 @@ namespace time_shield {
                 }
             }
 
-            if (!new_runner->start(interval, measure_immediately)) {
-                return false;
-            }
-
+            bool has_started = false;
             bool is_ok = false;
             try {
-                is_ok = new_runner->measure_now();
+                has_started = new_runner->start(interval, measure_immediately);
+                if (has_started) {
+                    is_ok = new_runner->measure_now();
+                }
             } catch (...) {
                 is_ok = false;
             }
 
+            if (!has_started || !is_ok || is_process_shutting_down()) {
+                try {
+                    if (has_started) {
+                        new_runner->stop();
+                    }
+                } catch (...) {
+                    // no-throw
+                }
+                new_runner.reset();
+            }
+
             {
                 std::lock_guard<std::mutex> lk(m_mtx);
-                m_runner = std::move(new_runner);
+                if (new_runner) {
+                    m_last_offset_us.store(new_runner->offset_us(), std::memory_order_relaxed);
+                    m_runner = std::move(new_runner);
+                    m_state = State::running;
+                } else {
+                    m_runner.reset();
+                    m_state = State::stopped;
+                }
             }
+            m_cv.notify_all();
             return is_ok;
         }
 
     private:
+        /// \brief Global lifetime state of the immortal singleton.
+        enum class ProcessState : uint8_t {
+            alive,
+            shutting_down
+        };
+
+        /// \brief Lifecycle state of the singleton runner.
+        enum class State : uint8_t {
+            stopped,
+            starting,
+            running,
+            stopping
+        };
+
+        /// \brief Register one process-shutdown handler for this specialization.
+        void register_process_shutdown_handler() noexcept {
+            if (std::atexit(&detail::NtpTimeServiceSingleton<RunnerT>::handle_process_exit) == 0) {
+                m_atexit_registration_count.fetch_add(1, std::memory_order_relaxed);
+            }
+        }
+
+        /// \brief Mark the singleton as shutting down and stop the runner.
+        void begin_process_shutdown() noexcept {
+            m_process_state.store(ProcessState::shutting_down, std::memory_order_release);
+
+            std::unique_ptr<RunnerT> local_runner;
+            {
+                std::unique_lock<std::mutex> lk(m_mtx);
+                while (is_transitioning_locked()) {
+                    m_cv.wait(lk);
+                }
+                if (m_runner) {
+                    m_last_offset_us.store(m_runner->offset_us(), std::memory_order_relaxed);
+                    m_state = State::stopping;
+                    local_runner = std::move(m_runner);
+                } else {
+                    m_state = State::stopped;
+                }
+            }
+
+            if (local_runner) {
+                try {
+                    local_runner->stop();
+                } catch (...) {
+                    // no-throw
+                }
+            }
+
+            {
+                std::lock_guard<std::mutex> lk(m_mtx);
+                m_state = State::stopped;
+            }
+            m_cv.notify_all();
+        }
+
+        /// \brief Return true when process shutdown has started.
+        bool is_process_shutting_down() const noexcept {
+            return m_process_state.load(std::memory_order_acquire) == ProcessState::shutting_down;
+        }
+
+        /// \brief Return true when process shutdown has started.
+        bool is_process_shutting_down_locked() const noexcept {
+            return is_process_shutting_down();
+        }
+
+        /// \brief Return number of successful atexit registrations.
+        uint32_t atexit_registration_count() const noexcept {
+            return m_atexit_registration_count.load(std::memory_order_relaxed);
+        }
+
         /// \brief Check runner status under lock.
         bool is_running_locked() const noexcept {
             return m_runner && m_runner->running();
+        }
+
+        /// \brief Return true when a start or stop transition is in progress.
+        bool is_transitioning_locked() const noexcept {
+            return m_state == State::starting || m_state == State::stopping;
+        }
+
+        /// \brief Return true when configuration can be changed safely.
+        bool is_reconfigurable_locked() const noexcept {
+            return !is_process_shutting_down_locked() && m_state == State::stopped && !m_runner;
         }
 
         /// \brief Build a runner with current server list and pool config.
@@ -521,6 +707,11 @@ namespace time_shield {
 
     private:
         mutable std::mutex m_mtx;
+        std::condition_variable m_cv;
+        State m_state{State::stopped};
+        std::atomic<ProcessState> m_process_state{ProcessState::alive};
+        std::atomic<int64_t> m_last_offset_us{0};
+        std::atomic<uint32_t> m_atexit_registration_count{0};
         std::chrono::milliseconds m_interval{std::chrono::seconds(30)};
         bool m_measure_immediately{true};
 
@@ -531,24 +722,40 @@ namespace time_shield {
         NtpPoolConfig m_pool_cfg{};
 
         std::unique_ptr<RunnerT> m_runner;
-
-#ifdef TIME_SHIELD_CPP17
-        static NtpTimeServiceT m_instance;
-#endif
     };
 
-#ifdef TIME_SHIELD_CPP17
-    template <class RunnerT>
-    inline NtpTimeServiceT<RunnerT> NtpTimeServiceT<RunnerT>::m_instance{};
-#endif
+    namespace detail {
+        template <class RunnerT>
+        struct NtpTimeServiceSingleton final {
+            static NtpTimeServiceT<RunnerT>& instance() noexcept {
+                static NtpTimeServiceT<RunnerT>* p_instance = []() noexcept {
+                    NtpTimeServiceT<RunnerT>* p_service = new NtpTimeServiceT<RunnerT>{};
+                    p_service->register_process_shutdown_handler();
+                    return p_service;
+                }();
+                return *p_instance;
+            }
 
-#ifndef TIME_SHIELD_CPP17
-namespace detail {
-#if defined(TIME_SHIELD_NTP_TIME_SERVICE_DEFINE)
-    NtpTimeServiceT<RunnerAlias> g_ntp_time_service;
-#endif
-} // namespace detail
-#endif
+            static void handle_process_exit() noexcept {
+                instance().begin_process_shutdown();
+            }
+        };
+
+        template <class RunnerT>
+        struct NtpTimeServiceTestAccess final {
+            static void begin_process_shutdown() noexcept {
+                NtpTimeServiceSingleton<RunnerT>::instance().begin_process_shutdown();
+            }
+
+            static bool is_process_shutting_down() noexcept {
+                return NtpTimeServiceSingleton<RunnerT>::instance().is_process_shutting_down();
+            }
+
+            static uint32_t atexit_registration_count() noexcept {
+                return NtpTimeServiceSingleton<RunnerT>::instance().atexit_registration_count();
+            }
+        };
+    } // namespace detail
 
 #if defined(TIME_SHIELD_TEST_FAKE_NTP)
     /// \ingroup ntp
@@ -657,6 +864,14 @@ namespace ntp {
     /// \return True when last measurement age exceeds max_age.
     inline bool stale(std::chrono::milliseconds max_age) noexcept {
         return NtpTimeService::instance().stale(max_age);
+    }
+
+    /// \ingroup ntp
+    /// \brief Return true when last measurement is older than max_age_ms.
+    /// \param max_age_ms Maximum allowed age in milliseconds.
+    /// \return True when last measurement age exceeds max_age_ms.
+    inline bool stale(int max_age_ms) noexcept {
+        return NtpTimeService::instance().stale(max_age_ms);
     }
 
 } // namespace ntp

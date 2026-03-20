@@ -144,16 +144,21 @@ custom formats, ISO8601, and other standardized formats.
 /*!
 \defgroup time_zone_conversions Time Zone Conversions
 \ingroup time_conversions
-\brief Helpers for converting regional time zones to GMT.
+\brief Helpers for converting supported regional time zones and UTC.
 
-These functions convert Central and Eastern European Time to Greenwich
-Mean Time. Daylight saving time rules before and after 2002 are taken
-into account, so conversions are accurate for legacy timestamps as well.
+These helpers cover:
+- DST-aware European civil time (`WET`, `CET`, `EET`) with the existing rule set,
+- DST-aware US civil time (`ET`, `CT`),
+- fixed-offset trading-oriented zones such as `IST`, `MYT`, `WIB`, `WITA`,
+  `WIT`, `KZT`, `TRT`, `BYT`, `SGT`, `ICT`, `PHT`, `GST`, `HKT`, `JST`, and
+  `KST`,
+- generic `zone_to_gmt`, `gmt_to_zone`, and `convert_time_zone` entry points.
 
 ### Example Usage:
 ```cpp
-ts_t cet_ts = time_shield::to_ts(2024, Month::JUN, 21, 12, 0, 0);
-ts_t gmt_ts = time_shield::cet_to_gmt(cet_ts);
+ts_t gmt_ts = time_shield::to_ts(2024, Month::JUN, 21, 12, 0, 0);
+ts_t ist_ts = time_shield::gmt_to_ist(gmt_ts);
+ts_t myt_ts = time_shield::convert_time_zone(ist_ts, time_shield::IST, time_shield::MYT);
 ```
 */
 

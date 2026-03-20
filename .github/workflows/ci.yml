@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        std: [11, 17]
+        std: [11, 14, 17]
     steps:
       - uses: actions/checkout@v4
       - name: Configure
@@ -47,7 +47,7 @@ jobs:
     runs-on: windows-latest
     strategy:
       matrix:
-        std: [11, 17]
+        std: [11, 14, 17]
     steps:
       - uses: actions/checkout@v4
       - name: Configure
@@ -86,7 +86,7 @@ jobs:
     runs-on: macos-latest
     strategy:
       matrix:
-        std: [11, 17]
+        std: [11, 14, 17]
     steps:
       - uses: actions/checkout@v4
       - name: Configure

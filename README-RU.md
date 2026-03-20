@@ -50,7 +50,7 @@ bool monday = is_workday(now);
 - **ISO week date** — конвертация, форматирование и парсинг ISO 8601 для недельного счёта.
 - **Астрономические утилиты** — расчёт Julian Date/MJD/JDN и оценка лунной фазы/возраста по Unix‑времени.
 - **Утилиты** — получение текущих меток времени, вычисления начала/конца периодов, работа с частями секунды.
-- **Преобразование часовых поясов** — функции для CET/EET/ET/CT в GMT.
+- **Преобразование часовых поясов** — функции для европейских, американских и популярных Asia/EMEA trading-зон, а также универсальная zone-to-zone конвертация.
 - **NTP‑клиент и пул** — одиночные запросы и конфигурируемый пул/раннер/сервис с возможностью офлайн‑тестов (Windows и Unix).
 - **Поддержка MQL5** — адаптированные заголовки в каталоге `MQL5` позволяют использовать библиотеку в MetaTrader.
 - Совместимость с `C++11` – `C++17`.
@@ -71,6 +71,8 @@ bool monday = is_workday(now);
 
 - `ts_t` — Unix-время в секундах (signed 64-bit). Представляет целые секунды.
 - `ts_ms_t` / `ts_us_t` — Unix-время в милли/микросекундах (signed 64-bit).
+- `monotonic_sec()` / `monotonic_ms()` / `monotonic_us()` — монотонные process-local счётчики для
+  интервалов и дедлайнов, а не UTC timestamps.
 - `fts_t` — Unix-время в секундах как `double`. Точность дробной части зависит от
   величины значения; около современной эпохи обычно сохраняет микросекунды, на
   очень больших |ts| младшие разряды могут теряться.
@@ -94,6 +96,15 @@ bool monday = is_workday(now);
 
 Примеры можно собрать скриптом `build-examples.bat`. Для установки файлов MQL5 предусмотрен `install_mql5.bat`.
 
+### Заметки по интеграции
+
+- `time_shield::time_shield` является header-only target и может одновременно использоваться из нескольких статических библиотек в одной программе.
+- `NtpTimeService` является header-only и поддерживает стандарты `C++11`/`C++14`/`C++17`.
+- На Windows при `TIME_SHIELD_ENABLE_NTP_CLIENT=ON` экспортируемый CMake target транзитивно подтягивает требуемую socket library.
+- При ручной интеграции без CMake target платформенную socket library нужно добавить самостоятельно.
+
+Подробности см. в [docs/library-integration-guidelines-RU.md](docs/library-integration-guidelines-RU.md).
+
 ## Примеры использования
 
 Ниже приведены небольшие примеры из разделов библиотеки.
@@ -108,7 +119,13 @@ using namespace time_shield;
 ts_t now = ts();                 // секунды с эпохи
 fts_t now_f = fts();             // время в секундах с дробной частью
 int ms_part = ms_of_sec(now_f);  // миллисекундная часть
+ts_t mono_sec = monotonic_sec(); // монотонные process-local секунды
+ts_ms_t mono = monotonic_ms();   // монотонные process-local миллисекунды
 ```
+
+Используйте `now()` / `ts_ms()` / `ts_us()` для wall-clock меток времени.
+Используйте `monotonic_sec()` / `monotonic_ms()` / `monotonic_us()` для
+измерения интервалов, дедлайнов и timeout-логики.
 
 ### Форматирование дат
 
@@ -216,9 +233,17 @@ bool is_new = calculator.is_new_moon_window(ts); // по умолчанию ок
 ```cpp
 #include <time_shield.hpp>
 
-ts_t cet = to_ts(2024, Month::JUN, 21, 12, 0, 0);
-ts_t gmt = cet_to_gmt(cet);
+ts_t gmt = to_ts(2024, Month::JUN, 21, 12, 0, 0);
+ts_t ist = gmt_to_ist(gmt);
+ts_t kyiv = gmt_to_kyiv(gmt);
+ts_t myt = convert_time_zone(ist, TimeZone::IST, TimeZone::MYT);
 ```
+
+Поддерживаются фиксированные зоны `IST`, `MYT`, `WIB`, `WITA`, `WIT`, `KZT`,
+`TRT`, `BYT`, `SGT`, `ICT`, `PHT`, `GST`, `HKT`, `JST` и `KST`. Для
+универсального API в секундах используйте `zone_to_gmt()` / `gmt_to_zone()` /
+`convert_time_zone()`, а для миллисекундных таймстампов —
+`zone_to_gmt_ms()` / `gmt_to_zone_ms()` / `convert_time_zone_ms()`.
 
 ### NTP‑клиент, пул и сервис времени
 
@@ -234,7 +259,7 @@ pool.measure();
 int64_t pool_offset = pool.offset_us();
 
 // Фоновый runner + ленивый сервис через функции-обёртки:
-ntp::init(std::chrono::seconds(30));
+ntp::init(30000); // 30 сек.
 int64_t utc_ms = ntp::utc_time_ms();
 int64_t offset_us = ntp::offset_us();
 int64_t utc_sec = ntp::utc_time_sec();
@@ -242,6 +267,16 @@ bool ok = ntp::last_measure_ok();
 uint64_t attempts = ntp::measure_count();
 ntp::shutdown();
 ```
+
+`NtpTimeService` является header-only и поддерживает стандарты
+`C++11`/`C++14`/`C++17`. Сервис использует immortal singleton, чтобы избежать
+проблем порядка разрушения статических объектов. Во время обычной работы
+геттеры сохраняют ленивый старт. Во время завершения процесса сервис не
+перезапускает background runner и переходит на fallback через realtime и
+последний закешированный offset. В общем случае `C++17+` позволяет
+использовать более простой singleton-storage паттерн через `inline`
+variables. Для `NtpTimeService` публичный способ подключения и вызова
+одинаков в `C++11`/`C++14`/`C++17`.
 
 ## Документация
 

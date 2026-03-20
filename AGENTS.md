@@ -20,6 +20,8 @@ Global rules:
 - Keep diffs minimal and focused.
 - Do not refactor or apply style changes beyond the lines you directly touch.
 - All comments and Doxygen must be in English.
+- Write user-facing docs and Doxygen in declarative present-tense style.
+- Avoid migration-style wording such as `now`, `no longer`, `remains`, `stays`, `previously`, and `currently` unless the section is explicitly changelog, migration, or release-notes content.
 - Commit headers and bodies must be in English.
 - Follow the referenced guidance in order.
 

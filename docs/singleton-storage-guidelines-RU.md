@@ -21,6 +21,7 @@ Agent playbook:
 - как держать один экземпляр сервиса на программу без ODR-проблем
 - когда достаточно `static inline` storage
 - когда в C++11/14 нужен один owning translation unit
+- когда immortal singleton лучше подходит для сервисов, которые должны переживать late teardown
 - как убрать raw storage из публичного API
 - как последовательно именовать макросы для определения storage
 
@@ -53,7 +54,7 @@ private:
 
 ## C++11/14
 
-Полностью header-only хранение singleton storage невозможно без ровно одного owning translation unit (TU).
+Большинство шаблонов хранения singleton в C++11/14 требуют ровно один owning translation unit (TU).
 
 Определяйте storage ровно в одном TU с помощью макроса.
 
@@ -109,6 +110,44 @@ inline Service& Service::instance() noexcept {
 #include "Service.hpp"
 ```
 
+## Исключение для late-teardown-safe сервисов в C++11/14
+
+Когда сервис должен оставаться доступным во время разрушения статических объектов, допустим и header-only immortal singleton.
+
+Типовая форма:
+
+```cpp
+class Service {
+public:
+    static Service& instance() noexcept {
+        static Service* p_instance = create_instance();
+        return *p_instance;
+    }
+
+private:
+    Service() = default;
+
+    static Service* create_instance() noexcept {
+        Service* p_instance = new Service();
+        std::atexit(&begin_process_shutdown);
+        return p_instance;
+    }
+
+    static void begin_process_shutdown() noexcept {
+        instance().stop_without_restarting();
+    }
+};
+```
+
+Используйте эту модель только если одновременно верны все условия:
+
+- сервис должен переживать проблемы порядка разрушения статических объектов
+- утечка одного process-lifetime экземпляра допустима
+- shutdown path явно no-throw
+- поздние вызовы не должны повторно запускать фоновую работу во время завершения процесса
+
+`NtpTimeService` в этом репозитории использует именно такой immortal singleton, а не старую one-TU macro model.
+
 ## Границы ownership
 
 Держите raw storage вне публичного API, размещая его в `detail`.
@@ -142,7 +181,7 @@ inline Service& Service::instance() noexcept {
 
 - уровень стандарта проекта понятен
 - в C++17+ используется `static inline` storage, когда сервис действительно header-owned
-- в C++11/14 storage определяется ровно в одном TU
-- raw storage остаётся в `detail`
+- в C++11/14 storage либо определяется ровно в одном TU, либо осознанно используется immortal singleton для late-teardown-safe поведения
+- raw storage размещается в `detail`
 - макрос именован последовательно по шаблону `*_DEFINE_STORAGE` или `*_IMPLEMENTATION`
 - сценарии ошибок понятны и при необходимости задокументированы

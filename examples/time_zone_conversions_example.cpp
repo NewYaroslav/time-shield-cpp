@@ -1,39 +1,29 @@
 /// \file time_zone_conversions_example.cpp
-/// \brief Demonstrates functions from time_shield::time_zone_conversions.
-///
-/// This example converts CET and EET timestamps to GMT and prints the
-/// human-readable representations.
+/// \brief Demonstrates named and generic time zone conversion helpers.
 
 #include <iostream>
 
-#if defined(_WIN32)
-#include <time_shield/time_zone_conversions.hpp>
 #include <time_shield/time_formatting.hpp>
+#include <time_shield/time_zone_conversions.hpp>
 
 int main() {
     using namespace time_shield;
 
-    // Create a timestamp for 2024-06-21 12:00:00 CET
-    ts_t cet_ts = to_ts(2024, Month::JUN, 21, 12, 0, 0);
-    ts_t gmt_from_cet = cet_to_gmt(cet_ts);
+    // Fixed-offset example: convert GMT to India Standard Time.
+    ts_t gmt = to_timestamp(2024, int(Month::JUN), 21, 12, 0, 0);
+    ts_t ist = gmt_to_ist(gmt);
 
-    // Create a timestamp for 2024-06-21 12:00:00 EET
-    ts_t eet_ts = to_ts(2024, Month::JUN, 21, 12, 0, 0);
-    ts_t gmt_from_eet = eet_to_gmt(eet_ts);
+    // Regional alias example: Kyiv uses the EET/EEST conversion rules.
+    ts_t kyiv = gmt_to_kyiv(gmt);
 
-    std::cout << "CET time: " << to_iso8601(cet_ts) << '\n';
-    std::cout << "GMT from CET: " << to_iso8601(gmt_from_cet) << '\n';
+    // Generic matrix example: convert IST local time directly to Malaysia time.
+    ts_t ist_local = to_timestamp(2024, int(Month::JUN), 21, 17, 30, 0);
+    ts_t myt_local = convert_time_zone(ist_local, TimeZone::IST, TimeZone::MYT);
 
-    std::cout << "EET time: " << to_iso8601(eet_ts) << '\n';
-    std::cout << "GMT from EET: " << to_iso8601(gmt_from_eet) << '\n';
-    
-    std::cout << "Press Enter to exit..." << std::endl;
-    std::cin.get();
+    std::cout << "GMT: " << to_iso8601(gmt) << '\n';
+    std::cout << "IST from GMT: " << to_iso8601(ist) << '\n';
+    std::cout << "Kyiv from GMT: " << to_iso8601(kyiv) << '\n';
+    std::cout << "MYT from IST local: " << to_iso8601(myt_local) << '\n';
+
     return 0;
 }
-#else
-int main() {
-    std::cout << "time_zone_conversions.hpp requires Windows." << std::endl;
-    return 0;
-}
-#endif

@@ -126,6 +126,23 @@ namespace time_shield {
         EEST,   ///< Eastern European Summer Time
         CEST,   ///< Central European Summer Time
         WEST,   ///< Western European Summer Time
+        ET,     ///< US Eastern Time
+        CT,     ///< US Central Time
+        IST,    ///< India Standard Time
+        MYT,    ///< Malaysia Time
+        WIB,    ///< Western Indonesia Time
+        WITA,   ///< Central Indonesia Time
+        WIT,    ///< Eastern Indonesia Time
+        KZT,    ///< Kazakhstan Time
+        TRT,    ///< Turkey Time
+        BYT,    ///< Belarus Time
+        SGT,    ///< Singapore Time
+        ICT,    ///< Indochina Time
+        PHT,    ///< Philippine Time
+        GST,    ///< Gulf Standard Time
+        HKT,    ///< Hong Kong Time
+        JST,    ///< Japan Standard Time
+        KST,    ///< Korea Standard Time
         UNKNOWN ///< Unknown Time Zone
     };
 
@@ -136,15 +153,25 @@ namespace time_shield {
     /// \return A string with the representation of the time zone.
     string to_timezone_str(TimeZone value, FormatType format = UPPERCASE_NAME) {
         static const string uppercase_names[] = {
-            "GMT", "UTC", "EET", "CET", "WET", "EEST", "CEST", "WEST", "UNKNOWN"
+            "GMT", "UTC", "EET", "CET", "WET", "EEST", "CEST", "WEST",
+            "ET", "CT", "IST", "MYT", "WIB", "WITA", "WIT", "KZT", "TRT",
+            "BYT", "SGT", "ICT", "PHT", "GST", "HKT", "JST", "KST", "UNKNOWN"
         };
         static const string short_names[] = {
-            "GMT", "UTC", "EET", "CET", "WET", "EEST", "CEST", "WEST", "Unknown"
+            "GMT", "UTC", "EET", "CET", "WET", "EEST", "CEST", "WEST",
+            "ET", "CT", "IST", "MYT", "WIB", "WITA", "WIT", "KZT", "TRT",
+            "BYT", "SGT", "ICT", "PHT", "GST", "HKT", "JST", "KST", "Unknown"
         };
         static const string full_names[] = {
             "Greenwich Mean Time", "Coordinated Universal Time", "Eastern European Time",
             "Central European Time", "Western European Time", "Eastern European Summer Time",
-            "Central European Summer Time", "Western European Summer Time", "Unknown Time Zone"
+            "Central European Summer Time", "Western European Summer Time",
+            "US Eastern Time", "US Central Time", "India Standard Time",
+            "Malaysia Time", "Western Indonesia Time", "Central Indonesia Time",
+            "Eastern Indonesia Time", "Kazakhstan Time", "Turkey Time",
+            "Belarus Time", "Singapore Time", "Indochina Time",
+            "Philippine Time", "Gulf Standard Time", "Hong Kong Time",
+            "Japan Standard Time", "Korea Standard Time", "Unknown Time Zone"
         };
         switch(format) {
         default:

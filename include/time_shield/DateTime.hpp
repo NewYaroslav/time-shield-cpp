@@ -58,7 +58,7 @@ namespace time_shield {
 
         /// \brief Construct instance for current UTC time.
         /// \param offset Fixed UTC offset in seconds.
-        /// \return DateTime set to now.
+        /// \return DateTime for the current UTC time.
         static DateTime now_utc(tz_t offset = 0) noexcept {
             return DateTime(ts_ms(), offset);
         }

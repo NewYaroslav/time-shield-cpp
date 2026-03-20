@@ -133,7 +133,7 @@ namespace time_shield {
             m_deadline = (time_point::max)();
         }
 
-        /// \brief Checks whether the timer currently tracks a deadline.
+        /// \brief Checks whether the timer tracks a deadline.
         TIME_SHIELD_NODISCARD bool is_running() const noexcept {
             return m_is_running;
         }

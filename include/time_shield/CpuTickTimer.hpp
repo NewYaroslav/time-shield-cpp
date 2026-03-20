@@ -62,7 +62,7 @@ namespace time_shield {
 
         /// \brief Record sample using elapsed ticks and restart timer.
         /// \return Collected sample value in CPU tick units or 0.0 when the
-        /// timer was not previously running.
+        /// timer is not running.
         double record_sample() noexcept {
             if (!m_is_running) {
                 start();

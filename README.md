@@ -74,7 +74,7 @@ more academic solutions like `HowardHinnant/date`, the library:
   lunar phase/age from Unix timestamps.
 - **Utilities**—fetches current timestamps, computes start/end of periods and
   works with fractions of a second.
-- **Time zone conversion**—functions for CET/EET/ET/CT to GMT.
+- **Time zone conversion**—functions for European, US, and selected Asia/EMEA trading zones plus generic zone-to-zone conversion.
 - **NTP client and pool**—single-client queries plus a configurable pool/runner/service pipeline with offline testing hooks (Windows and Unix).
 - **MQL5 support**—adapted headers in the `MQL5` directory allow using the
   library in MetaTrader.
@@ -102,6 +102,8 @@ Use `time_shield::` or `using namespace time_shield;` to access the API.
 
 - `ts_t` — Unix time in seconds (signed 64-bit). Represents whole seconds.
 - `ts_ms_t` / `ts_us_t` — Unix time in milli/microseconds (signed 64-bit).
+- `monotonic_sec()` / `monotonic_ms()` / `monotonic_us()` — monotonic process-local counters for
+  intervals and deadlines, not UTC timestamps.
 - `fts_t` — Unix time in seconds as `double`. Fractional precision depends on
   magnitude; near the modern epoch it typically preserves microseconds, while
   very large |ts| values can lose lower bits.
@@ -179,6 +181,19 @@ Examples can be built with the provided scripts:
 
 Use `install_mql5.bat` to install the MQL5 files.
 
+### Integration Notes
+
+- `time_shield::time_shield` is a header-only target and can be linked from
+  multiple static libraries in the same program.
+- `NtpTimeService` is header-only and supports `C++11`/`C++14`/`C++17`.
+- On Windows with `TIME_SHIELD_ENABLE_NTP_CLIENT=ON`, the exported CMake target
+  propagates the required socket system library transitively.
+- For non-CMake or manual integration, link the platform socket library
+  yourself when the NTP client is enabled.
+
+See [docs/library-integration-guidelines.md](docs/library-integration-guidelines.md)
+for the full integration contract.
+
 ## Tested Platforms
 
 | Platform | Compilers           | C++ Standards |
@@ -201,7 +216,13 @@ using namespace time_shield;
 ts_t now = ts();                 // seconds since epoch
 fts_t now_f = fts();             // time in seconds with fraction
 int ms_part = ms_of_sec(now_f);  // millisecond part
+ts_t mono_sec = monotonic_sec(); // monotonic process-local seconds
+ts_ms_t mono = monotonic_ms();   // monotonic process-local milliseconds
 ```
+
+Use `now()` / `ts_ms()` / `ts_us()` for wall-clock timestamps. Use
+`monotonic_sec()` / `monotonic_ms()` / `monotonic_us()` for elapsed-time
+measurement, intervals, and timeout logic.
 
 ### Date formatting
 
@@ -340,9 +361,17 @@ bool is_new = calculator.is_new_moon_window(ts); // +/-12h window by default
 ```cpp
 #include <time_shield.hpp>
 
-ts_t cet = to_ts(2024, Month::JUN, 21, 12, 0, 0);
-ts_t gmt = cet_to_gmt(cet);
+ts_t gmt = to_ts(2024, Month::JUN, 21, 12, 0, 0);
+ts_t ist = gmt_to_ist(gmt);
+ts_t kyiv = gmt_to_kyiv(gmt);
+ts_t myt = convert_time_zone(ist, TimeZone::IST, TimeZone::MYT);
 ```
+
+Supported fixed-offset additions include `IST`, `MYT`, `WIB`, `WITA`, `WIT`,
+`KZT`, `TRT`, `BYT`, `SGT`, `ICT`, `PHT`, `GST`, `HKT`, `JST`, and `KST`.
+Use `zone_to_gmt()` / `gmt_to_zone()` / `convert_time_zone()` for the generic
+seconds-based API and `zone_to_gmt_ms()` / `gmt_to_zone_ms()` /
+`convert_time_zone_ms()` for millisecond timestamps.
 
 ### NTP client, pool, and time service
 
@@ -358,7 +387,7 @@ pool.measure();
 int64_t pool_offset = pool.offset_us();
 
 // Background runner + lazy singleton service via wrapper functions:
-ntp::init(std::chrono::seconds(30));
+ntp::init(30000); // 30 sec
 int64_t utc_ms = ntp::utc_time_ms();
 int64_t offset_us = ntp::offset_us();
 int64_t utc_sec = ntp::utc_time_sec();
@@ -366,6 +395,15 @@ bool ok = ntp::last_measure_ok();
 uint64_t attempts = ntp::measure_count();
 ntp::shutdown();
 ```
+
+`NtpTimeService` is header-only and supports `C++11`/`C++14`/`C++17`. The
+service uses an immortal singleton to avoid static destruction order issues.
+During normal runtime the singleton getters keep their lazy-start behavior.
+During process teardown the service does not restart the background runner and
+falls back to realtime plus the last cached offset. In general, `C++17+`
+allows a simpler singleton-storage pattern with inline variables. For
+`NtpTimeService`, the public usage contract is the same in
+`C++11`/`C++14`/`C++17`.
 
 ## Documentation
 

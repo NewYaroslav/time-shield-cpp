@@ -12,6 +12,9 @@
 - All comments and Doxygen text must be in English.
 - Use `/// \brief` before classes and functions.
 - Do not start descriptions with `The`.
+- Describe current behavior and contract in declarative present-tense style.
+- Avoid migration/comparison wording such as `now`, `no longer`, `remains`, `stays`, `previously`, and `currently` unless the text is explicitly documenting history or migration.
+- Do not explain obvious consequences of the current contract unless that wording removes a real ambiguity.
 
 ## File naming
 

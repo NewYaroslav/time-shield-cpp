@@ -105,6 +105,6 @@ Before finalizing:
 - the target standard is clear
 - C++17+ uses `static inline` storage where appropriate
 - C++11/14 storage is owned by exactly one TU
-- raw storage stays out of the public API in `detail`
+- raw storage belongs in `detail`, outside the public API
 - macro naming is consistent
 - missing or duplicate storage definitions are not possible in the chosen build path

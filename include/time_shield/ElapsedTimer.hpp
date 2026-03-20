@@ -78,7 +78,7 @@ namespace time_shield {
             m_is_running = false;
         }
 
-        /// \brief Checks whether the timer currently measures elapsed time.
+        /// \brief Checks whether the timer measures elapsed time.
         TIME_SHIELD_NODISCARD bool is_running() const noexcept {
             return m_is_running;
         }

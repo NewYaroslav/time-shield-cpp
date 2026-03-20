@@ -23,13 +23,14 @@ portable, and suitable for scenarios like logging, serialization, MQL5 usage, an
 
 - Validation of dates and times (including weekend and workday predicates)
 - Time and date formatting (standard and custom)
-- Time zone conversion functions
+- Time zone conversion functions for Europe, US, and selected Asia/EMEA trading zones
 - Some timestamp-to-calendar conversions use a fast algorithm inspired by
   https://www.benjoffe.com/fast-date-64 (implemented from scratch).
 - `DateTime` value type storing UTC milliseconds with a fixed offset for
   ISO8601 round-trips, local/UTC components, arithmetic, and boundaries
 - ISO8601 string parsing
 - Utilities for time manipulation and conversion
+- Monotonic millisecond/microsecond helpers for intervals and deadlines
 - ISO 8601 week-date helpers for conversion, formatting, and parsing
 - OLE Automation date conversions and astronomy helpers (JD/MJD/JDN, lunar phase, geocentric MoonPhase calculator)
 
@@ -88,8 +89,15 @@ Additional example files are located in the `examples/` folder:
 - `time_parser_example.cpp` — parse ISO8601
 - `date_time_example.cpp` — fixed-offset `DateTime` parsing, formatting, and arithmetic helpers
 - `time_conversions_example.cpp` — convert between formats
-- `time_zone_conversions_example.cpp` — CET/EET ↔ GMT
+- `time_zone_conversions_example.cpp` — GMT/UTC, Kyiv, IST/MYT, and generic zone-to-zone conversions
 - `ntp_client_example.cpp` — NTP sync (sockets)
+
+Also see `ntp_time_service_example.cpp` for a compact wrapper-based NTP service example.
+
+For stateless monotonic timing, use `monotonic_sec()`, `monotonic_ms()`, or
+`monotonic_us()`.
+These helpers return process-local monotonic counters for intervals and timeout
+logic rather than UTC timestamps.
 
 \section ntp_sec NTP client, pool, and time service
 
@@ -124,10 +132,19 @@ if (client.query()) {
 }
 
 auto& service = NtpTimeService::instance();
-service.init(std::chrono::seconds(30));
+service.init(30000);
 int64_t now_ms = service.utc_time_ms();
 service.shutdown();
 \endcode
+
+`NtpTimeService` is header-only and supports `C++11`/`C++14`/`C++17`. The
+service uses an immortal singleton to avoid static destruction order issues.
+During normal runtime the singleton getters keep their lazy-start behavior.
+During process teardown the service does not restart background work and falls
+back to realtime plus the last cached offset. In general, `C++17+` allows a
+simpler singleton-storage pattern with inline variables. For
+`NtpTimeService`, the public usage contract is the same in
+`C++11`/`C++14`/`C++17`.
 
 \subsection oa_and_astronomy OA date and astronomy helpers
 
@@ -237,6 +254,9 @@ find_package(TimeShield CONFIG REQUIRED)
 add_executable(app main.cpp)
 target_link_libraries(app PRIVATE time_shield::time_shield)
 \endcode
+
+For header-only integration rules, multi-static-library usage, and Windows NTP
+linking details, see `docs/library-integration-guidelines.md` in the repository.
 
 \subsection install_submodule Git submodule with `add_subdirectory`
 

@@ -12,6 +12,7 @@
 #include "types.hpp"
 #include "constants.hpp"
 
+#include <chrono>
 #include <limits>       // For std::numeric_limits
 #include <ctime>        // For clock_t and timespec (POSIX)
 #include <time.h>       // For clock(), times(), etc.
@@ -136,6 +137,42 @@ namespace time_shield {
         const int64_t delta_ns = mono_now_ns - s_anchor_mono_ns;
         return s_anchor_realtime_us + delta_ns / 1000;
 #       endif
+    }
+
+    /// \ingroup time_utils
+    /// \brief Return monotonic seconds from a process-local reference.
+    ///
+    /// Uses `std::chrono::steady_clock` and returns an opaque monotonic value
+    /// that is only suitable for measuring intervals and deadlines.
+    ///
+    /// \return Monotonic seconds from a process-local reference.
+    inline ts_t monotonic_sec() noexcept {
+        const auto ticks = std::chrono::steady_clock::now().time_since_epoch();
+        return static_cast<ts_t>(std::chrono::duration_cast<std::chrono::seconds>(ticks).count());
+    }
+
+    /// \ingroup time_utils
+    /// \brief Return monotonic milliseconds from a process-local reference.
+    ///
+    /// Uses `std::chrono::steady_clock` and returns an opaque monotonic value
+    /// that is only suitable for measuring intervals and deadlines.
+    ///
+    /// \return Monotonic milliseconds from a process-local reference.
+    inline ts_ms_t monotonic_ms() noexcept {
+        const auto ticks = std::chrono::steady_clock::now().time_since_epoch();
+        return static_cast<ts_ms_t>(std::chrono::duration_cast<std::chrono::milliseconds>(ticks).count());
+    }
+
+    /// \ingroup time_utils
+    /// \brief Return monotonic microseconds from a process-local reference.
+    ///
+    /// Uses `std::chrono::steady_clock` and returns an opaque monotonic value
+    /// that is only suitable for measuring intervals and deadlines.
+    ///
+    /// \return Monotonic microseconds from a process-local reference.
+    inline ts_us_t monotonic_us() noexcept {
+        const auto ticks = std::chrono::steady_clock::now().time_since_epoch();
+        return static_cast<ts_us_t>(std::chrono::duration_cast<std::chrono::microseconds>(ticks).count());
     }
 
     /// \ingroup time_utils

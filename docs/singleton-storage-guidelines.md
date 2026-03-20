@@ -22,6 +22,7 @@ Use this guidance when deciding:
 - how to keep one service instance per program without ODR issues
 - when `static inline` storage is sufficient
 - when C++11/14 requires one-TU ownership
+- when an immortal singleton is a better fit for late-teardown-safe services
 - how to keep raw storage out of the public API
 - how to name storage-definition macros consistently
 
@@ -54,7 +55,8 @@ Use this model when:
 
 ## C++11/14
 
-Header-only singleton storage is not possible without exactly one owning translation unit (TU).
+Most C++11/14 singleton storage patterns need exactly one owning
+translation unit (TU).
 
 Define storage in exactly one TU using a macro.
 
@@ -110,6 +112,46 @@ All other `.cpp` files should include the header without the macro:
 #include "Service.hpp"
 ```
 
+## C++11/14 exception for late-teardown-safe services
+
+When a service must remain callable during static destruction, a header-only
+immortal singleton is also acceptable in C++11/14.
+
+Typical shape:
+
+```cpp
+class Service {
+public:
+    static Service& instance() noexcept {
+        static Service* p_instance = create_instance();
+        return *p_instance;
+    }
+
+private:
+    Service() = default;
+
+    static Service* create_instance() noexcept {
+        Service* p_instance = new Service();
+        std::atexit(&begin_process_shutdown);
+        return p_instance;
+    }
+
+    static void begin_process_shutdown() noexcept {
+        instance().stop_without_restarting();
+    }
+};
+```
+
+Use this model only when all of these are true:
+
+- the service must survive static destruction order problems
+- leaking one process-lifetime instance is acceptable
+- the shutdown path is explicitly no-throw
+- late calls must not restart background work during process teardown
+
+`NtpTimeService` in this repository uses this immortal-singleton model instead
+of the older one-TU macro pattern.
+
 ## Ownership Boundaries
 
 Keep raw storage out of the public API by placing it in `detail`.
@@ -143,7 +185,8 @@ Before finalizing a singleton-style service:
 
 - the project standard level is clear
 - C++17+ code uses `static inline` storage when the service is truly header-owned
-- C++11/14 code defines storage in exactly one TU
-- raw storage stays in `detail`
+- C++11/14 code either defines storage in exactly one TU or intentionally uses
+  an immortal singleton for late-teardown-safe behavior
+- raw storage belongs in `detail`
 - macro naming follows a consistent `*_DEFINE_STORAGE` or `*_IMPLEMENTATION` pattern
 - failure modes are understood and documented where needed

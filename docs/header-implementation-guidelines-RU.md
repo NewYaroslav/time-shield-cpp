@@ -84,7 +84,7 @@ Agent playbook:
 В этой модели:
 
 - публичный заголовок объявляет интерфейс
-- файл реализации остаётся рядом
+- файл реализации находится рядом
 - compiled ownership TU отвечает за one-TU emission в non-header-only сборках
 
 ## Aggregate entry header и leaf header

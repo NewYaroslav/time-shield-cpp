@@ -9,7 +9,7 @@
 /// TimerScheduler manages timers that can be processed either by a dedicated
 /// worker thread or manually via process/update calls. Timers are rescheduled
 /// using fixed-rate semantics, meaning the next activation time is based on the
-/// previously scheduled fire time. Cancelled timers are removed lazily from the
+/// stored fire time. Cancelled timers are removed lazily from the
 /// internal queue, which can temporarily increase the queue size under frequent
 /// start/stop cycles.
 
@@ -144,7 +144,7 @@ namespace time_shield {
         /// \brief Alias for process() for compatibility with update-based loops.
         void update();
 
-        /// \brief Returns number of timer states that are still alive.
+        /// \brief Returns number of timer states that remain alive.
         ///
         /// Method is intended for tests to verify resource cleanup.
         std::size_t active_timer_count_for_testing();
@@ -192,10 +192,10 @@ namespace time_shield {
         template<class Rep, class Period>
         void set_interval(std::chrono::duration<Rep, Period> interval) noexcept;
 
-        /// \brief Returns the currently configured interval.
+        /// \brief Returns the configured interval.
         std::chrono::milliseconds interval() const noexcept;
 
-        /// \brief Starts the timer using the previously configured interval.
+        /// \brief Starts the timer using the configured interval.
         void start();
 
         /// \brief Starts the timer with the specified interval.

@@ -85,7 +85,7 @@ Use explicit ownership when implementation should not be distributed to every co
 In this model:
 
 - the public header declares the interface
-- the implementation file remains nearby
+- the implementation file lives nearby
 - the compiled ownership TU is responsible for single-TU emission in non-header-only builds
 
 ## Aggregate Entry Header vs Leaf Header

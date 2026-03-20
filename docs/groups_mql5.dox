@@ -131,6 +131,16 @@ custom formats, ISO8601, and other standardized formats.
 */
 
 /*!
+\defgroup mql5_time_zone_conversions Time Zone Conversions
+\ingroup mql5_time_conversions
+\brief Helpers for converting supported regional time zones and UTC in MQL5.
+
+These helpers include the same Europe/US/trading-zone coverage as the C++
+layer and expose the seconds-based `zone_to_gmt`, `gmt_to_zone`, and
+`convert_time_zone` API for MetaTrader scripts.
+*/
+
+/*!
 \defgroup mql5_time_structures_time_conversions Time structure conversions
 \ingroup mql5_time_structures
 \ingroup mql5_time_conversions

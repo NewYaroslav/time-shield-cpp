@@ -2,7 +2,6 @@
 
 #if TIME_SHIELD_ENABLE_NTP_CLIENT
 #define TIME_SHIELD_TEST_FAKE_NTP
-#define TIME_SHIELD_NTP_TIME_SERVICE_DEFINE
 #include <time_shield/ntp_time_service.hpp>
 
 #include <cassert>
@@ -36,6 +35,7 @@ int main() {
     cfg.min_valid_samples = 2;
     assert(service.set_pool_config(cfg));
     assert(service.init());
+    assert(service.apply_config_now());
 
     assert(!service.set_default_servers());
     assert(!service.set_pool_config(cfg));

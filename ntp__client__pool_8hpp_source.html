@@ -754,7 +754,7 @@ $(function(){initNavTree('ntp__client__pool_8hpp_source.html','',''); });
 <div class="line"><a id="l00657" name="l00657"></a><span class="lineno">  657</span>            <span class="keywordflow">if</span> (state.backoff.count() == 0) {</div>
 <div class="line"><a id="l00658" name="l00658"></a><span class="lineno">  658</span>                state.backoff = <a class="code hl_function" href="group__lib__initialization.html#gacd9321e53ba96f121ed56ff0a9497182">init</a>;</div>
 <div class="line"><a id="l00659" name="l00659"></a><span class="lineno">  659</span>            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00660" name="l00660"></a><span class="lineno">  660</span>                state.backoff = std::min(max_backoff, state.backoff * 2);</div>
+<div class="line"><a id="l00660" name="l00660"></a><span class="lineno">  660</span>                state.backoff = (std::min)(max_backoff, state.backoff * 2);</div>
 <div class="line"><a id="l00661" name="l00661"></a><span class="lineno">  661</span>            }</div>
 <div class="line"><a id="l00662" name="l00662"></a><span class="lineno">  662</span> </div>
 <div class="line"><a id="l00663" name="l00663"></a><span class="lineno">  663</span>            state.next_allowed = std::chrono::steady_clock::now() + state.backoff;</div>

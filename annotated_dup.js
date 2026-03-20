@@ -10,6 +10,8 @@ var annotated_dup =
         [ "IUdpTransport", "classtime__shield_1_1detail_1_1IUdpTransport.html", "classtime__shield_1_1detail_1_1IUdpTransport" ],
         [ "UdpTransportPosix", "classtime__shield_1_1detail_1_1UdpTransportPosix.html", "classtime__shield_1_1detail_1_1UdpTransportPosix" ],
         [ "UdpTransportWin", "classtime__shield_1_1detail_1_1UdpTransportWin.html", "classtime__shield_1_1detail_1_1UdpTransportWin" ],
+        [ "NtpTimeServiceSingleton", "structtime__shield_1_1detail_1_1NtpTimeServiceSingleton.html", "structtime__shield_1_1detail_1_1NtpTimeServiceSingleton" ],
+        [ "NtpTimeServiceTestAccess", "structtime__shield_1_1detail_1_1NtpTimeServiceTestAccess.html", "structtime__shield_1_1detail_1_1NtpTimeServiceTestAccess" ],
         [ "FakeNtpRunner", "classtime__shield_1_1detail_1_1FakeNtpRunner.html", "classtime__shield_1_1detail_1_1FakeNtpRunner" ],
         [ "TimerState", "structtime__shield_1_1detail_1_1TimerState.html", "structtime__shield_1_1detail_1_1TimerState" ],
         [ "RunningTimerScope", "structtime__shield_1_1detail_1_1RunningTimerScope.html", "structtime__shield_1_1detail_1_1RunningTimerScope" ],

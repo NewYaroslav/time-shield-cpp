@@ -11,7 +11,9 @@ var searchData=
   ['includes_8',['Shared STL and domain includes',['../md_docs_2header-implementation-guidelines.html#autotoc_md68',1,'']]],
   ['install_20and_20find_5fpackage_9',['Install and &lt;span class=&quot;tt&quot;&gt;find_package&lt;/span&gt;',['../index.html#install_pkg',1,'']]],
   ['installation_10',['Installation',['../index.html#install_sec',1,'']]],
-  ['introduction_11',['Introduction',['../index.html#intro_sec',1,'']]],
-  ['invariants_12',['API Invariants',['../index.html#invariants_sec',1,'']]],
-  ['ipp_13',['ipp',['../md_docs_2header-implementation-guidelines-RU.html#autotoc_md40',1,'&lt;span class=&quot;tt&quot;&gt;.ipp&lt;/span&gt;'],['../md_docs_2header-implementation-guidelines.html#autotoc_md60',1,'&lt;span class=&quot;tt&quot;&gt;.ipp&lt;/span&gt;']]]
+  ['integration_20guidelines_11',['Library Integration Guidelines',['../md_docs_2library-integration-guidelines.html',1,'']]],
+  ['integration_20shapes_12',['Supported Integration Shapes',['../md_docs_2library-integration-guidelines.html#autotoc_md84',1,'']]],
+  ['introduction_13',['Introduction',['../index.html#intro_sec',1,'']]],
+  ['invariants_14',['API Invariants',['../index.html#invariants_sec',1,'']]],
+  ['ipp_15',['ipp',['../md_docs_2header-implementation-guidelines-RU.html#autotoc_md40',1,'&lt;span class=&quot;tt&quot;&gt;.ipp&lt;/span&gt;'],['../md_docs_2header-implementation-guidelines.html#autotoc_md60',1,'&lt;span class=&quot;tt&quot;&gt;.ipp&lt;/span&gt;']]]
 ];

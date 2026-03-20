@@ -123,11 +123,12 @@ Features</h1>
 <ul>
 <li>Validation of dates and times (including weekend and workday predicates)</li>
 <li>Time and date formatting (standard and custom)</li>
-<li>Time zone conversion functions</li>
+<li>Time zone conversion functions for Europe, US, and selected Asia/EMEA trading zones</li>
 <li>Some timestamp-to-calendar conversions use a fast algorithm inspired by <a href="https://www.benjoffe.com/fast-date-64">https://www.benjoffe.com/fast-date-64</a> (implemented from scratch).</li>
 <li><span class="tt">DateTime</span> value type storing UTC milliseconds with a fixed offset for ISO8601 round-trips, local/UTC components, arithmetic, and boundaries</li>
 <li>ISO8601 string parsing</li>
 <li>Utilities for time manipulation and conversion</li>
+<li>Monotonic millisecond/microsecond helpers for intervals and deadlines</li>
 <li>ISO 8601 week-date helpers for conversion, formatting, and parsing</li>
 <li>OLE Automation date conversions and astronomy helpers (JD/MJD/JDN, lunar phase, geocentric MoonPhase calculator)</li>
 </ul>
@@ -177,7 +178,7 @@ Examples</h1>
 <div class="ttc" id="agroup__time__structures_html_ga4b014df371dd3893a34ed1c6208b3e6b"><div class="ttname"><a href="group__time__structures.html#ga4b014df371dd3893a34ed1c6208b3e6b">time_shield::end_of_year</a></div><div class="ttdeci">TIME_SHIELD_CONSTEXPR ts_t end_of_year(ts_t ts=time_shield::ts())</div><div class="ttdoc">Get the end-of-year timestamp.</div><div class="ttdef"><b>Definition</b> <a href="date__time__conversions_8hpp_source.html#l00868">date_time_conversions.hpp:868</a></div></div>
 <div class="ttc" id="agroup__time__types_html_ga183c70b9c541a395d47690a82cdad282"><div class="ttname"><a href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">time_shield::ts_t</a></div><div class="ttdeci">int64_t ts_t</div><div class="ttdoc">Unix timestamp in seconds since 1970‑01‑01T00:00:00Z.</div><div class="ttdef"><b>Definition</b> <a href="types_8hpp_source.html#l00049">types.hpp:49</a></div></div>
 <div class="ttc" id="agroup__time__types_html_ga4f03438f0a251af75f1ac8eaa3a9eaad"><div class="ttname"><a href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">time_shield::ts_ms_t</a></div><div class="ttdeci">int64_t ts_ms_t</div><div class="ttdoc">Unix timestamp in milliseconds since epoch.</div><div class="ttdef"><b>Definition</b> <a href="types_8hpp_source.html#l00050">types.hpp:50</a></div></div>
-<div class="ttc" id="agroup__time__utils_html_ga450be3ba3ddf294da4c9bc4cd01f8216"><div class="ttname"><a href="group__time__utils.html#ga450be3ba3ddf294da4c9bc4cd01f8216">time_shield::timestamp</a></div><div class="ttdeci">ts_t timestamp() noexcept</div><div class="ttdoc">Get the current UTC timestamp in seconds.</div><div class="ttdef"><b>Definition</b> <a href="time__utils_8hpp_source.html#l00181">time_utils.hpp:181</a></div></div>
+<div class="ttc" id="agroup__time__utils_html_ga450be3ba3ddf294da4c9bc4cd01f8216"><div class="ttname"><a href="group__time__utils.html#ga450be3ba3ddf294da4c9bc4cd01f8216">time_shield::timestamp</a></div><div class="ttdeci">ts_t timestamp() noexcept</div><div class="ttdoc">Get the current UTC timestamp in seconds.</div><div class="ttdef"><b>Definition</b> <a href="time__utils_8hpp_source.html#l00218">time_utils.hpp:218</a></div></div>
 <div class="ttc" id="atime__shield_8hpp_html"><div class="ttname"><a href="time__shield_8hpp.html">time_shield.hpp</a></div><div class="ttdoc">Main header file for the Time Shield library.</div></div>
 </div><!-- fragment --><p>Additional example files are located in the <span class="tt">examples/</span> folder:</p>
 <ul>
@@ -186,13 +187,15 @@ Examples</h1>
 <li><span class="tt"><a class="el" href="time__parser__example_8cpp.html" title="Demonstrates functions from time_shield::time_parser.">time_parser_example.cpp</a></span> — parse ISO8601</li>
 <li><span class="tt"><a class="el" href="date__time__example_8cpp.html">date_time_example.cpp</a></span> — fixed-offset <span class="tt">DateTime</span> parsing, formatting, and arithmetic helpers</li>
 <li><span class="tt"><a class="el" href="time__conversions__example_8cpp.html" title="Demonstrates functions from time_shield::time_conversions.">time_conversions_example.cpp</a></span> — convert between formats</li>
-<li><span class="tt"><a class="el" href="time__zone__conversions__example_8cpp.html" title="Demonstrates functions from time_shield::time_zone_conversions.">time_zone_conversions_example.cpp</a></span> — CET/EET ↔ GMT</li>
+<li><span class="tt"><a class="el" href="time__zone__conversions__example_8cpp.html" title="Demonstrates named and generic time zone conversion helpers.">time_zone_conversions_example.cpp</a></span> — GMT/UTC, Kyiv, IST/MYT, and generic zone-to-zone conversions</li>
 <li><span class="tt"><a class="el" href="ntp__client__example_8cpp.html" title="Demonstrates usage of time_shield::NtpClient.">ntp_client_example.cpp</a></span> — NTP sync (sockets)</li>
 </ul>
+<p>Also see <span class="tt"><a class="el" href="ntp__time__service__example_8cpp.html" title="Shows a minimal NTP time service workflow.">ntp_time_service_example.cpp</a></span> for a compact wrapper-based NTP service example.</p>
+<p>For stateless monotonic timing, use <span class="tt">monotonic_sec()</span>, <span class="tt">monotonic_ms()</span>, or <span class="tt">monotonic_us()</span>. These helpers return process-local monotonic counters for intervals and timeout logic rather than UTC timestamps.</p>
 <h1 class="doxsection"><a class="anchor" id="ntp_sec"></a>
 NTP client, pool, and time service</h1>
 <p>Time Shield provides an optional NTP stack (<span class="tt">TIME_SHIELD_ENABLE_NTP_CLIENT</span>) that can query remote servers and compute a local offset for UTC time.</p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md74"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md90"></a>
 Components</h3>
 <ul>
 <li><span class="tt">NtpClient</span> performs a single NTP request to one server.</li>
@@ -200,10 +203,10 @@ Components</h3>
 <li><span class="tt">NtpClientPoolRunner</span> runs the pool periodically in a background thread.</li>
 <li><span class="tt">NtpTimeService</span> exposes a singleton interface with cached offset/UTC time.</li>
 </ul>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md75"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md91"></a>
 Offset computation</h3>
 <p>Each response is parsed using the standard four-timestamp method: <span class="tt">offset = ((t2 - t1) + (t3 - t4)) / 2</span>, <span class="tt">delay = (t4 - t1) - (t3 - t2)</span>, where <span class="tt">t1</span> is client transmit, <span class="tt">t2</span> is server receive, <span class="tt">t3</span> is server transmit, and <span class="tt">t4</span> is client receive time. Pool aggregation uses median or best-delay selection with optional MAD trimming and exponential smoothing.</p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md76"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md92"></a>
 Basic usage</h3>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="ntp__client_8hpp.html">time_shield/ntp_client.hpp</a>&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="ntp__time__service_8hpp.html">time_shield/ntp_time_service.hpp</a>&gt;</span></div>
@@ -217,15 +220,16 @@ Basic usage</h3>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span>&amp; service = <a class="code hl_function" href="classtime__shield_1_1NtpTimeServiceT.html#a8151a412c1c0aa9df5b88efd235c4325">NtpTimeService::instance</a>();</div>
-<div class="line">service.init(std::chrono::seconds(30));</div>
+<div class="line">service.init(30000);</div>
 <div class="line">int64_t now_ms = service.utc_time_ms();</div>
 <div class="line">service.shutdown();</div>
 <div class="ttc" id="aclasstime__shield_1_1NtpClient_html"><div class="ttname"><a href="classtime__shield_1_1NtpClient.html">time_shield::NtpClient</a></div><div class="ttdoc">NTP client for measuring time offset.</div><div class="ttdef"><b>Definition</b> <a href="ntp__client_8hpp_source.html#l00043">ntp_client.hpp:43</a></div></div>
-<div class="ttc" id="aclasstime__shield_1_1NtpTimeServiceT_html_a8151a412c1c0aa9df5b88efd235c4325"><div class="ttname"><a href="classtime__shield_1_1NtpTimeServiceT.html#a8151a412c1c0aa9df5b88efd235c4325">time_shield::NtpTimeServiceT&lt; detail::FakeNtpRunner &gt;::instance</a></div><div class="ttdeci">static NtpTimeServiceT &amp; instance() noexcept</div><div class="ttdef"><b>Definition</b> <a href="ntp__time__service_8hpp_source.html#l00204">ntp_time_service.hpp:204</a></div></div>
+<div class="ttc" id="aclasstime__shield_1_1NtpTimeServiceT_html_a8151a412c1c0aa9df5b88efd235c4325"><div class="ttname"><a href="classtime__shield_1_1NtpTimeServiceT.html#a8151a412c1c0aa9df5b88efd235c4325">time_shield::NtpTimeServiceT&lt; detail::FakeNtpRunner &gt;::instance</a></div><div class="ttdeci">static NtpTimeServiceT &amp; instance() noexcept</div><div class="ttdef"><b>Definition</b> <a href="ntp__time__service_8hpp_source.html#l00206">ntp_time_service.hpp:206</a></div></div>
 <div class="ttc" id="anamespacetime__shield_html"><div class="ttname"><a href="namespacetime__shield.html">time_shield</a></div><div class="ttdoc">Main namespace for the Time Shield library.</div></div>
 <div class="ttc" id="antp__client_8hpp_html"><div class="ttname"><a href="ntp__client_8hpp.html">ntp_client.hpp</a></div><div class="ttdoc">Simple NTP client for querying time offset from NTP servers.</div></div>
 <div class="ttc" id="antp__time__service_8hpp_html"><div class="ttname"><a href="ntp__time__service_8hpp.html">ntp_time_service.hpp</a></div></div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="oa_and_astronomy"></a>
+</div><!-- fragment --><p><span class="tt">NtpTimeService</span> is header-only and supports <span class="tt">C++11</span>/<span class="tt">C++14</span>/<span class="tt">C++17</span>. The service uses an immortal singleton to avoid static destruction order issues. During normal runtime the singleton getters keep their lazy-start behavior. During process teardown the service does not restart background work and falls back to realtime plus the last cached offset. In general, <span class="tt">C++17+</span> allows a simpler singleton-storage pattern with inline variables. For <span class="tt">NtpTimeService</span>, the public usage contract is the same in <span class="tt">C++11</span>/<span class="tt">C++14</span>/<span class="tt">C++17</span>.</p>
+<h2 class="doxsection"><a class="anchor" id="oa_and_astronomy"></a>
 OA date and astronomy helpers</h2>
 <p>Convert between Unix timestamps and Excel/COM OA dates, or derive basic astronomical values from calendar inputs:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="ole__automation__conversions_8hpp.html">time_shield/ole_automation_conversions.hpp</a>&gt;</span></div>
@@ -275,7 +279,7 @@ OA date and astronomy helpers</h2>
 <div class="line"><span class="keywordtype">bool</span> near_full = calculator.is_full_moon_window(<a class="code hl_function" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>, 3600.0);</div>
 <div class="ttc" id="aMoonPhase_8hpp_html"><div class="ttname"><a href="MoonPhase_8hpp.html">MoonPhase.hpp</a></div><div class="ttdoc">Geocentric Moon phase calculator and result helpers.</div></div>
 <div class="ttc" id="agroup__time__conversions_html_ga4701e4f2553acb70bf28ada865531a03"><div class="ttname"><a href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a></div><div class="ttdeci">TIME_SHIELD_CONSTEXPR ts_t ts(year_t year, int month, int day)</div><div class="ttdoc">Alias for to_timestamp.</div><div class="ttdef"><b>Definition</b> <a href="time__conversion__aliases_8hpp_source.html#l00363">time_conversion_aliases.hpp:363</a></div></div>
-<div class="ttc" id="agroup__time__enums_html_ga5fa51beb76e014adfffcd028fe1804ac"><div class="ttname"><a href="group__time__enums.html#ga5fa51beb76e014adfffcd028fe1804ac">time_shield::MoonPhase</a></div><div class="ttdeci">MoonPhase</div><div class="ttdef"><b>Definition</b> <a href="enums_8hpp_source.html#l00248">enums.hpp:248</a></div></div>
+<div class="ttc" id="agroup__time__enums_html_ga5fa51beb76e014adfffcd028fe1804ac"><div class="ttname"><a href="group__time__enums.html#ga5fa51beb76e014adfffcd028fe1804ac">time_shield::MoonPhase</a></div><div class="ttdeci">MoonPhase</div><div class="ttdef"><b>Definition</b> <a href="enums_8hpp_source.html#l00285">enums.hpp:285</a></div></div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="workday_helpers"></a>
 Workday helpers</h2>
 <p>Check whether a moment falls on a business day using timestamps, calendar components, or ISO8601 strings:</p>
@@ -340,7 +344,8 @@ Install and <span class="tt">find_package</span></h2>
 <div class="line"> </div>
 <div class="line">add_executable(app main.cpp)</div>
 <div class="line">target_link_libraries(app PRIVATE time_shield::time_shield)</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="install_submodule"></a>
+</div><!-- fragment --><p>For header-only integration rules, multi-static-library usage, and Windows NTP linking details, see <span class="tt"><a class="el" href="library-integration-guidelines_8md.html">docs/library-integration-guidelines.md</a></span> in the repository.</p>
+<h2 class="doxsection"><a class="anchor" id="install_submodule"></a>
 Git submodule with <span class="tt">add_subdirectory</span></h2>
 <p>Vendor the library as a submodule:</p>
 <div class="fragment"><div class="line">git submodule add https://github.com/NewYaroslav/time-shield-cpp external/time-shield-cpp</div>

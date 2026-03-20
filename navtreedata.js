@@ -94,27 +94,47 @@ var NAVTREE =
       [ "Test Contract Guidance", "md_docs_2header-implementation-guidelines.html#autotoc_md72", null ],
       [ "Practical Checklist", "md_docs_2header-implementation-guidelines.html#autotoc_md73", null ]
     ] ],
+    [ "Рекомендации по интеграции библиотеки", "md_docs_2library-integration-guidelines-RU.html", [
+      [ "Канонический язык", "md_docs_2library-integration-guidelines-RU.html#autotoc_md75", null ],
+      [ "Поддерживаемые варианты интеграции", "md_docs_2library-integration-guidelines-RU.html#autotoc_md76", null ],
+      [ "Несколько статических библиотек", "md_docs_2library-integration-guidelines-RU.html#autotoc_md77", null ],
+      [ "Контракт NTP сервиса", "md_docs_2library-integration-guidelines-RU.html#autotoc_md78", null ],
+      [ "Линковка на Windows", "md_docs_2library-integration-guidelines-RU.html#autotoc_md79", null ],
+      [ "Согласованность конфигурации", "md_docs_2library-integration-guidelines-RU.html#autotoc_md80", null ],
+      [ "Практический checklist", "md_docs_2library-integration-guidelines-RU.html#autotoc_md81", null ]
+    ] ],
+    [ "Library Integration Guidelines", "md_docs_2library-integration-guidelines.html", [
+      [ "Canonical Language", "md_docs_2library-integration-guidelines.html#autotoc_md83", null ],
+      [ "Supported Integration Shapes", "md_docs_2library-integration-guidelines.html#autotoc_md84", null ],
+      [ "Multiple Static Libraries", "md_docs_2library-integration-guidelines.html#autotoc_md85", null ],
+      [ "NTP Service Contract", "md_docs_2library-integration-guidelines.html#autotoc_md86", null ],
+      [ "Windows Linking", "md_docs_2library-integration-guidelines.html#autotoc_md87", null ],
+      [ "Configuration Consistency", "md_docs_2library-integration-guidelines.html#autotoc_md88", null ],
+      [ "Practical Checklist", "md_docs_2library-integration-guidelines.html#autotoc_md89", null ]
+    ] ],
     [ "Рекомендации по хранению singleton / service storage в header-only C++ коде", "md_docs_2singleton-storage-guidelines-RU.html", [
-      [ "Канонический язык", "md_docs_2singleton-storage-guidelines-RU.html#autotoc_md78", null ],
-      [ "Назначение", "md_docs_2singleton-storage-guidelines-RU.html#autotoc_md79", null ],
-      [ "Базовое правило", "md_docs_2singleton-storage-guidelines-RU.html#autotoc_md80", null ],
-      [ "C++17 и новее", "md_docs_2singleton-storage-guidelines-RU.html#autotoc_md81", null ],
-      [ "C++11/14", "md_docs_2singleton-storage-guidelines-RU.html#autotoc_md82", null ],
-      [ "Границы ownership", "md_docs_2singleton-storage-guidelines-RU.html#autotoc_md83", null ],
-      [ "Именование макросов", "md_docs_2singleton-storage-guidelines-RU.html#autotoc_md84", null ],
-      [ "Сценарии ошибок", "md_docs_2singleton-storage-guidelines-RU.html#autotoc_md85", null ],
-      [ "Практический checklist", "md_docs_2singleton-storage-guidelines-RU.html#autotoc_md86", null ]
+      [ "Канонический язык", "md_docs_2singleton-storage-guidelines-RU.html#autotoc_md94", null ],
+      [ "Назначение", "md_docs_2singleton-storage-guidelines-RU.html#autotoc_md95", null ],
+      [ "Базовое правило", "md_docs_2singleton-storage-guidelines-RU.html#autotoc_md96", null ],
+      [ "C++17 и новее", "md_docs_2singleton-storage-guidelines-RU.html#autotoc_md97", null ],
+      [ "C++11/14", "md_docs_2singleton-storage-guidelines-RU.html#autotoc_md98", null ],
+      [ "Исключение для late-teardown-safe сервисов в C++11/14", "md_docs_2singleton-storage-guidelines-RU.html#autotoc_md99", null ],
+      [ "Границы ownership", "md_docs_2singleton-storage-guidelines-RU.html#autotoc_md100", null ],
+      [ "Именование макросов", "md_docs_2singleton-storage-guidelines-RU.html#autotoc_md101", null ],
+      [ "Сценарии ошибок", "md_docs_2singleton-storage-guidelines-RU.html#autotoc_md102", null ],
+      [ "Практический checklist", "md_docs_2singleton-storage-guidelines-RU.html#autotoc_md103", null ]
     ] ],
     [ "Header-only Singleton / Service Storage Guidelines", "md_docs_2singleton-storage-guidelines.html", [
-      [ "Canonical Language", "md_docs_2singleton-storage-guidelines.html#autotoc_md88", null ],
-      [ "Purpose", "md_docs_2singleton-storage-guidelines.html#autotoc_md89", null ],
-      [ "Core Rule", "md_docs_2singleton-storage-guidelines.html#autotoc_md90", null ],
-      [ "C++17 and newer", "md_docs_2singleton-storage-guidelines.html#autotoc_md91", null ],
-      [ "C++11/14", "md_docs_2singleton-storage-guidelines.html#autotoc_md92", null ],
-      [ "Ownership Boundaries", "md_docs_2singleton-storage-guidelines.html#autotoc_md93", null ],
-      [ "Macro Naming", "md_docs_2singleton-storage-guidelines.html#autotoc_md94", null ],
-      [ "Failure Modes", "md_docs_2singleton-storage-guidelines.html#autotoc_md95", null ],
-      [ "Practical Checklist", "md_docs_2singleton-storage-guidelines.html#autotoc_md96", null ]
+      [ "Canonical Language", "md_docs_2singleton-storage-guidelines.html#autotoc_md105", null ],
+      [ "Purpose", "md_docs_2singleton-storage-guidelines.html#autotoc_md106", null ],
+      [ "Core Rule", "md_docs_2singleton-storage-guidelines.html#autotoc_md107", null ],
+      [ "C++17 and newer", "md_docs_2singleton-storage-guidelines.html#autotoc_md108", null ],
+      [ "C++11/14", "md_docs_2singleton-storage-guidelines.html#autotoc_md109", null ],
+      [ "C++11/14 exception for late-teardown-safe services", "md_docs_2singleton-storage-guidelines.html#autotoc_md110", null ],
+      [ "Ownership Boundaries", "md_docs_2singleton-storage-guidelines.html#autotoc_md111", null ],
+      [ "Macro Naming", "md_docs_2singleton-storage-guidelines.html#autotoc_md112", null ],
+      [ "Failure Modes", "md_docs_2singleton-storage-guidelines.html#autotoc_md113", null ],
+      [ "Practical Checklist", "md_docs_2singleton-storage-guidelines.html#autotoc_md114", null ]
     ] ],
     [ "Topics", "topics.html", "topics" ],
     [ "Namespaces", "namespaces.html", [
@@ -155,15 +175,16 @@ var NAVTREEINDEX =
 [
 "CpuTickTimer_8hpp.html",
 "classtime__shield_1_1DateTime.html#afd3ae5c2b4a50d3997b139bd152c0886",
-"classtime__shield_1_1Timer.html#a27d7a174235fbd7e4d4f9a9709a22c95",
-"classtime__shield_1_1detail_1_1FakeNtpRunner.html#ad4af303ea14f5c1655e23d8f0fbd0ef6",
-"group__time__constants.html#ga77f5cd93d7f33492f325a240c113a579",
-"group__time__conversions.html#ga572de0047cbf71f2e69b7eca85520d83",
-"group__time__conversions.html#gacd1601d44252ccf331a6c11449e71bac",
-"group__time__enums.html#ggac2ffd79e06ab94cf1bb50fec432c68a8a939f4fa15cc31f9b2ec0fc54fed08595",
-"group__time__structures.html#ga361b7f574fa40955ec4a6b7bfac97ba3",
-"namespacemembers_f.html",
-"structtime__shield_1_1astronomy_1_1MoonPhaseResult.html#a7b675de383072b1bedebe3bf0159bbad"
+"classtime__shield_1_1NtpTimeServiceT.html#aae4854c5b039941c1241b3d5ba279871",
+"classtime__shield_1_1detail_1_1FakeNtpRunner.html#a9241312ff92a213da9624f01f479e50b",
+"group__time__constants.html#ga1519887a8b884dd4cc0b45c2ed7a98f1",
+"group__time__conversions.html#ga48e95bb999e9f63ec736bde9c3047f7c",
+"group__time__conversions.html#gaba3ac826a6f37a8d1609e204f69fa970",
+"group__time__enums.html#gga5fa51beb76e014adfffcd028fe1804acabbc64be78b01604edf18005eb126443f",
+"group__time__formatting.html#ga9c3b567d4309ef41bee267c65a4751a2",
+"group__time__utils.html#gad6e2af7c1ddd04c8f8f170c329b4e492",
+"namespacetime__shield.html#a7015ffc21ef1c6b62acf3fc54bb7f585",
+"structtime__shield_1_1detail_1_1DaySplit.html#a6e556b9f12b3380e5df12aae10f26c03"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

@@ -18,7 +18,12 @@ var searchData=
   ['kmparallax_15',['kMParallax',['../classtime__shield_1_1astronomy_1_1MoonPhase.html#aec670be377c38db96141d1353d515ca9',1,'time_shield::astronomy::MoonPhase']]],
   ['kmsmax_16',['kMsMax',['../classtime__shield_1_1astronomy_1_1MoonPhase.html#a644a32493c3059111bf2e59ba95c0a4a',1,'time_shield::astronomy::MoonPhase']]],
   ['kpi_17',['kPi',['../classtime__shield_1_1astronomy_1_1MoonPhase.html#a44c3905d162ed09fcb8bb608503659e1',1,'time_shield::astronomy::MoonPhase']]],
-  ['ksunangsiz_18',['kSunAngSiz',['../classtime__shield_1_1astronomy_1_1MoonPhase.html#adcf38c065a3433b94d56a2de617973a7',1,'time_shield::astronomy::MoonPhase']]],
-  ['ksunsmax_19',['kSunSmax',['../classtime__shield_1_1astronomy_1_1MoonPhase.html#a30b8cb4954ccbe0fb64582538145f86d',1,'time_shield::astronomy::MoonPhase']]],
-  ['ksynmonth_20',['kSynMonth',['../classtime__shield_1_1astronomy_1_1MoonPhase.html#a1149b5dacf88afce4526fca7d6c2204f',1,'time_shield::astronomy::MoonPhase']]]
+  ['kst_18',['KST',['../group__time__enums.html#ggad8cb858fb6cedcf76c4f0630d56e042ba32a0433322cc813bdaf7e40cdd521873',1,'time_shield']]],
+  ['kst_5fto_5fgmt_19',['kst_to_gmt',['../group__time__conversions__time__zone__conversions.html#ga71ce59dbab18aa2fcb2113235d99cc16',1,'time_shield::kst_to_gmt(ts_t kst)'],['../namespacetime__shield.html#a828f00b19888d5012f109f3e20e98bff',1,'time_shield::kst_to_gmt(const datetime kst)']]],
+  ['ksunangsiz_20',['kSunAngSiz',['../classtime__shield_1_1astronomy_1_1MoonPhase.html#adcf38c065a3433b94d56a2de617973a7',1,'time_shield::astronomy::MoonPhase']]],
+  ['ksunsmax_21',['kSunSmax',['../classtime__shield_1_1astronomy_1_1MoonPhase.html#a30b8cb4954ccbe0fb64582538145f86d',1,'time_shield::astronomy::MoonPhase']]],
+  ['ksynmonth_22',['kSynMonth',['../classtime__shield_1_1astronomy_1_1MoonPhase.html#a1149b5dacf88afce4526fca7d6c2204f',1,'time_shield::astronomy::MoonPhase']]],
+  ['kyiv_5fto_5fgmt_23',['kyiv_to_gmt',['../group__time__conversions__time__zone__conversions.html#ga51d8470dff2cf3596dba752b2fd91d87',1,'time_shield::kyiv_to_gmt(ts_t kyiv)'],['../namespacetime__shield.html#a4f420e732c28d4f5a3489645e16183df',1,'time_shield::kyiv_to_gmt(const datetime kyiv)']]],
+  ['kzt_24',['KZT',['../group__time__enums.html#ggad8cb858fb6cedcf76c4f0630d56e042baa161f34d251587ce6cbe69e6c9122348',1,'time_shield']]],
+  ['kzt_5fto_5fgmt_25',['kzt_to_gmt',['../group__time__conversions__time__zone__conversions.html#ga079bfe80c57bb241e28c8913284ced40',1,'time_shield::kzt_to_gmt(ts_t kzt)'],['../namespacetime__shield.html#ae0cc4e16433a49d316d11a84d7dcc17a',1,'time_shield::kzt_to_gmt(const datetime kzt)']]]
 ];

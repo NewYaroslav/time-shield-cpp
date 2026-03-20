@@ -103,10 +103,10 @@ $(function(){initNavTree('md_docs_2singleton-storage-guidelines.html','',''); })
   <div class="headertitle"><div class="title">Header-only Singleton / Service Storage Guidelines </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md87"></a></p>
+<div class="textblock"><p><a class="anchor" id="autotoc_md104"></a></p>
 <p>This document defines a reusable policy for singleton-style service storage in header-oriented C++ projects.</p>
 <p>The guidance is intentionally generic so it can be copied into other repositories with minimal changes.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md88"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md105"></a>
 Canonical Language</h1>
 <p>English is the canonical version of this document.</p>
 <p>Russian localization:</p><ul>
@@ -116,20 +116,21 @@ Canonical Language</h1>
 <li><span class="tt">agents/singleton-storage-guidelines.md</span></li>
 <li><span class="tt">agents/singleton-storage-guidelines-RU.md</span></li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md89"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md106"></a>
 Purpose</h1>
 <p>Use this guidance when deciding:</p>
 <ul>
 <li>how to keep one service instance per program without ODR issues</li>
 <li>when <span class="tt">static inline</span> storage is sufficient</li>
 <li>when C++11/14 requires one-TU ownership</li>
+<li>when an immortal singleton is a better fit for late-teardown-safe services</li>
 <li>how to keep raw storage out of the public API</li>
 <li>how to name storage-definition macros consistently</li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md90"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md107"></a>
 Core Rule</h1>
 <p>Use this policy to avoid ODR issues while keeping a single instance per program.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md91"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md108"></a>
 C++17 and newer</h1>
 <p>Prefer <span class="tt">static inline</span> storage inside the class:</p>
 <div class="fragment"><div class="line"><span class="keyword">class </span>Service {</div>
@@ -148,9 +149,9 @@ C++17 and newer</h1>
 <li>inline storage is available for the target standard</li>
 <li>there is no need to move emission into a dedicated ownership TU</li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md92"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md109"></a>
 C++11/14</h1>
-<p>Header-only singleton storage is not possible without exactly one owning translation unit (TU).</p>
+<p>Most C++11/14 singleton storage patterns need exactly one owning translation unit (TU).</p>
 <p>Define storage in exactly one TU using a macro.</p>
 <p>Header (<span class="tt">Service.hpp</span>):</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#pragma once</span></div>
@@ -192,7 +193,39 @@ C++11/14</h1>
 <div class="line"><span class="preprocessor">#include &quot;Service.hpp&quot;</span></div>
 </div><!-- fragment --><p>All other <span class="tt">.cpp</span> files should include the header without the macro:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;Service.hpp&quot;</span></div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md93"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md110"></a>
+C++11/14 exception for late-teardown-safe services</h1>
+<p>When a service must remain callable during static destruction, a header-only immortal singleton is also acceptable in C++11/14.</p>
+<p>Typical shape:</p>
+<div class="fragment"><div class="line"><span class="keyword">class </span>Service {</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    <span class="keyword">static</span> Service&amp; instance() noexcept {</div>
+<div class="line">        <span class="keyword">static</span> Service* p_instance = create_instance();</div>
+<div class="line">        <span class="keywordflow">return</span> *p_instance;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">private</span>:</div>
+<div class="line">    Service() = <span class="keywordflow">default</span>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">static</span> Service* create_instance() noexcept {</div>
+<div class="line">        Service* p_instance = <span class="keyword">new</span> Service();</div>
+<div class="line">        std::atexit(&amp;begin_process_shutdown);</div>
+<div class="line">        <span class="keywordflow">return</span> p_instance;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> begin_process_shutdown() noexcept {</div>
+<div class="line">        instance().stop_without_restarting();</div>
+<div class="line">    }</div>
+<div class="line">};</div>
+</div><!-- fragment --><p>Use this model only when all of these are true:</p>
+<ul>
+<li>the service must survive static destruction order problems</li>
+<li>leaking one process-lifetime instance is acceptable</li>
+<li>the shutdown path is explicitly no-throw</li>
+<li>late calls must not restart background work during process teardown</li>
+</ul>
+<p><span class="tt">NtpTimeService</span> in this repository uses this immortal-singleton model instead of the older one-TU macro pattern.</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md111"></a>
 Ownership Boundaries</h1>
 <p>Keep raw storage out of the public API by placing it in <span class="tt">detail</span>.</p>
 <p>This is the preferred model when:</p>
@@ -202,7 +235,7 @@ Ownership Boundaries</h1>
 <li>ownership must stay explicit in non-header-only builds</li>
 </ul>
 <p>If many services need C++11/14 storage, prefer a single TU such as <span class="tt">project_singletons.cpp</span> that defines all <span class="tt">*_DEFINE_STORAGE</span> macros.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md94"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md112"></a>
 Macro Naming</h1>
 <p>Use one of these naming patterns for the storage-definition macro:</p>
 <ul>
@@ -210,21 +243,21 @@ Macro Naming</h1>
 <li><span class="tt">FOO_IMPLEMENTATION</span></li>
 </ul>
 <p>Exactly one TU must define the chosen macro.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md95"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md113"></a>
 Failure Modes</h1>
 <ul>
 <li>If the macro is not defined anywhere in C++11/14 builds, you will get an undefined reference error.</li>
 <li>If it is defined in multiple TUs, you will get multiple definition errors.</li>
 <li>In C++17+, the macro is unnecessary, but leaving it defined is harmless if the implementation is written accordingly.</li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md96"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md114"></a>
 Practical Checklist</h1>
 <p>Before finalizing a singleton-style service:</p>
 <ul>
 <li>the project standard level is clear</li>
 <li>C++17+ code uses <span class="tt">static inline</span> storage when the service is truly header-owned</li>
-<li>C++11/14 code defines storage in exactly one TU</li>
-<li>raw storage stays in <span class="tt">detail</span></li>
+<li>C++11/14 code either defines storage in exactly one TU or intentionally uses an immortal singleton for late-teardown-safe behavior</li>
+<li>raw storage belongs in <span class="tt">detail</span></li>
 <li>macro naming follows a consistent <span class="tt">*_DEFINE_STORAGE</span> or <span class="tt">*_IMPLEMENTATION</span> pattern</li>
 <li>failure modes are understood and documented where needed </li>
 </ul>

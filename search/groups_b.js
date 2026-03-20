@@ -12,7 +12,7 @@ var searchData=
   ['time_20utilities_9',['Time Utilities',['../group__time__utils.html',1,'']]],
   ['time_20validation_10',['Time Validation',['../group__time__validation.html',1,'']]],
   ['time_20zone_20conversion_20helpers_11',['Time zone conversion helpers',['../group__time__conversions__time__zone__conversions.html',1,'']]],
-  ['time_20zone_20conversions_12',['Time Zone Conversions',['../group__time__zone__conversions.html',1,'']]],
+  ['time_20zone_20conversions_12',['Time Zone Conversions',['../group__time__zone__conversions.html',1,'Time Zone Conversions'],['../group__mql5__time__zone__conversions.html',1,'Time Zone Conversions']]],
   ['timeshield_20api_13',['MQL5 TimeShield API',['../group__mql5.html',1,'']]],
   ['types_14',['Time Types',['../group__time__types.html',1,'']]]
 ];

@@ -118,6 +118,12 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga8849d62204f580ae2dda1e0bf148e5d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current timespec.  <br /></td></tr>
 <tr class="memitem:ga1aab54866cecab960bce9d55beea71ae" id="r_ga1aab54866cecab960bce9d55beea71ae"><td class="memItemLeft">int64_t&#160;</td><td class="memItemRight"><a class="el" href="#ga1aab54866cecab960bce9d55beea71ae">time_shield::now_realtime_us</a> ()</td></tr>
 <tr class="memdesc:ga1aab54866cecab960bce9d55beea71ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get current real time in microseconds using a platform-specific method.  <br /></td></tr>
+<tr class="memitem:ga13a6a9242a5d4ba31067bfa27a8b878f" id="r_ga13a6a9242a5d4ba31067bfa27a8b878f"><td class="memItemLeft"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#ga13a6a9242a5d4ba31067bfa27a8b878f">time_shield::monotonic_sec</a> () noexcept</td></tr>
+<tr class="memdesc:ga13a6a9242a5d4ba31067bfa27a8b878f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return monotonic seconds from a process-local reference.  <br /></td></tr>
+<tr class="memitem:gaa4d331946c44f40821c649ee70e8f421" id="r_gaa4d331946c44f40821c649ee70e8f421"><td class="memItemLeft"><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#gaa4d331946c44f40821c649ee70e8f421">time_shield::monotonic_ms</a> () noexcept</td></tr>
+<tr class="memdesc:gaa4d331946c44f40821c649ee70e8f421"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return monotonic milliseconds from a process-local reference.  <br /></td></tr>
+<tr class="memitem:ga0bc3f4c67edbaa8db2ed5c90eced53e0" id="r_ga0bc3f4c67edbaa8db2ed5c90eced53e0"><td class="memItemLeft"><a class="el" href="group__time__types.html#gaa09dd8f85dd996be93d7250acea4f638">ts_us_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#ga0bc3f4c67edbaa8db2ed5c90eced53e0">time_shield::monotonic_us</a> () noexcept</td></tr>
+<tr class="memdesc:ga0bc3f4c67edbaa8db2ed5c90eced53e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return monotonic microseconds from a process-local reference.  <br /></td></tr>
 <tr class="memitem:ga17b34bc74fb012932766bf04b98bcd97" id="r_ga17b34bc74fb012932766bf04b98bcd97"><td class="memTemplParams" colspan="2">template&lt;class T = int&gt; </td></tr>
 <tr class="memitem:ga17b34bc74fb012932766bf04b98bcd97 template"><td class="memItemLeft">T&#160;</td><td class="memItemRight"><a class="el" href="#ga17b34bc74fb012932766bf04b98bcd97">time_shield::ns_of_sec</a> () noexcept</td></tr>
 <tr class="memdesc:ga17b34bc74fb012932766bf04b98bcd97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the nanosecond part of the current second.  <br /></td></tr>
@@ -172,14 +178,14 @@ Usage Examples:</h3>
 <ul>
 <li>Get the current timestamp in seconds: <div class="fragment"><div class="line"><a class="code hl_typedef" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">time_shield::ts_t</a> current_time = <a class="code hl_function" href="#ga1d1c996fff6a55bf6a064991fec1f819">time_shield::ts</a>();</div>
 <div class="ttc" id="agroup__time__types_html_ga183c70b9c541a395d47690a82cdad282"><div class="ttname"><a href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">time_shield::ts_t</a></div><div class="ttdeci">int64_t ts_t</div><div class="ttdoc">Unix timestamp in seconds since 1970‑01‑01T00:00:00Z.</div><div class="ttdef"><b>Definition</b> <a href="types_8hpp_source.html#l00049">types.hpp:49</a></div></div>
-<div class="ttc" id="agroup__time__utils_html_ga1d1c996fff6a55bf6a064991fec1f819"><div class="ttname"><a href="#ga1d1c996fff6a55bf6a064991fec1f819">time_shield::ts</a></div><div class="ttdeci">ts_t ts() noexcept</div><div class="ttdoc">Get the current UTC timestamp in seconds.</div><div class="ttdef"><b>Definition</b> <a href="time__utils_8hpp_source.html#l00173">time_utils.hpp:173</a></div></div>
+<div class="ttc" id="agroup__time__utils_html_ga1d1c996fff6a55bf6a064991fec1f819"><div class="ttname"><a href="#ga1d1c996fff6a55bf6a064991fec1f819">time_shield::ts</a></div><div class="ttdeci">ts_t ts() noexcept</div><div class="ttdoc">Get the current UTC timestamp in seconds.</div><div class="ttdef"><b>Definition</b> <a href="time__utils_8hpp_source.html#l00210">time_utils.hpp:210</a></div></div>
 </div><!-- fragment --></li>
 <li>Get the millisecond part of the current second: <div class="fragment"><div class="line"><span class="keywordtype">int</span> ms = <a class="code hl_function" href="#ga8de184eb4e3279be0b1e8e45ddcd1d27">time_shield::ms_of_sec</a>();</div>
-<div class="ttc" id="agroup__time__utils_html_ga8de184eb4e3279be0b1e8e45ddcd1d27"><div class="ttname"><a href="#ga8de184eb4e3279be0b1e8e45ddcd1d27">time_shield::ms_of_sec</a></div><div class="ttdeci">T ms_of_sec() noexcept</div><div class="ttdoc">Get the millisecond part of the current second.</div><div class="ttdef"><b>Definition</b> <a href="time__utils_8hpp_source.html#l00166">time_utils.hpp:166</a></div></div>
+<div class="ttc" id="agroup__time__utils_html_ga8de184eb4e3279be0b1e8e45ddcd1d27"><div class="ttname"><a href="#ga8de184eb4e3279be0b1e8e45ddcd1d27">time_shield::ms_of_sec</a></div><div class="ttdeci">T ms_of_sec() noexcept</div><div class="ttdoc">Get the millisecond part of the current second.</div><div class="ttdef"><b>Definition</b> <a href="time__utils_8hpp_source.html#l00203">time_utils.hpp:203</a></div></div>
 </div><!-- fragment --></li>
 <li>Get the current timestamp in milliseconds: <div class="fragment"><div class="line"><a class="code hl_typedef" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">time_shield::ts_ms_t</a> current_time_ms = <a class="code hl_function" href="#gaaa261ef6a082be5820665e8136f885ae">time_shield::ts_ms</a>();</div>
 <div class="ttc" id="agroup__time__types_html_ga4f03438f0a251af75f1ac8eaa3a9eaad"><div class="ttname"><a href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">time_shield::ts_ms_t</a></div><div class="ttdeci">int64_t ts_ms_t</div><div class="ttdoc">Unix timestamp in milliseconds since epoch.</div><div class="ttdef"><b>Definition</b> <a href="types_8hpp_source.html#l00050">types.hpp:50</a></div></div>
-<div class="ttc" id="agroup__time__utils_html_gaaa261ef6a082be5820665e8136f885ae"><div class="ttname"><a href="#gaaa261ef6a082be5820665e8136f885ae">time_shield::ts_ms</a></div><div class="ttdeci">ts_ms_t ts_ms() noexcept</div><div class="ttdoc">Get the current UTC timestamp in milliseconds.</div><div class="ttdef"><b>Definition</b> <a href="time__utils_8hpp_source.html#l00205">time_utils.hpp:205</a></div></div>
+<div class="ttc" id="agroup__time__utils_html_gaaa261ef6a082be5820665e8136f885ae"><div class="ttname"><a href="#gaaa261ef6a082be5820665e8136f885ae">time_shield::ts_ms</a></div><div class="ttdeci">ts_ms_t ts_ms() noexcept</div><div class="ttdoc">Get the current UTC timestamp in milliseconds.</div><div class="ttdef"><b>Definition</b> <a href="time__utils_8hpp_source.html#l00242">time_utils.hpp:242</a></div></div>
 </div><!-- fragment --> </li>
 </ul>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
@@ -214,7 +220,7 @@ Usage Examples:</h3>
 <dd>
 Current UTC timestamp in floating-point seconds.    </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00197">197</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00234">234</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
 
 </div>
 </div>
@@ -246,7 +252,7 @@ Current UTC timestamp in floating-point seconds.    </dd></dl>
 <dd>
 Current UTC timestamp in floating-point seconds. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00189">189</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00226">226</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
 
 </div>
 </div>
@@ -278,7 +284,7 @@ Current UTC timestamp in floating-point seconds. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>This function attempts multiple fallback methods depending on platform capabilities. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://habr.com/ru/articles/282301/">https://habr.com/ru/articles/282301/</a> — original implementation idea </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00247">247</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00284">284</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
 
 </div>
 </div>
@@ -308,7 +314,7 @@ Current UTC timestamp in floating-point seconds. </dd></dl>
 <p>Get the current timespec. </p>
 <dl class="section return"><dt>Returns</dt><dd>struct timespec The current timespec. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00039">39</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00040">40</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
 
 </div>
 </div>
@@ -331,6 +337,99 @@ Current UTC timestamp in floating-point seconds. </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>Microseconds since 1 January 1970. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="time__utils_8mqh_source.html#l00032">32</a> of file <a class="el" href="time__utils_8mqh_source.html">time_utils.mqh</a>.</p>
+
+</div>
+</div>
+<a id="gaa4d331946c44f40821c649ee70e8f421" name="gaa4d331946c44f40821c649ee70e8f421"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa4d331946c44f40821c649ee70e8f421">&#9670;&#160;</a></span>monotonic_ms()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> time_shield::monotonic_ms </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return monotonic milliseconds from a process-local reference. </p>
+<p>Uses <span class="tt">std::chrono::steady_clock</span> and returns an opaque monotonic value that is only suitable for measuring intervals and deadlines.</p>
+<dl class="section return"><dt>Returns</dt><dd>Monotonic milliseconds from a process-local reference. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00161">161</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga13a6a9242a5d4ba31067bfa27a8b878f" name="ga13a6a9242a5d4ba31067bfa27a8b878f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga13a6a9242a5d4ba31067bfa27a8b878f">&#9670;&#160;</a></span>monotonic_sec()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> time_shield::monotonic_sec </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return monotonic seconds from a process-local reference. </p>
+<p>Uses <span class="tt">std::chrono::steady_clock</span> and returns an opaque monotonic value that is only suitable for measuring intervals and deadlines.</p>
+<dl class="section return"><dt>Returns</dt><dd>Monotonic seconds from a process-local reference. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00149">149</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga0bc3f4c67edbaa8db2ed5c90eced53e0" name="ga0bc3f4c67edbaa8db2ed5c90eced53e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0bc3f4c67edbaa8db2ed5c90eced53e0">&#9670;&#160;</a></span>monotonic_us()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__time__types.html#gaa09dd8f85dd996be93d7250acea4f638">ts_us_t</a> time_shield::monotonic_us </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return monotonic microseconds from a process-local reference. </p>
+<p>Uses <span class="tt">std::chrono::steady_clock</span> and returns an opaque monotonic value that is only suitable for measuring intervals and deadlines.</p>
+<dl class="section return"><dt>Returns</dt><dd>Monotonic microseconds from a process-local reference. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00173">173</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
 
 </div>
 </div>
@@ -390,7 +489,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>T Millisecond part of the current second. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00166">166</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00203">203</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
 
 </div>
 </div>
@@ -425,7 +524,7 @@ template&lt;class T = int&gt; </div>
 <dd>
 Current UTC timestamp in milliseconds.    </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00221">221</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00258">258</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
 
 </div>
 </div>
@@ -456,7 +555,7 @@ Current UTC timestamp in milliseconds.    </dd></dl>
 <p>On Windows this function combines <span class="tt">QueryPerformanceCounter</span> (high-resolution monotonic clock) with <span class="tt">GetSystemTimeAsFileTime</span> to compute an accurate, stable UTC timestamp. The base time is initialized only once per process (lazy init). On Unix-like systems a realtime anchor is captured once and combined with a high-resolution monotonic clock to compute stable timestamps.</p>
 <dl class="section return"><dt>Returns</dt><dd>Current UTC timestamp in microseconds. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00060">60</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00061">61</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
 
 </div>
 </div>
@@ -516,7 +615,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>T Nanosecond part of the current second. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00146">146</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00183">183</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
 
 </div>
 </div>
@@ -551,7 +650,7 @@ template&lt;class T = int&gt; </div>
 <dd>
 Current UTC timestamp in seconds.    </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00181">181</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00218">218</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
 
 </div>
 </div>
@@ -586,7 +685,7 @@ Current UTC timestamp in seconds.    </dd></dl>
 <dd>
 Current UTC timestamp in milliseconds.    </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00213">213</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00250">250</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
 
 </div>
 </div>
@@ -621,7 +720,7 @@ Current UTC timestamp in milliseconds.    </dd></dl>
 <dd>
 Current UTC timestamp in microseconds.    </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00237">237</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00274">274</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
 
 </div>
 </div>
@@ -653,7 +752,7 @@ Current UTC timestamp in microseconds.    </dd></dl>
 <dd>
 Current UTC timestamp in seconds. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00173">173</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00210">210</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
 
 </div>
 </div>
@@ -685,7 +784,7 @@ Current UTC timestamp in seconds. </dd></dl>
 <dd>
 Current UTC timestamp in milliseconds. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00205">205</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00242">242</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
 
 </div>
 </div>
@@ -717,7 +816,7 @@ Current UTC timestamp in milliseconds. </dd></dl>
 <dd>
 Current UTC timestamp in microseconds. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00229">229</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00266">266</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
 
 </div>
 </div>
@@ -777,7 +876,7 @@ template&lt;class T = int&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>T Microsecond part of the current second. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00156">156</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__utils_8hpp_source.html#l00193">193</a> of file <a class="el" href="time__utils_8hpp_source.html">time_utils.hpp</a>.</p>
 
 </div>
 </div>

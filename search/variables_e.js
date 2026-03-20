@@ -1,14 +1,13 @@
 var searchData=
 [
-  ['phase_0',['phase',['../structtime__shield_1_1astronomy_1_1MoonPhaseResult.html#a8951e27fdb33eee9dd28d4728d634eb8',1,'time_shield::astronomy::MoonPhaseResult']]],
-  ['phase_5fangle_5frad_1',['phase_angle_rad',['../structtime__shield_1_1MoonPhaseSineCosine.html#aaedca66d6959065de805503d777e9cbe',1,'time_shield::MoonPhaseSineCosine::phase_angle_rad'],['../structtime__shield_1_1astronomy_1_1MoonPhaseResult.html#aab77c808b2b2bd104293bd7808156bd6',1,'time_shield::astronomy::MoonPhaseResult::phase_angle_rad']]],
-  ['phase_5fcos_2',['phase_cos',['../structtime__shield_1_1MoonPhaseSineCosine.html#ad5d4ab3ef6c3a7fb1792982fce894467',1,'time_shield::MoonPhaseSineCosine::phase_cos'],['../structtime__shield_1_1astronomy_1_1MoonPhaseResult.html#ab8d76a7d973ff539b60d7a0aaf5c4671',1,'time_shield::astronomy::MoonPhaseResult::phase_cos']]],
-  ['phase_5fsin_3',['phase_sin',['../structtime__shield_1_1MoonPhaseSineCosine.html#a182ae974a831d9c3c6f138209b10e716',1,'time_shield::MoonPhaseSineCosine::phase_sin'],['../structtime__shield_1_1astronomy_1_1MoonPhaseResult.html#aa5e113195cdff17210b79cf78a87fc35',1,'time_shield::astronomy::MoonPhaseResult::phase_sin']]],
-  ['poll_4',['poll',['../structtime__shield_1_1detail_1_1NtpPacket.html#aa945cda649d43621d20bdf5cd4ee308c',1,'time_shield::detail::NtpPacket']]],
-  ['port_5',['port',['../structtime__shield_1_1detail_1_1UdpRequest.html#aad365344f6d102d147aa263bdee08d8f',1,'time_shield::detail::UdpRequest::port'],['../structtime__shield_1_1NtpSample.html#ae928ccb58862f6c337e263b1696170f9',1,'time_shield::NtpSample::port'],['../structtime__shield_1_1NtpServerConfig.html#ab66514ae795fd8c76ab4f7d4ffed4119',1,'time_shield::NtpServerConfig::port']]],
-  ['precision_6',['precision',['../structtime__shield_1_1detail_1_1NtpPacket.html#aa05765d9e145ed055c1ecfed9b8c50b3',1,'time_shield::detail::NtpPacket']]],
-  ['previous_5ffirst_5fquarter_5funix_5fs_7',['previous_first_quarter_unix_s',['../structtime__shield_1_1astronomy_1_1MoonQuarterInstants.html#a42529ef6435ba9498a9d0084e2a861a9',1,'time_shield::astronomy::MoonQuarterInstants']]],
-  ['previous_5ffull_5funix_5fs_8',['previous_full_unix_s',['../structtime__shield_1_1astronomy_1_1MoonQuarterInstants.html#a4dae0578645fabc81a9fd1afb07800ec',1,'time_shield::astronomy::MoonQuarterInstants']]],
-  ['previous_5flast_5fquarter_5funix_5fs_9',['previous_last_quarter_unix_s',['../structtime__shield_1_1astronomy_1_1MoonQuarterInstants.html#ab7d1206dfddf7dca7c9d837d49049daa',1,'time_shield::astronomy::MoonQuarterInstants']]],
-  ['previous_5fnew_5funix_5fs_10',['previous_new_unix_s',['../structtime__shield_1_1astronomy_1_1MoonQuarterInstants.html#a356edba6d87834d2b899c9cd62b0ad7c',1,'time_shield::astronomy::MoonQuarterInstants']]]
+  ['recv_5fdata_0',['recv_data',['../structtime__shield_1_1detail_1_1UdpRequest.html#ae0c61a4d970d95ec22fd856591e8a2bd',1,'time_shield::detail::UdpRequest']]],
+  ['recv_5fsize_1',['recv_size',['../structtime__shield_1_1detail_1_1UdpRequest.html#a83ac56da4630365757800be1fc79599b',1,'time_shield::detail::UdpRequest']]],
+  ['recv_5fts_5ffrac_2',['recv_ts_frac',['../structtime__shield_1_1detail_1_1NtpPacket.html#ad556733ef47fd047f2276ea5f388180d',1,'time_shield::detail::NtpPacket']]],
+  ['recv_5fts_5fsec_3',['recv_ts_sec',['../structtime__shield_1_1detail_1_1NtpPacket.html#ae4b91495246cbcfc40a062178368aadf',1,'time_shield::detail::NtpPacket']]],
+  ['ref_5fid_4',['ref_id',['../structtime__shield_1_1detail_1_1NtpPacket.html#a651411ed443e4bb2cb70e3466ffa7bf0',1,'time_shield::detail::NtpPacket']]],
+  ['ref_5fts_5ffrac_5',['ref_ts_frac',['../structtime__shield_1_1detail_1_1NtpPacket.html#a1aa957909f51c9dee91189195c27765e',1,'time_shield::detail::NtpPacket']]],
+  ['ref_5fts_5fsec_6',['ref_ts_sec',['../structtime__shield_1_1detail_1_1NtpPacket.html#a0c6965b06771507e252f69f826a9c0e0',1,'time_shield::detail::NtpPacket']]],
+  ['rng_5fseed_7',['rng_seed',['../structtime__shield_1_1NtpPoolConfig.html#a9d89dd999fd0f1055befe1b7815b77d2',1,'time_shield::NtpPoolConfig']]],
+  ['root_5fdelay_8',['root_delay',['../structtime__shield_1_1detail_1_1NtpPacket.html#a144344c23733d57755cdae3a233e15fc',1,'time_shield::detail::NtpPacket']]],
+  ['root_5fdispersion_9',['root_dispersion',['../structtime__shield_1_1detail_1_1NtpPacket.html#a9c9ebdfdb2204ef9e05017f832a941a3',1,'time_shield::detail::NtpPacket']]]
 ];

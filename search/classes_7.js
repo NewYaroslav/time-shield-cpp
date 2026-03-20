@@ -11,6 +11,8 @@ var searchData=
   ['ntpsample_8',['NtpSample',['../structtime__shield_1_1NtpSample.html',1,'time_shield']]],
   ['ntpserverconfig_9',['NtpServerConfig',['../structtime__shield_1_1NtpServerConfig.html',1,'time_shield']]],
   ['ntptimeservice_10',['NtpTimeService',['../classtime__shield_1_1NtpTimeService.html',1,'time_shield']]],
-  ['ntptimeservicet_11',['NtpTimeServiceT',['../classtime__shield_1_1NtpTimeServiceT.html',1,'time_shield']]],
-  ['ntptimeservicet_3c_20detail_3a_3afakentprunner_20_3e_12',['NtpTimeServiceT&lt; detail::FakeNtpRunner &gt;',['../classtime__shield_1_1NtpTimeServiceT.html',1,'time_shield']]]
+  ['ntptimeservicesingleton_11',['NtpTimeServiceSingleton',['../structtime__shield_1_1detail_1_1NtpTimeServiceSingleton.html',1,'time_shield::detail']]],
+  ['ntptimeservicet_12',['NtpTimeServiceT',['../classtime__shield_1_1NtpTimeServiceT.html',1,'time_shield']]],
+  ['ntptimeservicet_3c_20detail_3a_3afakentprunner_20_3e_13',['NtpTimeServiceT&lt; detail::FakeNtpRunner &gt;',['../classtime__shield_1_1NtpTimeServiceT.html',1,'time_shield']]],
+  ['ntptimeservicetestaccess_14',['NtpTimeServiceTestAccess',['../structtime__shield_1_1detail_1_1NtpTimeServiceTestAccess.html',1,'time_shield::detail']]]
 ];

@@ -1,12 +1,7 @@
 var searchData=
 [
-  ['next_5fallowed_0',['next_allowed',['../structtime__shield_1_1NtpClientPoolT_1_1ServerState.html#ac707c1ec227546b6e91e605cb885b69d',1,'time_shield::NtpClientPoolT::ServerState']]],
-  ['next_5ffirst_5fquarter_5funix_5fs_1',['next_first_quarter_unix_s',['../structtime__shield_1_1astronomy_1_1MoonQuarterInstants.html#ae7de2c2e6e5ce88a993f0ca7f9428223',1,'time_shield::astronomy::MoonQuarterInstants']]],
-  ['next_5ffull_5funix_5fs_2',['next_full_unix_s',['../structtime__shield_1_1astronomy_1_1MoonQuarterInstants.html#af08745ad437f9b22a8d2811b50383460',1,'time_shield::astronomy::MoonQuarterInstants']]],
-  ['next_5flast_5fquarter_5funix_5fs_3',['next_last_quarter_unix_s',['../structtime__shield_1_1astronomy_1_1MoonQuarterInstants.html#a5708c19ab02832b8feb1995fc973e1dc',1,'time_shield::astronomy::MoonQuarterInstants']]],
-  ['next_5fnew_5funix_5fs_4',['next_new_unix_s',['../structtime__shield_1_1astronomy_1_1MoonQuarterInstants.html#a74179e2125a2eef0a9f2a7d3f43f2d45',1,'time_shield::astronomy::MoonQuarterInstants']]],
-  ['ns_5fper_5fms_5',['NS_PER_MS',['../group__time__constants.html#gab0da694e20be23dfc97f464ff0c2bec7',1,'time_shield']]],
-  ['ns_5fper_5fsec_6',['NS_PER_SEC',['../group__time__constants.html#gad3720fc83862c4540189191ac518799e',1,'time_shield']]],
-  ['ns_5fper_5fus_7',['NS_PER_US',['../group__time__constants.html#gaad471abbc210ed35d64215f7d33cda3e',1,'time_shield']]],
-  ['ntptimeservicet_3c_20runnert_20_3e_3a_3am_5finstance_8',['m_instance',['../namespacetime__shield.html#a39a80a3aa8e3f0792d8287cab2584802',1,'time_shield']]]
+  ['offset_5fus_0',['offset_us',['../structtime__shield_1_1NtpSample.html#aa9abbf9e79fe841044c77862ff272188',1,'time_shield::NtpSample']]],
+  ['ole_5fepoch_1',['OLE_EPOCH',['../group__time__constants.html#ga61d50bb5fe7666932965fc43ff9ed245',1,'time_shield']]],
+  ['orig_5fts_5ffrac_2',['orig_ts_frac',['../structtime__shield_1_1detail_1_1NtpPacket.html#a93db290c4efc7692651c353726c4f6eb',1,'time_shield::detail::NtpPacket']]],
+  ['orig_5fts_5fsec_3',['orig_ts_sec',['../structtime__shield_1_1detail_1_1NtpPacket.html#aa3f0b8bd4830953d51a1359c9304921a',1,'time_shield::detail::NtpPacket']]]
 ];

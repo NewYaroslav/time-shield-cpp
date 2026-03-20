@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['файлами_20реализации_0',['Рекомендации по владению заголовками и файлами реализации',['../md_docs_2header-implementation-guidelines-RU.html',1,'']]],
-  ['файлов_1',['Роли файлов',['../md_docs_2header-implementation-guidelines-RU.html#autotoc_md37',1,'']]]
+  ['тестировать_20include_20контракт_0',['Как тестировать include-контракт',['../md_docs_2header-implementation-guidelines-RU.html#autotoc_md52',1,'']]]
 ];

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['eet_5fto_5fgmt_0',['eet_to_gmt',['../group__time__conversions__time__zone__conversions.html#ga0947d55d6b45837a23aa01ba52c2d49c',1,'time_shield::eet_to_gmt(ts_t eet)'],['../group__time__conversions.html#gaa4887077a2d3a3a89c0cc1f70bffa5f9',1,'time_shield::eet_to_gmt(const datetime eet)']]],
+  ['eet_5fto_5fgmt_0',['eet_to_gmt',['../group__time__conversions__time__zone__conversions.html#ga0947d55d6b45837a23aa01ba52c2d49c',1,'time_shield::eet_to_gmt(ts_t eet)'],['../group__mql5__time__conversions.html#gaa4887077a2d3a3a89c0cc1f70bffa5f9',1,'time_shield::eet_to_gmt(const datetime eet)']]],
   ['elapsed_1',['elapsed',['../classtime__shield_1_1CpuTickTimer.html#a60cd4ec34465ab04e97c9b2785dc8baa',1,'time_shield::CpuTickTimer::elapsed()'],['../classtime__shield_1_1ElapsedTimer.html#a41bc77ccc0925b28f0e54168341f72d9',1,'time_shield::ElapsedTimer::elapsed() const noexcept'],['../classtime__shield_1_1ElapsedTimer.html#a7c548aca70284c5fc6c500dcd64e1a32',1,'time_shield::ElapsedTimer::elapsed(time_point now) const noexcept']]],
   ['elapsed_5fcount_2',['elapsed_count',['../classtime__shield_1_1ElapsedTimer.html#ab78f62a38b4107e560735897fd261e12',1,'time_shield::ElapsedTimer']]],
   ['elapsed_5fms_3',['elapsed_ms',['../classtime__shield_1_1ElapsedTimer.html#a25098ec657c366ece4a466ff54fa24ad',1,'time_shield::ElapsedTimer::elapsed_ms() const noexcept'],['../classtime__shield_1_1ElapsedTimer.html#a73085cdb943a74843f522b653a468c42',1,'time_shield::ElapsedTimer::elapsed_ms(ts_ms_t now_ms) const noexcept']]],
@@ -28,6 +28,7 @@ var searchData=
   ['ensure_5fstarted_25',['ensure_started',['../classtime__shield_1_1NtpTimeServiceT.html#ae3d9af53f76327efdbad0587ec8a8eee',1,'time_shield::NtpTimeServiceT']]],
   ['eod_5ffrom_5funix_5fday_26',['eod_from_unix_day',['../group__time__conversions.html#ga37b83ed1b7727da914894ae1d01e83da',1,'time_shield']]],
   ['eod_5ffrom_5funix_5fday_5fms_27',['eod_from_unix_day_ms',['../group__time__conversions.html#ga7cf2827ccdd721b9c611010b4a7b0524',1,'time_shield']]],
-  ['et_5fto_5fgmt_28',['et_to_gmt',['../group__time__conversions__time__zone__conversions.html#gada2f6266e4b165ac81f57573ed7dc135',1,'time_shield']]],
-  ['execute_5fdue_5ftimers_29',['execute_due_timers',['../classtime__shield_1_1TimerScheduler.html#ace6e0ddb3b9f51f6541e585cb5711e3d',1,'time_shield::TimerScheduler']]]
+  ['et_5fto_5fgmt_28',['et_to_gmt',['../group__time__conversions__time__zone__conversions.html#gada2f6266e4b165ac81f57573ed7dc135',1,'time_shield::et_to_gmt(ts_t et)'],['../group__mql5__time__conversions.html#ga982e97effed390ad347f19b23df510a8',1,'time_shield::et_to_gmt(const datetime et)']]],
+  ['european_5flocal_5fto_5fgmt_29',['european_local_to_gmt',['../namespacetime__shield_1_1detail.html#af011f1ee32fce56d9b5104851c8060e7',1,'time_shield::detail::european_local_to_gmt()'],['../namespacetime__shield.html#ab6f4d3ebdc6dfc64a97117d8feb4290f',1,'time_shield::european_local_to_gmt()']]],
+  ['execute_5fdue_5ftimers_30',['execute_due_timers',['../classtime__shield_1_1TimerScheduler.html#ace6e0ddb3b9f51f6541e585cb5711e3d',1,'time_shield::TimerScheduler']]]
 ];

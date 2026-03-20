@@ -183,6 +183,8 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga7b26ca9277df54f9a73a8fb84eea47fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return realtime timestamp of last successful measurement.  <br /></td></tr>
 <tr class="memitem:ga1bbaa91f329c2c7fd7b36bce2d288b15" id="r_ga1bbaa91f329c2c7fd7b36bce2d288b15"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ga1bbaa91f329c2c7fd7b36bce2d288b15">time_shield::ntp::stale</a> (std::chrono::milliseconds max_age) noexcept</td></tr>
 <tr class="memdesc:ga1bbaa91f329c2c7fd7b36bce2d288b15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true when last measurement is older than max_age.  <br /></td></tr>
+<tr class="memitem:ga63bb277d0ced52974c78d0bb99b5e251" id="r_ga63bb277d0ced52974c78d0bb99b5e251"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ga63bb277d0ced52974c78d0bb99b5e251">time_shield::ntp::stale</a> (int max_age_ms) noexcept</td></tr>
+<tr class="memdesc:ga63bb277d0ced52974c78d0bb99b5e251"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true when last measurement is older than max_age_ms.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Facilities for retrieving time using the Network Time Protocol. </p>
@@ -240,7 +242,7 @@ Example Usage:</h3>
 <p>NTP time service alias that uses a fake runner for tests. </p>
 <p>NTP time service alias that uses the real pool runner. </p>
 
-<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00556">556</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00763">763</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
 
 </div>
 </div>
@@ -299,7 +301,7 @@ Example Usage:</h3>
 <p>Return number of failed measurement attempts. </p>
 <dl class="section return"><dt>Returns</dt><dd>Number of failed measurement attempts. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00636">636</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00843">843</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
 
 </div>
 </div>
@@ -340,7 +342,7 @@ Example Usage:</h3>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True when background runner started. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00580">580</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00787">787</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
 
 </div>
 </div>
@@ -381,7 +383,7 @@ Example Usage:</h3>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True when background runner started. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00570">570</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00777">777</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
 
 </div>
 </div>
@@ -411,7 +413,7 @@ Example Usage:</h3>
 <p>Return whether last measurement updated the offset. </p>
 <dl class="section return"><dt>Returns</dt><dd>True when last measurement updated the offset. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00622">622</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00829">829</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
 
 </div>
 </div>
@@ -441,7 +443,7 @@ Example Usage:</h3>
 <p>Return realtime timestamp of last successful measurement. </p>
 <dl class="section return"><dt>Returns</dt><dd>Realtime microseconds timestamp for last successful measurement. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00650">650</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00857">857</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
 
 </div>
 </div>
@@ -471,7 +473,7 @@ Example Usage:</h3>
 <p>Return realtime timestamp of last measurement attempt. </p>
 <dl class="section return"><dt>Returns</dt><dd>Realtime microseconds timestamp for last measurement attempt. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00643">643</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00850">850</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
 
 </div>
 </div>
@@ -501,7 +503,7 @@ Example Usage:</h3>
 <p>Return total number of measurement attempts. </p>
 <dl class="section return"><dt>Returns</dt><dd>Number of measurement attempts. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00629">629</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00836">836</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
 
 </div>
 </div>
@@ -531,7 +533,7 @@ Example Usage:</h3>
 <p>Return last estimated offset in microseconds. </p>
 <dl class="section return"><dt>Returns</dt><dd>Offset in microseconds (UTC - local realtime). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00594">594</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00801">801</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
 
 </div>
 </div>
@@ -560,12 +562,48 @@ Example Usage:</h3>
 
 <p>Stop NTP time service. </p>
 
-<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00587">587</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00794">794</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga63bb277d0ced52974c78d0bb99b5e251" name="ga63bb277d0ced52974c78d0bb99b5e251"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga63bb277d0ced52974c78d0bb99b5e251">&#9670;&#160;</a></span>stale() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool time_shield::ntp::stale </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>max_age_ms</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return true when last measurement is older than max_age_ms. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">max_age_ms</td><td>Maximum allowed age in milliseconds. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True when last measurement age exceeds max_age_ms. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00873">873</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
 
 </div>
 </div>
 <a id="ga1bbaa91f329c2c7fd7b36bce2d288b15" name="ga1bbaa91f329c2c7fd7b36bce2d288b15"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga1bbaa91f329c2c7fd7b36bce2d288b15">&#9670;&#160;</a></span>stale()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1bbaa91f329c2c7fd7b36bce2d288b15">&#9670;&#160;</a></span>stale() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -596,7 +634,7 @@ Example Usage:</h3>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True when last measurement age exceeds max_age. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00658">658</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00865">865</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
 
 </div>
 </div>
@@ -626,7 +664,7 @@ Example Usage:</h3>
 <p>Return current UTC time in milliseconds based on offset. </p>
 <dl class="section return"><dt>Returns</dt><dd>UTC time in milliseconds using last offset. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00608">608</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00815">815</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
 
 </div>
 </div>
@@ -656,7 +694,7 @@ Example Usage:</h3>
 <p>Return current UTC time in seconds based on offset. </p>
 <dl class="section return"><dt>Returns</dt><dd>UTC time in seconds using last offset. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00615">615</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00822">822</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
 
 </div>
 </div>
@@ -686,7 +724,7 @@ Example Usage:</h3>
 <p>Return current UTC time in microseconds based on offset. </p>
 <dl class="section return"><dt>Returns</dt><dd>UTC time in microseconds using last offset. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00601">601</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntp__time__service_8hpp_source.html#l00808">808</a> of file <a class="el" href="ntp__time__service_8hpp_source.html">ntp_time_service.hpp</a>.</p>
 
 </div>
 </div>

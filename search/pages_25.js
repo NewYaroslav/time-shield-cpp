@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['хранению_20singleton_20service_20storage_20в_20header_20only_20c_20коде_0',['Рекомендации по хранению singleton / service storage в header-only C++ коде',['../md_docs_2singleton-storage-guidelines-RU.html',1,'']]]
+  ['файлами_20реализации_0',['Рекомендации по владению заголовками и файлами реализации',['../md_docs_2header-implementation-guidelines-RU.html',1,'']]],
+  ['файлов_1',['Роли файлов',['../md_docs_2header-implementation-guidelines-RU.html#autotoc_md37',1,'']]]
 ];

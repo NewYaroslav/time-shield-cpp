@@ -9,7 +9,7 @@ var searchData=
   ['and_20astronomy_20helpers_6',['OA date and astronomy helpers',['../index.html#oa_and_astronomy',1,'']]],
   ['and_20domain_20includes_7',['Shared STL and domain includes',['../md_docs_2header-implementation-guidelines.html#autotoc_md68',1,'']]],
   ['and_20find_5fpackage_8',['Install and &lt;span class=&quot;tt&quot;&gt;find_package&lt;/span&gt;',['../index.html#install_pkg',1,'']]],
-  ['and_20newer_9',['C++17 and newer',['../md_docs_2singleton-storage-guidelines.html#autotoc_md91',1,'']]],
+  ['and_20newer_9',['C++17 and newer',['../md_docs_2singleton-storage-guidelines.html#autotoc_md108',1,'']]],
   ['and_20time_20service_10',['NTP client, pool, and time service',['../index.html#ntp_sec',1,'']]],
   ['api_20invariants_11',['API Invariants',['../index.html#invariants_sec',1,'']]],
   ['architecture_3a_12',['Architecture:',['../group__ntp.html#autotoc_md21',1,'']]],

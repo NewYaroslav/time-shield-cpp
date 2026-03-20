@@ -104,7 +104,7 @@ $(function(){initNavTree('group__time__zone__conversions.html','',''); });
 </div><!--header-->
 <div class="contents">
 
-<p>Helpers for converting regional time zones to GMT.  
+<p>Helpers for converting supported regional time zones and UTC.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-groups" class="groupheader"><a id="groups" name="groups"></a>
@@ -114,19 +114,28 @@ Topics</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 id="header-files" class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
 <tr class="memitem:time_5Fzone_5Fconversions_2Ehpp" id="r_time_5Fzone_5Fconversions_2Ehpp"><td class="memItemLeft">file &#160;</td><td class="memItemRight"><a class="el" href="time__zone__conversions_8hpp.html">time_zone_conversions.hpp</a></td></tr>
-<tr class="memdesc:time__zone__conversions_8hpp"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helpers for converting CET/EET/ET timestamps to GMT (UTC). <br /></td></tr>
+<tr class="memdesc:time__zone__conversions_8hpp"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helpers for converting supported regional time zones and UTC. <br /></td></tr>
 <tr class="memitem:time_5Fzone_5Foffset_2Ehpp" id="r_time_5Fzone_5Foffset_2Ehpp"><td class="memItemLeft">file &#160;</td><td class="memItemRight"><a class="el" href="time__zone__offset_8hpp.html">time_zone_offset.hpp</a></td></tr>
 <tr class="memdesc:time__zone__offset_8hpp"><td class="mdescLeft">&#160;</td><td class="mdescRight">UTC offset arithmetic helpers (UTC &lt;-&gt; local) and TimeZoneStruct offset extraction. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Helpers for converting regional time zones to GMT. </p>
-<p>These functions convert Central and Eastern European Time to Greenwich Mean Time. Daylight saving time rules before and after 2002 are taken into account, so conversions are accurate for legacy timestamps as well.</p>
+<div class="textblock"><p>Helpers for converting supported regional time zones and UTC. </p>
+<p>These helpers cover:</p><ul>
+<li>DST-aware European civil time (<span class="tt">WET</span>, <span class="tt">CET</span>, <span class="tt">EET</span>) with the existing rule set,</li>
+<li>DST-aware US civil time (<span class="tt">ET</span>, <span class="tt">CT</span>),</li>
+<li>fixed-offset trading-oriented zones such as <span class="tt">IST</span>, <span class="tt">MYT</span>, <span class="tt">WIB</span>, <span class="tt">WITA</span>, <span class="tt">WIT</span>, <span class="tt">KZT</span>, <span class="tt">TRT</span>, <span class="tt">BYT</span>, <span class="tt">SGT</span>, <span class="tt">ICT</span>, <span class="tt">PHT</span>, <span class="tt">GST</span>, <span class="tt">HKT</span>, <span class="tt">JST</span>, and <span class="tt">KST</span>,</li>
+<li>generic <span class="tt">zone_to_gmt</span>, <span class="tt">gmt_to_zone</span>, and <span class="tt">convert_time_zone</span> entry points.</li>
+</ul>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md20"></a>
 Example Usage:</h3>
-<div class="fragment"><div class="line">ts_t cet_ts = <a class="code hl_function" href="group__time__conversions.html#ga5efcc46cc96ba400832647939b620280">time_shield::to_ts</a>(2024, Month::JUN, 21, 12, 0, 0);</div>
-<div class="line">ts_t gmt_ts = <a class="code hl_function" href="group__time__conversions__time__zone__conversions.html#ga5974ceb721d677396c4297474832adad">time_shield::cet_to_gmt</a>(cet_ts);</div>
-<div class="ttc" id="agroup__time__conversions__time__zone__conversions_html_ga5974ceb721d677396c4297474832adad"><div class="ttname"><a href="group__time__conversions__time__zone__conversions.html#ga5974ceb721d677396c4297474832adad">time_shield::cet_to_gmt</a></div><div class="ttdeci">ts_t cet_to_gmt(ts_t cet)</div><div class="ttdoc">Convert Central European Time to Greenwich Mean Time.</div><div class="ttdef"><b>Definition</b> <a href="time__zone__conversions_8hpp_source.html#l00021">time_zone_conversions.hpp:21</a></div></div>
+<div class="fragment"><div class="line">ts_t gmt_ts = <a class="code hl_function" href="group__time__conversions.html#ga5efcc46cc96ba400832647939b620280">time_shield::to_ts</a>(2024, Month::JUN, 21, 12, 0, 0);</div>
+<div class="line">ts_t ist_ts = <a class="code hl_function" href="group__time__conversions__time__zone__conversions.html#ga28d37565f1e5cc7e8d5653b172c0bc06">time_shield::gmt_to_ist</a>(gmt_ts);</div>
+<div class="line">ts_t myt_ts = <a class="code hl_function" href="group__time__conversions__time__zone__conversions.html#ga60083e7dd4583a0d625a28e9364a5e2b">time_shield::convert_time_zone</a>(ist_ts, <a class="code hl_enumvalue" href="group__time__enums.html#ggad8cb858fb6cedcf76c4f0630d56e042baf357622797a265ba68dc1599e91560fa">time_shield::IST</a>, <a class="code hl_enumvalue" href="group__time__enums.html#ggad8cb858fb6cedcf76c4f0630d56e042ba7b293c4d7ae8848d0cae5d52478fe2a7">time_shield::MYT</a>);</div>
+<div class="ttc" id="agroup__time__conversions__time__zone__conversions_html_ga28d37565f1e5cc7e8d5653b172c0bc06"><div class="ttname"><a href="group__time__conversions__time__zone__conversions.html#ga28d37565f1e5cc7e8d5653b172c0bc06">time_shield::gmt_to_ist</a></div><div class="ttdeci">ts_t gmt_to_ist(ts_t gmt)</div><div class="ttdef"><b>Definition</b> <a href="time__zone__conversions_8hpp_source.html#l00530">time_zone_conversions.hpp:530</a></div></div>
+<div class="ttc" id="agroup__time__conversions__time__zone__conversions_html_ga60083e7dd4583a0d625a28e9364a5e2b"><div class="ttname"><a href="group__time__conversions__time__zone__conversions.html#ga60083e7dd4583a0d625a28e9364a5e2b">time_shield::convert_time_zone</a></div><div class="ttdeci">ts_t convert_time_zone(ts_t local, TimeZone from, TimeZone to)</div><div class="ttdoc">Convert a timestamp between two supported local civil time zones.</div><div class="ttdef"><b>Definition</b> <a href="time__zone__conversions_8hpp_source.html#l00442">time_zone_conversions.hpp:442</a></div></div>
 <div class="ttc" id="agroup__time__conversions_html_ga5efcc46cc96ba400832647939b620280"><div class="ttname"><a href="group__time__conversions.html#ga5efcc46cc96ba400832647939b620280">time_shield::to_ts</a></div><div class="ttdeci">TIME_SHIELD_CONSTEXPR ts_t to_ts(year_t year, int month, int day)</div><div class="ttdoc">Alias for to_timestamp.</div><div class="ttdef"><b>Definition</b> <a href="time__conversion__aliases_8hpp_source.html#l00691">time_conversion_aliases.hpp:691</a></div></div>
+<div class="ttc" id="agroup__time__enums_html_ggad8cb858fb6cedcf76c4f0630d56e042ba7b293c4d7ae8848d0cae5d52478fe2a7"><div class="ttname"><a href="group__time__enums.html#ggad8cb858fb6cedcf76c4f0630d56e042ba7b293c4d7ae8848d0cae5d52478fe2a7">time_shield::MYT</a></div><div class="ttdeci">@ MYT</div><div class="ttdoc">Malaysia Time.</div><div class="ttdef"><b>Definition</b> <a href="enums_8hpp_source.html#l00188">enums.hpp:188</a></div></div>
+<div class="ttc" id="agroup__time__enums_html_ggad8cb858fb6cedcf76c4f0630d56e042baf357622797a265ba68dc1599e91560fa"><div class="ttname"><a href="group__time__enums.html#ggad8cb858fb6cedcf76c4f0630d56e042baf357622797a265ba68dc1599e91560fa">time_shield::IST</a></div><div class="ttdeci">@ IST</div><div class="ttdoc">India Standard Time.</div><div class="ttdef"><b>Definition</b> <a href="enums_8hpp_source.html#l00187">enums.hpp:187</a></div></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">

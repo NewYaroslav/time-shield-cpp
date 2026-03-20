@@ -112,6 +112,8 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fake runner for tests without network access.  <a href="classtime__shield_1_1detail_1_1FakeNtpRunner.html#details">More...</a><br /></td></tr>
 <tr class="memitem:time_5Fshield_3A_3ANtpTimeServiceT_3C_20RunnerT_20_3E" id="r_time_5Fshield_3A_3ANtpTimeServiceT_3C_20RunnerT_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classtime__shield_1_1NtpTimeServiceT.html">time_shield::NtpTimeServiceT&lt; RunnerT &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Singleton service for background NTP measurements.  <a href="classtime__shield_1_1NtpTimeServiceT.html#details">More...</a><br /></td></tr>
+<tr class="memitem:time_5Fshield_3A_3Adetail_3A_3ANtpTimeServiceSingleton_3C_20RunnerT_20_3E" id="r_time_5Fshield_3A_3Adetail_3A_3ANtpTimeServiceSingleton_3C_20RunnerT_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structtime__shield_1_1detail_1_1NtpTimeServiceSingleton.html">time_shield::detail::NtpTimeServiceSingleton&lt; RunnerT &gt;</a></td></tr>
+<tr class="memitem:time_5Fshield_3A_3Adetail_3A_3ANtpTimeServiceTestAccess_3C_20RunnerT_20_3E" id="r_time_5Fshield_3A_3Adetail_3A_3ANtpTimeServiceTestAccess_3C_20RunnerT_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structtime__shield_1_1detail_1_1NtpTimeServiceTestAccess.html">time_shield::detail::NtpTimeServiceTestAccess&lt; RunnerT &gt;</a></td></tr>
 <tr class="memitem:time_5Fshield_3A_3ANtpTimeService" id="r_time_5Fshield_3A_3ANtpTimeService"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classtime__shield_1_1NtpTimeService.html">time_shield::NtpTimeService</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
@@ -123,7 +125,6 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a787d6e107fe144f38103b3caff9d20b7" id="r_a787d6e107fe144f38103b3caff9d20b7"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="namespacetime__shield_1_1detail.html#a787d6e107fe144f38103b3caff9d20b7">time_shield::detail::RunnerAlias</a> = <a class="el" href="classtime__shield_1_1detail_1_1FakeNtpRunner.html">detail::FakeNtpRunner</a></td></tr>
 <tr class="memitem:ga082593e1e418eeac1f2fb5d1d1001722" id="r_ga082593e1e418eeac1f2fb5d1d1001722"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="group__ntp.html#ga082593e1e418eeac1f2fb5d1d1001722">time_shield::NtpTimeService</a> = <a class="el" href="classtime__shield_1_1NtpTimeServiceT.html">NtpTimeServiceT</a>&lt;<a class="el" href="classtime__shield_1_1detail_1_1FakeNtpRunner.html">detail::FakeNtpRunner</a>&gt;</td></tr>
 <tr class="memdesc:ga082593e1e418eeac1f2fb5d1d1001722"><td class="mdescLeft">&#160;</td><td class="mdescRight">NTP time service alias that uses a fake runner for tests.  <br /></td></tr>
 </table><table class="memberdecls">
@@ -155,12 +156,8 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga7b26ca9277df54f9a73a8fb84eea47fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return realtime timestamp of last successful measurement.  <br /></td></tr>
 <tr class="memitem:ga1bbaa91f329c2c7fd7b36bce2d288b15" id="r_ga1bbaa91f329c2c7fd7b36bce2d288b15"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="group__ntp.html#ga1bbaa91f329c2c7fd7b36bce2d288b15">time_shield::ntp::stale</a> (std::chrono::milliseconds max_age) noexcept</td></tr>
 <tr class="memdesc:ga1bbaa91f329c2c7fd7b36bce2d288b15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true when last measurement is older than max_age.  <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:ada79468a2f3aec5293b6b5f40f2be7db" id="r_ada79468a2f3aec5293b6b5f40f2be7db"><td class="memItemLeft"><a class="el" href="classtime__shield_1_1NtpTimeServiceT.html">NtpTimeServiceT</a>&lt; <a class="el" href="namespacetime__shield_1_1detail.html#a787d6e107fe144f38103b3caff9d20b7">RunnerAlias</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="namespacetime__shield_1_1detail.html#ada79468a2f3aec5293b6b5f40f2be7db">time_shield::detail::g_ntp_time_service</a></td></tr>
-<tr class="memitem:a39a80a3aa8e3f0792d8287cab2584802" id="r_a39a80a3aa8e3f0792d8287cab2584802"><td class="memTemplParams" colspan="2">template&lt;class RunnerT&gt; </td></tr>
-<tr class="memitem:a39a80a3aa8e3f0792d8287cab2584802 template"><td class="memItemLeft"><a class="el" href="classtime__shield_1_1NtpTimeServiceT.html">NtpTimeServiceT</a>&lt; RunnerT &gt;&#160;</td><td class="memItemRight"><a class="el" href="namespacetime__shield.html#a39a80a3aa8e3f0792d8287cab2584802">time_shield::NtpTimeServiceT&lt; RunnerT &gt;::m_instance</a> {}</td></tr>
+<tr class="memitem:ga63bb277d0ced52974c78d0bb99b5e251" id="r_ga63bb277d0ced52974c78d0bb99b5e251"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="group__ntp.html#ga63bb277d0ced52974c78d0bb99b5e251">time_shield::ntp::stale</a> (int max_age_ms) noexcept</td></tr>
+<tr class="memdesc:ga63bb277d0ced52974c78d0bb99b5e251"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true when last measurement is older than max_age_ms.  <br /></td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -11,6 +11,8 @@ var namespacetime__shield_1_1detail =
     [ "IUdpTransport", "classtime__shield_1_1detail_1_1IUdpTransport.html", "classtime__shield_1_1detail_1_1IUdpTransport" ],
     [ "UdpTransportPosix", "classtime__shield_1_1detail_1_1UdpTransportPosix.html", "classtime__shield_1_1detail_1_1UdpTransportPosix" ],
     [ "UdpTransportWin", "classtime__shield_1_1detail_1_1UdpTransportWin.html", "classtime__shield_1_1detail_1_1UdpTransportWin" ],
+    [ "NtpTimeServiceSingleton", "structtime__shield_1_1detail_1_1NtpTimeServiceSingleton.html", "structtime__shield_1_1detail_1_1NtpTimeServiceSingleton" ],
+    [ "NtpTimeServiceTestAccess", "structtime__shield_1_1detail_1_1NtpTimeServiceTestAccess.html", "structtime__shield_1_1detail_1_1NtpTimeServiceTestAccess" ],
     [ "FakeNtpRunner", "classtime__shield_1_1detail_1_1FakeNtpRunner.html", "classtime__shield_1_1detail_1_1FakeNtpRunner" ],
     [ "TimerState", "structtime__shield_1_1detail_1_1TimerState.html", "structtime__shield_1_1detail_1_1TimerState" ],
     [ "RunningTimerScope", "structtime__shield_1_1detail_1_1RunningTimerScope.html", "structtime__shield_1_1detail_1_1RunningTimerScope" ],
@@ -18,7 +20,6 @@ var namespacetime__shield_1_1detail =
     [ "ScheduledComparator", "structtime__shield_1_1detail_1_1ScheduledComparator.html", "structtime__shield_1_1detail_1_1ScheduledComparator" ],
     [ "DueTimer", "structtime__shield_1_1detail_1_1DueTimer.html", "structtime__shield_1_1detail_1_1DueTimer" ],
     [ "PlatformUdpTransport", "namespacetime__shield_1_1detail.html#a75ee3a49ceb0d28587cec20b93d51298", null ],
-    [ "RunnerAlias", "namespacetime__shield_1_1detail.html#a787d6e107fe144f38103b3caff9d20b7", null ],
     [ "TimerCallback", "namespacetime__shield_1_1detail.html#ab7895535bd678165a097bd78ce41eb1b", null ],
     [ "TimerClock", "namespacetime__shield_1_1detail.html#a1555f22edeb3f1a8440448483811bc44", null ],
     [ "NtpProtoError", "group__ntp.html#ga0415b8ea31444b289d12fa4477ab0956", [
@@ -30,7 +31,9 @@ var namespacetime__shield_1_1detail =
       [ "NTP_E_KOD", "group__ntp.html#gga0415b8ea31444b289d12fa4477ab0956a242bb8a1ee2d6b3299c14885992408d4", null ],
       [ "NTP_E_BAD_TS", "group__ntp.html#gga0415b8ea31444b289d12fa4477ab0956ad39f33af632e93e1ef5ce7dd970af607", null ]
     ] ],
+    [ "cet_to_gmt_impl", "namespacetime__shield_1_1detail.html#a4ca3ec15bdb2194fa702217cef483d70", null ],
     [ "current_timer_state", "namespacetime__shield_1_1detail.html#a5e9f998322af0d986f490b7526d5345d", null ],
+    [ "european_local_to_gmt", "namespacetime__shield_1_1detail.html#af011f1ee32fce56d9b5104851c8060e7", null ],
     [ "fast_date_from_days", "namespacetime__shield_1_1detail.html#ad8015908b646d7409a7b5fada9f5c075", null ],
     [ "fast_date_from_days_constexpr", "namespacetime__shield_1_1detail.html#a5a89f8fabdea556865c9b9abe0991a17", null ],
     [ "fast_days_from_date", "namespacetime__shield_1_1detail.html#af1f56d3148488a0028b175e63bae2d00", null ],
@@ -38,10 +41,15 @@ var namespacetime__shield_1_1detail =
     [ "fast_year_from_days", "namespacetime__shield_1_1detail.html#a9526a97329d89f4c84b36c22792ff35a", null ],
     [ "fast_year_from_days_constexpr", "namespacetime__shield_1_1detail.html#ac37a65d82c36d9de43ab5e59bc437467", null ],
     [ "fill_client_packet", "namespacetime__shield_1_1detail.html#af660cd4c3b59a86868102cc8323d26fb", null ],
+    [ "fixed_zone_offset", "namespacetime__shield_1_1detail.html#a258a9ef1d7618d68ff8e180de7d44350", null ],
     [ "floor_div", "namespacetime__shield_1_1detail.html#a7feb3415dcece49bf82e7a554fff854a", null ],
     [ "floor_mod", "namespacetime__shield_1_1detail.html#a0b958a2e7fb65f29de3af00f0811cfb7", null ],
+    [ "gmt_to_cet_impl", "namespacetime__shield_1_1detail.html#a2fbe7d205149e934c8a183b82fff83d3", null ],
+    [ "gmt_to_european_local", "namespacetime__shield_1_1detail.html#a5ff639a6af053defe77e388f7162fd6b", null ],
+    [ "gmt_to_zone_ms_by_seconds", "namespacetime__shield_1_1detail.html#a9f2ae06d2224bfa6489e47d3c38d294d", null ],
     [ "is_ascii_digit", "namespacetime__shield_1_1detail.html#a30bd76de8e4ab15d80d93032c4216245", null ],
     [ "is_ascii_space", "namespacetime__shield_1_1detail.html#a4c4e74dd641a830641fdb33e3d225944", null ],
+    [ "is_us_eastern_dst_local", "namespacetime__shield_1_1detail.html#a6c483bfe8e08b1afe0469e0eff1e720b", null ],
     [ "mul_hi_u64", "namespacetime__shield_1_1detail.html#a68c2a273d69c3e128beccdfb5626f640", null ],
     [ "mul_hi_u64_constexpr", "namespacetime__shield_1_1detail.html#a5e3de882b3ea0aecee3f5db51ce8c5a6", null ],
     [ "mul_shift_u64", "namespacetime__shield_1_1detail.html#a1ab6dcd11256fecab0b344c57622ac61", null ],
@@ -65,5 +73,5 @@ var namespacetime__shield_1_1detail =
     [ "trim_view_ascii", "namespacetime__shield_1_1detail.html#a9ebc306d8cf35e7bd04192e453546848", null ],
     [ "try_parse_month_index", "namespacetime__shield_1_1detail.html#ac029cb3ca44207a7235acda196e3ad1b", null ],
     [ "try_parse_month_index", "namespacetime__shield_1_1detail.html#a9b4dd2b6af8616b2cd581c275b38334b", null ],
-    [ "g_ntp_time_service", "namespacetime__shield_1_1detail.html#ada79468a2f3aec5293b6b5f40f2be7db", null ]
+    [ "zone_to_gmt_ms_by_seconds", "namespacetime__shield_1_1detail.html#af56a0b4f4748bf703d41de48379cc61f", null ]
 ];

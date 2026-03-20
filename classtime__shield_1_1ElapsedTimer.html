@@ -132,9 +132,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7b730d2f31ae5ab994912183dbe69d8a" id="r_a7b730d2f31ae5ab994912183dbe69d8a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a7b730d2f31ae5ab994912183dbe69d8a">invalidate</a> () noexcept</td></tr>
 <tr class="memdesc:a7b730d2f31ae5ab994912183dbe69d8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalidates the timer so subsequent <a class="el" href="#a41bc77ccc0925b28f0e54168341f72d9" title="Returns elapsed duration since the timer was started.">elapsed()</a> calls return zero.  <br /></td></tr>
 <tr class="memitem:a41ef1167c0e54d63f9be165ac2d52fec" id="r_a41ef1167c0e54d63f9be165ac2d52fec"><td class="memItemLeft">TIME_SHIELD_NODISCARD bool&#160;</td><td class="memItemRight"><a class="el" href="#a41ef1167c0e54d63f9be165ac2d52fec">is_running</a> () const noexcept</td></tr>
-<tr class="memdesc:a41ef1167c0e54d63f9be165ac2d52fec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the timer currently measures elapsed time.  <br /></td></tr>
+<tr class="memdesc:a41ef1167c0e54d63f9be165ac2d52fec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the timer measures elapsed time.  <br /></td></tr>
 <tr class="memitem:a84f5189aafaf8c4aef364e0134c99074" id="r_a84f5189aafaf8c4aef364e0134c99074"><td class="memItemLeft">TIME_SHIELD_NODISCARD bool&#160;</td><td class="memItemRight"><a class="el" href="#a84f5189aafaf8c4aef364e0134c99074">is_valid</a> () const noexcept</td></tr>
-<tr class="memdesc:a84f5189aafaf8c4aef364e0134c99074"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for <a class="el" href="#a41ef1167c0e54d63f9be165ac2d52fec" title="Checks whether the timer currently measures elapsed time.">is_running()</a> to match Qt naming conventions.  <br /></td></tr>
+<tr class="memdesc:a84f5189aafaf8c4aef364e0134c99074"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for <a class="el" href="#a41ef1167c0e54d63f9be165ac2d52fec" title="Checks whether the timer measures elapsed time.">is_running()</a> to match Qt naming conventions.  <br /></td></tr>
 <tr class="memitem:a7568a8dca661afc3aa43705784232a37" id="r_a7568a8dca661afc3aa43705784232a37"><td class="memItemLeft">TIME_SHIELD_NODISCARD <a class="el" href="#a04be03f978d9823ba97db5af5a4776e8">time_point</a>&#160;</td><td class="memItemRight"><a class="el" href="#a7568a8dca661afc3aa43705784232a37">start_time</a> () const noexcept</td></tr>
 <tr class="memdesc:a7568a8dca661afc3aa43705784232a37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns start time stored by the timer.  <br /></td></tr>
 <tr class="memitem:a41bc77ccc0925b28f0e54168341f72d9" id="r_a41bc77ccc0925b28f0e54168341f72d9"><td class="memItemLeft">TIME_SHIELD_NODISCARD <a class="el" href="#a8ac4507867376c9040886ded09c18b58">duration</a>&#160;</td><td class="memItemRight"><a class="el" href="#a41bc77ccc0925b28f0e54168341f72d9">elapsed</a> () const noexcept</td></tr>
@@ -653,7 +653,7 @@ template&lt;class Duration&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Checks whether the timer currently measures elapsed time. </p>
+<p>Checks whether the timer measures elapsed time. </p>
 
 <p class="definition">Definition at line <a class="el" href="ElapsedTimer_8hpp_source.html#l00082">82</a> of file <a class="el" href="ElapsedTimer_8hpp_source.html">ElapsedTimer.hpp</a>.</p>
 
@@ -682,7 +682,7 @@ template&lt;class Duration&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Alias for <a class="el" href="#a41ef1167c0e54d63f9be165ac2d52fec" title="Checks whether the timer currently measures elapsed time.">is_running()</a> to match Qt naming conventions. </p>
+<p>Alias for <a class="el" href="#a41ef1167c0e54d63f9be165ac2d52fec" title="Checks whether the timer measures elapsed time.">is_running()</a> to match Qt naming conventions. </p>
 
 <p class="definition">Definition at line <a class="el" href="ElapsedTimer_8hpp_source.html#l00087">87</a> of file <a class="el" href="ElapsedTimer_8hpp_source.html">ElapsedTimer.hpp</a>.</p>
 

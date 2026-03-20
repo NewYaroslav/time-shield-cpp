@@ -12,5 +12,6 @@ var searchData=
   ['add_5fserver_9',['add_server',['../classtime__shield_1_1NtpClientPoolT.html#a29dc6a0ba13262ee93209ece8f94a116',1,'time_shield::NtpClientPoolT']]],
   ['apply_5fconfig_5fnow_10',['apply_config_now',['../classtime__shield_1_1NtpTimeServiceT.html#ab5529fb2341c5e300a599d6fbc3c1b23',1,'time_shield::NtpTimeServiceT']]],
   ['apply_5fsamples_11',['apply_samples',['../classtime__shield_1_1NtpClientPoolT.html#ab169b2995023608ec34d8b3e20c95f61',1,'time_shield::NtpClientPoolT']]],
-  ['average_5fticks_12',['average_ticks',['../classtime__shield_1_1CpuTickTimer.html#ab0fcfe5dd9d0292050ee5f146fea45ee',1,'time_shield::CpuTickTimer']]]
+  ['atexit_5fregistration_5fcount_12',['atexit_registration_count',['../classtime__shield_1_1NtpTimeServiceT.html#a289ffaba6c2427faa4e60949ee8c51a4',1,'time_shield::NtpTimeServiceT::atexit_registration_count()'],['../structtime__shield_1_1detail_1_1NtpTimeServiceTestAccess.html#a36aa10a1c14c3ca321d848946c163790',1,'time_shield::detail::NtpTimeServiceTestAccess::atexit_registration_count()']]],
+  ['average_5fticks_13',['average_ticks',['../classtime__shield_1_1CpuTickTimer.html#ab0fcfe5dd9d0292050ee5f146fea45ee',1,'time_shield::CpuTickTimer']]]
 ];

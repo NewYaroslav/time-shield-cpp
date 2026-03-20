@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['weekday_0',['Weekday',['../group__time__enums.html#gadf684443100352064316f6134bbe44f8',1,'time_shield::Weekday'],['../group__mql5__time__enums.html#gadf684443100352064316f6134bbe44f8',1,'time_shield::Weekday']]]
+  ['state_0',['State',['../classtime__shield_1_1NtpTimeServiceT.html#a31fdc76f7e0777429e2ae92a340a52b6',1,'time_shield::NtpTimeServiceT']]]
 ];

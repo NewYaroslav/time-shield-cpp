@@ -103,10 +103,10 @@ $(function(){initNavTree('md_docs_2singleton-storage-guidelines-RU.html','','');
   <div class="headertitle"><div class="title">Рекомендации по хранению singleton / service storage в header-only C++ коде </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md77"></a></p>
+<div class="textblock"><p><a class="anchor" id="autotoc_md93"></a></p>
 <p>Этот документ задаёт переносимую политику для хранения singleton-подобных сервисов в C++ проектах с заголовочной архитектурой.</p>
 <p>Текст намеренно написан в обобщённом виде, чтобы его можно было перенести в другой репозиторий с минимальными правками.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md78"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md94"></a>
 Канонический язык</h1>
 <p>Канонической версией этого документа является английская:</p>
 <ul>
@@ -116,20 +116,21 @@ $(function(){initNavTree('md_docs_2singleton-storage-guidelines-RU.html','','');
 <li><span class="tt">agents/singleton-storage-guidelines.md</span></li>
 <li><span class="tt">agents/singleton-storage-guidelines-RU.md</span></li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md79"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md95"></a>
 Назначение</h1>
 <p>Используйте эти рекомендации, когда нужно решить:</p>
 <ul>
 <li>как держать один экземпляр сервиса на программу без ODR-проблем</li>
 <li>когда достаточно <span class="tt">static inline</span> storage</li>
 <li>когда в C++11/14 нужен один owning translation unit</li>
+<li>когда immortal singleton лучше подходит для сервисов, которые должны переживать late teardown</li>
 <li>как убрать raw storage из публичного API</li>
 <li>как последовательно именовать макросы для определения storage</li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md80"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md96"></a>
 Базовое правило</h1>
 <p>Используйте эту политику, чтобы избежать ODR-проблем и при этом сохранить один экземпляр на программу.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md81"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md97"></a>
 C++17 и новее</h1>
 <p>Предпочитайте <span class="tt">static inline</span> storage внутри класса:</p>
 <div class="fragment"><div class="line"><span class="keyword">class </span>Service {</div>
@@ -148,9 +149,9 @@ C++17 и новее</h1>
 <li>целевой стандарт поддерживает inline storage</li>
 <li>нет необходимости переносить emission в отдельный ownership TU</li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md82"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md98"></a>
 C++11/14</h1>
-<p>Полностью header-only хранение singleton storage невозможно без ровно одного owning translation unit (TU).</p>
+<p>Большинство шаблонов хранения singleton в C++11/14 требуют ровно один owning translation unit (TU).</p>
 <p>Определяйте storage ровно в одном TU с помощью макроса.</p>
 <p>Заголовок (<span class="tt">Service.hpp</span>):</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#pragma once</span></div>
@@ -192,7 +193,39 @@ C++11/14</h1>
 <div class="line"><span class="preprocessor">#include &quot;Service.hpp&quot;</span></div>
 </div><!-- fragment --><p>Во всех остальных <span class="tt">.cpp</span> файлах подключайте заголовок без макроса:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;Service.hpp&quot;</span></div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md83"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md99"></a>
+Исключение для late-teardown-safe сервисов в C++11/14</h1>
+<p>Когда сервис должен оставаться доступным во время разрушения статических объектов, допустим и header-only immortal singleton.</p>
+<p>Типовая форма:</p>
+<div class="fragment"><div class="line"><span class="keyword">class </span>Service {</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    <span class="keyword">static</span> Service&amp; instance() noexcept {</div>
+<div class="line">        <span class="keyword">static</span> Service* p_instance = create_instance();</div>
+<div class="line">        <span class="keywordflow">return</span> *p_instance;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">private</span>:</div>
+<div class="line">    Service() = <span class="keywordflow">default</span>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">static</span> Service* create_instance() noexcept {</div>
+<div class="line">        Service* p_instance = <span class="keyword">new</span> Service();</div>
+<div class="line">        std::atexit(&amp;begin_process_shutdown);</div>
+<div class="line">        <span class="keywordflow">return</span> p_instance;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> begin_process_shutdown() noexcept {</div>
+<div class="line">        instance().stop_without_restarting();</div>
+<div class="line">    }</div>
+<div class="line">};</div>
+</div><!-- fragment --><p>Используйте эту модель только если одновременно верны все условия:</p>
+<ul>
+<li>сервис должен переживать проблемы порядка разрушения статических объектов</li>
+<li>утечка одного process-lifetime экземпляра допустима</li>
+<li>shutdown path явно no-throw</li>
+<li>поздние вызовы не должны повторно запускать фоновую работу во время завершения процесса</li>
+</ul>
+<p><span class="tt">NtpTimeService</span> в этом репозитории использует именно такой immortal singleton, а не старую one-TU macro model.</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md100"></a>
 Границы ownership</h1>
 <p>Держите raw storage вне публичного API, размещая его в <span class="tt">detail</span>.</p>
 <p>Эта модель предпочтительна, когда:</p>
@@ -202,7 +235,7 @@ C++11/14</h1>
 <li>ownership должен оставаться явным в non-header-only сборках</li>
 </ul>
 <p>Если сервисов много и нужен C++11/14 storage, предпочтителен единый TU вроде <span class="tt">project_singletons.cpp</span>, который определяет все <span class="tt">*_DEFINE_STORAGE</span> макросы.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md84"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md101"></a>
 Именование макросов</h1>
 <p>Используйте один из этих паттернов для макроса определения storage:</p>
 <ul>
@@ -210,21 +243,21 @@ C++11/14</h1>
 <li><span class="tt">FOO_IMPLEMENTATION</span></li>
 </ul>
 <p>Выбранный макрос должен быть определён ровно в одном TU.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md85"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md102"></a>
 Сценарии ошибок</h1>
 <ul>
 <li>Если в сборке C++11/14 макрос не определён нигде, будет undefined reference error.</li>
 <li>Если макрос определён в нескольких TU, будут multiple definition errors.</li>
 <li>В C++17+ макрос не нужен, но его наличие безвредно, если реализация написана соответствующим образом.</li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md86"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md103"></a>
 Практический checklist</h1>
 <p>Перед финализацией singleton-подобного сервиса проверьте:</p>
 <ul>
 <li>уровень стандарта проекта понятен</li>
 <li>в C++17+ используется <span class="tt">static inline</span> storage, когда сервис действительно header-owned</li>
-<li>в C++11/14 storage определяется ровно в одном TU</li>
-<li>raw storage остаётся в <span class="tt">detail</span></li>
+<li>в C++11/14 storage либо определяется ровно в одном TU, либо осознанно используется immortal singleton для late-teardown-safe поведения</li>
+<li>raw storage размещается в <span class="tt">detail</span></li>
 <li>макрос именован последовательно по шаблону <span class="tt">*_DEFINE_STORAGE</span> или <span class="tt">*_IMPLEMENTATION</span></li>
 <li>сценарии ошибок понятны и при необходимости задокументированы </li>
 </ul>

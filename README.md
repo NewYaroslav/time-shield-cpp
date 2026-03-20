@@ -298,7 +298,7 @@ The helpers reuse the `start_of_day` / `end_of_day` semantics and therefore retu
 
 ### OLE Automation (OA) date conversions
 
-OA conversions are Excel/COM compatible (base date 1899-12-30), operate in UTC, and mirror the round-toward-zero semantics used by OA serials.
+OA conversions are Excel/COM compatible (base date 1899-12-30), operate in UTC, and preserve the special negative-fraction semantics used by OA serials before the base date.
 
 ```cpp
 #include <time_shield/ole_automation_conversions.hpp>
@@ -307,6 +307,7 @@ using namespace time_shield;
 
 oadate_t oa = ts_to_oadate(1714608000);                     // 2024-05-02 00:00:00Z
 ts_t ts_from_oa = oadate_to_ts(oa);                         // round toward zero
+oadate_t pre_base = to_oadate(1899, Month::DEC, 29, 6, 0); // -1.25
 oadate_t from_parts = to_oadate(2024, Month::MAY, 2, 12, 0); // 2024-05-02 12:00:00Z
 ```
 

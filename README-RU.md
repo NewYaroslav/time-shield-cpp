@@ -170,7 +170,7 @@ int hour_utc = dt.utc_hour();               // час в UTC
 
 ### Преобразование дат OLE Automation (OA)
 
-Преобразования OA совместимы с Excel/COM (базовая дата 1899-12-30), выполняются в UTC и сохраняют округление к нулю, характерное для серийных OA дат.
+Преобразования OA совместимы с Excel/COM (базовая дата 1899-12-30), выполняются в UTC и корректно обрабатывают специальную семантику отрицательных дробных OA serials до базовой даты.
 
 ```cpp
 #include <time_shield/ole_automation_conversions.hpp>
@@ -179,6 +179,7 @@ using namespace time_shield;
 
 oadate_t oa = ts_to_oadate(1714608000);                     // 2024-05-02 00:00:00Z
 ts_t ts_from_oa = oadate_to_ts(oa);                         // преобразование обратно в Unix-время
+oadate_t pre_base = to_oadate(1899, Month::DEC, 29, 6, 0); // -1.25
 oadate_t from_parts = to_oadate(2024, Month::MAY, 2, 12, 0); // 2024-05-02 12:00:00Z
 ```
 

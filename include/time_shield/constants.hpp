@@ -159,7 +159,7 @@ namespace time_shield {
     constexpr int64_t MAX_TIMESTAMP_MS  = MAX_TIMESTAMP * MS_PER_SEC + (MS_PER_SEC - 1); ///< Maximum timestamp value in milliseconds
     constexpr int64_t MIN_TIMESTAMP_MS  = MIN_TIMESTAMP * MS_PER_SEC; ///< Minimum timestamp value in milliseconds
     constexpr int64_t ERROR_TIMESTAMP   = 9223372036854770000LL; ///< Error timestamp value
-    constexpr double MAX_OADATE         = (std::numeric_limits<double>::max)(); ///< Maximum OLE automation date
+    constexpr double MAX_OADATE         = (std::numeric_limits<double>::max)(); ///< Maximum representable oadate_t value
     constexpr double AVG_DAYS_PER_YEAR  = 365.25;   ///< Average days per year
 
 /// \}

@@ -11,6 +11,7 @@
 /// - 0.0 is 1899-12-30 00:00:00
 /// - the integer part is days offset from that date
 /// - the fractional part is time-of-day / 24
+/// - negative fractional values follow Excel/COM serial semantics
 ///
 /// This header provides conversions between OA date and:
 /// - Unix timestamps in seconds (ts_t)
@@ -20,39 +21,71 @@
 #include "config.hpp"
 #include "types.hpp"
 #include "constants.hpp"
-#include "time_conversions.hpp"
+#include "date_time_conversions.hpp"
+
+#include <cmath>
 
 namespace time_shield {
+
+    namespace detail {
+
+        TIME_SHIELD_CONSTEXPR inline bool oadate_has_fraction(oadate_t value) noexcept {
+            return std::trunc(value) != value;
+        }
+
+        TIME_SHIELD_CONSTEXPR inline oadate_t linear_days_to_oadate(oadate_t linear_days) noexcept {
+            if (linear_days < 0 && oadate_has_fraction(linear_days)) {
+                const oadate_t whole_days = std::floor(linear_days);
+                const oadate_t fraction = linear_days - whole_days;
+                return whole_days - fraction;
+            }
+            return linear_days;
+        }
+
+        TIME_SHIELD_CONSTEXPR inline oadate_t oadate_to_linear_days(oadate_t oa) noexcept {
+            if (oa < 0 && oadate_has_fraction(oa)) {
+                const oadate_t whole_days = std::trunc(oa);
+                const oadate_t fraction = std::fabs(oa - whole_days);
+                return whole_days + fraction;
+            }
+            return oa;
+        }
+
+    } // namespace detail
 
     /// \brief Convert Unix timestamp (seconds) to OA date.
     /// \param ts Unix timestamp in seconds (may be negative).
     /// \return OA date value.
     TIME_SHIELD_CONSTEXPR inline oadate_t ts_to_oadate(ts_t ts) noexcept {
-        return static_cast<oadate_t>(OLE_EPOCH)
-             + static_cast<oadate_t>(ts) / static_cast<oadate_t>(SEC_PER_DAY);
+        const oadate_t linear_days = static_cast<oadate_t>(OLE_EPOCH)
+            + static_cast<oadate_t>(ts) / static_cast<oadate_t>(SEC_PER_DAY);
+        return detail::linear_days_to_oadate(linear_days);
     }
     
     /// \brief Convert Unix timestamp (floating seconds) to OA date.
     /// \param ts Unix timestamp in seconds as floating point (may be negative).
     /// \return OA date value.
     TIME_SHIELD_CONSTEXPR inline oadate_t fts_to_oadate(fts_t ts) noexcept {
-        return static_cast<oadate_t>(OLE_EPOCH)
-             + static_cast<oadate_t>(ts) / static_cast<oadate_t>(SEC_PER_DAY);
+        const oadate_t linear_days = static_cast<oadate_t>(OLE_EPOCH)
+            + static_cast<oadate_t>(ts) / static_cast<oadate_t>(SEC_PER_DAY);
+        return detail::linear_days_to_oadate(linear_days);
     }
     
     /// \brief Convert Unix timestamp (milliseconds) to OA date.
     /// \param ts_ms Unix timestamp in milliseconds (may be negative).
     /// \return OA date value.
     TIME_SHIELD_CONSTEXPR inline oadate_t ts_ms_to_oadate(ts_ms_t ts_ms) noexcept {
-        return static_cast<oadate_t>(OLE_EPOCH)
-             + static_cast<oadate_t>(ts_ms) / static_cast<oadate_t>(MS_PER_DAY);
+        const oadate_t linear_days = static_cast<oadate_t>(OLE_EPOCH)
+            + static_cast<oadate_t>(ts_ms) / static_cast<oadate_t>(MS_PER_DAY);
+        return detail::linear_days_to_oadate(linear_days);
     }
     
     /// \brief Convert OA date to Unix timestamp (seconds).
     /// \param oa OA date value.
     /// \return Unix timestamp in seconds (truncated toward zero).
     TIME_SHIELD_CONSTEXPR inline ts_t oadate_to_ts(oadate_t oa) noexcept {
-        const oadate_t seconds = (oa - static_cast<oadate_t>(OLE_EPOCH))
+        const oadate_t linear_days = detail::oadate_to_linear_days(oa);
+        const oadate_t seconds = (linear_days - static_cast<oadate_t>(OLE_EPOCH))
                                * static_cast<oadate_t>(SEC_PER_DAY);
         return static_cast<ts_t>(seconds);
     }
@@ -61,7 +94,8 @@ namespace time_shield {
     /// \param oa OA date value.
     /// \return Unix timestamp in seconds as floating point.
     TIME_SHIELD_CONSTEXPR inline fts_t oadate_to_fts(oadate_t oa) noexcept {
-        return static_cast<fts_t>((oa - static_cast<oadate_t>(OLE_EPOCH))
+        const oadate_t linear_days = detail::oadate_to_linear_days(oa);
+        return static_cast<fts_t>((linear_days - static_cast<oadate_t>(OLE_EPOCH))
              * static_cast<oadate_t>(SEC_PER_DAY));
     }
     
@@ -69,7 +103,8 @@ namespace time_shield {
     /// \param oa OA date value.
     /// \return Unix timestamp in milliseconds (truncated toward zero).
     TIME_SHIELD_CONSTEXPR inline ts_ms_t oadate_to_ts_ms(oadate_t oa) noexcept {
-        const oadate_t ms = (oa - static_cast<oadate_t>(OLE_EPOCH))
+        const oadate_t linear_days = detail::oadate_to_linear_days(oa);
+        const oadate_t ms = (linear_days - static_cast<oadate_t>(OLE_EPOCH))
                           * static_cast<oadate_t>(MS_PER_DAY);
         return static_cast<ts_ms_t>(ms);
     }

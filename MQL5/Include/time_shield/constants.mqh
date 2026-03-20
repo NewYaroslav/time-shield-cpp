@@ -162,7 +162,7 @@ namespace time_shield {
     const long ERROR_YEAR        = 9223372036854770000; ///< Error year value
     const long MAX_TIMESTAMP     = 9223371890843040000; ///< Maximum timestamp value
     const long ERROR_TIMESTAMP   = 9223372036854770000; ///< Error timestamp value
-    const double MAX_OADATE      = 1.7976931348623158e+308; ///< Maximum OLE automation date
+    const double MAX_OADATE      = 1.7976931348623158e+308; ///< Maximum representable oadate_t value
     const double AVG_DAYS_PER_YEAR  = 365.25;   ///< Average days per year
 
     /// \}

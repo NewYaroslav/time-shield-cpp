@@ -159,6 +159,7 @@ using namespace time_shield;
 
 oadate_t oa = ts_to_oadate(1714608000);               // OA date for 2024-05-02
 ts_t ts_from_oa = oadate_to_ts(oa);
+oadate_t pre_base = to_oadate(1899, Month::DEC, 29, 6, 0); // -1.25
 
 jd_t jd = gregorian_to_jd(2, 5, 2024, 12, 0);         // Julian Date with time
 mjd_t mjd = ts_to_mjd(1714608000);                    // Modified Julian Date

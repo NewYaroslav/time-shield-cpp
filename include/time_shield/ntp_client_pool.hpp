@@ -657,7 +657,7 @@ namespace time_shield {
             if (state.backoff.count() == 0) {
                 state.backoff = init;
             } else {
-                state.backoff = std::min(max_backoff, state.backoff * 2);
+                state.backoff = (std::min)(max_backoff, state.backoff * 2);
             }
 
             state.next_allowed = std::chrono::steady_clock::now() + state.backoff;

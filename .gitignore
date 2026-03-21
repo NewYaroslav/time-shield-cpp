@@ -37,3 +37,19 @@ agents/local-machine-settings.json
 
 # Agent temporary work area
 tmp/agent-work/
+
+# Local build and generated documentation output
+build/
+docs/html/
+docs/latex/
+
+# Local scratch files
+log.txt
+structure.txt
+tests/test_divide.cpp
+
+# Local helper scripts
+build-mingw-examples.bat
+cloc.bat
+copy_mt5.bat
+dendro.bat

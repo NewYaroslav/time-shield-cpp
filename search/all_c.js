@@ -22,7 +22,7 @@ var searchData=
   ['leaf_20first_20subsystem_19',['Standalone-leaf-first subsystem',['../md_docs_2header-implementation-guidelines.html#autotoc_md67',1,'']]],
   ['leaf_20header_20',['Aggregate Entry Header vs Leaf Header',['../md_docs_2header-implementation-guidelines.html#autotoc_md65',1,'']]],
   ['leaf_20header_21',['Aggregate entry header и leaf header',['../md_docs_2header-implementation-guidelines-RU.html#autotoc_md45',1,'']]],
-  ['leap_5fyear_22',['leap_year',['../group__time__validation.html#gaff561037cb91433512da3922c2666022',1,'time_shield::leap_year(T year) noexcept'],['../group__time__validation.html#gacb2fb6bd5fb218e0bbde17d9870e8afb',1,'time_shield::leap_year(const long year)']]],
+  ['leap_5fyear_22',['leap_year',['../group__time__validation.html#ga0a26945dc3480ca97fb3c9467613ad22',1,'time_shield::leap_year(T year) noexcept'],['../group__time__validation.html#gacb2fb6bd5fb218e0bbde17d9870e8afb',1,'time_shield::leap_year(const long year)']]],
   ['leap_5fyear_5fper_5f100_5fyear_23',['LEAP_YEAR_PER_100_YEAR',['../group__time__constants.html#ga0cf2f64e27728a988f7391d1cff27325',1,'time_shield']]],
   ['leap_5fyear_5fper_5f400_5fyear_24',['LEAP_YEAR_PER_400_YEAR',['../group__time__constants.html#ga2ea9411366a3595637a7b9a5a2e31147',1,'time_shield']]],
   ['leap_5fyear_5fts_25',['leap_year_ts',['../group__time__validation.html#ga8e0d80a09f42577e88f9bc294da403d1',1,'time_shield::leap_year_ts(ts_t ts)'],['../group__time__validation.html#ga046472fb8c315f13a3b30649a26241ce',1,'time_shield::leap_year_ts(const long ts)']]],

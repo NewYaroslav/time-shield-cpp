@@ -178,14 +178,14 @@ var NAVTREEINDEX =
 "classtime__shield_1_1NtpTimeServiceT.html#a2f17857107d756c815390af87c9ea8f8",
 "classtime__shield_1_1astronomy_1_1MoonPhase.html#a1a522c5b8d60030b12ffbaaf4d760873",
 "functions_o.html",
-"group__time__conversions.html#ga13db87732b24455dc8caf0902bc36577",
-"group__time__conversions.html#ga7b9b1b808aba917b3f6cd6d20360bd10",
-"group__time__conversions.html#gaf2cbc0da5ee10422816b21d7e2ed52a5",
+"group__time__conversions.html#ga122d02011db630c86c50fc149d57f7d9",
+"group__time__conversions.html#ga7cf2827ccdd721b9c611010b4a7b0524",
+"group__time__conversions.html#gaf1e220e4b775d17cc4c07209b906a4b1",
 "group__time__enums.html#ggad8cb858fb6cedcf76c4f0630d56e042ba62b4f1dddfbf15eed8ca9771b9cbfe31",
 "group__time__parsing.html#gaebd6745cef0d115470cc9449c91833a0",
-"md_docs_2header-implementation-guidelines.html#autotoc_md65",
-"namespacetime__shield_1_1detail_1_1format__parse.html#a07cdd6c84fa8cb263fd90b34cb4fc179",
-"structtime__shield_1_1detail_1_1ScheduledTimer.html#a9a2945ef613a3f34c673f542f35ecd43"
+"md_docs_2header-implementation-guidelines.html#autotoc_md64",
+"namespacetime__shield_1_1detail.html#aec5a95b3874a3cd243821dd1c2c1f295",
+"structtime__shield_1_1detail_1_1ScheduledComparator.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

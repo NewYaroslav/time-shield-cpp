@@ -41,7 +41,7 @@ var classtime__shield_1_1DateTime =
     [ "now_utc", "classtime__shield_1_1DateTime.html#a8b6d004eccd52f4fb737e1aa518adb1c", null ],
     [ "now_utc", "classtime__shield_1_1DateTime.html#a034ad8a3b8fc63b5eb7fad3b9fae3819", null ],
     [ "offset_to_ms", "classtime__shield_1_1DateTime.html#a3f5f67bc4de238c7a72f84d28a20a397", null ],
-    [ "offset_to_ms", "classtime__shield_1_1DateTime.html#ae460c774387fabfef8fbfd311a35cf32", null ],
+    [ "offset_to_ms", "classtime__shield_1_1DateTime.html#aff8095544901d3494d63b921a9bb9f4c", null ],
     [ "operator!=", "classtime__shield_1_1DateTime.html#a27d350cb74dbc17ad7eb6559135c1918", null ],
     [ "operator<", "classtime__shield_1_1DateTime.html#abfe52db36c778dd0414efb947776022d", null ],
     [ "operator<=", "classtime__shield_1_1DateTime.html#a696e937ad2d9839764931da3404d6026", null ],

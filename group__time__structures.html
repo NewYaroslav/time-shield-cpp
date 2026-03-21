@@ -134,7 +134,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:gab2f5d5f6dcbef50ff35c876ee4f0ca05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a timestamp to a date-time structure.  <br /></td></tr>
 <tr class="memitem:gab6cf08da5ef726f11d460ad3e45f6800" id="r_gab6cf08da5ef726f11d460ad3e45f6800"><td class="memItemLeft">const <a class="el" href="structtime__shield_1_1DateTimeStruct.html">DateTimeStruct</a>&#160;</td><td class="memItemRight"><a class="el" href="#gab6cf08da5ef726f11d460ad3e45f6800">time_shield::create_date_time_struct</a> (int64_t <a class="el" href="group__time__conversions.html#gadd68b9e632d1b5a43c18b116bbf105a4">year</a>, int mon=1, int day=1, int hour=0, int min=0, int sec=0, int ms=0)</td></tr>
 <tr class="memdesc:gab6cf08da5ef726f11d460ad3e45f6800"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="structtime__shield_1_1DateTimeStruct.html" title="Structure to represent date and time.">DateTimeStruct</a> instance.  <br /></td></tr>
-<tr class="memitem:ga9da8bcc317b82ac17d1768ba31eaece5" id="r_ga9da8bcc317b82ac17d1768ba31eaece5"><td class="memItemLeft">const <a class="el" href="structtime__shield_1_1IsoWeekDateStruct.html">IsoWeekDateStruct</a>&#160;</td><td class="memItemRight"><a class="el" href="#ga9da8bcc317b82ac17d1768ba31eaece5">time_shield::create_iso_week_date_struct</a> (int64_t <a class="el" href="group__time__conversions.html#gadd68b9e632d1b5a43c18b116bbf105a4">year</a>, int32_t week=1, int32_t <a class="el" href="group__time__conversions.html#gaceafb0639e52115aff08ec242f81b5f5">weekday</a>=1)</td></tr>
+<tr class="memitem:ga9da8bcc317b82ac17d1768ba31eaece5" id="r_ga9da8bcc317b82ac17d1768ba31eaece5"><td class="memItemLeft">const <a class="el" href="structtime__shield_1_1IsoWeekDateStruct.html">IsoWeekDateStruct</a>&#160;</td><td class="memItemRight"><a class="el" href="#ga9da8bcc317b82ac17d1768ba31eaece5">time_shield::create_iso_week_date_struct</a> (int64_t <a class="el" href="group__time__conversions.html#gadd68b9e632d1b5a43c18b116bbf105a4">year</a>, int32_t week=1, int32_t <a class="el" href="group__time__conversions.html#ga872101570bc5bc23bfc38fb1335ca0e2">weekday</a>=1)</td></tr>
 <tr class="memdesc:ga9da8bcc317b82ac17d1768ba31eaece5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="structtime__shield_1_1IsoWeekDateStruct.html" title="Structure to represent an ISO week date.">IsoWeekDateStruct</a> instance.  <br /></td></tr>
 <tr class="memitem:ga31f445e3e85cba85035f71b35de12e25" id="r_ga31f445e3e85cba85035f71b35de12e25"><td class="memItemLeft">const <a class="el" href="structtime__shield_1_1TimeStruct.html">TimeStruct</a>&#160;</td><td class="memItemRight"><a class="el" href="#ga31f445e3e85cba85035f71b35de12e25">time_shield::create_time_struct</a> (int16_t hour, int16_t min, int16_t sec=0, int16_t ms=0)</td></tr>
 <tr class="memdesc:ga31f445e3e85cba85035f71b35de12e25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="structtime__shield_1_1TimeStruct.html" title="Structure to represent time.">TimeStruct</a> instance.  <br /></td></tr>
@@ -203,33 +203,33 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga8c23d7f60ed6d2dd82ff310d5c21e1e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a date and time to a floating-point timestamp.  <br /></td></tr>
 <tr class="memitem:ga10b556c28469481aa02d613649134b0b" id="r_ga10b556c28469481aa02d613649134b0b"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f">fts_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#ga10b556c28469481aa02d613649134b0b">time_shield::tm_to_ftimestamp</a> (const std::tm *timeinfo)</td></tr>
 <tr class="memdesc:ga10b556c28469481aa02d613649134b0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a std::tm structure to a floating-point timestamp.  <br /></td></tr>
-<tr class="memitem:ga9645c1e5b43e602c456bd297c78e7f4b" id="r_ga9645c1e5b43e602c456bd297c78e7f4b"><td class="memItemLeft">constexpr <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#ga9645c1e5b43e602c456bd297c78e7f4b">time_shield::start_of_day</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>=<a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>()) noexcept</td></tr>
-<tr class="memdesc:ga9645c1e5b43e602c456bd297c78e7f4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the start of the day timestamp.  <br /></td></tr>
-<tr class="memitem:gadfa501f1f9d1b4b687bba3fb850ce3cb" id="r_gadfa501f1f9d1b4b687bba3fb850ce3cb"><td class="memTemplParams" colspan="2">template&lt;class T = int&gt; </td></tr>
-<tr class="memitem:gadfa501f1f9d1b4b687bba3fb850ce3cb template"><td class="memItemLeft">constexpr <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#gadfa501f1f9d1b4b687bba3fb850ce3cb">time_shield::start_of_prev_day</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>=<a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>(), T <a class="el" href="group__time__conversions.html#gac15d883acc0247a54eea2b17f68f6860">days</a>=1) noexcept</td></tr>
-<tr class="memdesc:gadfa501f1f9d1b4b687bba3fb850ce3cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get timestamp of the start of the previous day.  <br /></td></tr>
-<tr class="memitem:gac5fad76a1d5a6677d363b8421659b914" id="r_gac5fad76a1d5a6677d363b8421659b914"><td class="memItemLeft">constexpr <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#gac5fad76a1d5a6677d363b8421659b914">time_shield::start_of_day_sec</a> (<a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> <a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">ts_ms</a>=<a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">time_shield::ts_ms</a>()) noexcept</td></tr>
-<tr class="memdesc:gac5fad76a1d5a6677d363b8421659b914"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the start of the day timestamp in seconds.  <br /></td></tr>
-<tr class="memitem:ga518e724145efa3e49429908db595d09e" id="r_ga518e724145efa3e49429908db595d09e"><td class="memItemLeft">constexpr <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#ga518e724145efa3e49429908db595d09e">time_shield::start_of_day_ms</a> (<a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> <a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">ts_ms</a>=<a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">time_shield::ts_ms</a>()) noexcept</td></tr>
-<tr class="memdesc:ga518e724145efa3e49429908db595d09e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the start of the day timestamp in milliseconds.  <br /></td></tr>
-<tr class="memitem:gab2017f2438d264e48dc2acb839989d7a" id="r_gab2017f2438d264e48dc2acb839989d7a"><td class="memTemplParams" colspan="2">template&lt;class T = int&gt; </td></tr>
-<tr class="memitem:gab2017f2438d264e48dc2acb839989d7a template"><td class="memItemLeft">constexpr <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#gab2017f2438d264e48dc2acb839989d7a">time_shield::start_of_next_day</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>, T <a class="el" href="group__time__conversions.html#gac15d883acc0247a54eea2b17f68f6860">days</a>=1) noexcept</td></tr>
-<tr class="memdesc:gab2017f2438d264e48dc2acb839989d7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the timestamp of the start of the day after a specified number of days.  <br /></td></tr>
-<tr class="memitem:gaae682a4603729173273f7021da9a1fc5" id="r_gaae682a4603729173273f7021da9a1fc5"><td class="memTemplParams" colspan="2">template&lt;class T = int&gt; </td></tr>
-<tr class="memitem:gaae682a4603729173273f7021da9a1fc5 template"><td class="memItemLeft">constexpr <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#gaae682a4603729173273f7021da9a1fc5">time_shield::start_of_next_day_ms</a> (<a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> <a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">ts_ms</a>, T <a class="el" href="group__time__conversions.html#gac15d883acc0247a54eea2b17f68f6860">days</a>=1) noexcept</td></tr>
-<tr class="memdesc:gaae682a4603729173273f7021da9a1fc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the timestamp of the start of the day after a specified number of days.  <br /></td></tr>
-<tr class="memitem:gab88cbc8062ea211724a30df28f4781a2" id="r_gab88cbc8062ea211724a30df28f4781a2"><td class="memTemplParams" colspan="2">template&lt;class T = int&gt; </td></tr>
-<tr class="memitem:gab88cbc8062ea211724a30df28f4781a2 template"><td class="memItemLeft">constexpr <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#gab88cbc8062ea211724a30df28f4781a2">time_shield::next_day</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>, T <a class="el" href="group__time__conversions.html#gac15d883acc0247a54eea2b17f68f6860">days</a>=1) noexcept</td></tr>
-<tr class="memdesc:gab88cbc8062ea211724a30df28f4781a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the timestamp for a specified number of days in the future.  <br /></td></tr>
-<tr class="memitem:gab137480ffab276959b4ac440b6d09fb0" id="r_gab137480ffab276959b4ac440b6d09fb0"><td class="memTemplParams" colspan="2">template&lt;class T = int&gt; </td></tr>
-<tr class="memitem:gab137480ffab276959b4ac440b6d09fb0 template"><td class="memItemLeft">constexpr <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#gab137480ffab276959b4ac440b6d09fb0">time_shield::next_day_ms</a> (<a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> <a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">ts_ms</a>, T <a class="el" href="group__time__conversions.html#gac15d883acc0247a54eea2b17f68f6860">days</a>=1) noexcept</td></tr>
-<tr class="memdesc:gab137480ffab276959b4ac440b6d09fb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the timestamp for a specified number of days in the future (milliseconds).  <br /></td></tr>
-<tr class="memitem:ga6652d1b0777fce93ca2beb4f4589c684" id="r_ga6652d1b0777fce93ca2beb4f4589c684"><td class="memItemLeft">constexpr <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#ga6652d1b0777fce93ca2beb4f4589c684">time_shield::end_of_day</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>=<a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>()) noexcept</td></tr>
-<tr class="memdesc:ga6652d1b0777fce93ca2beb4f4589c684"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the timestamp at the end of the day.  <br /></td></tr>
-<tr class="memitem:gafb9ac12a0e5b1c5195f6932c61e0f799" id="r_gafb9ac12a0e5b1c5195f6932c61e0f799"><td class="memItemLeft">constexpr <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#gafb9ac12a0e5b1c5195f6932c61e0f799">time_shield::end_of_day_sec</a> (<a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> <a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">ts_ms</a>=<a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">time_shield::ts_ms</a>()) noexcept</td></tr>
-<tr class="memdesc:gafb9ac12a0e5b1c5195f6932c61e0f799"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the timestamp at the end of the day in seconds.  <br /></td></tr>
-<tr class="memitem:ga38caa64a9fbc211fd0b647e1c4215aef" id="r_ga38caa64a9fbc211fd0b647e1c4215aef"><td class="memItemLeft">constexpr <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#ga38caa64a9fbc211fd0b647e1c4215aef">time_shield::end_of_day_ms</a> (<a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> <a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">ts_ms</a>=<a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">time_shield::ts_ms</a>()) noexcept</td></tr>
-<tr class="memdesc:ga38caa64a9fbc211fd0b647e1c4215aef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the timestamp at the end of the day in milliseconds.  <br /></td></tr>
+<tr class="memitem:ga65d223f1d59df13f149fa4a5fd4c8475" id="r_ga65d223f1d59df13f149fa4a5fd4c8475"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#ga65d223f1d59df13f149fa4a5fd4c8475">time_shield::start_of_day</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>=<a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>()) noexcept</td></tr>
+<tr class="memdesc:ga65d223f1d59df13f149fa4a5fd4c8475"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the start of the day timestamp.  <br /></td></tr>
+<tr class="memitem:gacea69f331d74b341736b05eb25a59545" id="r_gacea69f331d74b341736b05eb25a59545"><td class="memTemplParams" colspan="2">template&lt;class T = int&gt; </td></tr>
+<tr class="memitem:gacea69f331d74b341736b05eb25a59545 template"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#gacea69f331d74b341736b05eb25a59545">time_shield::start_of_prev_day</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>=<a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>(), T <a class="el" href="group__time__conversions.html#ga706b3e0663e8b359c13ebe8ee65f05fe">days</a>=1) noexcept</td></tr>
+<tr class="memdesc:gacea69f331d74b341736b05eb25a59545"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get timestamp of the start of the previous day.  <br /></td></tr>
+<tr class="memitem:ga0abf8fe2ff0896085f95212e82354e5f" id="r_ga0abf8fe2ff0896085f95212e82354e5f"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#ga0abf8fe2ff0896085f95212e82354e5f">time_shield::start_of_day_sec</a> (<a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> <a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">ts_ms</a>=<a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">time_shield::ts_ms</a>()) noexcept</td></tr>
+<tr class="memdesc:ga0abf8fe2ff0896085f95212e82354e5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the start of the day timestamp in seconds.  <br /></td></tr>
+<tr class="memitem:gaca23c01feae2d60691e4817b92ee7042" id="r_gaca23c01feae2d60691e4817b92ee7042"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#gaca23c01feae2d60691e4817b92ee7042">time_shield::start_of_day_ms</a> (<a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> <a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">ts_ms</a>=<a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">time_shield::ts_ms</a>()) noexcept</td></tr>
+<tr class="memdesc:gaca23c01feae2d60691e4817b92ee7042"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the start of the day timestamp in milliseconds.  <br /></td></tr>
+<tr class="memitem:ga0dc1955d7153617e73105a423192c767" id="r_ga0dc1955d7153617e73105a423192c767"><td class="memTemplParams" colspan="2">template&lt;class T = int&gt; </td></tr>
+<tr class="memitem:ga0dc1955d7153617e73105a423192c767 template"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#ga0dc1955d7153617e73105a423192c767">time_shield::start_of_next_day</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>, T <a class="el" href="group__time__conversions.html#ga706b3e0663e8b359c13ebe8ee65f05fe">days</a>=1) noexcept</td></tr>
+<tr class="memdesc:ga0dc1955d7153617e73105a423192c767"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the timestamp of the start of the day after a specified number of days.  <br /></td></tr>
+<tr class="memitem:ga08b66dadc7689d8e8b7cdcec9140fa15" id="r_ga08b66dadc7689d8e8b7cdcec9140fa15"><td class="memTemplParams" colspan="2">template&lt;class T = int&gt; </td></tr>
+<tr class="memitem:ga08b66dadc7689d8e8b7cdcec9140fa15 template"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#ga08b66dadc7689d8e8b7cdcec9140fa15">time_shield::start_of_next_day_ms</a> (<a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> <a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">ts_ms</a>, T <a class="el" href="group__time__conversions.html#ga706b3e0663e8b359c13ebe8ee65f05fe">days</a>=1) noexcept</td></tr>
+<tr class="memdesc:ga08b66dadc7689d8e8b7cdcec9140fa15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the timestamp of the start of the day after a specified number of days.  <br /></td></tr>
+<tr class="memitem:ga68d1ff04ff2ba9651a8fdd073c7d7607" id="r_ga68d1ff04ff2ba9651a8fdd073c7d7607"><td class="memTemplParams" colspan="2">template&lt;class T = int&gt; </td></tr>
+<tr class="memitem:ga68d1ff04ff2ba9651a8fdd073c7d7607 template"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#ga68d1ff04ff2ba9651a8fdd073c7d7607">time_shield::next_day</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>, T <a class="el" href="group__time__conversions.html#ga706b3e0663e8b359c13ebe8ee65f05fe">days</a>=1) noexcept</td></tr>
+<tr class="memdesc:ga68d1ff04ff2ba9651a8fdd073c7d7607"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the timestamp for a specified number of days in the future.  <br /></td></tr>
+<tr class="memitem:ga6f949d0443d0672d8b1c56f4590c8837" id="r_ga6f949d0443d0672d8b1c56f4590c8837"><td class="memTemplParams" colspan="2">template&lt;class T = int&gt; </td></tr>
+<tr class="memitem:ga6f949d0443d0672d8b1c56f4590c8837 template"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#ga6f949d0443d0672d8b1c56f4590c8837">time_shield::next_day_ms</a> (<a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> <a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">ts_ms</a>, T <a class="el" href="group__time__conversions.html#ga706b3e0663e8b359c13ebe8ee65f05fe">days</a>=1) noexcept</td></tr>
+<tr class="memdesc:ga6f949d0443d0672d8b1c56f4590c8837"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the timestamp for a specified number of days in the future (milliseconds).  <br /></td></tr>
+<tr class="memitem:gad8831d7dee91fdfe068a6cf0ae68d2a3" id="r_gad8831d7dee91fdfe068a6cf0ae68d2a3"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#gad8831d7dee91fdfe068a6cf0ae68d2a3">time_shield::end_of_day</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>=<a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>()) noexcept</td></tr>
+<tr class="memdesc:gad8831d7dee91fdfe068a6cf0ae68d2a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the timestamp at the end of the day.  <br /></td></tr>
+<tr class="memitem:ga8acb9c454b14ce826d4a97b7c90d861f" id="r_ga8acb9c454b14ce826d4a97b7c90d861f"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#ga8acb9c454b14ce826d4a97b7c90d861f">time_shield::end_of_day_sec</a> (<a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> <a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">ts_ms</a>=<a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">time_shield::ts_ms</a>()) noexcept</td></tr>
+<tr class="memdesc:ga8acb9c454b14ce826d4a97b7c90d861f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the timestamp at the end of the day in seconds.  <br /></td></tr>
+<tr class="memitem:gabb74dbb8b9428145cce1e3c5e3e83d41" id="r_gabb74dbb8b9428145cce1e3c5e3e83d41"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#gabb74dbb8b9428145cce1e3c5e3e83d41">time_shield::end_of_day_ms</a> (<a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> <a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">ts_ms</a>=<a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">time_shield::ts_ms</a>()) noexcept</td></tr>
+<tr class="memdesc:gabb74dbb8b9428145cce1e3c5e3e83d41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the timestamp at the end of the day in milliseconds.  <br /></td></tr>
 <tr class="memitem:gab04168777059bcb3c8cfff7305f6f8c8" id="r_gab04168777059bcb3c8cfff7305f6f8c8"><td class="memTemplParams" colspan="2">template&lt;class T = year_t&gt; </td></tr>
 <tr class="memitem:gab04168777059bcb3c8cfff7305f6f8c8 template"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#gab04168777059bcb3c8cfff7305f6f8c8">time_shield::start_of_year_date</a> (T <a class="el" href="group__time__conversions.html#gadd68b9e632d1b5a43c18b116bbf105a4">year</a>)</td></tr>
 <tr class="memdesc:gab04168777059bcb3c8cfff7305f6f8c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the timestamp of the start of the year.  <br /></td></tr>
@@ -260,18 +260,18 @@ Functions</h2></td></tr>
 <tr class="memitem:ga87a61143fab23f66f64f5487882c07b5" id="r_ga87a61143fab23f66f64f5487882c07b5"><td class="memTemplParams" colspan="2">template&lt;class T1 = int&gt; </td></tr>
 <tr class="memitem:ga87a61143fab23f66f64f5487882c07b5 template"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR T1&#160;</td><td class="memItemRight"><a class="el" href="#ga87a61143fab23f66f64f5487882c07b5">time_shield::num_days_in_month_ts</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>=<a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>()) noexcept</td></tr>
 <tr class="memdesc:ga87a61143fab23f66f64f5487882c07b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of days in the month of the given timestamp.  <br /></td></tr>
-<tr class="memitem:gac636c3ce16aa7fe399f7aac1fa3719c7" id="r_gac636c3ce16aa7fe399f7aac1fa3719c7"><td class="memTemplParams" colspan="2">template&lt;class T = Weekday&gt; </td></tr>
-<tr class="memitem:gac636c3ce16aa7fe399f7aac1fa3719c7 template"><td class="memItemLeft">constexpr T&#160;</td><td class="memItemRight"><a class="el" href="#gac636c3ce16aa7fe399f7aac1fa3719c7">time_shield::weekday_of_ts</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>) noexcept</td></tr>
-<tr class="memdesc:gac636c3ce16aa7fe399f7aac1fa3719c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the second of the week day from a timestamp.  <br /></td></tr>
-<tr class="memitem:ga305b9f95f3e40e2b18127034fd4b51ce" id="r_ga305b9f95f3e40e2b18127034fd4b51ce"><td class="memTemplParams" colspan="2">template&lt;class T = Weekday&gt; </td></tr>
-<tr class="memitem:ga305b9f95f3e40e2b18127034fd4b51ce template"><td class="memItemLeft">constexpr T&#160;</td><td class="memItemRight"><a class="el" href="#ga305b9f95f3e40e2b18127034fd4b51ce">time_shield::weekday_of_ts_ms</a> (<a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> <a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">ts_ms</a>)</td></tr>
-<tr class="memdesc:ga305b9f95f3e40e2b18127034fd4b51ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the weekday from a timestamp in milliseconds.  <br /></td></tr>
-<tr class="memitem:gaf116818f1eeb0fee721a220b666b6412" id="r_gaf116818f1eeb0fee721a220b666b6412"><td class="memTemplParams" colspan="2">template&lt;class T = Weekday&gt; </td></tr>
-<tr class="memitem:gaf116818f1eeb0fee721a220b666b6412 template"><td class="memItemLeft">constexpr T&#160;</td><td class="memItemRight"><a class="el" href="#gaf116818f1eeb0fee721a220b666b6412">time_shield::get_weekday_from_ts</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>) noexcept</td></tr>
-<tr class="memdesc:gaf116818f1eeb0fee721a220b666b6412"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for weekday_of_ts.  <br /></td></tr>
-<tr class="memitem:ga8463fd36ce43fe1c3c44a2b2ec85214f" id="r_ga8463fd36ce43fe1c3c44a2b2ec85214f"><td class="memTemplParams" colspan="2">template&lt;class T = Weekday&gt; </td></tr>
-<tr class="memitem:ga8463fd36ce43fe1c3c44a2b2ec85214f template"><td class="memItemLeft">constexpr T&#160;</td><td class="memItemRight"><a class="el" href="#ga8463fd36ce43fe1c3c44a2b2ec85214f">time_shield::get_weekday_from_ts_ms</a> (<a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> <a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">ts_ms</a>)</td></tr>
-<tr class="memdesc:ga8463fd36ce43fe1c3c44a2b2ec85214f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for weekday_of_ts_ms.  <br /></td></tr>
+<tr class="memitem:ga14a5c48e36651143c1b861945d5ee742" id="r_ga14a5c48e36651143c1b861945d5ee742"><td class="memTemplParams" colspan="2">template&lt;class T = Weekday&gt; </td></tr>
+<tr class="memitem:ga14a5c48e36651143c1b861945d5ee742 template"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR T&#160;</td><td class="memItemRight"><a class="el" href="#ga14a5c48e36651143c1b861945d5ee742">time_shield::weekday_of_ts</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>) noexcept</td></tr>
+<tr class="memdesc:ga14a5c48e36651143c1b861945d5ee742"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the second of the week day from a timestamp.  <br /></td></tr>
+<tr class="memitem:gadc8fa00746924d72a5c6071020a997e5" id="r_gadc8fa00746924d72a5c6071020a997e5"><td class="memTemplParams" colspan="2">template&lt;class T = Weekday&gt; </td></tr>
+<tr class="memitem:gadc8fa00746924d72a5c6071020a997e5 template"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR T&#160;</td><td class="memItemRight"><a class="el" href="#gadc8fa00746924d72a5c6071020a997e5">time_shield::weekday_of_ts_ms</a> (<a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> <a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">ts_ms</a>)</td></tr>
+<tr class="memdesc:gadc8fa00746924d72a5c6071020a997e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the weekday from a timestamp in milliseconds.  <br /></td></tr>
+<tr class="memitem:gae0d52a3c8ea8b6bd1bfa6074e4884728" id="r_gae0d52a3c8ea8b6bd1bfa6074e4884728"><td class="memTemplParams" colspan="2">template&lt;class T = Weekday&gt; </td></tr>
+<tr class="memitem:gae0d52a3c8ea8b6bd1bfa6074e4884728 template"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR T&#160;</td><td class="memItemRight"><a class="el" href="#gae0d52a3c8ea8b6bd1bfa6074e4884728">time_shield::get_weekday_from_ts</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>) noexcept</td></tr>
+<tr class="memdesc:gae0d52a3c8ea8b6bd1bfa6074e4884728"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for weekday_of_ts.  <br /></td></tr>
+<tr class="memitem:gad78ba30c247349b5cc02e94dfe5ac6ac" id="r_gad78ba30c247349b5cc02e94dfe5ac6ac"><td class="memTemplParams" colspan="2">template&lt;class T = Weekday&gt; </td></tr>
+<tr class="memitem:gad78ba30c247349b5cc02e94dfe5ac6ac template"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR T&#160;</td><td class="memItemRight"><a class="el" href="#gad78ba30c247349b5cc02e94dfe5ac6ac">time_shield::get_weekday_from_ts_ms</a> (<a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> <a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">ts_ms</a>)</td></tr>
+<tr class="memdesc:gad78ba30c247349b5cc02e94dfe5ac6ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for weekday_of_ts_ms.  <br /></td></tr>
 <tr class="memitem:ga7b74948156af28b57aeaada2d7beba49" id="r_ga7b74948156af28b57aeaada2d7beba49"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#ga7b74948156af28b57aeaada2d7beba49">time_shield::start_of_month</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>=<a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>())</td></tr>
 <tr class="memdesc:ga7b74948156af28b57aeaada2d7beba49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the timestamp at the start of the current month.  <br /></td></tr>
 <tr class="memitem:ga8e8227e7f6d6824381d4be513ad7286a" id="r_ga8e8227e7f6d6824381d4be513ad7286a"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#ga8e8227e7f6d6824381d4be513ad7286a">time_shield::end_of_month</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>=<a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>())</td></tr>
@@ -281,43 +281,43 @@ Functions</h2></td></tr>
 <tr class="memitem:ga303f4ae30aa80221e7f64336b5845f1b" id="r_ga303f4ae30aa80221e7f64336b5845f1b"><td class="memTemplParams" colspan="2">template&lt;class T1 = int, class T2 = year_t, class T3 = int&gt; </td></tr>
 <tr class="memitem:ga303f4ae30aa80221e7f64336b5845f1b template"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR T1&#160;</td><td class="memItemRight"><a class="el" href="#ga303f4ae30aa80221e7f64336b5845f1b">time_shield::last_sunday_month_day</a> (T2 <a class="el" href="group__time__conversions.html#gadd68b9e632d1b5a43c18b116bbf105a4">year</a>, T3 month)</td></tr>
 <tr class="memdesc:ga303f4ae30aa80221e7f64336b5845f1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the day of the last Sunday of the given month and year.  <br /></td></tr>
-<tr class="memitem:gac478de6fe94a45128de1464062418a84" id="r_gac478de6fe94a45128de1464062418a84"><td class="memItemLeft">constexpr <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#gac478de6fe94a45128de1464062418a84">time_shield::start_of_week</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>=<a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>())</td></tr>
-<tr class="memdesc:gac478de6fe94a45128de1464062418a84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the timestamp of the beginning of the week.  <br /></td></tr>
-<tr class="memitem:ga147bc52b3bf4f4584cf17048fdc32fd0" id="r_ga147bc52b3bf4f4584cf17048fdc32fd0"><td class="memItemLeft">constexpr <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#ga147bc52b3bf4f4584cf17048fdc32fd0">time_shield::end_of_week</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>=<a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>())</td></tr>
-<tr class="memdesc:ga147bc52b3bf4f4584cf17048fdc32fd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the timestamp of the end of the week.  <br /></td></tr>
-<tr class="memitem:ga14137f5710bb2974e69b7137f7f3bf2a" id="r_ga14137f5710bb2974e69b7137f7f3bf2a"><td class="memItemLeft">constexpr <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#ga14137f5710bb2974e69b7137f7f3bf2a">time_shield::start_of_saturday</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>=<a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>())</td></tr>
-<tr class="memdesc:ga14137f5710bb2974e69b7137f7f3bf2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the timestamp of the start of Saturday.  <br /></td></tr>
-<tr class="memitem:ga54ff25b7c955a347a5e32e1e9be39d03" id="r_ga54ff25b7c955a347a5e32e1e9be39d03"><td class="memItemLeft">constexpr <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#ga54ff25b7c955a347a5e32e1e9be39d03">time_shield::start_of_hour</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>=<a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>()) noexcept</td></tr>
-<tr class="memdesc:ga54ff25b7c955a347a5e32e1e9be39d03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the timestamp at the start of the hour.  <br /></td></tr>
-<tr class="memitem:gaf95e43d99a32be893da36479db52a25c" id="r_gaf95e43d99a32be893da36479db52a25c"><td class="memItemLeft">constexpr <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#gaf95e43d99a32be893da36479db52a25c">time_shield::start_of_hour_sec</a> (<a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> <a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">ts_ms</a>=<a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">time_shield::ts_ms</a>()) noexcept</td></tr>
-<tr class="memdesc:gaf95e43d99a32be893da36479db52a25c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the timestamp at the start of the hour.  <br /></td></tr>
-<tr class="memitem:ga84a64a043b93ff6abd3b7d510ebfcca3" id="r_ga84a64a043b93ff6abd3b7d510ebfcca3"><td class="memItemLeft">constexpr <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#ga84a64a043b93ff6abd3b7d510ebfcca3">time_shield::start_of_hour_ms</a> (<a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> <a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">ts_ms</a>=<a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">time_shield::ts_ms</a>()) noexcept</td></tr>
-<tr class="memdesc:ga84a64a043b93ff6abd3b7d510ebfcca3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the timestamp at the start of the hour. This function sets the minute and second to zero.  <br /></td></tr>
-<tr class="memitem:ga09890472228893f828895d66e81a95d3" id="r_ga09890472228893f828895d66e81a95d3"><td class="memItemLeft">constexpr <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#ga09890472228893f828895d66e81a95d3">time_shield::end_of_hour</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>=<a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>()) noexcept</td></tr>
-<tr class="memdesc:ga09890472228893f828895d66e81a95d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the timestamp at the end of the hour.  <br /></td></tr>
-<tr class="memitem:ga9cecf97a729989ad9e83954293782775" id="r_ga9cecf97a729989ad9e83954293782775"><td class="memItemLeft">constexpr <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#ga9cecf97a729989ad9e83954293782775">time_shield::end_of_hour_sec</a> (<a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> <a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">ts_ms</a>=<a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">time_shield::ts_ms</a>()) noexcept</td></tr>
-<tr class="memdesc:ga9cecf97a729989ad9e83954293782775"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the timestamp at the end of the hour in seconds.  <br /></td></tr>
-<tr class="memitem:ga361b7f574fa40955ec4a6b7bfac97ba3" id="r_ga361b7f574fa40955ec4a6b7bfac97ba3"><td class="memItemLeft">constexpr <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#ga361b7f574fa40955ec4a6b7bfac97ba3">time_shield::end_of_hour_ms</a> (<a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> <a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">ts_ms</a>=<a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">time_shield::ts_ms</a>()) noexcept</td></tr>
-<tr class="memdesc:ga361b7f574fa40955ec4a6b7bfac97ba3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the timestamp at the end of the hour in milliseconds.  <br /></td></tr>
-<tr class="memitem:ga23bf99c2bc02f3a430517a3abaf62b38" id="r_ga23bf99c2bc02f3a430517a3abaf62b38"><td class="memItemLeft">constexpr <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#ga23bf99c2bc02f3a430517a3abaf62b38">time_shield::start_of_min</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>=<a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>()) noexcept</td></tr>
-<tr class="memdesc:ga23bf99c2bc02f3a430517a3abaf62b38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the timestamp of the beginning of the minute.  <br /></td></tr>
-<tr class="memitem:gaa9542e7bf558208be7e1d7cabc9acd9e" id="r_gaa9542e7bf558208be7e1d7cabc9acd9e"><td class="memItemLeft">constexpr <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#gaa9542e7bf558208be7e1d7cabc9acd9e">time_shield::end_of_min</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>=<a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>()) noexcept</td></tr>
-<tr class="memdesc:gaa9542e7bf558208be7e1d7cabc9acd9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the timestamp of the end of the minute.  <br /></td></tr>
-<tr class="memitem:gadcc9778d2f9e3e4872ca77fd6c7fdef5" id="r_gadcc9778d2f9e3e4872ca77fd6c7fdef5"><td class="memTemplParams" colspan="2">template&lt;class T = int&gt; </td></tr>
-<tr class="memitem:gadcc9778d2f9e3e4872ca77fd6c7fdef5 template"><td class="memItemLeft">constexpr T&#160;</td><td class="memItemRight"><a class="el" href="#gadcc9778d2f9e3e4872ca77fd6c7fdef5">time_shield::min_of_day</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>=<a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>()) noexcept</td></tr>
-<tr class="memdesc:gadcc9778d2f9e3e4872ca77fd6c7fdef5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get minute of day. This function returns a value between 0 to 1439 (minute of day).  <br /></td></tr>
-<tr class="memitem:ga593f77471d15efc8cd41773ae3b14c77" id="r_ga593f77471d15efc8cd41773ae3b14c77"><td class="memTemplParams" colspan="2">template&lt;class T = int&gt; </td></tr>
-<tr class="memitem:ga593f77471d15efc8cd41773ae3b14c77 template"><td class="memItemLeft">constexpr T&#160;</td><td class="memItemRight"><a class="el" href="#ga593f77471d15efc8cd41773ae3b14c77">time_shield::hour_of_day</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>=<a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>()) noexcept</td></tr>
-<tr class="memdesc:ga593f77471d15efc8cd41773ae3b14c77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get hour of day. This function returns a value between 0 to 23.  <br /></td></tr>
-<tr class="memitem:ga534901699df1c9260170a397b02a85db" id="r_ga534901699df1c9260170a397b02a85db"><td class="memTemplParams" colspan="2">template&lt;class T = int&gt; </td></tr>
-<tr class="memitem:ga534901699df1c9260170a397b02a85db template"><td class="memItemLeft">constexpr T&#160;</td><td class="memItemRight"><a class="el" href="#ga534901699df1c9260170a397b02a85db">time_shield::min_of_hour</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>=<a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>()) noexcept</td></tr>
-<tr class="memdesc:ga534901699df1c9260170a397b02a85db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get minute of hour. This function returns a value between 0 to 59.  <br /></td></tr>
-<tr class="memitem:ga182f16e5b088efaede5f1dfd2083cd56" id="r_ga182f16e5b088efaede5f1dfd2083cd56"><td class="memTemplParams" colspan="2">template&lt;class T = int&gt; </td></tr>
-<tr class="memitem:ga182f16e5b088efaede5f1dfd2083cd56 template"><td class="memItemLeft">constexpr <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#ga182f16e5b088efaede5f1dfd2083cd56">time_shield::start_of_period</a> (T p, <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>=<a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>())</td></tr>
-<tr class="memdesc:ga182f16e5b088efaede5f1dfd2083cd56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the timestamp of the start of the period.  <br /></td></tr>
-<tr class="memitem:gab1d68eb3e33912c95ba237b2def392ab" id="r_gab1d68eb3e33912c95ba237b2def392ab"><td class="memTemplParams" colspan="2">template&lt;class T = int&gt; </td></tr>
-<tr class="memitem:gab1d68eb3e33912c95ba237b2def392ab template"><td class="memItemLeft">constexpr <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#gab1d68eb3e33912c95ba237b2def392ab">time_shield::end_of_period</a> (T p, <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>=<a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>())</td></tr>
-<tr class="memdesc:gab1d68eb3e33912c95ba237b2def392ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the timestamp of the end of the period.  <br /></td></tr>
+<tr class="memitem:ga934093e72e16f009f647a6fd3ef1bfd9" id="r_ga934093e72e16f009f647a6fd3ef1bfd9"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#ga934093e72e16f009f647a6fd3ef1bfd9">time_shield::start_of_week</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>=<a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>())</td></tr>
+<tr class="memdesc:ga934093e72e16f009f647a6fd3ef1bfd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the timestamp of the beginning of the week.  <br /></td></tr>
+<tr class="memitem:gacd417cf302d63bbcbc3a6e4a6c1e0fc6" id="r_gacd417cf302d63bbcbc3a6e4a6c1e0fc6"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#gacd417cf302d63bbcbc3a6e4a6c1e0fc6">time_shield::end_of_week</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>=<a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>())</td></tr>
+<tr class="memdesc:gacd417cf302d63bbcbc3a6e4a6c1e0fc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the timestamp of the end of the week.  <br /></td></tr>
+<tr class="memitem:gaa02b0a6d74de34f893d136f1cfa93cc7" id="r_gaa02b0a6d74de34f893d136f1cfa93cc7"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#gaa02b0a6d74de34f893d136f1cfa93cc7">time_shield::start_of_saturday</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>=<a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>())</td></tr>
+<tr class="memdesc:gaa02b0a6d74de34f893d136f1cfa93cc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the timestamp of the start of Saturday.  <br /></td></tr>
+<tr class="memitem:ga1b4cfee4356584b8e71b1506637010a3" id="r_ga1b4cfee4356584b8e71b1506637010a3"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#ga1b4cfee4356584b8e71b1506637010a3">time_shield::start_of_hour</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>=<a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>()) noexcept</td></tr>
+<tr class="memdesc:ga1b4cfee4356584b8e71b1506637010a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the timestamp at the start of the hour.  <br /></td></tr>
+<tr class="memitem:ga8cd1cc744e432398777ed21a63dce3ee" id="r_ga8cd1cc744e432398777ed21a63dce3ee"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#ga8cd1cc744e432398777ed21a63dce3ee">time_shield::start_of_hour_sec</a> (<a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> <a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">ts_ms</a>=<a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">time_shield::ts_ms</a>()) noexcept</td></tr>
+<tr class="memdesc:ga8cd1cc744e432398777ed21a63dce3ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the timestamp at the start of the hour.  <br /></td></tr>
+<tr class="memitem:ga332622bac124049f21803b87081d582a" id="r_ga332622bac124049f21803b87081d582a"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#ga332622bac124049f21803b87081d582a">time_shield::start_of_hour_ms</a> (<a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> <a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">ts_ms</a>=<a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">time_shield::ts_ms</a>()) noexcept</td></tr>
+<tr class="memdesc:ga332622bac124049f21803b87081d582a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the timestamp at the start of the hour. This function sets the minute and second to zero.  <br /></td></tr>
+<tr class="memitem:ga122b941071f9be51da8103f15fabbf71" id="r_ga122b941071f9be51da8103f15fabbf71"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#ga122b941071f9be51da8103f15fabbf71">time_shield::end_of_hour</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>=<a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>()) noexcept</td></tr>
+<tr class="memdesc:ga122b941071f9be51da8103f15fabbf71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the timestamp at the end of the hour.  <br /></td></tr>
+<tr class="memitem:ga52218252b3e66b0f0107589927cd3a77" id="r_ga52218252b3e66b0f0107589927cd3a77"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#ga52218252b3e66b0f0107589927cd3a77">time_shield::end_of_hour_sec</a> (<a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> <a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">ts_ms</a>=<a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">time_shield::ts_ms</a>()) noexcept</td></tr>
+<tr class="memdesc:ga52218252b3e66b0f0107589927cd3a77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the timestamp at the end of the hour in seconds.  <br /></td></tr>
+<tr class="memitem:ga7d170014d50e74be90bf3bb05c61a5b7" id="r_ga7d170014d50e74be90bf3bb05c61a5b7"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#ga7d170014d50e74be90bf3bb05c61a5b7">time_shield::end_of_hour_ms</a> (<a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> <a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">ts_ms</a>=<a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">time_shield::ts_ms</a>()) noexcept</td></tr>
+<tr class="memdesc:ga7d170014d50e74be90bf3bb05c61a5b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the timestamp at the end of the hour in milliseconds.  <br /></td></tr>
+<tr class="memitem:ga160af1f7fd8cecad4d2ad89c61d94037" id="r_ga160af1f7fd8cecad4d2ad89c61d94037"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#ga160af1f7fd8cecad4d2ad89c61d94037">time_shield::start_of_min</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>=<a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>()) noexcept</td></tr>
+<tr class="memdesc:ga160af1f7fd8cecad4d2ad89c61d94037"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the timestamp of the beginning of the minute.  <br /></td></tr>
+<tr class="memitem:ga213b254d6d1b9f74bf638c4abe7e1863" id="r_ga213b254d6d1b9f74bf638c4abe7e1863"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#ga213b254d6d1b9f74bf638c4abe7e1863">time_shield::end_of_min</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>=<a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>()) noexcept</td></tr>
+<tr class="memdesc:ga213b254d6d1b9f74bf638c4abe7e1863"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the timestamp of the end of the minute.  <br /></td></tr>
+<tr class="memitem:ga3927f5598cdf0359136c043aee616445" id="r_ga3927f5598cdf0359136c043aee616445"><td class="memTemplParams" colspan="2">template&lt;class T = int&gt; </td></tr>
+<tr class="memitem:ga3927f5598cdf0359136c043aee616445 template"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR T&#160;</td><td class="memItemRight"><a class="el" href="#ga3927f5598cdf0359136c043aee616445">time_shield::min_of_day</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>=<a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>()) noexcept</td></tr>
+<tr class="memdesc:ga3927f5598cdf0359136c043aee616445"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get minute of day. This function returns a value between 0 to 1439 (minute of day).  <br /></td></tr>
+<tr class="memitem:ga1b0bea9b9ca806aabbe1c569cdfdeb96" id="r_ga1b0bea9b9ca806aabbe1c569cdfdeb96"><td class="memTemplParams" colspan="2">template&lt;class T = int&gt; </td></tr>
+<tr class="memitem:ga1b0bea9b9ca806aabbe1c569cdfdeb96 template"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR T&#160;</td><td class="memItemRight"><a class="el" href="#ga1b0bea9b9ca806aabbe1c569cdfdeb96">time_shield::hour_of_day</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>=<a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>()) noexcept</td></tr>
+<tr class="memdesc:ga1b0bea9b9ca806aabbe1c569cdfdeb96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get hour of day. This function returns a value between 0 to 23.  <br /></td></tr>
+<tr class="memitem:gac96dff6d6a807bd8da413f0620017f96" id="r_gac96dff6d6a807bd8da413f0620017f96"><td class="memTemplParams" colspan="2">template&lt;class T = int&gt; </td></tr>
+<tr class="memitem:gac96dff6d6a807bd8da413f0620017f96 template"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR T&#160;</td><td class="memItemRight"><a class="el" href="#gac96dff6d6a807bd8da413f0620017f96">time_shield::min_of_hour</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>=<a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>()) noexcept</td></tr>
+<tr class="memdesc:gac96dff6d6a807bd8da413f0620017f96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get minute of hour. This function returns a value between 0 to 59.  <br /></td></tr>
+<tr class="memitem:ga9b82795d4d238729d91a44b22fa48c86" id="r_ga9b82795d4d238729d91a44b22fa48c86"><td class="memTemplParams" colspan="2">template&lt;class T = int&gt; </td></tr>
+<tr class="memitem:ga9b82795d4d238729d91a44b22fa48c86 template"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#ga9b82795d4d238729d91a44b22fa48c86">time_shield::start_of_period</a> (T p, <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>=<a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>())</td></tr>
+<tr class="memdesc:ga9b82795d4d238729d91a44b22fa48c86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the timestamp of the start of the period.  <br /></td></tr>
+<tr class="memitem:ga5636a322203b3c369e02312d7b36bc84" id="r_ga5636a322203b3c369e02312d7b36bc84"><td class="memTemplParams" colspan="2">template&lt;class T = int&gt; </td></tr>
+<tr class="memitem:ga5636a322203b3c369e02312d7b36bc84 template"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#ga5636a322203b3c369e02312d7b36bc84">time_shield::end_of_period</a> (T p, <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>=<a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>())</td></tr>
+<tr class="memdesc:ga5636a322203b3c369e02312d7b36bc84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the timestamp of the end of the period.  <br /></td></tr>
 <tr class="memitem:gadd1eb6198dacedad6b9c0251f2269b44" id="r_gadd1eb6198dacedad6b9c0251f2269b44"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
 <tr class="memitem:gadd1eb6198dacedad6b9c0251f2269b44 template"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR auto&#160;</td><td class="memItemRight"><a class="el" href="group__time__conversions.html#gadd1eb6198dacedad6b9c0251f2269b44">time_shield::dt_to_ts</a> (const T &amp;date_time) -&gt; decltype(<a class="el" href="#ga8498212ff626ec46a7a4a2df26f83734">dt_to_timestamp</a>(date_time))</td></tr>
 <tr class="memdesc:gadd1eb6198dacedad6b9c0251f2269b44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for dt_to_timestamp.  <br /></td></tr>
@@ -366,21 +366,21 @@ Functions</h2></td></tr>
 <tr class="memitem:ga9f41aff2fef1c492a41ef77c7b5b8e34" id="r_ga9f41aff2fef1c492a41ef77c7b5b8e34"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
 <tr class="memitem:ga9f41aff2fef1c492a41ef77c7b5b8e34 template"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight"><a class="el" href="group__time__conversions.html#ga9f41aff2fef1c492a41ef77c7b5b8e34">time_shield::timestamp_ms</a> (const T &amp;date_time)</td></tr>
 <tr class="memdesc:ga9f41aff2fef1c492a41ef77c7b5b8e34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for dt_to_timestamp_ms function.  <br /></td></tr>
-<tr class="memitem:ga8c817a893ff5c3d26cd59cedb0e3eb96" id="r_ga8c817a893ff5c3d26cd59cedb0e3eb96"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
-<tr class="memitem:ga8c817a893ff5c3d26cd59cedb0e3eb96 template"><td class="memItemLeft">constexpr <a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f">fts_t</a>&#160;</td><td class="memItemRight"><a class="el" href="group__time__conversions.html#ga8c817a893ff5c3d26cd59cedb0e3eb96">time_shield::to_ftimestamp</a> (const T &amp;date_time)</td></tr>
-<tr class="memdesc:ga8c817a893ff5c3d26cd59cedb0e3eb96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for dt_to_ftimestamp.  <br /></td></tr>
+<tr class="memitem:ga2481c00b550660ae7c80a1de6e1e37a6" id="r_ga2481c00b550660ae7c80a1de6e1e37a6"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
+<tr class="memitem:ga2481c00b550660ae7c80a1de6e1e37a6 template"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f">fts_t</a>&#160;</td><td class="memItemRight"><a class="el" href="group__time__conversions.html#ga2481c00b550660ae7c80a1de6e1e37a6">time_shield::to_ftimestamp</a> (const T &amp;date_time)</td></tr>
+<tr class="memdesc:ga2481c00b550660ae7c80a1de6e1e37a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for dt_to_ftimestamp.  <br /></td></tr>
 <tr class="memitem:gad3b6001991fa8e4e82b17cad8b5c8084" id="r_gad3b6001991fa8e4e82b17cad8b5c8084"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
 <tr class="memitem:gad3b6001991fa8e4e82b17cad8b5c8084 template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="group__time__conversions.html#gad3b6001991fa8e4e82b17cad8b5c8084">time_shield::dt_to_fts</a> (const T &amp;date_time) -&gt; decltype(<a class="el" href="#ga0cf44698c7145d5d7476e533e4a3db8d">dt_to_ftimestamp</a>(date_time))</td></tr>
 <tr class="memdesc:gad3b6001991fa8e4e82b17cad8b5c8084"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for dt_to_ftimestamp.  <br /></td></tr>
-<tr class="memitem:gaa0c07f2382a154356759cc60da54d2a0" id="r_gaa0c07f2382a154356759cc60da54d2a0"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
-<tr class="memitem:gaa0c07f2382a154356759cc60da54d2a0 template"><td class="memItemLeft">constexpr <a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f">fts_t</a>&#160;</td><td class="memItemRight"><a class="el" href="group__time__conversions.html#gaa0c07f2382a154356759cc60da54d2a0">time_shield::to_fts</a> (const T &amp;date_time)</td></tr>
-<tr class="memdesc:gaa0c07f2382a154356759cc60da54d2a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for dt_to_ftimestamp.  <br /></td></tr>
-<tr class="memitem:ga6e3cae02d09bfa9900d1a797d688e58c" id="r_ga6e3cae02d09bfa9900d1a797d688e58c"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
-<tr class="memitem:ga6e3cae02d09bfa9900d1a797d688e58c template"><td class="memItemLeft">constexpr <a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f">fts_t</a>&#160;</td><td class="memItemRight"><a class="el" href="group__time__conversions.html#ga6e3cae02d09bfa9900d1a797d688e58c">time_shield::fts</a> (const T &amp;date_time)</td></tr>
-<tr class="memdesc:ga6e3cae02d09bfa9900d1a797d688e58c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for dt_to_ftimestamp.  <br /></td></tr>
-<tr class="memitem:ga2f2e016aec247291048fabe7eea3270e" id="r_ga2f2e016aec247291048fabe7eea3270e"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
-<tr class="memitem:ga2f2e016aec247291048fabe7eea3270e template"><td class="memItemLeft">constexpr <a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f">fts_t</a>&#160;</td><td class="memItemRight"><a class="el" href="group__time__conversions.html#ga2f2e016aec247291048fabe7eea3270e">time_shield::ftimestamp</a> (const T &amp;date_time)</td></tr>
-<tr class="memdesc:ga2f2e016aec247291048fabe7eea3270e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for dt_to_ftimestamp.  <br /></td></tr>
+<tr class="memitem:ga359fd39c6f1a585cde80fa4c40adca21" id="r_ga359fd39c6f1a585cde80fa4c40adca21"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
+<tr class="memitem:ga359fd39c6f1a585cde80fa4c40adca21 template"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f">fts_t</a>&#160;</td><td class="memItemRight"><a class="el" href="group__time__conversions.html#ga359fd39c6f1a585cde80fa4c40adca21">time_shield::to_fts</a> (const T &amp;date_time)</td></tr>
+<tr class="memdesc:ga359fd39c6f1a585cde80fa4c40adca21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for dt_to_ftimestamp.  <br /></td></tr>
+<tr class="memitem:gaa2e709f6c62dd9d96750b718e7421298" id="r_gaa2e709f6c62dd9d96750b718e7421298"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
+<tr class="memitem:gaa2e709f6c62dd9d96750b718e7421298 template"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f">fts_t</a>&#160;</td><td class="memItemRight"><a class="el" href="group__time__conversions.html#gaa2e709f6c62dd9d96750b718e7421298">time_shield::fts</a> (const T &amp;date_time)</td></tr>
+<tr class="memdesc:gaa2e709f6c62dd9d96750b718e7421298"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for dt_to_ftimestamp.  <br /></td></tr>
+<tr class="memitem:gae50e0776085fef8bb6f771ad78a403a3" id="r_gae50e0776085fef8bb6f771ad78a403a3"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
+<tr class="memitem:gae50e0776085fef8bb6f771ad78a403a3 template"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f">fts_t</a>&#160;</td><td class="memItemRight"><a class="el" href="group__time__conversions.html#gae50e0776085fef8bb6f771ad78a403a3">time_shield::ftimestamp</a> (const T &amp;date_time)</td></tr>
+<tr class="memdesc:gae50e0776085fef8bb6f771ad78a403a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for dt_to_ftimestamp.  <br /></td></tr>
 <tr class="memitem:gaff5490170eb67bbe2dfb712d818bc2ca" id="r_gaff5490170eb67bbe2dfb712d818bc2ca"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f">fts_t</a>&#160;</td><td class="memItemRight"><a class="el" href="group__time__conversions.html#gaff5490170eb67bbe2dfb712d818bc2ca">time_shield::to_ftimestamp</a> (const std::tm *timeinfo)</td></tr>
 <tr class="memdesc:gaff5490170eb67bbe2dfb712d818bc2ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for tm_to_ftimestamp.  <br /></td></tr>
 <tr class="memitem:ga8c93312cfd13d06471acfb9e07dbb22a" id="r_ga8c93312cfd13d06471acfb9e07dbb22a"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR auto&#160;</td><td class="memItemRight"><a class="el" href="group__time__conversions.html#ga8c93312cfd13d06471acfb9e07dbb22a">time_shield::tm_to_fts</a> (const std::tm *timeinfo) -&gt; decltype(<a class="el" href="#ga10b556c28469481aa02d613649134b0b">tm_to_ftimestamp</a>(timeinfo))</td></tr>
@@ -394,27 +394,27 @@ Functions</h2></td></tr>
 <tr class="memitem:ga307e1fb13405ad84dc262db6d7522efa" id="r_ga307e1fb13405ad84dc262db6d7522efa"><td class="memTemplParams" colspan="2">template&lt;class T1 = Weekday, class T2, typename std::enable_if&lt; std::is_class&lt; T2 &gt;::value, int &gt;::type = 0&gt; </td></tr>
 <tr class="memitem:ga307e1fb13405ad84dc262db6d7522efa template"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR T1&#160;</td><td class="memItemRight"><a class="el" href="group__time__conversions.html#ga307e1fb13405ad84dc262db6d7522efa">time_shield::get_weekday_from_date</a> (const T2 &amp;date)</td></tr>
 <tr class="memdesc:ga307e1fb13405ad84dc262db6d7522efa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for weekday_of_date.  <br /></td></tr>
-<tr class="memitem:ga3443cf41eed6dd73140879407f760c8c" id="r_ga3443cf41eed6dd73140879407f760c8c"><td class="memTemplParams" colspan="2">template&lt;class T1 = Weekday, class T2, typename std::enable_if&lt; std::is_class&lt; T2 &gt;::value, int &gt;::type = 0&gt; </td></tr>
-<tr class="memitem:ga3443cf41eed6dd73140879407f760c8c template"><td class="memItemLeft">constexpr T1&#160;</td><td class="memItemRight"><a class="el" href="group__time__conversions.html#ga3443cf41eed6dd73140879407f760c8c">time_shield::get_dow</a> (const T2 &amp;date)</td></tr>
-<tr class="memdesc:ga3443cf41eed6dd73140879407f760c8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for weekday_of_date.  <br /></td></tr>
-<tr class="memitem:ga35287daaf78238c07473745b30ab6ff4" id="r_ga35287daaf78238c07473745b30ab6ff4"><td class="memTemplParams" colspan="2">template&lt;class T1 = Weekday, class T2, typename std::enable_if&lt; std::is_class&lt; T2 &gt;::value, int &gt;::type = 0&gt; </td></tr>
-<tr class="memitem:ga35287daaf78238c07473745b30ab6ff4 template"><td class="memItemLeft">constexpr T1&#160;</td><td class="memItemRight"><a class="el" href="group__time__conversions.html#ga35287daaf78238c07473745b30ab6ff4">time_shield::dow_from_date</a> (const T2 &amp;date)</td></tr>
-<tr class="memdesc:ga35287daaf78238c07473745b30ab6ff4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for weekday_of_date.  <br /></td></tr>
-<tr class="memitem:ga5d59e6b2b58ffe02885afe5f9eabca58" id="r_ga5d59e6b2b58ffe02885afe5f9eabca58"><td class="memTemplParams" colspan="2">template&lt;class T1 = Weekday, class T2, typename std::enable_if&lt; std::is_class&lt; T2 &gt;::value, int &gt;::type = 0&gt; </td></tr>
-<tr class="memitem:ga5d59e6b2b58ffe02885afe5f9eabca58 template"><td class="memItemLeft">constexpr T1&#160;</td><td class="memItemRight"><a class="el" href="group__time__conversions.html#ga5d59e6b2b58ffe02885afe5f9eabca58">time_shield::weekday_of</a> (const T2 &amp;date)</td></tr>
-<tr class="memdesc:ga5d59e6b2b58ffe02885afe5f9eabca58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for weekday_of_date.  <br /></td></tr>
-<tr class="memitem:gaf30fbc2841867ab27937917f02708e9d" id="r_gaf30fbc2841867ab27937917f02708e9d"><td class="memTemplParams" colspan="2">template&lt;class T1 = Weekday, class T2, typename std::enable_if&lt; std::is_class&lt; T2 &gt;::value, int &gt;::type = 0&gt; </td></tr>
-<tr class="memitem:gaf30fbc2841867ab27937917f02708e9d template"><td class="memItemLeft">constexpr T1&#160;</td><td class="memItemRight"><a class="el" href="group__time__conversions.html#gaf30fbc2841867ab27937917f02708e9d">time_shield::day_of_week_dt</a> (const T2 &amp;date)</td></tr>
-<tr class="memdesc:gaf30fbc2841867ab27937917f02708e9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for weekday_of_date.  <br /></td></tr>
-<tr class="memitem:ga28888443bcc8cbe47c78f7cbd63093ab" id="r_ga28888443bcc8cbe47c78f7cbd63093ab"><td class="memTemplParams" colspan="2">template&lt;class T1 = Weekday, class T2, typename std::enable_if&lt; std::is_class&lt; T2 &gt;::value, int &gt;::type = 0&gt; </td></tr>
-<tr class="memitem:ga28888443bcc8cbe47c78f7cbd63093ab template"><td class="memItemLeft">constexpr T1&#160;</td><td class="memItemRight"><a class="el" href="group__time__conversions.html#ga28888443bcc8cbe47c78f7cbd63093ab">time_shield::day_of_week</a> (const T2 &amp;date)</td></tr>
-<tr class="memdesc:ga28888443bcc8cbe47c78f7cbd63093ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for weekday_of_date.  <br /></td></tr>
-<tr class="memitem:ga0d03c8eb9399449d8b51484cd7dc50a2" id="r_ga0d03c8eb9399449d8b51484cd7dc50a2"><td class="memTemplParams" colspan="2">template&lt;class T1 = Weekday, class T2, typename std::enable_if&lt; std::is_class&lt; T2 &gt;::value, int &gt;::type = 0&gt; </td></tr>
-<tr class="memitem:ga0d03c8eb9399449d8b51484cd7dc50a2 template"><td class="memItemLeft">constexpr T1&#160;</td><td class="memItemRight"><a class="el" href="group__time__conversions.html#ga0d03c8eb9399449d8b51484cd7dc50a2">time_shield::dow</a> (const T2 &amp;date)</td></tr>
-<tr class="memdesc:ga0d03c8eb9399449d8b51484cd7dc50a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for weekday_of_date.  <br /></td></tr>
-<tr class="memitem:ga83b4821bf7f30e11e48c2309bb30b3f2" id="r_ga83b4821bf7f30e11e48c2309bb30b3f2"><td class="memTemplParams" colspan="2">template&lt;class T1 = Weekday, class T2, typename std::enable_if&lt; std::is_class&lt; T2 &gt;::value, int &gt;::type = 0&gt; </td></tr>
-<tr class="memitem:ga83b4821bf7f30e11e48c2309bb30b3f2 template"><td class="memItemLeft">constexpr T1&#160;</td><td class="memItemRight"><a class="el" href="group__time__conversions.html#ga83b4821bf7f30e11e48c2309bb30b3f2">time_shield::wd</a> (const T2 &amp;date)</td></tr>
-<tr class="memdesc:ga83b4821bf7f30e11e48c2309bb30b3f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for weekday_of_date.  <br /></td></tr>
+<tr class="memitem:gad39c6fec35dafa98e75ee46a16feaf55" id="r_gad39c6fec35dafa98e75ee46a16feaf55"><td class="memTemplParams" colspan="2">template&lt;class T1 = Weekday, class T2, typename std::enable_if&lt; std::is_class&lt; T2 &gt;::value, int &gt;::type = 0&gt; </td></tr>
+<tr class="memitem:gad39c6fec35dafa98e75ee46a16feaf55 template"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR T1&#160;</td><td class="memItemRight"><a class="el" href="group__time__conversions.html#gad39c6fec35dafa98e75ee46a16feaf55">time_shield::get_dow</a> (const T2 &amp;date)</td></tr>
+<tr class="memdesc:gad39c6fec35dafa98e75ee46a16feaf55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for weekday_of_date.  <br /></td></tr>
+<tr class="memitem:ga997c33303b085d6c274133242087a59d" id="r_ga997c33303b085d6c274133242087a59d"><td class="memTemplParams" colspan="2">template&lt;class T1 = Weekday, class T2, typename std::enable_if&lt; std::is_class&lt; T2 &gt;::value, int &gt;::type = 0&gt; </td></tr>
+<tr class="memitem:ga997c33303b085d6c274133242087a59d template"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR T1&#160;</td><td class="memItemRight"><a class="el" href="group__time__conversions.html#ga997c33303b085d6c274133242087a59d">time_shield::dow_from_date</a> (const T2 &amp;date)</td></tr>
+<tr class="memdesc:ga997c33303b085d6c274133242087a59d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for weekday_of_date.  <br /></td></tr>
+<tr class="memitem:gabcdc49298b5774d08f49271bd219442e" id="r_gabcdc49298b5774d08f49271bd219442e"><td class="memTemplParams" colspan="2">template&lt;class T1 = Weekday, class T2, typename std::enable_if&lt; std::is_class&lt; T2 &gt;::value, int &gt;::type = 0&gt; </td></tr>
+<tr class="memitem:gabcdc49298b5774d08f49271bd219442e template"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR T1&#160;</td><td class="memItemRight"><a class="el" href="group__time__conversions.html#gabcdc49298b5774d08f49271bd219442e">time_shield::weekday_of</a> (const T2 &amp;date)</td></tr>
+<tr class="memdesc:gabcdc49298b5774d08f49271bd219442e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for weekday_of_date.  <br /></td></tr>
+<tr class="memitem:ga40ca2e7e2255b06fdd6c90077d5fd7b8" id="r_ga40ca2e7e2255b06fdd6c90077d5fd7b8"><td class="memTemplParams" colspan="2">template&lt;class T1 = Weekday, class T2, typename std::enable_if&lt; std::is_class&lt; T2 &gt;::value, int &gt;::type = 0&gt; </td></tr>
+<tr class="memitem:ga40ca2e7e2255b06fdd6c90077d5fd7b8 template"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR T1&#160;</td><td class="memItemRight"><a class="el" href="group__time__conversions.html#ga40ca2e7e2255b06fdd6c90077d5fd7b8">time_shield::day_of_week_dt</a> (const T2 &amp;date)</td></tr>
+<tr class="memdesc:ga40ca2e7e2255b06fdd6c90077d5fd7b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for weekday_of_date.  <br /></td></tr>
+<tr class="memitem:ga2ab795e78fa159355e2eac86b869c354" id="r_ga2ab795e78fa159355e2eac86b869c354"><td class="memTemplParams" colspan="2">template&lt;class T1 = Weekday, class T2, typename std::enable_if&lt; std::is_class&lt; T2 &gt;::value, int &gt;::type = 0&gt; </td></tr>
+<tr class="memitem:ga2ab795e78fa159355e2eac86b869c354 template"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR T1&#160;</td><td class="memItemRight"><a class="el" href="group__time__conversions.html#ga2ab795e78fa159355e2eac86b869c354">time_shield::day_of_week</a> (const T2 &amp;date)</td></tr>
+<tr class="memdesc:ga2ab795e78fa159355e2eac86b869c354"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for weekday_of_date.  <br /></td></tr>
+<tr class="memitem:ga8c1e227020802a123c2506bd39dee67c" id="r_ga8c1e227020802a123c2506bd39dee67c"><td class="memTemplParams" colspan="2">template&lt;class T1 = Weekday, class T2, typename std::enable_if&lt; std::is_class&lt; T2 &gt;::value, int &gt;::type = 0&gt; </td></tr>
+<tr class="memitem:ga8c1e227020802a123c2506bd39dee67c template"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR T1&#160;</td><td class="memItemRight"><a class="el" href="group__time__conversions.html#ga8c1e227020802a123c2506bd39dee67c">time_shield::dow</a> (const T2 &amp;date)</td></tr>
+<tr class="memdesc:ga8c1e227020802a123c2506bd39dee67c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for weekday_of_date.  <br /></td></tr>
+<tr class="memitem:gadf755fc1c49682f3ec8e05934f70a96c" id="r_gadf755fc1c49682f3ec8e05934f70a96c"><td class="memTemplParams" colspan="2">template&lt;class T1 = Weekday, class T2, typename std::enable_if&lt; std::is_class&lt; T2 &gt;::value, int &gt;::type = 0&gt; </td></tr>
+<tr class="memitem:gadf755fc1c49682f3ec8e05934f70a96c template"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR T1&#160;</td><td class="memItemRight"><a class="el" href="group__time__conversions.html#gadf755fc1c49682f3ec8e05934f70a96c">time_shield::wd</a> (const T2 &amp;date)</td></tr>
+<tr class="memdesc:gadf755fc1c49682f3ec8e05934f70a96c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for weekday_of_date.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Structures for representing and working with time and date components. </p>
@@ -695,7 +695,7 @@ Example Usage:</h3>
   <table class="params">
     <tr><td class="paramname"><a class="el" href="group__time__conversions.html#gadd68b9e632d1b5a43c18b116bbf105a4" title="Alias for year_of function.">year</a></td><td>ISO week-numbering year component. </td></tr>
     <tr><td class="paramname">week</td><td>ISO week number component. </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__time__conversions.html#gaceafb0639e52115aff08ec242f81b5f5" title="Alias for day_of_week_date.">weekday</a></td><td>ISO weekday component (1=Monday .. 7=Sunday). </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__time__conversions.html#ga872101570bc5bc23bfc38fb1335ca0e2" title="Alias for day_of_week_date.">weekday</a></td><td>ISO weekday component (1=Monday .. 7=Sunday). </td></tr>
   </table>
   </dd>
 </dl>
@@ -889,29 +889,21 @@ template&lt;class T = int&gt; </div>
 
 </div>
 </div>
-<a id="ga28888443bcc8cbe47c78f7cbd63093ab" name="ga28888443bcc8cbe47c78f7cbd63093ab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga28888443bcc8cbe47c78f7cbd63093ab">&#9670;&#160;</a></span>day_of_week()</h2>
+<a id="ga2ab795e78fa159355e2eac86b869c354" name="ga2ab795e78fa159355e2eac86b869c354"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2ab795e78fa159355e2eac86b869c354">&#9670;&#160;</a></span>day_of_week()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class T1 = Weekday, class T2, typename std::enable_if&lt; std::is_class&lt; T2 &gt;::value, int &gt;::type = 0&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">T1 time_shield::day_of_week </td>
+          <td class="memname">TIME_SHIELD_CONSTEXPR T1 time_shield::day_of_week </td>
           <td>(</td>
           <td class="paramtype">const T2 &amp;</td>          <td class="paramname"><span class="paramname"><em>date</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Alias for weekday_of_date. </p>
@@ -929,29 +921,21 @@ template&lt;class T1 = Weekday, class T2, typename std::enable_if&lt; std::is_cl
 
 </div>
 </div>
-<a id="gaf30fbc2841867ab27937917f02708e9d" name="gaf30fbc2841867ab27937917f02708e9d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf30fbc2841867ab27937917f02708e9d">&#9670;&#160;</a></span>day_of_week_dt()</h2>
+<a id="ga40ca2e7e2255b06fdd6c90077d5fd7b8" name="ga40ca2e7e2255b06fdd6c90077d5fd7b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga40ca2e7e2255b06fdd6c90077d5fd7b8">&#9670;&#160;</a></span>day_of_week_dt()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class T1 = Weekday, class T2, typename std::enable_if&lt; std::is_class&lt; T2 &gt;::value, int &gt;::type = 0&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">T1 time_shield::day_of_week_dt </td>
+          <td class="memname">TIME_SHIELD_CONSTEXPR T1 time_shield::day_of_week_dt </td>
           <td>(</td>
           <td class="paramtype">const T2 &amp;</td>          <td class="paramname"><span class="paramname"><em>date</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Alias for weekday_of_date. </p>
@@ -1008,29 +992,21 @@ template&lt;class T = int&gt; </div>
 
 </div>
 </div>
-<a id="ga0d03c8eb9399449d8b51484cd7dc50a2" name="ga0d03c8eb9399449d8b51484cd7dc50a2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0d03c8eb9399449d8b51484cd7dc50a2">&#9670;&#160;</a></span>dow()</h2>
+<a id="ga8c1e227020802a123c2506bd39dee67c" name="ga8c1e227020802a123c2506bd39dee67c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8c1e227020802a123c2506bd39dee67c">&#9670;&#160;</a></span>dow()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class T1 = Weekday, class T2, typename std::enable_if&lt; std::is_class&lt; T2 &gt;::value, int &gt;::type = 0&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">T1 time_shield::dow </td>
+          <td class="memname">TIME_SHIELD_CONSTEXPR T1 time_shield::dow </td>
           <td>(</td>
           <td class="paramtype">const T2 &amp;</td>          <td class="paramname"><span class="paramname"><em>date</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Alias for weekday_of_date. </p>
@@ -1048,29 +1024,21 @@ template&lt;class T1 = Weekday, class T2, typename std::enable_if&lt; std::is_cl
 
 </div>
 </div>
-<a id="ga35287daaf78238c07473745b30ab6ff4" name="ga35287daaf78238c07473745b30ab6ff4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga35287daaf78238c07473745b30ab6ff4">&#9670;&#160;</a></span>dow_from_date()</h2>
+<a id="ga997c33303b085d6c274133242087a59d" name="ga997c33303b085d6c274133242087a59d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga997c33303b085d6c274133242087a59d">&#9670;&#160;</a></span>dow_from_date()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class T1 = Weekday, class T2, typename std::enable_if&lt; std::is_class&lt; T2 &gt;::value, int &gt;::type = 0&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">T1 time_shield::dow_from_date </td>
+          <td class="memname">TIME_SHIELD_CONSTEXPR T1 time_shield::dow_from_date </td>
           <td>(</td>
           <td class="paramtype">const T2 &amp;</td>          <td class="paramname"><span class="paramname"><em>date</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Alias for weekday_of_date. </p>
@@ -1397,8 +1365,8 @@ template&lt;class T&gt; </div>
 
 </div>
 </div>
-<a id="ga6652d1b0777fce93ca2beb4f4589c684" name="ga6652d1b0777fce93ca2beb4f4589c684"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga6652d1b0777fce93ca2beb4f4589c684">&#9670;&#160;</a></span>end_of_day()</h2>
+<a id="gad8831d7dee91fdfe068a6cf0ae68d2a3" name="gad8831d7dee91fdfe068a6cf0ae68d2a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad8831d7dee91fdfe068a6cf0ae68d2a3">&#9670;&#160;</a></span>end_of_day()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1407,7 +1375,7 @@ template&lt;class T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> time_shield::end_of_day </td>
+          <td class="memname">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> time_shield::end_of_day </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a></td>          <td class="paramname"><span class="paramname"><em>ts</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>()</span></td><td>)</td>
           <td></td>
@@ -1415,7 +1383,7 @@ template&lt;class T&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1434,8 +1402,8 @@ template&lt;class T&gt; </div>
 
 </div>
 </div>
-<a id="ga38caa64a9fbc211fd0b647e1c4215aef" name="ga38caa64a9fbc211fd0b647e1c4215aef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga38caa64a9fbc211fd0b647e1c4215aef">&#9670;&#160;</a></span>end_of_day_ms()</h2>
+<a id="gabb74dbb8b9428145cce1e3c5e3e83d41" name="gabb74dbb8b9428145cce1e3c5e3e83d41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabb74dbb8b9428145cce1e3c5e3e83d41">&#9670;&#160;</a></span>end_of_day_ms()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1444,7 +1412,7 @@ template&lt;class T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> time_shield::end_of_day_ms </td>
+          <td class="memname">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> time_shield::end_of_day_ms </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a></td>          <td class="paramname"><span class="paramname"><em>ts_ms</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">time_shield::ts_ms</a>()</span></td><td>)</td>
           <td></td>
@@ -1452,7 +1420,7 @@ template&lt;class T&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1471,8 +1439,8 @@ template&lt;class T&gt; </div>
 
 </div>
 </div>
-<a id="gafb9ac12a0e5b1c5195f6932c61e0f799" name="gafb9ac12a0e5b1c5195f6932c61e0f799"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gafb9ac12a0e5b1c5195f6932c61e0f799">&#9670;&#160;</a></span>end_of_day_sec()</h2>
+<a id="ga8acb9c454b14ce826d4a97b7c90d861f" name="ga8acb9c454b14ce826d4a97b7c90d861f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8acb9c454b14ce826d4a97b7c90d861f">&#9670;&#160;</a></span>end_of_day_sec()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1481,7 +1449,7 @@ template&lt;class T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> time_shield::end_of_day_sec </td>
+          <td class="memname">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> time_shield::end_of_day_sec </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a></td>          <td class="paramname"><span class="paramname"><em>ts_ms</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">time_shield::ts_ms</a>()</span></td><td>)</td>
           <td></td>
@@ -1489,7 +1457,7 @@ template&lt;class T&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1508,8 +1476,8 @@ template&lt;class T&gt; </div>
 
 </div>
 </div>
-<a id="ga09890472228893f828895d66e81a95d3" name="ga09890472228893f828895d66e81a95d3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga09890472228893f828895d66e81a95d3">&#9670;&#160;</a></span>end_of_hour()</h2>
+<a id="ga122b941071f9be51da8103f15fabbf71" name="ga122b941071f9be51da8103f15fabbf71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga122b941071f9be51da8103f15fabbf71">&#9670;&#160;</a></span>end_of_hour()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1518,7 +1486,7 @@ template&lt;class T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> time_shield::end_of_hour </td>
+          <td class="memname">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> time_shield::end_of_hour </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a></td>          <td class="paramname"><span class="paramname"><em>ts</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>()</span></td><td>)</td>
           <td></td>
@@ -1526,7 +1494,7 @@ template&lt;class T&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1544,8 +1512,8 @@ template&lt;class T&gt; </div>
 
 </div>
 </div>
-<a id="ga361b7f574fa40955ec4a6b7bfac97ba3" name="ga361b7f574fa40955ec4a6b7bfac97ba3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga361b7f574fa40955ec4a6b7bfac97ba3">&#9670;&#160;</a></span>end_of_hour_ms()</h2>
+<a id="ga7d170014d50e74be90bf3bb05c61a5b7" name="ga7d170014d50e74be90bf3bb05c61a5b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7d170014d50e74be90bf3bb05c61a5b7">&#9670;&#160;</a></span>end_of_hour_ms()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1554,7 +1522,7 @@ template&lt;class T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> time_shield::end_of_hour_ms </td>
+          <td class="memname">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> time_shield::end_of_hour_ms </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a></td>          <td class="paramname"><span class="paramname"><em>ts_ms</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">time_shield::ts_ms</a>()</span></td><td>)</td>
           <td></td>
@@ -1562,7 +1530,7 @@ template&lt;class T&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1580,8 +1548,8 @@ template&lt;class T&gt; </div>
 
 </div>
 </div>
-<a id="ga9cecf97a729989ad9e83954293782775" name="ga9cecf97a729989ad9e83954293782775"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga9cecf97a729989ad9e83954293782775">&#9670;&#160;</a></span>end_of_hour_sec()</h2>
+<a id="ga52218252b3e66b0f0107589927cd3a77" name="ga52218252b3e66b0f0107589927cd3a77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga52218252b3e66b0f0107589927cd3a77">&#9670;&#160;</a></span>end_of_hour_sec()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1590,7 +1558,7 @@ template&lt;class T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> time_shield::end_of_hour_sec </td>
+          <td class="memname">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> time_shield::end_of_hour_sec </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a></td>          <td class="paramname"><span class="paramname"><em>ts_ms</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">time_shield::ts_ms</a>()</span></td><td>)</td>
           <td></td>
@@ -1598,7 +1566,7 @@ template&lt;class T&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1616,8 +1584,8 @@ template&lt;class T&gt; </div>
 
 </div>
 </div>
-<a id="gaa9542e7bf558208be7e1d7cabc9acd9e" name="gaa9542e7bf558208be7e1d7cabc9acd9e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa9542e7bf558208be7e1d7cabc9acd9e">&#9670;&#160;</a></span>end_of_min()</h2>
+<a id="ga213b254d6d1b9f74bf638c4abe7e1863" name="ga213b254d6d1b9f74bf638c4abe7e1863"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga213b254d6d1b9f74bf638c4abe7e1863">&#9670;&#160;</a></span>end_of_min()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1626,7 +1594,7 @@ template&lt;class T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> time_shield::end_of_min </td>
+          <td class="memname">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> time_shield::end_of_min </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a></td>          <td class="paramname"><span class="paramname"><em>ts</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>()</span></td><td>)</td>
           <td></td>
@@ -1634,7 +1602,7 @@ template&lt;class T&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1689,19 +1657,16 @@ template&lt;class T&gt; </div>
 
 </div>
 </div>
-<a id="gab1d68eb3e33912c95ba237b2def392ab" name="gab1d68eb3e33912c95ba237b2def392ab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab1d68eb3e33912c95ba237b2def392ab">&#9670;&#160;</a></span>end_of_period()</h2>
+<a id="ga5636a322203b3c369e02312d7b36bc84" name="ga5636a322203b3c369e02312d7b36bc84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5636a322203b3c369e02312d7b36bc84">&#9670;&#160;</a></span>end_of_period()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class T = int&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> time_shield::end_of_period </td>
+          <td class="memname">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> time_shield::end_of_period </td>
           <td>(</td>
           <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>p</em></span>, </td>
         </tr>
@@ -1711,11 +1676,6 @@ template&lt;class T = int&gt; </div>
           <td class="paramtype"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a></td>          <td class="paramname"><span class="paramname"><em>ts</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>()</span>&#160;)</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Get the timestamp of the end of the period. </p>
@@ -1732,8 +1692,8 @@ template&lt;class T = int&gt; </div>
 
 </div>
 </div>
-<a id="ga147bc52b3bf4f4584cf17048fdc32fd0" name="ga147bc52b3bf4f4584cf17048fdc32fd0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga147bc52b3bf4f4584cf17048fdc32fd0">&#9670;&#160;</a></span>end_of_week()</h2>
+<a id="gacd417cf302d63bbcbc3a6e4a6c1e0fc6" name="gacd417cf302d63bbcbc3a6e4a6c1e0fc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacd417cf302d63bbcbc3a6e4a6c1e0fc6">&#9670;&#160;</a></span>end_of_week()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1742,7 +1702,7 @@ template&lt;class T = int&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> time_shield::end_of_week </td>
+          <td class="memname">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> time_shield::end_of_week </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a></td>          <td class="paramname"><span class="paramname"><em>ts</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>()</span></td><td>)</td>
           <td></td>
@@ -1750,7 +1710,7 @@ template&lt;class T = int&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1889,29 +1849,21 @@ template&lt;class T = year_t&gt; </div>
 
 </div>
 </div>
-<a id="ga2f2e016aec247291048fabe7eea3270e" name="ga2f2e016aec247291048fabe7eea3270e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga2f2e016aec247291048fabe7eea3270e">&#9670;&#160;</a></span>ftimestamp() <span class="overload">[2/2]</span></h2>
+<a id="gae50e0776085fef8bb6f771ad78a403a3" name="gae50e0776085fef8bb6f771ad78a403a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae50e0776085fef8bb6f771ad78a403a3">&#9670;&#160;</a></span>ftimestamp() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class T&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f">fts_t</a> time_shield::ftimestamp </td>
+          <td class="memname">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f">fts_t</a> time_shield::ftimestamp </td>
           <td>(</td>
           <td class="paramtype">const T &amp;</td>          <td class="paramname"><span class="paramname"><em>date_time</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Alias for dt_to_ftimestamp. </p>
@@ -1985,29 +1937,21 @@ template&lt;class T&gt; </div>
 
 </div>
 </div>
-<a id="ga6e3cae02d09bfa9900d1a797d688e58c" name="ga6e3cae02d09bfa9900d1a797d688e58c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga6e3cae02d09bfa9900d1a797d688e58c">&#9670;&#160;</a></span>fts() <span class="overload">[2/2]</span></h2>
+<a id="gaa2e709f6c62dd9d96750b718e7421298" name="gaa2e709f6c62dd9d96750b718e7421298"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa2e709f6c62dd9d96750b718e7421298">&#9670;&#160;</a></span>fts() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class T&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f">fts_t</a> time_shield::fts </td>
+          <td class="memname">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f">fts_t</a> time_shield::fts </td>
           <td>(</td>
           <td class="paramtype">const T &amp;</td>          <td class="paramname"><span class="paramname"><em>date_time</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Alias for dt_to_ftimestamp. </p>
@@ -2037,29 +1981,21 @@ template&lt;class T&gt; </div>
 
 </div>
 </div>
-<a id="ga3443cf41eed6dd73140879407f760c8c" name="ga3443cf41eed6dd73140879407f760c8c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga3443cf41eed6dd73140879407f760c8c">&#9670;&#160;</a></span>get_dow()</h2>
+<a id="gad39c6fec35dafa98e75ee46a16feaf55" name="gad39c6fec35dafa98e75ee46a16feaf55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad39c6fec35dafa98e75ee46a16feaf55">&#9670;&#160;</a></span>get_dow()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class T1 = Weekday, class T2, typename std::enable_if&lt; std::is_class&lt; T2 &gt;::value, int &gt;::type = 0&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">T1 time_shield::get_dow </td>
+          <td class="memname">TIME_SHIELD_CONSTEXPR T1 time_shield::get_dow </td>
           <td>(</td>
           <td class="paramtype">const T2 &amp;</td>          <td class="paramname"><span class="paramname"><em>date</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Alias for weekday_of_date. </p>
@@ -2117,8 +2053,8 @@ template&lt;class T1 = Weekday, class T2, typename std::enable_if&lt; std::is_cl
 
 </div>
 </div>
-<a id="gaf116818f1eeb0fee721a220b666b6412" name="gaf116818f1eeb0fee721a220b666b6412"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf116818f1eeb0fee721a220b666b6412">&#9670;&#160;</a></span>get_weekday_from_ts()</h2>
+<a id="gae0d52a3c8ea8b6bd1bfa6074e4884728" name="gae0d52a3c8ea8b6bd1bfa6074e4884728"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae0d52a3c8ea8b6bd1bfa6074e4884728">&#9670;&#160;</a></span>get_weekday_from_ts()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2129,7 +2065,7 @@ template&lt;class T = Weekday&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">T time_shield::get_weekday_from_ts </td>
+          <td class="memname">TIME_SHIELD_CONSTEXPR T time_shield::get_weekday_from_ts </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a></td>          <td class="paramname"><span class="paramname"><em>ts</em></span></td><td>)</td>
           <td></td>
@@ -2137,7 +2073,7 @@ template&lt;class T = Weekday&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2156,29 +2092,21 @@ template&lt;class T = Weekday&gt; </div>
 
 </div>
 </div>
-<a id="ga8463fd36ce43fe1c3c44a2b2ec85214f" name="ga8463fd36ce43fe1c3c44a2b2ec85214f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga8463fd36ce43fe1c3c44a2b2ec85214f">&#9670;&#160;</a></span>get_weekday_from_ts_ms()</h2>
+<a id="gad78ba30c247349b5cc02e94dfe5ac6ac" name="gad78ba30c247349b5cc02e94dfe5ac6ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad78ba30c247349b5cc02e94dfe5ac6ac">&#9670;&#160;</a></span>get_weekday_from_ts_ms()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class T = Weekday&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">T time_shield::get_weekday_from_ts_ms </td>
+          <td class="memname">TIME_SHIELD_CONSTEXPR T time_shield::get_weekday_from_ts_ms </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a></td>          <td class="paramname"><span class="paramname"><em>ts_ms</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Alias for weekday_of_ts_ms. </p>
@@ -2195,8 +2123,8 @@ template&lt;class T = Weekday&gt; </div>
 
 </div>
 </div>
-<a id="ga593f77471d15efc8cd41773ae3b14c77" name="ga593f77471d15efc8cd41773ae3b14c77"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga593f77471d15efc8cd41773ae3b14c77">&#9670;&#160;</a></span>hour_of_day()</h2>
+<a id="ga1b0bea9b9ca806aabbe1c569cdfdeb96" name="ga1b0bea9b9ca806aabbe1c569cdfdeb96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1b0bea9b9ca806aabbe1c569cdfdeb96">&#9670;&#160;</a></span>hour_of_day()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2207,7 +2135,7 @@ template&lt;class T = int&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">T time_shield::hour_of_day </td>
+          <td class="memname">TIME_SHIELD_CONSTEXPR T time_shield::hour_of_day </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a></td>          <td class="paramname"><span class="paramname"><em>ts</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>()</span></td><td>)</td>
           <td></td>
@@ -2215,7 +2143,7 @@ template&lt;class T = int&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2580,8 +2508,8 @@ template&lt;class T1 = int, class T2 = year_t, class T3 = int&gt; </div>
 
 </div>
 </div>
-<a id="gadcc9778d2f9e3e4872ca77fd6c7fdef5" name="gadcc9778d2f9e3e4872ca77fd6c7fdef5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gadcc9778d2f9e3e4872ca77fd6c7fdef5">&#9670;&#160;</a></span>min_of_day()</h2>
+<a id="ga3927f5598cdf0359136c043aee616445" name="ga3927f5598cdf0359136c043aee616445"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3927f5598cdf0359136c043aee616445">&#9670;&#160;</a></span>min_of_day()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2592,7 +2520,7 @@ template&lt;class T = int&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">T time_shield::min_of_day </td>
+          <td class="memname">TIME_SHIELD_CONSTEXPR T time_shield::min_of_day </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a></td>          <td class="paramname"><span class="paramname"><em>ts</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>()</span></td><td>)</td>
           <td></td>
@@ -2600,7 +2528,7 @@ template&lt;class T = int&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2618,8 +2546,8 @@ template&lt;class T = int&gt; </div>
 
 </div>
 </div>
-<a id="ga534901699df1c9260170a397b02a85db" name="ga534901699df1c9260170a397b02a85db"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga534901699df1c9260170a397b02a85db">&#9670;&#160;</a></span>min_of_hour()</h2>
+<a id="gac96dff6d6a807bd8da413f0620017f96" name="gac96dff6d6a807bd8da413f0620017f96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac96dff6d6a807bd8da413f0620017f96">&#9670;&#160;</a></span>min_of_hour()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2630,7 +2558,7 @@ template&lt;class T = int&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">T time_shield::min_of_hour </td>
+          <td class="memname">TIME_SHIELD_CONSTEXPR T time_shield::min_of_hour </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a></td>          <td class="paramname"><span class="paramname"><em>ts</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>()</span></td><td>)</td>
           <td></td>
@@ -2638,7 +2566,7 @@ template&lt;class T = int&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2695,8 +2623,8 @@ template&lt;class T = Month&gt; </div>
 
 </div>
 </div>
-<a id="gab88cbc8062ea211724a30df28f4781a2" name="gab88cbc8062ea211724a30df28f4781a2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab88cbc8062ea211724a30df28f4781a2">&#9670;&#160;</a></span>next_day()</h2>
+<a id="ga68d1ff04ff2ba9651a8fdd073c7d7607" name="ga68d1ff04ff2ba9651a8fdd073c7d7607"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga68d1ff04ff2ba9651a8fdd073c7d7607">&#9670;&#160;</a></span>next_day()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2707,7 +2635,7 @@ template&lt;class T = int&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> time_shield::next_day </td>
+          <td class="memname">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> time_shield::next_day </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a></td>          <td class="paramname"><span class="paramname"><em>ts</em></span>, </td>
         </tr>
@@ -2719,7 +2647,7 @@ template&lt;class T = int&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2729,7 +2657,7 @@ template&lt;class T = int&gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname"><a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03" title="Alias for to_timestamp.">ts</a></td><td>The current timestamp in seconds. </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__time__conversions.html#gac15d883acc0247a54eea2b17f68f6860" title="Alias for days_between function.">days</a></td><td>The number of days to add to the current timestamp (default is 1). </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__time__conversions.html#ga706b3e0663e8b359c13ebe8ee65f05fe" title="Alias for days_between function.">days</a></td><td>The number of days to add to the current timestamp (default is 1). </td></tr>
   </table>
   </dd>
 </dl>
@@ -2739,8 +2667,8 @@ template&lt;class T = int&gt; </div>
 
 </div>
 </div>
-<a id="gab137480ffab276959b4ac440b6d09fb0" name="gab137480ffab276959b4ac440b6d09fb0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab137480ffab276959b4ac440b6d09fb0">&#9670;&#160;</a></span>next_day_ms()</h2>
+<a id="ga6f949d0443d0672d8b1c56f4590c8837" name="ga6f949d0443d0672d8b1c56f4590c8837"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6f949d0443d0672d8b1c56f4590c8837">&#9670;&#160;</a></span>next_day_ms()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2751,7 +2679,7 @@ template&lt;class T = int&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> time_shield::next_day_ms </td>
+          <td class="memname">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> time_shield::next_day_ms </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a></td>          <td class="paramname"><span class="paramname"><em>ts_ms</em></span>, </td>
         </tr>
@@ -2763,7 +2691,7 @@ template&lt;class T = int&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2773,7 +2701,7 @@ template&lt;class T = int&gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname"><a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b" title="Alias for to_timestamp_ms.">ts_ms</a></td><td>The current timestamp in milliseconds. </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__time__conversions.html#gac15d883acc0247a54eea2b17f68f6860" title="Alias for days_between function.">days</a></td><td>The number of days to add to the current timestamp (default is 1). </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__time__conversions.html#ga706b3e0663e8b359c13ebe8ee65f05fe" title="Alias for days_between function.">days</a></td><td>The number of days to add to the current timestamp (default is 1). </td></tr>
   </table>
   </dd>
 </dl>
@@ -2866,8 +2794,8 @@ template&lt;class T1 = int&gt; </div>
 
 </div>
 </div>
-<a id="ga9645c1e5b43e602c456bd297c78e7f4b" name="ga9645c1e5b43e602c456bd297c78e7f4b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga9645c1e5b43e602c456bd297c78e7f4b">&#9670;&#160;</a></span>start_of_day()</h2>
+<a id="ga65d223f1d59df13f149fa4a5fd4c8475" name="ga65d223f1d59df13f149fa4a5fd4c8475"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga65d223f1d59df13f149fa4a5fd4c8475">&#9670;&#160;</a></span>start_of_day()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2876,7 +2804,7 @@ template&lt;class T1 = int&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> time_shield::start_of_day </td>
+          <td class="memname">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> time_shield::start_of_day </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a></td>          <td class="paramname"><span class="paramname"><em>ts</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>()</span></td><td>)</td>
           <td></td>
@@ -2884,7 +2812,7 @@ template&lt;class T1 = int&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2903,8 +2831,8 @@ template&lt;class T1 = int&gt; </div>
 
 </div>
 </div>
-<a id="ga518e724145efa3e49429908db595d09e" name="ga518e724145efa3e49429908db595d09e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga518e724145efa3e49429908db595d09e">&#9670;&#160;</a></span>start_of_day_ms()</h2>
+<a id="gaca23c01feae2d60691e4817b92ee7042" name="gaca23c01feae2d60691e4817b92ee7042"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaca23c01feae2d60691e4817b92ee7042">&#9670;&#160;</a></span>start_of_day_ms()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2913,7 +2841,7 @@ template&lt;class T1 = int&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> time_shield::start_of_day_ms </td>
+          <td class="memname">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> time_shield::start_of_day_ms </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a></td>          <td class="paramname"><span class="paramname"><em>ts_ms</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">time_shield::ts_ms</a>()</span></td><td>)</td>
           <td></td>
@@ -2921,7 +2849,7 @@ template&lt;class T1 = int&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2940,8 +2868,8 @@ template&lt;class T1 = int&gt; </div>
 
 </div>
 </div>
-<a id="gac5fad76a1d5a6677d363b8421659b914" name="gac5fad76a1d5a6677d363b8421659b914"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac5fad76a1d5a6677d363b8421659b914">&#9670;&#160;</a></span>start_of_day_sec()</h2>
+<a id="ga0abf8fe2ff0896085f95212e82354e5f" name="ga0abf8fe2ff0896085f95212e82354e5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0abf8fe2ff0896085f95212e82354e5f">&#9670;&#160;</a></span>start_of_day_sec()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2950,7 +2878,7 @@ template&lt;class T1 = int&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> time_shield::start_of_day_sec </td>
+          <td class="memname">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> time_shield::start_of_day_sec </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a></td>          <td class="paramname"><span class="paramname"><em>ts_ms</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">time_shield::ts_ms</a>()</span></td><td>)</td>
           <td></td>
@@ -2958,7 +2886,7 @@ template&lt;class T1 = int&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2977,8 +2905,8 @@ template&lt;class T1 = int&gt; </div>
 
 </div>
 </div>
-<a id="ga54ff25b7c955a347a5e32e1e9be39d03" name="ga54ff25b7c955a347a5e32e1e9be39d03"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga54ff25b7c955a347a5e32e1e9be39d03">&#9670;&#160;</a></span>start_of_hour()</h2>
+<a id="ga1b4cfee4356584b8e71b1506637010a3" name="ga1b4cfee4356584b8e71b1506637010a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1b4cfee4356584b8e71b1506637010a3">&#9670;&#160;</a></span>start_of_hour()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2987,7 +2915,7 @@ template&lt;class T1 = int&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> time_shield::start_of_hour </td>
+          <td class="memname">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> time_shield::start_of_hour </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a></td>          <td class="paramname"><span class="paramname"><em>ts</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>()</span></td><td>)</td>
           <td></td>
@@ -2995,7 +2923,7 @@ template&lt;class T1 = int&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -3014,8 +2942,8 @@ template&lt;class T1 = int&gt; </div>
 
 </div>
 </div>
-<a id="ga84a64a043b93ff6abd3b7d510ebfcca3" name="ga84a64a043b93ff6abd3b7d510ebfcca3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga84a64a043b93ff6abd3b7d510ebfcca3">&#9670;&#160;</a></span>start_of_hour_ms()</h2>
+<a id="ga332622bac124049f21803b87081d582a" name="ga332622bac124049f21803b87081d582a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga332622bac124049f21803b87081d582a">&#9670;&#160;</a></span>start_of_hour_ms()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3024,7 +2952,7 @@ template&lt;class T1 = int&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> time_shield::start_of_hour_ms </td>
+          <td class="memname">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> time_shield::start_of_hour_ms </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a></td>          <td class="paramname"><span class="paramname"><em>ts_ms</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">time_shield::ts_ms</a>()</span></td><td>)</td>
           <td></td>
@@ -3032,7 +2960,7 @@ template&lt;class T1 = int&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -3050,8 +2978,8 @@ template&lt;class T1 = int&gt; </div>
 
 </div>
 </div>
-<a id="gaf95e43d99a32be893da36479db52a25c" name="gaf95e43d99a32be893da36479db52a25c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf95e43d99a32be893da36479db52a25c">&#9670;&#160;</a></span>start_of_hour_sec()</h2>
+<a id="ga8cd1cc744e432398777ed21a63dce3ee" name="ga8cd1cc744e432398777ed21a63dce3ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8cd1cc744e432398777ed21a63dce3ee">&#9670;&#160;</a></span>start_of_hour_sec()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3060,7 +2988,7 @@ template&lt;class T1 = int&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> time_shield::start_of_hour_sec </td>
+          <td class="memname">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> time_shield::start_of_hour_sec </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a></td>          <td class="paramname"><span class="paramname"><em>ts_ms</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b">time_shield::ts_ms</a>()</span></td><td>)</td>
           <td></td>
@@ -3068,7 +2996,7 @@ template&lt;class T1 = int&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -3087,8 +3015,8 @@ template&lt;class T1 = int&gt; </div>
 
 </div>
 </div>
-<a id="ga23bf99c2bc02f3a430517a3abaf62b38" name="ga23bf99c2bc02f3a430517a3abaf62b38"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga23bf99c2bc02f3a430517a3abaf62b38">&#9670;&#160;</a></span>start_of_min()</h2>
+<a id="ga160af1f7fd8cecad4d2ad89c61d94037" name="ga160af1f7fd8cecad4d2ad89c61d94037"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga160af1f7fd8cecad4d2ad89c61d94037">&#9670;&#160;</a></span>start_of_min()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3097,7 +3025,7 @@ template&lt;class T1 = int&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> time_shield::start_of_min </td>
+          <td class="memname">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> time_shield::start_of_min </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a></td>          <td class="paramname"><span class="paramname"><em>ts</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>()</span></td><td>)</td>
           <td></td>
@@ -3105,7 +3033,7 @@ template&lt;class T1 = int&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -3160,8 +3088,8 @@ template&lt;class T1 = int&gt; </div>
 
 </div>
 </div>
-<a id="gab2017f2438d264e48dc2acb839989d7a" name="gab2017f2438d264e48dc2acb839989d7a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab2017f2438d264e48dc2acb839989d7a">&#9670;&#160;</a></span>start_of_next_day()</h2>
+<a id="ga0dc1955d7153617e73105a423192c767" name="ga0dc1955d7153617e73105a423192c767"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0dc1955d7153617e73105a423192c767">&#9670;&#160;</a></span>start_of_next_day()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3172,7 +3100,7 @@ template&lt;class T = int&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> time_shield::start_of_next_day </td>
+          <td class="memname">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> time_shield::start_of_next_day </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a></td>          <td class="paramname"><span class="paramname"><em>ts</em></span>, </td>
         </tr>
@@ -3184,7 +3112,7 @@ template&lt;class T = int&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -3194,7 +3122,7 @@ template&lt;class T = int&gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname"><a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03" title="Alias for to_timestamp.">ts</a></td><td>The current timestamp in seconds. </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__time__conversions.html#gac15d883acc0247a54eea2b17f68f6860" title="Alias for days_between function.">days</a></td><td>The number of days after the current day (default is 1). </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__time__conversions.html#ga706b3e0663e8b359c13ebe8ee65f05fe" title="Alias for days_between function.">days</a></td><td>The number of days after the current day (default is 1). </td></tr>
   </table>
   </dd>
 </dl>
@@ -3204,8 +3132,8 @@ template&lt;class T = int&gt; </div>
 
 </div>
 </div>
-<a id="gaae682a4603729173273f7021da9a1fc5" name="gaae682a4603729173273f7021da9a1fc5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaae682a4603729173273f7021da9a1fc5">&#9670;&#160;</a></span>start_of_next_day_ms()</h2>
+<a id="ga08b66dadc7689d8e8b7cdcec9140fa15" name="ga08b66dadc7689d8e8b7cdcec9140fa15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga08b66dadc7689d8e8b7cdcec9140fa15">&#9670;&#160;</a></span>start_of_next_day_ms()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3216,7 +3144,7 @@ template&lt;class T = int&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> time_shield::start_of_next_day_ms </td>
+          <td class="memname">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> time_shield::start_of_next_day_ms </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a></td>          <td class="paramname"><span class="paramname"><em>ts_ms</em></span>, </td>
         </tr>
@@ -3228,7 +3156,7 @@ template&lt;class T = int&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -3238,7 +3166,7 @@ template&lt;class T = int&gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname"><a class="el" href="group__time__conversions.html#ga5ea6979cd4275492cf00833278b95c6b" title="Alias for to_timestamp_ms.">ts_ms</a></td><td>The current timestamp in milliseconds. </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__time__conversions.html#gac15d883acc0247a54eea2b17f68f6860" title="Alias for days_between function.">days</a></td><td>The number of days after the current day (default is 1). </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__time__conversions.html#ga706b3e0663e8b359c13ebe8ee65f05fe" title="Alias for days_between function.">days</a></td><td>The number of days after the current day (default is 1). </td></tr>
   </table>
   </dd>
 </dl>
@@ -3248,19 +3176,16 @@ template&lt;class T = int&gt; </div>
 
 </div>
 </div>
-<a id="ga182f16e5b088efaede5f1dfd2083cd56" name="ga182f16e5b088efaede5f1dfd2083cd56"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga182f16e5b088efaede5f1dfd2083cd56">&#9670;&#160;</a></span>start_of_period()</h2>
+<a id="ga9b82795d4d238729d91a44b22fa48c86" name="ga9b82795d4d238729d91a44b22fa48c86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9b82795d4d238729d91a44b22fa48c86">&#9670;&#160;</a></span>start_of_period()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class T = int&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> time_shield::start_of_period </td>
+          <td class="memname">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> time_shield::start_of_period </td>
           <td>(</td>
           <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>p</em></span>, </td>
         </tr>
@@ -3270,11 +3195,6 @@ template&lt;class T = int&gt; </div>
           <td class="paramtype"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a></td>          <td class="paramname"><span class="paramname"><em>ts</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>()</span>&#160;)</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Get the timestamp of the start of the period. </p>
@@ -3291,8 +3211,8 @@ template&lt;class T = int&gt; </div>
 
 </div>
 </div>
-<a id="gadfa501f1f9d1b4b687bba3fb850ce3cb" name="gadfa501f1f9d1b4b687bba3fb850ce3cb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gadfa501f1f9d1b4b687bba3fb850ce3cb">&#9670;&#160;</a></span>start_of_prev_day()</h2>
+<a id="gacea69f331d74b341736b05eb25a59545" name="gacea69f331d74b341736b05eb25a59545"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacea69f331d74b341736b05eb25a59545">&#9670;&#160;</a></span>start_of_prev_day()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3303,7 +3223,7 @@ template&lt;class T = int&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> time_shield::start_of_prev_day </td>
+          <td class="memname">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> time_shield::start_of_prev_day </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a></td>          <td class="paramname"><span class="paramname"><em>ts</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>()</span>, </td>
         </tr>
@@ -3315,7 +3235,7 @@ template&lt;class T = int&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -3325,7 +3245,7 @@ template&lt;class T = int&gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname"><a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03" title="Alias for to_timestamp.">ts</a></td><td>Timestamp of the current day. </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__time__conversions.html#gac15d883acc0247a54eea2b17f68f6860" title="Alias for days_between function.">days</a></td><td>Number of days to go back (default is 1). </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__time__conversions.html#ga706b3e0663e8b359c13ebe8ee65f05fe" title="Alias for days_between function.">days</a></td><td>Number of days to go back (default is 1). </td></tr>
   </table>
   </dd>
 </dl>
@@ -3335,8 +3255,8 @@ template&lt;class T = int&gt; </div>
 
 </div>
 </div>
-<a id="ga14137f5710bb2974e69b7137f7f3bf2a" name="ga14137f5710bb2974e69b7137f7f3bf2a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga14137f5710bb2974e69b7137f7f3bf2a">&#9670;&#160;</a></span>start_of_saturday()</h2>
+<a id="gaa02b0a6d74de34f893d136f1cfa93cc7" name="gaa02b0a6d74de34f893d136f1cfa93cc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa02b0a6d74de34f893d136f1cfa93cc7">&#9670;&#160;</a></span>start_of_saturday()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3345,7 +3265,7 @@ template&lt;class T = int&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> time_shield::start_of_saturday </td>
+          <td class="memname">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> time_shield::start_of_saturday </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a></td>          <td class="paramname"><span class="paramname"><em>ts</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>()</span></td><td>)</td>
           <td></td>
@@ -3353,7 +3273,7 @@ template&lt;class T = int&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -3372,8 +3292,8 @@ template&lt;class T = int&gt; </div>
 
 </div>
 </div>
-<a id="gac478de6fe94a45128de1464062418a84" name="gac478de6fe94a45128de1464062418a84"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac478de6fe94a45128de1464062418a84">&#9670;&#160;</a></span>start_of_week()</h2>
+<a id="ga934093e72e16f009f647a6fd3ef1bfd9" name="ga934093e72e16f009f647a6fd3ef1bfd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga934093e72e16f009f647a6fd3ef1bfd9">&#9670;&#160;</a></span>start_of_week()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3382,7 +3302,7 @@ template&lt;class T = int&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> time_shield::start_of_week </td>
+          <td class="memname">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> time_shield::start_of_week </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a></td>          <td class="paramname"><span class="paramname"><em>ts</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">time_shield::ts</a>()</span></td><td>)</td>
           <td></td>
@@ -3390,7 +3310,7 @@ template&lt;class T = int&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -4288,29 +4208,21 @@ template&lt;class T&gt; </div>
 
 </div>
 </div>
-<a id="ga8c817a893ff5c3d26cd59cedb0e3eb96" name="ga8c817a893ff5c3d26cd59cedb0e3eb96"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga8c817a893ff5c3d26cd59cedb0e3eb96">&#9670;&#160;</a></span>to_ftimestamp() <span class="overload">[2/3]</span></h2>
+<a id="ga2481c00b550660ae7c80a1de6e1e37a6" name="ga2481c00b550660ae7c80a1de6e1e37a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2481c00b550660ae7c80a1de6e1e37a6">&#9670;&#160;</a></span>to_ftimestamp() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class T&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f">fts_t</a> time_shield::to_ftimestamp </td>
+          <td class="memname">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f">fts_t</a> time_shield::to_ftimestamp </td>
           <td>(</td>
           <td class="paramtype">const T &amp;</td>          <td class="paramname"><span class="paramname"><em>date_time</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Alias for dt_to_ftimestamp. </p>
@@ -4472,29 +4384,21 @@ template&lt;class T1 = year_t, class T2 = int, class T3 = int&gt; </div>
 
 </div>
 </div>
-<a id="gaa0c07f2382a154356759cc60da54d2a0" name="gaa0c07f2382a154356759cc60da54d2a0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa0c07f2382a154356759cc60da54d2a0">&#9670;&#160;</a></span>to_fts() <span class="overload">[2/2]</span></h2>
+<a id="ga359fd39c6f1a585cde80fa4c40adca21" name="ga359fd39c6f1a585cde80fa4c40adca21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga359fd39c6f1a585cde80fa4c40adca21">&#9670;&#160;</a></span>to_fts() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class T&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f">fts_t</a> time_shield::to_fts </td>
+          <td class="memname">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f">fts_t</a> time_shield::to_fts </td>
           <td>(</td>
           <td class="paramtype">const T &amp;</td>          <td class="paramname"><span class="paramname"><em>date_time</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Alias for dt_to_ftimestamp. </p>
@@ -5101,29 +5005,21 @@ template&lt;class T&gt; </div>
 
 </div>
 </div>
-<a id="ga83b4821bf7f30e11e48c2309bb30b3f2" name="ga83b4821bf7f30e11e48c2309bb30b3f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga83b4821bf7f30e11e48c2309bb30b3f2">&#9670;&#160;</a></span>wd()</h2>
+<a id="gadf755fc1c49682f3ec8e05934f70a96c" name="gadf755fc1c49682f3ec8e05934f70a96c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadf755fc1c49682f3ec8e05934f70a96c">&#9670;&#160;</a></span>wd()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class T1 = Weekday, class T2, typename std::enable_if&lt; std::is_class&lt; T2 &gt;::value, int &gt;::type = 0&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">T1 time_shield::wd </td>
+          <td class="memname">TIME_SHIELD_CONSTEXPR T1 time_shield::wd </td>
           <td>(</td>
           <td class="paramtype">const T2 &amp;</td>          <td class="paramname"><span class="paramname"><em>date</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Alias for weekday_of_date. </p>
@@ -5181,29 +5077,21 @@ template&lt;class T1 = Weekday, class T2&gt; </div>
 
 </div>
 </div>
-<a id="ga5d59e6b2b58ffe02885afe5f9eabca58" name="ga5d59e6b2b58ffe02885afe5f9eabca58"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga5d59e6b2b58ffe02885afe5f9eabca58">&#9670;&#160;</a></span>weekday_of()</h2>
+<a id="gabcdc49298b5774d08f49271bd219442e" name="gabcdc49298b5774d08f49271bd219442e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabcdc49298b5774d08f49271bd219442e">&#9670;&#160;</a></span>weekday_of()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class T1 = Weekday, class T2, typename std::enable_if&lt; std::is_class&lt; T2 &gt;::value, int &gt;::type = 0&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">T1 time_shield::weekday_of </td>
+          <td class="memname">TIME_SHIELD_CONSTEXPR T1 time_shield::weekday_of </td>
           <td>(</td>
           <td class="paramtype">const T2 &amp;</td>          <td class="paramname"><span class="paramname"><em>date</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Alias for weekday_of_date. </p>
@@ -5260,8 +5148,8 @@ template&lt;class T1 = Weekday, class T2&gt; </div>
 
 </div>
 </div>
-<a id="gac636c3ce16aa7fe399f7aac1fa3719c7" name="gac636c3ce16aa7fe399f7aac1fa3719c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac636c3ce16aa7fe399f7aac1fa3719c7">&#9670;&#160;</a></span>weekday_of_ts()</h2>
+<a id="ga14a5c48e36651143c1b861945d5ee742" name="ga14a5c48e36651143c1b861945d5ee742"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga14a5c48e36651143c1b861945d5ee742">&#9670;&#160;</a></span>weekday_of_ts()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -5272,7 +5160,7 @@ template&lt;class T = Weekday&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">T time_shield::weekday_of_ts </td>
+          <td class="memname">TIME_SHIELD_CONSTEXPR T time_shield::weekday_of_ts </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a></td>          <td class="paramname"><span class="paramname"><em>ts</em></span></td><td>)</td>
           <td></td>
@@ -5280,7 +5168,7 @@ template&lt;class T = Weekday&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -5298,29 +5186,21 @@ template&lt;class T = Weekday&gt; </div>
 
 </div>
 </div>
-<a id="ga305b9f95f3e40e2b18127034fd4b51ce" name="ga305b9f95f3e40e2b18127034fd4b51ce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga305b9f95f3e40e2b18127034fd4b51ce">&#9670;&#160;</a></span>weekday_of_ts_ms()</h2>
+<a id="gadc8fa00746924d72a5c6071020a997e5" name="gadc8fa00746924d72a5c6071020a997e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadc8fa00746924d72a5c6071020a997e5">&#9670;&#160;</a></span>weekday_of_ts_ms()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class T = Weekday&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">T time_shield::weekday_of_ts_ms </td>
+          <td class="memname">TIME_SHIELD_CONSTEXPR T time_shield::weekday_of_ts_ms </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a></td>          <td class="paramname"><span class="paramname"><em>ts_ms</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Get the weekday from a timestamp in milliseconds. </p>

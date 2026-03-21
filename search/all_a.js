@@ -7,6 +7,7 @@ var searchData=
   ['jst_4',['JST',['../group__time__enums.html#ggad8cb858fb6cedcf76c4f0630d56e042ba01ce9feb3b6ed511b0e10733c0403e34',1,'time_shield']]],
   ['jst_5fto_5fgmt_5',['jst_to_gmt',['../group__time__conversions__time__zone__conversions.html#gafe94b27396fd9967b45f76a26e0ae035',1,'time_shield::jst_to_gmt(ts_t jst)'],['../namespacetime__shield.html#a8f2e3bfd7fb2ac8d030d908e33c59cec',1,'time_shield::jst_to_gmt(const datetime jst)']]],
   ['jul_6',['JUL',['../group__time__enums.html#ggac2ffd79e06ab94cf1bb50fec432c68a8ae3790c5cf902c76c1da7bc748c9eb18c',1,'time_shield']]],
-  ['julian_5fday_5ffrom_5funix_5fseconds_7',['julian_day_from_unix_seconds',['../classtime__shield_1_1astronomy_1_1MoonPhase.html#a4ca8d9485791b7f880418b33575fe4f8',1,'time_shield::astronomy::MoonPhase']]],
-  ['jun_8',['JUN',['../group__time__enums.html#ggac2ffd79e06ab94cf1bb50fec432c68a8a55a49547565d1d9e155d52473e21aa60',1,'time_shield']]]
+  ['julian_5fconversions_2ehpp_7',['julian_conversions.hpp',['../julian__conversions_8hpp.html',1,'']]],
+  ['julian_5fday_5ffrom_5funix_5fseconds_8',['julian_day_from_unix_seconds',['../classtime__shield_1_1astronomy_1_1MoonPhase.html#a4ca8d9485791b7f880418b33575fe4f8',1,'time_shield::astronomy::MoonPhase']]],
+  ['jun_9',['JUN',['../group__time__enums.html#ggac2ffd79e06ab94cf1bb50fec432c68a8a55a49547565d1d9e155d52473e21aa60',1,'time_shield']]]
 ];

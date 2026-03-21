@@ -1,11 +1,11 @@
 var validation_8hpp =
 [
-    [ "time_shield::check_leap_year", "group__time__validation.html#ga0d94fbfb5290a1ae3bc863d47c34ba22", null ],
+    [ "time_shield::check_leap_year", "group__time__validation.html#ga06f74b5d24d039be38706e5972589de5", null ],
     [ "time_shield::check_leap_year_ts", "group__time__validation.html#gac6498174d5a46f29615d696c3a659380", null ],
     [ "time_shield::is_day_off", "group__time__validation.html#ga003ae6e5486b23cfe47a3ba795250978", null ],
     [ "time_shield::is_day_off_unix_day", "group__time__validation.html#gaaa13c138e194eff2a8868cda6bf4791b", null ],
     [ "time_shield::is_leap_year", "group__time__validation.html#ga17ef47bc687b55e4a41cc3e4c0945b3c", null ],
-    [ "time_shield::is_leap_year_date", "group__time__validation.html#gac170040e738cb4b6558850563eb277f9", null ],
+    [ "time_shield::is_leap_year_date", "group__time__validation.html#gae61b510e94f80cfdc92a6f2b2a0b3c93", null ],
     [ "time_shield::is_leap_year_ts", "group__time__validation.html#gadcc64f7880b3c4a67d60ddc9998352ae", null ],
     [ "time_shield::is_valid_date", "group__time__structures.html#ga1721af7fc3d8b705db317fd69c4c520e", null ],
     [ "time_shield::is_valid_date", "group__time__validation.html#ga40e4000e13a71634b368b27dc849d847", null ],
@@ -23,6 +23,6 @@ var validation_8hpp =
     [ "time_shield::is_workday", "group__time__validation.html#gacb28cefd10710814ccd99811df035b49", null ],
     [ "time_shield::is_workday", "group__time__validation.html#ga95b2cb2966f9e00c1d9eeb96c09d9c6d", null ],
     [ "time_shield::is_workday_ms", "group__time__validation.html#gad1e4530905aee51b52c08de8723e199d", null ],
-    [ "time_shield::leap_year", "group__time__validation.html#gaff561037cb91433512da3922c2666022", null ],
+    [ "time_shield::leap_year", "group__time__validation.html#ga0a26945dc3480ca97fb3c9467613ad22", null ],
     [ "time_shield::leap_year_ts", "group__time__validation.html#ga8e0d80a09f42577e88f9bc294da403d1", null ]
 ];

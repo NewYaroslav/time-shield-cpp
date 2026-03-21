@@ -215,7 +215,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a9fd27e37249445b6aacc918160d35ef7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add minutes to UTC instant.  <br /></td></tr>
 <tr class="memitem:a0f7aceb89217e4f1c6db07ef18d0fd9d" id="r_a0f7aceb89217e4f1c6db07ef18d0fd9d"><td class="memItemLeft"><a class="el" href="#a8cd750295982f9a31453c8d2b3f00bb4">DateTime</a>&#160;</td><td class="memItemRight"><a class="el" href="#a0f7aceb89217e4f1c6db07ef18d0fd9d">add_hours</a> (int64_t hours) const noexcept</td></tr>
 <tr class="memdesc:a0f7aceb89217e4f1c6db07ef18d0fd9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add hours to UTC instant.  <br /></td></tr>
-<tr class="memitem:afe9fc4568ed406760d203d30a8c6135e" id="r_afe9fc4568ed406760d203d30a8c6135e"><td class="memItemLeft"><a class="el" href="#a8cd750295982f9a31453c8d2b3f00bb4">DateTime</a>&#160;</td><td class="memItemRight"><a class="el" href="#afe9fc4568ed406760d203d30a8c6135e">add_days</a> (int64_t <a class="el" href="group__time__conversions.html#gac15d883acc0247a54eea2b17f68f6860">days</a>) const noexcept</td></tr>
+<tr class="memitem:afe9fc4568ed406760d203d30a8c6135e" id="r_afe9fc4568ed406760d203d30a8c6135e"><td class="memItemLeft"><a class="el" href="#a8cd750295982f9a31453c8d2b3f00bb4">DateTime</a>&#160;</td><td class="memItemRight"><a class="el" href="#afe9fc4568ed406760d203d30a8c6135e">add_days</a> (int64_t <a class="el" href="group__time__conversions.html#ga706b3e0663e8b359c13ebe8ee65f05fe">days</a>) const noexcept</td></tr>
 <tr class="memdesc:afe9fc4568ed406760d203d30a8c6135e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add days to UTC instant.  <br /></td></tr>
 <tr class="memitem:aa96e35d29f07eeb0c2747932782e6eb2" id="r_aa96e35d29f07eeb0c2747932782e6eb2"><td class="memItemLeft">int64_t&#160;</td><td class="memItemRight"><a class="el" href="#aa96e35d29f07eeb0c2747932782e6eb2">diff_ms</a> (const <a class="el" href="#a8cd750295982f9a31453c8d2b3f00bb4">DateTime</a> &amp;other) const noexcept</td></tr>
 <tr class="memdesc:aa96e35d29f07eeb0c2747932782e6eb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Difference in milliseconds to another <a class="el" href="classtime__shield_1_1DateTime.html" title="Represents a moment in time with optional fixed UTC offset.">DateTime</a>.  <br /></td></tr>
@@ -320,7 +320,7 @@ Private Member Functions</h2></td></tr>
 Static Private Member Functions</h2></td></tr>
 <tr class="memitem:a80f43ec9245ffd64c110cdd4c05af8b7" id="r_a80f43ec9245ffd64c110cdd4c05af8b7"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#a80f43ec9245ffd64c110cdd4c05af8b7">try_parse_iso8601_buffer</a> (const char *data, std::size_t size, <a class="el" href="#a8cd750295982f9a31453c8d2b3f00bb4">DateTime</a> &amp;out) noexcept</td></tr>
 <tr class="memitem:ad1a527f2467daa9dfd74490257513cbb" id="r_ad1a527f2467daa9dfd74490257513cbb"><td class="memItemLeft">static <a class="el" href="#a8cd750295982f9a31453c8d2b3f00bb4">DateTime</a>&#160;</td><td class="memItemRight"><a class="el" href="#ad1a527f2467daa9dfd74490257513cbb">parse_iso8601_buffer</a> (const char *data, std::size_t size)</td></tr>
-<tr class="memitem:ae460c774387fabfef8fbfd311a35cf32" id="r_ae460c774387fabfef8fbfd311a35cf32"><td class="memItemLeft">static constexpr <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#ae460c774387fabfef8fbfd311a35cf32">offset_to_ms</a> (<a class="el" href="group__time__types.html#ga467db13fb99208bd078b5abff59866fb">tz_t</a> offset) noexcept</td></tr>
+<tr class="memitem:aff8095544901d3494d63b921a9bb9f4c" id="r_aff8095544901d3494d63b921a9bb9f4c"><td class="memItemLeft">static TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#aff8095544901d3494d63b921a9bb9f4c">offset_to_ms</a> (<a class="el" href="group__time__types.html#ga467db13fb99208bd078b5abff59866fb">tz_t</a> offset) noexcept</td></tr>
 <tr class="memitem:a3f5f67bc4de238c7a72f84d28a20a397" id="r_a3f5f67bc4de238c7a72f84d28a20a397"><td class="memItemLeft">static long&#160;</td><td class="memItemRight"><a class="el" href="#a3f5f67bc4de238c7a72f84d28a20a397">offset_to_ms</a> (const int offset)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
@@ -1637,8 +1637,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ae460c774387fabfef8fbfd311a35cf32" name="ae460c774387fabfef8fbfd311a35cf32"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae460c774387fabfef8fbfd311a35cf32">&#9670;&#160;</a></span>offset_to_ms() <span class="overload">[2/2]</span></h2>
+<a id="aff8095544901d3494d63b921a9bb9f4c" name="aff8095544901d3494d63b921a9bb9f4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff8095544901d3494d63b921a9bb9f4c">&#9670;&#160;</a></span>offset_to_ms() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1647,7 +1647,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> time_shield::DateTime::offset_to_ms </td>
+          <td class="memname">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> time_shield::DateTime::offset_to_ms </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__time__types.html#ga467db13fb99208bd078b5abff59866fb">tz_t</a></td>          <td class="paramname"><span class="paramname"><em>offset</em></span></td><td>)</td>
           <td></td>
@@ -1655,7 +1655,7 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span><span class="mlabel private">private</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel private">private</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

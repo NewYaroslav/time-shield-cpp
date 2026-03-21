@@ -104,7 +104,7 @@ $(function(){initNavTree('astronomy__conversions_8hpp.html','',''); });
 </div><!--header-->
 <div class="contents">
 
-<p>Julian Date / MJD / JDN and simple lunar helpers.  
+<p>Astronomy entry header with Julian conversions and lunar helpers.  
 <a href="#details">More...</a></p>
 
 <p><a href="astronomy__conversions_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -121,20 +121,6 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a4985f238ac29786aa0b8dd3e68f46199" id="r_a4985f238ac29786aa0b8dd3e68f46199"><td class="memItemLeft"><a class="el" href="group__time__types.html#gad6b7a13bb33749e9f503f913d445a6e7">jd_t</a>&#160;</td><td class="memItemRight"><a class="el" href="namespacetime__shield.html#a4985f238ac29786aa0b8dd3e68f46199">time_shield::fts_to_jd</a> (<a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f">fts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>) noexcept</td></tr>
-<tr class="memdesc:a4985f238ac29786aa0b8dd3e68f46199"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert Unix timestamp (floating seconds) to Julian Date (JD).  <br /></td></tr>
-<tr class="memitem:a78830bceb93d6a07c921383d8818d674" id="r_a78830bceb93d6a07c921383d8818d674"><td class="memItemLeft"><a class="el" href="group__time__types.html#gad6b7a13bb33749e9f503f913d445a6e7">jd_t</a>&#160;</td><td class="memItemRight"><a class="el" href="namespacetime__shield.html#a78830bceb93d6a07c921383d8818d674">time_shield::ts_to_jd</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>) noexcept</td></tr>
-<tr class="memdesc:a78830bceb93d6a07c921383d8818d674"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert Unix timestamp (seconds) to Julian Date (JD).  <br /></td></tr>
-<tr class="memitem:a0b348975140c881557b1951654630133" id="r_a0b348975140c881557b1951654630133"><td class="memItemLeft"><a class="el" href="group__time__types.html#gad6b7a13bb33749e9f503f913d445a6e7">jd_t</a>&#160;</td><td class="memItemRight"><a class="el" href="namespacetime__shield.html#a0b348975140c881557b1951654630133">time_shield::gregorian_to_jd</a> (double day, int64_t month, int64_t <a class="el" href="group__time__conversions.html#gadd68b9e632d1b5a43c18b116bbf105a4">year</a>) noexcept</td></tr>
-<tr class="memdesc:a0b348975140c881557b1951654630133"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert Gregorian date (with optional fractional day) to Julian Date (JD).  <br /></td></tr>
-<tr class="memitem:a3ed00cd6d83ae31dde3be4fd0417de7f" id="r_a3ed00cd6d83ae31dde3be4fd0417de7f"><td class="memItemLeft"><a class="el" href="group__time__types.html#gad6b7a13bb33749e9f503f913d445a6e7">jd_t</a>&#160;</td><td class="memItemRight"><a class="el" href="namespacetime__shield.html#a3ed00cd6d83ae31dde3be4fd0417de7f">time_shield::gregorian_to_jd</a> (uint32_t day, uint32_t month, uint32_t <a class="el" href="group__time__conversions.html#gadd68b9e632d1b5a43c18b116bbf105a4">year</a>, uint32_t hour, uint32_t minute, uint32_t second=0, uint32_t millisecond=0) noexcept</td></tr>
-<tr class="memdesc:a3ed00cd6d83ae31dde3be4fd0417de7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert Gregorian date/time components to Julian Date (JD).  <br /></td></tr>
-<tr class="memitem:a31807ba8ea1f9b80bb4c8873a15df84a" id="r_a31807ba8ea1f9b80bb4c8873a15df84a"><td class="memItemLeft"><a class="el" href="group__time__types.html#gac2c43d72af642bbab55e7c68ca268237">mjd_t</a>&#160;</td><td class="memItemRight"><a class="el" href="namespacetime__shield.html#a31807ba8ea1f9b80bb4c8873a15df84a">time_shield::fts_to_mjd</a> (<a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f">fts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>) noexcept</td></tr>
-<tr class="memdesc:a31807ba8ea1f9b80bb4c8873a15df84a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert Unix timestamp (floating seconds) to Modified Julian Date (MJD).  <br /></td></tr>
-<tr class="memitem:a0a7cbd8ac4b9311d37ec2b1244d5fc00" id="r_a0a7cbd8ac4b9311d37ec2b1244d5fc00"><td class="memItemLeft"><a class="el" href="group__time__types.html#gac2c43d72af642bbab55e7c68ca268237">mjd_t</a>&#160;</td><td class="memItemRight"><a class="el" href="namespacetime__shield.html#a0a7cbd8ac4b9311d37ec2b1244d5fc00">time_shield::ts_to_mjd</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>) noexcept</td></tr>
-<tr class="memdesc:a0a7cbd8ac4b9311d37ec2b1244d5fc00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert Unix timestamp (seconds) to Modified Julian Date (MJD).  <br /></td></tr>
-<tr class="memitem:ad6bc6f0425632d7502109ff81d43c458" id="r_ad6bc6f0425632d7502109ff81d43c458"><td class="memItemLeft"><a class="el" href="group__time__types.html#ga9f2039b057978a2b41d1a4b2418158a6">jdn_t</a>&#160;</td><td class="memItemRight"><a class="el" href="namespacetime__shield.html#ad6bc6f0425632d7502109ff81d43c458">time_shield::gregorian_to_jdn</a> (uint32_t day, uint32_t month, uint32_t <a class="el" href="group__time__conversions.html#gadd68b9e632d1b5a43c18b116bbf105a4">year</a>) noexcept</td></tr>
-<tr class="memdesc:ad6bc6f0425632d7502109ff81d43c458"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert Gregorian date to Julian Day Number (JDN).  <br /></td></tr>
 <tr class="memitem:aa663697cc8fd118697c5aa9752e16fc2" id="r_aa663697cc8fd118697c5aa9752e16fc2"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="namespacetime__shield.html#aa663697cc8fd118697c5aa9752e16fc2">time_shield::moon_phase_jd_approx</a> (<a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f">fts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>) noexcept</td></tr>
 <tr class="memdesc:aa663697cc8fd118697c5aa9752e16fc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get lunar phase in range [0..1) using a simple Julian Day approximation.  <br /></td></tr>
 <tr class="memitem:a9e16c9860968265ac4340e050fab8419" id="r_a9e16c9860968265ac4340e050fab8419"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="namespacetime__shield.html#a9e16c9860968265ac4340e050fab8419">time_shield::moon_phase</a> (<a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f">fts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>) noexcept</td></tr>
@@ -159,14 +145,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:a4d34366ea6d2627700acacb8b0da9f24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if timestamp falls into the last quarter window (default \pm12h).  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Julian Date / MJD / JDN and simple lunar helpers. </p>
-<p>JD epoch used here:</p><ul>
-<li>Unix epoch (1970-01-01 00:00:00 UTC) is JD 2440587.5</li>
-</ul>
-<p>Notes:</p><ul>
-<li>JD and MJD are returned as double (jd_t/mjd_t).</li>
-<li>These functions are intended for utility/analytics, not for high-precision astronomy. </li>
-</ul>
+<div class="textblock"><p>Astronomy entry header with Julian conversions and lunar helpers. </p>
 
 <p class="definition">Definition in file <a class="el" href="astronomy__conversions_8hpp_source.html">astronomy_conversions.hpp</a>.</p>
 </div></div><!-- contents -->

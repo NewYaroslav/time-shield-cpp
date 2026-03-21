@@ -19,7 +19,7 @@ var time__format__parser_8hpp =
     [ "time_shield::detail::format_parse::parse_month_token", "namespacetime__shield_1_1detail_1_1format__parse.html#afec3a499da6065efc9f1d6966adc677d", null ],
     [ "time_shield::detail::format_parse::parse_signed_digits", "namespacetime__shield_1_1detail_1_1format__parse.html#a07cdd6c84fa8cb263fd90b34cb4fc179", null ],
     [ "time_shield::detail::format_parse::parse_space_padded_2digits", "namespacetime__shield_1_1detail_1_1format__parse.html#a516730402e9b94b830c8beeed4629b47", null ],
-    [ "time_shield::detail::format_parse::parse_tz_compact", "namespacetime__shield_1_1detail_1_1format__parse.html#a71bb4be275a8bc49b923bfbecb2f21e0", null ],
+    [ "time_shield::detail::format_parse::parse_tz_offset_token", "namespacetime__shield_1_1detail_1_1format__parse.html#af11ed791f42deb99808767e0b8fc9938", null ],
     [ "time_shield::detail::format_parse::parse_unsigned_digits", "namespacetime__shield_1_1detail_1_1format__parse.html#aaabfdbdb787283ad4372c401625ab0c0", null ],
     [ "time_shield::detail::format_parse::parse_weekday_token", "namespacetime__shield_1_1detail_1_1format__parse.html#a1b3b7d4aef96c9532cbcae00212aba9a", null ],
     [ "time_shield::detail::format_parse::resolve_day_of_year", "namespacetime__shield_1_1detail_1_1format__parse.html#aa507e8b9baff3d80d6b7fab8bc69caa9", null ],

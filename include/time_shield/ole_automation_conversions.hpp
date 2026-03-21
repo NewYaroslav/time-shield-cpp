@@ -23,19 +23,50 @@
 #include "constants.hpp"
 #include "date_time_conversions.hpp"
 
-#include <cmath>
+#include <cstdint>
+#include <limits>
 
 namespace time_shield {
 
     namespace detail {
 
+        TIME_SHIELD_CONSTEXPR inline bool oadate_can_cast_to_i64(oadate_t value) noexcept {
+            return value >= static_cast<oadate_t>((std::numeric_limits<int64_t>::min)())
+                && value <= static_cast<oadate_t>((std::numeric_limits<int64_t>::max)());
+        }
+
+        TIME_SHIELD_CONSTEXPR inline oadate_t oadate_abs(oadate_t value) noexcept {
+            return value < 0 ? -value : value;
+        }
+
+        TIME_SHIELD_CONSTEXPR inline oadate_t oadate_trunc_toward_zero(oadate_t value) noexcept {
+            if (!oadate_can_cast_to_i64(value)) {
+                return value;
+            }
+            return static_cast<oadate_t>(static_cast<int64_t>(value));
+        }
+
+        TIME_SHIELD_CONSTEXPR inline oadate_t oadate_floor_value(oadate_t value) noexcept {
+            const oadate_t truncated = oadate_trunc_toward_zero(value);
+            if (truncated == value) {
+                return truncated;
+            }
+            if (value < 0) {
+                return truncated - static_cast<oadate_t>(1.0);
+            }
+            return truncated;
+        }
+
         TIME_SHIELD_CONSTEXPR inline bool oadate_has_fraction(oadate_t value) noexcept {
-            return std::trunc(value) != value;
+            if (!oadate_can_cast_to_i64(value)) {
+                return false;
+            }
+            return oadate_trunc_toward_zero(value) != value;
         }
 
         TIME_SHIELD_CONSTEXPR inline oadate_t linear_days_to_oadate(oadate_t linear_days) noexcept {
             if (linear_days < 0 && oadate_has_fraction(linear_days)) {
-                const oadate_t whole_days = std::floor(linear_days);
+                const oadate_t whole_days = oadate_floor_value(linear_days);
                 const oadate_t fraction = linear_days - whole_days;
                 return whole_days - fraction;
             }
@@ -44,8 +75,8 @@ namespace time_shield {
 
         TIME_SHIELD_CONSTEXPR inline oadate_t oadate_to_linear_days(oadate_t oa) noexcept {
             if (oa < 0 && oadate_has_fraction(oa)) {
-                const oadate_t whole_days = std::trunc(oa);
-                const oadate_t fraction = std::fabs(oa - whole_days);
+                const oadate_t whole_days = oadate_trunc_toward_zero(oa);
+                const oadate_t fraction = oadate_abs(oa - whole_days);
                 return whole_days + fraction;
             }
             return oa;

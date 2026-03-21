@@ -6,6 +6,12 @@
 int main() {
     using namespace time_shield;
 
+#if defined(TIME_SHIELD_CPP14) || defined(TIME_SHIELD_CPP17)
+    static_assert(ts_to_oadate(static_cast<ts_t>(0)) == static_cast<oadate_t>(OLE_EPOCH), "OA epoch conversion should stay constexpr-friendly");
+    static_assert(to_oadate(1899, 12, 29, 6, 0, 0, 0) == static_cast<oadate_t>(-1.25), "Pre-base OA conversion should preserve Excel semantics");
+    static_assert(oadate_to_ts(static_cast<oadate_t>(-0.25)) == oadate_to_ts(static_cast<oadate_t>(0.25)), "Negative fractional OA values should map symmetrically");
+#endif
+
     const double epsilon = 1e-9;
     const ts_t pre_base_6h = to_timestamp(1899, 12, 29, 6, 0, 0);
     const ts_t pre_base_18h = to_timestamp(1899, 12, 29, 18, 0, 0);

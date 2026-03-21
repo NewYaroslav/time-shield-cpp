@@ -5,6 +5,11 @@
 int main() {
     using namespace time_shield;
 
+    assert(detail::floor_div<ts_t>(-1, SEC_PER_DAY) == -1);
+    assert(detail::floor_mod<ts_t>(-1, SEC_PER_DAY) == SEC_PER_DAY - 1);
+    assert(detail::floor_div<int64_t>(-1001, 1000) == -2);
+    assert(detail::floor_mod<int64_t>(-1001, 1000) == 999);
+
     const ts_t pre_epoch = to_timestamp(1969, 12, 31, 23, 59, 59);
     const ts_t pre_epoch_start = to_timestamp(1969, 12, 31, 0, 0, 0);
     const ts_t pre_epoch_prev_day = to_timestamp(1969, 12, 30, 0, 0, 0);

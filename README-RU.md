@@ -197,6 +197,38 @@ int hour_local = dt.hour();                 // локальный час с уч
 int hour_utc = dt.utc_hour();               // час в UTC
 ```
 
+### Класс ZonedClock
+
+`ZonedClock` хранит переиспользуемый контекст локального времени для
+именованной зоны или фиксированного UTC offset. Именованные зоны
+пересчитывают effective offset для заданного UTC-момента, а числовой offset
+остаётся фиксированным.
+
+```cpp
+#include <time_shield.hpp>
+
+using namespace time_shield;
+
+ZonedClock clock(CET);
+DateTime berlin_now = clock.now();
+
+TimeZone zone = UNKNOWN;
+bool has_zone = parse_time_zone_name("CET", zone);
+
+TimeZoneStruct tz_struct{};
+bool has_offset = parse_time_zone("+05:30", tz_struct);
+ZonedClock fixed_clock;
+bool created_fixed = ZonedClock::try_from_offset(2 * SEC_PER_HOUR, fixed_clock);
+
+clock.try_set_zone("+05:30");
+std::string local_iso = clock.to_iso8601();
+
+ZonedClock ntp_tokyo(JST, true);
+ts_ms_t tokyo_local_ms = ntp_tokyo.local_time_ms();
+```
+
+`parse_time_zone(...)` проверяет синтаксис и принимает числовые смещения вплоть до `23:59`. Семантическая проверка поддерживаемых UTC offset для `DateTime`, `ZonedClock` и связанных helper-ов использует `is_valid_tz_offset(...)` и диапазон `[-12:00, +14:00]`.
+
 ### Преобразование дат OLE Automation (OA)
 
 Преобразования OA совместимы с Excel/COM (базовая дата 1899-12-30), выполняются в UTC и корректно обрабатывают специальную семантику отрицательных дробных OA serials до базовой даты.

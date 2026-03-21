@@ -16,6 +16,7 @@
 #include "time_parser.hpp"
 #include "time_struct.hpp"
 #include "time_utils.hpp"
+#include "time_zone_offset_conversions.hpp"
 #include "time_zone_struct.hpp"
 #include "types.hpp"
 #include "validation.hpp"
@@ -102,8 +103,7 @@ namespace time_shield {
             if (!is_valid_date_time(year, month, day, hour, min, sec, ms)) {
                 return false;
             }
-            const TimeZoneStruct tz = to_time_zone_struct(offset);
-            if (!is_valid_time_zone_offset(tz)) {
+            if (!is_valid_tz_offset(offset)) {
                 return false;
             }
             const ts_ms_t local_ms = to_timestamp_ms(year, month, day, hour, min, sec, ms);
@@ -130,8 +130,7 @@ namespace time_shield {
             if (!is_valid_date_time(local_dt)) {
                 return false;
             }
-            const TimeZoneStruct tz = to_time_zone_struct(offset);
-            if (!is_valid_time_zone_offset(tz)) {
+            if (!is_valid_tz_offset(offset)) {
                 return false;
             }
             const ts_ms_t local_ms = dt_to_timestamp_ms(local_dt);
@@ -361,6 +360,41 @@ namespace time_shield {
                     static_cast<int16_t>(utc_dt.ms));
         }
 
+        /// \brief UTC year component.
+        year_t utc_year() const {
+            return to_date_time_struct_utc().year;
+        }
+
+        /// \brief UTC month component.
+        int utc_month() const {
+            return to_date_time_struct_utc().mon;
+        }
+
+        /// \brief UTC day component.
+        int utc_day() const {
+            return to_date_time_struct_utc().day;
+        }
+
+        /// \brief UTC hour component.
+        int utc_hour() const {
+            return to_date_time_struct_utc().hour;
+        }
+
+        /// \brief UTC minute component.
+        int utc_minute() const {
+            return to_date_time_struct_utc().min;
+        }
+
+        /// \brief UTC second component.
+        int utc_second() const {
+            return to_date_time_struct_utc().sec;
+        }
+
+        /// \brief UTC millisecond component.
+        int utc_millisecond() const {
+            return to_date_time_struct_utc().ms;
+        }
+
         /// \brief Local weekday.
         Weekday weekday() const {
             const DateStruct local_date = date();
@@ -379,6 +413,24 @@ namespace time_shield {
             return to_iso_week_date(local_date.year, local_date.mon, local_date.day);
         }
 
+        /// \brief UTC weekday.
+        Weekday utc_weekday() const {
+            const DateStruct utc_dt = utc_date();
+            return weekday_of_date<Weekday>(utc_dt);
+        }
+
+        /// \brief UTC ISO weekday number (1..7).
+        int utc_iso_weekday() const {
+            const DateStruct utc_dt = utc_date();
+            return iso_weekday_of_date(utc_dt.year, utc_dt.mon, utc_dt.day);
+        }
+
+        /// \brief UTC ISO week date.
+        IsoWeekDateStruct utc_iso_week_date() const {
+            const DateStruct utc_dt = utc_date();
+            return to_iso_week_date(utc_dt.year, utc_dt.mon, utc_dt.day);
+        }
+
         /// \brief Check if local date is a workday.
         bool is_workday() const noexcept {
             return is_workday_ms(local_ms());
@@ -387,6 +439,17 @@ namespace time_shield {
         /// \brief Check if local date is a weekend.
         bool is_weekend() const noexcept {
             return time_shield::is_weekend(ms_to_sec<ts_t>(local_ms()));
+        }
+
+        /// \brief Check if UTC date is a workday.
+        bool utc_is_workday() const noexcept {
+            const DateStruct utc_dt = utc_date();
+            return time_shield::is_workday(utc_dt.year, utc_dt.mon, utc_dt.day);
+        }
+
+        /// \brief Check if UTC date is a weekend.
+        bool utc_is_weekend() const noexcept {
+            return time_shield::is_weekend(ms_to_sec<ts_t>(m_utc_ms));
         }
 
         /// \brief Compare equality by UTC instant.
@@ -533,6 +596,70 @@ namespace time_shield {
             return from_unix_ms(local_end_ms - offset_to_ms(m_offset), m_offset);
         }
 
+        /// \brief Start of UTC day.
+        DateTime start_of_utc_day() const {
+            const DateTimeStruct utc_dt = to_date_time_struct_utc();
+            return from_unix_ms(to_timestamp_ms(utc_dt.year, utc_dt.mon, utc_dt.day), m_offset);
+        }
+
+        /// \brief End of UTC day.
+        DateTime end_of_utc_day() const {
+            const DateTimeStruct utc_dt = to_date_time_struct_utc();
+            return from_unix_ms(
+                    to_timestamp_ms(
+                        utc_dt.year,
+                        utc_dt.mon,
+                        utc_dt.day,
+                        23,
+                        59,
+                        59,
+                        static_cast<int>(MS_PER_SEC - 1)),
+                    m_offset);
+        }
+
+        /// \brief Start of UTC month.
+        DateTime start_of_utc_month() const {
+            const DateTimeStruct utc_dt = to_date_time_struct_utc();
+            return from_unix_ms(to_timestamp_ms(utc_dt.year, utc_dt.mon, 1), m_offset);
+        }
+
+        /// \brief End of UTC month.
+        DateTime end_of_utc_month() const {
+            const DateTimeStruct utc_dt = to_date_time_struct_utc();
+            const int days = num_days_in_month(utc_dt.year, utc_dt.mon);
+            return from_unix_ms(
+                    to_timestamp_ms(
+                        utc_dt.year,
+                        utc_dt.mon,
+                        days,
+                        23,
+                        59,
+                        59,
+                        static_cast<int>(MS_PER_SEC - 1)),
+                    m_offset);
+        }
+
+        /// \brief Start of UTC year.
+        DateTime start_of_utc_year() const {
+            const year_t utc_year_value = utc_year();
+            return from_unix_ms(to_timestamp_ms(utc_year_value, 1, 1), m_offset);
+        }
+
+        /// \brief End of UTC year.
+        DateTime end_of_utc_year() const {
+            const year_t utc_year_value = utc_year();
+            return from_unix_ms(
+                    to_timestamp_ms(
+                        utc_year_value,
+                        12,
+                        31,
+                        23,
+                        59,
+                        59,
+                        static_cast<int>(MS_PER_SEC - 1)),
+                    m_offset);
+        }
+
     private:
         static bool try_parse_iso8601_buffer(const char* data, std::size_t size, DateTime& out) noexcept {
             if (data == nullptr) {
@@ -544,6 +671,9 @@ namespace time_shield {
                 return false;
             }
             const tz_t offset = time_zone_struct_to_offset(tz);
+            if (!is_valid_tz_offset(offset)) {
+                return false;
+            }
             const ts_ms_t utc_ms = dt_to_timestamp_ms(dt) - offset_to_ms(offset);
             out = from_unix_ms(utc_ms, offset);
             return true;

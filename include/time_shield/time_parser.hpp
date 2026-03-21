@@ -30,6 +30,7 @@
 #include <array>
 #include <stdexcept>
 #include <cctype>
+#include <cstring>
 #include <string>
 
 #if __cplusplus >= 201703L
@@ -206,6 +207,63 @@ namespace time_shield {
             return value;
         }
 #   endif
+
+        struct ZoneNameEntry {
+            const char* name;
+            TimeZone zone;
+        };
+
+        /// \brief Return supported strict named-zone entries.
+        inline const std::array<ZoneNameEntry, 25>& time_zone_name_entries() noexcept {
+            static const std::array<ZoneNameEntry, 25> entries = {{
+                {"GMT", GMT},
+                {"UTC", UTC},
+                {"EET", EET},
+                {"CET", CET},
+                {"WET", WET},
+                {"EEST", EEST},
+                {"CEST", CEST},
+                {"WEST", WEST},
+                {"ET", ET},
+                {"CT", CT},
+                {"IST", IST},
+                {"MYT", MYT},
+                {"WIB", WIB},
+                {"WITA", WITA},
+                {"WIT", WIT},
+                {"KZT", KZT},
+                {"TRT", TRT},
+                {"BYT", BYT},
+                {"SGT", SGT},
+                {"ICT", ICT},
+                {"PHT", PHT},
+                {"GST", GST},
+                {"HKT", HKT},
+                {"JST", JST},
+                {"KST", KST}
+            }};
+            return entries;
+        }
+
+        /// \brief Parse strict named-zone token without trimming.
+        inline bool try_parse_time_zone_name_token(const char* data, std::size_t length, TimeZone& zone) noexcept {
+            if (data == nullptr || length == 0) {
+                zone = UNKNOWN;
+                return false;
+            }
+
+            const std::array<ZoneNameEntry, 25>& entries = time_zone_name_entries();
+            for (std::size_t i = 0; i < entries.size(); ++i) {
+                const std::size_t name_length = std::strlen(entries[i].name);
+                if (length == name_length && std::memcmp(data, entries[i].name, name_length) == 0) {
+                    zone = entries[i].zone;
+                    return true;
+                }
+            }
+
+            zone = UNKNOWN;
+            return false;
+        }
 
 //------------------------------------------------------------------------------
 // Small C-style helpers (no lambdas, no detail namespace)
@@ -556,6 +614,11 @@ namespace time_shield {
     /// - ""    -> UTC (+00:00)
     /// - "Z"   -> UTC (+00:00)
     /// - "+HH:MM" or "-HH:MM"
+    ///
+    /// Parsing is syntax-oriented and accepts offsets up to `23:59`. Semantic
+    /// support checks for reusable library features use `is_valid_tz_offset(...)`
+    /// and the supported UTC-offset range `[-12:00, +14:00]`.
+    ///
     /// \param data Pointer to timezone buffer (may be not null-terminated).
     /// \param length Number of characters in buffer.
     /// \param tz Output time zone struct.
@@ -616,6 +679,75 @@ namespace time_shield {
     /// \brief Alias for parse_time_zone (buffer overload).
     inline bool parse_tz(const char* data, std::size_t length, TimeZoneStruct& tz) noexcept {
         return parse_time_zone(data, length, tz);
+    }
+
+    /// \brief Parse named time zone character buffer into TimeZone enum.
+    /// \details Supported tokens are exact uppercase repo-native abbreviations with ASCII trimming.
+    /// \param data Pointer to time zone name buffer.
+    /// \param length Number of characters in buffer.
+    /// \param zone Output named time zone.
+    /// \return True when parsing succeeds.
+    inline bool parse_time_zone_name(const char* data, std::size_t length, TimeZone& zone) noexcept {
+        if (!data) {
+            zone = UNKNOWN;
+            return false;
+        }
+
+        std::size_t begin = 0;
+        std::size_t end = length;
+        while (begin < end && std::isspace(static_cast<unsigned char>(data[begin])) != 0) {
+            ++begin;
+        }
+        while (end > begin && std::isspace(static_cast<unsigned char>(data[end - 1])) != 0) {
+            --end;
+        }
+        return detail::try_parse_time_zone_name_token(data + begin, end - begin, zone);
+    }
+
+    /// \brief Parse named time zone string into TimeZone enum.
+    /// \details Wrapper over parse_time_zone_name(const char*, std::size_t, TimeZone&).
+    inline bool parse_time_zone_name(const std::string& value, TimeZone& zone) noexcept {
+        return parse_time_zone_name(value.c_str(), value.size(), zone);
+    }
+
+#if __cplusplus >= 201703L
+    /// \brief Parse named time zone string_view into TimeZone enum.
+    /// \details Wrapper over parse_time_zone_name(const char*, std::size_t, TimeZone&).
+    inline bool parse_time_zone_name(std::string_view value, TimeZone& zone) noexcept {
+        return parse_time_zone_name(value.data(), value.size(), zone);
+    }
+#endif
+
+    /// \brief Parse named time zone C-string into TimeZone enum.
+    /// \details Wrapper over parse_time_zone_name(const char*, std::size_t, TimeZone&).
+    inline bool parse_time_zone_name(const char* value, TimeZone& zone) noexcept {
+        if (value == nullptr) {
+            zone = UNKNOWN;
+            return false;
+        }
+        return parse_time_zone_name(value, std::strlen(value), zone);
+    }
+
+    /// \brief Alias for parse_time_zone_name.
+    inline bool parse_tz_name(const char* data, std::size_t length, TimeZone& zone) noexcept {
+        return parse_time_zone_name(data, length, zone);
+    }
+
+    /// \brief Alias for parse_time_zone_name.
+    inline bool parse_tz_name(const std::string& value, TimeZone& zone) noexcept {
+        return parse_time_zone_name(value, zone);
+    }
+
+#if __cplusplus >= 201703L
+    /// \brief Alias for parse_time_zone_name.
+    inline bool parse_tz_name(std::string_view value, TimeZone& zone) noexcept {
+        return parse_time_zone_name(value, zone);
+    }
+#endif
+
+    /// \brief Alias for parse_time_zone_name.
+    inline bool parse_tz_name(const char* value, TimeZone& zone) noexcept {
+        return parse_time_zone_name(value, zone);
     }
 
 //------------------------------------------------------------------------------
@@ -809,6 +941,15 @@ namespace time_shield {
     /// \details Wrapper over parse_iso8601(const char*, std::size_t, DateTimeStruct&, TimeZoneStruct&).
     inline bool parse_iso8601(const std::string& input, DateTimeStruct& dt, TimeZoneStruct& tz) noexcept {
         return parse_iso8601(input.c_str(), input.size(), dt, tz);
+    }
+
+    /// \brief Parse ISO8601 C-string into DateTimeStruct and TimeZoneStruct.
+    /// \details Wrapper over parse_iso8601(const char*, std::size_t, DateTimeStruct&, TimeZoneStruct&).
+    inline bool parse_iso8601(const char* input, DateTimeStruct& dt, TimeZoneStruct& tz) noexcept {
+        if (input == nullptr) {
+            return false;
+        }
+        return parse_iso8601(input, std::strlen(input), dt, tz);
     }
 
 #   if __cplusplus >= 201703L

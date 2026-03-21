@@ -294,6 +294,38 @@ int hour_local = dt.hour();                 // local hour (offset applied)
 int hour_utc = dt.utc_hour();               // UTC hour
 ```
 
+### ZonedClock
+
+`ZonedClock` stores a reusable local-time context for either a named zone or a
+fixed UTC offset. Named zones recompute DST-sensitive offsets for the requested
+UTC instant, while numeric offsets stay fixed.
+
+```cpp
+#include <time_shield.hpp>
+
+using namespace time_shield;
+
+ZonedClock clock(CET);
+DateTime berlin_now = clock.now();
+
+TimeZone zone = UNKNOWN;
+bool has_zone = parse_time_zone_name("CET", zone);
+
+TimeZoneStruct tz_struct{};
+bool has_offset = parse_time_zone("+05:30", tz_struct);
+
+ZonedClock fixed_clock;
+bool created_fixed = ZonedClock::try_from_offset(2 * SEC_PER_HOUR, fixed_clock);
+
+clock.try_set_zone("+05:30");
+std::string local_iso = clock.to_iso8601();
+
+ZonedClock ntp_tokyo(JST, true);
+ts_ms_t tokyo_local_ms = ntp_tokyo.local_time_ms();
+```
+
+`parse_time_zone(...)` validates timezone syntax and accepts numeric offsets up to `23:59`. Semantic support checks for reusable offsets in `DateTime`, `ZonedClock`, and related helpers use `is_valid_tz_offset(...)` with the supported range `[-12:00, +14:00]`.
+
 ### Checking workdays
 
 ```cpp

@@ -93,6 +93,7 @@ int main() {
     {
         DateTime parsed;
         expect(!DateTime::try_parse_iso8601("invalid-date", parsed), "Invalid ISO should fail to parse");
+        expect(!DateTime::try_parse_iso8601("2024-01-02T03:04:05+23:59", parsed), "Unsupported semantic offset should fail to parse");
     }
 
     {
@@ -100,7 +101,17 @@ int main() {
         expect(DateTime::try_from_components(2024, 2, 29, 23, 59, 59, 999, 0, result), "Valid leap day components should parse");
         expect(!DateTime::try_from_components(2023, 2, 29, 0, 0, 0, 0, 0, result), "Invalid leap day should fail");
         expect(!DateTime::try_from_components(2024, 1, 1, 25, 0, 0, 0, 0, result), "Out-of-range hour should fail");
-        expect(!DateTime::try_from_components(2024, 1, 1, 0, 0, 0, 0, 30 * SEC_PER_HOUR, result), "Out-of-range offset should fail");
+        expect(!DateTime::try_from_components(2024, 1, 1, 0, 0, 0, 0, 15 * SEC_PER_HOUR, result), "Out-of-range semantic offset should fail");
+    }
+
+    {
+        DateTime result = DateTime::from_components(2024, 1, 1, 12, 0, 0, 0, SEC_PER_HOUR);
+        const DateTimeStruct valid_dt = create_date_time_struct(2024, 1, 1, 12, 0, 0, 0);
+        const DateTimeStruct invalid_dt = create_date_time_struct(2024, 2, 30, 12, 0, 0, 0);
+
+        expect(DateTime::try_from_date_time_struct(valid_dt, 14 * SEC_PER_HOUR, result), "Valid semantic offset should build from DateTimeStruct");
+        expect(!DateTime::try_from_date_time_struct(valid_dt, 15 * SEC_PER_HOUR, result), "Unsupported semantic offset should fail for DateTimeStruct");
+        expect(!DateTime::try_from_date_time_struct(invalid_dt, 0, result), "Invalid DateTimeStruct should fail");
     }
 
     {
@@ -117,6 +128,40 @@ int main() {
         const DateTime shifted = utc.with_offset(SEC_PER_HOUR);
         expect(utc == shifted, "Offset change should keep instant equal");
         expect(!utc.same_local(shifted), "Offset change should alter local representation");
+    }
+
+    {
+        const DateTime dt = DateTime::from_components(2024, 1, 1, 1, 30, 15, 250, 2 * SEC_PER_HOUR);
+        const DateTimeStruct utc = dt.to_date_time_struct_utc();
+        const IsoWeekDateStruct utc_iso = dt.utc_iso_week_date();
+
+        expect(dt.utc_year() == utc.year, "UTC year getter should match UTC structure");
+        expect(dt.utc_month() == utc.mon, "UTC month getter should match UTC structure");
+        expect(dt.utc_day() == utc.day, "UTC day getter should match UTC structure");
+        expect(dt.utc_hour() == utc.hour, "UTC hour getter should match UTC structure");
+        expect(dt.utc_minute() == utc.min, "UTC minute getter should match UTC structure");
+        expect(dt.utc_second() == utc.sec, "UTC second getter should match UTC structure");
+        expect(dt.utc_millisecond() == utc.ms, "UTC millisecond getter should match UTC structure");
+        expect(dt.utc_weekday() == weekday_of_date<Weekday>(dt.utc_date()), "UTC weekday should match UTC date");
+        expect(dt.utc_iso_weekday() == iso_weekday_of_date(utc.year, utc.mon, utc.day), "UTC ISO weekday should match conversion helper");
+        expect(utc_iso.year == 2023 && utc_iso.week == 52 && utc_iso.weekday == 7, "UTC ISO week date should match expected boundary value");
+        expect(!dt.utc_is_workday(), "UTC weekend helper should report non-workday");
+        expect(dt.utc_is_weekend(), "UTC weekend helper should report weekend");
+
+        const DateTime start_day = dt.start_of_utc_day();
+        const DateTime end_day = dt.end_of_utc_day();
+        const DateTime start_month = dt.start_of_utc_month();
+        const DateTime end_month = dt.end_of_utc_month();
+        const DateTime start_year = dt.start_of_utc_year();
+        const DateTime end_year = dt.end_of_utc_year();
+
+        expect(start_day.to_iso8601_utc() == "2023-12-31T00:00:00.000Z", "UTC start_of_day should use UTC boundary");
+        expect(end_day.to_iso8601_utc() == "2023-12-31T23:59:59.999Z", "UTC end_of_day should use UTC boundary");
+        expect(start_month.to_iso8601_utc() == "2023-12-01T00:00:00.000Z", "UTC start_of_month should use UTC boundary");
+        expect(end_month.to_iso8601_utc() == "2023-12-31T23:59:59.999Z", "UTC end_of_month should use UTC boundary");
+        expect(start_year.to_iso8601_utc() == "2023-01-01T00:00:00.000Z", "UTC start_of_year should use UTC boundary");
+        expect(end_year.to_iso8601_utc() == "2023-12-31T23:59:59.999Z", "UTC end_of_year should use UTC boundary");
+        expect(start_day.utc_offset() == dt.utc_offset(), "UTC boundary helpers should preserve stored offset");
     }
 
     return all_ok ? 0 : 1;

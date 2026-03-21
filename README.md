@@ -376,16 +376,17 @@ oadate_t from_parts = to_oadate(2024, Month::MAY, 2, 12, 0); // 2024-05-02 12:00
 
 ### Julian date and lunar helpers
 
-The astronomy helpers provide lightweight analytics-oriented values (JD, MJD, JDN, phase, age) rather than high-precision ephemerides.
+The Julian helpers use the proleptic Gregorian calendar and provide lightweight analytics-oriented values (JD, MJD, JDN) rather than high-precision ephemerides. The lunar helpers remain analytics-oriented and are exposed through the astronomy entry header.
 
 ```cpp
+#include <time_shield/julian_conversions.hpp>
 #include <time_shield/astronomy_conversions.hpp>
 
 using namespace time_shield;
 
-jd_t jd = ts_to_jd(1714608000);               // Julian Date for the timestamp
-mjd_t mjd = ts_to_mjd(1714608000);             // Modified Julian Date
-jdn_t jdn = gregorian_to_jdn(2, 5, 2024);      // Julian Day Number
+jd_t jd = gregorian_ymd_to_jd(2024, 5, 2, 12, 0); // Julian Date for a calendar instant
+mjd_t mjd = ts_to_mjd(1714608000);                 // Modified Julian Date
+jdn_t jdn = gregorian_ymd_to_jdn(2024, 5, 2);     // Julian Day Number
 double phase = moon_phase(fts());              // lunar phase fraction [0..1)
 double age_days = moon_age_days(fts());        // approximate lunar age
 MoonPhaseSineCosine signal = moon_phase_sincos(fts()); // sin/cos of the phase angle (continuous)

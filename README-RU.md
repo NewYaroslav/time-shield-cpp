@@ -248,16 +248,17 @@ oadate_t from_parts = to_oadate(2024, Month::MAY, 2, 12, 0); // 2024-05-02 12:00
 
 ### Джулианские даты и лунные вычисления
 
-Астрономические хелперы ориентированы на аналитические оценки (JD, MJD, JDN, фазу и возраст Луны), а не на высокоточные эфемериды.
+Хелперы Julian Date используют пролептический григорианский календарь и ориентированы на аналитические значения (JD, MJD, JDN), а не на высокоточные эфемериды. Лунные helper-ы по-прежнему доступны через astronomy entry header.
 
 ```cpp
+#include <time_shield/julian_conversions.hpp>
 #include <time_shield/astronomy_conversions.hpp>
 
 using namespace time_shield;
 
-jd_t jd = ts_to_jd(1714608000);               // Julian Date для переданного таймстампа
-mjd_t mjd = ts_to_mjd(1714608000);             // Modified Julian Date
-jdn_t jdn = gregorian_to_jdn(2, 5, 2024);      // Julian Day Number (целое значение)
+jd_t jd = gregorian_ymd_to_jd(2024, 5, 2, 12, 0); // Julian Date для календарного момента
+mjd_t mjd = ts_to_mjd(1714608000);                 // Modified Julian Date
+jdn_t jdn = gregorian_ymd_to_jdn(2024, 5, 2);     // Julian Day Number (целое значение)
 double phase = moon_phase(fts());              // фаза Луны [0..1)
 double age_days = moon_age_days(fts());        // примерный возраст Луны в днях
 MoonPhaseSineCosine signal = moon_phase_sincos(fts()); // sin/cos фазового угла без скачка в 0/1

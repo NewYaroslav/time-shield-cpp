@@ -170,6 +170,7 @@ astronomical values from calendar inputs:
 
 \code{.cpp}
 #include <time_shield/ole_automation_conversions.hpp>
+#include <time_shield/julian_conversions.hpp>
 #include <time_shield/astronomy_conversions.hpp>
 
 using namespace time_shield;
@@ -178,8 +179,9 @@ oadate_t oa = ts_to_oadate(1714608000);               // OA date for 2024-05-02
 ts_t ts_from_oa = oadate_to_ts(oa);
 oadate_t pre_base = to_oadate(1899, Month::DEC, 29, 6, 0); // -1.25
 
-jd_t jd = gregorian_to_jd(2, 5, 2024, 12, 0);         // Julian Date with time
+jd_t jd = gregorian_ymd_to_jd(2024, 5, 2, 12, 0);    // Julian Date with time
 mjd_t mjd = ts_to_mjd(1714608000);                    // Modified Julian Date
+jdn_t jdn = gregorian_ymd_to_jdn(2024, 5, 2);        // Julian Day Number
 double phase = moon_phase(fts());                     // lunar phase [0..1)
 double age = moon_age_days(fts());                    // lunar age in days
 MoonPhaseSineCosine signal = moon_phase_sincos(fts()); // sin/cos of the phase angle

@@ -13,12 +13,12 @@ int main() {
     ts_t parsed_z = ts(str_z);
     assert(parsed_z == base_ts);
 
-    std::string str_pos = to_iso8601(base_ts - SEC_PER_HOUR, SEC_PER_HOUR);
+    std::string str_pos = to_iso8601(base_ts, SEC_PER_HOUR);
     ts_t parsed_pos = ts(str_pos);
     assert(parsed_pos == base_ts);
 
     const tz_t offset_neg = -(5 * SEC_PER_HOUR + 30 * SEC_PER_MIN);
-    std::string str_neg = to_iso8601(base_ts - offset_neg, offset_neg);
+    std::string str_neg = to_iso8601(base_ts, offset_neg);
     ts_t parsed_neg = ts(str_neg);
     assert(parsed_neg == base_ts);
 
@@ -31,11 +31,11 @@ int main() {
     ts_ms_t parsed_ms_z = ts_ms(str_ms_z);
     assert(parsed_ms_z == base_ms);
 
-    std::string str_ms_pos = to_iso8601_ms(base_ms - sec_to_ms(SEC_PER_HOUR), SEC_PER_HOUR);
+    std::string str_ms_pos = to_iso8601_ms(base_ms, SEC_PER_HOUR);
     ts_ms_t parsed_ms_pos = ts_ms(str_ms_pos);
     assert(parsed_ms_pos == base_ms);
 
-    std::string str_ms_neg = to_iso8601_ms(base_ms - sec_to_ms(offset_neg), offset_neg);
+    std::string str_ms_neg = to_iso8601_ms(base_ms, offset_neg);
     ts_ms_t parsed_ms_neg = ts_ms(str_ms_neg);
     assert(parsed_ms_neg == base_ms);
 

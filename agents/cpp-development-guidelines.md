@@ -37,6 +37,13 @@
 - Keep diffs minimal and focused.
 - Do not refactor or apply style changes beyond the lines you directly touch.
 
+## Temporary build/test artifacts
+
+- Store all non-tracked build, test, verify, install-consumer, and scratch artifacts only in `tmp/agent-work/`.
+- Prefer task-specific subdirectories such as `tmp/agent-work/build-cxx17`, `tmp/agent-work/verify-timezone-cxx14`, or `tmp/agent-work/install-consumer-cxx11`.
+- Reuse or clean subdirectories in `tmp/agent-work/` instead of creating new `verify_*`, `build_*`, `install-*`, or similar directories in the repository root.
+- Do not create temporary `.bat`, `.txt`, `.log`, `.md`, or similar scratch files in the repository root unless they are intended project files.
+
 ## Code style
 
 - Use 4 spaces for indentation; do not use tabs.

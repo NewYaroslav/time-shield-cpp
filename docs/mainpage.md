@@ -86,7 +86,8 @@ Additional example files are located in the `examples/` folder:
 
 - `time_utils_example.cpp` — get timestamps and parts
 - `time_formatting_example.cpp` — to_string, ISO8601, MQL5
-- `time_parser_example.cpp` — parse ISO8601
+- `time_formatting_showcase_example.cpp` — broader formatter showcase with UTC/local, ms, MQL5, human-readable, and filename helpers
+- `time_parser_example.cpp` — parse ISO8601 and custom format strings
 - `date_time_example.cpp` — fixed-offset `DateTime` parsing, formatting, and arithmetic helpers
 - `time_conversions_example.cpp` — convert between formats
 - `time_zone_conversions_example.cpp` — GMT/UTC, Kyiv, IST/MYT, and generic zone-to-zone conversions
@@ -94,10 +95,26 @@ Additional example files are located in the `examples/` folder:
 
 Also see `ntp_time_service_example.cpp` for a compact wrapper-based NTP service example.
 
+`time_formatting_example.cpp` shows ISO8601 formatting, custom formatting,
+offset-aware rendering, and filename-safe strings.
+
+`time_formatting_showcase_example.cpp` shows a broader formatter cookbook with
+UTC/local variants, millisecond helpers, MQL5 output, human-readable strings,
+and filename-oriented helpers.
+
+`time_parser_example.cpp` shows ISO8601 parsing, seconds/ms/floating timestamp
+parsing, formatter-compatible custom formats, and a simple failure case.
+
 For stateless monotonic timing, use `monotonic_sec()`, `monotonic_ms()`, or
 `monotonic_us()`.
 These helpers return process-local monotonic counters for intervals and timeout
 logic rather than UTC timestamps.
+
+ISO 8601 parsing uses a manual fast path without `std::regex`. Explicit timezone
+offsets are interpreted canonically: the wall-clock time in the string is
+converted to the corresponding UTC instant. For formatter-compatible custom
+patterns, use `try_parse_format()`, `try_parse_format_ts()`, or
+`try_parse_format_ts_ms()`.
 
 \section ntp_sec NTP client, pool, and time service
 

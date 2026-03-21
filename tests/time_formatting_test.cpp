@@ -10,8 +10,10 @@ int main() {
     assert(to_iso8601_time_utc(ts_t(1)) == "00:00:01Z");
     assert(to_iso8601_utc(ts_t(1)) == "1970-01-01T00:00:01Z");
     assert(to_iso8601_ms(ts_ms_t(1500)) == "1970-01-01T00:00:01.500");
-    assert(to_iso8601(ts_t(1), 3 * SEC_PER_HOUR) == "1970-01-01T00:00:01+03:00");
-    assert(to_iso8601_ms(ts_ms_t(1500), -2 * SEC_PER_HOUR) == "1970-01-01T00:00:01.500-02:00");
+    assert(to_iso8601(ts_t(1), 3 * SEC_PER_HOUR) == "1970-01-01T03:00:01+03:00");
+    assert(to_iso8601_ms(ts_ms_t(1500), -2 * SEC_PER_HOUR) == "1969-12-31T22:00:01.500-02:00");
+    assert(to_human_readable(ts_t(1718973296)) == "2024-06-21 12:34:56");
+    assert(to_human_readable_ms(ts_ms_t(1718973296789)) == "2024-06-21 12:34:56.789");
 
     return 0;
 }

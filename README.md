@@ -230,10 +230,18 @@ measurement, intervals, and timeout logic.
 #include <time_shield.hpp>
 
 std::string iso = to_iso8601(now);          // 2024-06-21T12:00:00
+std::string local = to_iso8601(now, 2 * SEC_PER_HOUR + 30 * SEC_PER_MIN);
 std::string custom = to_string("%Y-%m-%d %H:%M:%S", now);
-std::string mql5 = to_mql5_date_time(now);  // 2024.06.21 12:00:00
+std::string custom_local = to_string("%Y-%m-%d %H:%M:%S %z", now, 2 * SEC_PER_HOUR);
 std::string filename = to_windows_filename(now);
 ```
+
+See `examples/time_formatting_example.cpp` for a compact cross-platform example
+covering ISO8601, custom formatting, offset-aware rendering, and filename-safe
+output.
+See `examples/time_formatting_showcase_example.cpp` for a broader formatter
+showcase with UTC/local variants, millisecond helpers, MQL5, human-readable,
+and filename-oriented output.
 
 ### ISO 8601 parsing
 
@@ -243,9 +251,30 @@ std::string filename = to_windows_filename(now);
 DateTimeStruct dt;
 TimeZoneStruct tz;
 if (parse_iso8601("2024-11-25T14:30:00-05:30", dt, tz)) {
-    ts_t ts_val = to_timestamp(dt) + to_offset(tz);
+    ts_t ts_val = to_timestamp(dt) - to_offset(tz);
 }
 ```
+
+The parser uses a manual fast path without `std::regex`. Strings with an
+explicit offset are interpreted canonically: the wall-clock time in the string
+is converted to the corresponding UTC instant.
+
+### Custom format parsing
+
+```cpp
+#include <time_shield.hpp>
+
+ts_t ts_val = 0;
+bool ok = try_parse_format_ts(
+    "2024-11-25 14:30:00 -0530",
+    "%Y-%m-%d %H:%M:%S %z",
+    ts_val);
+```
+
+`try_parse_format*` mirrors the custom formatter grammar used by `to_string()`
+and `to_string_ms()`, stays non-throwing, and avoids regex-based parsing.
+See `examples/time_parser_example.cpp` for ISO8601 parsing, seconds/ms/floating
+timestamp parsing, formatter round-trips, and a simple failure case.
 
 ### DateTime value type
 

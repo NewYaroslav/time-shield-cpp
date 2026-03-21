@@ -133,10 +133,18 @@ ts_ms_t mono = monotonic_ms();   // монотонные process-local милл�
 #include <time_shield.hpp>
 
 std::string iso = to_iso8601(now);          // 2024-06-21T12:00:00
+std::string local = to_iso8601(now, 2 * SEC_PER_HOUR + 30 * SEC_PER_MIN);
 std::string custom = to_string("%Y-%m-%d %H:%M:%S", now);
-std::string mql5 = to_mql5_date_time(now);  // 2024.06.21 12:00:00
+std::string custom_local = to_string("%Y-%m-%d %H:%M:%S %z", now, 2 * SEC_PER_HOUR);
 std::string filename = to_windows_filename(now);
 ```
+
+См. `examples/time_formatting_example.cpp` для компактного cross-platform
+примера с ISO8601, custom formatting, offset-aware rendering и
+filename-safe строками.
+См. `examples/time_formatting_showcase_example.cpp` для более широкого
+formatter showcase с UTC/local вариантами, millisecond helpers, MQL5,
+human-readable и filename-oriented выводом.
 
 ### Парсинг ISO 8601
 
@@ -146,9 +154,30 @@ std::string filename = to_windows_filename(now);
 DateTimeStruct dt;
 TimeZoneStruct tz;
 if (parse_iso8601("2024-11-25T14:30:00-05:30", dt, tz)) {
-    ts_t ts_val = to_timestamp(dt) + to_offset(tz);
+    ts_t ts_val = to_timestamp(dt) - to_offset(tz);
 }
 ```
+
+Парсер использует быстрый ручной path без `std::regex`. Если в строке есть
+timezone offset, локальное время из строки переводится в канонический UTC
+instant.
+
+### Парсинг по шаблону
+
+```cpp
+#include <time_shield.hpp>
+
+ts_t ts_val = 0;
+bool ok = try_parse_format_ts(
+    "2024-11-25 14:30:00 -0530",
+    "%Y-%m-%d %H:%M:%S %z",
+    ts_val);
+```
+
+`try_parse_format*` понимает ту же custom grammar, что и `to_string()` /
+`to_string_ms()`, остаётся non-throwing и не использует regex-парсинг.
+См. `examples/time_parser_example.cpp` для ISO8601 parsing, seconds/ms/floating
+timestamp parsing, formatter round-trip и простого failure case.
 
 ### Класс DateTime
 

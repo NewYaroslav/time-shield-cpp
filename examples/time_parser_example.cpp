@@ -1,64 +1,65 @@
 /// \file time_parser_example.cpp
-/// \brief Demonstrates functions from time_shield::time_parser.
-///
-/// This example parses ISO8601 strings, retrieves month numbers, and
-/// converts the parsed date and time to different timestamp formats.
+/// \brief Demonstrates fast ISO8601 and custom-format parsing helpers.
+
+#include <time_shield/time_format_parser.hpp>
+#include <time_shield/time_formatting.hpp>
+#include <time_shield/time_parser.hpp>
 
 #include <iostream>
-
-#if defined(_WIN32)
-#include <time_shield/time_parser.hpp>
 
 int main() {
     using namespace time_shield;
 
+    // Parse ISO8601 into calendar fields and an explicit fixed offset.
     const std::string iso = "2024-11-25T14:30:00-05:30";
-
-    DateTimeStruct dt;
-    TimeZoneStruct tz;
-    if (parse_iso8601(iso, dt, tz)) {
-        std::cout << "Parsed date/time: "
-                  << dt.year << '-' << dt.mon << '-' << dt.day << ' '
-                  << dt.hour << ':' << dt.min << ':' << dt.sec;
-        if (dt.ms)
-            std::cout << '.' << dt.ms;
-        std::cout << ' ' << (tz.is_positive ? '+' : '-')
-                  << tz.hour << ':' << tz.min << '\n';
-    } else {
-        std::cerr << "Failed to parse: " << iso << '\n';
+    DateTimeStruct iso_dt{};
+    TimeZoneStruct iso_tz{};
+    if (parse_iso8601(iso, iso_dt, iso_tz)) {
+        std::cout << "ISO fields: "
+                  << iso_dt.year << '-' << iso_dt.mon << '-' << iso_dt.day << ' '
+                  << iso_dt.hour << ':' << iso_dt.min << ':' << iso_dt.sec << ' '
+                  << to_string(iso_tz) << '\n';
     }
 
-    ts_t s_ts;
-    if (str_to_ts(iso, s_ts))
-        std::cout << "ts: " << s_ts << '\n';
+    // Offset-aware strings are converted to the corresponding UTC instant.
+    ts_t utc_ts = 0;
+    if (str_to_ts(iso, utc_ts)) {
+        std::cout << "UTC seconds: " << utc_ts << '\n';
+    }
 
-    ts_ms_t ms_ts;
-    if (str_to_ts_ms(iso, ms_ts))
-        std::cout << "ts_ms: " << ms_ts << '\n';
+    // Plain strings without a timezone token are interpreted as UTC.
+    ts_ms_t utc_ms = 0;
+    if (str_to_ts_ms("2024-11-25T20:00:00.250", utc_ms)) {
+        std::cout << "UTC milliseconds: " << utc_ms << '\n';
+    }
 
-    fts_t f_ts;
-    if (str_to_fts(iso, f_ts))
-        std::cout << "fts: " << f_ts << '\n';
+    // Floating timestamps keep the fractional part in seconds.
+    fts_t utc_fts = 0.0;
+    if (str_to_fts("2024-11-25T20:00:00.250Z", utc_fts)) {
+        std::cout << "UTC floating seconds: " << utc_fts << '\n';
+    }
 
-    std::cout << "Using helpers ts():  " << ts(iso) << '\n';
-    std::cout << "Using helpers ts_ms(): " << ts_ms(iso) << '\n';
-    std::cout << "Using helpers fts():   " << fts(iso) << '\n';
+    // Formatter and parser use the same custom grammar for round-trips.
+    const tz_t utc_offset = -(5 * SEC_PER_HOUR + 30 * SEC_PER_MIN);
+    const std::string custom = to_string("%Y-%m-%d %H:%M:%S %z", utc_ts, utc_offset);
+    std::cout << "Custom formatted: " << custom << '\n';
 
-    Month mon = get_month_number<Month>("March");
-    std::cout << "Month number for March: " << static_cast<int>(mon) << '\n';
+    ts_t reparsed_ts = 0;
+    if (try_parse_format_ts(custom, "%Y-%m-%d %H:%M:%S %z", reparsed_ts)) {
+        std::cout << "Reparsed seconds: " << reparsed_ts << '\n';
+    }
 
-    int sod;
-    if (sec_of_day("15:30:10", sod))
-        std::cout << "sec_of_day(\"15:30:10\"): " << sod << '\n';
-    std::cout << "sec_of_day(\"8:20\"): " << sec_of_day("8:20") << '\n';
+    const std::string custom_ms = to_string_ms("%Y-%m-%d %H:%M:%S.%sss %z", utc_ms, utc_offset);
+    std::cout << "Custom formatted with ms: " << custom_ms << '\n';
 
-    std::cout << "Press Enter to exit..." << std::endl;
-    std::cin.get();
+    ts_ms_t reparsed_ms = 0;
+    if (try_parse_format_ts_ms(custom_ms, "%Y-%m-%d %H:%M:%S.%sss %z", reparsed_ms)) {
+        std::cout << "Parsed custom milliseconds: " << reparsed_ms << '\n';
+    }
+
+    // Failed parsing simply returns false.
+    const bool mismatch = try_parse_format_ts("2024/11/25", "%Y-%m-%d", reparsed_ts);
+    std::cout << "Format mismatch: " << (mismatch ? "unexpected success" : "false") << '\n';
+
     return 0;
 }
-#else
-int main() {
-    std::cout << "time_parser.hpp requires Windows for now_realtime_us()" << std::endl;
-    return 0;
-}
-#endif

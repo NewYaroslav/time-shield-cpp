@@ -241,7 +241,7 @@ namespace time_shield {
 
         /// \brief Format to ISO8601 string with stored offset.
         std::string to_iso8601() const {
-            return to_iso8601_ms(local_ms(), m_offset);
+            return to_iso8601_ms(m_utc_ms, m_offset);
         }
 
         /// \brief Format to ISO8601 string in UTC.
@@ -251,13 +251,13 @@ namespace time_shield {
 
         /// \brief Format using custom pattern.
         std::string format(const std::string& fmt) const {
-            return to_string_ms(fmt, local_ms(), m_offset);
+            return to_string_ms(fmt, m_utc_ms, m_offset);
         }
 
         #ifdef TIME_SHIELD_CPP17
         /// \brief Format using custom string_view pattern.
         std::string format(std::string_view fmt) const {
-            return to_string_ms(std::string(fmt), local_ms(), m_offset);
+            return to_string_ms(std::string(fmt), m_utc_ms, m_offset);
         }
         #endif
 
@@ -266,7 +266,7 @@ namespace time_shield {
             if (fmt == nullptr) {
                 return std::string();
             }
-            return to_string_ms(std::string(fmt), local_ms(), m_offset);
+            return to_string_ms(std::string(fmt), m_utc_ms, m_offset);
         }
 
         /// \brief Format to MQL5 date-time string.

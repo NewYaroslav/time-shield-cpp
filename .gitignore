@@ -34,3 +34,6 @@
 
 # Local agent preferences
 agents/local-machine-settings.json
+
+# Agent temporary work area
+tmp/agent-work/

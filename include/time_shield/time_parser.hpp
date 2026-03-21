@@ -23,6 +23,7 @@
 #include "validation.hpp"
 #include "time_conversions.hpp"
 #include "iso_week_conversions.hpp"
+#include "time_format_parser.hpp"
 
 #include <algorithm>
 #include <locale>
@@ -809,6 +810,14 @@ namespace time_shield {
     inline bool parse_iso8601(const std::string& input, DateTimeStruct& dt, TimeZoneStruct& tz) noexcept {
         return parse_iso8601(input.c_str(), input.size(), dt, tz);
     }
+
+#   if __cplusplus >= 201703L
+    /// \brief Parse ISO8601 view into DateTimeStruct and TimeZoneStruct.
+    /// \details Wrapper over parse_iso8601(const char*, std::size_t, DateTimeStruct&, TimeZoneStruct&).
+    inline bool parse_iso8601(std::string_view input, DateTimeStruct& dt, TimeZoneStruct& tz) noexcept {
+        return parse_iso8601(input.data(), input.size(), dt, tz);
+    }
+#   endif
     
 //------------------------------------------------------------------------------
 // ISO8601 -> timestamps
@@ -823,7 +832,7 @@ namespace time_shield {
         TimeZoneStruct tz;
         if (!parse_iso8601(str, dt, tz)) return false;
         try {
-            ts = dt_to_timestamp(dt) + to_offset(tz);
+            ts = dt_to_timestamp(dt) - to_offset(tz);
             return true;
         } catch (...) {}
         return false;
@@ -839,8 +848,14 @@ namespace time_shield {
             ts = 0;
             return false;
         }
-        // Без string_view (C++11) просто собираем std::string по длине.
-        return str_to_ts(std::string(data, length), ts);
+        DateTimeStruct dt;
+        TimeZoneStruct tz;
+        if (!parse_iso8601(data, length, dt, tz)) return false;
+        try {
+            ts = dt_to_timestamp(dt) - to_offset(tz);
+            return true;
+        } catch (...) {}
+        return false;
     }
 
     /// \brief Convert an ISO8601 string to a millisecond timestamp (ts_ms_t).
@@ -852,7 +867,7 @@ namespace time_shield {
         TimeZoneStruct tz;
         if (!parse_iso8601(str, dt, tz)) return false;
         try {
-            ts = static_cast<ts_ms_t>(dt_to_timestamp_ms(dt)) + sec_to_ms(to_offset(tz));
+            ts = static_cast<ts_ms_t>(dt_to_timestamp_ms(dt)) - sec_to_ms(to_offset(tz));
             return true;
         } catch (...) {}
         return false;
@@ -868,7 +883,14 @@ namespace time_shield {
             ts = 0;
             return false;
         }
-        return str_to_ts_ms(std::string(data, length), ts);
+        DateTimeStruct dt;
+        TimeZoneStruct tz;
+        if (!parse_iso8601(data, length, dt, tz)) return false;
+        try {
+            ts = static_cast<ts_ms_t>(dt_to_timestamp_ms(dt)) - sec_to_ms(to_offset(tz));
+            return true;
+        } catch (...) {}
+        return false;
     }
 
     /// \brief Convert an ISO8601 string to a floating-point timestamp (fts_t).
@@ -880,7 +902,7 @@ namespace time_shield {
         TimeZoneStruct tz;
         if (!parse_iso8601(str, dt, tz)) return false;
         try {
-            ts = dt_to_ftimestamp(dt) + static_cast<fts_t>(to_offset(tz));
+            ts = dt_to_ftimestamp(dt) - static_cast<fts_t>(to_offset(tz));
             return true;
         } catch (...) {}
         return false;
@@ -896,7 +918,14 @@ namespace time_shield {
             ts = 0;
             return false;
         }
-        return str_to_fts(std::string(data, length), ts);
+        DateTimeStruct dt;
+        TimeZoneStruct tz;
+        if (!parse_iso8601(data, length, dt, tz)) return false;
+        try {
+            ts = dt_to_ftimestamp(dt) - static_cast<fts_t>(to_offset(tz));
+            return true;
+        } catch (...) {}
+        return false;
     }
 
 //------------------------------------------------------------------------------

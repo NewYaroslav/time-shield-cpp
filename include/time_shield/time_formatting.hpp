@@ -405,7 +405,8 @@ namespace time_shield {
             tz_t utc_offset = 0) {
         std::string result;
         if (format_str.empty()) return result;
-        DateTimeStruct dt = to_date_time<DateTimeStruct>(timestamp);
+        const T local_timestamp = static_cast<T>(timestamp + static_cast<T>(utc_offset));
+        DateTimeStruct dt = to_date_time<DateTimeStruct>(local_timestamp);
 
         bool is_command = false;
         size_t repeat_count = 0;
@@ -488,7 +489,8 @@ namespace time_shield {
             tz_t utc_offset = 0) {
         std::string result;
         if (format_str.empty()) return result;
-        DateTimeStruct dt = to_date_time_ms<DateTimeStruct>(timestamp);
+        const T local_timestamp = static_cast<T>(timestamp + sec_to_ms<T, tz_t>(utc_offset));
+        DateTimeStruct dt = to_date_time_ms<DateTimeStruct>(local_timestamp);
 
         bool is_command = false;
         size_t repeat_count = 0;
@@ -730,7 +732,8 @@ namespace time_shield {
     template<class T = ts_t>
     inline const std::string to_iso8601(T ts, tz_t utc_offset) {
         TimeZoneStruct tz = to_time_zone(utc_offset);
-        DateTimeStruct dt = to_date_time(ts);
+        const T local_ts = static_cast<T>(ts + static_cast<T>(utc_offset));
+        DateTimeStruct dt = to_date_time(local_ts);
         char buffer[32] = {0};
         if TIME_SHIELD_IF_CONSTEXPR (std::is_floating_point<T>::value) {
             if (tz.is_positive) {
@@ -803,7 +806,8 @@ namespace time_shield {
     /// \return A string representing the timestamp in ISO8601 format with timezone offset and milliseconds.
     inline const std::string to_iso8601_ms(ts_ms_t ts_ms, tz_t utc_offset) {
         TimeZoneStruct tz = to_time_zone(utc_offset);
-        DateTimeStruct dt = to_date_time_ms<DateTimeStruct>(ts_ms);
+        const ts_ms_t local_ts_ms = ts_ms + sec_to_ms<ts_ms_t, tz_t>(utc_offset);
+        DateTimeStruct dt = to_date_time_ms<DateTimeStruct>(local_ts_ms);
         char buffer[32] = {0};
         if (tz.is_positive) {
             snprintf(
@@ -940,7 +944,7 @@ namespace time_shield {
     /// \param ts The timestamp in seconds.
     /// \return A string in the format "YYYY-MM-DD HH:MM:SS".
     inline std::string to_human_readable(ts_t ts) {
-        DateTimeStruct dt = to_date_time_ms<DateTimeStruct>(ts);
+        DateTimeStruct dt = to_date_time<DateTimeStruct>(ts);
         char buffer[32] = {0};
         snprintf(
                 buffer,

@@ -13,6 +13,7 @@ Optional local settings:
 
 - If `agents/local-machine-settings.json` exists, read it after the tracked repository guidance.
 - Treat that JSON as advisory local context only for machine facts and local interaction preferences.
+- Agents may read `agent_temp_dir` from that JSON as an advisory local temp-work path.
 - Local settings must not override system or developer instructions, or tracked repository policy.
 
 Global rules:
@@ -23,6 +24,8 @@ Global rules:
 - Write user-facing docs and Doxygen in declarative present-tense style.
 - Avoid migration-style wording such as `now`, `no longer`, `remains`, `stays`, `previously`, and `currently` unless the section is explicitly changelog, migration, or release-notes content.
 - Commit headers and bodies must be in English.
+- Store temporary build/test/scratch artifacts only in `tmp/agent-work/`.
+- Do not clutter the repository root with ad-hoc `verify_*`, `build_*`, `install-*`, log, or scratch files.
 - Follow the referenced guidance in order.
 
 Additional policy:

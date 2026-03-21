@@ -2,6 +2,9 @@ var annotated_dup =
 [
     [ "time_shield", "namespacetime__shield.html", [
       [ "detail", "namespacetime__shield_1_1detail.html", [
+        [ "format_parse", "namespacetime__shield_1_1detail_1_1format__parse.html", [
+          [ "FormatParseState", "structtime__shield_1_1detail_1_1format__parse_1_1FormatParseState.html", "structtime__shield_1_1detail_1_1format__parse_1_1FormatParseState" ]
+        ] ],
         [ "DaySplit", "structtime__shield_1_1detail_1_1DaySplit.html", "structtime__shield_1_1detail_1_1DaySplit" ],
         [ "FastDate", "structtime__shield_1_1detail_1_1FastDate.html", "structtime__shield_1_1detail_1_1FastDate" ],
         [ "NtpClientCore", "classtime__shield_1_1detail_1_1NtpClientCore.html", "classtime__shield_1_1detail_1_1NtpClientCore" ],

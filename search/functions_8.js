@@ -7,7 +7,7 @@ var searchData=
   ['interval_4',['interval',['../classtime__shield_1_1Timer.html#a7ff2760dce0ae57021d6c61637ddb90a',1,'time_shield::Timer']]],
   ['invalidate_5',['invalidate',['../classtime__shield_1_1ElapsedTimer.html#a7b730d2f31ae5ab994912183dbe69d8a',1,'time_shield::ElapsedTimer']]],
   ['is_5factive_6',['is_active',['../classtime__shield_1_1Timer.html#a4c0cfc4bf3ee44f41b8f1fbf2b1eaff3',1,'time_shield::Timer']]],
-  ['is_5fascii_5fdigit_7',['is_ascii_digit',['../namespacetime__shield_1_1detail.html#a30bd76de8e4ab15d80d93032c4216245',1,'time_shield::detail']]],
+  ['is_5fascii_5fdigit_7',['is_ascii_digit',['../namespacetime__shield_1_1detail_1_1format__parse.html#afbef7ca7bbef97cf379b9b5824be710d',1,'time_shield::detail::format_parse::is_ascii_digit()'],['../namespacetime__shield_1_1detail.html#a30bd76de8e4ab15d80d93032c4216245',1,'time_shield::detail::is_ascii_digit(char c) noexcept']]],
   ['is_5fascii_5fspace_8',['is_ascii_space',['../namespacetime__shield_1_1detail.html#a4c4e74dd641a830641fdb33e3d225944',1,'time_shield::detail']]],
   ['is_5fday_5foff_9',['is_day_off',['../group__time__validation.html#ga003ae6e5486b23cfe47a3ba795250978',1,'time_shield::is_day_off(ts_t ts) noexcept'],['../group__time__validation.html#gac26f9a68b2235ea4af9e8a66ad51c8dc',1,'time_shield::is_day_off(const long ts)']]],
   ['is_5fday_5foff_5funix_5fday_10',['is_day_off_unix_day',['../group__time__validation.html#gaaa13c138e194eff2a8868cda6bf4791b',1,'time_shield::is_day_off_unix_day(T unix_day) noexcept'],['../group__time__validation.html#ga0fd18b51b9fc61d69dba8839bc712692',1,'time_shield::is_day_off_unix_day(const long unix_day)']]],

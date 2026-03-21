@@ -114,30 +114,25 @@ $(function(){initNavTree('floor__math_8hpp_source.html','',''); });
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
 <div class="foldopen" id="foldopen00014" data-start="{" data-end="}">
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="namespacetime__shield_1_1detail.html#a7feb3415dcece49bf82e7a554fff854a">   14</a></span>    TIME_SHIELD_CONSTEXPR <span class="keyword">inline</span> T <a class="code hl_function" href="namespacetime__shield_1_1detail.html#a7feb3415dcece49bf82e7a554fff854a">floor_div</a>(T a, T b) <span class="keyword">noexcept</span> {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        T q = a / b;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        T r = a % b;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keywordflow">if</span> (r != 0 &amp;&amp; a &lt; 0) --q;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keywordflow">return</span> q;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    }</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="namespacetime__shield_1_1detail.html#a020fd5ae3e30872e6aa022c73d99ca10">   14</a></span>    <span class="keyword">constexpr</span> <span class="keyword">inline</span> T <a class="code hl_function" href="namespacetime__shield_1_1detail.html#a020fd5ae3e30872e6aa022c73d99ca10">floor_div</a>(T a, T b) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>((a / b) - (((a % b) != 0 &amp;&amp; a &lt; 0) ? 1 : 0));</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    }</div>
 </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
-<div class="foldopen" id="foldopen00023" data-start="{" data-end="}">
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="namespacetime__shield_1_1detail.html#a0b958a2e7fb65f29de3af00f0811cfb7">   23</a></span>    TIME_SHIELD_CONSTEXPR <span class="keyword">inline</span> T <a class="code hl_function" href="namespacetime__shield_1_1detail.html#a0b958a2e7fb65f29de3af00f0811cfb7">floor_mod</a>(T a, T b) <span class="keyword">noexcept</span> {</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        T r = a % b;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordflow">if</span> (r &lt; 0) r += b;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keywordflow">return</span> r;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    }</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="}">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="namespacetime__shield_1_1detail.html#ad2fd367761c0756d92f00cec27aa05de">   20</a></span>    <span class="keyword">constexpr</span> <span class="keyword">inline</span> T <a class="code hl_function" href="namespacetime__shield_1_1detail.html#ad2fd367761c0756d92f00cec27aa05de">floor_mod</a>(T a, T b) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>((a % b) + (((a % b) &lt; 0) ? b : 0));</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    }</div>
 </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>} <span class="comment">// namespace detail</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>} <span class="comment">// namespace time_shield</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#endif </span><span class="comment">// _TIME_SHIELD_DETAIL_FLOOR_MATH_HPP_INCLUDED</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>} <span class="comment">// namespace detail</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>} <span class="comment">// namespace time_shield</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#endif </span><span class="comment">// _TIME_SHIELD_DETAIL_FLOOR_MATH_HPP_INCLUDED</span></div>
 <div class="ttc" id="anamespacetime__shield_1_1detail_html"><div class="ttname"><a href="namespacetime__shield_1_1detail.html">time_shield::detail</a></div><div class="ttdef"><b>Definition</b> <a href="fast__date_8hpp_source.html#l00014">fast_date.hpp:14</a></div></div>
-<div class="ttc" id="anamespacetime__shield_1_1detail_html_a0b958a2e7fb65f29de3af00f0811cfb7"><div class="ttname"><a href="namespacetime__shield_1_1detail.html#a0b958a2e7fb65f29de3af00f0811cfb7">time_shield::detail::floor_mod</a></div><div class="ttdeci">TIME_SHIELD_CONSTEXPR T floor_mod(T a, T b) noexcept</div><div class="ttdoc">Floor-mod for positive modulus (returns r in [0..b)).</div><div class="ttdef"><b>Definition</b> <a href="#l00023">floor_math.hpp:23</a></div></div>
-<div class="ttc" id="anamespacetime__shield_1_1detail_html_a7feb3415dcece49bf82e7a554fff854a"><div class="ttname"><a href="namespacetime__shield_1_1detail.html#a7feb3415dcece49bf82e7a554fff854a">time_shield::detail::floor_div</a></div><div class="ttdeci">TIME_SHIELD_CONSTEXPR T floor_div(T a, T b) noexcept</div><div class="ttdoc">Floor division for positive divisor.</div><div class="ttdef"><b>Definition</b> <a href="#l00014">floor_math.hpp:14</a></div></div>
+<div class="ttc" id="anamespacetime__shield_1_1detail_html_a020fd5ae3e30872e6aa022c73d99ca10"><div class="ttname"><a href="namespacetime__shield_1_1detail.html#a020fd5ae3e30872e6aa022c73d99ca10">time_shield::detail::floor_div</a></div><div class="ttdeci">constexpr T floor_div(T a, T b) noexcept</div><div class="ttdoc">Floor division for positive divisor.</div><div class="ttdef"><b>Definition</b> <a href="#l00014">floor_math.hpp:14</a></div></div>
+<div class="ttc" id="anamespacetime__shield_1_1detail_html_ad2fd367761c0756d92f00cec27aa05de"><div class="ttname"><a href="namespacetime__shield_1_1detail.html#ad2fd367761c0756d92f00cec27aa05de">time_shield::detail::floor_mod</a></div><div class="ttdeci">constexpr T floor_mod(T a, T b) noexcept</div><div class="ttdoc">Floor-mod for positive modulus (returns r in [0..b)).</div><div class="ttdef"><b>Definition</b> <a href="#l00020">floor_math.hpp:20</a></div></div>
 <div class="ttc" id="anamespacetime__shield_html"><div class="ttname"><a href="namespacetime__shield.html">time_shield</a></div><div class="ttdoc">Main namespace for the Time Shield library.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

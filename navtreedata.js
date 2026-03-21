@@ -177,14 +177,15 @@ var NAVTREEINDEX =
 "classtime__shield_1_1DateTime.html#afd3ae5c2b4a50d3997b139bd152c0886",
 "classtime__shield_1_1NtpTimeServiceT.html#aae4854c5b039941c1241b3d5ba279871",
 "classtime__shield_1_1detail_1_1FakeNtpRunner.html#a9241312ff92a213da9624f01f479e50b",
-"group__time__constants.html#ga1519887a8b884dd4cc0b45c2ed7a98f1",
-"group__time__conversions.html#ga48e95bb999e9f63ec736bde9c3047f7c",
-"group__time__conversions.html#gaba3ac826a6f37a8d1609e204f69fa970",
+"group__time__constants.html#ga1154f2d46e123e3a81ab11718f242c9f",
+"group__time__conversions.html#ga48b28eda9acfde440cdfe6b5d3559792",
+"group__time__conversions.html#gab97444cacf2e94e6c6d2207a463a8932",
 "group__time__enums.html#gga5fa51beb76e014adfffcd028fe1804acabbc64be78b01604edf18005eb126443f",
-"group__time__formatting.html#ga9c3b567d4309ef41bee267c65a4751a2",
-"group__time__utils.html#gad6e2af7c1ddd04c8f8f170c329b4e492",
-"namespacetime__shield.html#a7015ffc21ef1c6b62acf3fc54bb7f585",
-"structtime__shield_1_1detail_1_1DaySplit.html#a6e556b9f12b3380e5df12aae10f26c03"
+"group__time__formatting.html#ga9af5b5811bb191ed1ba80fccbf444fc9",
+"group__time__utils.html#ga1d1c996fff6a55bf6a064991fec1f819",
+"namespacetime__shield.html#a40ef0f060775d17045700553841865e5",
+"structtime__shield_1_1astronomy_1_1MoonPhaseResult.html",
+"time__formatting__showcase__example_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

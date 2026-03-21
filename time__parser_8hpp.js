@@ -38,6 +38,7 @@ var time__parser_8hpp =
     [ "time_shield::detail::parse_fraction_to_ms", "namespacetime__shield_1_1detail.html#a26075423e41821bdd117a0a82ac63ad9", null ],
     [ "time_shield::parse_iso8601", "group__time__parsing.html#ga0be75a4aade82b22f6033e1235fb8308", null ],
     [ "time_shield::parse_iso8601", "group__time__parsing.html#gaac7c2584f6d92dc4a309a76ddd344ac5", null ],
+    [ "time_shield::parse_iso8601", "group__time__parsing.html#ga32c4aa5a0dffda99c089c20315fc2881", null ],
     [ "time_shield::parse_month", "group__time__parsing.html#ga1be9d95777ab6fea1f262a42aab6eb8d", null ],
     [ "time_shield::parse_month", "group__time__parsing.html#gafb7cd89111cb03fcdaf8e875c0ce45e0", null ],
     [ "time_shield::parse_month_enum", "group__time__parsing.html#gaf5160eaf80af8323dbb9eb9bbfa4f1d5", null ],

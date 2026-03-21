@@ -25,6 +25,7 @@ var dir_07c7b06f5dd7d1513dc7d4081673a960 =
     [ "ole_automation_conversions.hpp", "ole__automation__conversions_8hpp.html", "ole__automation__conversions_8hpp" ],
     [ "time_conversion_aliases.hpp", "time__conversion__aliases_8hpp.html", "time__conversion__aliases_8hpp" ],
     [ "time_conversions.hpp", "time__conversions_8hpp.html", null ],
+    [ "time_format_parser.hpp", "time__format__parser_8hpp.html", "time__format__parser_8hpp" ],
     [ "time_formatting.hpp", "time__formatting_8hpp.html", "time__formatting_8hpp" ],
     [ "time_parser.hpp", "time__parser_8hpp.html", "time__parser_8hpp" ],
     [ "time_struct.hpp", "time__struct_8hpp.html", "time__struct_8hpp" ],

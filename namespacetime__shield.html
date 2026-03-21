@@ -452,6 +452,30 @@ Functions</h2></td></tr>
 <tr class="memitem:a500644c3531d96d9171ee5585bafa1df" id="r_a500644c3531d96d9171ee5585bafa1df"><td class="memTemplParams" colspan="2">template&lt;class T1, class T2, class T3&gt; </td></tr>
 <tr class="memitem:a500644c3531d96d9171ee5585bafa1df template"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#gaab97b453fa3ad4ad8a752b00019968d6">oadate_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#a500644c3531d96d9171ee5585bafa1df">to_oadate</a> (T1 <a class="el" href="group__time__conversions.html#gadd68b9e632d1b5a43c18b116bbf105a4">year</a>, T2 month, T2 day, T2 hour=0, T2 min=0, T2 sec=0, T3 ms=0) noexcept</td></tr>
 <tr class="memdesc:a500644c3531d96d9171ee5585bafa1df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build OA date from calendar components (Gregorian).  <br /></td></tr>
+<tr class="memitem:ga57f90b941182fa644103d93fbef61682" id="r_ga57f90b941182fa644103d93fbef61682"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="group__time__parsing.html#ga57f90b941182fa644103d93fbef61682">try_parse_format</a> (const char *data, std::size_t length, const char *format, std::size_t format_length, <a class="el" href="structtime__shield_1_1DateTimeStruct.html">DateTimeStruct</a> &amp;out_dt, <a class="el" href="structtime__shield_1_1TimeZoneStruct.html">TimeZoneStruct</a> &amp;out_tz) noexcept</td></tr>
+<tr class="memdesc:ga57f90b941182fa644103d93fbef61682"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse input using formatter-compatible custom pattern.  <br /></td></tr>
+<tr class="memitem:gacda66705fb7020fc0619b9570beaabb6" id="r_gacda66705fb7020fc0619b9570beaabb6"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="group__time__parsing.html#gacda66705fb7020fc0619b9570beaabb6">try_parse_format_ts</a> (const char *data, std::size_t length, const char *format, std::size_t format_length, <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> &amp;out_ts) noexcept</td></tr>
+<tr class="memdesc:gacda66705fb7020fc0619b9570beaabb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse input using formatter-compatible custom pattern and convert to UTC seconds.  <br /></td></tr>
+<tr class="memitem:gab09eff0127ab36aa1479538fc057853b" id="r_gab09eff0127ab36aa1479538fc057853b"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="group__time__parsing.html#gab09eff0127ab36aa1479538fc057853b">try_parse_format_ts_ms</a> (const char *data, std::size_t length, const char *format, std::size_t format_length, <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> &amp;out_ts) noexcept</td></tr>
+<tr class="memdesc:gab09eff0127ab36aa1479538fc057853b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse input using formatter-compatible custom pattern and convert to UTC milliseconds.  <br /></td></tr>
+<tr class="memitem:ga524946abdaa3d9a77852286e255cf22a" id="r_ga524946abdaa3d9a77852286e255cf22a"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="group__time__parsing.html#ga524946abdaa3d9a77852286e255cf22a">try_parse_format</a> (const std::string &amp;data, const std::string &amp;format, <a class="el" href="structtime__shield_1_1DateTimeStruct.html">DateTimeStruct</a> &amp;out_dt, <a class="el" href="structtime__shield_1_1TimeZoneStruct.html">TimeZoneStruct</a> &amp;out_tz) noexcept</td></tr>
+<tr class="memdesc:ga524946abdaa3d9a77852286e255cf22a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse std::string using formatter-compatible custom pattern.  <br /></td></tr>
+<tr class="memitem:ga0a5cf58f26577c05922e0dcfb00533e7" id="r_ga0a5cf58f26577c05922e0dcfb00533e7"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="group__time__parsing.html#ga0a5cf58f26577c05922e0dcfb00533e7">try_parse_format</a> (const char *data, const char *format, <a class="el" href="structtime__shield_1_1DateTimeStruct.html">DateTimeStruct</a> &amp;out_dt, <a class="el" href="structtime__shield_1_1TimeZoneStruct.html">TimeZoneStruct</a> &amp;out_tz) noexcept</td></tr>
+<tr class="memdesc:ga0a5cf58f26577c05922e0dcfb00533e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse null-terminated strings using formatter-compatible custom pattern.  <br /></td></tr>
+<tr class="memitem:ga1bf04058719c6c2d358c68f4b9281403" id="r_ga1bf04058719c6c2d358c68f4b9281403"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="group__time__parsing.html#ga1bf04058719c6c2d358c68f4b9281403">try_parse_format_ts</a> (const std::string &amp;data, const std::string &amp;format, <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> &amp;out_ts) noexcept</td></tr>
+<tr class="memdesc:ga1bf04058719c6c2d358c68f4b9281403"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse std::string using formatter-compatible custom pattern and convert to UTC seconds.  <br /></td></tr>
+<tr class="memitem:gaa3693e24618a2d432aae8bce186349d9" id="r_gaa3693e24618a2d432aae8bce186349d9"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="group__time__parsing.html#gaa3693e24618a2d432aae8bce186349d9">try_parse_format_ts</a> (const char *data, const char *format, <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> &amp;out_ts) noexcept</td></tr>
+<tr class="memdesc:gaa3693e24618a2d432aae8bce186349d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse null-terminated strings using custom format and convert to UTC seconds.  <br /></td></tr>
+<tr class="memitem:ga7813731217f9077d9bea642e8b96b0fc" id="r_ga7813731217f9077d9bea642e8b96b0fc"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="group__time__parsing.html#ga7813731217f9077d9bea642e8b96b0fc">try_parse_format_ts_ms</a> (const std::string &amp;data, const std::string &amp;format, <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> &amp;out_ts) noexcept</td></tr>
+<tr class="memdesc:ga7813731217f9077d9bea642e8b96b0fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse std::string using formatter-compatible custom pattern and convert to UTC milliseconds.  <br /></td></tr>
+<tr class="memitem:ga23812e4729f80090edeeea7e8c72c268" id="r_ga23812e4729f80090edeeea7e8c72c268"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="group__time__parsing.html#ga23812e4729f80090edeeea7e8c72c268">try_parse_format_ts_ms</a> (const char *data, const char *format, <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> &amp;out_ts) noexcept</td></tr>
+<tr class="memdesc:ga23812e4729f80090edeeea7e8c72c268"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse null-terminated strings using custom format and convert to UTC milliseconds.  <br /></td></tr>
+<tr class="memitem:ga9e8f164a418b6039915f67daab330321" id="r_ga9e8f164a418b6039915f67daab330321"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="group__time__parsing.html#ga9e8f164a418b6039915f67daab330321">try_parse_format</a> (std::string_view data, std::string_view format, <a class="el" href="structtime__shield_1_1DateTimeStruct.html">DateTimeStruct</a> &amp;out_dt, <a class="el" href="structtime__shield_1_1TimeZoneStruct.html">TimeZoneStruct</a> &amp;out_tz) noexcept</td></tr>
+<tr class="memdesc:ga9e8f164a418b6039915f67daab330321"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse std::string_view using formatter-compatible custom pattern.  <br /></td></tr>
+<tr class="memitem:ga681974c99f7c084ea1774f727fdaa2dd" id="r_ga681974c99f7c084ea1774f727fdaa2dd"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="group__time__parsing.html#ga681974c99f7c084ea1774f727fdaa2dd">try_parse_format_ts</a> (std::string_view data, std::string_view format, <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> &amp;out_ts) noexcept</td></tr>
+<tr class="memdesc:ga681974c99f7c084ea1774f727fdaa2dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse std::string_view using formatter-compatible custom pattern and convert to UTC seconds.  <br /></td></tr>
+<tr class="memitem:ga9d81c83633d75350d314f9a5aef9288c" id="r_ga9d81c83633d75350d314f9a5aef9288c"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="group__time__parsing.html#ga9d81c83633d75350d314f9a5aef9288c">try_parse_format_ts_ms</a> (std::string_view data, std::string_view format, <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> &amp;out_ts) noexcept</td></tr>
+<tr class="memdesc:ga9d81c83633d75350d314f9a5aef9288c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse std::string_view using formatter-compatible custom pattern and convert to UTC milliseconds.  <br /></td></tr>
 <tr class="memitem:gacd3d06ad4e2d29a45fe4f858813dc4c0" id="r_gacd3d06ad4e2d29a45fe4f858813dc4c0"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="group__time__parsing.html#gacd3d06ad4e2d29a45fe4f858813dc4c0">try_parse_month</a> (const std::string &amp;month, int &amp;value)</td></tr>
 <tr class="memdesc:gacd3d06ad4e2d29a45fe4f858813dc4c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try parse month name token into month index [1..12].  <br /></td></tr>
 <tr class="memitem:ga1be9d95777ab6fea1f262a42aab6eb8d" id="r_ga1be9d95777ab6fea1f262a42aab6eb8d"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group__time__parsing.html#ga1be9d95777ab6fea1f262a42aab6eb8d">parse_month</a> (const std::string &amp;month)</td></tr>
@@ -541,6 +565,8 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga0be75a4aade82b22f6033e1235fb8308"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse ISO8601 character buffer into <a class="el" href="structtime__shield_1_1DateTimeStruct.html" title="Structure to represent date and time.">DateTimeStruct</a> and <a class="el" href="structtime__shield_1_1TimeZoneStruct.html" title="Structure to represent time zone information.">TimeZoneStruct</a>.  <br /></td></tr>
 <tr class="memitem:gaac7c2584f6d92dc4a309a76ddd344ac5" id="r_gaac7c2584f6d92dc4a309a76ddd344ac5"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="group__time__parsing.html#gaac7c2584f6d92dc4a309a76ddd344ac5">parse_iso8601</a> (const std::string &amp;input, <a class="el" href="structtime__shield_1_1DateTimeStruct.html">DateTimeStruct</a> &amp;dt, <a class="el" href="structtime__shield_1_1TimeZoneStruct.html">TimeZoneStruct</a> &amp;tz) noexcept</td></tr>
 <tr class="memdesc:gaac7c2584f6d92dc4a309a76ddd344ac5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse ISO8601 string into <a class="el" href="structtime__shield_1_1DateTimeStruct.html" title="Structure to represent date and time.">DateTimeStruct</a> and <a class="el" href="structtime__shield_1_1TimeZoneStruct.html" title="Structure to represent time zone information.">TimeZoneStruct</a>.  <br /></td></tr>
+<tr class="memitem:ga32c4aa5a0dffda99c089c20315fc2881" id="r_ga32c4aa5a0dffda99c089c20315fc2881"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="group__time__parsing.html#ga32c4aa5a0dffda99c089c20315fc2881">parse_iso8601</a> (std::string_view input, <a class="el" href="structtime__shield_1_1DateTimeStruct.html">DateTimeStruct</a> &amp;dt, <a class="el" href="structtime__shield_1_1TimeZoneStruct.html">TimeZoneStruct</a> &amp;tz) noexcept</td></tr>
+<tr class="memdesc:ga32c4aa5a0dffda99c089c20315fc2881"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse ISO8601 view into <a class="el" href="structtime__shield_1_1DateTimeStruct.html" title="Structure to represent date and time.">DateTimeStruct</a> and <a class="el" href="structtime__shield_1_1TimeZoneStruct.html" title="Structure to represent time zone information.">TimeZoneStruct</a>.  <br /></td></tr>
 <tr class="memitem:gad29621998c077452dcc57a51f413b9ce" id="r_gad29621998c077452dcc57a51f413b9ce"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="group__time__parsing.html#gad29621998c077452dcc57a51f413b9ce">str_to_ts</a> (const std::string &amp;str, <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> &amp;<a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>)</td></tr>
 <tr class="memdesc:gad29621998c077452dcc57a51f413b9ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an ISO8601 string to a timestamp (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282" title="Unix timestamp in seconds since 1970‑01‑01T00:00:00Z.">ts_t</a>).  <br /></td></tr>
 <tr class="memitem:gab62f006fc8aac3d9a57161e1946e9768" id="r_gab62f006fc8aac3d9a57161e1946e9768"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="group__time__parsing.html#gab62f006fc8aac3d9a57161e1946e9768">str_to_ts</a> (const char *data, std::size_t length, <a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> &amp;<a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>)</td></tr>
@@ -2717,7 +2743,7 @@ Variables</h2></td></tr>
 <tr class="memitem:ga1844be7ac6c1c9af10a78f801eae3dca" id="r_ga1844be7ac6c1c9af10a78f801eae3dca"><td class="memItemLeft">constexpr int64_t&#160;</td><td class="memItemRight"><a class="el" href="group__time__constants.html#ga1844be7ac6c1c9af10a78f801eae3dca">ERROR_TIMESTAMP</a> = 9223372036854770000LL</td></tr>
 <tr class="memdesc:ga1844be7ac6c1c9af10a78f801eae3dca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error timestamp value.  <br /></td></tr>
 <tr class="memitem:ga1e4765f891bb20094076fe6fe81de5ea" id="r_ga1e4765f891bb20094076fe6fe81de5ea"><td class="memItemLeft">constexpr double&#160;</td><td class="memItemRight"><a class="el" href="group__time__constants.html#ga1e4765f891bb20094076fe6fe81de5ea">MAX_OADATE</a> = (std::numeric_limits&lt;double&gt;::max)()</td></tr>
-<tr class="memdesc:ga1e4765f891bb20094076fe6fe81de5ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum OLE automation date.  <br /></td></tr>
+<tr class="memdesc:ga1e4765f891bb20094076fe6fe81de5ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum representable <a class="el" href="group__time__types.html#gaab97b453fa3ad4ad8a752b00019968d6" title="OLE Automation date (days since 1899‑12‑30, as double).">oadate_t</a> value.  <br /></td></tr>
 <tr class="memitem:ga24075d386d517252e371f0fa915b768d" id="r_ga24075d386d517252e371f0fa915b768d"><td class="memItemLeft">constexpr double&#160;</td><td class="memItemRight"><a class="el" href="group__time__constants.html#ga24075d386d517252e371f0fa915b768d">AVG_DAYS_PER_YEAR</a> = 365.25</td></tr>
 <tr class="memdesc:ga24075d386d517252e371f0fa915b768d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Average days per year.  <br /></td></tr>
 <tr class="memitem:ga97004b8781e8dbb9b46201b0a5280b81" id="r_ga97004b8781e8dbb9b46201b0a5280b81"><td class="memItemLeft">enum &#160;</td><td class="memItemRight"><a class="el" href="group__mql5__time__enums.html#ga97004b8781e8dbb9b46201b0a5280b81">FormatType</a> { <br />
@@ -3463,7 +3489,7 @@ template&lt;class T = ts_ms_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>OA date value. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ole__automation__conversions_8hpp_source.html#l00038">38</a> of file <a class="el" href="ole__automation__conversions_8hpp_source.html">ole_automation_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ole__automation__conversions_8hpp_source.html#l00068">68</a> of file <a class="el" href="ole__automation__conversions_8hpp_source.html">ole_automation_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -4610,7 +4636,7 @@ template&lt;class T = int64_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Unix timestamp in seconds as floating point. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ole__automation__conversions_8hpp_source.html#l00063">63</a> of file <a class="el" href="ole__automation__conversions_8hpp_source.html">ole_automation_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ole__automation__conversions_8hpp_source.html#l00096">96</a> of file <a class="el" href="ole__automation__conversions_8hpp_source.html">ole_automation_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -4646,7 +4672,7 @@ template&lt;class T = int64_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Unix timestamp in seconds (truncated toward zero). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ole__automation__conversions_8hpp_source.html#l00054">54</a> of file <a class="el" href="ole__automation__conversions_8hpp_source.html">ole_automation_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ole__automation__conversions_8hpp_source.html#l00086">86</a> of file <a class="el" href="ole__automation__conversions_8hpp_source.html">ole_automation_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -4682,7 +4708,7 @@ template&lt;class T = int64_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Unix timestamp in milliseconds (truncated toward zero). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ole__automation__conversions_8hpp_source.html#l00071">71</a> of file <a class="el" href="ole__automation__conversions_8hpp_source.html">ole_automation_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ole__automation__conversions_8hpp_source.html#l00105">105</a> of file <a class="el" href="ole__automation__conversions_8hpp_source.html">ole_automation_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -5116,7 +5142,7 @@ template&lt;class T1, class T2, class T3&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>OA date value. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ole__automation__conversions_8hpp_source.html#l00083">83</a> of file <a class="el" href="ole__automation__conversions_8hpp_source.html">ole_automation_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ole__automation__conversions_8hpp_source.html#l00118">118</a> of file <a class="el" href="ole__automation__conversions_8hpp_source.html">ole_automation_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -5193,7 +5219,7 @@ template&lt;class T1, class T2, class T3&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>OA date value. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ole__automation__conversions_8hpp_source.html#l00046">46</a> of file <a class="el" href="ole__automation__conversions_8hpp_source.html">ole_automation_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ole__automation__conversions_8hpp_source.html#l00077">77</a> of file <a class="el" href="ole__automation__conversions_8hpp_source.html">ole_automation_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -5301,7 +5327,7 @@ template&lt;class T1, class T2, class T3&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>OA date value. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ole__automation__conversions_8hpp_source.html#l00030">30</a> of file <a class="el" href="ole__automation__conversions_8hpp_source.html">ole_automation_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ole__automation__conversions_8hpp_source.html#l00059">59</a> of file <a class="el" href="ole__automation__conversions_8hpp_source.html">ole_automation_conversions.hpp</a>.</p>
 
 </div>
 </div>

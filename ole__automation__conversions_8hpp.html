@@ -113,9 +113,13 @@ $(function(){initNavTree('ole__automation__conversions_8hpp.html','',''); });
 Namespaces</h2></td></tr>
 <tr class="memitem:time_5Fshield" id="r_time_5Fshield"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacetime__shield.html">time_shield</a></td></tr>
 <tr class="memdesc:namespacetime__shield"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main namespace for the Time Shield library. <br /></td></tr>
+<tr class="memitem:time_5Fshield_3A_3Adetail" id="r_time_5Fshield_3A_3Adetail"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacetime__shield_1_1detail.html">time_shield::detail</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:ac6176d754dae9b2d9fb3db000ae610bd" id="r_ac6176d754dae9b2d9fb3db000ae610bd"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR bool&#160;</td><td class="memItemRight"><a class="el" href="namespacetime__shield_1_1detail.html#ac6176d754dae9b2d9fb3db000ae610bd">time_shield::detail::oadate_has_fraction</a> (<a class="el" href="group__time__types.html#gaab97b453fa3ad4ad8a752b00019968d6">oadate_t</a> value) noexcept</td></tr>
+<tr class="memitem:a06833afc86ca2e2de48037047e1649e2" id="r_a06833afc86ca2e2de48037047e1649e2"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#gaab97b453fa3ad4ad8a752b00019968d6">oadate_t</a>&#160;</td><td class="memItemRight"><a class="el" href="namespacetime__shield_1_1detail.html#a06833afc86ca2e2de48037047e1649e2">time_shield::detail::linear_days_to_oadate</a> (<a class="el" href="group__time__types.html#gaab97b453fa3ad4ad8a752b00019968d6">oadate_t</a> linear_days) noexcept</td></tr>
+<tr class="memitem:a034e998bbe602832241d2fc8b0c67cd3" id="r_a034e998bbe602832241d2fc8b0c67cd3"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#gaab97b453fa3ad4ad8a752b00019968d6">oadate_t</a>&#160;</td><td class="memItemRight"><a class="el" href="namespacetime__shield_1_1detail.html#a034e998bbe602832241d2fc8b0c67cd3">time_shield::detail::oadate_to_linear_days</a> (<a class="el" href="group__time__types.html#gaab97b453fa3ad4ad8a752b00019968d6">oadate_t</a> oa) noexcept</td></tr>
 <tr class="memitem:a167c3fafd4f67c009a57926c58564dda" id="r_a167c3fafd4f67c009a57926c58564dda"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#gaab97b453fa3ad4ad8a752b00019968d6">oadate_t</a>&#160;</td><td class="memItemRight"><a class="el" href="namespacetime__shield.html#a167c3fafd4f67c009a57926c58564dda">time_shield::ts_to_oadate</a> (<a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>) noexcept</td></tr>
 <tr class="memdesc:a167c3fafd4f67c009a57926c58564dda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert Unix timestamp (seconds) to OA date.  <br /></td></tr>
 <tr class="memitem:ab21cf0204fe3d8aeb0041835d32f0f74" id="r_ab21cf0204fe3d8aeb0041835d32f0f74"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#gaab97b453fa3ad4ad8a752b00019968d6">oadate_t</a>&#160;</td><td class="memItemRight"><a class="el" href="namespacetime__shield.html#ab21cf0204fe3d8aeb0041835d32f0f74">time_shield::fts_to_oadate</a> (<a class="el" href="group__time__types.html#ga922ce1d0bc31869e531512c233b7633f">fts_t</a> <a class="el" href="group__time__conversions.html#ga4701e4f2553acb70bf28ada865531a03">ts</a>) noexcept</td></tr>
@@ -138,6 +142,7 @@ Functions</h2></td></tr>
 <li>0.0 is 1899-12-30 00:00:00</li>
 <li>the integer part is days offset from that date</li>
 <li>the fractional part is time-of-day / 24</li>
+<li>negative fractional values follow Excel/COM serial semantics</li>
 </ul>
 <p>This header provides conversions between OA date and:</p><ul>
 <li>Unix timestamps in seconds (ts_t)</li>

@@ -11,6 +11,7 @@ var hierarchy =
     [ "time_shield::ElapsedTimer", "classtime__shield_1_1ElapsedTimer.html", null ],
     [ "time_shield::detail::FakeNtpRunner", "classtime__shield_1_1detail_1_1FakeNtpRunner.html", null ],
     [ "time_shield::detail::FastDate", "structtime__shield_1_1detail_1_1FastDate.html", null ],
+    [ "time_shield::detail::format_parse::FormatParseState", "structtime__shield_1_1detail_1_1format__parse_1_1FormatParseState.html", null ],
     [ "time_shield::IsoWeekDateStruct", "structtime__shield_1_1IsoWeekDateStruct.html", null ],
     [ "time_shield::detail::IUdpTransport", "classtime__shield_1_1detail_1_1IUdpTransport.html", [
       [ "time_shield::detail::UdpTransportPosix", "classtime__shield_1_1detail_1_1UdpTransportPosix.html", null ],

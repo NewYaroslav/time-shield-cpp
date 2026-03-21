@@ -107,6 +107,7 @@ $(function(){initNavTree('namespacetime__shield_1_1detail.html','',''); });
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:anonymous_5Fnamespace_7Bfast_5Fdate_2Ehpp_7D" id="r_anonymous_5Fnamespace_7Bfast_5Fdate_2Ehpp_7D"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacetime__shield_1_1detail_1_1anonymous__namespace_02fast__date_8hpp_03.html">anonymous_namespace{fast_date.hpp}</a></td></tr>
+<tr class="memitem:format_5Fparse" id="r_format_5Fparse"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacetime__shield_1_1detail_1_1format__parse.html">format_parse</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
@@ -175,12 +176,12 @@ Functions</h2></td></tr>
 <tr class="memdesc:ac37a65d82c36d9de43ab5e59bc437467"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert days since Unix epoch to year using a fast constexpr algorithm.  <br /></td></tr>
 <tr class="memitem:a9526a97329d89f4c84b36c22792ff35a" id="r_a9526a97329d89f4c84b36c22792ff35a"><td class="memItemLeft">int64_t&#160;</td><td class="memItemRight"><a class="el" href="#a9526a97329d89f4c84b36c22792ff35a">fast_year_from_days</a> (int64_t p_days) noexcept</td></tr>
 <tr class="memdesc:a9526a97329d89f4c84b36c22792ff35a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert days since Unix epoch to year using a fast algorithm.  <br /></td></tr>
-<tr class="memitem:a7feb3415dcece49bf82e7a554fff854a" id="r_a7feb3415dcece49bf82e7a554fff854a"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
-<tr class="memitem:a7feb3415dcece49bf82e7a554fff854a template"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR T&#160;</td><td class="memItemRight"><a class="el" href="#a7feb3415dcece49bf82e7a554fff854a">floor_div</a> (T a, T b) noexcept</td></tr>
-<tr class="memdesc:a7feb3415dcece49bf82e7a554fff854a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Floor division for positive divisor.  <br /></td></tr>
-<tr class="memitem:a0b958a2e7fb65f29de3af00f0811cfb7" id="r_a0b958a2e7fb65f29de3af00f0811cfb7"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
-<tr class="memitem:a0b958a2e7fb65f29de3af00f0811cfb7 template"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR T&#160;</td><td class="memItemRight"><a class="el" href="#a0b958a2e7fb65f29de3af00f0811cfb7">floor_mod</a> (T a, T b) noexcept</td></tr>
-<tr class="memdesc:a0b958a2e7fb65f29de3af00f0811cfb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Floor-mod for positive modulus (returns r in [0..b)).  <br /></td></tr>
+<tr class="memitem:a020fd5ae3e30872e6aa022c73d99ca10" id="r_a020fd5ae3e30872e6aa022c73d99ca10"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
+<tr class="memitem:a020fd5ae3e30872e6aa022c73d99ca10 template"><td class="memItemLeft">constexpr T&#160;</td><td class="memItemRight"><a class="el" href="#a020fd5ae3e30872e6aa022c73d99ca10">floor_div</a> (T a, T b) noexcept</td></tr>
+<tr class="memdesc:a020fd5ae3e30872e6aa022c73d99ca10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Floor division for positive divisor.  <br /></td></tr>
+<tr class="memitem:ad2fd367761c0756d92f00cec27aa05de" id="r_ad2fd367761c0756d92f00cec27aa05de"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
+<tr class="memitem:ad2fd367761c0756d92f00cec27aa05de template"><td class="memItemLeft">constexpr T&#160;</td><td class="memItemRight"><a class="el" href="#ad2fd367761c0756d92f00cec27aa05de">floor_mod</a> (T a, T b) noexcept</td></tr>
+<tr class="memdesc:ad2fd367761c0756d92f00cec27aa05de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Floor-mod for positive modulus (returns r in [0..b)).  <br /></td></tr>
 <tr class="memitem:a5e3de882b3ea0aecee3f5db51ce8c5a6" id="r_a5e3de882b3ea0aecee3f5db51ce8c5a6"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR uint64_t&#160;</td><td class="memItemRight"><a class="el" href="#a5e3de882b3ea0aecee3f5db51ce8c5a6">mul_hi_u64_constexpr</a> (uint64_t p_a, uint64_t p_b) noexcept</td></tr>
 <tr class="memdesc:a5e3de882b3ea0aecee3f5db51ce8c5a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the high 64 bits of a 64x64-bit multiplication (constexpr variant).  <br /></td></tr>
 <tr class="memitem:a68c2a273d69c3e128beccdfb5626f640" id="r_a68c2a273d69c3e128beccdfb5626f640"><td class="memItemLeft">uint64_t&#160;</td><td class="memItemRight"><a class="el" href="#a68c2a273d69c3e128beccdfb5626f640">mul_hi_u64</a> (uint64_t p_a, uint64_t p_b) noexcept</td></tr>
@@ -203,6 +204,9 @@ Functions</h2></td></tr>
 <tr class="memdesc:af660cd4c3b59a86868102cc8323d26fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill an NTP client request packet using local time.  <br /></td></tr>
 <tr class="memitem:ae7f2f8b871c0f6d5d03b789823abaa26" id="r_ae7f2f8b871c0f6d5d03b789823abaa26"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#ae7f2f8b871c0f6d5d03b789823abaa26">parse_server_packet</a> (const <a class="el" href="structtime__shield_1_1detail_1_1NtpPacket.html">NtpPacket</a> &amp;pkt, uint64_t arrival_us, int64_t &amp;offset_us, int64_t &amp;delay_us, int &amp;stratum, int &amp;out_error_code) noexcept</td></tr>
 <tr class="memdesc:ae7f2f8b871c0f6d5d03b789823abaa26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse server response and compute offset and delay.  <br /></td></tr>
+<tr class="memitem:ac6176d754dae9b2d9fb3db000ae610bd" id="r_ac6176d754dae9b2d9fb3db000ae610bd"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR bool&#160;</td><td class="memItemRight"><a class="el" href="#ac6176d754dae9b2d9fb3db000ae610bd">oadate_has_fraction</a> (<a class="el" href="group__time__types.html#gaab97b453fa3ad4ad8a752b00019968d6">oadate_t</a> value) noexcept</td></tr>
+<tr class="memitem:a06833afc86ca2e2de48037047e1649e2" id="r_a06833afc86ca2e2de48037047e1649e2"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#gaab97b453fa3ad4ad8a752b00019968d6">oadate_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#a06833afc86ca2e2de48037047e1649e2">linear_days_to_oadate</a> (<a class="el" href="group__time__types.html#gaab97b453fa3ad4ad8a752b00019968d6">oadate_t</a> linear_days) noexcept</td></tr>
+<tr class="memitem:a034e998bbe602832241d2fc8b0c67cd3" id="r_a034e998bbe602832241d2fc8b0c67cd3"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#gaab97b453fa3ad4ad8a752b00019968d6">oadate_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#a034e998bbe602832241d2fc8b0c67cd3">oadate_to_linear_days</a> (<a class="el" href="group__time__types.html#gaab97b453fa3ad4ad8a752b00019968d6">oadate_t</a> oa) noexcept</td></tr>
 <tr class="memitem:a8457db4d57439e08761c4233512af39f" id="r_a8457db4d57439e08761c4233512af39f"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a8457db4d57439e08761c4233512af39f">trim_copy_ascii</a> (const std::string &amp;s)</td></tr>
 <tr class="memdesc:a8457db4d57439e08761c4233512af39f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trim ASCII whitespace from both ends.  <br /></td></tr>
 <tr class="memitem:a9ebc306d8cf35e7bd04192e453546848" id="r_a9ebc306d8cf35e7bd04192e453546848"><td class="memItemLeft">std::string_view&#160;</td><td class="memItemRight"><a class="el" href="#a9ebc306d8cf35e7bd04192e453546848">trim_view_ascii</a> (std::string_view v)</td></tr>
@@ -638,8 +642,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a7feb3415dcece49bf82e7a554fff854a" name="a7feb3415dcece49bf82e7a554fff854a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7feb3415dcece49bf82e7a554fff854a">&#9670;&#160;</a></span>floor_div()</h2>
+<a id="a020fd5ae3e30872e6aa022c73d99ca10" name="a020fd5ae3e30872e6aa022c73d99ca10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a020fd5ae3e30872e6aa022c73d99ca10">&#9670;&#160;</a></span>floor_div()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -650,7 +654,7 @@ template&lt;class T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">TIME_SHIELD_CONSTEXPR T time_shield::detail::floor_div </td>
+          <td class="memname">T time_shield::detail::floor_div </td>
           <td>(</td>
           <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
         </tr>
@@ -662,7 +666,7 @@ template&lt;class T&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -673,8 +677,8 @@ template&lt;class T&gt; </div>
 
 </div>
 </div>
-<a id="a0b958a2e7fb65f29de3af00f0811cfb7" name="a0b958a2e7fb65f29de3af00f0811cfb7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0b958a2e7fb65f29de3af00f0811cfb7">&#9670;&#160;</a></span>floor_mod()</h2>
+<a id="ad2fd367761c0756d92f00cec27aa05de" name="ad2fd367761c0756d92f00cec27aa05de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2fd367761c0756d92f00cec27aa05de">&#9670;&#160;</a></span>floor_mod()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -685,7 +689,7 @@ template&lt;class T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">TIME_SHIELD_CONSTEXPR T time_shield::detail::floor_mod </td>
+          <td class="memname">T time_shield::detail::floor_mod </td>
           <td>(</td>
           <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
         </tr>
@@ -697,14 +701,14 @@ template&lt;class T&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Floor-mod for positive modulus (returns r in [0..b)). </p>
 
-<p class="definition">Definition at line <a class="el" href="floor__math_8hpp_source.html#l00023">23</a> of file <a class="el" href="floor__math_8hpp_source.html">floor_math.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="floor__math_8hpp_source.html#l00020">20</a> of file <a class="el" href="floor__math_8hpp_source.html">floor_math.hpp</a>.</p>
 
 </div>
 </div>
@@ -822,7 +826,7 @@ template&lt;class T&gt; </div>
 
 <p>Check whether character is ASCII digit. </p>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00219">219</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00220">220</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -851,7 +855,7 @@ template&lt;class T&gt; </div>
 
 <p>Check whether character is ASCII whitespace. </p>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00214">214</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00215">215</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -879,6 +883,33 @@ template&lt;class T&gt; </div>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="time__zone__conversions_8hpp_source.html#l00142">142</a> of file <a class="el" href="time__zone__conversions_8hpp_source.html">time_zone_conversions.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a06833afc86ca2e2de48037047e1649e2" name="a06833afc86ca2e2de48037047e1649e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06833afc86ca2e2de48037047e1649e2">&#9670;&#160;</a></span>linear_days_to_oadate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#gaab97b453fa3ad4ad8a752b00019968d6">oadate_t</a> time_shield::detail::linear_days_to_oadate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#gaab97b453fa3ad4ad8a752b00019968d6">oadate_t</a></td>          <td class="paramname"><span class="paramname"><em>linear_days</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ole__automation__conversions_8hpp_source.html#l00036">36</a> of file <a class="el" href="ole__automation__conversions_8hpp_source.html">ole_automation_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -1050,7 +1081,7 @@ template&lt;class T&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00097">97</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00098">98</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -1090,7 +1121,7 @@ template&lt;class T&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00110">110</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00111">111</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -1248,6 +1279,60 @@ template&lt;class T&gt; </div>
 
 </div>
 </div>
+<a id="ac6176d754dae9b2d9fb3db000ae610bd" name="ac6176d754dae9b2d9fb3db000ae610bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6176d754dae9b2d9fb3db000ae610bd">&#9670;&#160;</a></span>oadate_has_fraction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TIME_SHIELD_CONSTEXPR bool time_shield::detail::oadate_has_fraction </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#gaab97b453fa3ad4ad8a752b00019968d6">oadate_t</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ole__automation__conversions_8hpp_source.html#l00032">32</a> of file <a class="el" href="ole__automation__conversions_8hpp_source.html">ole_automation_conversions.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a034e998bbe602832241d2fc8b0c67cd3" name="a034e998bbe602832241d2fc8b0c67cd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a034e998bbe602832241d2fc8b0c67cd3">&#9670;&#160;</a></span>oadate_to_linear_days()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#gaab97b453fa3ad4ad8a752b00019968d6">oadate_t</a> time_shield::detail::oadate_to_linear_days </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#gaab97b453fa3ad4ad8a752b00019968d6">oadate_t</a></td>          <td class="paramname"><span class="paramname"><em>oa</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ole__automation__conversions_8hpp_source.html#l00045">45</a> of file <a class="el" href="ole__automation__conversions_8hpp_source.html">ole_automation_conversions.hpp</a>.</p>
+
+</div>
+</div>
 <a id="a46444ff7df406058fc8e69c195281153" name="a46444ff7df406058fc8e69c195281153"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a46444ff7df406058fc8e69c195281153">&#9670;&#160;</a></span>parse_2digits()</h2>
 
@@ -1283,7 +1368,7 @@ template&lt;class T&gt; </div>
 <p>Parse exactly 2 digits into int. </p>
 <dl class="section return"><dt>Returns</dt><dd>true on success. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00232">232</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00233">233</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -1322,7 +1407,7 @@ template&lt;class T&gt; </div>
 <p>Parse exactly 4 digits into <a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9" title="Year as an integer (e.g., 2024).">year_t</a> (via int). </p>
 <dl class="section return"><dt>Returns</dt><dd>true on success. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00248">248</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00249">249</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -1361,7 +1446,7 @@ template&lt;class T&gt; </div>
 <p>Parse fractional seconds (1..9 digits) and convert to milliseconds. </p>
 <p>Uses first 3 digits, scales if fewer. </p><dl class="section return"><dt>Returns</dt><dd>true on success. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00265">265</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00266">266</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -1403,7 +1488,7 @@ template&lt;class T&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00187">187</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00188">188</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -1445,7 +1530,7 @@ template&lt;class T&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00200">200</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00201">201</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -1531,7 +1616,7 @@ template&lt;class T&gt; </div>
 
 <p>Skip ASCII whitespace. </p>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00224">224</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00225">225</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -1589,7 +1674,7 @@ template&lt;class T&gt; </div>
 
 <p>Trim ASCII whitespace from both ends. </p>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00075">75</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00076">76</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -1618,7 +1703,7 @@ template&lt;class T&gt; </div>
 
 <p>Trim ASCII whitespace from both ends (string_view). </p>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00085">85</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00086">86</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -1659,7 +1744,7 @@ template&lt;class T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if token matches a supported month name, false otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00125">125</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00126">126</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -1700,7 +1785,7 @@ template&lt;class T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if token matches a supported month name, false otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00156">156</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00157">157</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>

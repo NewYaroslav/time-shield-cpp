@@ -11,13 +11,13 @@ namespace detail {
 
     /// \brief Floor division for positive divisor.
     template<class T>
-    constexpr inline T floor_div(T a, T b) noexcept {
+    TIME_SHIELD_CONSTEXPR inline T floor_div(T a, T b) noexcept {
         return static_cast<T>((a / b) - (((a % b) != 0 && a < 0) ? 1 : 0));
     }
 
     /// \brief Floor-mod for positive modulus (returns r in [0..b)).
     template<class T>
-    constexpr inline T floor_mod(T a, T b) noexcept {
+    TIME_SHIELD_CONSTEXPR inline T floor_mod(T a, T b) noexcept {
         return static_cast<T>((a % b) + (((a % b) < 0) ? b : 0));
     }
 

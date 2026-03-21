@@ -691,7 +691,7 @@ namespace time_shield {
             : m_utc_ms(utc_ms)
             , m_offset(offset) {}
 
-        static constexpr ts_ms_t offset_to_ms(tz_t offset) noexcept {
+        static TIME_SHIELD_CONSTEXPR ts_ms_t offset_to_ms(tz_t offset) noexcept {
             return static_cast<ts_ms_t>(offset) * MS_PER_SEC;
         }
 

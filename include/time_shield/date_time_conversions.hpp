@@ -650,7 +650,7 @@ namespace time_shield {
     ///
     /// \param ts Timestamp.
     /// \return Start of the day timestamp.
-    constexpr ts_t start_of_day(ts_t ts = time_shield::ts()) noexcept {
+    TIME_SHIELD_CONSTEXPR inline ts_t start_of_day(ts_t ts = time_shield::ts()) noexcept {
         return ts - detail::floor_mod(ts, SEC_PER_DAY);
     }
 
@@ -662,7 +662,7 @@ namespace time_shield {
     /// \param days Number of days to go back (default is 1).
     /// \return Timestamp of the start of the previous day.
     template<class T = int>
-    constexpr ts_t start_of_prev_day(ts_t ts = time_shield::ts(), T days = 1) noexcept {
+    TIME_SHIELD_CONSTEXPR ts_t start_of_prev_day(ts_t ts = time_shield::ts(), T days = 1) noexcept {
         return ts - detail::floor_mod(ts, SEC_PER_DAY) - SEC_PER_DAY * days;
     }
 
@@ -673,7 +673,7 @@ namespace time_shield {
     ///
     /// \param ts_ms Timestamp in milliseconds.
     /// \return Start of the day timestamp in seconds.
-    constexpr ts_t start_of_day_sec(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
+    TIME_SHIELD_CONSTEXPR inline ts_t start_of_day_sec(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
         return start_of_day(ms_to_sec<ts_t>(ts_ms));
     }
 
@@ -684,7 +684,7 @@ namespace time_shield {
     ///
     /// \param ts_ms Timestamp in milliseconds.
     /// \return Start of the day timestamp in milliseconds.
-    constexpr ts_ms_t start_of_day_ms(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
+    TIME_SHIELD_CONSTEXPR inline ts_ms_t start_of_day_ms(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
         return ts_ms - detail::floor_mod(ts_ms, MS_PER_DAY);
     }
 
@@ -697,7 +697,7 @@ namespace time_shield {
     /// \param days The number of days after the current day (default is 1).
     /// \return The timestamp in seconds representing the beginning of the specified future day.
     template<class T = int>
-    constexpr ts_t start_of_next_day(ts_t ts, T days = 1) noexcept {
+    TIME_SHIELD_CONSTEXPR ts_t start_of_next_day(ts_t ts, T days = 1) noexcept {
         return start_of_day(ts) + days * SEC_PER_DAY;
     }
 
@@ -710,7 +710,7 @@ namespace time_shield {
     /// \param days The number of days after the current day (default is 1).
     /// \return The timestamp in milliseconds representing the beginning of the specified future day.
     template<class T = int>
-    constexpr ts_ms_t start_of_next_day_ms(ts_ms_t ts_ms, T days = 1) noexcept {
+    TIME_SHIELD_CONSTEXPR ts_ms_t start_of_next_day_ms(ts_ms_t ts_ms, T days = 1) noexcept {
         return start_of_day_ms(ts_ms) + days * MS_PER_DAY;
     }
 
@@ -722,7 +722,7 @@ namespace time_shield {
     /// \param days The number of days to add to the current timestamp (default is 1).
     /// \return The timestamp in seconds after adding the specified number of days.
     template<class T = int>
-    constexpr ts_t next_day(ts_t ts, T days = 1) noexcept {
+    TIME_SHIELD_CONSTEXPR ts_t next_day(ts_t ts, T days = 1) noexcept {
         return ts + days * SEC_PER_DAY;
     }
 
@@ -734,7 +734,7 @@ namespace time_shield {
     /// \param days The number of days to add to the current timestamp (default is 1).
     /// \return The timestamp in milliseconds after adding the specified number of days.
     template<class T = int>
-    constexpr ts_ms_t next_day_ms(ts_ms_t ts_ms, T days = 1) noexcept {
+    TIME_SHIELD_CONSTEXPR ts_ms_t next_day_ms(ts_ms_t ts_ms, T days = 1) noexcept {
         return ts_ms + days * MS_PER_DAY;
     }
 
@@ -744,7 +744,7 @@ namespace time_shield {
     ///
     /// \param ts Timestamp.
     /// \return Timestamp at the end of the day.
-    constexpr ts_t end_of_day(ts_t ts = time_shield::ts()) noexcept {
+    TIME_SHIELD_CONSTEXPR inline ts_t end_of_day(ts_t ts = time_shield::ts()) noexcept {
         return ts - detail::floor_mod(ts, SEC_PER_DAY) + SEC_PER_DAY - 1;
     }
 
@@ -754,7 +754,7 @@ namespace time_shield {
     ///
     /// \param ts_ms Timestamp in milliseconds.
     /// \return Timestamp at the end of the day in seconds.
-    constexpr ts_t end_of_day_sec(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
+    TIME_SHIELD_CONSTEXPR inline ts_t end_of_day_sec(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
         return end_of_day(ms_to_sec<ts_t>(ts_ms));
     }
 
@@ -764,7 +764,7 @@ namespace time_shield {
     ///
     /// \param ts_ms Timestamp in milliseconds.
     /// \return Timestamp at the end of the day in milliseconds.
-    constexpr ts_ms_t end_of_day_ms(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
+    TIME_SHIELD_CONSTEXPR inline ts_ms_t end_of_day_ms(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
         return ts_ms - detail::floor_mod(ts_ms, MS_PER_DAY) + MS_PER_DAY - 1;
     }
 
@@ -989,7 +989,7 @@ namespace time_shield {
     /// \param ts Timestamp.
     /// \return Weekday (SUN = 0, MON = 1, ... SAT = 6).
     template<class T = Weekday>
-    constexpr T weekday_of_ts(ts_t ts) noexcept {
+    TIME_SHIELD_CONSTEXPR T weekday_of_ts(ts_t ts) noexcept {
         const ts_t days = detail::floor_div(ts, SEC_PER_DAY);
         return static_cast<T>(detail::floor_mod(days + THU, DAYS_PER_WEEK));
     }
@@ -998,21 +998,21 @@ namespace time_shield {
     /// \param ts_ms Timestamp in milliseconds.
     /// \return Weekday (SUN = 0, MON = 1, ... SAT = 6).
     template<class T = Weekday>
-    constexpr T weekday_of_ts_ms(ts_ms_t ts_ms) {
+    TIME_SHIELD_CONSTEXPR T weekday_of_ts_ms(ts_ms_t ts_ms) {
         return weekday_of_ts<T>(ms_to_sec<ts_t>(ts_ms));
     }
 
     /// \brief Alias for weekday_of_ts.
     /// \copydoc weekday_of_ts
     template<class T = Weekday>
-    constexpr T get_weekday_from_ts(ts_t ts) noexcept {
+    TIME_SHIELD_CONSTEXPR T get_weekday_from_ts(ts_t ts) noexcept {
         return weekday_of_ts<T>(ts);
     }
 
     /// \brief Alias for weekday_of_ts_ms.
     /// \copydoc weekday_of_ts_ms
     template<class T = Weekday>
-    constexpr T get_weekday_from_ts_ms(ts_ms_t ts_ms) {
+    TIME_SHIELD_CONSTEXPR T get_weekday_from_ts_ms(ts_ms_t ts_ms) {
         return weekday_of_ts_ms<T>(ts_ms);
     }
 
@@ -1070,7 +1070,7 @@ namespace time_shield {
     ///
     /// \param ts Timestamp (default: current timestamp).
     /// \return Returns the timestamp of the beginning of the week.
-    constexpr ts_t start_of_week(ts_t ts = time_shield::ts()) {
+    TIME_SHIELD_CONSTEXPR inline ts_t start_of_week(ts_t ts = time_shield::ts()) {
         return start_of_day(ts) - weekday_of_ts(ts) * SEC_PER_DAY;
     }
 
@@ -1081,7 +1081,7 @@ namespace time_shield {
     ///
     /// \param ts Timestamp (default: current timestamp).
     /// \return Returns the timestamp of the end of the week.
-    constexpr ts_t end_of_week(ts_t ts = time_shield::ts()) {
+    TIME_SHIELD_CONSTEXPR inline ts_t end_of_week(ts_t ts = time_shield::ts()) {
         return start_of_day(ts) + (DAYS_PER_WEEK - weekday_of_ts(ts)) * SEC_PER_DAY - 1;
     }
 
@@ -1092,7 +1092,7 @@ namespace time_shield {
     ///
     /// \param ts Timestamp (default: current timestamp).
     /// \return Returns the timestamp of the start of Saturday.
-    constexpr ts_t start_of_saturday(ts_t ts = time_shield::ts()) {
+    TIME_SHIELD_CONSTEXPR inline ts_t start_of_saturday(ts_t ts = time_shield::ts()) {
         return start_of_day(ts) + (SAT - weekday_of_ts(ts)) * SEC_PER_DAY;
     }
 
@@ -1103,7 +1103,7 @@ namespace time_shield {
     ///
     /// \param ts Timestamp (default: current timestamp).
     /// \return Timestamp at the start of the hour.
-    constexpr ts_t start_of_hour(ts_t ts = time_shield::ts()) noexcept {
+    TIME_SHIELD_CONSTEXPR inline ts_t start_of_hour(ts_t ts = time_shield::ts()) noexcept {
         return ts - detail::floor_mod(ts, SEC_PER_HOUR);
     }
 
@@ -1113,7 +1113,7 @@ namespace time_shield {
     ///
     /// \param ts_ms Timestamp in milliseconds (default: current timestamp in milliseconds).
     /// \return Timestamp at the start of the hour in seconds.
-    constexpr ts_t start_of_hour_sec(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
+    TIME_SHIELD_CONSTEXPR inline ts_t start_of_hour_sec(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
         return start_of_hour(ms_to_sec<ts_t>(ts_ms));
     }
 
@@ -1121,42 +1121,42 @@ namespace time_shield {
     /// This function sets the minute and second to zero.
     /// \param ts_ms Timestamp in milliseconds (default: current timestamp in milliseconds).
     /// \return Timestamp at the start of the hour in milliseconds.
-    constexpr ts_ms_t start_of_hour_ms(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
+    TIME_SHIELD_CONSTEXPR inline ts_ms_t start_of_hour_ms(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
         return ts_ms - detail::floor_mod(ts_ms, MS_PER_HOUR);
     }
 
     /// \brief Get the timestamp at the end of the hour.
     /// \param ts Timestamp (default: current timestamp).
     /// \return Returns the timestamp of the end of the hour.
-    constexpr ts_t end_of_hour(ts_t ts = time_shield::ts()) noexcept {
+    TIME_SHIELD_CONSTEXPR inline ts_t end_of_hour(ts_t ts = time_shield::ts()) noexcept {
         return ts - detail::floor_mod(ts, SEC_PER_HOUR) + SEC_PER_HOUR - 1;
     }
 
     /// \brief Get the timestamp at the end of the hour in seconds.
     /// \param ts_ms Timestamp in milliseconds (default: current timestamp).
     /// \return Returns the timestamp of the end of the hour in seconds.
-    constexpr ts_t end_of_hour_sec(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
+    TIME_SHIELD_CONSTEXPR inline ts_t end_of_hour_sec(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
         return end_of_hour(ms_to_sec<ts_t>(ts_ms));
     }
 
     /// \brief Get the timestamp at the end of the hour in milliseconds.
     /// \param ts_ms Timestamp in milliseconds (default: current timestamp).
     /// \return Returns the timestamp of the end of the hour in milliseconds.
-    constexpr ts_ms_t end_of_hour_ms(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
+    TIME_SHIELD_CONSTEXPR inline ts_ms_t end_of_hour_ms(ts_ms_t ts_ms = time_shield::ts_ms()) noexcept {
         return ts_ms - detail::floor_mod(ts_ms, MS_PER_HOUR) + MS_PER_HOUR - 1;
     }
 
     /// \brief Get the timestamp of the beginning of the minute.
     /// \param ts Timestamp (default: current timestamp).
     /// \return Returns the timestamp of the beginning of the minute.
-    constexpr ts_t start_of_min(ts_t ts = time_shield::ts()) noexcept {
+    TIME_SHIELD_CONSTEXPR inline ts_t start_of_min(ts_t ts = time_shield::ts()) noexcept {
         return ts - detail::floor_mod(ts, SEC_PER_MIN);
     }
 
     /// \brief Get the timestamp of the end of the minute.
     /// \param ts Timestamp (default: current timestamp).
     /// \return Returns the timestamp of the end of the minute.
-    constexpr ts_t end_of_min(ts_t ts = time_shield::ts()) noexcept {
+    TIME_SHIELD_CONSTEXPR inline ts_t end_of_min(ts_t ts = time_shield::ts()) noexcept {
         return ts - detail::floor_mod(ts, SEC_PER_MIN) + SEC_PER_MIN - 1;
     }
 
@@ -1165,7 +1165,7 @@ namespace time_shield {
     /// \param ts Timestamp in seconds (default: current timestamp).
     /// \return Minute of day.
     template<class T = int>
-    constexpr T min_of_day(ts_t ts = time_shield::ts()) noexcept {
+    TIME_SHIELD_CONSTEXPR T min_of_day(ts_t ts = time_shield::ts()) noexcept {
         const ts_t minutes = detail::floor_div(ts, SEC_PER_MIN);
         return static_cast<T>(detail::floor_mod(minutes, MIN_PER_DAY));
     }
@@ -1175,7 +1175,7 @@ namespace time_shield {
     /// \param ts Timestamp in seconds (default: current timestamp).
     /// \return Hour of day.
     template<class T = int>
-    constexpr T hour_of_day(ts_t ts = time_shield::ts()) noexcept {
+    TIME_SHIELD_CONSTEXPR T hour_of_day(ts_t ts = time_shield::ts()) noexcept {
         const ts_t hours = detail::floor_div(ts, SEC_PER_HOUR);
         return static_cast<T>(detail::floor_mod(hours, HOURS_PER_DAY));
     }
@@ -1185,7 +1185,7 @@ namespace time_shield {
     /// \param ts Timestamp in seconds (default: current timestamp).
     /// \return Minute of hour.
     template<class T = int>
-    constexpr T min_of_hour(ts_t ts = time_shield::ts()) noexcept {
+    TIME_SHIELD_CONSTEXPR T min_of_hour(ts_t ts = time_shield::ts()) noexcept {
         const ts_t minutes = detail::floor_div(ts, SEC_PER_MIN);
         return static_cast<T>(detail::floor_mod(minutes, MIN_PER_HOUR));
     }
@@ -1195,7 +1195,7 @@ namespace time_shield {
     /// \param ts Timestamp (default: current timestamp).
     /// \return Timestamp of the start of the period, or ERROR_TIMESTAMP for invalid period values.
     template<class T = int>
-    constexpr ts_t start_of_period(T p, ts_t ts = time_shield::ts()) {
+    TIME_SHIELD_CONSTEXPR ts_t start_of_period(T p, ts_t ts = time_shield::ts()) {
         const ts_t period = static_cast<ts_t>(p);
         return period <= 0 ? ERROR_TIMESTAMP : ts - detail::floor_mod(ts, period);
     }
@@ -1205,7 +1205,7 @@ namespace time_shield {
     /// \param ts Timestamp (default: current timestamp).
     /// \return Timestamp of the end of the period, or ERROR_TIMESTAMP for invalid period values.
     template<class T = int>
-    constexpr ts_t end_of_period(T p, ts_t ts = time_shield::ts()) {
+    TIME_SHIELD_CONSTEXPR ts_t end_of_period(T p, ts_t ts = time_shield::ts()) {
         const ts_t period = static_cast<ts_t>(p);
         return period <= 0 ? ERROR_TIMESTAMP : ts - detail::floor_mod(ts, period) + period - 1;
     }

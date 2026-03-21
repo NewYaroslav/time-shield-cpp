@@ -84,7 +84,7 @@ namespace time_shield {
     /// \param ts Timestamp in milliseconds.
     /// \return T Millisecond part of the timestamp.
     template<class T = int>
-    constexpr T ms_part(ts_ms_t ts) noexcept {
+    TIME_SHIELD_CONSTEXPR T ms_part(ts_ms_t ts) noexcept {
         return static_cast<T>(detail::floor_mod<int64_t>(static_cast<int64_t>(ts), MS_PER_SEC));
     }
 
@@ -93,7 +93,7 @@ namespace time_shield {
     /// \param ts Timestamp in milliseconds.
     /// \return T Millisecond part of the timestamp.
     template<class T = int>
-    constexpr T ms_of_ts(ts_ms_t ts) noexcept {
+    TIME_SHIELD_CONSTEXPR T ms_of_ts(ts_ms_t ts) noexcept {
         return ms_part<T>(ts);
     }
 
@@ -102,7 +102,7 @@ namespace time_shield {
     /// \param ts Timestamp in microseconds.
     /// \return T Microsecond part of the timestamp.
     template<class T = int>
-    constexpr T us_part(ts_us_t ts) noexcept {
+    TIME_SHIELD_CONSTEXPR T us_part(ts_us_t ts) noexcept {
         return static_cast<T>(detail::floor_mod<int64_t>(static_cast<int64_t>(ts), US_PER_SEC));
     }
 
@@ -111,7 +111,7 @@ namespace time_shield {
     /// \param ts Timestamp in microseconds.
     /// \return T Microsecond part of the timestamp.
     template<class T = int>
-    constexpr T us_of_ts(ts_us_t ts) noexcept {
+    TIME_SHIELD_CONSTEXPR T us_of_ts(ts_us_t ts) noexcept {
         return us_part<T>(ts);
     }
 
@@ -120,7 +120,7 @@ namespace time_shield {
     /// \param ts Timestamp in nanoseconds.
     /// \return T Nanosecond part of the timestamp.
     template<class T = int, class T2 = int64_t>
-    constexpr T ns_part(T2 ts) noexcept {
+    TIME_SHIELD_CONSTEXPR T ns_part(T2 ts) noexcept {
         return static_cast<T>(detail::floor_mod<int64_t>(static_cast<int64_t>(ts), NS_PER_SEC));
     }
 
@@ -131,7 +131,7 @@ namespace time_shield {
     /// \param tag std::true_type indicates a floating-point type.
     /// \return ts_ms_t Timestamp in milliseconds.
     template<class T>
-    constexpr ts_ms_t sec_to_ms_impl(T t, std::true_type) noexcept {
+    TIME_SHIELD_CONSTEXPR ts_ms_t sec_to_ms_impl(T t, std::true_type) noexcept {
         return static_cast<ts_ms_t>(std::round(t * static_cast<T>(MS_PER_SEC)));
     }
 
@@ -141,7 +141,7 @@ namespace time_shield {
     /// \param tag std::false_type indicates a non-floating-point type.
     /// \return ts_ms_t Timestamp in milliseconds.
     template<class T>
-    constexpr ts_ms_t sec_to_ms_impl(T t, std::false_type) noexcept {
+    TIME_SHIELD_CONSTEXPR ts_ms_t sec_to_ms_impl(T t, std::false_type) noexcept {
         return static_cast<ts_ms_t>(t) * static_cast<ts_ms_t>(MS_PER_SEC);
     }
 #   endif // TIME_SHIELD_CPP17
@@ -152,7 +152,7 @@ namespace time_shield {
     /// \param ts Timestamp in seconds.
     /// \return T1 Timestamp in milliseconds.
     template<class T1 = ts_ms_t, class T2>
-    constexpr T1 sec_to_ms(T2 ts) noexcept {
+    TIME_SHIELD_CONSTEXPR T1 sec_to_ms(T2 ts) noexcept {
 #       ifdef TIME_SHIELD_CPP17
         if constexpr (std::is_floating_point_v<T2>) {
             return static_cast<T1>(std::round(ts * static_cast<T2>(MS_PER_SEC)));
@@ -181,7 +181,7 @@ namespace time_shield {
     /// \param ts_ms Timestamp in milliseconds.
     /// \return T1 Timestamp in seconds.
     template<class T1 = ts_t, class T2 = ts_ms_t>
-    constexpr T1 ms_to_sec(T2 ts_ms) noexcept {
+    TIME_SHIELD_CONSTEXPR T1 ms_to_sec(T2 ts_ms) noexcept {
         return static_cast<T1>(detail::floor_div(
             static_cast<int64_t>(ts_ms),
             static_cast<int64_t>(MS_PER_SEC)));
@@ -192,7 +192,7 @@ namespace time_shield {
     /// \param ts_ms Timestamp in milliseconds.
     /// \return fts_t Timestamp in floating-point seconds.
     template<class T = ts_ms_t>
-    constexpr fts_t ms_to_fsec(T ts_ms) noexcept {
+    TIME_SHIELD_CONSTEXPR fts_t ms_to_fsec(T ts_ms) noexcept {
         return static_cast<fts_t>(ts_ms) / static_cast<fts_t>(MS_PER_SEC);
     }
 
@@ -206,7 +206,7 @@ namespace time_shield {
     /// \param tag std::true_type indicates a floating-point type (double or float).
     /// \return ts_ms_t Timestamp in milliseconds.
     template<class T>
-    constexpr ts_ms_t min_to_ms_impl(T t, std::true_type) noexcept {
+    TIME_SHIELD_CONSTEXPR ts_ms_t min_to_ms_impl(T t, std::true_type) noexcept {
         return static_cast<ts_ms_t>(std::round(t * static_cast<T>(MS_PER_MIN)));
     }
 
@@ -216,7 +216,7 @@ namespace time_shield {
     /// \param tag std::false_type indicates a non-floating-point type.
     /// \return ts_ms_t Timestamp in milliseconds.
     template<class T>
-    constexpr ts_ms_t min_to_ms_impl(T t, std::false_type) noexcept {
+    TIME_SHIELD_CONSTEXPR ts_ms_t min_to_ms_impl(T t, std::false_type) noexcept {
         return static_cast<ts_ms_t>(t) * static_cast<ts_ms_t>(MS_PER_MIN);
     }
 #   endif // TIME_SHIELD_CPP17
@@ -227,7 +227,7 @@ namespace time_shield {
     /// \param ts Timestamp in minutes.
     /// \return T1 Timestamp in milliseconds.
     template<class T1 = ts_ms_t, class T2>
-    constexpr T1 min_to_ms(T2 ts) noexcept {
+    TIME_SHIELD_CONSTEXPR T1 min_to_ms(T2 ts) noexcept {
 #       ifdef TIME_SHIELD_CPP17
         if constexpr (std::is_floating_point_v<T2>) {
             return static_cast<T1>(std::round(ts * static_cast<T2>(MS_PER_MIN)));
@@ -249,7 +249,7 @@ namespace time_shield {
     /// \param ts Timestamp in milliseconds.
     /// \return T1 Timestamp in minutes.
     template<class T1 = int, class T2 = ts_ms_t>
-    constexpr T1 ms_to_min(T2 ts) noexcept {
+    TIME_SHIELD_CONSTEXPR T1 ms_to_min(T2 ts) noexcept {
         return static_cast<T1>(detail::floor_div(
             static_cast<int64_t>(ts),
             static_cast<int64_t>(MS_PER_MIN)));
@@ -265,7 +265,7 @@ namespace time_shield {
     /// \param tag std::true_type indicates a floating-point type (double or float).
     /// \return ts_t Timestamp in seconds.
     template<class T>
-    constexpr ts_t min_to_sec_impl(T t, std::true_type) noexcept {
+    TIME_SHIELD_CONSTEXPR ts_t min_to_sec_impl(T t, std::true_type) noexcept {
         return static_cast<ts_t>(std::round(t * static_cast<T>(SEC_PER_MIN)));
     }
 
@@ -275,7 +275,7 @@ namespace time_shield {
     /// \param tag std::false_type indicates a non-floating-point type.
     /// \return ts_t Timestamp in seconds.
     template<class T>
-    constexpr ts_t min_to_sec_impl(T t, std::false_type) noexcept {
+    TIME_SHIELD_CONSTEXPR ts_t min_to_sec_impl(T t, std::false_type) noexcept {
         return static_cast<ts_t>(t) * static_cast<ts_t>(SEC_PER_MIN);
     }
 #   endif // TIME_SHIELD_CPP17
@@ -286,7 +286,7 @@ namespace time_shield {
     /// \param ts Timestamp in minutes.
     /// \return T1 Timestamp in seconds.
     template<class T1 = ts_t, class T2>
-    constexpr T1 min_to_sec(T2 ts) noexcept {
+    TIME_SHIELD_CONSTEXPR T1 min_to_sec(T2 ts) noexcept {
 #       ifdef TIME_SHIELD_CPP17
         if constexpr (std::is_floating_point_v<T2>) {
             return static_cast<T1>(std::round(ts * static_cast<T2>(SEC_PER_MIN)));
@@ -308,7 +308,7 @@ namespace time_shield {
     /// \param ts Timestamp in seconds.
     /// \return T1 Timestamp in minutes.
     template<class T1 = int, class T2 = ts_t>
-    constexpr T1 sec_to_min(T2 ts) noexcept {
+    TIME_SHIELD_CONSTEXPR T1 sec_to_min(T2 ts) noexcept {
         return static_cast<T1>(detail::floor_div(
             static_cast<int64_t>(ts),
             static_cast<int64_t>(SEC_PER_MIN)));
@@ -319,7 +319,7 @@ namespace time_shield {
     /// \param min Timestamp in minutes.
     /// \return fts_t Timestamp in floating-point seconds.
     template<class T = int>
-    constexpr fts_t min_to_fsec(T min) noexcept {
+    TIME_SHIELD_CONSTEXPR fts_t min_to_fsec(T min) noexcept {
         return static_cast<fts_t>(min) * static_cast<fts_t>(SEC_PER_MIN);
     }
 
@@ -328,7 +328,7 @@ namespace time_shield {
     /// \param ts Timestamp in seconds.
     /// \return double Timestamp in floating-point minutes.
     template<class T = ts_t>
-    constexpr double sec_to_fmin(T ts) noexcept {
+    TIME_SHIELD_CONSTEXPR double sec_to_fmin(T ts) noexcept {
         return static_cast<double>(ts) / static_cast<double>(SEC_PER_MIN);
     }
 
@@ -343,7 +343,7 @@ namespace time_shield {
     /// \param tag std::true_type indicates a floating-point type (double or float).
     /// \return ts_ms_t Timestamp in milliseconds.
     template<class T>
-    constexpr ts_ms_t hour_to_ms_impl(T t, std::true_type) noexcept {
+    TIME_SHIELD_CONSTEXPR ts_ms_t hour_to_ms_impl(T t, std::true_type) noexcept {
         return static_cast<ts_ms_t>(std::round(t * static_cast<T>(MS_PER_HOUR)));
     }
 
@@ -353,7 +353,7 @@ namespace time_shield {
     /// \param tag Type tag used to select the integral overload (must be std::false_type).
     /// \return ts_ms_t Timestamp in milliseconds.
     template<class T>
-    constexpr ts_ms_t hour_to_ms_impl(T t, std::false_type) noexcept {
+    TIME_SHIELD_CONSTEXPR ts_ms_t hour_to_ms_impl(T t, std::false_type) noexcept {
         return static_cast<ts_ms_t>(t) * static_cast<ts_ms_t>(MS_PER_HOUR);
     }
 #   endif // TIME_SHIELD_CPP17
@@ -364,7 +364,7 @@ namespace time_shield {
     /// \param ts Timestamp in hours.
     /// \return T1 Timestamp in milliseconds.
     template<class T1 = ts_ms_t, class T2>
-    constexpr T1 hour_to_ms(T2 ts) noexcept {
+    TIME_SHIELD_CONSTEXPR T1 hour_to_ms(T2 ts) noexcept {
 #       ifdef TIME_SHIELD_CPP17
         if constexpr (std::is_floating_point_v<T2>) {
             return static_cast<T1>(std::round(ts * static_cast<T2>(MS_PER_HOUR)));
@@ -386,7 +386,7 @@ namespace time_shield {
     /// \param ts Timestamp in milliseconds.
     /// \return T1 Timestamp in hours.
     template<class T1 = int, class T2 = ts_ms_t>
-    constexpr T1 ms_to_hour(T2 ts) noexcept {
+    TIME_SHIELD_CONSTEXPR T1 ms_to_hour(T2 ts) noexcept {
         return static_cast<T1>(detail::floor_div(
             static_cast<int64_t>(ts),
             static_cast<int64_t>(MS_PER_HOUR)));
@@ -403,7 +403,7 @@ namespace time_shield {
     /// \param tag std::true_type indicates a floating-point type (double or float).
     /// \return ts_t Timestamp in seconds.
     template<class T>
-    constexpr ts_t hour_to_sec_impl(T t, std::true_type) noexcept {
+    TIME_SHIELD_CONSTEXPR ts_t hour_to_sec_impl(T t, std::true_type) noexcept {
         return static_cast<ts_t>(std::round(t * static_cast<T>(SEC_PER_HOUR)));
     }
 
@@ -413,7 +413,7 @@ namespace time_shield {
     /// \param tag std::false_type indicates a non-floating-point type.
     /// \return ts_t Timestamp in seconds.
     template<class T>
-    constexpr ts_t hour_to_sec_impl(T t, std::false_type) noexcept {
+    TIME_SHIELD_CONSTEXPR ts_t hour_to_sec_impl(T t, std::false_type) noexcept {
         return static_cast<ts_t>(t) * static_cast<ts_t>(SEC_PER_HOUR);
     }
 #   endif // TIME_SHIELD_CPP17
@@ -424,7 +424,7 @@ namespace time_shield {
     /// \param ts Timestamp in hours.
     /// \return T1 Timestamp in seconds.
     template<class T1 = ts_t, class T2>
-    constexpr T1 hour_to_sec(T2 ts) noexcept {
+    TIME_SHIELD_CONSTEXPR T1 hour_to_sec(T2 ts) noexcept {
 #       ifdef TIME_SHIELD_CPP17
         if constexpr (std::is_floating_point_v<T2>) {
             return static_cast<T1>(std::round(ts * static_cast<T2>(SEC_PER_HOUR)));
@@ -446,7 +446,7 @@ namespace time_shield {
     /// \param ts Timestamp in seconds.
     /// \return T1 Timestamp in hours.
     template<class T1 = int, class T2 = ts_t>
-    constexpr T1 sec_to_hour(T2 ts) noexcept {
+    TIME_SHIELD_CONSTEXPR T1 sec_to_hour(T2 ts) noexcept {
         return static_cast<T1>(detail::floor_div(
             static_cast<int64_t>(ts),
             static_cast<int64_t>(SEC_PER_HOUR)));
@@ -457,7 +457,7 @@ namespace time_shield {
     /// \param hr Timestamp in hours.
     /// \return fts_t Timestamp in floating-point seconds.
     template<class T = int>
-    constexpr fts_t hour_to_fsec(T hr) noexcept {
+    TIME_SHIELD_CONSTEXPR fts_t hour_to_fsec(T hr) noexcept {
         return static_cast<fts_t>(hr) * static_cast<fts_t>(SEC_PER_HOUR);
     }
 
@@ -466,7 +466,7 @@ namespace time_shield {
     /// \param ts Timestamp in seconds.
     /// \return double Timestamp in floating-point hours.
     template<class T = ts_t>
-    constexpr double sec_to_fhour(T ts) noexcept {
+    TIME_SHIELD_CONSTEXPR double sec_to_fhour(T ts) noexcept {
         return static_cast<double>(ts) / static_cast<double>(SEC_PER_HOUR);
     }
 

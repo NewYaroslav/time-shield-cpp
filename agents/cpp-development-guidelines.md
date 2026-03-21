@@ -76,5 +76,6 @@
 
 - Constants and macro names use `UPPER_SNAKE_CASE`.
 - Enum values use `CamelCase`.
+- Public headers that belong to the C++11 compatibility surface must use `TIME_SHIELD_CONSTEXPR` instead of raw `constexpr` for function declarations and definitions.
 - Mark non-inheritable classes with `final`.
 - Use `override` for overridden virtual methods.

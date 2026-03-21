@@ -57,6 +57,31 @@ int main() {
     }
 
     {
+        const tz_t offset = 2 * SEC_PER_HOUR;
+        const DateTime dt = DateTime::from_components(2024, 3, 15, 10, 20, 30, 400, offset);
+        const ts_ms_t offset_ms = sec_to_ms(offset);
+        const ts_t local_ts = to_timestamp(2024, 3, 15, 10, 20, 30);
+
+        const DateTime local_start_month = dt.start_of_month();
+        const DateTime local_end_month = dt.end_of_month();
+        const DateTime local_start_year = dt.start_of_year();
+        const DateTime local_end_year = dt.end_of_year();
+
+        expect(local_start_month.unix_ms() == sec_to_ms(start_of_month(local_ts)) - offset_ms, "Local start_of_month should match raw helper");
+        expect(local_end_month.unix_ms() == sec_to_ms(end_of_month(local_ts)) + 999 - offset_ms, "Local end_of_month should match raw helper");
+        expect(local_start_year.unix_ms() == sec_to_ms(start_of_year(local_ts)) - offset_ms, "Local start_of_year should match raw helper");
+        expect(local_end_year.unix_ms() == sec_to_ms(end_of_year(local_ts)) + 999 - offset_ms, "Local end_of_year should match raw helper");
+
+        expect(local_start_month.year() == 2024 && local_start_month.month() == 3 && local_start_month.day() == 1, "Local start_of_month should reset to first day");
+        expect(local_start_month.hour() == 0 && local_start_month.minute() == 0 && local_start_month.second() == 0 && local_start_month.millisecond() == 0, "Local start_of_month should reset time of day");
+        expect(local_end_month.year() == 2024 && local_end_month.month() == 3 && local_end_month.day() == 31, "Local end_of_month should target last day");
+        expect(local_end_month.hour() == 23 && local_end_month.minute() == 59 && local_end_month.second() == 59 && local_end_month.millisecond() == 999, "Local end_of_month should reach end of day");
+        expect(local_start_year.year() == 2024 && local_start_year.month() == 1 && local_start_year.day() == 1, "Local start_of_year should reset to first day of year");
+        expect(local_end_year.year() == 2024 && local_end_year.month() == 12 && local_end_year.day() == 31, "Local end_of_year should target last day of year");
+        expect(local_end_year.hour() == 23 && local_end_year.minute() == 59 && local_end_year.second() == 59 && local_end_year.millisecond() == 999, "Local end_of_year should reach end of day");
+    }
+
+    {
         DateTime parsed_z;
         DateTime parsed_plus;
         DateTime parsed_negative;

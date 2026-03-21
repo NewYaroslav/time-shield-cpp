@@ -1041,12 +1041,13 @@ namespace time_shield {
     /// \brief Get the timestamp of the last Sunday of the current month.
     ///
     /// This function returns the timestamp of the last Sunday of the current month,
-    /// setting the day to the last Sunday and the time to 00:00:00.
+    /// setting the time to 00:00:00.
     ///
     /// \param ts Timestamp (default is current timestamp)
-    /// \return Timestamp of the last Sunday of the current month
+    /// \return Timestamp of the last Sunday of the current month at 00:00:00
     TIME_SHIELD_CONSTEXPR inline ts_t last_sunday_of_month(ts_t ts = time_shield::ts()) {
-        return end_of_month(ts) - weekday_of_ts(ts) * SEC_PER_DAY;
+        const ts_t month_end = end_of_month(ts);
+        return start_of_day(month_end) - weekday_of_ts(month_end) * SEC_PER_DAY;
     }
 
     /// \brief Get the day of the last Sunday of the given month and year.
@@ -1190,21 +1191,23 @@ namespace time_shield {
     }
 
     /// \brief Get the timestamp of the start of the period.
-    /// \param p Period duration in seconds.
+    /// \param p Positive period duration in seconds.
     /// \param ts Timestamp (default: current timestamp).
-    /// \return Returns the timestamp of the start of the period.
+    /// \return Timestamp of the start of the period, or ERROR_TIMESTAMP for invalid period values.
     template<class T = int>
     constexpr ts_t start_of_period(T p, ts_t ts = time_shield::ts()) {
-        return ts - detail::floor_mod(ts, static_cast<ts_t>(p));
+        const ts_t period = static_cast<ts_t>(p);
+        return period <= 0 ? ERROR_TIMESTAMP : ts - detail::floor_mod(ts, period);
     }
 
     /// \brief Get the timestamp of the end of the period.
-    /// \param p Period duration in seconds.
+    /// \param p Positive period duration in seconds.
     /// \param ts Timestamp (default: current timestamp).
-    /// \return Returns the timestamp of the end of the period.
+    /// \return Timestamp of the end of the period, or ERROR_TIMESTAMP for invalid period values.
     template<class T = int>
     constexpr ts_t end_of_period(T p, ts_t ts = time_shield::ts()) {
-        return ts - detail::floor_mod(ts, static_cast<ts_t>(p)) + p - 1;
+        const ts_t period = static_cast<ts_t>(p);
+        return period <= 0 ? ERROR_TIMESTAMP : ts - detail::floor_mod(ts, period) + period - 1;
     }
 
 /// \}

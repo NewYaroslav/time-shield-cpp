@@ -1118,7 +1118,8 @@ double sec_to_fhour(long sec) {
     /// \param ts Timestamp in seconds.
     /// \return Timestamp at 00:00:00 of the last Sunday of the month.
     long last_sunday_of_month(long ts) {
-       return end_of_month(ts) - day_of_week(ts) * SEC_PER_DAY;
+       long month_end = end_of_month(ts);
+       return start_of_day(month_end) - day_of_week(month_end) * SEC_PER_DAY;
     }
 
     /// \brief Alias for last_sunday_of_month.
@@ -1289,19 +1290,33 @@ double sec_to_fhour(long sec) {
     int min_in_hour(long ts) { return min_of_hour(ts); }
 
     /// \brief Get the start of a period.
-    /// \param p Period length in seconds.
+    /// \param p Positive period length in seconds.
     /// \param ts Timestamp (default current). Use time_utils.ts().
-    /// \return Timestamp of the start of the period.
+    /// \return Timestamp of the start of the period, or ERROR_TIMESTAMP for invalid period values.
     long start_of_period(int p, long ts) {
-       return ts - (ts % p);
+       if(p <= 0) {
+          return ERROR_TIMESTAMP;
+       }
+       long rem = ts % p;
+       if(rem < 0) {
+          rem += p;
+       }
+       return ts - rem;
     }
 
     /// \brief Get the end of a period.
-    /// \param p Period length in seconds.
+    /// \param p Positive period length in seconds.
     /// \param ts Timestamp (default current).
-    /// \return Timestamp of the end of the period.
+    /// \return Timestamp of the end of the period, or ERROR_TIMESTAMP for invalid period values.
     long end_of_period(int p, long ts) {
-       return ts - (ts % p) + p - 1;
+       if(p <= 0) {
+          return ERROR_TIMESTAMP;
+       }
+       long rem = ts % p;
+       if(rem < 0) {
+          rem += p;
+       }
+       return ts - rem + p - 1;
     }
 
     //----------------------------------------------------------------------

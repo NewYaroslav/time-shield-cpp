@@ -269,7 +269,8 @@ int main() {
 
     assert(start_of_month(day_start) == to_timestamp(2024, 6, 1));
     assert(end_of_month(day_start) == to_timestamp(2024, 6, 30, 23, 59, 59));
-    assert(last_sunday_of_month(day_start) == to_timestamp(2024, 6, 30, 23, 59, 59));
+    assert(last_sunday_of_month(day_start) == to_timestamp(2024, 6, 30, 0, 0, 0));
+    assert(last_sunday_of_month(to_timestamp(2024, 6, 15, 12, 0, 0)) == to_timestamp(2024, 6, 30, 0, 0, 0));
     assert(last_sunday_month_day<>(2024, 6) == 30);
 
     assert(start_of_week(day_start) == to_timestamp(2024, 6, 30));
@@ -287,8 +288,14 @@ int main() {
     assert(min_of_day(dt_ts) == 754);
     assert(hour_of_day(dt_ts) == 12);
     assert(min_of_hour(dt_ts) == 34);
+    assert(start_of_period(1, dt_ts) == dt_ts);
     assert(start_of_period(300, dt_ts) == to_timestamp(2024, 6, 30, 12, 30, 0));
+    assert(start_of_period(0, dt_ts) == ERROR_TIMESTAMP);
+    assert(start_of_period(-300, dt_ts) == ERROR_TIMESTAMP);
+    assert(end_of_period(1, dt_ts) == dt_ts);
     assert(end_of_period(300, dt_ts) == to_timestamp(2024, 6, 30, 12, 34, 59));
+    assert(end_of_period(0, dt_ts) == ERROR_TIMESTAMP);
+    assert(end_of_period(-300, dt_ts) == ERROR_TIMESTAMP);
 
     const TimeZoneStruct tz_struct{3, 30, true};
     assert(time_zone_struct_to_offset(tz_struct) == SEC_PER_HOUR * 3 + SEC_PER_MIN * 30);

@@ -32,8 +32,20 @@ int main() {
     assert(min_of_hour(pre_epoch) == 59);
     assert(weekday_of_ts(pre_epoch) == WED);
 
+    assert(start_of_month(pre_epoch) == to_timestamp(1969, 12, 1, 0, 0, 0));
+    assert(end_of_month(pre_epoch) == to_timestamp(1969, 12, 31, 23, 59, 59));
+    assert(last_sunday_of_month(pre_epoch) == to_timestamp(1969, 12, 28, 0, 0, 0));
+    assert(start_of_week(pre_epoch) == to_timestamp(1969, 12, 28, 0, 0, 0));
+    assert(end_of_week(pre_epoch) == to_timestamp(1970, 1, 3, 23, 59, 59));
+
     assert(start_of_period(300, pre_epoch) == -300);
     assert(end_of_period(300, pre_epoch) == -1);
+    assert(start_of_period(1, pre_epoch) == pre_epoch);
+    assert(end_of_period(1, pre_epoch) == pre_epoch);
+    assert(start_of_period(0, pre_epoch) == ERROR_TIMESTAMP);
+    assert(end_of_period(0, pre_epoch) == ERROR_TIMESTAMP);
+    assert(start_of_period(-300, pre_epoch) == ERROR_TIMESTAMP);
+    assert(end_of_period(-300, pre_epoch) == ERROR_TIMESTAMP);
 
     const ts_ms_t pre_epoch_ms = to_timestamp_ms(1969, 12, 31, 23, 59, 59, 999);
     const ts_ms_t pre_epoch_start_ms = sec_to_ms(pre_epoch_start);

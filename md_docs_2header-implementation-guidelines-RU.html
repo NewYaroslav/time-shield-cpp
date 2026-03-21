@@ -103,10 +103,10 @@ $(function(){initNavTree('md_docs_2header-implementation-guidelines-RU.html','',
   <div class="headertitle"><div class="title">Рекомендации по владению заголовками и файлами реализации </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md34"></a></p>
+<div class="textblock"><p><a class="anchor" id="autotoc_md35"></a></p>
 <p>Этот документ задаёт переносимую политику для организации <span class="tt">.hpp</span>, <span class="tt">.ipp</span> и <span class="tt">.tpp</span> файлов в C++ проектах.</p>
 <p>Текст намеренно написан в обобщённом виде, чтобы его можно было перенести в другой репозиторий с минимальными правками.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md35"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md36"></a>
 Канонический язык</h1>
 <p>Канонической версией этого документа является английская:</p>
 <ul>
@@ -116,7 +116,7 @@ $(function(){initNavTree('md_docs_2header-implementation-guidelines-RU.html','',
 <li><span class="tt">agents/header-implementation-guidelines.md</span></li>
 <li><span class="tt">agents/header-implementation-guidelines-RU.md</span></li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md36"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md37"></a>
 Назначение</h1>
 <p>Используйте эти рекомендации, когда нужно решить:</p>
 <ul>
@@ -126,9 +126,9 @@ $(function(){initNavTree('md_docs_2header-implementation-guidelines-RU.html','',
 <li>когда forward declarations полезны, а когда только засоряют код</li>
 <li>как держать build-mode helper'ы и implementation-only зависимости у настоящей границы реализации</li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md37"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md38"></a>
 Роли файлов</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md38"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md39"></a>
 <span class="tt">.hpp</span></h2>
 <p><span class="tt">.hpp</span> используется для:</p>
 <ul>
@@ -142,7 +142,7 @@ $(function(){initNavTree('md_docs_2header-implementation-guidelines-RU.html','',
 <li>самостоятельным leaf-header</li>
 <li>или частью aggregate-first подсистемы</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md39"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md40"></a>
 <span class="tt">.tpp</span></h2>
 <p><span class="tt">.tpp</span> используется для template-visible реализации.</p>
 <p>Правила:</p>
@@ -151,7 +151,7 @@ $(function(){initNavTree('md_docs_2header-implementation-guidelines-RU.html','',
 <li>такой код должен жить либо прямо в <span class="tt">.hpp</span>, либо в <span class="tt">.tpp</span>, который всегда подключается из <span class="tt">.hpp</span></li>
 <li>нельзя прятать consumer-instantiated templates за implementation-only путями подключения</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md40"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md41"></a>
 <span class="tt">.ipp</span></h2>
 <p><span class="tt">.ipp</span> используется для нетemplate-реализации, которую удобно хранить рядом с объявлением.</p>
 <p>Типичные сценарии:</p>
@@ -160,9 +160,9 @@ $(function(){initNavTree('md_docs_2header-implementation-guidelines-RU.html','',
 <li>inline-capable helper bodies</li>
 <li>определения методов вне класса, которые концептуально принадлежат тому же заголовку</li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md41"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md42"></a>
 Модель владения</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md42"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md43"></a>
 Реализация, всегда подключаемая из заголовка</h2>
 <p>Такой вариант подходит только для кода, который действительно должен принадлежать заголовку:</p>
 <ul>
@@ -172,7 +172,7 @@ $(function(){initNavTree('md_docs_2header-implementation-guidelines-RU.html','',
 <li>логика, которую осознанно нужно показывать во всех translation units</li>
 </ul>
 <p>Этот подход уместен, когда файл действительно должен работать как самостоятельный leaf-header.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md43"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md44"></a>
 Реализация с явным ownership</h2>
 <p>Явный ownership нужен там, где реализацию не надо раздавать во все consumer TU:</p>
 <ul>
@@ -186,10 +186,10 @@ $(function(){initNavTree('md_docs_2header-implementation-guidelines-RU.html','',
 <li>файл реализации находится рядом</li>
 <li>compiled ownership TU отвечает за one-TU emission в non-header-only сборках</li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md44"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md45"></a>
 Aggregate entry header и leaf header</h1>
 <p>У каждой подсистемы должен быть осознанно выбран основной include-подход.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md45"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md46"></a>
 Aggregate-first подсистема</h2>
 <p>Единый entry header уместен, если:</p>
 <ul>
@@ -203,7 +203,7 @@ Aggregate-first подсистема</h2>
 <li>общие STL и доменные include'ы можно собирать там</li>
 <li>leaf headers не нужно искусственно превращать в самостоятельные public entrypoints</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md46"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md47"></a>
 Standalone-leaf-first подсистема</h2>
 <p>Самодостаточные leaf headers уместны, если:</p>
 <ul>
@@ -216,9 +216,9 @@ Standalone-leaf-first подсистема</h2>
 <li>каждый leaf-header сам владеет зависимостями своего публичного контракта</li>
 <li>always-included реализация допустимее, если leaf-header действительно задуман как самодостаточный</li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md47"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md48"></a>
 Размещение зависимостей</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md48"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md49"></a>
 Общие STL и доменные include'ы</h2>
 <p>Централизуйте общие include'ы только тогда, когда у подсистемы действительно есть канонический aggregate entry header.</p>
 <p>Это оправдано, если:</p>
@@ -228,7 +228,7 @@ Standalone-leaf-first подсистема</h2>
 <li>централизация уменьшает дублирование и не скрывает ownership</li>
 </ul>
 <p>Не стоит централизовать зависимости только ради экономии нескольких строк include, если подсистема построена вокруг самостоятельных leaf headers.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md49"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md50"></a>
 Implementation-only helper'ы</h2>
 <p>Build-mode helper'ы, implementation macros и похожая инфраструктура должны находиться на границе реализации.</p>
 <p>Предпочтительное размещение:</p>
@@ -237,7 +237,7 @@ Implementation-only helper'ы</h2>
 <li>либо в его непосредственном owning <span class="tt">.hpp</span>, если это действительно самая узкая корректная граница</li>
 </ul>
 <p>Не размазывайте такие helper'ы через широкие aggregate headers, если это не требуется всем корректным путям использования.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md50"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md51"></a>
 Forward declarations</h1>
 <p>Используйте forward declarations только там, где они дают реальную структурную пользу:</p>
 <ul>
@@ -252,7 +252,7 @@ Forward declarations</h1>
 <li>добавляют визуальный шум без заметной архитектурной пользы</li>
 </ul>
 <p>Если у подсистемы уже есть канонический aggregate entry header, обычно лучше предпочесть ясную и плоскую структуру зависимостей, а не механически максимизировать число forward declarations.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md51"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md52"></a>
 Границы private / vendor реализации</h1>
 <p>Код приложения не должен подключать private implementation files зависимостей, чтобы обойти границы public API.</p>
 <p>Если нужная возможность недоступна через публичные заголовки:</p>
@@ -261,7 +261,7 @@ Forward declarations</h1>
 <li>либо держите недостающий ownership локально в приложении</li>
 </ul>
 <p>Не стоит обходить границу, напрямую подключая vendor <span class="tt">.ipp</span> или другие private implementation details из application-кода.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md52"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md53"></a>
 Как тестировать include-контракт</h1>
 <p>Тесты должны проверять тот include-контракт, который проект действительно собирается поддерживать.</p>
 <p>Для aggregate-first подсистем:</p>
@@ -275,7 +275,7 @@ Forward declarations</h1>
 <li>такие тесты должны сами явно объявлять свои prerequisites</li>
 <li>internal tests не должны молча переопределять public include policy подсистемы</li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md53"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md54"></a>
 Практический checklist</h1>
 <p>Перед тем как считать новую header-layout схему завершённой, проверьте:</p>
 <ul>

@@ -22,5 +22,7 @@ var searchData=
   ['create_5ftime_5fzone_5fstruct_19',['create_time_zone_struct',['../group__time__structures.html#gae83e4d4791a1f6ce69657a3868b00504',1,'time_shield']]],
   ['create_5ftimer_5fstate_20',['create_timer_state',['../classtime__shield_1_1TimerScheduler.html#ada09029c44122b63ad803a87b801a71b',1,'time_shield::TimerScheduler']]],
   ['ct_5fto_5fgmt_21',['ct_to_gmt',['../group__time__conversions__time__zone__conversions.html#ga303e31d36a74f2d70b158e22fb2db865',1,'time_shield::ct_to_gmt(ts_t ct)'],['../group__mql5__time__conversions.html#gacd59395424d97e5695614f5d48f6bd8a',1,'time_shield::ct_to_gmt(const datetime ct)']]],
-  ['current_5ftimer_5fstate_22',['current_timer_state',['../namespacetime__shield_1_1detail.html#a5e9f998322af0d986f490b7526d5345d',1,'time_shield::detail']]]
+  ['current_5ftimer_5fstate_22',['current_timer_state',['../namespacetime__shield_1_1detail.html#a5e9f998322af0d986f490b7526d5345d',1,'time_shield::detail']]],
+  ['current_5futc_5fms_23',['current_utc_ms',['../classtime__shield_1_1ZonedClock.html#a506d6c3c2cbbb20f1e3ce5013cef50d2',1,'time_shield::ZonedClock']]],
+  ['current_5futc_5fus_24',['current_utc_us',['../classtime__shield_1_1ZonedClock.html#afc4aeb533d99f23107178f7c29bf0e7c',1,'time_shield::ZonedClock']]]
 ];

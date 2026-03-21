@@ -189,7 +189,7 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Facilities for retrieving time using the Network Time Protocol. </p>
 <p>This module contains a minimal client and optional pool/service pipeline capable of querying remote NTP servers to measure the offset between local realtime and network time. It uses WinSock via the <span class="tt">WsaGuard</span> helper on Windows and POSIX sockets on Unix platforms.</p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md21"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md22"></a>
 Architecture:</h3>
 <ul>
 <li><span class="tt">NtpClient</span> performs a single request/response exchange with one server.</li>
@@ -197,7 +197,7 @@ Architecture:</h3>
 <li><span class="tt">NtpClientPoolRunner</span> runs the pool periodically in a background thread.</li>
 <li><span class="tt">NtpTimeService</span> wraps the runner in a singleton interface for easy access.</li>
 </ul>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md22"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md23"></a>
 Offset computation:</h3>
 <p>For each response, offsets and delays are computed using the standard NTP four-timestamp method:</p><ul>
 <li><span class="tt">t1</span> — client transmit time</li>
@@ -207,7 +207,7 @@ Offset computation:</h3>
 </ul>
 <p>Offset and delay are derived as: <span class="tt">offset = ((t2 - t1) + (t3 - t4)) / 2</span>, <span class="tt">delay = (t4 - t1) - (t3 - t2)</span>.</p>
 <p>Pools aggregate per-server offsets using the configured strategy (median, best-delay sample, or median with MAD trimming) and optional exponential smoothing.</p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md23"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md24"></a>
 Features:</h3>
 <ul>
 <li>Query NTP servers and obtain the time offset.</li>
@@ -215,7 +215,7 @@ Features:</h3>
 <li>Automatic WinSock initialization through <span class="tt">WsaGuard</span> (Windows build).</li>
 <li>Requires network connectivity.</li>
 </ul>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md24"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md25"></a>
 Example Usage:</h3>
 <div class="fragment"><div class="line"><a class="code hl_class" href="classtime__shield_1_1NtpClient.html">time_shield::NtpClient</a> client;</div>
 <div class="line"><span class="keywordflow">if</span> (client.<a class="code hl_function" href="classtime__shield_1_1NtpClient.html#aec57675f3cf62878d7fa628f9e512ab1">query</a>()) {</div>

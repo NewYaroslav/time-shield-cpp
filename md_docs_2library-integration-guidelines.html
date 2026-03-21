@@ -103,15 +103,15 @@ $(function(){initNavTree('md_docs_2library-integration-guidelines.html','',''); 
   <div class="headertitle"><div class="title">Library Integration Guidelines </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md82"></a></p>
+<div class="textblock"><p><a class="anchor" id="autotoc_md83"></a></p>
 <p>This document defines the supported integration contract for consuming Time Shield as a header-only dependency.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md83"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md84"></a>
 Canonical Language</h1>
 <p>English is the canonical version of this document.</p>
 <p>Russian localization:</p><ul>
 <li><span class="tt"><a class="el" href="library-integration-guidelines-RU_8md.html">docs/library-integration-guidelines-RU.md</a></span></li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md84"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md85"></a>
 Supported Integration Shapes</h1>
 <p>Time Shield is a header-only library. The normal supported integration paths are:</p>
 <ul>
@@ -121,7 +121,7 @@ Supported Integration Shapes</h1>
 </ul>
 <p>Link the exported target when CMake is available:</p>
 <div class="fragment"><div class="line">target_link_libraries(app PRIVATE time_shield::time_shield)</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md85"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md86"></a>
 Multiple Static Libraries</h1>
 <p>It is valid for multiple static libraries in the same final program to depend on <span class="tt">time_shield::time_shield</span>.</p>
 <p>This does not create a source-duplication problem as long as consumers:</p>
@@ -130,7 +130,7 @@ Multiple Static Libraries</h1>
 <li>do not compile private copies of the library internals as separate <span class="tt">.cpp</span> files</li>
 <li>do not mix incompatible compile-time configuration for the same final program</li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md86"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md87"></a>
 NTP Service Contract</h1>
 <p><span class="tt">NtpTimeService</span> is header-only and supports <span class="tt">C++11</span>, <span class="tt">C++14</span>, and <span class="tt">C++17</span>.</p>
 <ul>
@@ -139,7 +139,7 @@ NTP Service Contract</h1>
 <li>during process teardown the service stops restarting background work and falls back to realtime plus the last cached offset</li>
 <li>in general, <span class="tt">C++17+</span> allows a simpler singleton-storage pattern with inline variables, and the public usage contract for <span class="tt">NtpTimeService</span> is the same in <span class="tt">C++11</span>/<span class="tt">C++14</span>/<span class="tt">C++17</span></li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md87"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md88"></a>
 Windows Linking</h1>
 <p>When <span class="tt">TIME_SHIELD_ENABLE_NTP_CLIENT=ON</span> on Windows, the NTP stack requires the platform socket system library.</p>
 <p>Supported behavior:</p>
@@ -147,7 +147,7 @@ Windows Linking</h1>
 <li>if you use the exported CMake target <span class="tt">time_shield::time_shield</span>, the required Windows socket library is linked transitively</li>
 <li>if you integrate manually without the CMake target, you must link the platform socket library yourself (for Windows, <span class="tt">ws2_32</span>)</li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md88"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md89"></a>
 Configuration Consistency</h1>
 <p>Do not mix incompatible compile-time configuration for the same final program.</p>
 <p>In particular:</p>
@@ -155,7 +155,7 @@ Configuration Consistency</h1>
 <li>all consumers in one program should agree on whether <span class="tt">TIME_SHIELD_ENABLE_NTP_CLIENT</span> is enabled</li>
 <li>public behavior that depends on compile-time configuration must stay consistent across static libraries and the final executable</li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md89"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md90"></a>
 Practical Checklist</h1>
 <p>Before finalizing integration, verify:</p>
 <ul>

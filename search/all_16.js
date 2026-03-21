@@ -6,7 +6,7 @@ var searchData=
   ['validation_2ehpp_3',['validation.hpp',['../validation_8hpp.html',1,'']]],
   ['validation_2emqh_4',['validation.mqh',['../validation_8mqh.html',1,'']]],
   ['vcpkg_20overlay_5',['vcpkg overlay',['../index.html#install_vcpkg',1,'']]],
-  ['vendor_20реализации_6',['Границы private / vendor реализации',['../md_docs_2header-implementation-guidelines-RU.html#autotoc_md51',1,'']]],
-  ['vendor_20boundaries_7',['Private / Vendor Boundaries',['../md_docs_2header-implementation-guidelines.html#autotoc_md71',1,'']]],
-  ['vs_20leaf_20header_8',['Aggregate Entry Header vs Leaf Header',['../md_docs_2header-implementation-guidelines.html#autotoc_md64',1,'']]]
+  ['vendor_20реализации_6',['Границы private / vendor реализации',['../md_docs_2header-implementation-guidelines-RU.html#autotoc_md52',1,'']]],
+  ['vendor_20boundaries_7',['Private / Vendor Boundaries',['../md_docs_2header-implementation-guidelines.html#autotoc_md72',1,'']]],
+  ['vs_20leaf_20header_8',['Aggregate Entry Header vs Leaf Header',['../md_docs_2header-implementation-guidelines.html#autotoc_md65',1,'']]]
 ];

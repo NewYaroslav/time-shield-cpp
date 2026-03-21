@@ -60,6 +60,6 @@ var searchData=
   ['groups_5fmql5_2edox_57',['groups_mql5.dox',['../groups__mql5_8dox.html',1,'']]],
   ['gst_58',['GST',['../group__time__enums.html#ggad8cb858fb6cedcf76c4f0630d56e042ba1318d3544b22dc718cf1030548ffe2af',1,'time_shield']]],
   ['gst_5fto_5fgmt_59',['gst_to_gmt',['../group__time__conversions__time__zone__conversions.html#ga103672b6d16f3b4cb85be9c4b169b2c8',1,'time_shield::gst_to_gmt(ts_t gst)'],['../namespacetime__shield.html#a8d134b9e45492cc9704af495db0e1582',1,'time_shield::gst_to_gmt(const datetime gst)']]],
-  ['guidance_60',['Test Contract Guidance',['../md_docs_2header-implementation-guidelines.html#autotoc_md72',1,'']]],
+  ['guidance_60',['Test Contract Guidance',['../md_docs_2header-implementation-guidelines.html#autotoc_md73',1,'']]],
   ['guidelines_61',['Guidelines',['../md_docs_2header-implementation-guidelines.html',1,'Header / Implementation Ownership Guidelines'],['../md_docs_2singleton-storage-guidelines.html',1,'Header-only Singleton / Service Storage Guidelines'],['../md_docs_2library-integration-guidelines.html',1,'Library Integration Guidelines']]]
 ];

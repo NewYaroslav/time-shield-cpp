@@ -103,15 +103,15 @@ $(function(){initNavTree('md_docs_2library-integration-guidelines-RU.html','',''
   <div class="headertitle"><div class="title">Рекомендации по интеграции библиотеки </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md74"></a></p>
+<div class="textblock"><p><a class="anchor" id="autotoc_md75"></a></p>
 <p>Этот документ фиксирует поддерживаемый контракт подключения Time Shield как header-only зависимости.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md75"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md76"></a>
 Канонический язык</h1>
 <p>Канонической версией этого документа является английская:</p>
 <ul>
 <li><span class="tt"><a class="el" href="library-integration-guidelines_8md.html">docs/library-integration-guidelines.md</a></span></li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md76"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md77"></a>
 Поддерживаемые варианты интеграции</h1>
 <p>Time Shield является header-only библиотекой. Обычные поддерживаемые пути подключения:</p>
 <ul>
@@ -121,7 +121,7 @@ $(function(){initNavTree('md_docs_2library-integration-guidelines-RU.html','',''
 </ul>
 <p>Если доступен CMake, подключайте экспортируемый target:</p>
 <div class="fragment"><div class="line">target_link_libraries(app PRIVATE time_shield::time_shield)</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md77"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md78"></a>
 Несколько статических библиотек</h1>
 <p>Допустимо, чтобы несколько статических библиотек в составе одной итоговой программы зависели от <span class="tt">time_shield::time_shield</span>.</p>
 <p>Это не создаёт проблемы дублирования исходников, пока потребители:</p>
@@ -130,7 +130,7 @@ $(function(){initNavTree('md_docs_2library-integration-guidelines-RU.html','',''
 <li>не компилируют приватные копии внутренностей библиотеки как отдельные <span class="tt">.cpp</span> файлы</li>
 <li>не смешивают несовместимую compile-time конфигурацию в одной итоговой программе</li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md78"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md79"></a>
 Контракт NTP сервиса</h1>
 <p><span class="tt">NtpTimeService</span> является header-only и поддерживает стандарты <span class="tt">C++11</span>, <span class="tt">C++14</span> и <span class="tt">C++17</span>.</p>
 <ul>
@@ -139,7 +139,7 @@ $(function(){initNavTree('md_docs_2library-integration-guidelines-RU.html','',''
 <li>во время завершения процесса сервис не перезапускает фоновую работу и переходит на fallback через realtime и последний закешированный offset</li>
 <li>в общем случае <span class="tt">C++17+</span> позволяет использовать более простой singleton-storage паттерн через <span class="tt">inline</span> variables, а для <span class="tt">NtpTimeService</span> пользовательский contract одинаков в <span class="tt">C++11</span>/<span class="tt">C++14</span>/<span class="tt">C++17</span></li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md79"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md80"></a>
 Линковка на Windows</h1>
 <p>Когда на Windows включён <span class="tt">TIME_SHIELD_ENABLE_NTP_CLIENT=ON</span>, NTP-стек требует платформенную socket library.</p>
 <p>Поддерживаемое поведение:</p>
@@ -147,7 +147,7 @@ $(function(){initNavTree('md_docs_2library-integration-guidelines-RU.html','',''
 <li>если используется экспортируемый CMake target <span class="tt">time_shield::time_shield</span>, нужная Windows socket library приходит транзитивно</li>
 <li>при ручной интеграции без CMake target эту библиотеку нужно добавить самостоятельно (для Windows это <span class="tt">ws2_32</span>)</li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md80"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md81"></a>
 Согласованность конфигурации</h1>
 <p>Не смешивайте несовместимую compile-time конфигурацию в рамках одной итоговой программы.</p>
 <p>В частности:</p>
@@ -155,7 +155,7 @@ $(function(){initNavTree('md_docs_2library-integration-guidelines-RU.html','',''
 <li>все потребители в составе одной программы должны одинаково трактовать <span class="tt">TIME_SHIELD_ENABLE_NTP_CLIENT</span></li>
 <li>публичное поведение, зависящее от compile-time конфигурации, должно быть согласованным между статическими библиотеками и финальным приложением</li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md81"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md82"></a>
 Практический checklist</h1>
 <p>Перед финализацией интеграции проверьте:</p>
 <ul>

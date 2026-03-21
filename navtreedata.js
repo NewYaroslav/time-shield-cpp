@@ -45,96 +45,96 @@ var NAVTREE =
     [ "Repository", "index.html#repo_sec", null ],
     [ "License", "index.html#license_sec", null ],
     [ "Рекомендации по владению заголовками и файлами реализации", "md_docs_2header-implementation-guidelines-RU.html", [
-      [ "Канонический язык", "md_docs_2header-implementation-guidelines-RU.html#autotoc_md35", null ],
-      [ "Назначение", "md_docs_2header-implementation-guidelines-RU.html#autotoc_md36", null ],
-      [ "Роли файлов", "md_docs_2header-implementation-guidelines-RU.html#autotoc_md37", [
-        [ "<span class=\"tt\">.hpp</span>", "md_docs_2header-implementation-guidelines-RU.html#autotoc_md38", null ],
-        [ "<span class=\"tt\">.tpp</span>", "md_docs_2header-implementation-guidelines-RU.html#autotoc_md39", null ],
-        [ "<span class=\"tt\">.ipp</span>", "md_docs_2header-implementation-guidelines-RU.html#autotoc_md40", null ]
+      [ "Канонический язык", "md_docs_2header-implementation-guidelines-RU.html#autotoc_md36", null ],
+      [ "Назначение", "md_docs_2header-implementation-guidelines-RU.html#autotoc_md37", null ],
+      [ "Роли файлов", "md_docs_2header-implementation-guidelines-RU.html#autotoc_md38", [
+        [ "<span class=\"tt\">.hpp</span>", "md_docs_2header-implementation-guidelines-RU.html#autotoc_md39", null ],
+        [ "<span class=\"tt\">.tpp</span>", "md_docs_2header-implementation-guidelines-RU.html#autotoc_md40", null ],
+        [ "<span class=\"tt\">.ipp</span>", "md_docs_2header-implementation-guidelines-RU.html#autotoc_md41", null ]
       ] ],
-      [ "Модель владения", "md_docs_2header-implementation-guidelines-RU.html#autotoc_md41", [
-        [ "Реализация, всегда подключаемая из заголовка", "md_docs_2header-implementation-guidelines-RU.html#autotoc_md42", null ],
-        [ "Реализация с явным ownership", "md_docs_2header-implementation-guidelines-RU.html#autotoc_md43", null ]
+      [ "Модель владения", "md_docs_2header-implementation-guidelines-RU.html#autotoc_md42", [
+        [ "Реализация, всегда подключаемая из заголовка", "md_docs_2header-implementation-guidelines-RU.html#autotoc_md43", null ],
+        [ "Реализация с явным ownership", "md_docs_2header-implementation-guidelines-RU.html#autotoc_md44", null ]
       ] ],
-      [ "Aggregate entry header и leaf header", "md_docs_2header-implementation-guidelines-RU.html#autotoc_md44", [
-        [ "Aggregate-first подсистема", "md_docs_2header-implementation-guidelines-RU.html#autotoc_md45", null ],
-        [ "Standalone-leaf-first подсистема", "md_docs_2header-implementation-guidelines-RU.html#autotoc_md46", null ]
+      [ "Aggregate entry header и leaf header", "md_docs_2header-implementation-guidelines-RU.html#autotoc_md45", [
+        [ "Aggregate-first подсистема", "md_docs_2header-implementation-guidelines-RU.html#autotoc_md46", null ],
+        [ "Standalone-leaf-first подсистема", "md_docs_2header-implementation-guidelines-RU.html#autotoc_md47", null ]
       ] ],
-      [ "Размещение зависимостей", "md_docs_2header-implementation-guidelines-RU.html#autotoc_md47", [
-        [ "Общие STL и доменные include'ы", "md_docs_2header-implementation-guidelines-RU.html#autotoc_md48", null ],
-        [ "Implementation-only helper'ы", "md_docs_2header-implementation-guidelines-RU.html#autotoc_md49", null ]
+      [ "Размещение зависимостей", "md_docs_2header-implementation-guidelines-RU.html#autotoc_md48", [
+        [ "Общие STL и доменные include'ы", "md_docs_2header-implementation-guidelines-RU.html#autotoc_md49", null ],
+        [ "Implementation-only helper'ы", "md_docs_2header-implementation-guidelines-RU.html#autotoc_md50", null ]
       ] ],
-      [ "Forward declarations", "md_docs_2header-implementation-guidelines-RU.html#autotoc_md50", null ],
-      [ "Границы private / vendor реализации", "md_docs_2header-implementation-guidelines-RU.html#autotoc_md51", null ],
-      [ "Как тестировать include-контракт", "md_docs_2header-implementation-guidelines-RU.html#autotoc_md52", null ],
-      [ "Практический checklist", "md_docs_2header-implementation-guidelines-RU.html#autotoc_md53", null ]
+      [ "Forward declarations", "md_docs_2header-implementation-guidelines-RU.html#autotoc_md51", null ],
+      [ "Границы private / vendor реализации", "md_docs_2header-implementation-guidelines-RU.html#autotoc_md52", null ],
+      [ "Как тестировать include-контракт", "md_docs_2header-implementation-guidelines-RU.html#autotoc_md53", null ],
+      [ "Практический checklist", "md_docs_2header-implementation-guidelines-RU.html#autotoc_md54", null ]
     ] ],
     [ "Header / Implementation Ownership Guidelines", "md_docs_2header-implementation-guidelines.html", [
-      [ "Canonical Language", "md_docs_2header-implementation-guidelines.html#autotoc_md55", null ],
-      [ "Purpose", "md_docs_2header-implementation-guidelines.html#autotoc_md56", null ],
-      [ "File Roles", "md_docs_2header-implementation-guidelines.html#autotoc_md57", [
-        [ "<span class=\"tt\">.hpp</span>", "md_docs_2header-implementation-guidelines.html#autotoc_md58", null ],
-        [ "<span class=\"tt\">.tpp</span>", "md_docs_2header-implementation-guidelines.html#autotoc_md59", null ],
-        [ "<span class=\"tt\">.ipp</span>", "md_docs_2header-implementation-guidelines.html#autotoc_md60", null ]
+      [ "Canonical Language", "md_docs_2header-implementation-guidelines.html#autotoc_md56", null ],
+      [ "Purpose", "md_docs_2header-implementation-guidelines.html#autotoc_md57", null ],
+      [ "File Roles", "md_docs_2header-implementation-guidelines.html#autotoc_md58", [
+        [ "<span class=\"tt\">.hpp</span>", "md_docs_2header-implementation-guidelines.html#autotoc_md59", null ],
+        [ "<span class=\"tt\">.tpp</span>", "md_docs_2header-implementation-guidelines.html#autotoc_md60", null ],
+        [ "<span class=\"tt\">.ipp</span>", "md_docs_2header-implementation-guidelines.html#autotoc_md61", null ]
       ] ],
-      [ "Ownership Model", "md_docs_2header-implementation-guidelines.html#autotoc_md61", [
-        [ "Always-included implementation", "md_docs_2header-implementation-guidelines.html#autotoc_md62", null ],
-        [ "Ownership-controlled implementation", "md_docs_2header-implementation-guidelines.html#autotoc_md63", null ]
+      [ "Ownership Model", "md_docs_2header-implementation-guidelines.html#autotoc_md62", [
+        [ "Always-included implementation", "md_docs_2header-implementation-guidelines.html#autotoc_md63", null ],
+        [ "Ownership-controlled implementation", "md_docs_2header-implementation-guidelines.html#autotoc_md64", null ]
       ] ],
-      [ "Aggregate Entry Header vs Leaf Header", "md_docs_2header-implementation-guidelines.html#autotoc_md64", [
-        [ "Aggregate-first subsystem", "md_docs_2header-implementation-guidelines.html#autotoc_md65", null ],
-        [ "Standalone-leaf-first subsystem", "md_docs_2header-implementation-guidelines.html#autotoc_md66", null ]
+      [ "Aggregate Entry Header vs Leaf Header", "md_docs_2header-implementation-guidelines.html#autotoc_md65", [
+        [ "Aggregate-first subsystem", "md_docs_2header-implementation-guidelines.html#autotoc_md66", null ],
+        [ "Standalone-leaf-first subsystem", "md_docs_2header-implementation-guidelines.html#autotoc_md67", null ]
       ] ],
-      [ "Dependency Placement", "md_docs_2header-implementation-guidelines.html#autotoc_md67", [
-        [ "Shared STL and domain includes", "md_docs_2header-implementation-guidelines.html#autotoc_md68", null ],
-        [ "Implementation-only helpers", "md_docs_2header-implementation-guidelines.html#autotoc_md69", null ]
+      [ "Dependency Placement", "md_docs_2header-implementation-guidelines.html#autotoc_md68", [
+        [ "Shared STL and domain includes", "md_docs_2header-implementation-guidelines.html#autotoc_md69", null ],
+        [ "Implementation-only helpers", "md_docs_2header-implementation-guidelines.html#autotoc_md70", null ]
       ] ],
-      [ "Forward Declarations", "md_docs_2header-implementation-guidelines.html#autotoc_md70", null ],
-      [ "Private / Vendor Boundaries", "md_docs_2header-implementation-guidelines.html#autotoc_md71", null ],
-      [ "Test Contract Guidance", "md_docs_2header-implementation-guidelines.html#autotoc_md72", null ],
-      [ "Practical Checklist", "md_docs_2header-implementation-guidelines.html#autotoc_md73", null ]
+      [ "Forward Declarations", "md_docs_2header-implementation-guidelines.html#autotoc_md71", null ],
+      [ "Private / Vendor Boundaries", "md_docs_2header-implementation-guidelines.html#autotoc_md72", null ],
+      [ "Test Contract Guidance", "md_docs_2header-implementation-guidelines.html#autotoc_md73", null ],
+      [ "Practical Checklist", "md_docs_2header-implementation-guidelines.html#autotoc_md74", null ]
     ] ],
     [ "Рекомендации по интеграции библиотеки", "md_docs_2library-integration-guidelines-RU.html", [
-      [ "Канонический язык", "md_docs_2library-integration-guidelines-RU.html#autotoc_md75", null ],
-      [ "Поддерживаемые варианты интеграции", "md_docs_2library-integration-guidelines-RU.html#autotoc_md76", null ],
-      [ "Несколько статических библиотек", "md_docs_2library-integration-guidelines-RU.html#autotoc_md77", null ],
-      [ "Контракт NTP сервиса", "md_docs_2library-integration-guidelines-RU.html#autotoc_md78", null ],
-      [ "Линковка на Windows", "md_docs_2library-integration-guidelines-RU.html#autotoc_md79", null ],
-      [ "Согласованность конфигурации", "md_docs_2library-integration-guidelines-RU.html#autotoc_md80", null ],
-      [ "Практический checklist", "md_docs_2library-integration-guidelines-RU.html#autotoc_md81", null ]
+      [ "Канонический язык", "md_docs_2library-integration-guidelines-RU.html#autotoc_md76", null ],
+      [ "Поддерживаемые варианты интеграции", "md_docs_2library-integration-guidelines-RU.html#autotoc_md77", null ],
+      [ "Несколько статических библиотек", "md_docs_2library-integration-guidelines-RU.html#autotoc_md78", null ],
+      [ "Контракт NTP сервиса", "md_docs_2library-integration-guidelines-RU.html#autotoc_md79", null ],
+      [ "Линковка на Windows", "md_docs_2library-integration-guidelines-RU.html#autotoc_md80", null ],
+      [ "Согласованность конфигурации", "md_docs_2library-integration-guidelines-RU.html#autotoc_md81", null ],
+      [ "Практический checklist", "md_docs_2library-integration-guidelines-RU.html#autotoc_md82", null ]
     ] ],
     [ "Library Integration Guidelines", "md_docs_2library-integration-guidelines.html", [
-      [ "Canonical Language", "md_docs_2library-integration-guidelines.html#autotoc_md83", null ],
-      [ "Supported Integration Shapes", "md_docs_2library-integration-guidelines.html#autotoc_md84", null ],
-      [ "Multiple Static Libraries", "md_docs_2library-integration-guidelines.html#autotoc_md85", null ],
-      [ "NTP Service Contract", "md_docs_2library-integration-guidelines.html#autotoc_md86", null ],
-      [ "Windows Linking", "md_docs_2library-integration-guidelines.html#autotoc_md87", null ],
-      [ "Configuration Consistency", "md_docs_2library-integration-guidelines.html#autotoc_md88", null ],
-      [ "Practical Checklist", "md_docs_2library-integration-guidelines.html#autotoc_md89", null ]
+      [ "Canonical Language", "md_docs_2library-integration-guidelines.html#autotoc_md84", null ],
+      [ "Supported Integration Shapes", "md_docs_2library-integration-guidelines.html#autotoc_md85", null ],
+      [ "Multiple Static Libraries", "md_docs_2library-integration-guidelines.html#autotoc_md86", null ],
+      [ "NTP Service Contract", "md_docs_2library-integration-guidelines.html#autotoc_md87", null ],
+      [ "Windows Linking", "md_docs_2library-integration-guidelines.html#autotoc_md88", null ],
+      [ "Configuration Consistency", "md_docs_2library-integration-guidelines.html#autotoc_md89", null ],
+      [ "Practical Checklist", "md_docs_2library-integration-guidelines.html#autotoc_md90", null ]
     ] ],
     [ "Рекомендации по хранению singleton / service storage в header-only C++ коде", "md_docs_2singleton-storage-guidelines-RU.html", [
-      [ "Канонический язык", "md_docs_2singleton-storage-guidelines-RU.html#autotoc_md94", null ],
-      [ "Назначение", "md_docs_2singleton-storage-guidelines-RU.html#autotoc_md95", null ],
-      [ "Базовое правило", "md_docs_2singleton-storage-guidelines-RU.html#autotoc_md96", null ],
-      [ "C++17 и новее", "md_docs_2singleton-storage-guidelines-RU.html#autotoc_md97", null ],
-      [ "C++11/14", "md_docs_2singleton-storage-guidelines-RU.html#autotoc_md98", null ],
-      [ "Исключение для late-teardown-safe сервисов в C++11/14", "md_docs_2singleton-storage-guidelines-RU.html#autotoc_md99", null ],
-      [ "Границы ownership", "md_docs_2singleton-storage-guidelines-RU.html#autotoc_md100", null ],
-      [ "Именование макросов", "md_docs_2singleton-storage-guidelines-RU.html#autotoc_md101", null ],
-      [ "Сценарии ошибок", "md_docs_2singleton-storage-guidelines-RU.html#autotoc_md102", null ],
-      [ "Практический checklist", "md_docs_2singleton-storage-guidelines-RU.html#autotoc_md103", null ]
+      [ "Канонический язык", "md_docs_2singleton-storage-guidelines-RU.html#autotoc_md95", null ],
+      [ "Назначение", "md_docs_2singleton-storage-guidelines-RU.html#autotoc_md96", null ],
+      [ "Базовое правило", "md_docs_2singleton-storage-guidelines-RU.html#autotoc_md97", null ],
+      [ "C++17 и новее", "md_docs_2singleton-storage-guidelines-RU.html#autotoc_md98", null ],
+      [ "C++11/14", "md_docs_2singleton-storage-guidelines-RU.html#autotoc_md99", null ],
+      [ "Исключение для late-teardown-safe сервисов в C++11/14", "md_docs_2singleton-storage-guidelines-RU.html#autotoc_md100", null ],
+      [ "Границы ownership", "md_docs_2singleton-storage-guidelines-RU.html#autotoc_md101", null ],
+      [ "Именование макросов", "md_docs_2singleton-storage-guidelines-RU.html#autotoc_md102", null ],
+      [ "Сценарии ошибок", "md_docs_2singleton-storage-guidelines-RU.html#autotoc_md103", null ],
+      [ "Практический checklist", "md_docs_2singleton-storage-guidelines-RU.html#autotoc_md104", null ]
     ] ],
     [ "Header-only Singleton / Service Storage Guidelines", "md_docs_2singleton-storage-guidelines.html", [
-      [ "Canonical Language", "md_docs_2singleton-storage-guidelines.html#autotoc_md105", null ],
-      [ "Purpose", "md_docs_2singleton-storage-guidelines.html#autotoc_md106", null ],
-      [ "Core Rule", "md_docs_2singleton-storage-guidelines.html#autotoc_md107", null ],
-      [ "C++17 and newer", "md_docs_2singleton-storage-guidelines.html#autotoc_md108", null ],
-      [ "C++11/14", "md_docs_2singleton-storage-guidelines.html#autotoc_md109", null ],
-      [ "C++11/14 exception for late-teardown-safe services", "md_docs_2singleton-storage-guidelines.html#autotoc_md110", null ],
-      [ "Ownership Boundaries", "md_docs_2singleton-storage-guidelines.html#autotoc_md111", null ],
-      [ "Macro Naming", "md_docs_2singleton-storage-guidelines.html#autotoc_md112", null ],
-      [ "Failure Modes", "md_docs_2singleton-storage-guidelines.html#autotoc_md113", null ],
-      [ "Practical Checklist", "md_docs_2singleton-storage-guidelines.html#autotoc_md114", null ]
+      [ "Canonical Language", "md_docs_2singleton-storage-guidelines.html#autotoc_md106", null ],
+      [ "Purpose", "md_docs_2singleton-storage-guidelines.html#autotoc_md107", null ],
+      [ "Core Rule", "md_docs_2singleton-storage-guidelines.html#autotoc_md108", null ],
+      [ "C++17 and newer", "md_docs_2singleton-storage-guidelines.html#autotoc_md109", null ],
+      [ "C++11/14", "md_docs_2singleton-storage-guidelines.html#autotoc_md110", null ],
+      [ "C++11/14 exception for late-teardown-safe services", "md_docs_2singleton-storage-guidelines.html#autotoc_md111", null ],
+      [ "Ownership Boundaries", "md_docs_2singleton-storage-guidelines.html#autotoc_md112", null ],
+      [ "Macro Naming", "md_docs_2singleton-storage-guidelines.html#autotoc_md113", null ],
+      [ "Failure Modes", "md_docs_2singleton-storage-guidelines.html#autotoc_md114", null ],
+      [ "Practical Checklist", "md_docs_2singleton-storage-guidelines.html#autotoc_md115", null ]
     ] ],
     [ "Topics", "topics.html", "topics" ],
     [ "Namespaces", "namespaces.html", [
@@ -174,18 +174,18 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "CpuTickTimer_8hpp.html",
-"classtime__shield_1_1DateTime.html#afd3ae5c2b4a50d3997b139bd152c0886",
-"classtime__shield_1_1NtpTimeServiceT.html#aae4854c5b039941c1241b3d5ba279871",
-"classtime__shield_1_1detail_1_1FakeNtpRunner.html#a9241312ff92a213da9624f01f479e50b",
-"group__time__constants.html#ga1154f2d46e123e3a81ab11718f242c9f",
-"group__time__conversions.html#ga48b28eda9acfde440cdfe6b5d3559792",
-"group__time__conversions.html#gab97444cacf2e94e6c6d2207a463a8932",
-"group__time__enums.html#gga5fa51beb76e014adfffcd028fe1804acabbc64be78b01604edf18005eb126443f",
-"group__time__formatting.html#ga9af5b5811bb191ed1ba80fccbf444fc9",
-"group__time__utils.html#ga1d1c996fff6a55bf6a064991fec1f819",
-"namespacetime__shield.html#a40ef0f060775d17045700553841865e5",
-"structtime__shield_1_1astronomy_1_1MoonPhaseResult.html",
-"time__formatting__showcase__example_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4"
+"classtime__shield_1_1DateTime.html#adf831752250e96986a57d0bb069e436a",
+"classtime__shield_1_1NtpTimeServiceT.html#a2f17857107d756c815390af87c9ea8f8",
+"classtime__shield_1_1astronomy_1_1MoonPhase.html#a1a522c5b8d60030b12ffbaaf4d760873",
+"functions_o.html",
+"group__time__conversions.html#ga13db87732b24455dc8caf0902bc36577",
+"group__time__conversions.html#ga7b9b1b808aba917b3f6cd6d20360bd10",
+"group__time__conversions.html#gaf2cbc0da5ee10422816b21d7e2ed52a5",
+"group__time__enums.html#ggad8cb858fb6cedcf76c4f0630d56e042ba62b4f1dddfbf15eed8ca9771b9cbfe31",
+"group__time__parsing.html#gaebd6745cef0d115470cc9449c91833a0",
+"md_docs_2header-implementation-guidelines.html#autotoc_md65",
+"namespacetime__shield_1_1detail_1_1format__parse.html#a55a0240341f5b22efc3f5827388a0525",
+"structtime__shield_1_1detail_1_1ScheduledTimer.html#aabf07c40a033b676eb5cbc98f5e83b61"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

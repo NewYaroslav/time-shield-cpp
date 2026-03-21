@@ -129,6 +129,7 @@ Classes</h2></td></tr>
 <tr class="memitem:NtpTimeServiceTestAccess" id="r_NtpTimeServiceTestAccess"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structtime__shield_1_1detail_1_1NtpTimeServiceTestAccess.html">NtpTimeServiceTestAccess</a></td></tr>
 <tr class="memitem:FakeNtpRunner" id="r_FakeNtpRunner"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classtime__shield_1_1detail_1_1FakeNtpRunner.html">FakeNtpRunner</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fake runner for tests without network access.  <a href="classtime__shield_1_1detail_1_1FakeNtpRunner.html#details">More...</a><br /></td></tr>
+<tr class="memitem:ZoneNameEntry" id="r_ZoneNameEntry"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structtime__shield_1_1detail_1_1ZoneNameEntry.html">ZoneNameEntry</a></td></tr>
 <tr class="memitem:TimerState" id="r_TimerState"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structtime__shield_1_1detail_1_1TimerState.html">TimerState</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal state shared between <a class="el" href="classtime__shield_1_1Timer.html" title="Timer that mimics the behavior of Qt timers.">Timer</a> and <a class="el" href="classtime__shield_1_1TimerScheduler.html" title="Scheduler that manages timer execution.">TimerScheduler</a>.  <a href="structtime__shield_1_1detail_1_1TimerState.html#details">More...</a><br /></td></tr>
 <tr class="memitem:RunningTimerScope" id="r_RunningTimerScope"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structtime__shield_1_1detail_1_1RunningTimerScope.html">RunningTimerScope</a></td></tr>
@@ -223,6 +224,10 @@ Functions</h2></td></tr>
 <tr class="memdesc:aec5a95b3874a3cd243821dd1c2c1f295"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse month name token into month index (1..12).  <br /></td></tr>
 <tr class="memitem:a6dee1c0e77efc5a9b190b31ba07ff2ed" id="r_a6dee1c0e77efc5a9b190b31ba07ff2ed"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a6dee1c0e77efc5a9b190b31ba07ff2ed">parse_month_index</a> (std::string_view month)</td></tr>
 <tr class="memdesc:a6dee1c0e77efc5a9b190b31ba07ff2ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse month name token into month index (1..12), string_view overload.  <br /></td></tr>
+<tr class="memitem:a5439afc5a23a3690ebcdcfff457fce6e" id="r_a5439afc5a23a3690ebcdcfff457fce6e"><td class="memItemLeft">const std::array&lt; <a class="el" href="structtime__shield_1_1detail_1_1ZoneNameEntry.html">ZoneNameEntry</a>, 25 &gt; &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a5439afc5a23a3690ebcdcfff457fce6e">time_zone_name_entries</a> () noexcept</td></tr>
+<tr class="memdesc:a5439afc5a23a3690ebcdcfff457fce6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return supported strict named-zone entries.  <br /></td></tr>
+<tr class="memitem:a8aba63cddab853d749289543ff0a8be2" id="r_a8aba63cddab853d749289543ff0a8be2"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a8aba63cddab853d749289543ff0a8be2">try_parse_time_zone_name_token</a> (const char *data, std::size_t length, <a class="el" href="group__time__enums.html#gad8cb858fb6cedcf76c4f0630d56e042b">TimeZone</a> &amp;zone) noexcept</td></tr>
+<tr class="memdesc:a8aba63cddab853d749289543ff0a8be2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse strict named-zone token without trimming.  <br /></td></tr>
 <tr class="memitem:a4c4e74dd641a830641fdb33e3d225944" id="r_a4c4e74dd641a830641fdb33e3d225944"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR bool&#160;</td><td class="memItemRight"><a class="el" href="#a4c4e74dd641a830641fdb33e3d225944">is_ascii_space</a> (char c) noexcept</td></tr>
 <tr class="memdesc:a4c4e74dd641a830641fdb33e3d225944"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether character is ASCII whitespace.  <br /></td></tr>
 <tr class="memitem:a30bd76de8e4ab15d80d93032c4216245" id="r_a30bd76de8e4ab15d80d93032c4216245"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR bool&#160;</td><td class="memItemRight"><a class="el" href="#a30bd76de8e4ab15d80d93032c4216245">is_ascii_digit</a> (char c) noexcept</td></tr>
@@ -826,7 +831,7 @@ template&lt;class T&gt; </div>
 
 <p>Check whether character is ASCII digit. </p>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00220">220</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00278">278</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -855,7 +860,7 @@ template&lt;class T&gt; </div>
 
 <p>Check whether character is ASCII whitespace. </p>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00215">215</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00273">273</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -1081,7 +1086,7 @@ template&lt;class T&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00098">98</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00099">99</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -1121,7 +1126,7 @@ template&lt;class T&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00111">111</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00112">112</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -1368,7 +1373,7 @@ template&lt;class T&gt; </div>
 <p>Parse exactly 2 digits into int. </p>
 <dl class="section return"><dt>Returns</dt><dd>true on success. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00233">233</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00291">291</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -1407,7 +1412,7 @@ template&lt;class T&gt; </div>
 <p>Parse exactly 4 digits into <a class="el" href="group__time__types.html#gab9f26871d6521b013bea4c65e6697ad9" title="Year as an integer (e.g., 2024).">year_t</a> (via int). </p>
 <dl class="section return"><dt>Returns</dt><dd>true on success. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00249">249</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00307">307</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -1446,7 +1451,7 @@ template&lt;class T&gt; </div>
 <p>Parse fractional seconds (1..9 digits) and convert to milliseconds. </p>
 <p>Uses first 3 digits, scales if fewer. </p><dl class="section return"><dt>Returns</dt><dd>true on success. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00266">266</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00324">324</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -1488,7 +1493,7 @@ template&lt;class T&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00188">188</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00189">189</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -1530,7 +1535,7 @@ template&lt;class T&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00201">201</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00202">202</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -1616,7 +1621,7 @@ template&lt;class T&gt; </div>
 
 <p>Skip ASCII whitespace. </p>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00225">225</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00283">283</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -1649,6 +1654,35 @@ template&lt;class T&gt; </div>
 
 </div>
 </div>
+<a id="a5439afc5a23a3690ebcdcfff457fce6e" name="a5439afc5a23a3690ebcdcfff457fce6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5439afc5a23a3690ebcdcfff457fce6e">&#9670;&#160;</a></span>time_zone_name_entries()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::array&lt; <a class="el" href="structtime__shield_1_1detail_1_1ZoneNameEntry.html">ZoneNameEntry</a>, 25 &gt; &amp; time_shield::detail::time_zone_name_entries </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return supported strict named-zone entries. </p>
+
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00217">217</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+
+</div>
+</div>
 <a id="a8457db4d57439e08761c4233512af39f" name="a8457db4d57439e08761c4233512af39f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8457db4d57439e08761c4233512af39f">&#9670;&#160;</a></span>trim_copy_ascii()</h2>
 
@@ -1674,7 +1708,7 @@ template&lt;class T&gt; </div>
 
 <p>Trim ASCII whitespace from both ends. </p>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00076">76</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00077">77</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -1703,7 +1737,7 @@ template&lt;class T&gt; </div>
 
 <p>Trim ASCII whitespace from both ends (string_view). </p>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00086">86</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00087">87</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -1744,7 +1778,7 @@ template&lt;class T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if token matches a supported month name, false otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00126">126</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00127">127</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -1785,7 +1819,45 @@ template&lt;class T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if token matches a supported month name, false otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00157">157</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00158">158</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a8aba63cddab853d749289543ff0a8be2" name="a8aba63cddab853d749289543ff0a8be2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8aba63cddab853d749289543ff0a8be2">&#9670;&#160;</a></span>try_parse_time_zone_name_token()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool time_shield::detail::try_parse_time_zone_name_token </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t</td>          <td class="paramname"><span class="paramname"><em>length</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__time__enums.html#gad8cb858fb6cedcf76c4f0630d56e042b">TimeZone</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>zone</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Parse strict named-zone token without trimming. </p>
+
+<p class="definition">Definition at line <a class="el" href="time__parser_8hpp_source.html#l00249">249</a> of file <a class="el" href="time__parser_8hpp_source.html">time_parser.hpp</a>.</p>
 
 </div>
 </div>

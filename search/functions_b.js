@@ -14,5 +14,8 @@ var searchData=
   ['leap_5fyear_11',['leap_year',['../group__time__validation.html#gaff561037cb91433512da3922c2666022',1,'time_shield::leap_year(T year) noexcept'],['../group__time__validation.html#gacb2fb6bd5fb218e0bbde17d9870e8afb',1,'time_shield::leap_year(const long year)']]],
   ['leap_5fyear_5fts_12',['leap_year_ts',['../group__time__validation.html#ga8e0d80a09f42577e88f9bc294da403d1',1,'time_shield::leap_year_ts(ts_t ts)'],['../group__time__validation.html#ga046472fb8c315f13a3b30649a26241ce',1,'time_shield::leap_year_ts(const long ts)']]],
   ['linear_5fdays_5fto_5foadate_13',['linear_days_to_oadate',['../namespacetime__shield_1_1detail.html#a06833afc86ca2e2de48037047e1649e2',1,'time_shield::detail']]],
-  ['local_5fms_14',['local_ms',['../classtime__shield_1_1DateTime.html#ad3e832106dcd0a6c99546a03f3b85f57',1,'time_shield::DateTime::local_ms() const noexcept'],['../classtime__shield_1_1DateTime.html#a3c79f11931bfc392b91c7c8f37727f71',1,'time_shield::DateTime::local_ms() const']]]
+  ['local_5fms_14',['local_ms',['../classtime__shield_1_1DateTime.html#ad3e832106dcd0a6c99546a03f3b85f57',1,'time_shield::DateTime::local_ms() const noexcept'],['../classtime__shield_1_1DateTime.html#a3c79f11931bfc392b91c7c8f37727f71',1,'time_shield::DateTime::local_ms() const']]],
+  ['local_5ftime_5fms_15',['local_time_ms',['../classtime__shield_1_1ZonedClock.html#abc58f8f073b58aec53edd904588b8b81',1,'time_shield::ZonedClock']]],
+  ['local_5ftime_5fsec_16',['local_time_sec',['../classtime__shield_1_1ZonedClock.html#a2635282295df93ca26a71d93f65d669b',1,'time_shield::ZonedClock']]],
+  ['local_5ftime_5fus_17',['local_time_us',['../classtime__shield_1_1ZonedClock.html#a1a61193d39f52d8dfc532eedbfc2c2bc',1,'time_shield::ZonedClock']]]
 ];

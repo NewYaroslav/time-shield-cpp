@@ -39,5 +39,6 @@ var dir_07c7b06f5dd7d1513dc7d4081673a960 =
     [ "types.hpp", "types_8hpp.html", "types_8hpp" ],
     [ "unix_time_conversions.hpp", "unix__time__conversions_8hpp.html", "unix__time__conversions_8hpp" ],
     [ "validation.hpp", "validation_8hpp.html", "validation_8hpp" ],
-    [ "workday_conversions.hpp", "workday__conversions_8hpp.html", "workday__conversions_8hpp" ]
+    [ "workday_conversions.hpp", "workday__conversions_8hpp.html", "workday__conversions_8hpp" ],
+    [ "ZonedClock.hpp", "ZonedClock_8hpp.html", "ZonedClock_8hpp" ]
 ];

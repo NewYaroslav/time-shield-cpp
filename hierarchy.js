@@ -44,5 +44,7 @@ var hierarchy =
     [ "time_shield::TimeStruct", "structtime__shield_1_1TimeStruct.html", null ],
     [ "time_shield::TimeZoneStruct", "structtime__shield_1_1TimeZoneStruct.html", null ],
     [ "time_shield::detail::UdpRequest", "structtime__shield_1_1detail_1_1UdpRequest.html", null ],
-    [ "time_shield::WsaGuard", "classtime__shield_1_1WsaGuard.html", null ]
+    [ "time_shield::WsaGuard", "classtime__shield_1_1WsaGuard.html", null ],
+    [ "time_shield::ZonedClock", "classtime__shield_1_1ZonedClock.html", null ],
+    [ "time_shield::detail::ZoneNameEntry", "structtime__shield_1_1detail_1_1ZoneNameEntry.html", null ]
 ];

@@ -15,6 +15,7 @@ var namespacetime__shield_1_1detail =
     [ "NtpTimeServiceSingleton", "structtime__shield_1_1detail_1_1NtpTimeServiceSingleton.html", "structtime__shield_1_1detail_1_1NtpTimeServiceSingleton" ],
     [ "NtpTimeServiceTestAccess", "structtime__shield_1_1detail_1_1NtpTimeServiceTestAccess.html", "structtime__shield_1_1detail_1_1NtpTimeServiceTestAccess" ],
     [ "FakeNtpRunner", "classtime__shield_1_1detail_1_1FakeNtpRunner.html", "classtime__shield_1_1detail_1_1FakeNtpRunner" ],
+    [ "ZoneNameEntry", "structtime__shield_1_1detail_1_1ZoneNameEntry.html", "structtime__shield_1_1detail_1_1ZoneNameEntry" ],
     [ "TimerState", "structtime__shield_1_1detail_1_1TimerState.html", "structtime__shield_1_1detail_1_1TimerState" ],
     [ "RunningTimerScope", "structtime__shield_1_1detail_1_1RunningTimerScope.html", "structtime__shield_1_1detail_1_1RunningTimerScope" ],
     [ "ScheduledTimer", "structtime__shield_1_1detail_1_1ScheduledTimer.html", "structtime__shield_1_1detail_1_1ScheduledTimer" ],
@@ -73,9 +74,11 @@ var namespacetime__shield_1_1detail =
     [ "parse_server_packet", "namespacetime__shield_1_1detail.html#ae7f2f8b871c0f6d5d03b789823abaa26", null ],
     [ "skip_spaces", "namespacetime__shield_1_1detail.html#a8732a208af06d7af4e8b4e3a670800a1", null ],
     [ "split_unix_day", "namespacetime__shield_1_1detail.html#a6e01839da3cbd15ae7bc05bd4ac9858d", null ],
+    [ "time_zone_name_entries", "namespacetime__shield_1_1detail.html#a5439afc5a23a3690ebcdcfff457fce6e", null ],
     [ "trim_copy_ascii", "namespacetime__shield_1_1detail.html#a8457db4d57439e08761c4233512af39f", null ],
     [ "trim_view_ascii", "namespacetime__shield_1_1detail.html#a9ebc306d8cf35e7bd04192e453546848", null ],
     [ "try_parse_month_index", "namespacetime__shield_1_1detail.html#ac029cb3ca44207a7235acda196e3ad1b", null ],
     [ "try_parse_month_index", "namespacetime__shield_1_1detail.html#a9b4dd2b6af8616b2cd581c275b38334b", null ],
+    [ "try_parse_time_zone_name_token", "namespacetime__shield_1_1detail.html#a8aba63cddab853d749289543ff0a8be2", null ],
     [ "zone_to_gmt_ms_by_seconds", "namespacetime__shield_1_1detail.html#af56a0b4f4748bf703d41de48379cc61f", null ]
 ];

@@ -16,6 +16,7 @@ var annotated_dup =
         [ "NtpTimeServiceSingleton", "structtime__shield_1_1detail_1_1NtpTimeServiceSingleton.html", "structtime__shield_1_1detail_1_1NtpTimeServiceSingleton" ],
         [ "NtpTimeServiceTestAccess", "structtime__shield_1_1detail_1_1NtpTimeServiceTestAccess.html", "structtime__shield_1_1detail_1_1NtpTimeServiceTestAccess" ],
         [ "FakeNtpRunner", "classtime__shield_1_1detail_1_1FakeNtpRunner.html", "classtime__shield_1_1detail_1_1FakeNtpRunner" ],
+        [ "ZoneNameEntry", "structtime__shield_1_1detail_1_1ZoneNameEntry.html", "structtime__shield_1_1detail_1_1ZoneNameEntry" ],
         [ "TimerState", "structtime__shield_1_1detail_1_1TimerState.html", "structtime__shield_1_1detail_1_1TimerState" ],
         [ "RunningTimerScope", "structtime__shield_1_1detail_1_1RunningTimerScope.html", "structtime__shield_1_1detail_1_1RunningTimerScope" ],
         [ "ScheduledTimer", "structtime__shield_1_1detail_1_1ScheduledTimer.html", "structtime__shield_1_1detail_1_1ScheduledTimer" ],
@@ -49,6 +50,7 @@ var annotated_dup =
       [ "TimeStruct", "structtime__shield_1_1TimeStruct.html", "structtime__shield_1_1TimeStruct" ],
       [ "TimeZoneStruct", "structtime__shield_1_1TimeZoneStruct.html", "structtime__shield_1_1TimeZoneStruct" ],
       [ "TimerScheduler", "classtime__shield_1_1TimerScheduler.html", "classtime__shield_1_1TimerScheduler" ],
-      [ "Timer", "classtime__shield_1_1Timer.html", "classtime__shield_1_1Timer" ]
+      [ "Timer", "classtime__shield_1_1Timer.html", "classtime__shield_1_1Timer" ],
+      [ "ZonedClock", "classtime__shield_1_1ZonedClock.html", "classtime__shield_1_1ZonedClock" ]
     ] ]
 ];

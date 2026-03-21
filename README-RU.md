@@ -175,7 +175,9 @@ bool ok = try_parse_format_ts(
 ```
 
 `try_parse_format*` понимает ту же custom grammar, что и `to_string()` /
-`to_string_ms()`, остаётся non-throwing и не использует regex-парсинг.
+`to_string_ms()`, остаётся non-throwing и не использует regex-парсинг. `%z`
+в formatter выдаёт compact offsets вида `+0530`, а parser принимает и `+HHMM`,
+и ISO-вид `+HH:MM`.
 См. `examples/time_parser_example.cpp` для ISO8601 parsing, seconds/ms/floating
 timestamp parsing, formatter round-trip и простого failure case.
 

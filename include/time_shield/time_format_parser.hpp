@@ -293,14 +293,20 @@ namespace time_shield {
             }
         }
 
-        inline bool parse_tz_compact(const char*& p, const char* end, TimeZoneStruct& tz) noexcept {
+        /// \brief Parse `%z` timezone token in compact or extended ISO-style form.
+        /// \details Supported forms are `+HHMM`, `-HHMM`, `+HH:MM`, and `-HH:MM`.
+        inline bool parse_tz_offset_token(const char*& p, const char* end, TimeZoneStruct& tz) noexcept {
             if (end - p < 5 || (*p != '+' && *p != '-')) {
                 return false;
             }
+
             tz.is_positive = (*p == '+');
             ++p;
             if (!parse_exact_2digits(p, end, tz.hour)) {
                 return false;
+            }
+            if (p < end && *p == ':') {
+                ++p;
             }
             if (!parse_exact_2digits(p, end, tz.min)) {
                 return false;
@@ -654,7 +660,7 @@ namespace time_shield {
                     }
                     return false;
                 case 'z':
-                    if (repeat_count != 1 || !parse_tz_compact(p, end, state.tz)) {
+                    if (repeat_count != 1 || !parse_tz_offset_token(p, end, state.tz)) {
                         return false;
                     }
                     state.has_tz = true;

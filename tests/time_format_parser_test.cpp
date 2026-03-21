@@ -50,6 +50,16 @@ int main() {
     }
 
     {
+        ts_t ts_value = 0;
+        assert(try_parse_format_ts(
+            std::string("2024-03-20T07:04:05-05:30"),
+            std::string("%Y-%m-%dT%H:%M:%S%z"),
+            ts_value));
+        assert(ts_value == to_timestamp(2024, 3, 20, 12, 34, 5));
+        (void)ts_value;
+    }
+
+    {
         const ts_ms_t utc_ms = ts_ms(2024, 3, 20, 12, 34, 56, 789);
         const std::string text = to_string_ms("%a %b %e %H:%M:%S %Y", utc_ms, 0);
         DateTimeStruct dt{};
@@ -79,7 +89,12 @@ int main() {
         TimeZoneStruct tz{};
         assert(!try_parse_format(std::string("2024-07-08X12:34:56"), std::string("%Y-%m-%d %H:%M:%S"), dt, tz));
         assert(!try_parse_format(std::string("2024-02-30 12:34:56"), std::string("%Y-%m-%d %H:%M:%S"), dt, tz));
+        assert(!try_parse_format(std::string("2024-07-08 12:34:56 +01"), std::string("%Y-%m-%d %H:%M:%S %z"), dt, tz));
+        assert(!try_parse_format(std::string("2024-07-08 12:34:56 +010"), std::string("%Y-%m-%d %H:%M:%S %z"), dt, tz));
+        assert(!try_parse_format(std::string("2024-07-08 12:34:56 +01:0"), std::string("%Y-%m-%d %H:%M:%S %z"), dt, tz));
+        assert(!try_parse_format(std::string("2024-07-08 12:34:56 +01:000"), std::string("%Y-%m-%d %H:%M:%S %z"), dt, tz));
         assert(!try_parse_format(std::string("2024-07-08 12:34:56 +2500"), std::string("%Y-%m-%d %H:%M:%S %z"), dt, tz));
+        assert(!try_parse_format(std::string("2024-07-08 12:34:56 +25:00"), std::string("%Y-%m-%d %H:%M:%S %z"), dt, tz));
         (void)dt;
         (void)tz;
     }

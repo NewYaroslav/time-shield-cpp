@@ -205,6 +205,10 @@ Functions</h2></td></tr>
 <tr class="memdesc:af660cd4c3b59a86868102cc8323d26fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill an NTP client request packet using local time.  <br /></td></tr>
 <tr class="memitem:ae7f2f8b871c0f6d5d03b789823abaa26" id="r_ae7f2f8b871c0f6d5d03b789823abaa26"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#ae7f2f8b871c0f6d5d03b789823abaa26">parse_server_packet</a> (const <a class="el" href="structtime__shield_1_1detail_1_1NtpPacket.html">NtpPacket</a> &amp;pkt, uint64_t arrival_us, int64_t &amp;offset_us, int64_t &amp;delay_us, int &amp;stratum, int &amp;out_error_code) noexcept</td></tr>
 <tr class="memdesc:ae7f2f8b871c0f6d5d03b789823abaa26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse server response and compute offset and delay.  <br /></td></tr>
+<tr class="memitem:abef8403634e68b0e903a2ba349f0ca1c" id="r_abef8403634e68b0e903a2ba349f0ca1c"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR bool&#160;</td><td class="memItemRight"><a class="el" href="#abef8403634e68b0e903a2ba349f0ca1c">oadate_can_cast_to_i64</a> (<a class="el" href="group__time__types.html#gaab97b453fa3ad4ad8a752b00019968d6">oadate_t</a> value) noexcept</td></tr>
+<tr class="memitem:a8080fefecb78ab0ec799d1593ef379a7" id="r_a8080fefecb78ab0ec799d1593ef379a7"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#gaab97b453fa3ad4ad8a752b00019968d6">oadate_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#a8080fefecb78ab0ec799d1593ef379a7">oadate_abs</a> (<a class="el" href="group__time__types.html#gaab97b453fa3ad4ad8a752b00019968d6">oadate_t</a> value) noexcept</td></tr>
+<tr class="memitem:a2845b8236e7ad1d8b20c2297e9daee0f" id="r_a2845b8236e7ad1d8b20c2297e9daee0f"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#gaab97b453fa3ad4ad8a752b00019968d6">oadate_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#a2845b8236e7ad1d8b20c2297e9daee0f">oadate_trunc_toward_zero</a> (<a class="el" href="group__time__types.html#gaab97b453fa3ad4ad8a752b00019968d6">oadate_t</a> value) noexcept</td></tr>
+<tr class="memitem:a3c420de9c7374fdc711e6f45453a962c" id="r_a3c420de9c7374fdc711e6f45453a962c"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#gaab97b453fa3ad4ad8a752b00019968d6">oadate_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#a3c420de9c7374fdc711e6f45453a962c">oadate_floor_value</a> (<a class="el" href="group__time__types.html#gaab97b453fa3ad4ad8a752b00019968d6">oadate_t</a> value) noexcept</td></tr>
 <tr class="memitem:ac6176d754dae9b2d9fb3db000ae610bd" id="r_ac6176d754dae9b2d9fb3db000ae610bd"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR bool&#160;</td><td class="memItemRight"><a class="el" href="#ac6176d754dae9b2d9fb3db000ae610bd">oadate_has_fraction</a> (<a class="el" href="group__time__types.html#gaab97b453fa3ad4ad8a752b00019968d6">oadate_t</a> value) noexcept</td></tr>
 <tr class="memitem:a06833afc86ca2e2de48037047e1649e2" id="r_a06833afc86ca2e2de48037047e1649e2"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#gaab97b453fa3ad4ad8a752b00019968d6">oadate_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#a06833afc86ca2e2de48037047e1649e2">linear_days_to_oadate</a> (<a class="el" href="group__time__types.html#gaab97b453fa3ad4ad8a752b00019968d6">oadate_t</a> linear_days) noexcept</td></tr>
 <tr class="memitem:a034e998bbe602832241d2fc8b0c67cd3" id="r_a034e998bbe602832241d2fc8b0c67cd3"><td class="memItemLeft">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#gaab97b453fa3ad4ad8a752b00019968d6">oadate_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#a034e998bbe602832241d2fc8b0c67cd3">oadate_to_linear_days</a> (<a class="el" href="group__time__types.html#gaab97b453fa3ad4ad8a752b00019968d6">oadate_t</a> oa) noexcept</td></tr>
@@ -914,7 +918,7 @@ template&lt;class T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ole__automation__conversions_8hpp_source.html#l00036">36</a> of file <a class="el" href="ole__automation__conversions_8hpp_source.html">ole_automation_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ole__automation__conversions_8hpp_source.html#l00067">67</a> of file <a class="el" href="ole__automation__conversions_8hpp_source.html">ole_automation_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -1284,6 +1288,87 @@ template&lt;class T&gt; </div>
 
 </div>
 </div>
+<a id="a8080fefecb78ab0ec799d1593ef379a7" name="a8080fefecb78ab0ec799d1593ef379a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8080fefecb78ab0ec799d1593ef379a7">&#9670;&#160;</a></span>oadate_abs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#gaab97b453fa3ad4ad8a752b00019968d6">oadate_t</a> time_shield::detail::oadate_abs </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#gaab97b453fa3ad4ad8a752b00019968d6">oadate_t</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ole__automation__conversions_8hpp_source.html#l00038">38</a> of file <a class="el" href="ole__automation__conversions_8hpp_source.html">ole_automation_conversions.hpp</a>.</p>
+
+</div>
+</div>
+<a id="abef8403634e68b0e903a2ba349f0ca1c" name="abef8403634e68b0e903a2ba349f0ca1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abef8403634e68b0e903a2ba349f0ca1c">&#9670;&#160;</a></span>oadate_can_cast_to_i64()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TIME_SHIELD_CONSTEXPR bool time_shield::detail::oadate_can_cast_to_i64 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#gaab97b453fa3ad4ad8a752b00019968d6">oadate_t</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ole__automation__conversions_8hpp_source.html#l00033">33</a> of file <a class="el" href="ole__automation__conversions_8hpp_source.html">ole_automation_conversions.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a3c420de9c7374fdc711e6f45453a962c" name="a3c420de9c7374fdc711e6f45453a962c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c420de9c7374fdc711e6f45453a962c">&#9670;&#160;</a></span>oadate_floor_value()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#gaab97b453fa3ad4ad8a752b00019968d6">oadate_t</a> time_shield::detail::oadate_floor_value </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#gaab97b453fa3ad4ad8a752b00019968d6">oadate_t</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ole__automation__conversions_8hpp_source.html#l00049">49</a> of file <a class="el" href="ole__automation__conversions_8hpp_source.html">ole_automation_conversions.hpp</a>.</p>
+
+</div>
+</div>
 <a id="ac6176d754dae9b2d9fb3db000ae610bd" name="ac6176d754dae9b2d9fb3db000ae610bd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac6176d754dae9b2d9fb3db000ae610bd">&#9670;&#160;</a></span>oadate_has_fraction()</h2>
 
@@ -1307,7 +1392,7 @@ template&lt;class T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ole__automation__conversions_8hpp_source.html#l00032">32</a> of file <a class="el" href="ole__automation__conversions_8hpp_source.html">ole_automation_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ole__automation__conversions_8hpp_source.html#l00060">60</a> of file <a class="el" href="ole__automation__conversions_8hpp_source.html">ole_automation_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -1334,7 +1419,34 @@ template&lt;class T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ole__automation__conversions_8hpp_source.html#l00045">45</a> of file <a class="el" href="ole__automation__conversions_8hpp_source.html">ole_automation_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ole__automation__conversions_8hpp_source.html#l00076">76</a> of file <a class="el" href="ole__automation__conversions_8hpp_source.html">ole_automation_conversions.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a2845b8236e7ad1d8b20c2297e9daee0f" name="a2845b8236e7ad1d8b20c2297e9daee0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2845b8236e7ad1d8b20c2297e9daee0f">&#9670;&#160;</a></span>oadate_trunc_toward_zero()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TIME_SHIELD_CONSTEXPR <a class="el" href="group__time__types.html#gaab97b453fa3ad4ad8a752b00019968d6">oadate_t</a> time_shield::detail::oadate_trunc_toward_zero </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#gaab97b453fa3ad4ad8a752b00019968d6">oadate_t</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ole__automation__conversions_8hpp_source.html#l00042">42</a> of file <a class="el" href="ole__automation__conversions_8hpp_source.html">ole_automation_conversions.hpp</a>.</p>
 
 </div>
 </div>

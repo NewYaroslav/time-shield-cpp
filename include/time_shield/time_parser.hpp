@@ -764,6 +764,9 @@ namespace time_shield {
     /// - Separator between date and time: 'T' or ASCII whitespace.
     ///
     /// Date separators supported: '-', '/', '.' (as in original regex).
+    /// ISO week-date forms are also accepted through parse_iso_week_date(),
+    /// including canonical and compatible mixed separator variants with optional
+    /// weekday and uppercase or lowercase `W`.
     ///
     /// \param input Pointer to buffer (may be not null-terminated).
     /// \param length Buffer length.

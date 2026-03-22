@@ -31,6 +31,28 @@ int main() {
     }
 
     {
+        DateTimeStruct dt{};
+        TimeZoneStruct tz{};
+        assert(try_parse_format(std::string("2025-51-2"), std::string("%G-%V-%u"), dt, tz));
+        assert(dt.year == 2025);
+        assert(dt.mon == 12);
+        assert(dt.day == 16);
+        assert(time_zone_struct_to_offset(tz) == 0);
+    }
+
+    {
+        DateTimeStruct dt{};
+        TimeZoneStruct tz{};
+        assert(try_parse_format(std::string("2025-W51"), std::string("%G-W%V"), dt, tz));
+        assert(dt.year == 2025);
+        assert(dt.mon == 12);
+        assert(dt.day == 15);
+        assert(dt.hour == 0);
+        assert(dt.min == 0);
+        assert(dt.sec == 0);
+    }
+
+    {
         ts_t ts_value = 0;
         assert(try_parse_format_ts(
             std::string("2024-01-02T04:04:05+0100"),
@@ -95,6 +117,11 @@ int main() {
         assert(!try_parse_format(std::string("2024-07-08 12:34:56 +01:000"), std::string("%Y-%m-%d %H:%M:%S %z"), dt, tz));
         assert(!try_parse_format(std::string("2024-07-08 12:34:56 +2500"), std::string("%Y-%m-%d %H:%M:%S %z"), dt, tz));
         assert(!try_parse_format(std::string("2024-07-08 12:34:56 +25:00"), std::string("%Y-%m-%d %H:%M:%S %z"), dt, tz));
+        assert(!try_parse_format(std::string("2025-12-16 2025-51-2"), std::string("%Y-%m-%d %G-%V-%u"), dt, tz));
+        assert(!try_parse_format(std::string("2025-00-1"), std::string("%G-%V-%u"), dt, tz));
+        assert(!try_parse_format(std::string("2025-54-1"), std::string("%G-%V-%u"), dt, tz));
+        assert(!try_parse_format(std::string("2025-51-0"), std::string("%G-%V-%u"), dt, tz));
+        assert(!try_parse_format(std::string("2025-51-8"), std::string("%G-%V-%u"), dt, tz));
         (void)dt;
         (void)tz;
     }

@@ -35,6 +35,9 @@ namespace time_shield {
             bool has_year;
             bool has_century;
             bool has_two_digit_year;
+            bool has_iso_week_year;
+            bool has_iso_week_two_digit_year;
+            bool has_iso_week;
             bool has_month;
             bool has_day;
             bool has_day_of_year;
@@ -49,8 +52,11 @@ namespace time_shield {
             bool has_iso_weekday;
             bool has_unix_seconds;
             year_t year;
+            year_t iso_week_year;
             int century;
             int two_digit_year;
+            int iso_week_two_digit_year;
+            int iso_week;
             int month;
             int day;
             int day_of_year;
@@ -71,6 +77,9 @@ namespace time_shield {
             state.has_year = false;
             state.has_century = false;
             state.has_two_digit_year = false;
+            state.has_iso_week_year = false;
+            state.has_iso_week_two_digit_year = false;
+            state.has_iso_week = false;
             state.has_month = false;
             state.has_day = false;
             state.has_day_of_year = false;
@@ -85,8 +94,11 @@ namespace time_shield {
             state.has_iso_weekday = false;
             state.has_unix_seconds = false;
             state.year = 0;
+            state.iso_week_year = 0;
             state.century = 0;
             state.two_digit_year = 0;
+            state.iso_week_two_digit_year = 0;
+            state.iso_week = 0;
             state.month = 0;
             state.day = 0;
             state.day_of_year = 0;
@@ -332,6 +344,26 @@ namespace time_shield {
             return true;
         }
 
+        inline bool has_iso_week_date_fields(const FormatParseState& state) noexcept {
+            return state.has_iso_week_year
+                || state.has_iso_week_two_digit_year
+                || state.has_iso_week;
+        }
+
+        inline bool has_gregorian_date_fields(const FormatParseState& state) noexcept {
+            return state.has_year
+                || state.has_century
+                || state.has_two_digit_year
+                || state.has_month
+                || state.has_day
+                || state.has_day_of_year;
+        }
+
+        inline int last_two_digits_of_year(year_t year) noexcept {
+            const int value = static_cast<int>(year % 100);
+            return value < 0 ? -value : value;
+        }
+
         inline bool resolve_day_of_year(year_t year, int day_of_year, int& month, int& day) noexcept {
             if (day_of_year < 1) {
                 return false;
@@ -482,6 +514,16 @@ namespace time_shield {
                 case 'F':
                     return repeat_count == 1
                         && parse_format_sequence(p, end, "%Y-%m-%d", 8, state);
+                case 'g':
+                    if (repeat_count != 1 || !parse_unsigned_digits(p, end, 2, 2, wide_value)) {
+                        return false;
+                    }
+                    return assign_int_field(state.has_iso_week_two_digit_year, state.iso_week_two_digit_year, static_cast<int>(wide_value));
+                case 'G':
+                    if (repeat_count != 1 || !parse_signed_digits(p, end, 1, 18, wide_value)) {
+                        return false;
+                    }
+                    return assign_year_field(state.has_iso_week_year, state.iso_week_year, static_cast<year_t>(wide_value));
                 case 'H':
                     if (repeat_count > 2 || !parse_exact_2digits(p, end, value)) {
                         return false;
@@ -627,6 +669,11 @@ namespace time_shield {
                             && assign_int_field(state.has_weekday, state.weekday, value);
                     }
                     return false;
+                case 'V':
+                    if (repeat_count != 1 || !parse_exact_2digits(p, end, value)) {
+                        return false;
+                    }
+                    return assign_int_field(state.has_iso_week, state.iso_week, value);
                 case 'y':
                     if (repeat_count != 1 || !parse_unsigned_digits(p, end, 1, 2, wide_value)) {
                         return false;
@@ -734,14 +781,108 @@ namespace time_shield {
             if (state.has_weekday && day_of_week_date<Weekday>(dt.year, dt.mon, dt.day) != state.weekday) {
                 return false;
             }
-            if (state.has_iso_weekday && iso_weekday_of_date(dt.year, dt.mon, dt.day) != state.iso_weekday) {
-                return false;
+            if (has_iso_week_date_fields(state) || state.has_iso_weekday) {
+                const IsoWeekDateStruct iso_week = to_iso_week_date(dt.year, dt.mon, dt.day);
+                if (state.has_iso_week_year && iso_week.year != state.iso_week_year) {
+                    return false;
+                }
+                if (state.has_iso_week_two_digit_year && last_two_digits_of_year(iso_week.year) != state.iso_week_two_digit_year) {
+                    return false;
+                }
+                if (state.has_iso_week && iso_week.week != state.iso_week) {
+                    return false;
+                }
+                if (state.has_iso_weekday && iso_week.weekday != state.iso_weekday) {
+                    return false;
+                }
             }
+            return true;
+        }
+
+        inline bool resolve_time_fields(const FormatParseState& state, int& hour, int& minute, int& second, int& millisecond) noexcept {
+            hour = 0;
+            if (state.has_hour24) {
+                hour = state.hour24;
+                if (state.has_meridiem && state.has_hour12) {
+                    int expected = state.hour12 % 12;
+                    if (state.is_pm) {
+                        expected += 12;
+                    }
+                    if (expected != hour) {
+                        return false;
+                    }
+                }
+            } else if (state.has_hour12) {
+                if (!state.has_meridiem || state.hour12 < 1 || state.hour12 > 12) {
+                    return false;
+                }
+                hour = state.hour12 % 12;
+                if (state.is_pm) {
+                    hour += 12;
+                }
+            }
+
+            minute = state.has_minute ? state.minute : 0;
+            second = state.has_second ? state.second : 0;
+            millisecond = state.has_millisecond ? state.millisecond : 0;
             return true;
         }
 
         inline bool finalize_calendar_state(FormatParseState& state, DateTimeStruct& out_dt, TimeZoneStruct& out_tz) noexcept {
             out_tz = state.has_tz ? state.tz : create_time_zone_struct(0, 0, true);
+
+            if (has_iso_week_date_fields(state)) {
+                if (has_gregorian_date_fields(state)) {
+                    return false;
+                }
+
+                year_t iso_week_year = 0;
+                if (state.has_iso_week_year) {
+                    iso_week_year = state.iso_week_year;
+                    if (state.has_iso_week_two_digit_year
+                            && last_two_digits_of_year(iso_week_year) != state.iso_week_two_digit_year) {
+                        return false;
+                    }
+                } else if (state.has_iso_week_two_digit_year) {
+                    iso_week_year = static_cast<year_t>(state.iso_week_two_digit_year);
+                } else {
+                    return false;
+                }
+
+                if (!state.has_iso_week) {
+                    return false;
+                }
+
+                const IsoWeekDateStruct iso_week_date = create_iso_week_date_struct(
+                    iso_week_year,
+                    state.iso_week,
+                    state.has_iso_weekday ? state.iso_weekday : 1);
+                if (!is_valid_iso_week_date(iso_week_date.year, iso_week_date.week, iso_week_date.weekday)) {
+                    return false;
+                }
+
+                const DateStruct calendar_date = iso_week_date_to_date(iso_week_date);
+                int hour = 0;
+                int minute = 0;
+                int second = 0;
+                int millisecond = 0;
+                if (!resolve_time_fields(state, hour, minute, second, millisecond)) {
+                    return false;
+                }
+
+                out_dt = create_date_time_struct(
+                    calendar_date.year,
+                    calendar_date.mon,
+                    calendar_date.day,
+                    hour,
+                    minute,
+                    second,
+                    millisecond);
+                if (!is_valid_date_time(out_dt)) {
+                    return false;
+                }
+                return validate_weekday_constraints(state, out_dt);
+            }
 
             year_t year = 0;
             if (state.has_year) {
@@ -782,25 +923,11 @@ namespace time_shield {
             }
 
             int hour = 0;
-            if (state.has_hour24) {
-                hour = state.hour24;
-                if (state.has_meridiem && state.has_hour12) {
-                    int expected = state.hour12 % 12;
-                    if (state.is_pm) {
-                        expected += 12;
-                    }
-                    if (expected != hour) {
-                        return false;
-                    }
-                }
-            } else if (state.has_hour12) {
-                if (!state.has_meridiem || state.hour12 < 1 || state.hour12 > 12) {
-                    return false;
-                }
-                hour = state.hour12 % 12;
-                if (state.is_pm) {
-                    hour += 12;
-                }
+            int minute = 0;
+            int second = 0;
+            int millisecond = 0;
+            if (!resolve_time_fields(state, hour, minute, second, millisecond)) {
+                return false;
             }
 
             out_dt = create_date_time_struct(
@@ -808,9 +935,9 @@ namespace time_shield {
                 month,
                 day,
                 hour,
-                state.has_minute ? state.minute : 0,
-                state.has_second ? state.second : 0,
-                state.has_millisecond ? state.millisecond : 0);
+                minute,
+                second,
+                millisecond);
             if (!is_valid_date_time(out_dt)) {
                 return false;
             }
@@ -821,6 +948,10 @@ namespace time_shield {
                 FormatParseState& state,
                 DateTimeStruct& out_dt,
                 TimeZoneStruct& out_tz) noexcept {
+            if (has_iso_week_date_fields(state) && has_gregorian_date_fields(state)) {
+                return false;
+            }
+
             if (state.has_unix_seconds) {
                 out_tz = state.has_tz ? state.tz : create_time_zone_struct(0, 0, true);
                 const tz_t offset = time_zone_struct_to_offset(out_tz);
@@ -872,6 +1003,9 @@ namespace time_shield {
 
     /// \ingroup time_parsing
     /// \brief Parse input using formatter-compatible custom pattern.
+    /// \details ISO week-based tokens `%G`, `%g`, `%V`, and `%u` follow the
+    /// same grammar as formatter output. Formats using ISO week-based year/week
+    /// tokens do not mix with Gregorian `%Y` / `%m` / `%d` date tokens.
     inline bool try_parse_format(
             const char* data,
             std::size_t length,

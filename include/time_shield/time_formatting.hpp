@@ -12,6 +12,7 @@
 
 #include "config.hpp"
 #include "date_time_struct.hpp"
+#include "iso_week_conversions.hpp"
 #include "time_zone_struct.hpp"
 #include "time_conversions.hpp"
 
@@ -140,11 +141,23 @@ namespace time_shield {
                 }
                 result += std::string(buffer);
             }
+            break;
         case 'g':
             // ISO 8601 week-based year without century (2-digit year).
+            if (repeat_count == 1) {
+                const IsoWeekDateStruct iso_week = to_iso_week_date(dt.year, dt.mon, dt.day);
+                const int two_digit_year = static_cast<int>(iso_week.year % 100);
+                char buffer[4] = {0};
+                snprintf(buffer, sizeof(buffer), "%.2d", two_digit_year < 0 ? -two_digit_year : two_digit_year);
+                result += std::string(buffer);
+            }
             break;
         case 'G':
             // ISO 8601 week-based year with century as a decimal number.
+            if (repeat_count == 1) {
+                const IsoWeekDateStruct iso_week = to_iso_week_date(dt.year, dt.mon, dt.day);
+                result += std::to_string(iso_week.year);
+            }
             break;
         case 'j':
             if (repeat_count == 1) {
@@ -273,6 +286,12 @@ namespace time_shield {
             break;
         case 'V':
             // ISO 8601 week number of the current year (01 to 53, with specific rules).
+            if (repeat_count == 1) {
+                const IsoWeekDateStruct iso_week = to_iso_week_date(dt.year, dt.mon, dt.day);
+                char buffer[4] = {0};
+                snprintf(buffer, sizeof(buffer), "%.2d", iso_week.week);
+                result += std::string(buffer);
+            }
             break;
         case 'w':
             // Day of the week as a decimal number (0 to 6, Sunday being 0).
@@ -384,12 +403,16 @@ namespace time_shield {
     /// - %MM: Month (01-12).
     /// - %MMM: Abbreviated month name.
     /// - %DD: Day of the month (01-31).
+    /// - %G: ISO week-based year.
+    /// - %g: ISO week-based year without century (00-99).
     /// - %hh: Hour of the day in 24-hour format (00-23).
     /// - %mm: Minute of the hour (00-59).
     /// - %ss: Second (00-59).
     /// - %sss: Millisecond (000-999).
+    /// - %V: ISO week number (01-53).
     /// - %WWW: Abbreviated day of the week name in uppercase (SUN, MON, TUE, etc.).
     /// - %www: Abbreviated day of the week name (Sun, Mon, Tue, etc.).
+    /// - %u: ISO weekday number (1-7, Monday is 1).
     ///
     /// For more information, see the strftime specifiers documentation:
     /// \sa https://manpages.debian.org/bullseye/manpages-dev/strftime.3.en.html

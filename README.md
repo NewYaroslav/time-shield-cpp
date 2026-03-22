@@ -278,6 +278,28 @@ and ISO-style `+HH:MM` during parsing.
 See `examples/time_parser_example.cpp` for ISO8601 parsing, seconds/ms/floating
 timestamp parsing, formatter round-trips, and a simple failure case.
 
+### ISO week dates
+
+```cpp
+#include <time_shield.hpp>
+
+using namespace time_shield;
+
+IsoWeekDateStruct iso{};
+bool ok_iso = parse_iso_week_date("2025-W512", iso);      // permissive mixed form
+bool ok_dt = DateTime::try_parse_iso_week_date("2025w51", iso); // lowercase 'w', Monday default
+
+DateTime monday = DateTime::from_iso_week_date(iso, 9, 30);
+std::string custom_iso = to_string_ms("%G-%V-%u", monday.unix_ms(), monday.utc_offset());
+```
+
+ISO week-date parsing accepts canonical forms (`YYYY-Www-D`, `YYYYWwwD`) and
+compatible mixed separator variants (`YYYY-WwwD`, `YYYYWww-D`). The parser also
+accepts uppercase or lowercase `W`, and missing ISO weekday defaults to Monday.
+Custom formatting and parsing support `%G` / `%g` / `%V` / `%u` as ISO
+week-based tokens. Custom parse formats reject mixes of ISO week-based year/week
+tokens with Gregorian `%Y` / `%m` / `%d` date tokens.
+
 ### DateTime value type
 
 `DateTime` stores UTC milliseconds plus an optional fixed offset for local

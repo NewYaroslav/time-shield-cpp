@@ -4,6 +4,7 @@
 
 #include <cassert>
 #include <array>
+#include <stdexcept>
 #include <string>
 
 /// \brief Checks for ISO week-date conversions, formatting, and parsing.
@@ -64,6 +65,15 @@ int main() {
     assert(parse_iso_week_date("2025W512", parsed));
     assert(format_iso_week_date(parsed) == "2025-W51-2");
 
+    assert(parse_iso_week_date("2025-W512", parsed));
+    assert(parsed.year == 2025 && parsed.week == 51 && parsed.weekday == 2);
+
+    assert(parse_iso_week_date("2025W51-2", parsed));
+    assert(parsed.year == 2025 && parsed.week == 51 && parsed.weekday == 2);
+
+    assert(parse_iso_week_date("2025-w51-2", parsed));
+    assert(parsed.year == 2025 && parsed.week == 51 && parsed.weekday == 2);
+
     assert(parse_iso_week_date("2025-W51", parsed));
     assert(parsed.weekday == 1);
     assert(format_iso_week_date(parsed, true, false) == "2025-W51");
@@ -76,6 +86,7 @@ int main() {
     assert(!parse_iso_week_date("2025-W54-1", parsed));
     assert(!parse_iso_week_date("2025-W51-0", parsed));
     assert(!parse_iso_week_date("2025-W51-8", parsed));
+    assert(!parse_iso_week_date("2025-W51-X", parsed));
 
     const IsoWeekDateStruct round_trip_iso = create_iso_week_date_struct(2020, 53, 4);
     const auto round_trip_date = iso_week_date_to_date(round_trip_iso);
@@ -83,6 +94,29 @@ int main() {
     assert(iso_again.year == round_trip_iso.year);
     assert(iso_again.week == round_trip_iso.week);
     assert(iso_again.weekday == round_trip_iso.weekday);
+
+    {
+        const IsoWeekDateStruct no_weekday = create_iso_week_date_struct(2025, 51, 0);
+        assert(format_iso_week_date(no_weekday, true, false) == "2025-W51");
+
+        bool threw = false;
+        try {
+            (void)format_iso_week_date(no_weekday);
+        } catch (const std::invalid_argument&) {
+            threw = true;
+        }
+        assert(threw);
+    }
+
+    {
+        bool threw = false;
+        try {
+            (void)iso_week_date_to_date(create_iso_week_date_struct(2025, 54, 1));
+        } catch (const std::invalid_argument&) {
+            threw = true;
+        }
+        assert(threw);
+    }
 
     DateTimeStruct parsed_dt{};
     TimeZoneStruct parsed_tz{};

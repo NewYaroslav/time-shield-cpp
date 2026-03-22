@@ -116,6 +116,28 @@ converted to the corresponding UTC instant. For formatter-compatible custom
 patterns, use `try_parse_format()`, `try_parse_format_ts()`, or
 `try_parse_format_ts_ms()`.
 
+ISO week-date helpers convert between calendar dates and `IsoWeekDateStruct`,
+format ISO week dates, and parse canonical forms (`YYYY-Www-D`, `YYYYWwwD`)
+plus compatible mixed separator variants (`YYYY-WwwD`, `YYYYWww-D`). Parsing
+accepts uppercase or lowercase `W`, and omitted ISO weekday defaults to Monday.
+Formatter-compatible custom patterns also support `%G`, `%g`, `%V`, and `%u`
+for ISO week-based year, two-digit week-based year, week number, and ISO
+weekday. Custom parse formats reject mixes of ISO week-based year/week tokens
+with Gregorian `%Y`, `%m`, and `%d` date tokens.
+
+\code{.cpp}
+#include <time_shield.hpp>
+
+using namespace time_shield;
+
+IsoWeekDateStruct iso{};
+bool ok_iso = parse_iso_week_date("2025-W512", iso);
+bool ok_dt = DateTime::try_parse_iso_week_date("2025w51", iso);
+
+DateTime monday = DateTime::from_iso_week_date(iso, 9, 30);
+std::string text = to_string_ms("%G-%V-%u", monday.unix_ms(), monday.utc_offset());
+\endcode
+
 \section ntp_sec NTP client, pool, and time service
 
 Time Shield provides an optional NTP stack (`TIME_SHIELD_ENABLE_NTP_CLIENT`)

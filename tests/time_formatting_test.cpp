@@ -14,6 +14,8 @@ int main() {
     assert(to_iso8601_ms(ts_ms_t(1500), -2 * SEC_PER_HOUR) == "1969-12-31T22:00:01.500-02:00");
     assert(to_human_readable(ts_t(1718973296)) == "2024-06-21 12:34:56");
     assert(to_human_readable_ms(ts_ms_t(1718973296789)) == "2024-06-21 12:34:56.789");
+    assert(to_string("%G-%V-%u", to_timestamp(2025, 12, 16)) == "2025-51-2");
+    assert(to_string("%g-W%V", to_timestamp(2025, 12, 16)) == "25-W51");
 
     return 0;
 }

@@ -129,10 +129,13 @@ namespace time_shield {
     /// \brief Format ISO week date to string.
     /// \param iso_date ISO week date to format.
     /// \param extended When true, uses extended format with separators ("YYYY-Www-D").
-    /// \param include_weekday When false, omits weekday ("YYYY-Www"). Weekday defaults to Monday when omitted.
+    /// \param include_weekday When false, omits weekday ("YYYY-Www") and ignores the weekday field.
     /// \return Formatted ISO week-date string.
     inline std::string format_iso_week_date(const IsoWeekDateStruct& iso_date, bool extended = true, bool include_weekday = true) {
-        if (!is_valid_iso_week_date(iso_date.year, iso_date.week, iso_date.weekday)) {
+        const bool has_valid_year = iso_date.year >= MIN_YEAR && iso_date.year <= MAX_YEAR;
+        const bool has_valid_week = has_valid_year && iso_date.week >= 1 && iso_date.week <= iso_weeks_in_year(iso_date.year);
+        const bool has_valid_weekday = iso_date.weekday >= 1 && iso_date.weekday <= 7;
+        if (!has_valid_year || !has_valid_week || (include_weekday && !has_valid_weekday)) {
             throw std::invalid_argument("Invalid ISO week date");
         }
 
@@ -154,6 +157,9 @@ namespace time_shield {
     /// \param length Length of the buffer.
     /// \param iso_date Output ISO week date structure.
     /// \return True if parsing succeeded and produced a valid ISO week date; otherwise false.
+    /// \details Accepted forms include canonical `YYYY-Www-D` and `YYYYWwwD`,
+    /// compatible mixed separator variants `YYYY-WwwD` and `YYYYWww-D`,
+    /// uppercase or lowercase `W`, and omitted weekday with Monday default.
     inline bool parse_iso_week_date(const char* input, std::size_t length, IsoWeekDateStruct& iso_date) noexcept {
         if (input == nullptr) {
             return false;
@@ -230,6 +236,8 @@ namespace time_shield {
     /// \param input Input string containing ISO week date.
     /// \param iso_date Output ISO week date structure.
     /// \return True if parsing succeeded and produced a valid ISO week date; otherwise false.
+    /// \details Parser accepts canonical and compatible mixed separator variants,
+    /// uppercase or lowercase `W`, and Monday default when weekday is omitted.
     inline bool parse_iso_week_date(const std::string& input, IsoWeekDateStruct& iso_date) noexcept {
         return parse_iso_week_date(input.c_str(), input.size(), iso_date);
     }

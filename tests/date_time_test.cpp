@@ -47,6 +47,17 @@ int main() {
     }
 
     {
+        IsoWeekDateStruct parsed{};
+        expect(DateTime::try_parse_iso_week_date("2025-W51-2", parsed), "DateTime ISO week parser should accept canonical form");
+        expect(parsed.year == 2025 && parsed.week == 51 && parsed.weekday == 2, "Canonical ISO week parse should populate fields");
+        expect(DateTime::try_parse_iso_week_date("2025W51-2", parsed), "DateTime ISO week parser should accept permissive mixed form");
+        expect(parsed.year == 2025 && parsed.week == 51 && parsed.weekday == 2, "Mixed ISO week parse should populate fields");
+        expect(DateTime::try_parse_iso_week_date("2025-w51", parsed), "DateTime ISO week parser should accept lowercase week marker");
+        expect(parsed.weekday == 1, "Missing ISO weekday should default to Monday");
+        expect(!DateTime::try_parse_iso_week_date("2025-W54-1", parsed), "Invalid ISO week should fail in DateTime parser");
+    }
+
+    {
         const DateTime dt = DateTime::from_components(2025, 3, 14, 15, 9, 26, 500, 2 * SEC_PER_HOUR);
         const DateTime start = dt.start_of_day();
         expect(start.hour() == 0, "Start of day should reset hour");
@@ -159,6 +170,7 @@ int main() {
         const DateTime dt = DateTime::from_components(2024, 1, 1, 1, 30, 15, 250, 2 * SEC_PER_HOUR);
         const DateTimeStruct utc = dt.to_date_time_struct_utc();
         const IsoWeekDateStruct utc_iso = dt.utc_iso_week_date();
+        const IsoWeekDateStruct local_iso = dt.iso_week_date();
 
         expect(dt.utc_year() == utc.year, "UTC year getter should match UTC structure");
         expect(dt.utc_month() == utc.mon, "UTC month getter should match UTC structure");
@@ -170,6 +182,9 @@ int main() {
         expect(dt.utc_weekday() == weekday_of_date<Weekday>(dt.utc_date()), "UTC weekday should match UTC date");
         expect(dt.utc_iso_weekday() == iso_weekday_of_date(utc.year, utc.mon, utc.day), "UTC ISO weekday should match conversion helper");
         expect(utc_iso.year == 2023 && utc_iso.week == 52 && utc_iso.weekday == 7, "UTC ISO week date should match expected boundary value");
+        expect(local_iso.year == to_iso_week_date(dt.year(), dt.month(), dt.day()).year, "Local ISO week-year should match raw conversion helper");
+        expect(local_iso.week == to_iso_week_date(dt.year(), dt.month(), dt.day()).week, "Local ISO week number should match raw conversion helper");
+        expect(local_iso.weekday == to_iso_week_date(dt.year(), dt.month(), dt.day()).weekday, "Local ISO weekday should match raw conversion helper");
         expect(!dt.utc_is_workday(), "UTC weekend helper should report non-workday");
         expect(dt.utc_is_weekend(), "UTC weekend helper should report weekend");
 

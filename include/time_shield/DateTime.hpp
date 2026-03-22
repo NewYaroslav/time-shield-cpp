@@ -219,18 +219,24 @@ namespace time_shield {
         /// \param str Input ISO week-date string.
         /// \param iso Output ISO week-date structure.
         /// \return True on success.
+        /// \details Parser accepts canonical and compatible mixed separator variants,
+        /// uppercase or lowercase `W`, and Monday default when weekday is omitted.
         static bool try_parse_iso_week_date(const std::string& str, IsoWeekDateStruct& iso) noexcept {
             return parse_iso_week_date(str.data(), str.size(), iso);
         }
 
         #ifdef TIME_SHIELD_CPP17
         /// \brief Try to parse ISO week-date string_view.
+        /// \details Parser accepts canonical and compatible mixed separator variants,
+        /// uppercase or lowercase `W`, and Monday default when weekday is omitted.
         static bool try_parse_iso_week_date(std::string_view str, IsoWeekDateStruct& iso) noexcept {
             return parse_iso_week_date(str.data(), str.size(), iso);
         }
         #endif
 
         /// \brief Try to parse ISO week-date C-string.
+        /// \details Parser accepts canonical and compatible mixed separator variants,
+        /// uppercase or lowercase `W`, and Monday default when weekday is omitted.
         static bool try_parse_iso_week_date(const char* str, IsoWeekDateStruct& iso) noexcept {
             if (str == nullptr) {
                 return false;

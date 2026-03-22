@@ -7,7 +7,10 @@ var namespacetime__shield_1_1detail_1_1format__parse =
     [ "create_format_parse_state", "namespacetime__shield_1_1detail_1_1format__parse.html#a79b55065661a511cabdd0da6146e3e72", null ],
     [ "finalize_calendar_state", "namespacetime__shield_1_1detail_1_1format__parse.html#a55a0240341f5b22efc3f5827388a0525", null ],
     [ "finalize_format_parse_state", "namespacetime__shield_1_1detail_1_1format__parse.html#af81335691a8c7f8ec10af80e413c8c59", null ],
+    [ "has_gregorian_date_fields", "namespacetime__shield_1_1detail_1_1format__parse.html#a10ee0e52f8f32bb8eac4567faeba24d9", null ],
+    [ "has_iso_week_date_fields", "namespacetime__shield_1_1detail_1_1format__parse.html#afefcfa0e84f760c044138f457aa9a9ee", null ],
     [ "is_ascii_digit", "namespacetime__shield_1_1detail_1_1format__parse.html#afbef7ca7bbef97cf379b9b5824be710d", null ],
+    [ "last_two_digits_of_year", "namespacetime__shield_1_1detail_1_1format__parse.html#aef7905501f508504abcb82c4dfd61c9b", null ],
     [ "match_literal", "namespacetime__shield_1_1detail_1_1format__parse.html#ae2d94e747ae1ffd410d75ee6db427f72", null ],
     [ "match_literal", "namespacetime__shield_1_1detail_1_1format__parse.html#a84f91443c008ec39a2d4d1a7f8a79bc8", null ],
     [ "match_name_token", "namespacetime__shield_1_1detail_1_1format__parse.html#a8db4e7fe3a577a5230fb62df56d10014", null ],
@@ -23,6 +26,7 @@ var namespacetime__shield_1_1detail_1_1format__parse =
     [ "parse_unsigned_digits", "namespacetime__shield_1_1detail_1_1format__parse.html#aaabfdbdb787283ad4372c401625ab0c0", null ],
     [ "parse_weekday_token", "namespacetime__shield_1_1detail_1_1format__parse.html#a1b3b7d4aef96c9532cbcae00212aba9a", null ],
     [ "resolve_day_of_year", "namespacetime__shield_1_1detail_1_1format__parse.html#aa507e8b9baff3d80d6b7fab8bc69caa9", null ],
+    [ "resolve_time_fields", "namespacetime__shield_1_1detail_1_1format__parse.html#acf3fcf930b2f46786ce427af4c6bd36b", null ],
     [ "try_parse_format_core", "namespacetime__shield_1_1detail_1_1format__parse.html#a8e736cb191a9c65d9cf2c21fada66ed5", null ],
     [ "validate_weekday_constraints", "namespacetime__shield_1_1detail_1_1format__parse.html#a123b7dfa6b1a7fe3182124dfd07544df", null ]
 ];

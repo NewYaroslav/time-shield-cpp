@@ -185,7 +185,7 @@ var NAVTREEINDEX =
 "group__time__parsing.html#gaebd6745cef0d115470cc9449c91833a0",
 "md_docs_2header-implementation-guidelines.html#autotoc_md64",
 "namespacetime__shield_1_1detail.html#aec5a95b3874a3cd243821dd1c2c1f295",
-"structtime__shield_1_1detail_1_1ScheduledComparator.html"
+"structtime__shield_1_1detail_1_1RunningTimerScope.html#a76ea44f6978139c34acd1dbea0770db7"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

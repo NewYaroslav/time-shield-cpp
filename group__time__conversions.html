@@ -4989,7 +4989,7 @@ template&lt;class T1 = int, class T2 = year_t, class T3 = int&gt; </div>
   <table class="params">
     <tr><td class="paramname">iso_date</td><td>ISO week date to format. </td></tr>
     <tr><td class="paramname">extended</td><td>When true, uses extended format with separators ("YYYY-Www-D"). </td></tr>
-    <tr><td class="paramname">include_weekday</td><td>When false, omits weekday ("YYYY-Www"). <a class="el" href="group__time__enums.html#gadf684443100352064316f6134bbe44f8">Weekday</a> defaults to Monday when omitted. </td></tr>
+    <tr><td class="paramname">include_weekday</td><td>When false, omits weekday ("YYYY-Www") and ignores the weekday field. </td></tr>
   </table>
   </dd>
 </dl>
@@ -12351,9 +12351,10 @@ template&lt;class T = int&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>True if parsing succeeded and produced a valid ISO week date; otherwise false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True if parsing succeeded and produced a valid ISO week date; otherwise false.</dd></dl>
+<p>Accepted forms include canonical <span class="tt">YYYY-Www-D</span> and <span class="tt">YYYYWwwD</span>, compatible mixed separator variants <span class="tt">YYYY-WwwD</span> and <span class="tt">YYYYWww-D</span>, uppercase or lowercase <span class="tt">W</span>, and omitted weekday with Monday default. </p>
 
-<p class="definition">Definition at line <a class="el" href="iso__week__conversions_8hpp_source.html#l00157">157</a> of file <a class="el" href="iso__week__conversions_8hpp_source.html">iso_week_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="iso__week__conversions_8hpp_source.html#l00163">163</a> of file <a class="el" href="iso__week__conversions_8hpp_source.html">iso_week_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -12392,9 +12393,10 @@ template&lt;class T = int&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>True if parsing succeeded and produced a valid ISO week date; otherwise false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True if parsing succeeded and produced a valid ISO week date; otherwise false.</dd></dl>
+<p>Parser accepts canonical and compatible mixed separator variants, uppercase or lowercase <span class="tt">W</span>, and Monday default when weekday is omitted. </p>
 
-<p class="definition">Definition at line <a class="el" href="iso__week__conversions_8hpp_source.html#l00233">233</a> of file <a class="el" href="iso__week__conversions_8hpp_source.html">iso_week_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="iso__week__conversions_8hpp_source.html#l00241">241</a> of file <a class="el" href="iso__week__conversions_8hpp_source.html">iso_week_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -18079,7 +18081,7 @@ template&lt;class T = year_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if parsing succeeded and produced a valid ISO week date; otherwise false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="iso__week__conversions_8hpp_source.html#l00242">242</a> of file <a class="el" href="iso__week__conversions_8hpp_source.html">iso_week_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="iso__week__conversions_8hpp_source.html#l00250">250</a> of file <a class="el" href="iso__week__conversions_8hpp_source.html">iso_week_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -18120,7 +18122,7 @@ template&lt;class T = year_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if parsing succeeded and produced a valid ISO week date; otherwise false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="iso__week__conversions_8hpp_source.html#l00250">250</a> of file <a class="el" href="iso__week__conversions_8hpp_source.html">iso_week_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="iso__week__conversions_8hpp_source.html#l00258">258</a> of file <a class="el" href="iso__week__conversions_8hpp_source.html">iso_week_conversions.hpp</a>.</p>
 
 </div>
 </div>

@@ -10,7 +10,7 @@
 /// \file time_parser.mqh
 /// \ingroup mql5
 /// \brief Header with functions for parsing ISO8601 strings
-/// and converting them to timestamps.
+/// and fixed durations.
 ///
 /// This file contains utilities to parse ISO8601 date and time strings,
 /// extract month numbers and convert parsed values into different
@@ -84,6 +84,185 @@ namespace time_shield {
     bool month_of_year(string month, int &value) { return try_get_month_number(month,value); }
 
 //------------------------------------------------------------------------------
+
+    bool timeframe_is_ascii_space(const int ch) {
+       return ch==' ' || ch=='\t' || ch=='\n' || ch=='\r' || ch=='\f' || ch=='\v';
+    }
+
+    bool timeframe_is_ascii_digit(const int ch) {
+       return ch>='0' && ch<='9';
+    }
+
+    bool timeframe_is_ascii_alpha(const int ch) {
+       return (ch>='A' && ch<='Z') || (ch>='a' && ch<='z');
+    }
+
+    int timeframe_ascii_to_lower(const int ch) {
+       if(ch>='A' && ch<='Z')
+          return ch - 'A' + 'a';
+       return ch;
+    }
+
+    string timeframe_trim_ascii(string value) {
+       int begin = 0;
+       int end = StringLen(value);
+       while(begin < end && timeframe_is_ascii_space(StringGetCharacter(value, begin)))
+          ++begin;
+       while(end > begin && timeframe_is_ascii_space(StringGetCharacter(value, end - 1)))
+          --end;
+       return StringSubstr(value, begin, end - begin);
+    }
+
+    bool timeframe_ascii_iequals(string value, string literal) {
+       const int len = StringLen(value);
+       if(len != StringLen(literal))
+          return false;
+
+       for(int i = 0; i < len; ++i) {
+          if(timeframe_ascii_to_lower(StringGetCharacter(value, i))
+             != timeframe_ascii_to_lower(StringGetCharacter(literal, i)))
+             return false;
+       }
+
+       return true;
+    }
+
+    bool timeframe_try_parse_positive_long(string value, long &out) {
+       const string trimmed = timeframe_trim_ascii(value);
+       const int len = StringLen(trimmed);
+       const string k_max_long = "9223372036854775807";
+       out = 0;
+       if(len <= 0)
+          return false;
+
+       for(int i = 0; i < len; ++i) {
+          if(!timeframe_is_ascii_digit(StringGetCharacter(trimmed, i)))
+             return false;
+       }
+
+       if(len > StringLen(k_max_long))
+          return false;
+       if(len == StringLen(k_max_long) && StringCompare(trimmed, k_max_long) > 0)
+          return false;
+
+       for(int i = 0; i < len; ++i)
+          out = out * 10 + (long)(StringGetCharacter(trimmed, i) - '0');
+
+       return out > 0;
+    }
+
+    bool timeframe_try_multiply_positive_long(long lhs, long rhs, long &out) {
+       const long k_max_long = 9223372036854775807;
+       out = 0;
+       if(lhs <= 0 || rhs <= 0)
+          return false;
+       if(lhs > k_max_long / rhs)
+          return false;
+       out = lhs * rhs;
+       return true;
+    }
+
+    bool timeframe_try_get_unit_seconds_compact(string unit, long &unit_seconds) {
+       const string normalized = StringToLower(unit);
+       unit_seconds = 0;
+       if(normalized == "s") { unit_seconds = 1; return true; }
+       if(normalized == "m") { unit_seconds = SEC_PER_MIN; return true; }
+       if(normalized == "h") { unit_seconds = SEC_PER_HOUR; return true; }
+       if(normalized == "d") { unit_seconds = SEC_PER_DAY; return true; }
+       if(normalized == "w") { unit_seconds = 7 * SEC_PER_DAY; return true; }
+       if(normalized == "mn") { unit_seconds = 30 * SEC_PER_DAY; return true; }
+       if(normalized == "q") { unit_seconds = 90 * SEC_PER_DAY; return true; }
+       if(normalized == "y") { unit_seconds = SEC_PER_YEAR; return true; }
+       return false;
+    }
+
+    bool timeframe_try_get_unit_seconds_word(string unit, long &unit_seconds) {
+       const string normalized = StringToLower(unit);
+       unit_seconds = 0;
+       if(normalized == "sec" || normalized == "second" || normalized == "seconds") { unit_seconds = 1; return true; }
+       if(normalized == "min" || normalized == "minute" || normalized == "minutes") { unit_seconds = SEC_PER_MIN; return true; }
+       if(normalized == "hr" || normalized == "hour" || normalized == "hours") { unit_seconds = SEC_PER_HOUR; return true; }
+       if(normalized == "day" || normalized == "days") { unit_seconds = SEC_PER_DAY; return true; }
+       if(normalized == "week" || normalized == "weeks") { unit_seconds = 7 * SEC_PER_DAY; return true; }
+       if(normalized == "month" || normalized == "months") { unit_seconds = 30 * SEC_PER_DAY; return true; }
+       if(normalized == "quarter" || normalized == "quarters") { unit_seconds = 90 * SEC_PER_DAY; return true; }
+       if(normalized == "year" || normalized == "years") { unit_seconds = SEC_PER_YEAR; return true; }
+       return false;
+    }
+
+    bool timeframe_try_parse_seconds(string str, long &seconds) {
+       str = timeframe_trim_ascii(str);
+       seconds = 0;
+       const int len = StringLen(str);
+       if(len <= 0)
+          return false;
+
+       long multiplier = 1;
+       long unit_seconds = 0;
+       long result = 0;
+       const int first = StringGetCharacter(str, 0);
+
+       if(timeframe_is_ascii_digit(first)) {
+          int pos = 0;
+          while(pos < len && timeframe_is_ascii_digit(StringGetCharacter(str, pos)))
+             ++pos;
+
+          if(!timeframe_try_parse_positive_long(StringSubstr(str, 0, pos), multiplier))
+             return false;
+
+          while(pos < len && timeframe_is_ascii_space(StringGetCharacter(str, pos)))
+             ++pos;
+          if(pos >= len)
+             return false;
+
+          string unit = StringSubstr(str, pos);
+          for(int i = 0; i < StringLen(unit); ++i) {
+             if(!timeframe_is_ascii_alpha(StringGetCharacter(unit, i)))
+                return false;
+          }
+
+          if(!timeframe_try_get_unit_seconds_word(unit, unit_seconds))
+             return false;
+          if(!timeframe_try_multiply_positive_long(multiplier, unit_seconds, result))
+             return false;
+
+          seconds = result;
+          return true;
+       }
+
+       if(!timeframe_is_ascii_alpha(first))
+          return false;
+
+       int pos = 0;
+       while(pos < len && timeframe_is_ascii_alpha(StringGetCharacter(str, pos)))
+          ++pos;
+
+       string unit = StringSubstr(str, 0, pos);
+       if(pos == len) {
+          if(!timeframe_try_get_unit_seconds_word(unit, unit_seconds))
+             return false;
+          seconds = unit_seconds;
+          return true;
+       }
+
+       if(timeframe_is_ascii_space(StringGetCharacter(str, pos)))
+          return false;
+
+       for(int i = pos; i < len; ++i) {
+          if(!timeframe_is_ascii_digit(StringGetCharacter(str, i)))
+             return false;
+       }
+
+       if(!timeframe_try_get_unit_seconds_compact(unit, unit_seconds))
+          return false;
+       if(!timeframe_try_parse_positive_long(StringSubstr(str, pos), multiplier))
+          return false;
+       if(!timeframe_try_multiply_positive_long(multiplier, unit_seconds, result))
+          return false;
+
+       seconds = result;
+       return true;
+    }
 
     /// \brief Parse a time zone string into a TimeZoneStruct.
     /// \details Parses a time zone string in the format "+hh:mm", "-hh:mm" or "Z".
@@ -428,6 +607,55 @@ namespace time_shield {
         double v=0.0;
         str_to_fts(str,v);
         return v;
+    }
+
+    //--------------------------------------------------------------------------
+
+    /// \brief Parse timeframe string into fixed seconds.
+    /// \param str Timeframe string such as "M15", "hour", or "2 weeks".
+    /// \param seconds Parsed duration in seconds.
+    /// \return True on successful parsing.
+    bool str_to_timeframe_sec(string str, long &seconds) {
+       return timeframe_try_parse_seconds(str, seconds);
+    }
+
+    /// \brief Parse timeframe string into fixed milliseconds.
+    /// \param str Timeframe string such as "M15", "hour", or "2 weeks".
+    /// \param milliseconds Parsed duration in milliseconds.
+    /// \return True on successful parsing.
+    bool str_to_timeframe_ms(string str, long &milliseconds) {
+       long seconds = 0;
+       if(!timeframe_try_parse_seconds(str, seconds)) {
+          milliseconds = 0;
+          return false;
+       }
+
+       if(!timeframe_try_multiply_positive_long(seconds, MS_PER_SEC, milliseconds)) {
+          milliseconds = 0;
+          return false;
+       }
+
+       return true;
+    }
+
+    /// \brief Convert timeframe string to fixed seconds.
+    /// \details Returns 0 if parsing fails.
+    /// \param str Timeframe string such as "M15", "hour", or "2 weeks".
+    /// \return Parsed duration in seconds, or 0 on failure.
+    long timeframe_sec(string str) {
+       long value = 0;
+       str_to_timeframe_sec(str, value);
+       return value;
+    }
+
+    /// \brief Convert timeframe string to fixed milliseconds.
+    /// \details Returns 0 if parsing fails.
+    /// \param str Timeframe string such as "M15", "hour", or "2 weeks".
+    /// \return Parsed duration in milliseconds, or 0 on failure.
+    long timeframe_ms(string str) {
+       long value = 0;
+       str_to_timeframe_ms(str, value);
+       return value;
     }
 
     //--------------------------------------------------------------------------

@@ -278,6 +278,27 @@ and ISO-style `+HH:MM` during parsing.
 See `examples/time_parser_example.cpp` for ISO8601 parsing, seconds/ms/floating
 timestamp parsing, formatter round-trips, and a simple failure case.
 
+### Trading timeframe strings
+
+```cpp
+#include <time_shield.hpp>
+
+using namespace time_shield;
+
+ts_t m15_sec = timeframe_sec("M15");            // 900
+ts_ms_t h1_ms = timeframe_ms("hour");           // 3600000
+ts_t two_weeks = timeframe_sec("2 weeks");      // 1209600
+
+ts_t quarter = 0;
+bool ok = str_to_timeframe_sec("Q1", quarter);  // 90 fixed days
+```
+
+`str_to_timeframe_sec(...)` and `str_to_timeframe_ms(...)` parse compact
+trading tokens such as `M1`, `M15`, `H1`, `H4`, `D1`, `W1`, `MN1`,
+`Q1`, and `Y1`, plus English word forms such as `minute`, `hour`,
+`2 weeks`, and `month`. Calendar-sized units use fixed conversions:
+month = 30 days, quarter = 90 days, and year = 365 days.
+
 ### ISO week dates
 
 ```cpp

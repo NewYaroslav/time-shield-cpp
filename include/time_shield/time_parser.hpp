@@ -11,6 +11,7 @@
 ///
 /// Provides:
 /// - Month name parsing (e.g. "Jan", "January") to month index (1..12).
+/// - Timeframe parsing for trading and engineering strings (e.g. "M15", "hour", "2 weeks").
 /// - ISO8601 date/time parsing into DateTimeStruct + TimeZoneStruct.
 /// - Convenience functions to convert ISO8601 strings to timestamps (sec/ms/float).
 ///
@@ -28,6 +29,7 @@
 #include <algorithm>
 #include <locale>
 #include <array>
+#include <limits>
 #include <stdexcept>
 #include <cctype>
 #include <cstring>
@@ -277,6 +279,244 @@ namespace time_shield {
         /// \brief Check whether character is ASCII digit.
         TIME_SHIELD_CONSTEXPR inline bool is_ascii_digit(char c) noexcept {
             return c >= '0' && c <= '9';
+        }
+
+        /// \brief Check whether character is ASCII letter.
+        TIME_SHIELD_CONSTEXPR inline bool is_ascii_alpha(char c) noexcept {
+            return (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z');
+        }
+
+        /// \brief Convert ASCII letter to lower-case.
+        TIME_SHIELD_CONSTEXPR inline char ascii_to_lower(char c) noexcept {
+            return (c >= 'A' && c <= 'Z') ? static_cast<char>(c - 'A' + 'a') : c;
+        }
+
+        /// \brief Compare ASCII token to literal case-insensitively.
+        inline bool ascii_iequals(const char* data, std::size_t length, const char* literal) noexcept {
+            if (data == nullptr || literal == nullptr) {
+                return false;
+            }
+
+            for (std::size_t i = 0; i < length; ++i) {
+                if (literal[i] == '\0' || ascii_to_lower(data[i]) != ascii_to_lower(literal[i])) {
+                    return false;
+                }
+            }
+
+            return literal[length] == '\0';
+        }
+
+        /// \brief Parse positive int64 value from ASCII digits.
+        inline bool try_parse_positive_int64(const char* data, std::size_t length, int64_t& value) noexcept {
+            value = 0;
+            if (data == nullptr || length == 0) {
+                return false;
+            }
+
+            const int64_t max_value = (std::numeric_limits<int64_t>::max)();
+            for (std::size_t i = 0; i < length; ++i) {
+                if (!is_ascii_digit(data[i])) {
+                    return false;
+                }
+
+                const int digit = data[i] - '0';
+                if (value > (max_value - digit) / 10) {
+                    value = 0;
+                    return false;
+                }
+                value = value * 10 + digit;
+            }
+
+            return value > 0;
+        }
+
+        /// \brief Multiply positive int64 values with overflow check.
+        TIME_SHIELD_CONSTEXPR inline bool try_multiply_positive_int64(int64_t lhs, int64_t rhs, int64_t& value) noexcept {
+            if (lhs <= 0 || rhs <= 0) {
+                return false;
+            }
+
+            if (lhs > (std::numeric_limits<int64_t>::max)() / rhs) {
+                return false;
+            }
+
+            value = lhs * rhs;
+            return true;
+        }
+
+        /// \brief Resolve compact trading unit token to seconds.
+        inline bool try_get_timeframe_unit_seconds_compact(const char* data, std::size_t length, int64_t& unit_seconds) noexcept {
+            unit_seconds = 0;
+            if (data == nullptr || length == 0) {
+                return false;
+            }
+
+            if (length == 1) {
+                switch (ascii_to_lower(data[0])) {
+                    case 's': unit_seconds = 1; return true;
+                    case 'm': unit_seconds = SEC_PER_MIN; return true;
+                    case 'h': unit_seconds = SEC_PER_HOUR; return true;
+                    case 'd': unit_seconds = SEC_PER_DAY; return true;
+                    case 'w': unit_seconds = SEC_PER_DAY * 7; return true;
+                    case 'q': unit_seconds = SEC_PER_DAY * 90; return true;
+                    case 'y': unit_seconds = SEC_PER_YEAR; return true;
+                    default: return false;
+                }
+            }
+
+            if (length == 2
+                && ascii_to_lower(data[0]) == 'm'
+                && ascii_to_lower(data[1]) == 'n') {
+                unit_seconds = SEC_PER_DAY * 30;
+                return true;
+            }
+
+            return false;
+        }
+
+        /// \brief Resolve word timeframe unit token to seconds.
+        inline bool try_get_timeframe_unit_seconds_word(const char* data, std::size_t length, int64_t& unit_seconds) noexcept {
+            unit_seconds = 0;
+            if (data == nullptr || length == 0) {
+                return false;
+            }
+
+            struct TimeframeUnitEntry {
+                const char* name;
+                int64_t seconds;
+            };
+
+            static const TimeframeUnitEntry entries[] = {
+                {"sec", 1},
+                {"second", 1},
+                {"seconds", 1},
+                {"min", SEC_PER_MIN},
+                {"minute", SEC_PER_MIN},
+                {"minutes", SEC_PER_MIN},
+                {"hr", SEC_PER_HOUR},
+                {"hour", SEC_PER_HOUR},
+                {"hours", SEC_PER_HOUR},
+                {"day", SEC_PER_DAY},
+                {"days", SEC_PER_DAY},
+                {"week", SEC_PER_DAY * 7},
+                {"weeks", SEC_PER_DAY * 7},
+                {"month", SEC_PER_DAY * 30},
+                {"months", SEC_PER_DAY * 30},
+                {"quarter", SEC_PER_DAY * 90},
+                {"quarters", SEC_PER_DAY * 90},
+                {"year", SEC_PER_YEAR},
+                {"years", SEC_PER_YEAR}
+            };
+
+            for (std::size_t i = 0; i < sizeof(entries) / sizeof(entries[0]); ++i) {
+                if (ascii_iequals(data, length, entries[i].name)) {
+                    unit_seconds = entries[i].seconds;
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        /// \brief Parse timeframe string into fixed seconds.
+        inline bool try_parse_timeframe_seconds(const char* data, std::size_t length, ts_t& seconds) noexcept {
+            seconds = 0;
+            if (data == nullptr || length == 0) {
+                return false;
+            }
+
+            const char* begin = data;
+            const char* end = data + length;
+            while (begin < end && is_ascii_space(*begin)) {
+                ++begin;
+            }
+            while (end > begin && is_ascii_space(*(end - 1))) {
+                --end;
+            }
+
+            if (begin == end) {
+                return false;
+            }
+
+            int64_t multiplier = 1;
+            int64_t unit_seconds = 0;
+            int64_t result = 0;
+
+            if (is_ascii_digit(*begin)) {
+                const char* cursor = begin;
+                while (cursor < end && is_ascii_digit(*cursor)) {
+                    ++cursor;
+                }
+
+                if (!try_parse_positive_int64(begin, static_cast<std::size_t>(cursor - begin), multiplier)) {
+                    return false;
+                }
+
+                while (cursor < end && is_ascii_space(*cursor)) {
+                    ++cursor;
+                }
+                if (cursor == end) {
+                    return false;
+                }
+
+                for (const char* p = cursor; p < end; ++p) {
+                    if (!is_ascii_alpha(*p)) {
+                        return false;
+                    }
+                }
+
+                if (!try_get_timeframe_unit_seconds_word(cursor, static_cast<std::size_t>(end - cursor), unit_seconds)) {
+                    return false;
+                }
+
+                if (!try_multiply_positive_int64(multiplier, unit_seconds, result)) {
+                    return false;
+                }
+
+                seconds = static_cast<ts_t>(result);
+                return true;
+            }
+
+            if (!is_ascii_alpha(*begin)) {
+                return false;
+            }
+
+            const char* cursor = begin;
+            while (cursor < end && is_ascii_alpha(*cursor)) {
+                ++cursor;
+            }
+
+            if (cursor == end) {
+                if (!try_get_timeframe_unit_seconds_word(begin, static_cast<std::size_t>(end - begin), unit_seconds)) {
+                    return false;
+                }
+
+                seconds = static_cast<ts_t>(unit_seconds);
+                return true;
+            }
+
+            if (is_ascii_space(*cursor)) {
+                return false;
+            }
+
+            for (const char* p = cursor; p < end; ++p) {
+                if (!is_ascii_digit(*p)) {
+                    return false;
+                }
+            }
+
+            if (!try_get_timeframe_unit_seconds_compact(begin, static_cast<std::size_t>(cursor - begin), unit_seconds)) {
+                return false;
+            }
+            if (!try_parse_positive_int64(cursor, static_cast<std::size_t>(end - cursor), multiplier)) {
+                return false;
+            }
+            if (!try_multiply_positive_int64(multiplier, unit_seconds, result)) {
+                return false;
+            }
+
+            seconds = static_cast<ts_t>(result);
+            return true;
         }
 
         /// \brief Skip ASCII whitespace.
@@ -911,7 +1151,7 @@ namespace time_shield {
             dt.ms = ms;
         }
 
-        // ---- Optional timezone: [spaces] (Z | ±HH:MM)
+        // ---- Optional timezone: [spaces] (Z | +/-HH:MM)
         detail::skip_spaces(p, end);
 
         if (p < end) {
@@ -1286,6 +1526,172 @@ namespace time_shield {
         str_to_fts(str, ts);
         return ts;
     }
+
+//------------------------------------------------------------------------------
+
+    /// \brief Parse timeframe string into fixed seconds.
+    /// \param str Timeframe string such as "M15", "hour", or "2 weeks".
+    /// \param seconds Output duration in seconds.
+    /// \return True on successful parsing.
+    inline bool str_to_timeframe_sec(const std::string& str, ts_t& seconds) noexcept {
+        return detail::try_parse_timeframe_seconds(str.c_str(), str.size(), seconds);
+    }
+
+    /// \brief Parse timeframe C-string into fixed seconds.
+    /// \param str Timeframe string such as "M15", "hour", or "2 weeks".
+    /// \param seconds Output duration in seconds.
+    /// \return True on successful parsing.
+    inline bool str_to_timeframe_sec(const char* str, ts_t& seconds) noexcept {
+        if (str == nullptr) {
+            seconds = 0;
+            return false;
+        }
+        return detail::try_parse_timeframe_seconds(str, std::strlen(str), seconds);
+    }
+
+#   if __cplusplus >= 201703L
+    /// \brief Parse timeframe view into fixed seconds.
+    /// \param str Timeframe string such as "M15", "hour", or "2 weeks".
+    /// \param seconds Output duration in seconds.
+    /// \return True on successful parsing.
+    inline bool str_to_timeframe_sec(std::string_view str, ts_t& seconds) noexcept {
+        return detail::try_parse_timeframe_seconds(str.data(), str.size(), seconds);
+    }
+#   endif
+
+    /// \brief Parse timeframe string into fixed milliseconds.
+    /// \param str Timeframe string such as "M15", "hour", or "2 weeks".
+    /// \param milliseconds Output duration in milliseconds.
+    /// \return True on successful parsing.
+    inline bool str_to_timeframe_ms(const std::string& str, ts_ms_t& milliseconds) noexcept {
+        ts_t seconds = 0;
+        if (!detail::try_parse_timeframe_seconds(str.c_str(), str.size(), seconds)) {
+            milliseconds = 0;
+            return false;
+        }
+
+        int64_t milliseconds_value = 0;
+        if (!detail::try_multiply_positive_int64(seconds, MS_PER_SEC, milliseconds_value)) {
+            milliseconds = 0;
+            return false;
+        }
+
+        milliseconds = static_cast<ts_ms_t>(milliseconds_value);
+        return true;
+    }
+
+    /// \brief Parse timeframe C-string into fixed milliseconds.
+    /// \param str Timeframe string such as "M15", "hour", or "2 weeks".
+    /// \param milliseconds Output duration in milliseconds.
+    /// \return True on successful parsing.
+    inline bool str_to_timeframe_ms(const char* str, ts_ms_t& milliseconds) noexcept {
+        if (str == nullptr) {
+            milliseconds = 0;
+            return false;
+        }
+
+        ts_t seconds = 0;
+        if (!detail::try_parse_timeframe_seconds(str, std::strlen(str), seconds)) {
+            milliseconds = 0;
+            return false;
+        }
+
+        int64_t milliseconds_value = 0;
+        if (!detail::try_multiply_positive_int64(seconds, MS_PER_SEC, milliseconds_value)) {
+            milliseconds = 0;
+            return false;
+        }
+
+        milliseconds = static_cast<ts_ms_t>(milliseconds_value);
+        return true;
+    }
+
+#   if __cplusplus >= 201703L
+    /// \brief Parse timeframe view into fixed milliseconds.
+    /// \param str Timeframe string such as "M15", "hour", or "2 weeks".
+    /// \param milliseconds Output duration in milliseconds.
+    /// \return True on successful parsing.
+    inline bool str_to_timeframe_ms(std::string_view str, ts_ms_t& milliseconds) noexcept {
+        ts_t seconds = 0;
+        if (!detail::try_parse_timeframe_seconds(str.data(), str.size(), seconds)) {
+            milliseconds = 0;
+            return false;
+        }
+
+        int64_t milliseconds_value = 0;
+        if (!detail::try_multiply_positive_int64(seconds, MS_PER_SEC, milliseconds_value)) {
+            milliseconds = 0;
+            return false;
+        }
+
+        milliseconds = static_cast<ts_ms_t>(milliseconds_value);
+        return true;
+    }
+#   endif
+
+    /// \brief Convert timeframe string to fixed seconds.
+    /// \details Returns 0 if parsing fails.
+    /// \param str Timeframe string such as "M15", "hour", or "2 weeks".
+    /// \return Parsed duration in seconds, or 0 on failure.
+    inline ts_t timeframe_sec(const std::string& str) noexcept {
+        ts_t seconds = 0;
+        str_to_timeframe_sec(str, seconds);
+        return seconds;
+    }
+
+    /// \brief Convert timeframe C-string to fixed seconds.
+    /// \details Returns 0 if parsing fails.
+    /// \param str Timeframe string such as "M15", "hour", or "2 weeks".
+    /// \return Parsed duration in seconds, or 0 on failure.
+    inline ts_t timeframe_sec(const char* str) noexcept {
+        ts_t seconds = 0;
+        str_to_timeframe_sec(str, seconds);
+        return seconds;
+    }
+
+#   if __cplusplus >= 201703L
+    /// \brief Convert timeframe view to fixed seconds.
+    /// \details Returns 0 if parsing fails.
+    /// \param str Timeframe string such as "M15", "hour", or "2 weeks".
+    /// \return Parsed duration in seconds, or 0 on failure.
+    inline ts_t timeframe_sec(std::string_view str) noexcept {
+        ts_t seconds = 0;
+        str_to_timeframe_sec(str, seconds);
+        return seconds;
+    }
+#   endif
+
+    /// \brief Convert timeframe string to fixed milliseconds.
+    /// \details Returns 0 if parsing fails.
+    /// \param str Timeframe string such as "M15", "hour", or "2 weeks".
+    /// \return Parsed duration in milliseconds, or 0 on failure.
+    inline ts_ms_t timeframe_ms(const std::string& str) noexcept {
+        ts_ms_t milliseconds = 0;
+        str_to_timeframe_ms(str, milliseconds);
+        return milliseconds;
+    }
+
+    /// \brief Convert timeframe C-string to fixed milliseconds.
+    /// \details Returns 0 if parsing fails.
+    /// \param str Timeframe string such as "M15", "hour", or "2 weeks".
+    /// \return Parsed duration in milliseconds, or 0 on failure.
+    inline ts_ms_t timeframe_ms(const char* str) noexcept {
+        ts_ms_t milliseconds = 0;
+        str_to_timeframe_ms(str, milliseconds);
+        return milliseconds;
+    }
+
+#   if __cplusplus >= 201703L
+    /// \brief Convert timeframe view to fixed milliseconds.
+    /// \details Returns 0 if parsing fails.
+    /// \param str Timeframe string such as "M15", "hour", or "2 weeks".
+    /// \return Parsed duration in milliseconds, or 0 on failure.
+    inline ts_ms_t timeframe_ms(std::string_view str) noexcept {
+        ts_ms_t milliseconds = 0;
+        str_to_timeframe_ms(str, milliseconds);
+        return milliseconds;
+    }
+#   endif
 
 //------------------------------------------------------------------------------
 

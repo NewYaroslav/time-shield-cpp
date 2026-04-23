@@ -43,6 +43,11 @@ void OnStart() {
     Print("sec_of_day('15:30:10'): ", sod);
     Print("sec_of_day('8:20'): ", time_shield::sec_of_day("8:20"));
 
+    long timeframe_sec;
+    if (time_shield::str_to_timeframe_sec("M15", timeframe_sec))
+        Print("timeframe M15 seconds: ", timeframe_sec);
+    Print("timeframe 2 weeks milliseconds: ", time_shield::timeframe_ms("2 weeks"));
+
     datetime direct = (datetime)time_shield::ts("2024-01-01T00:00:00Z");
     Print("ts() shortcut: ", direct);
 }

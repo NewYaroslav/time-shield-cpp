@@ -12,8 +12,10 @@ var searchData=
   ['add_5fserver_9',['add_server',['../classtime__shield_1_1NtpClientPoolT.html#a29dc6a0ba13262ee93209ece8f94a116',1,'time_shield::NtpClientPoolT']]],
   ['apply_5fconfig_5fnow_10',['apply_config_now',['../classtime__shield_1_1NtpTimeServiceT.html#ab5529fb2341c5e300a599d6fbc3c1b23',1,'time_shield::NtpTimeServiceT']]],
   ['apply_5fsamples_11',['apply_samples',['../classtime__shield_1_1NtpClientPoolT.html#ab169b2995023608ec34d8b3e20c95f61',1,'time_shield::NtpClientPoolT']]],
-  ['assign_5fint_5ffield_12',['assign_int_field',['../namespacetime__shield_1_1detail_1_1format__parse.html#ade21b716a9e379f701875f9843b7002d',1,'time_shield::detail::format_parse']]],
-  ['assign_5fyear_5ffield_13',['assign_year_field',['../namespacetime__shield_1_1detail_1_1format__parse.html#a6c33400b382a01374f41c3b6ebe414bb',1,'time_shield::detail::format_parse']]],
-  ['atexit_5fregistration_5fcount_14',['atexit_registration_count',['../classtime__shield_1_1NtpTimeServiceT.html#a289ffaba6c2427faa4e60949ee8c51a4',1,'time_shield::NtpTimeServiceT::atexit_registration_count()'],['../structtime__shield_1_1detail_1_1NtpTimeServiceTestAccess.html#a36aa10a1c14c3ca321d848946c163790',1,'time_shield::detail::NtpTimeServiceTestAccess::atexit_registration_count()']]],
-  ['average_5fticks_15',['average_ticks',['../classtime__shield_1_1CpuTickTimer.html#ab0fcfe5dd9d0292050ee5f146fea45ee',1,'time_shield::CpuTickTimer']]]
+  ['ascii_5fiequals_12',['ascii_iequals',['../namespacetime__shield_1_1detail.html#adfc1e845ab7a84cbef9e712aa26d327f',1,'time_shield::detail']]],
+  ['ascii_5fto_5flower_13',['ascii_to_lower',['../namespacetime__shield_1_1detail.html#a2d2146a0ff9319719cf0347f81b708d7',1,'time_shield::detail']]],
+  ['assign_5fint_5ffield_14',['assign_int_field',['../namespacetime__shield_1_1detail_1_1format__parse.html#ade21b716a9e379f701875f9843b7002d',1,'time_shield::detail::format_parse']]],
+  ['assign_5fyear_5ffield_15',['assign_year_field',['../namespacetime__shield_1_1detail_1_1format__parse.html#a6c33400b382a01374f41c3b6ebe414bb',1,'time_shield::detail::format_parse']]],
+  ['atexit_5fregistration_5fcount_16',['atexit_registration_count',['../classtime__shield_1_1NtpTimeServiceT.html#a289ffaba6c2427faa4e60949ee8c51a4',1,'time_shield::NtpTimeServiceT::atexit_registration_count()'],['../structtime__shield_1_1detail_1_1NtpTimeServiceTestAccess.html#a36aa10a1c14c3ca321d848946c163790',1,'time_shield::detail::NtpTimeServiceTestAccess::atexit_registration_count()']]],
+  ['average_5fticks_17',['average_ticks',['../classtime__shield_1_1CpuTickTimer.html#ab0fcfe5dd9d0292050ee5f146fea45ee',1,'time_shield::CpuTickTimer']]]
 ];

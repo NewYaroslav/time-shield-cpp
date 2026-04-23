@@ -33,6 +33,8 @@ var namespacetime__shield_1_1detail =
       [ "NTP_E_KOD", "group__ntp.html#gga0415b8ea31444b289d12fa4477ab0956a242bb8a1ee2d6b3299c14885992408d4", null ],
       [ "NTP_E_BAD_TS", "group__ntp.html#gga0415b8ea31444b289d12fa4477ab0956ad39f33af632e93e1ef5ce7dd970af607", null ]
     ] ],
+    [ "ascii_iequals", "namespacetime__shield_1_1detail.html#adfc1e845ab7a84cbef9e712aa26d327f", null ],
+    [ "ascii_to_lower", "namespacetime__shield_1_1detail.html#a2d2146a0ff9319719cf0347f81b708d7", null ],
     [ "cet_to_gmt_impl", "namespacetime__shield_1_1detail.html#a4ca3ec15bdb2194fa702217cef483d70", null ],
     [ "current_timer_state", "namespacetime__shield_1_1detail.html#a5e9f998322af0d986f490b7526d5345d", null ],
     [ "day_fraction_from_hms", "namespacetime__shield_1_1detail.html#a399b41f03a0c374f1a149baa52d64d0b", null ],
@@ -52,6 +54,7 @@ var namespacetime__shield_1_1detail =
     [ "gmt_to_zone_ms_by_seconds", "namespacetime__shield_1_1detail.html#a9f2ae06d2224bfa6489e47d3c38d294d", null ],
     [ "gregorian_dmy_to_jd_unchecked", "namespacetime__shield_1_1detail.html#a868e26dd31dbd3f6491d49803ad9217a", null ],
     [ "gregorian_dmy_to_jdn_unchecked", "namespacetime__shield_1_1detail.html#a134587864a19c24614133286eeb93f53", null ],
+    [ "is_ascii_alpha", "namespacetime__shield_1_1detail.html#a1452d6abf414344833855e9e751631a4", null ],
     [ "is_ascii_digit", "namespacetime__shield_1_1detail.html#a30bd76de8e4ab15d80d93032c4216245", null ],
     [ "is_ascii_space", "namespacetime__shield_1_1detail.html#a4c4e74dd641a830641fdb33e3d225944", null ],
     [ "is_us_eastern_dst_local", "namespacetime__shield_1_1detail.html#a6c483bfe8e08b1afe0469e0eff1e720b", null ],
@@ -84,8 +87,13 @@ var namespacetime__shield_1_1detail =
     [ "time_zone_name_entries", "namespacetime__shield_1_1detail.html#a5439afc5a23a3690ebcdcfff457fce6e", null ],
     [ "trim_copy_ascii", "namespacetime__shield_1_1detail.html#a8457db4d57439e08761c4233512af39f", null ],
     [ "trim_view_ascii", "namespacetime__shield_1_1detail.html#a9ebc306d8cf35e7bd04192e453546848", null ],
+    [ "try_get_timeframe_unit_seconds_compact", "namespacetime__shield_1_1detail.html#a1339e9b17949ebd41586fda2c7159a74", null ],
+    [ "try_get_timeframe_unit_seconds_word", "namespacetime__shield_1_1detail.html#a6719a478abfda50447b00349eea65deb", null ],
+    [ "try_multiply_positive_int64", "namespacetime__shield_1_1detail.html#a220efab806dbc9de1e2713ba2a89cb45", null ],
     [ "try_parse_month_index", "namespacetime__shield_1_1detail.html#ac029cb3ca44207a7235acda196e3ad1b", null ],
     [ "try_parse_month_index", "namespacetime__shield_1_1detail.html#a9b4dd2b6af8616b2cd581c275b38334b", null ],
+    [ "try_parse_positive_int64", "namespacetime__shield_1_1detail.html#a1a365c91392501f80bdf85dfc5ce2b27", null ],
     [ "try_parse_time_zone_name_token", "namespacetime__shield_1_1detail.html#a8aba63cddab853d749289543ff0a8be2", null ],
+    [ "try_parse_timeframe_seconds", "namespacetime__shield_1_1detail.html#a07dc035fe2cc66c1916dc2e76e2cbea1", null ],
     [ "zone_to_gmt_ms_by_seconds", "namespacetime__shield_1_1detail.html#af56a0b4f4748bf703d41de48379cc61f", null ]
 ];

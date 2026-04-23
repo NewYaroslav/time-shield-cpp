@@ -148,9 +148,14 @@ $(function(){initNavTree('time__parser__demo_8mq5_source.html','',''); });
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    Print(&quot;sec_of_day(&#39;15:30:10&#39;): &quot;, sod);</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    Print(&quot;sec_of_day(&#39;8:20&#39;): &quot;, time_shield::sec_of_day(&quot;8:20&quot;));</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    datetime direct = (datetime)time_shield::ts(&quot;2024-01-01T00:00:00Z&quot;);</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    Print(&quot;ts() shortcut: &quot;, direct);</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>}</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    long timeframe_sec;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    if (time_shield::str_to_timeframe_sec(&quot;M15&quot;, timeframe_sec))</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        Print(&quot;timeframe M15 seconds: &quot;, timeframe_sec);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    Print(&quot;timeframe 2 weeks milliseconds: &quot;, time_shield::timeframe_ms(&quot;2 weeks&quot;));</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    datetime direct = (datetime)time_shield::ts(&quot;2024-01-01T00:00:00Z&quot;);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    Print(&quot;ts() shortcut: &quot;, direct);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

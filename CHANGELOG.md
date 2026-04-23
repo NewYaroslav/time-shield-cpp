@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v1.0.6] - 2026-04-23
+- Added `ZonedClock` with reusable named-zone and fixed-offset local-time helpers and clarified timezone semantics.
+- Completed ISO week-date parsing support and formatter/parser round-trip coverage.
+- Added timeframe parsing helpers for trading and engineering strings in C++ and MQL5, with docs, examples, and tests.
+- Split Julian conversions into a dedicated header while preserving the public include surface.
+- Extended parser and formatting examples and refreshed README coverage for newer APIs.
+- Accepted ISO-style offsets in `%z` custom-format parsing.
+- Restored C++11 `constexpr` compatibility in affected header-owned APIs.
+- Corrected OA date conversions to align with Excel semantics and related edge cases.
+- Hardened time boundary and rounding behavior, including overflow-safe millisecond conversions and related tests.
+- Expanded timezone and NTP coverage and finalized recent timezone conversion support and NTP-facing documentation for consumers.
+
 ## [v1.0.5] - 2025-12-22
 - Added fast date conversion paths for timestamp-to-calendar helpers, along with unchecked timestamp math to reduce validation overhead in hot paths (legacy fallbacks remain for comparison).
 - Added reference tests and micro-benchmarks for fast vs legacy date conversions with averaged performance measurements across pre/post-epoch ranges.

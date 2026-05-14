@@ -137,6 +137,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a801e0ccdd486893475d9460f48c4cca2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return effective UTC offset in seconds for the current UTC instant.  <br /></td></tr>
 <tr class="memitem:a02464a90f499ae9b925da7169c82a630" id="r_a02464a90f499ae9b925da7169c82a630"><td class="memItemLeft"><a class="el" href="group__time__types.html#ga467db13fb99208bd078b5abff59866fb">tz_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#a02464a90f499ae9b925da7169c82a630">offset_at_utc_ms</a> (<a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> utc_ms) const noexcept</td></tr>
 <tr class="memdesc:a02464a90f499ae9b925da7169c82a630"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return effective UTC offset in seconds for a specific UTC instant.  <br /></td></tr>
+<tr class="memitem:a2abbc3a775ba24328b5fad66ac75d3f9" id="r_a2abbc3a775ba24328b5fad66ac75d3f9"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a2abbc3a775ba24328b5fad66ac75d3f9">try_offset_at_utc_ms</a> (<a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> utc_ms, <a class="el" href="group__time__types.html#ga467db13fb99208bd078b5abff59866fb">tz_t</a> &amp;out) const noexcept</td></tr>
+<tr class="memdesc:a2abbc3a775ba24328b5fad66ac75d3f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to resolve effective UTC offset for a UTC instant.  <br /></td></tr>
+<tr class="memitem:a11cfcc7fe2140f373ac3f104c4ec6388" id="r_a11cfcc7fe2140f373ac3f104c4ec6388"><td class="memItemLeft"><a class="el" href="structtime__shield_1_1LocalTimeResolution.html">LocalTimeResolution</a>&#160;</td><td class="memItemRight"><a class="el" href="#a11cfcc7fe2140f373ac3f104c4ec6388">resolve_local_time_ms</a> (<a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> local_ms) const noexcept</td></tr>
+<tr class="memdesc:a11cfcc7fe2140f373ac3f104c4ec6388"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resolve a local timestamp in this clock's zone.  <br /></td></tr>
+<tr class="memitem:a874aaaa58fea0b7a6f4b39caea3415ae" id="r_a874aaaa58fea0b7a6f4b39caea3415ae"><td class="memItemLeft"><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#a874aaaa58fea0b7a6f4b39caea3415ae">to_utc_ms</a> (<a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> local_ms, <a class="el" href="namespacetime__shield.html#acada22540daffcec62da92968c13b5f4">AmbiguousTimePolicy</a> ambiguous_policy=<a class="el" href="namespacetime__shield.html#acada22540daffcec62da92968c13b5f4acb5e100e5a9a3e7f6d1fd97512215282">AmbiguousTimePolicy::error</a>, <a class="el" href="namespacetime__shield.html#aeafbb8b596314af22fcebaf0b849293b">NonexistentTimePolicy</a> nonexistent_policy=<a class="el" href="namespacetime__shield.html#aeafbb8b596314af22fcebaf0b849293bacb5e100e5a9a3e7f6d1fd97512215282">NonexistentTimePolicy::error</a>) const noexcept</td></tr>
+<tr class="memdesc:a874aaaa58fea0b7a6f4b39caea3415ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a local timestamp in this clock's zone to UTC.  <br /></td></tr>
 <tr class="memitem:ae55c01142528bdc2b5f11cff1f5e791f" id="r_ae55c01142528bdc2b5f11cff1f5e791f"><td class="memItemLeft"><a class="el" href="group__time__types.html#ga183c70b9c541a395d47690a82cdad282">ts_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#ae55c01142528bdc2b5f11cff1f5e791f">utc_time_sec</a> () const noexcept</td></tr>
 <tr class="memdesc:ae55c01142528bdc2b5f11cff1f5e791f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return current UTC time in seconds.  <br /></td></tr>
 <tr class="memitem:ad869baacf6aa5b72cdc44e96954ec92c" id="r_ad869baacf6aa5b72cdc44e96954ec92c"><td class="memItemLeft"><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#ad869baacf6aa5b72cdc44e96954ec92c">utc_time_ms</a> () const noexcept</td></tr>
@@ -336,7 +342,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ZonedClock_8hpp_source.html#l00294">294</a> of file <a class="el" href="ZonedClock_8hpp_source.html">ZonedClock.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ZonedClock_8hpp_source.html#l00347">347</a> of file <a class="el" href="ZonedClock_8hpp_source.html">ZonedClock.hpp</a>.</p>
 
 </div>
 </div>
@@ -363,7 +369,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ZonedClock_8hpp_source.html#l00298">298</a> of file <a class="el" href="ZonedClock_8hpp_source.html">ZonedClock.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ZonedClock_8hpp_source.html#l00351">351</a> of file <a class="el" href="ZonedClock_8hpp_source.html">ZonedClock.hpp</a>.</p>
 
 </div>
 </div>
@@ -399,7 +405,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Formatted string. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ZonedClock_8hpp_source.html#l00269">269</a> of file <a class="el" href="ZonedClock_8hpp_source.html">ZonedClock.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ZonedClock_8hpp_source.html#l00322">322</a> of file <a class="el" href="ZonedClock_8hpp_source.html">ZonedClock.hpp</a>.</p>
 
 </div>
 </div>
@@ -435,7 +441,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="classtime__shield_1_1DateTime.html" title="Represents a moment in time with optional fixed UTC offset.">DateTime</a> snapshot with resolved fixed offset. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ZonedClock_8hpp_source.html#l00225">225</a> of file <a class="el" href="ZonedClock_8hpp_source.html">ZonedClock.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ZonedClock_8hpp_source.html#l00278">278</a> of file <a class="el" href="ZonedClock_8hpp_source.html">ZonedClock.hpp</a>.</p>
 
 </div>
 </div>
@@ -471,7 +477,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="classtime__shield_1_1DateTime.html" title="Represents a moment in time with optional fixed UTC offset.">DateTime</a> snapshot with resolved fixed offset. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ZonedClock_8hpp_source.html#l00232">232</a> of file <a class="el" href="ZonedClock_8hpp_source.html">ZonedClock.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ZonedClock_8hpp_source.html#l00285">285</a> of file <a class="el" href="ZonedClock_8hpp_source.html">ZonedClock.hpp</a>.</p>
 
 </div>
 </div>
@@ -527,7 +533,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ZonedClock_8hpp_source.html#l00286">286</a> of file <a class="el" href="ZonedClock_8hpp_source.html">ZonedClock.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ZonedClock_8hpp_source.html#l00339">339</a> of file <a class="el" href="ZonedClock_8hpp_source.html">ZonedClock.hpp</a>.</p>
 
 </div>
 </div>
@@ -556,7 +562,7 @@ Private Attributes</h2></td></tr>
 
 <p>Return current local timestamp in milliseconds. </p>
 
-<p class="definition">Definition at line <a class="el" href="ZonedClock_8hpp_source.html#l00206">206</a> of file <a class="el" href="ZonedClock_8hpp_source.html">ZonedClock.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ZonedClock_8hpp_source.html#l00259">259</a> of file <a class="el" href="ZonedClock_8hpp_source.html">ZonedClock.hpp</a>.</p>
 
 </div>
 </div>
@@ -585,7 +591,7 @@ Private Attributes</h2></td></tr>
 
 <p>Return current local timestamp in seconds. </p>
 
-<p class="definition">Definition at line <a class="el" href="ZonedClock_8hpp_source.html#l00200">200</a> of file <a class="el" href="ZonedClock_8hpp_source.html">ZonedClock.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ZonedClock_8hpp_source.html#l00253">253</a> of file <a class="el" href="ZonedClock_8hpp_source.html">ZonedClock.hpp</a>.</p>
 
 </div>
 </div>
@@ -614,7 +620,7 @@ Private Attributes</h2></td></tr>
 
 <p>Return current local timestamp in microseconds. </p>
 
-<p class="definition">Definition at line <a class="el" href="ZonedClock_8hpp_source.html#l00212">212</a> of file <a class="el" href="ZonedClock_8hpp_source.html">ZonedClock.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ZonedClock_8hpp_source.html#l00265">265</a> of file <a class="el" href="ZonedClock_8hpp_source.html">ZonedClock.hpp</a>.</p>
 
 </div>
 </div>
@@ -643,7 +649,7 @@ Private Attributes</h2></td></tr>
 
 <p>Return current time snapshot with resolved fixed offset. </p>
 
-<p class="definition">Definition at line <a class="el" href="ZonedClock_8hpp_source.html#l00218">218</a> of file <a class="el" href="ZonedClock_8hpp_source.html">ZonedClock.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ZonedClock_8hpp_source.html#l00271">271</a> of file <a class="el" href="ZonedClock_8hpp_source.html">ZonedClock.hpp</a>.</p>
 
 </div>
 </div>
@@ -766,7 +772,7 @@ Private Attributes</h2></td></tr>
 
 <p>Return effective numeric UTC offset as <span class="tt">+HH:MM</span> or <span class="tt">-HH:MM</span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="ZonedClock_8hpp_source.html#l00252">252</a> of file <a class="el" href="ZonedClock_8hpp_source.html">ZonedClock.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ZonedClock_8hpp_source.html#l00305">305</a> of file <a class="el" href="ZonedClock_8hpp_source.html">ZonedClock.hpp</a>.</p>
 
 </div>
 </div>
@@ -793,7 +799,43 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ZonedClock_8hpp_source.html#l00290">290</a> of file <a class="el" href="ZonedClock_8hpp_source.html">ZonedClock.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ZonedClock_8hpp_source.html#l00343">343</a> of file <a class="el" href="ZonedClock_8hpp_source.html">ZonedClock.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a11cfcc7fe2140f373ac3f104c4ec6388" name="a11cfcc7fe2140f373ac3f104c4ec6388"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11cfcc7fe2140f373ac3f104c4ec6388">&#9670;&#160;</a></span>resolve_local_time_ms()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structtime__shield_1_1LocalTimeResolution.html">LocalTimeResolution</a> time_shield::ZonedClock::resolve_local_time_ms </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a></td>          <td class="paramname"><span class="paramname"><em>local_ms</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Resolve a local timestamp in this clock's zone. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">local_ms</td><td>Local civil timestamp in milliseconds. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Local-time resolution with zero, one, or two UTC candidates. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="ZonedClock_8hpp_source.html#l00195">195</a> of file <a class="el" href="ZonedClock_8hpp_source.html">ZonedClock.hpp</a>.</p>
 
 </div>
 </div>
@@ -892,7 +934,7 @@ Private Attributes</h2></td></tr>
 
 <p>Return current local time formatted as ISO8601 with offset. </p>
 
-<p class="definition">Definition at line <a class="el" href="ZonedClock_8hpp_source.html#l00257">257</a> of file <a class="el" href="ZonedClock_8hpp_source.html">ZonedClock.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ZonedClock_8hpp_source.html#l00310">310</a> of file <a class="el" href="ZonedClock_8hpp_source.html">ZonedClock.hpp</a>.</p>
 
 </div>
 </div>
@@ -921,7 +963,54 @@ Private Attributes</h2></td></tr>
 
 <p>Return current UTC time formatted as ISO8601 with <span class="tt">Z</span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="ZonedClock_8hpp_source.html#l00262">262</a> of file <a class="el" href="ZonedClock_8hpp_source.html">ZonedClock.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ZonedClock_8hpp_source.html#l00315">315</a> of file <a class="el" href="ZonedClock_8hpp_source.html">ZonedClock.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a874aaaa58fea0b7a6f4b39caea3415ae" name="a874aaaa58fea0b7a6f4b39caea3415ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a874aaaa58fea0b7a6f4b39caea3415ae">&#9670;&#160;</a></span>to_utc_ms()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> time_shield::ZonedClock::to_utc_ms </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a></td>          <td class="paramname"><span class="paramname"><em>local_ms</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacetime__shield.html#acada22540daffcec62da92968c13b5f4">AmbiguousTimePolicy</a></td>          <td class="paramname"><span class="paramname"><em>ambiguous_policy</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespacetime__shield.html#acada22540daffcec62da92968c13b5f4acb5e100e5a9a3e7f6d1fd97512215282">AmbiguousTimePolicy::error</a></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacetime__shield.html#aeafbb8b596314af22fcebaf0b849293b">NonexistentTimePolicy</a></td>          <td class="paramname"><span class="paramname"><em>nonexistent_policy</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespacetime__shield.html#aeafbb8b596314af22fcebaf0b849293bacb5e100e5a9a3e7f6d1fd97512215282">NonexistentTimePolicy::error</a></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert a local timestamp in this clock's zone to UTC. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">local_ms</td><td>Local civil timestamp in milliseconds. </td></tr>
+    <tr><td class="paramname">ambiguous_policy</td><td>Policy for DST-fold local times. </td></tr>
+    <tr><td class="paramname">nonexistent_policy</td><td>Policy for DST-gap local times. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>UTC timestamp in milliseconds, or ERROR_TIMESTAMP. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="ZonedClock_8hpp_source.html#l00222">222</a> of file <a class="el" href="ZonedClock_8hpp_source.html">ZonedClock.hpp</a>.</p>
 
 </div>
 </div>
@@ -948,7 +1037,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ZonedClock_8hpp_source.html#l00274">274</a> of file <a class="el" href="ZonedClock_8hpp_source.html">ZonedClock.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ZonedClock_8hpp_source.html#l00327">327</a> of file <a class="el" href="ZonedClock_8hpp_source.html">ZonedClock.hpp</a>.</p>
 
 </div>
 </div>
@@ -990,6 +1079,47 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>True when the offset is valid and out is updated. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="ZonedClock_8hpp_source.html#l00071">71</a> of file <a class="el" href="ZonedClock_8hpp_source.html">ZonedClock.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a2abbc3a775ba24328b5fad66ac75d3f9" name="a2abbc3a775ba24328b5fad66ac75d3f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2abbc3a775ba24328b5fad66ac75d3f9">&#9670;&#160;</a></span>try_offset_at_utc_ms()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool time_shield::ZonedClock::try_offset_at_utc_ms </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a></td>          <td class="paramname"><span class="paramname"><em>utc_ms</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#ga467db13fb99208bd078b5abff59866fb">tz_t</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>out</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Try to resolve effective UTC offset for a UTC instant. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">utc_ms</td><td>UTC timestamp in milliseconds. </td></tr>
+    <tr><td class="paramname">out</td><td>Receives offset in seconds on success. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True when the offset can be resolved. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="ZonedClock_8hpp_source.html#l00179">179</a> of file <a class="el" href="ZonedClock_8hpp_source.html">ZonedClock.hpp</a>.</p>
 
 </div>
 </div>
@@ -1119,7 +1249,7 @@ Private Attributes</h2></td></tr>
 
 <p>Return current UTC time in milliseconds. </p>
 
-<p class="definition">Definition at line <a class="el" href="ZonedClock_8hpp_source.html#l00190">190</a> of file <a class="el" href="ZonedClock_8hpp_source.html">ZonedClock.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ZonedClock_8hpp_source.html#l00243">243</a> of file <a class="el" href="ZonedClock_8hpp_source.html">ZonedClock.hpp</a>.</p>
 
 </div>
 </div>
@@ -1148,7 +1278,7 @@ Private Attributes</h2></td></tr>
 
 <p>Return current UTC time in seconds. </p>
 
-<p class="definition">Definition at line <a class="el" href="ZonedClock_8hpp_source.html#l00185">185</a> of file <a class="el" href="ZonedClock_8hpp_source.html">ZonedClock.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ZonedClock_8hpp_source.html#l00238">238</a> of file <a class="el" href="ZonedClock_8hpp_source.html">ZonedClock.hpp</a>.</p>
 
 </div>
 </div>
@@ -1177,7 +1307,7 @@ Private Attributes</h2></td></tr>
 
 <p>Return current UTC time in microseconds. </p>
 
-<p class="definition">Definition at line <a class="el" href="ZonedClock_8hpp_source.html#l00195">195</a> of file <a class="el" href="ZonedClock_8hpp_source.html">ZonedClock.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ZonedClock_8hpp_source.html#l00248">248</a> of file <a class="el" href="ZonedClock_8hpp_source.html">ZonedClock.hpp</a>.</p>
 
 </div>
 </div>
@@ -1236,7 +1366,7 @@ Private Attributes</h2></td></tr>
 <p>Return human-readable zone label. </p>
 <dl class="section return"><dt>Returns</dt><dd>Full zone name for named zones or <span class="tt">UTC+/-HH:MM</span> for fixed offsets. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ZonedClock_8hpp_source.html#l00244">244</a> of file <a class="el" href="ZonedClock_8hpp_source.html">ZonedClock.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ZonedClock_8hpp_source.html#l00297">297</a> of file <a class="el" href="ZonedClock_8hpp_source.html">ZonedClock.hpp</a>.</p>
 
 </div>
 </div>
@@ -1266,7 +1396,7 @@ Private Attributes</h2></td></tr>
 <p>Return short name of the stored named zone. </p>
 <dl class="section return"><dt>Returns</dt><dd>Zone abbreviation or an empty string in fixed-offset mode. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ZonedClock_8hpp_source.html#l00238">238</a> of file <a class="el" href="ZonedClock_8hpp_source.html">ZonedClock.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ZonedClock_8hpp_source.html#l00291">291</a> of file <a class="el" href="ZonedClock_8hpp_source.html">ZonedClock.hpp</a>.</p>
 
 </div>
 </div>
@@ -1291,7 +1421,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ZonedClock_8hpp_source.html#l00313">313</a> of file <a class="el" href="ZonedClock_8hpp_source.html">ZonedClock.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ZonedClock_8hpp_source.html#l00366">366</a> of file <a class="el" href="ZonedClock_8hpp_source.html">ZonedClock.hpp</a>.</p>
 
 </div>
 </div>
@@ -1315,7 +1445,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ZonedClock_8hpp_source.html#l00312">312</a> of file <a class="el" href="ZonedClock_8hpp_source.html">ZonedClock.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ZonedClock_8hpp_source.html#l00365">365</a> of file <a class="el" href="ZonedClock_8hpp_source.html">ZonedClock.hpp</a>.</p>
 
 </div>
 </div>
@@ -1339,7 +1469,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ZonedClock_8hpp_source.html#l00314">314</a> of file <a class="el" href="ZonedClock_8hpp_source.html">ZonedClock.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ZonedClock_8hpp_source.html#l00367">367</a> of file <a class="el" href="ZonedClock_8hpp_source.html">ZonedClock.hpp</a>.</p>
 
 </div>
 </div>
@@ -1363,7 +1493,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ZonedClock_8hpp_source.html#l00311">311</a> of file <a class="el" href="ZonedClock_8hpp_source.html">ZonedClock.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ZonedClock_8hpp_source.html#l00364">364</a> of file <a class="el" href="ZonedClock_8hpp_source.html">ZonedClock.hpp</a>.</p>
 
 </div>
 </div>

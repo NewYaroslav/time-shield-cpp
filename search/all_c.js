@@ -39,6 +39,10 @@ var searchData=
   ['linking_36',['Windows Linking',['../md_docs_2library-integration-guidelines.html#autotoc_md88',1,'']]],
   ['local_5fms_37',['local_ms',['../classtime__shield_1_1DateTime.html#ad3e832106dcd0a6c99546a03f3b85f57',1,'time_shield::DateTime::local_ms() const noexcept'],['../classtime__shield_1_1DateTime.html#a3c79f11931bfc392b91c7c8f37727f71',1,'time_shield::DateTime::local_ms() const']]],
   ['local_5ftime_5fms_38',['local_time_ms',['../classtime__shield_1_1ZonedClock.html#abc58f8f073b58aec53edd904588b8b81',1,'time_shield::ZonedClock']]],
-  ['local_5ftime_5fsec_39',['local_time_sec',['../classtime__shield_1_1ZonedClock.html#a2635282295df93ca26a71d93f65d669b',1,'time_shield::ZonedClock']]],
-  ['local_5ftime_5fus_40',['local_time_us',['../classtime__shield_1_1ZonedClock.html#a1a61193d39f52d8dfc532eedbfc2c2bc',1,'time_shield::ZonedClock']]]
+  ['local_5ftime_5fresolution_5fto_5futc_39',['local_time_resolution_to_utc',['../namespacetime__shield_1_1detail.html#adc871d0b40190164e89a3fd016c61f69',1,'time_shield::detail']]],
+  ['local_5ftime_5fsec_40',['local_time_sec',['../classtime__shield_1_1ZonedClock.html#a2635282295df93ca26a71d93f65d669b',1,'time_shield::ZonedClock']]],
+  ['local_5ftime_5fstatus_5fhas_5futc_41',['local_time_status_has_utc',['../namespacetime__shield_1_1detail.html#a0de2b0a191d5eeca8c9e69f18adfb051',1,'time_shield::detail']]],
+  ['local_5ftime_5fus_42',['local_time_us',['../classtime__shield_1_1ZonedClock.html#a1a61193d39f52d8dfc532eedbfc2c2bc',1,'time_shield::ZonedClock']]],
+  ['localtimeresolution_43',['LocalTimeResolution',['../structtime__shield_1_1LocalTimeResolution.html',1,'time_shield']]],
+  ['localtimestatus_44',['LocalTimeStatus',['../namespacetime__shield.html#a6829f4391ca64230bda539c0815feb00',1,'time_shield']]]
 ];

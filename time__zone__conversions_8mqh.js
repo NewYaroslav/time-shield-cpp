@@ -36,7 +36,7 @@ var time__zone__conversions_8mqh =
     [ "time_shield::gst_to_gmt", "namespacetime__shield.html#a8d134b9e45492cc9704af495db0e1582", null ],
     [ "time_shield::hkt_to_gmt", "namespacetime__shield.html#ab88e08e5bfca2978c9b8965f9a898536", null ],
     [ "time_shield::ict_to_gmt", "namespacetime__shield.html#ac37be7de2ae0ffc205954e5e9c212a06", null ],
-    [ "time_shield::is_us_eastern_dst_local", "group__time__conversions__time__zone__conversions.html#ga368574073b7e11e73dd258e319aa3db7", null ],
+    [ "time_shield::is_us_eastern_dst_local", "namespacetime__shield.html#a368574073b7e11e73dd258e319aa3db7", null ],
     [ "time_shield::ist_to_gmt", "namespacetime__shield.html#a673e05ff1bf570f50ad35cd28dcaa81d", null ],
     [ "time_shield::jst_to_gmt", "namespacetime__shield.html#a8f2e3bfd7fb2ac8d030d908e33c59cec", null ],
     [ "time_shield::kst_to_gmt", "namespacetime__shield.html#a828f00b19888d5012f109f3e20e98bff", null ],

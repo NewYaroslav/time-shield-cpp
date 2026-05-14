@@ -17,6 +17,7 @@ var hierarchy =
       [ "time_shield::detail::UdpTransportPosix", "classtime__shield_1_1detail_1_1UdpTransportPosix.html", null ],
       [ "time_shield::detail::UdpTransportWin", "classtime__shield_1_1detail_1_1UdpTransportWin.html", null ]
     ] ],
+    [ "time_shield::LocalTimeResolution", "structtime__shield_1_1LocalTimeResolution.html", null ],
     [ "time_shield::astronomy::MoonPhase", "classtime__shield_1_1astronomy_1_1MoonPhase.html", null ],
     [ "time_shield::astronomy::MoonPhaseResult", "structtime__shield_1_1astronomy_1_1MoonPhaseResult.html", null ],
     [ "time_shield::MoonPhaseSineCosine", "structtime__shield_1_1MoonPhaseSineCosine.html", null ],

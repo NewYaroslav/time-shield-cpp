@@ -13,5 +13,5 @@ var searchData=
   ['build_5fdefault_5fservers_10',['build_default_servers',['../classtime__shield_1_1NtpClientPoolT.html#a0ece43f90d4ed5fa9ca5e57a75752f9f',1,'time_shield::NtpClientPoolT']]],
   ['build_5frunner_5flocked_11',['build_runner_locked',['../classtime__shield_1_1NtpTimeServiceT.html#a03077cfbb94ffddeb059fcb5549717a8',1,'time_shield::NtpTimeServiceT']]],
   ['byt_12',['BYT',['../group__time__enums.html#ggad8cb858fb6cedcf76c4f0630d56e042ba2b5db452429fff731482408aa652403c',1,'time_shield']]],
-  ['byt_5fto_5fgmt_13',['byt_to_gmt',['../group__time__conversions__time__zone__conversions.html#ga209e44cf78be9a31f5c4a3493fccdbbe',1,'time_shield::byt_to_gmt(ts_t byt)'],['../namespacetime__shield.html#a6cfa140572987fd1de49e5477ef09deb',1,'time_shield::byt_to_gmt(const datetime byt)']]]
+  ['byt_5fto_5fgmt_13',['byt_to_gmt',['../namespacetime__shield.html#a209e44cf78be9a31f5c4a3493fccdbbe',1,'time_shield::byt_to_gmt(ts_t byt)'],['../namespacetime__shield.html#a6cfa140572987fd1de49e5477ef09deb',1,'time_shield::byt_to_gmt(const datetime byt)']]]
 ];

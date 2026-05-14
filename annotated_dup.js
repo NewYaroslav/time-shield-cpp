@@ -48,6 +48,7 @@ var annotated_dup =
       [ "NtpTimeServiceT", "classtime__shield_1_1NtpTimeServiceT.html", "classtime__shield_1_1NtpTimeServiceT" ],
       [ "NtpTimeService", "classtime__shield_1_1NtpTimeService.html", "classtime__shield_1_1NtpTimeService" ],
       [ "TimeStruct", "structtime__shield_1_1TimeStruct.html", "structtime__shield_1_1TimeStruct" ],
+      [ "LocalTimeResolution", "structtime__shield_1_1LocalTimeResolution.html", "structtime__shield_1_1LocalTimeResolution" ],
       [ "TimeZoneStruct", "structtime__shield_1_1TimeZoneStruct.html", "structtime__shield_1_1TimeZoneStruct" ],
       [ "TimerScheduler", "classtime__shield_1_1TimerScheduler.html", "classtime__shield_1_1TimerScheduler" ],
       [ "Timer", "classtime__shield_1_1Timer.html", "classtime__shield_1_1Timer" ],

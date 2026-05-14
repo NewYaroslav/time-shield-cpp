@@ -271,6 +271,20 @@ Functions</h2></td></tr>
 <tr class="memitem:a258a9ef1d7618d68ff8e180de7d44350" id="r_a258a9ef1d7618d68ff8e180de7d44350"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a258a9ef1d7618d68ff8e180de7d44350">fixed_zone_offset</a> (<a class="el" href="group__time__enums.html#gad8cb858fb6cedcf76c4f0630d56e042b">TimeZone</a> zone, <a class="el" href="group__time__types.html#ga467db13fb99208bd078b5abff59866fb">tz_t</a> &amp;utc_offset)</td></tr>
 <tr class="memitem:af56a0b4f4748bf703d41de48379cc61f" id="r_af56a0b4f4748bf703d41de48379cc61f"><td class="memItemLeft"><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#af56a0b4f4748bf703d41de48379cc61f">zone_to_gmt_ms_by_seconds</a> (<a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> local_ms, <a class="el" href="group__time__enums.html#gad8cb858fb6cedcf76c4f0630d56e042b">TimeZone</a> zone)</td></tr>
 <tr class="memitem:a9f2ae06d2224bfa6489e47d3c38d294d" id="r_a9f2ae06d2224bfa6489e47d3c38d294d"><td class="memItemLeft"><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#a9f2ae06d2224bfa6489e47d3c38d294d">gmt_to_zone_ms_by_seconds</a> (<a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> gmt_ms, <a class="el" href="group__time__enums.html#gad8cb858fb6cedcf76c4f0630d56e042b">TimeZone</a> zone)</td></tr>
+<tr class="memitem:a4a996b4ca963dda8c6d0f16b609fd57e" id="r_a4a996b4ca963dda8c6d0f16b609fd57e"><td class="memItemLeft"><a class="el" href="structtime__shield_1_1LocalTimeResolution.html">LocalTimeResolution</a>&#160;</td><td class="memItemRight"><a class="el" href="#a4a996b4ca963dda8c6d0f16b609fd57e">make_local_time_resolution</a> (<a class="el" href="namespacetime__shield.html#a6829f4391ca64230bda539c0815feb00">LocalTimeStatus</a> status, <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> first_utc_ms=<a class="el" href="group__time__constants.html#ga1844be7ac6c1c9af10a78f801eae3dca">ERROR_TIMESTAMP</a>, <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> second_utc_ms=<a class="el" href="group__time__constants.html#ga1844be7ac6c1c9af10a78f801eae3dca">ERROR_TIMESTAMP</a>)</td></tr>
+<tr class="memitem:ad7725ec26abe311d5db41f0e8a58603d" id="r_ad7725ec26abe311d5db41f0e8a58603d"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ad7725ec26abe311d5db41f0e8a58603d">dynamic_dst_zone_offsets</a> (<a class="el" href="group__time__enums.html#gad8cb858fb6cedcf76c4f0630d56e042b">TimeZone</a> zone, <a class="el" href="group__time__types.html#ga467db13fb99208bd078b5abff59866fb">tz_t</a> &amp;first_offset, <a class="el" href="group__time__types.html#ga467db13fb99208bd078b5abff59866fb">tz_t</a> &amp;second_offset)</td></tr>
+<tr class="memitem:a2db9f0e985439e05822d775242850bd0" id="r_a2db9f0e985439e05822d775242850bd0"><td class="memItemLeft"><a class="el" href="group__time__types.html#ga467db13fb99208bd078b5abff59866fb">tz_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#a2db9f0e985439e05822d775242850bd0">dynamic_zone_standard_offset</a> (<a class="el" href="group__time__enums.html#gad8cb858fb6cedcf76c4f0630d56e042b">TimeZone</a> zone)</td></tr>
+<tr class="memitem:ada0ce6312d353bc17301de96c596640f" id="r_ada0ce6312d353bc17301de96c596640f"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ada0ce6312d353bc17301de96c596640f">is_european_dynamic_zone</a> (<a class="el" href="group__time__enums.html#gad8cb858fb6cedcf76c4f0630d56e042b">TimeZone</a> zone)</td></tr>
+<tr class="memitem:a090404040d4b4a45b4da59f7710d174a" id="r_a090404040d4b4a45b4da59f7710d174a"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a090404040d4b4a45b4da59f7710d174a">is_us_dynamic_zone</a> (<a class="el" href="group__time__enums.html#gad8cb858fb6cedcf76c4f0630d56e042b">TimeZone</a> zone)</td></tr>
+<tr class="memitem:ac4a6639dd53ac6801b04e1aff44760ad" id="r_ac4a6639dd53ac6801b04e1aff44760ad"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ac4a6639dd53ac6801b04e1aff44760ad">european_dst_at_utc_ms</a> (<a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> utc_ms)</td></tr>
+<tr class="memitem:a57bb036af5343139a99e4640093f9169" id="r_a57bb036af5343139a99e4640093f9169"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a57bb036af5343139a99e4640093f9169">first_sunday_month_day</a> (int <a class="el" href="group__time__conversions.html#gadd68b9e632d1b5a43c18b116bbf105a4">year</a>, int month)</td></tr>
+<tr class="memitem:afdb0e3958baebbd98a74392c952aa507" id="r_afdb0e3958baebbd98a74392c952aa507"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#afdb0e3958baebbd98a74392c952aa507">us_dst_at_utc_ms</a> (<a class="el" href="group__time__enums.html#gad8cb858fb6cedcf76c4f0630d56e042b">TimeZone</a> zone, <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> utc_ms)</td></tr>
+<tr class="memitem:af320a840d5184c7dcada9e71a3e91aa8" id="r_af320a840d5184c7dcada9e71a3e91aa8"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#af320a840d5184c7dcada9e71a3e91aa8">dynamic_offset_applies_at_utc_ms</a> (<a class="el" href="group__time__enums.html#gad8cb858fb6cedcf76c4f0630d56e042b">TimeZone</a> zone, <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> utc_ms, <a class="el" href="group__time__types.html#ga467db13fb99208bd078b5abff59866fb">tz_t</a> offset)</td></tr>
+<tr class="memitem:a05329878f2caa5c4f95f7a80fb92d479" id="r_a05329878f2caa5c4f95f7a80fb92d479"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a05329878f2caa5c4f95f7a80fb92d479">add_local_time_candidate</a> (<a class="el" href="structtime__shield_1_1LocalTimeResolution.html">LocalTimeResolution</a> &amp;result, <a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> local_ms, <a class="el" href="group__time__enums.html#gad8cb858fb6cedcf76c4f0630d56e042b">TimeZone</a> zone, <a class="el" href="group__time__types.html#ga467db13fb99208bd078b5abff59866fb">tz_t</a> offset)</td></tr>
+<tr class="memitem:a43b18858eababae4fbb4db8f839db77a" id="r_a43b18858eababae4fbb4db8f839db77a"><td class="memItemLeft"><a class="el" href="structtime__shield_1_1LocalTimeResolution.html">LocalTimeResolution</a>&#160;</td><td class="memItemRight"><a class="el" href="#a43b18858eababae4fbb4db8f839db77a">resolve_with_dynamic_offsets</a> (<a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> local_ms, <a class="el" href="group__time__enums.html#gad8cb858fb6cedcf76c4f0630d56e042b">TimeZone</a> zone, <a class="el" href="group__time__types.html#ga467db13fb99208bd078b5abff59866fb">tz_t</a> first_offset, <a class="el" href="group__time__types.html#ga467db13fb99208bd078b5abff59866fb">tz_t</a> second_offset)</td></tr>
+<tr class="memitem:a0de2b0a191d5eeca8c9e69f18adfb051" id="r_a0de2b0a191d5eeca8c9e69f18adfb051"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a0de2b0a191d5eeca8c9e69f18adfb051">local_time_status_has_utc</a> (<a class="el" href="namespacetime__shield.html#a6829f4391ca64230bda539c0815feb00">LocalTimeStatus</a> status)</td></tr>
+<tr class="memitem:adc871d0b40190164e89a3fd016c61f69" id="r_adc871d0b40190164e89a3fd016c61f69"><td class="memItemLeft"><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#adc871d0b40190164e89a3fd016c61f69">local_time_resolution_to_utc</a> (const <a class="el" href="structtime__shield_1_1LocalTimeResolution.html">LocalTimeResolution</a> &amp;resolution, <a class="el" href="namespacetime__shield.html#acada22540daffcec62da92968c13b5f4">AmbiguousTimePolicy</a> ambiguous_policy)</td></tr>
+<tr class="memitem:aec71746702fe3d0b9d101ac54c0dbc3b" id="r_aec71746702fe3d0b9d101ac54c0dbc3b"><td class="memItemLeft"><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#aec71746702fe3d0b9d101ac54c0dbc3b">shift_nonexistent_local_time_ms</a> (<a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> local_ms, <a class="el" href="group__time__enums.html#gad8cb858fb6cedcf76c4f0630d56e042b">TimeZone</a> zone, int direction)</td></tr>
 <tr class="memitem:a5e9f998322af0d986f490b7526d5345d" id="r_a5e9f998322af0d986f490b7526d5345d"><td class="memItemLeft"><a class="el" href="structtime__shield_1_1detail_1_1TimerState.html">TimerState</a> *&amp;&#160;</td><td class="memItemRight"><a class="el" href="#a5e9f998322af0d986f490b7526d5345d">current_timer_state</a> ()</td></tr>
 </table>
 <a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Typedef Documentation</h2>
@@ -323,6 +337,47 @@ Functions</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a id="a05329878f2caa5c4f95f7a80fb92d479" name="a05329878f2caa5c4f95f7a80fb92d479"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05329878f2caa5c4f95f7a80fb92d479">&#9670;&#160;</a></span>add_local_time_candidate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void time_shield::detail::add_local_time_candidate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structtime__shield_1_1LocalTimeResolution.html">LocalTimeResolution</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>result</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a></td>          <td class="paramname"><span class="paramname"><em>local_ms</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__time__enums.html#gad8cb858fb6cedcf76c4f0630d56e042b">TimeZone</a></td>          <td class="paramname"><span class="paramname"><em>zone</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#ga467db13fb99208bd078b5abff59866fb">tz_t</a></td>          <td class="paramname"><span class="paramname"><em>offset</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="time__zone__conversions_8hpp_source.html#l00696">696</a> of file <a class="el" href="time__zone__conversions_8hpp_source.html">time_zone_conversions.hpp</a>.</p>
+
+</div>
+</div>
 <a id="adfc1e845ab7a84cbef9e712aa26d327f" name="adfc1e845ab7a84cbef9e712aa26d327f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adfc1e845ab7a84cbef9e712aa26d327f">&#9670;&#160;</a></span>ascii_iequals()</h2>
 
@@ -413,7 +468,7 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="time__zone__conversions_8hpp_source.html#l00025">25</a> of file <a class="el" href="time__zone__conversions_8hpp_source.html">time_zone_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__zone__conversions_8hpp_source.html#l00056">56</a> of file <a class="el" href="time__zone__conversions_8hpp_source.html">time_zone_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -485,6 +540,132 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ad7725ec26abe311d5db41f0e8a58603d" name="ad7725ec26abe311d5db41f0e8a58603d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7725ec26abe311d5db41f0e8a58603d">&#9670;&#160;</a></span>dynamic_dst_zone_offsets()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool time_shield::detail::dynamic_dst_zone_offsets </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__time__enums.html#gad8cb858fb6cedcf76c4f0630d56e042b">TimeZone</a></td>          <td class="paramname"><span class="paramname"><em>zone</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#ga467db13fb99208bd078b5abff59866fb">tz_t</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>first_offset</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#ga467db13fb99208bd078b5abff59866fb">tz_t</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>second_offset</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="time__zone__conversions_8hpp_source.html#l00570">570</a> of file <a class="el" href="time__zone__conversions_8hpp_source.html">time_zone_conversions.hpp</a>.</p>
+
+</div>
+</div>
+<a id="af320a840d5184c7dcada9e71a3e91aa8" name="af320a840d5184c7dcada9e71a3e91aa8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af320a840d5184c7dcada9e71a3e91aa8">&#9670;&#160;</a></span>dynamic_offset_applies_at_utc_ms()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool time_shield::detail::dynamic_offset_applies_at_utc_ms </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__time__enums.html#gad8cb858fb6cedcf76c4f0630d56e042b">TimeZone</a></td>          <td class="paramname"><span class="paramname"><em>zone</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a></td>          <td class="paramname"><span class="paramname"><em>utc_ms</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#ga467db13fb99208bd078b5abff59866fb">tz_t</a></td>          <td class="paramname"><span class="paramname"><em>offset</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="time__zone__conversions_8hpp_source.html#l00670">670</a> of file <a class="el" href="time__zone__conversions_8hpp_source.html">time_zone_conversions.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a2db9f0e985439e05822d775242850bd0" name="a2db9f0e985439e05822d775242850bd0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2db9f0e985439e05822d775242850bd0">&#9670;&#160;</a></span>dynamic_zone_standard_offset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__time__types.html#ga467db13fb99208bd078b5abff59866fb">tz_t</a> time_shield::detail::dynamic_zone_standard_offset </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__time__enums.html#gad8cb858fb6cedcf76c4f0630d56e042b">TimeZone</a></td>          <td class="paramname"><span class="paramname"><em>zone</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="time__zone__conversions_8hpp_source.html#l00601">601</a> of file <a class="el" href="time__zone__conversions_8hpp_source.html">time_zone_conversions.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ac4a6639dd53ac6801b04e1aff44760ad" name="ac4a6639dd53ac6801b04e1aff44760ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4a6639dd53ac6801b04e1aff44760ad">&#9670;&#160;</a></span>european_dst_at_utc_ms()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool time_shield::detail::european_dst_at_utc_ms </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a></td>          <td class="paramname"><span class="paramname"><em>utc_ms</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="time__zone__conversions_8hpp_source.html#l00626">626</a> of file <a class="el" href="time__zone__conversions_8hpp_source.html">time_zone_conversions.hpp</a>.</p>
+
+</div>
+</div>
 <a id="af011f1ee32fce56d9b5104851c8060e7" name="af011f1ee32fce56d9b5104851c8060e7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af011f1ee32fce56d9b5104851c8060e7">&#9670;&#160;</a></span>european_local_to_gmt()</h2>
 
@@ -512,7 +693,7 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="time__zone__conversions_8hpp_source.html#l00134">134</a> of file <a class="el" href="time__zone__conversions_8hpp_source.html">time_zone_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__zone__conversions_8hpp_source.html#l00165">165</a> of file <a class="el" href="time__zone__conversions_8hpp_source.html">time_zone_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -747,6 +928,37 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a57bb036af5343139a99e4640093f9169" name="a57bb036af5343139a99e4640093f9169"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57bb036af5343139a99e4640093f9169">&#9670;&#160;</a></span>first_sunday_month_day()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int time_shield::detail::first_sunday_month_day </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>year</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>month</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="time__zone__conversions_8hpp_source.html#l00637">637</a> of file <a class="el" href="time__zone__conversions_8hpp_source.html">time_zone_conversions.hpp</a>.</p>
+
+</div>
+</div>
 <a id="a258a9ef1d7618d68ff8e180de7d44350" name="a258a9ef1d7618d68ff8e180de7d44350"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a258a9ef1d7618d68ff8e180de7d44350">&#9670;&#160;</a></span>fixed_zone_offset()</h2>
 
@@ -774,7 +986,7 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="time__zone__conversions_8hpp_source.html#l00192">192</a> of file <a class="el" href="time__zone__conversions_8hpp_source.html">time_zone_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__zone__conversions_8hpp_source.html#l00223">223</a> of file <a class="el" href="time__zone__conversions_8hpp_source.html">time_zone_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -871,7 +1083,7 @@ template&lt;class T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="time__zone__conversions_8hpp_source.html#l00098">98</a> of file <a class="el" href="time__zone__conversions_8hpp_source.html">time_zone_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__zone__conversions_8hpp_source.html#l00129">129</a> of file <a class="el" href="time__zone__conversions_8hpp_source.html">time_zone_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -902,7 +1114,7 @@ template&lt;class T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="time__zone__conversions_8hpp_source.html#l00138">138</a> of file <a class="el" href="time__zone__conversions_8hpp_source.html">time_zone_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__zone__conversions_8hpp_source.html#l00169">169</a> of file <a class="el" href="time__zone__conversions_8hpp_source.html">time_zone_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -933,7 +1145,7 @@ template&lt;class T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="time__zone__conversions_8hpp_source.html#l00262">262</a> of file <a class="el" href="time__zone__conversions_8hpp_source.html">time_zone_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__zone__conversions_8hpp_source.html#l00293">293</a> of file <a class="el" href="time__zone__conversions_8hpp_source.html">time_zone_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -1096,6 +1308,60 @@ template&lt;class T&gt; </div>
 
 </div>
 </div>
+<a id="ada0ce6312d353bc17301de96c596640f" name="ada0ce6312d353bc17301de96c596640f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada0ce6312d353bc17301de96c596640f">&#9670;&#160;</a></span>is_european_dynamic_zone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool time_shield::detail::is_european_dynamic_zone </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__time__enums.html#gad8cb858fb6cedcf76c4f0630d56e042b">TimeZone</a></td>          <td class="paramname"><span class="paramname"><em>zone</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="time__zone__conversions_8hpp_source.html#l00618">618</a> of file <a class="el" href="time__zone__conversions_8hpp_source.html">time_zone_conversions.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a090404040d4b4a45b4da59f7710d174a" name="a090404040d4b4a45b4da59f7710d174a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a090404040d4b4a45b4da59f7710d174a">&#9670;&#160;</a></span>is_us_dynamic_zone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool time_shield::detail::is_us_dynamic_zone </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__time__enums.html#gad8cb858fb6cedcf76c4f0630d56e042b">TimeZone</a></td>          <td class="paramname"><span class="paramname"><em>zone</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="time__zone__conversions_8hpp_source.html#l00622">622</a> of file <a class="el" href="time__zone__conversions_8hpp_source.html">time_zone_conversions.hpp</a>.</p>
+
+</div>
+</div>
 <a id="a6c483bfe8e08b1afe0469e0eff1e720b" name="a6c483bfe8e08b1afe0469e0eff1e720b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6c483bfe8e08b1afe0469e0eff1e720b">&#9670;&#160;</a></span>is_us_eastern_dst_local()</h2>
 
@@ -1119,7 +1385,7 @@ template&lt;class T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="time__zone__conversions_8hpp_source.html#l00142">142</a> of file <a class="el" href="time__zone__conversions_8hpp_source.html">time_zone_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__zone__conversions_8hpp_source.html#l00173">173</a> of file <a class="el" href="time__zone__conversions_8hpp_source.html">time_zone_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -1147,6 +1413,100 @@ template&lt;class T&gt; </div>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="ole__automation__conversions_8hpp_source.html#l00067">67</a> of file <a class="el" href="ole__automation__conversions_8hpp_source.html">ole_automation_conversions.hpp</a>.</p>
+
+</div>
+</div>
+<a id="adc871d0b40190164e89a3fd016c61f69" name="adc871d0b40190164e89a3fd016c61f69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc871d0b40190164e89a3fd016c61f69">&#9670;&#160;</a></span>local_time_resolution_to_utc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> time_shield::detail::local_time_resolution_to_utc </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structtime__shield_1_1LocalTimeResolution.html">LocalTimeResolution</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>resolution</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacetime__shield.html#acada22540daffcec62da92968c13b5f4">AmbiguousTimePolicy</a></td>          <td class="paramname"><span class="paramname"><em>ambiguous_policy</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="time__zone__conversions_8hpp_source.html#l00754">754</a> of file <a class="el" href="time__zone__conversions_8hpp_source.html">time_zone_conversions.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a0de2b0a191d5eeca8c9e69f18adfb051" name="a0de2b0a191d5eeca8c9e69f18adfb051"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0de2b0a191d5eeca8c9e69f18adfb051">&#9670;&#160;</a></span>local_time_status_has_utc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool time_shield::detail::local_time_status_has_utc </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacetime__shield.html#a6829f4391ca64230bda539c0815feb00">LocalTimeStatus</a></td>          <td class="paramname"><span class="paramname"><em>status</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="time__zone__conversions_8hpp_source.html#l00749">749</a> of file <a class="el" href="time__zone__conversions_8hpp_source.html">time_zone_conversions.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a4a996b4ca963dda8c6d0f16b609fd57e" name="a4a996b4ca963dda8c6d0f16b609fd57e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a996b4ca963dda8c6d0f16b609fd57e">&#9670;&#160;</a></span>make_local_time_resolution()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structtime__shield_1_1LocalTimeResolution.html">LocalTimeResolution</a> time_shield::detail::make_local_time_resolution </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacetime__shield.html#a6829f4391ca64230bda539c0815feb00">LocalTimeStatus</a></td>          <td class="paramname"><span class="paramname"><em>status</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a></td>          <td class="paramname"><span class="paramname"><em>first_utc_ms</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="group__time__constants.html#ga1844be7ac6c1c9af10a78f801eae3dca">ERROR_TIMESTAMP</a></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a></td>          <td class="paramname"><span class="paramname"><em>second_utc_ms</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="group__time__constants.html#ga1844be7ac6c1c9af10a78f801eae3dca">ERROR_TIMESTAMP</a></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="time__zone__conversions_8hpp_source.html#l00562">562</a> of file <a class="el" href="time__zone__conversions_8hpp_source.html">time_zone_conversions.hpp</a>.</p>
 
 </div>
 </div>
@@ -1932,6 +2292,83 @@ template&lt;class T&gt; </div>
 
 </div>
 </div>
+<a id="a43b18858eababae4fbb4db8f839db77a" name="a43b18858eababae4fbb4db8f839db77a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43b18858eababae4fbb4db8f839db77a">&#9670;&#160;</a></span>resolve_with_dynamic_offsets()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structtime__shield_1_1LocalTimeResolution.html">LocalTimeResolution</a> time_shield::detail::resolve_with_dynamic_offsets </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a></td>          <td class="paramname"><span class="paramname"><em>local_ms</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__time__enums.html#gad8cb858fb6cedcf76c4f0630d56e042b">TimeZone</a></td>          <td class="paramname"><span class="paramname"><em>zone</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#ga467db13fb99208bd078b5abff59866fb">tz_t</a></td>          <td class="paramname"><span class="paramname"><em>first_offset</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#ga467db13fb99208bd078b5abff59866fb">tz_t</a></td>          <td class="paramname"><span class="paramname"><em>second_offset</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="time__zone__conversions_8hpp_source.html#l00719">719</a> of file <a class="el" href="time__zone__conversions_8hpp_source.html">time_zone_conversions.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aec71746702fe3d0b9d101ac54c0dbc3b" name="aec71746702fe3d0b9d101ac54c0dbc3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec71746702fe3d0b9d101ac54c0dbc3b">&#9670;&#160;</a></span>shift_nonexistent_local_time_ms()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a> time_shield::detail::shift_nonexistent_local_time_ms </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a></td>          <td class="paramname"><span class="paramname"><em>local_ms</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__time__enums.html#gad8cb858fb6cedcf76c4f0630d56e042b">TimeZone</a></td>          <td class="paramname"><span class="paramname"><em>zone</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>direction</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="time__zone__conversions_8hpp_source.html#l00882">882</a> of file <a class="el" href="time__zone__conversions_8hpp_source.html">time_zone_conversions.hpp</a>.</p>
+
+</div>
+</div>
 <a id="a8732a208af06d7af4e8b4e3a670800a1" name="a8732a208af06d7af4e8b4e3a670800a1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8732a208af06d7af4e8b4e3a670800a1">&#9670;&#160;</a></span>skip_spaces()</h2>
 
@@ -2391,6 +2828,37 @@ template&lt;class T&gt; </div>
 
 </div>
 </div>
+<a id="afdb0e3958baebbd98a74392c952aa507" name="afdb0e3958baebbd98a74392c952aa507"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdb0e3958baebbd98a74392c952aa507">&#9670;&#160;</a></span>us_dst_at_utc_ms()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool time_shield::detail::us_dst_at_utc_ms </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__time__enums.html#gad8cb858fb6cedcf76c4f0630d56e042b">TimeZone</a></td>          <td class="paramname"><span class="paramname"><em>zone</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__time__types.html#ga4f03438f0a251af75f1ac8eaa3a9eaad">ts_ms_t</a></td>          <td class="paramname"><span class="paramname"><em>utc_ms</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="time__zone__conversions_8hpp_source.html#l00643">643</a> of file <a class="el" href="time__zone__conversions_8hpp_source.html">time_zone_conversions.hpp</a>.</p>
+
+</div>
+</div>
 <a id="af56a0b4f4748bf703d41de48379cc61f" name="af56a0b4f4748bf703d41de48379cc61f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af56a0b4f4748bf703d41de48379cc61f">&#9670;&#160;</a></span>zone_to_gmt_ms_by_seconds()</h2>
 
@@ -2418,7 +2886,7 @@ template&lt;class T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="time__zone__conversions_8hpp_source.html#l00249">249</a> of file <a class="el" href="time__zone__conversions_8hpp_source.html">time_zone_conversions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__zone__conversions_8hpp_source.html#l00280">280</a> of file <a class="el" href="time__zone__conversions_8hpp_source.html">time_zone_conversions.hpp</a>.</p>
 
 </div>
 </div>

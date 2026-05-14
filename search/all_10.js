@@ -32,7 +32,7 @@ var searchData=
   ['phase_5fcos_29',['phase_cos',['../structtime__shield_1_1MoonPhaseSineCosine.html#ad5d4ab3ef6c3a7fb1792982fce894467',1,'time_shield::MoonPhaseSineCosine::phase_cos'],['../structtime__shield_1_1astronomy_1_1MoonPhaseResult.html#ab8d76a7d973ff539b60d7a0aaf5c4671',1,'time_shield::astronomy::MoonPhaseResult::phase_cos']]],
   ['phase_5fsin_30',['phase_sin',['../structtime__shield_1_1MoonPhaseSineCosine.html#a182ae974a831d9c3c6f138209b10e716',1,'time_shield::MoonPhaseSineCosine::phase_sin'],['../structtime__shield_1_1astronomy_1_1MoonPhaseResult.html#aa5e113195cdff17210b79cf78a87fc35',1,'time_shield::astronomy::MoonPhaseResult::phase_sin']]],
   ['pht_31',['PHT',['../group__time__enums.html#ggad8cb858fb6cedcf76c4f0630d56e042ba26653a3000d91041476b766f70955758',1,'time_shield']]],
-  ['pht_5fto_5fgmt_32',['pht_to_gmt',['../group__time__conversions__time__zone__conversions.html#gac8e3962ae9fc6a3f6eb12dbeeecc6406',1,'time_shield::pht_to_gmt(ts_t pht)'],['../namespacetime__shield.html#a4e32d5eb3326393ca2533031fb0be014',1,'time_shield::pht_to_gmt(const datetime pht)']]],
+  ['pht_5fto_5fgmt_32',['pht_to_gmt',['../namespacetime__shield.html#ac8e3962ae9fc6a3f6eb12dbeeecc6406',1,'time_shield::pht_to_gmt(ts_t pht)'],['../namespacetime__shield.html#a4e32d5eb3326393ca2533031fb0be014',1,'time_shield::pht_to_gmt(const datetime pht)']]],
   ['pick_5fservers_5flocked_33',['pick_servers_locked',['../classtime__shield_1_1NtpClientPoolT.html#a3d520d7d679093955f78a697a60e3970',1,'time_shield::NtpClientPoolT']]],
   ['placement_34',['Dependency Placement',['../md_docs_2header-implementation-guidelines.html#autotoc_md68',1,'']]],
   ['platforms_35',['Tested Platforms',['../index.html#tested_sec',1,'']]],

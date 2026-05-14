@@ -19,6 +19,37 @@ namespace time_shield {
 
     ts_t zone_to_gmt(ts_t local, TimeZone zone);
     ts_t gmt_to_zone(ts_t gmt, TimeZone zone);
+    ts_ms_t zone_to_gmt_ms(ts_ms_t local_ms, TimeZone zone);
+    ts_ms_t gmt_to_zone_ms(ts_ms_t gmt_ms, TimeZone zone);
+
+    /// \brief Classification of a local civil timestamp in a time zone.
+    enum class LocalTimeStatus {
+        valid,       ///< Local time maps to exactly one UTC timestamp.
+        nonexistent, ///< Local time falls into a DST forward gap.
+        ambiguous,   ///< Local time maps to more than one UTC timestamp.
+        unsupported  ///< Zone or timestamp cannot be resolved.
+    };
+
+    /// \brief Policy for ambiguous local civil timestamps.
+    enum class AmbiguousTimePolicy {
+        first_occurrence,  ///< Use the earliest UTC occurrence.
+        second_occurrence, ///< Use the latest UTC occurrence.
+        error              ///< Return ERROR_TIMESTAMP.
+    };
+
+    /// \brief Policy for nonexistent local civil timestamps.
+    enum class NonexistentTimePolicy {
+        error,          ///< Return ERROR_TIMESTAMP.
+        shift_forward,  ///< Use the earliest valid local instant after the gap.
+        shift_backward  ///< Use the latest valid local instant before the gap.
+    };
+
+    /// \brief Result of explicit local-time resolution.
+    struct LocalTimeResolution {
+        LocalTimeStatus status;
+        ts_ms_t first_utc_ms;
+        ts_ms_t second_utc_ms;
+    };
 
     namespace detail {
 
@@ -524,6 +555,459 @@ namespace time_shield {
         ts_ms_t gmt_ms = zone_to_gmt_ms(local_ms, from);
         return gmt_ms == ERROR_TIMESTAMP ? ERROR_TIMESTAMP
                                          : gmt_to_zone_ms(gmt_ms, to);
+    }
+
+    namespace detail {
+
+        inline LocalTimeResolution make_local_time_resolution(
+            LocalTimeStatus status,
+            ts_ms_t first_utc_ms = ERROR_TIMESTAMP,
+            ts_ms_t second_utc_ms = ERROR_TIMESTAMP) {
+            LocalTimeResolution result = {status, first_utc_ms, second_utc_ms};
+            return result;
+        }
+
+        inline bool dynamic_dst_zone_offsets(TimeZone zone,
+                                             tz_t& first_offset,
+                                             tz_t& second_offset) {
+            switch(zone) {
+                case WET:
+                    first_offset = 0;
+                    second_offset = static_cast<tz_t>(SEC_PER_HOUR);
+                    return true;
+                case CET:
+                    first_offset = static_cast<tz_t>(SEC_PER_HOUR);
+                    second_offset = static_cast<tz_t>(SEC_PER_HOUR * 2);
+                    return true;
+                case EET:
+                    first_offset = static_cast<tz_t>(SEC_PER_HOUR * 2);
+                    second_offset = static_cast<tz_t>(SEC_PER_HOUR * 3);
+                    return true;
+                case ET:
+                    first_offset = static_cast<tz_t>(-SEC_PER_HOUR * 5);
+                    second_offset = static_cast<tz_t>(-SEC_PER_HOUR * 4);
+                    return true;
+                case CT:
+                    first_offset = static_cast<tz_t>(-SEC_PER_HOUR * 6);
+                    second_offset = static_cast<tz_t>(-SEC_PER_HOUR * 5);
+                    return true;
+                default:
+                    first_offset = 0;
+                    second_offset = 0;
+                    return false;
+            }
+        }
+
+        inline tz_t dynamic_zone_standard_offset(TimeZone zone) {
+            switch(zone) {
+                case WET:
+                    return 0;
+                case CET:
+                    return static_cast<tz_t>(SEC_PER_HOUR);
+                case EET:
+                    return static_cast<tz_t>(SEC_PER_HOUR * 2);
+                case ET:
+                    return static_cast<tz_t>(-SEC_PER_HOUR * 5);
+                case CT:
+                    return static_cast<tz_t>(-SEC_PER_HOUR * 6);
+                default:
+                    return 0;
+            }
+        }
+
+        inline bool is_european_dynamic_zone(TimeZone zone) {
+            return zone == WET || zone == CET || zone == EET;
+        }
+
+        inline bool is_us_dynamic_zone(TimeZone zone) {
+            return zone == ET || zone == CT;
+        }
+
+        inline bool european_dst_at_utc_ms(ts_ms_t utc_ms) {
+            const DateTimeStruct dt = to_date_time(ms_to_sec<ts_t>(utc_ms));
+            const int start_day = last_sunday_month_day(dt.year, MAR);
+            const int end_day = last_sunday_month_day(dt.year, OCT);
+            const ts_ms_t start_ms =
+                to_timestamp_ms(dt.year, int(MAR), start_day, 1, 0, 0);
+            const ts_ms_t end_ms =
+                to_timestamp_ms(dt.year, int(OCT), end_day, 1, 0, 0);
+            return utc_ms >= start_ms && utc_ms < end_ms;
+        }
+
+        inline int first_sunday_month_day(int year, int month) {
+            return static_cast<int>(
+                1 + (DAYS_PER_WEEK - day_of_week_date(year, month, 1)) %
+                        DAYS_PER_WEEK);
+        }
+
+        inline bool us_dst_at_utc_ms(TimeZone zone, ts_ms_t utc_ms) {
+            const DateTimeStruct dt = to_date_time(ms_to_sec<ts_t>(utc_ms));
+            const int year = static_cast<int>(dt.year);
+            int start_month = MAR;
+            int end_month = NOV;
+            int start_day = first_sunday_month_day(year, MAR) + 7;
+            int end_day = first_sunday_month_day(year, NOV);
+
+            if(dt.year < 2007) {
+                start_month = APR;
+                end_month = OCT;
+                start_day = first_sunday_month_day(year, APR);
+                end_day = last_sunday_month_day(year, OCT);
+            }
+
+            const tz_t standard_offset = dynamic_zone_standard_offset(zone);
+            const tz_t daylight_offset =
+                static_cast<tz_t>(standard_offset + SEC_PER_HOUR);
+            const ts_ms_t start_local =
+                to_timestamp_ms(dt.year, start_month, start_day, 2, 0, 0);
+            const ts_ms_t end_local =
+                to_timestamp_ms(dt.year, end_month, end_day, 2, 0, 0);
+            const ts_ms_t start_utc = to_utc_ms(start_local, standard_offset);
+            const ts_ms_t end_utc = to_utc_ms(end_local, daylight_offset);
+            return utc_ms >= start_utc && utc_ms < end_utc;
+        }
+
+        inline bool dynamic_offset_applies_at_utc_ms(TimeZone zone,
+                                                     ts_ms_t utc_ms,
+                                                     tz_t offset) {
+            if(is_european_dynamic_zone(zone)) {
+                const tz_t standard_offset = dynamic_zone_standard_offset(zone);
+                const tz_t expected =
+                    static_cast<tz_t>(standard_offset +
+                                      (european_dst_at_utc_ms(utc_ms)
+                                           ? SEC_PER_HOUR
+                                           : 0));
+                return offset == expected;
+            }
+
+            if(is_us_dynamic_zone(zone)) {
+                const tz_t standard_offset = dynamic_zone_standard_offset(zone);
+                const tz_t expected =
+                    static_cast<tz_t>(standard_offset +
+                                      (us_dst_at_utc_ms(zone, utc_ms)
+                                           ? SEC_PER_HOUR
+                                           : 0));
+                return offset == expected;
+            }
+
+            return false;
+        }
+
+        inline void add_local_time_candidate(LocalTimeResolution& result,
+                                             ts_ms_t local_ms,
+                                             TimeZone zone,
+                                             tz_t offset) {
+            const ts_ms_t candidate = to_utc_ms(local_ms, offset);
+            if(candidate == ERROR_TIMESTAMP ||
+               to_local_ms(candidate, offset) != local_ms ||
+               !dynamic_offset_applies_at_utc_ms(zone, candidate, offset) ||
+               result.first_utc_ms == candidate ||
+               result.second_utc_ms == candidate) {
+                return;
+            }
+
+            if(result.first_utc_ms == ERROR_TIMESTAMP) {
+                result.first_utc_ms = candidate;
+                return;
+            }
+
+            if(result.second_utc_ms == ERROR_TIMESTAMP) {
+                result.second_utc_ms = candidate;
+            }
+        }
+
+        inline LocalTimeResolution resolve_with_dynamic_offsets(
+            ts_ms_t local_ms,
+            TimeZone zone,
+            tz_t first_offset,
+            tz_t second_offset) {
+            LocalTimeResolution result =
+                make_local_time_resolution(LocalTimeStatus::nonexistent);
+
+            add_local_time_candidate(result, local_ms, zone, first_offset);
+            add_local_time_candidate(result, local_ms, zone, second_offset);
+
+            if(result.first_utc_ms == ERROR_TIMESTAMP) {
+                return result;
+            }
+
+            if(result.second_utc_ms == ERROR_TIMESTAMP) {
+                result.status = LocalTimeStatus::valid;
+                return result;
+            }
+
+            if(result.second_utc_ms < result.first_utc_ms) {
+                const ts_ms_t tmp = result.first_utc_ms;
+                result.first_utc_ms = result.second_utc_ms;
+                result.second_utc_ms = tmp;
+            }
+
+            result.status = LocalTimeStatus::ambiguous;
+            return result;
+        }
+
+        inline bool local_time_status_has_utc(LocalTimeStatus status) {
+            return status == LocalTimeStatus::valid ||
+                   status == LocalTimeStatus::ambiguous;
+        }
+
+        inline ts_ms_t local_time_resolution_to_utc(
+            const LocalTimeResolution& resolution,
+            AmbiguousTimePolicy ambiguous_policy) {
+            if(resolution.status == LocalTimeStatus::valid) {
+                return resolution.first_utc_ms;
+            }
+
+            if(resolution.status == LocalTimeStatus::ambiguous) {
+                switch(ambiguous_policy) {
+                    case AmbiguousTimePolicy::first_occurrence:
+                        return resolution.first_utc_ms;
+                    case AmbiguousTimePolicy::second_occurrence:
+                        return resolution.second_utc_ms;
+                    case AmbiguousTimePolicy::error:
+                    default:
+                        return ERROR_TIMESTAMP;
+                }
+            }
+
+            return ERROR_TIMESTAMP;
+        }
+
+    } // namespace detail
+
+    /// \brief Resolve the effective UTC offset for a UTC millisecond instant.
+    /// \param utc_ms UTC timestamp in milliseconds.
+    /// \param zone Time zone to inspect.
+    /// \param out Receives offset in seconds on success.
+    /// \return True when the zone and timestamp can be resolved.
+    inline bool zone_offset_at_utc_ms(ts_ms_t utc_ms,
+                                      TimeZone zone,
+                                      tz_t& out) noexcept {
+        if(utc_ms == ERROR_TIMESTAMP || zone == UNKNOWN) {
+            return false;
+        }
+
+        if(zone == GMT || zone == UTC) {
+            out = 0;
+            return true;
+        }
+
+        if(detail::is_european_dynamic_zone(zone)) {
+            const tz_t standard_offset = detail::dynamic_zone_standard_offset(zone);
+            out = static_cast<tz_t>(standard_offset +
+                                    (detail::european_dst_at_utc_ms(utc_ms)
+                                         ? SEC_PER_HOUR
+                                         : 0));
+            return true;
+        }
+
+        if(detail::is_us_dynamic_zone(zone)) {
+            const tz_t standard_offset = detail::dynamic_zone_standard_offset(zone);
+            out = static_cast<tz_t>(standard_offset +
+                                    (detail::us_dst_at_utc_ms(zone, utc_ms)
+                                         ? SEC_PER_HOUR
+                                         : 0));
+            return true;
+        }
+
+        tz_t utc_offset = 0;
+        if(detail::fixed_zone_offset(zone, utc_offset)) {
+            out = utc_offset;
+            return true;
+        }
+
+        return false;
+    }
+
+    /// \brief Resolve the effective UTC offset for a UTC second instant.
+    /// \param utc UTC timestamp in seconds.
+    /// \param zone Time zone to inspect.
+    /// \param out Receives offset in seconds on success.
+    /// \return True when the zone and timestamp can be resolved.
+    inline bool zone_offset_at_utc(ts_t utc,
+                                   TimeZone zone,
+                                   tz_t& out) noexcept {
+        return utc == ERROR_TIMESTAMP
+                   ? false
+                   : zone_offset_at_utc_ms(sec_to_ms<ts_ms_t>(utc), zone, out);
+    }
+
+    /// \brief Resolve local civil time to zero, one, or two UTC candidates.
+    /// \param local_ms Local civil timestamp in milliseconds.
+    /// \param zone Source time zone.
+    /// \return Resolution status plus UTC candidates in milliseconds.
+    inline LocalTimeResolution resolve_local_time_ms(ts_ms_t local_ms,
+                                                     TimeZone zone) {
+        if(local_ms == ERROR_TIMESTAMP || zone == UNKNOWN) {
+            return detail::make_local_time_resolution(
+                LocalTimeStatus::unsupported);
+        }
+
+        if(zone == GMT || zone == UTC) {
+            return detail::make_local_time_resolution(LocalTimeStatus::valid,
+                                                      local_ms);
+        }
+
+        tz_t first_offset = 0;
+        tz_t second_offset = 0;
+        if(detail::dynamic_dst_zone_offsets(zone, first_offset, second_offset)) {
+            return detail::resolve_with_dynamic_offsets(local_ms,
+                                                        zone,
+                                                        first_offset,
+                                                        second_offset);
+        }
+
+        tz_t utc_offset = 0;
+        if(detail::fixed_zone_offset(zone, utc_offset)) {
+            return detail::make_local_time_resolution(
+                LocalTimeStatus::valid,
+                to_utc_ms(local_ms, utc_offset));
+        }
+
+        return detail::make_local_time_resolution(LocalTimeStatus::unsupported);
+    }
+
+    /// \brief Resolve local civil time given in seconds.
+    ///
+    /// UTC candidates are returned in milliseconds in LocalTimeResolution.
+    inline LocalTimeResolution resolve_local_time(ts_t local, TimeZone zone) {
+        return local == ERROR_TIMESTAMP
+                   ? detail::make_local_time_resolution(
+                         LocalTimeStatus::unsupported)
+                   : resolve_local_time_ms(sec_to_ms<ts_ms_t>(local), zone);
+    }
+
+    namespace detail {
+
+        inline ts_ms_t shift_nonexistent_local_time_ms(ts_ms_t local_ms,
+                                                       TimeZone zone,
+                                                       int direction) {
+            const ts_ms_t window = static_cast<ts_ms_t>(MS_PER_DAY) * 2;
+            const bool forward = direction >= 0;
+            ts_ms_t low = forward ? local_ms : local_ms - window;
+            ts_ms_t high = forward ? local_ms + window : local_ms;
+
+            LocalTimeResolution edge =
+                resolve_local_time_ms(forward ? high : low, zone);
+            if(!local_time_status_has_utc(edge.status)) {
+                return ERROR_TIMESTAMP;
+            }
+
+            while(high - low > 1) {
+                const ts_ms_t mid = low + (high - low) / 2;
+                const LocalTimeResolution resolution =
+                    resolve_local_time_ms(mid, zone);
+                if(local_time_status_has_utc(resolution.status)) {
+                    if(forward) {
+                        high = mid;
+                    } else {
+                        low = mid;
+                    }
+                } else if(forward) {
+                    low = mid;
+                } else {
+                    high = mid;
+                }
+            }
+
+            const LocalTimeResolution shifted =
+                resolve_local_time_ms(forward ? high : low, zone);
+            return local_time_resolution_to_utc(
+                shifted,
+                AmbiguousTimePolicy::first_occurrence);
+        }
+
+    } // namespace detail
+
+    /// \brief Convert local civil time to UTC with explicit DST policies.
+    inline ts_ms_t zone_to_gmt_ms(ts_ms_t local_ms,
+                                  TimeZone zone,
+                                  AmbiguousTimePolicy ambiguous_policy,
+                                  NonexistentTimePolicy nonexistent_policy) {
+        const LocalTimeResolution resolution =
+            resolve_local_time_ms(local_ms, zone);
+
+        if(resolution.status == LocalTimeStatus::nonexistent) {
+            switch(nonexistent_policy) {
+                case NonexistentTimePolicy::shift_forward:
+                    return detail::shift_nonexistent_local_time_ms(
+                        local_ms,
+                        zone,
+                        1);
+                case NonexistentTimePolicy::shift_backward:
+                    return detail::shift_nonexistent_local_time_ms(
+                        local_ms,
+                        zone,
+                        -1);
+                case NonexistentTimePolicy::error:
+                default:
+                    return ERROR_TIMESTAMP;
+            }
+        }
+
+        return detail::local_time_resolution_to_utc(resolution,
+                                                    ambiguous_policy);
+    }
+
+    /// \brief Convert local civil time in seconds to UTC with explicit DST policies.
+    inline ts_t zone_to_gmt(ts_t local,
+                            TimeZone zone,
+                            AmbiguousTimePolicy ambiguous_policy,
+                            NonexistentTimePolicy nonexistent_policy) {
+        const ts_ms_t utc_ms = local == ERROR_TIMESTAMP
+                                   ? ERROR_TIMESTAMP
+                                   : zone_to_gmt_ms(sec_to_ms<ts_ms_t>(local),
+                                                    zone,
+                                                    ambiguous_policy,
+                                                    nonexistent_policy);
+        return utc_ms == ERROR_TIMESTAMP ? ERROR_TIMESTAMP
+                                         : ms_to_sec<ts_t>(utc_ms);
+    }
+
+    /// \brief Convert only unambiguous existing local time to UTC.
+    inline ts_ms_t zone_to_gmt_ms_strict(ts_ms_t local_ms, TimeZone zone) {
+        return zone_to_gmt_ms(local_ms,
+                              zone,
+                              AmbiguousTimePolicy::error,
+                              NonexistentTimePolicy::error);
+    }
+
+    /// \brief Convert only unambiguous existing local time in seconds to UTC.
+    inline ts_t zone_to_gmt_strict(ts_t local, TimeZone zone) {
+        return zone_to_gmt(local,
+                           zone,
+                           AmbiguousTimePolicy::error,
+                           NonexistentTimePolicy::error);
+    }
+
+    /// \brief Convert local civil time between zones with explicit DST policies.
+    inline ts_ms_t convert_time_zone_ms(
+        ts_ms_t local_ms,
+        TimeZone from,
+        TimeZone to,
+        AmbiguousTimePolicy ambiguous_policy,
+        NonexistentTimePolicy nonexistent_policy) {
+        const ts_ms_t gmt_ms = zone_to_gmt_ms(local_ms,
+                                              from,
+                                              ambiguous_policy,
+                                              nonexistent_policy);
+        return gmt_ms == ERROR_TIMESTAMP ? ERROR_TIMESTAMP
+                                         : gmt_to_zone_ms(gmt_ms, to);
+    }
+
+    /// \brief Convert local civil time in seconds between zones with explicit DST policies.
+    inline ts_t convert_time_zone(
+        ts_t local,
+        TimeZone from,
+        TimeZone to,
+        AmbiguousTimePolicy ambiguous_policy,
+        NonexistentTimePolicy nonexistent_policy) {
+        const ts_t gmt = zone_to_gmt(local,
+                                     from,
+                                     ambiguous_policy,
+                                     nonexistent_policy);
+        return gmt == ERROR_TIMESTAMP ? ERROR_TIMESTAMP
+                                      : gmt_to_zone(gmt, to);
     }
 
     inline ts_t ist_to_gmt(ts_t ist) { return zone_to_gmt(ist, IST); }

@@ -36,3 +36,6 @@ Additional policy:
 - For header-only singleton / service storage and ODR-safe ownership policy, prefer:
   - developer doc: `docs/singleton-storage-guidelines.md`
   - agent playbook: `agents/singleton-storage-guidelines.md`
+- Runtime test expectations use `TIME_SHIELD_TEST_CHECK(...)` from
+  `tests/test_assert.hpp`; avoid `<cassert>` / `assert(...)` for tests because
+  Release/NDEBUG builds can compile them out.

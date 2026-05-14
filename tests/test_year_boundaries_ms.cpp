@@ -2,7 +2,7 @@
 #include <time_shield/detail/floor_math.hpp>
 
 #include <array>
-#include <cassert>
+#include "test_assert.hpp"
 #include <cstdint>
 
 int main() {
@@ -15,10 +15,10 @@ int main() {
         const ts_t end_sec = end_of_year(static_cast<ts_t>(sec_floor));
         const ts_ms_t ref_start_ms = static_cast<ts_ms_t>(start_sec * MS_PER_SEC);
         const ts_ms_t ref_end_ms = static_cast<ts_ms_t>(end_sec * MS_PER_SEC + MS_PER_SEC - 1);
-        assert(start_of_year_ms(ts_ms) == ref_start_ms);
-        assert(end_of_year_ms(ts_ms) == ref_end_ms);
-        assert(ref_start_ms <= ts_ms);
-        assert(ts_ms <= ref_end_ms);
+        TIME_SHIELD_TEST_CHECK(start_of_year_ms(ts_ms) == ref_start_ms);
+        TIME_SHIELD_TEST_CHECK(end_of_year_ms(ts_ms) == ref_end_ms);
+        TIME_SHIELD_TEST_CHECK(ref_start_ms <= ts_ms);
+        TIME_SHIELD_TEST_CHECK(ts_ms <= ref_end_ms);
     };
 
     const std::array<ts_ms_t, 10> near_epoch_ms = {

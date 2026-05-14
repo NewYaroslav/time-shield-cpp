@@ -1,7 +1,7 @@
 #include <time_shield/TimerScheduler.hpp>
 
 #include <atomic>
-#include <cassert>
+#include "test_assert.hpp"
 #include <chrono>
 #include <thread>
 
@@ -23,10 +23,10 @@ int main() {
         std::this_thread::sleep_for(std::chrono::milliseconds(10));
     }
     const auto elapsed = std::chrono::steady_clock::now() - start_time;
-    assert(elapsed >= std::chrono::milliseconds(900));
-    assert(elapsed < std::chrono::seconds(2));
-    assert(single_counter.load() == 1);
-    assert(!single_timer.is_active());
+    TIME_SHIELD_TEST_CHECK(elapsed >= std::chrono::milliseconds(900));
+    TIME_SHIELD_TEST_CHECK(elapsed < std::chrono::seconds(2));
+    TIME_SHIELD_TEST_CHECK(single_counter.load() == 1);
+    TIME_SHIELD_TEST_CHECK(!single_timer.is_active());
 
     // Repeating timer stopped from callback.
     Timer repeating_timer(scheduler);
@@ -41,7 +41,7 @@ int main() {
     for (int i = 0; i < 5 && repeating_counter.load() < 3; ++i) {
         scheduler.process();
     }
-    assert(repeating_counter.load() >= 3);
+    TIME_SHIELD_TEST_CHECK(repeating_counter.load() >= 3);
 
     // Worker thread driven timer with stop_and_wait().
     Timer worker_timer(scheduler);
@@ -58,7 +58,7 @@ int main() {
     }
     worker_timer.stop_and_wait();
     scheduler.stop();
-    assert(worker_counter.load() == 1);
+    TIME_SHIELD_TEST_CHECK(worker_counter.load() == 1);
 
     // Static single shot helper.
     const auto baseline_states = scheduler.active_timer_count_for_testing();
@@ -66,16 +66,16 @@ int main() {
     Timer::single_shot(scheduler, std::chrono::milliseconds(50), [&helper_counter]() {
         helper_counter.fetch_add(1);
     });
-    assert(scheduler.active_timer_count_for_testing() == baseline_states + 1);
+    TIME_SHIELD_TEST_CHECK(scheduler.active_timer_count_for_testing() == baseline_states + 1);
     while (helper_counter.load() == 0) {
         scheduler.process();
         std::this_thread::sleep_for(std::chrono::milliseconds(10));
     }
-    assert(helper_counter.load() == 1);
+    TIME_SHIELD_TEST_CHECK(helper_counter.load() == 1);
     for (int i = 0; i < 3; ++i) {
         scheduler.process();
     }
-    assert(scheduler.active_timer_count_for_testing() == baseline_states);
+    TIME_SHIELD_TEST_CHECK(scheduler.active_timer_count_for_testing() == baseline_states);
 
     // Static single shot cancelled before firing should release its state.
     const auto cancellation_baseline = scheduler.active_timer_count_for_testing();
@@ -83,10 +83,10 @@ int main() {
     Timer::single_shot(scheduler, std::chrono::seconds(1), [&cancelled_counter]() {
         cancelled_counter.fetch_add(1);
     });
-    assert(scheduler.active_timer_count_for_testing() == cancellation_baseline + 1);
+    TIME_SHIELD_TEST_CHECK(scheduler.active_timer_count_for_testing() == cancellation_baseline + 1);
     scheduler.stop();
-    assert(cancelled_counter.load() == 0);
-    assert(scheduler.active_timer_count_for_testing() == cancellation_baseline);
+    TIME_SHIELD_TEST_CHECK(cancelled_counter.load() == 0);
+    TIME_SHIELD_TEST_CHECK(scheduler.active_timer_count_for_testing() == cancellation_baseline);
 
     (void)baseline_states;
     (void)cancellation_baseline;

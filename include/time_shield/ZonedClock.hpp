@@ -168,17 +168,70 @@ namespace time_shield {
         /// \param utc_ms UTC timestamp in milliseconds.
         /// \return Effective UTC offset in seconds.
         tz_t offset_at_utc_ms(ts_ms_t utc_ms) const noexcept {
+            tz_t offset = 0;
+            return try_offset_at_utc_ms(utc_ms, offset) ? offset : 0;
+        }
+
+        /// \brief Try to resolve effective UTC offset for a UTC instant.
+        /// \param utc_ms UTC timestamp in milliseconds.
+        /// \param out Receives offset in seconds on success.
+        /// \return True when the offset can be resolved.
+        bool try_offset_at_utc_ms(ts_ms_t utc_ms, tz_t& out) const noexcept {
+            if (utc_ms == ERROR_TIMESTAMP) {
+                return false;
+            }
+
             if (!m_is_named_zone) {
-                return m_offset;
+                out = m_offset;
+                return true;
             }
 
-            const ts_ms_t local_ms = gmt_to_zone_ms(utc_ms, m_zone);
+            return zone_offset_at_utc_ms(utc_ms, m_zone, out);
+        }
+
+        /// \brief Resolve a local timestamp in this clock's zone.
+        /// \param local_ms Local civil timestamp in milliseconds.
+        /// \return Local-time resolution with zero, one, or two UTC candidates.
+        LocalTimeResolution resolve_local_time_ms(ts_ms_t local_ms) const noexcept {
             if (local_ms == ERROR_TIMESTAMP) {
-                return 0;
+                LocalTimeResolution result = {
+                    LocalTimeStatus::unsupported,
+                    ERROR_TIMESTAMP,
+                    ERROR_TIMESTAMP
+                };
+                return result;
             }
 
-            const ts_ms_t delta_ms = local_ms - utc_ms;
-            return static_cast<tz_t>(delta_ms / MS_PER_SEC);
+            if (m_is_named_zone) {
+                return time_shield::resolve_local_time_ms(local_ms, m_zone);
+            }
+
+            LocalTimeResolution result = {
+                LocalTimeStatus::valid,
+                time_shield::to_utc_ms(local_ms, m_offset),
+                ERROR_TIMESTAMP
+            };
+            return result;
+        }
+
+        /// \brief Convert a local timestamp in this clock's zone to UTC.
+        /// \param local_ms Local civil timestamp in milliseconds.
+        /// \param ambiguous_policy Policy for DST-fold local times.
+        /// \param nonexistent_policy Policy for DST-gap local times.
+        /// \return UTC timestamp in milliseconds, or ERROR_TIMESTAMP.
+        ts_ms_t to_utc_ms(
+            ts_ms_t local_ms,
+            AmbiguousTimePolicy ambiguous_policy = AmbiguousTimePolicy::error,
+            NonexistentTimePolicy nonexistent_policy =
+                NonexistentTimePolicy::error) const noexcept {
+            if (m_is_named_zone) {
+                return zone_to_gmt_ms(local_ms,
+                                      m_zone,
+                                      ambiguous_policy,
+                                      nonexistent_policy);
+            }
+
+            return time_shield::to_utc_ms(local_ms, m_offset);
         }
 
         /// \brief Return current UTC time in seconds.

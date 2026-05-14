@@ -1,6 +1,6 @@
 #include <time_shield/time_parser.hpp>
 
-#include <cassert>
+#include "test_assert.hpp"
 #include <string>
 
 int main() {
@@ -14,13 +14,13 @@ int main() {
                        int minute,
                        int second,
                        int millisecond) {
-        assert(dt.year == year);
-        assert(dt.mon == month);
-        assert(dt.day == day);
-        assert(dt.hour == hour);
-        assert(dt.min == minute);
-        assert(dt.sec == second);
-        assert(dt.ms == millisecond);
+        TIME_SHIELD_TEST_CHECK(dt.year == year);
+        TIME_SHIELD_TEST_CHECK(dt.mon == month);
+        TIME_SHIELD_TEST_CHECK(dt.day == day);
+        TIME_SHIELD_TEST_CHECK(dt.hour == hour);
+        TIME_SHIELD_TEST_CHECK(dt.min == minute);
+        TIME_SHIELD_TEST_CHECK(dt.sec == second);
+        TIME_SHIELD_TEST_CHECK(dt.ms == millisecond);
         (void)dt;
         (void)year;
         (void)month;
@@ -32,9 +32,9 @@ int main() {
     };
 
     auto check_tz = [](const TimeZoneStruct& tz, bool is_positive, int hour, int minute) {
-        assert(tz.is_positive == is_positive);
-        assert(tz.hour == hour);
-        assert(tz.min == minute);
+        TIME_SHIELD_TEST_CHECK(tz.is_positive == is_positive);
+        TIME_SHIELD_TEST_CHECK(tz.hour == hour);
+        TIME_SHIELD_TEST_CHECK(tz.min == minute);
         (void)tz;
         (void)is_positive;
         (void)hour;
@@ -60,7 +60,7 @@ int main() {
         tz.is_positive = true;
 
         const bool is_parsed = parse_iso8601(input, dt, tz);
-        assert(is_parsed);
+        TIME_SHIELD_TEST_CHECK(is_parsed);
         (void)is_parsed;
 
         check_dt(dt, year, month, day, hour, minute, second, millisecond);

@@ -1,7 +1,7 @@
 #include <time_shield/time_conversions.hpp>
 #include <time_shield/detail/floor_math.hpp>
 
-#include <cassert>
+#include "test_assert.hpp"
 #include <cstdint>
 
 namespace {
@@ -21,37 +21,37 @@ namespace {
 int main() {
     using namespace time_shield;
 
-    assert(to_timestamp_ms(1969, 12, 31, 23, 59, 59, 0) == -1000);
-    assert(to_timestamp_ms(1969, 12, 31, 23, 59, 59, 1) == -999);
-    assert(to_timestamp_ms(1969, 12, 31, 23, 59, 59, 500) == -500);
-    assert(to_timestamp_ms(1969, 12, 31, 23, 59, 59, 999) == -1);
-    assert(to_timestamp_ms(1970, 1, 1, 0, 0, 0, 0) == 0);
-    assert(to_timestamp_ms(1970, 1, 1, 0, 0, 0, 1) == 1);
+    TIME_SHIELD_TEST_CHECK(to_timestamp_ms(1969, 12, 31, 23, 59, 59, 0) == -1000);
+    TIME_SHIELD_TEST_CHECK(to_timestamp_ms(1969, 12, 31, 23, 59, 59, 1) == -999);
+    TIME_SHIELD_TEST_CHECK(to_timestamp_ms(1969, 12, 31, 23, 59, 59, 500) == -500);
+    TIME_SHIELD_TEST_CHECK(to_timestamp_ms(1969, 12, 31, 23, 59, 59, 999) == -1);
+    TIME_SHIELD_TEST_CHECK(to_timestamp_ms(1970, 1, 1, 0, 0, 0, 0) == 0);
+    TIME_SHIELD_TEST_CHECK(to_timestamp_ms(1970, 1, 1, 0, 0, 0, 1) == 1);
 
-    assert(to_timestamp_ms(1969, 12, 31, 23, 59, 59, 1000) ==
+    TIME_SHIELD_TEST_CHECK(to_timestamp_ms(1969, 12, 31, 23, 59, 59, 1000) ==
         expected_ts_ms(1969, 12, 31, 23, 59, 59, 1000));
-    assert(to_timestamp_ms(1969, 12, 31, 23, 59, 59, -1) ==
+    TIME_SHIELD_TEST_CHECK(to_timestamp_ms(1969, 12, 31, 23, 59, 59, -1) ==
         expected_ts_ms(1969, 12, 31, 23, 59, 59, -1));
-    assert(to_timestamp_ms(1969, 12, 31, 23, 59, 59, -1000) ==
+    TIME_SHIELD_TEST_CHECK(to_timestamp_ms(1969, 12, 31, 23, 59, 59, -1000) ==
         expected_ts_ms(1969, 12, 31, 23, 59, 59, -1000));
-    assert(to_timestamp_ms(1969, 12, 31, 23, 59, 59, -1001) ==
+    TIME_SHIELD_TEST_CHECK(to_timestamp_ms(1969, 12, 31, 23, 59, 59, -1001) ==
         expected_ts_ms(1969, 12, 31, 23, 59, 59, -1001));
-    assert(to_timestamp_ms(1969, 12, 31, 23, 59, 59, 1500) ==
+    TIME_SHIELD_TEST_CHECK(to_timestamp_ms(1969, 12, 31, 23, 59, 59, 1500) ==
         expected_ts_ms(1969, 12, 31, 23, 59, 59, 1500));
-    assert(to_timestamp_ms(1970, 1, 1, 0, 0, 0, -1) ==
+    TIME_SHIELD_TEST_CHECK(to_timestamp_ms(1970, 1, 1, 0, 0, 0, -1) ==
         expected_ts_ms(1970, 1, 1, 0, 0, 0, -1));
-    assert(to_timestamp_ms(1970, 1, 1, 0, 0, 0, 1234567) ==
+    TIME_SHIELD_TEST_CHECK(to_timestamp_ms(1970, 1, 1, 0, 0, 0, 1234567) ==
         expected_ts_ms(1970, 1, 1, 0, 0, 0, 1234567));
 
-    assert(to_timestamp_ms(1900, 3, 1, 0, 0, 0, 123) ==
+    TIME_SHIELD_TEST_CHECK(to_timestamp_ms(1900, 3, 1, 0, 0, 0, 123) ==
         expected_ts_ms(1900, 3, 1, 0, 0, 0, 123));
-    assert(to_timestamp_ms(2000, 2, 29, 12, 34, 56, 789) ==
+    TIME_SHIELD_TEST_CHECK(to_timestamp_ms(2000, 2, 29, 12, 34, 56, 789) ==
         expected_ts_ms(2000, 2, 29, 12, 34, 56, 789));
-    assert(to_timestamp_ms(2100, 3, 1, 0, 0, 0, 0) ==
+    TIME_SHIELD_TEST_CHECK(to_timestamp_ms(2100, 3, 1, 0, 0, 0, 0) ==
         expected_ts_ms(2100, 3, 1, 0, 0, 0, 0));
 
     DateTimeStruct dt{1969, 12, 31, 23, 59, 59, 500};
-    assert(dt_to_timestamp_ms(dt) == to_timestamp_ms(1969, 12, 31, 23, 59, 59, 500));
+    TIME_SHIELD_TEST_CHECK(dt_to_timestamp_ms(dt) == to_timestamp_ms(1969, 12, 31, 23, 59, 59, 500));
 
     return 0;
 }

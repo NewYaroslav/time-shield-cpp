@@ -5,7 +5,7 @@
 #include <time_shield/ntp_client_pool_runner.hpp>
 
 #include <atomic>
-#include <cassert>
+#include "test_assert.hpp"
 #include <chrono>
 #include <thread>
 
@@ -49,34 +49,34 @@ int main() {
 
     {
         Runner runner;
-        assert(runner.start(std::chrono::milliseconds(20), true));
+        TIME_SHIELD_TEST_CHECK(runner.start(std::chrono::milliseconds(20), true));
 
         const auto deadline = std::chrono::steady_clock::now() + std::chrono::seconds(1);
         while (runner.measure_count() < 3 && std::chrono::steady_clock::now() < deadline) {
             std::this_thread::sleep_for(std::chrono::milliseconds(10));
         }
 
-        assert(runner.running());
-        assert(runner.last_measure_ok());
-        assert(runner.measure_count() >= 3);
-        assert(runner.offset_us() > 0);
+        TIME_SHIELD_TEST_CHECK(runner.running());
+        TIME_SHIELD_TEST_CHECK(runner.last_measure_ok());
+        TIME_SHIELD_TEST_CHECK(runner.measure_count() >= 3);
+        TIME_SHIELD_TEST_CHECK(runner.offset_us() > 0);
 
         const uint64_t before = runner.measure_count();
         runner.stop();
         const uint64_t after = runner.measure_count();
-        assert(before == after);
-        assert(!runner.running());
+        TIME_SHIELD_TEST_CHECK(before == after);
+        TIME_SHIELD_TEST_CHECK(!runner.running());
         (void)before;
         (void)after;
     }
 
     {
         Runner runner;
-        assert(runner.start(std::chrono::milliseconds(500), false));
+        TIME_SHIELD_TEST_CHECK(runner.start(std::chrono::milliseconds(500), false));
         std::this_thread::sleep_for(std::chrono::milliseconds(50));
-        assert(runner.measure_count() == 0);
+        TIME_SHIELD_TEST_CHECK(runner.measure_count() == 0);
 
-        assert(runner.force_measure());
+        TIME_SHIELD_TEST_CHECK(runner.force_measure());
 
         const auto deadline = std::chrono::steady_clock::now() + std::chrono::milliseconds(200);
         while (runner.measure_count() < 1 && std::chrono::steady_clock::now() < deadline) {

@@ -4,7 +4,7 @@
 #define TIME_SHIELD_TEST_FAKE_NTP
 #include <time_shield/ntp_time_service.hpp>
 
-#include <cassert>
+#include "test_assert.hpp"
 #include <chrono>
 
 using namespace time_shield;
@@ -14,25 +14,25 @@ int main() {
     service.shutdown();
 
     auto& same_service = NtpTimeService::instance();
-    assert(&service == &same_service);
-    assert(detail::NtpTimeServiceTestAccess<detail::FakeNtpRunner>::atexit_registration_count() == 1);
+    TIME_SHIELD_TEST_CHECK(&service == &same_service);
+    TIME_SHIELD_TEST_CHECK(detail::NtpTimeServiceTestAccess<detail::FakeNtpRunner>::atexit_registration_count() == 1);
 
-    assert(service.init(std::chrono::milliseconds(10), true));
+    TIME_SHIELD_TEST_CHECK(service.init(std::chrono::milliseconds(10), true));
     const int64_t cached_offset = service.offset_us();
-    assert(cached_offset > 0);
-    assert(service.running());
+    TIME_SHIELD_TEST_CHECK(cached_offset > 0);
+    TIME_SHIELD_TEST_CHECK(service.running());
 
     detail::NtpTimeServiceTestAccess<detail::FakeNtpRunner>::begin_process_shutdown();
 
-    assert(detail::NtpTimeServiceTestAccess<detail::FakeNtpRunner>::is_process_shutting_down());
-    assert(!service.running());
-    assert(!service.init(std::chrono::milliseconds(10), true));
-    assert(service.offset_us() == cached_offset);
+    TIME_SHIELD_TEST_CHECK(detail::NtpTimeServiceTestAccess<detail::FakeNtpRunner>::is_process_shutting_down());
+    TIME_SHIELD_TEST_CHECK(!service.running());
+    TIME_SHIELD_TEST_CHECK(!service.init(std::chrono::milliseconds(10), true));
+    TIME_SHIELD_TEST_CHECK(service.offset_us() == cached_offset);
 
     const int64_t utc_before = service.utc_time_us();
     const int64_t utc_after = service.utc_time_us();
-    assert(utc_after >= utc_before);
-    assert(!service.running());
+    TIME_SHIELD_TEST_CHECK(utc_after >= utc_before);
+    TIME_SHIELD_TEST_CHECK(!service.running());
     return 0;
 }
 

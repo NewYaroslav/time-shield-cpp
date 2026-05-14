@@ -4,7 +4,7 @@
 
 #include <time_shield/ntp_client_pool.hpp>
 
-#include <cassert>
+#include "test_assert.hpp"
 #include <cstdint>
 #include <stdexcept>
 #include <string>
@@ -87,8 +87,8 @@ int main() {
         samples.push_back(make_sample(true, 200, 0, 0));
         samples.push_back(make_sample(true, 300, 0, 0));
 
-        assert(pool.apply_samples(samples));
-        assert(pool.offset_us() == 200);
+        TIME_SHIELD_TEST_CHECK(pool.apply_samples(samples));
+        TIME_SHIELD_TEST_CHECK(pool.offset_us() == 200);
     }
 
     {
@@ -103,8 +103,8 @@ int main() {
         samples.push_back(make_sample(true, 105, 0, 0));
         samples.push_back(make_sample(true, 100000, 0, 0));
 
-        assert(pool.apply_samples(samples));
-        assert(pool.offset_us() == 102);
+        TIME_SHIELD_TEST_CHECK(pool.apply_samples(samples));
+        TIME_SHIELD_TEST_CHECK(pool.offset_us() == 102);
     }
 
     {
@@ -117,14 +117,14 @@ int main() {
         samples.push_back(make_sample(true, 10, 100000, 200000));
         samples.push_back(make_sample(true, 5, 300000, 200000));
 
-        assert(pool.apply_samples(samples));
-        assert(pool.offset_us() == 10);
+        TIME_SHIELD_TEST_CHECK(pool.apply_samples(samples));
+        TIME_SHIELD_TEST_CHECK(pool.offset_us() == 10);
 
         samples.clear();
         samples.push_back(make_sample(true, 40, 50000, 200000));
         samples.push_back(make_sample(true, 20, 30000, 200000));
-        assert(pool.apply_samples(samples));
-        assert(pool.offset_us() == 20);
+        TIME_SHIELD_TEST_CHECK(pool.apply_samples(samples));
+        TIME_SHIELD_TEST_CHECK(pool.offset_us() == 20);
     }
 
     {
@@ -135,8 +135,8 @@ int main() {
 
         std::vector<NtpSample> samples;
         samples.push_back(make_sample(true, 500, 0, 0));
-        assert(pool.apply_samples(samples));
-        assert(pool.offset_us() == 500);
+        TIME_SHIELD_TEST_CHECK(pool.apply_samples(samples));
+        TIME_SHIELD_TEST_CHECK(pool.offset_us() == 500);
     }
 
     {
@@ -147,8 +147,8 @@ int main() {
 
         std::vector<NtpSample> samples;
         samples.push_back(make_sample(true, 700, 0, 0));
-        assert(pool.apply_samples(samples));
-        assert(pool.offset_us() == 0);
+        TIME_SHIELD_TEST_CHECK(pool.apply_samples(samples));
+        TIME_SHIELD_TEST_CHECK(pool.offset_us() == 0);
     }
 
     {
@@ -159,8 +159,8 @@ int main() {
 
         std::vector<NtpSample> samples;
         samples.push_back(make_sample(true, 123, 0, 0));
-        assert(!pool.apply_samples(samples));
-        assert(pool.offset_us() == 0);
+        TIME_SHIELD_TEST_CHECK(!pool.apply_samples(samples));
+        TIME_SHIELD_TEST_CHECK(pool.offset_us() == 0);
     }
 
     {
@@ -201,8 +201,8 @@ int main() {
         servers.push_back(sc);
         pool.set_servers(std::move(servers));
 
-        assert(pool.measure());
-        assert(pool.offset_us() == 200);
+        TIME_SHIELD_TEST_CHECK(pool.measure());
+        TIME_SHIELD_TEST_CHECK(pool.offset_us() == 200);
     }
 
     {
@@ -226,11 +226,11 @@ int main() {
         servers.push_back(sx);
         pool.set_servers(std::move(servers));
 
-        assert(!pool.measure_n(1));
+        TIME_SHIELD_TEST_CHECK(!pool.measure_n(1));
         const std::vector<NtpSample> samples = pool.last_samples();
-        assert(!samples.empty());
-        assert(!samples.front().is_ok);
-        assert(samples.front().error_code != 0);
+        TIME_SHIELD_TEST_CHECK(!samples.empty());
+        TIME_SHIELD_TEST_CHECK(!samples.front().is_ok);
+        TIME_SHIELD_TEST_CHECK(samples.front().error_code != 0);
     }
 
     return 0;

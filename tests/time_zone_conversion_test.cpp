@@ -1,6 +1,6 @@
 #include <time_shield/time_zone_conversions.hpp>
 #include <time_shield/time_conversions.hpp>
-#include <cassert>
+#include "test_assert.hpp"
 
 /// \brief Tests CET/EET conversions to UTC including DST transitions.
 ///
@@ -24,92 +24,92 @@ int main() {
 
     ts_t cet_winter = to_timestamp(2023, 1, 1, 12, 0, 0);
     ts_t gmt_winter = cet_to_gmt(cet_winter);
-    assert(gmt_winter == to_timestamp(2023, 1, 1, 11, 0, 0));
+    TIME_SHIELD_TEST_CHECK(gmt_winter == to_timestamp(2023, 1, 1, 11, 0, 0));
 
     ts_t cet_summer = to_timestamp(2023, 7, 1, 12, 0, 0);
     ts_t gmt_summer = cet_to_gmt(cet_summer);
-    assert(gmt_summer == to_timestamp(2023, 7, 1, 10, 0, 0));
+    TIME_SHIELD_TEST_CHECK(gmt_summer == to_timestamp(2023, 7, 1, 10, 0, 0));
 
     ts_t cet_before = to_timestamp(2023, 3, 26, 1, 30, 0);
     ts_t gmt_before = cet_to_gmt(cet_before);
-    assert(gmt_before == to_timestamp(2023, 3, 26, 0, 30, 0));
+    TIME_SHIELD_TEST_CHECK(gmt_before == to_timestamp(2023, 3, 26, 0, 30, 0));
 
     ts_t cet_after = to_timestamp(2023, 3, 26, 3, 30, 0);
     ts_t gmt_after = cet_to_gmt(cet_after);
-    assert(gmt_after == to_timestamp(2023, 3, 26, 1, 30, 0));
+    TIME_SHIELD_TEST_CHECK(gmt_after == to_timestamp(2023, 3, 26, 1, 30, 0));
 
     ts_t eet_winter = to_timestamp(2023, 1, 1, 12, 0, 0);
     ts_t gmt_eet_winter = eet_to_gmt(eet_winter);
-    assert(gmt_eet_winter == to_timestamp(2023, 1, 1, 10, 0, 0));
+    TIME_SHIELD_TEST_CHECK(gmt_eet_winter == to_timestamp(2023, 1, 1, 10, 0, 0));
 
     ts_t eet_summer = to_timestamp(2023, 7, 1, 12, 0, 0);
     ts_t gmt_eet_summer = eet_to_gmt(eet_summer);
-    assert(gmt_eet_summer == to_timestamp(2023, 7, 1, 9, 0, 0));
+    TIME_SHIELD_TEST_CHECK(gmt_eet_summer == to_timestamp(2023, 7, 1, 9, 0, 0));
 
     int spring_day_2024 = static_cast<int>(second_sunday_month_day(2024, MAR));
     ts_t et_before_spring = to_timestamp(2024, int(MAR), spring_day_2024, 1, 59, 59);
     ts_t gmt_before_spring = et_to_gmt(et_before_spring);
-    assert(gmt_before_spring == to_timestamp(2024, int(MAR), spring_day_2024, 6, 59, 59));
+    TIME_SHIELD_TEST_CHECK(gmt_before_spring == to_timestamp(2024, int(MAR), spring_day_2024, 6, 59, 59));
 
     ts_t gmt_spring_switch = to_timestamp(2024, int(MAR), spring_day_2024, 7, 0, 0);
     ts_t et_after_spring = gmt_to_et(gmt_spring_switch);
-    assert(et_after_spring == to_timestamp(2024, int(MAR), spring_day_2024, 3, 0, 0));
+    TIME_SHIELD_TEST_CHECK(et_after_spring == to_timestamp(2024, int(MAR), spring_day_2024, 3, 0, 0));
 
     int fall_day_2024 = static_cast<int>(first_sunday_month_day(2024, NOV));
     ts_t gmt_fall_before = to_timestamp(2024, int(NOV), fall_day_2024, 6, 59, 59);
     ts_t et_fall_before = gmt_to_et(gmt_fall_before);
-    assert(gmt_fall_before - et_fall_before == SEC_PER_HOUR * 4);
+    TIME_SHIELD_TEST_CHECK(gmt_fall_before - et_fall_before == SEC_PER_HOUR * 4);
 
     ts_t gmt_fall_after = to_timestamp(2024, int(NOV), fall_day_2024, 7, 0, 0);
     ts_t et_fall_after = gmt_to_et(gmt_fall_after);
-    assert(gmt_fall_after - et_fall_after == SEC_PER_HOUR * 5);
+    TIME_SHIELD_TEST_CHECK(gmt_fall_after - et_fall_after == SEC_PER_HOUR * 5);
 
     int spring_day_2006 = static_cast<int>(first_sunday_month_day(2006, APR));
     ts_t et_before_2006 = to_timestamp(2006, int(APR), spring_day_2006, 1, 59, 59);
     ts_t gmt_before_2006 = et_to_gmt(et_before_2006);
-    assert(gmt_before_2006 == to_timestamp(2006, int(APR), spring_day_2006, 6, 59, 59));
+    TIME_SHIELD_TEST_CHECK(gmt_before_2006 == to_timestamp(2006, int(APR), spring_day_2006, 6, 59, 59));
 
     ts_t et_after_2006 = to_timestamp(2006, int(APR), spring_day_2006, SWITCH_HOUR, 0, 0);
     ts_t gmt_after_2006 = et_to_gmt(et_after_2006);
-    assert(gmt_after_2006 == to_timestamp(2006, int(APR), spring_day_2006, 6, 0, 0));
+    TIME_SHIELD_TEST_CHECK(gmt_after_2006 == to_timestamp(2006, int(APR), spring_day_2006, 6, 0, 0));
 
     int fall_day_2006 = last_sunday_month_day(2006, OCT);
     ts_t et_fall_2006_before = to_timestamp(2006, int(OCT), fall_day_2006, 1, 59, 59);
     ts_t gmt_fall_2006_before = et_to_gmt(et_fall_2006_before);
-    assert(gmt_fall_2006_before == to_timestamp(2006, int(OCT), fall_day_2006, 5, 59, 59));
+    TIME_SHIELD_TEST_CHECK(gmt_fall_2006_before == to_timestamp(2006, int(OCT), fall_day_2006, 5, 59, 59));
 
     ts_t et_fall_2006_after = to_timestamp(2006, int(OCT), fall_day_2006, SWITCH_HOUR, 0, 0);
     ts_t gmt_fall_2006_after = et_to_gmt(et_fall_2006_after);
-    assert(gmt_fall_2006_after == to_timestamp(2006, int(OCT), fall_day_2006, 7, 0, 0));
+    TIME_SHIELD_TEST_CHECK(gmt_fall_2006_after == to_timestamp(2006, int(OCT), fall_day_2006, 7, 0, 0));
 
     ts_t et_round_trip_winter = to_timestamp(2024, 1, 15, 12, 0, 0);
     ts_t et_round_trip_summer = to_timestamp(2024, 7, 15, 12, 0, 0);
-    assert(et_round_trip_winter == gmt_to_et(et_to_gmt(et_round_trip_winter)));
-    assert(et_round_trip_summer == gmt_to_et(et_to_gmt(et_round_trip_summer)));
+    TIME_SHIELD_TEST_CHECK(et_round_trip_winter == gmt_to_et(et_to_gmt(et_round_trip_winter)));
+    TIME_SHIELD_TEST_CHECK(et_round_trip_summer == gmt_to_et(et_to_gmt(et_round_trip_summer)));
 
     ts_t gmt_round_trip_winter = to_timestamp(2024, 1, 15, 17, 0, 0);
     ts_t gmt_round_trip_summer = to_timestamp(2024, 7, 15, 16, 0, 0);
-    assert(gmt_round_trip_winter == et_to_gmt(gmt_to_et(gmt_round_trip_winter)));
-    assert(gmt_round_trip_summer == et_to_gmt(gmt_to_et(gmt_round_trip_summer)));
+    TIME_SHIELD_TEST_CHECK(gmt_round_trip_winter == et_to_gmt(gmt_to_et(gmt_round_trip_winter)));
+    TIME_SHIELD_TEST_CHECK(gmt_round_trip_summer == et_to_gmt(gmt_to_et(gmt_round_trip_summer)));
 
     for(int year : {2021, 2022, 2023, 2024}) {
         int day = last_sunday_month_day(year, OCT);
 
         ts_t cet_end_before = to_timestamp(year, int(OCT), day, 1, 30, 0);
         ts_t gmt_end_before = cet_to_gmt(cet_end_before);
-        assert(gmt_end_before == to_timestamp(year, int(OCT), day - 1, 23, 30, 0));
+        TIME_SHIELD_TEST_CHECK(gmt_end_before == to_timestamp(year, int(OCT), day - 1, 23, 30, 0));
 
         ts_t cet_end_after = to_timestamp(year, int(OCT), day, 3, 30, 0);
         ts_t gmt_end_after = cet_to_gmt(cet_end_after);
-        assert(gmt_end_after == to_timestamp(year, int(OCT), day, 2, 30, 0));
+        TIME_SHIELD_TEST_CHECK(gmt_end_after == to_timestamp(year, int(OCT), day, 2, 30, 0));
 
         ts_t eet_end_before = to_timestamp(year, int(OCT), day, 2, 30, 0);
         ts_t gmt_eet_end_before = eet_to_gmt(eet_end_before);
-        assert(gmt_eet_end_before == to_timestamp(year, int(OCT), day - 1, 23, 30, 0));
+        TIME_SHIELD_TEST_CHECK(gmt_eet_end_before == to_timestamp(year, int(OCT), day - 1, 23, 30, 0));
 
         ts_t eet_end_after = to_timestamp(year, int(OCT), day, 4, 30, 0);
         ts_t gmt_eet_end_after = eet_to_gmt(eet_end_after);
-        assert(gmt_eet_end_after == to_timestamp(year, int(OCT), day, 2, 30, 0));
+        TIME_SHIELD_TEST_CHECK(gmt_eet_end_after == to_timestamp(year, int(OCT), day, 2, 30, 0));
 
         (void)day;
         (void)cet_end_before;

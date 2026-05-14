@@ -1,5 +1,5 @@
 #include <time_shield/time_utils.hpp>
-#include <cassert>
+#include "test_assert.hpp"
 
 /// \brief Windows specific checks for high resolution timers.
 int main() {
@@ -7,7 +7,7 @@ int main() {
     using namespace time_shield;
     const int64_t start = now_realtime_us();
     const int64_t end = now_realtime_us();
-    assert(end >= start);
+    TIME_SHIELD_TEST_CHECK(end >= start);
     (void)start;
     (void)end;
 #endif

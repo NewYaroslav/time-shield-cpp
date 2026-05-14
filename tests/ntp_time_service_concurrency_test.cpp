@@ -5,7 +5,7 @@
 #include <time_shield/ntp_time_service.hpp>
 
 #include <atomic>
-#include <cassert>
+#include "test_assert.hpp"
 #include <chrono>
 #include <thread>
 #include <vector>
@@ -41,9 +41,9 @@ int main() {
     reconfigure_thread.join();
 
     (void)service.utc_time_ms();
-    assert(service.running());
+    TIME_SHIELD_TEST_CHECK(service.running());
     service.shutdown();
-    assert(!service.running());
+    TIME_SHIELD_TEST_CHECK(!service.running());
     return 0;
 }
 

@@ -7,7 +7,7 @@
 #include <time_shield/ntp_client/ntp_packet.hpp>
 #include <time_shield/ntp_client/udp_transport.hpp>
 
-#include <cassert>
+#include "test_assert.hpp"
 #include <cstdint>
 #include <cstring>
 
@@ -68,10 +68,10 @@ int main() {
         int64_t delay = 0;
         int stratum = -1;
         const bool ok = core.query(transport, "example.com", 123, 5000, error, offset, delay, stratum);
-        assert(ok);
-        assert(error == 0);
-        assert(offset != 0 || delay != 0); // basic sanity without relying on realtime arrival
-        assert(stratum == 2);
+        TIME_SHIELD_TEST_CHECK(ok);
+        TIME_SHIELD_TEST_CHECK(error == 0);
+        TIME_SHIELD_TEST_CHECK(offset != 0 || delay != 0); // basic sanity without relying on realtime arrival
+        TIME_SHIELD_TEST_CHECK(stratum == 2);
         (void)ok;
         (void)error;
         (void)offset;
@@ -90,8 +90,8 @@ int main() {
         int64_t delay = 0;
         int stratum = -1;
         const bool ok = core.query(transport, "example.com", 123, 5000, error, offset, delay, stratum);
-        assert(!ok);
-        assert(error == 42);
+        TIME_SHIELD_TEST_CHECK(!ok);
+        TIME_SHIELD_TEST_CHECK(error == 42);
         (void)ok;
         (void)error;
         (void)offset;
@@ -111,8 +111,8 @@ int main() {
         int64_t delay = 0;
         int stratum = -1;
         const bool ok = core.query(transport, "example.com", 123, 5000, error, offset, delay, stratum);
-        assert(!ok);
-        assert(error == detail::NTP_E_BAD_TS);
+        TIME_SHIELD_TEST_CHECK(!ok);
+        TIME_SHIELD_TEST_CHECK(error == detail::NTP_E_BAD_TS);
         (void)ok;
         (void)error;
         (void)offset;
@@ -122,9 +122,9 @@ int main() {
 
     {
         // Fraction to microseconds
-        assert(detail::ntp_frac_to_us(htonl(0u)) == 0);
-        assert(detail::ntp_frac_to_us(htonl(0x80000000u)) >= 499999 && detail::ntp_frac_to_us(htonl(0x80000000u)) <= 500001);
-        assert(detail::ntp_frac_to_us(htonl(0xFFFFFFFFu)) >= 999998 && detail::ntp_frac_to_us(htonl(0xFFFFFFFFu)) <= 1000000);
+        TIME_SHIELD_TEST_CHECK(detail::ntp_frac_to_us(htonl(0u)) == 0);
+        TIME_SHIELD_TEST_CHECK(detail::ntp_frac_to_us(htonl(0x80000000u)) >= 499999 && detail::ntp_frac_to_us(htonl(0x80000000u)) <= 500001);
+        TIME_SHIELD_TEST_CHECK(detail::ntp_frac_to_us(htonl(0xFFFFFFFFu)) >= 999998 && detail::ntp_frac_to_us(htonl(0xFFFFFFFFu)) <= 1000000);
     }
 
     return 0;

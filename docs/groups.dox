@@ -154,6 +154,13 @@ These helpers cover:
   `KST`,
 - generic `zone_to_gmt`, `gmt_to_zone`, and `convert_time_zone` entry points.
 
+The two-argument local-to-UTC conversion helpers keep their legacy best-effort
+semantics. Use `resolve_local_time_ms`, `zone_to_gmt_ms_strict`, or the policy
+overloads when local civil time can fall into a DST gap or fold. A nonexistent
+local time has no UTC candidate, while an ambiguous local time has first and
+second UTC occurrences. UTC-to-local conversion is single-valued; use
+`zone_offset_at_utc` / `zone_offset_at_utc_ms` when the effective offset matters.
+
 ### Example Usage:
 ```cpp
 ts_t gmt_ts = time_shield::to_ts(2024, Month::JUN, 21, 12, 0, 0);

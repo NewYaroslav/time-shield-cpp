@@ -7,7 +7,7 @@
 #include <time_shield/ntp_client/ntp_packet.hpp>
 #include <time_shield/ntp_client/udp_transport.hpp>
 
-#include <cassert>
+#include "test_assert.hpp"
 #include <cstdint>
 #include <cstring>
 
@@ -20,8 +20,8 @@ public:
     detail::NtpPacket reply{};
 
     bool transact(const detail::UdpRequest& req, int& out_error_code) noexcept override {
-        assert(req.send_size == sizeof(detail::NtpPacket));
-        assert(req.recv_size == sizeof(detail::NtpPacket));
+        TIME_SHIELD_TEST_CHECK(req.send_size == sizeof(detail::NtpPacket));
+        TIME_SHIELD_TEST_CHECK(req.recv_size == sizeof(detail::NtpPacket));
         out_error_code = error_code;
         if (!is_ok) {
             return false;
@@ -69,7 +69,7 @@ static detail::NtpPacket build_base_packet(uint64_t base_us) {
 
 int main() {
     const int64_t now_us = time_shield::now_realtime_us();
-    assert(now_us > 0);
+    TIME_SHIELD_TEST_CHECK(now_us > 0);
     const uint64_t base_us = static_cast<uint64_t>(now_us);
 
     {
@@ -83,10 +83,10 @@ int main() {
         int64_t delay = 0;
         int stratum = -1;
         const bool is_ok = core.query(transport, "example.com", 123, 5000, error, offset, delay, stratum);
-        assert(is_ok);
-        assert(error == 0);
-        assert(stratum == 2);
-        assert(delay >= 0);
+        TIME_SHIELD_TEST_CHECK(is_ok);
+        TIME_SHIELD_TEST_CHECK(error == 0);
+        TIME_SHIELD_TEST_CHECK(stratum == 2);
+        TIME_SHIELD_TEST_CHECK(delay >= 0);
         (void)is_ok;
         (void)error;
         (void)offset;
@@ -107,8 +107,8 @@ int main() {
         int64_t delay = 0;
         int stratum = -1;
         const bool is_ok = core.query(transport, "example.com", 123, 5000, error, offset, delay, stratum);
-        assert(!is_ok);
-        assert(error == detail::NTP_E_BAD_MODE);
+        TIME_SHIELD_TEST_CHECK(!is_ok);
+        TIME_SHIELD_TEST_CHECK(error == detail::NTP_E_BAD_MODE);
         (void)is_ok;
     }
 
@@ -125,8 +125,8 @@ int main() {
         int64_t delay = 0;
         int stratum = -1;
         const bool is_ok = core.query(transport, "example.com", 123, 5000, error, offset, delay, stratum);
-        assert(!is_ok);
-        assert(error == detail::NTP_E_BAD_VERSION);
+        TIME_SHIELD_TEST_CHECK(!is_ok);
+        TIME_SHIELD_TEST_CHECK(error == detail::NTP_E_BAD_VERSION);
         (void)is_ok;
     }
 
@@ -143,8 +143,8 @@ int main() {
         int64_t delay = 0;
         int stratum = -1;
         const bool is_ok = core.query(transport, "example.com", 123, 5000, error, offset, delay, stratum);
-        assert(!is_ok);
-        assert(error == detail::NTP_E_BAD_LI);
+        TIME_SHIELD_TEST_CHECK(!is_ok);
+        TIME_SHIELD_TEST_CHECK(error == detail::NTP_E_BAD_LI);
         (void)is_ok;
     }
 
@@ -161,8 +161,8 @@ int main() {
         int64_t delay = 0;
         int stratum = -1;
         const bool is_ok = core.query(transport, "example.com", 123, 5000, error, offset, delay, stratum);
-        assert(!is_ok);
-        assert(error == detail::NTP_E_KOD);
+        TIME_SHIELD_TEST_CHECK(!is_ok);
+        TIME_SHIELD_TEST_CHECK(error == detail::NTP_E_KOD);
         (void)is_ok;
     }
 
@@ -179,8 +179,8 @@ int main() {
         int64_t delay = 0;
         int stratum = -1;
         const bool is_ok = core.query(transport, "example.com", 123, 5000, error, offset, delay, stratum);
-        assert(!is_ok);
-        assert(error == detail::NTP_E_BAD_STRATUM);
+        TIME_SHIELD_TEST_CHECK(!is_ok);
+        TIME_SHIELD_TEST_CHECK(error == detail::NTP_E_BAD_STRATUM);
         (void)is_ok;
     }
 
@@ -198,8 +198,8 @@ int main() {
         int64_t delay = 0;
         int stratum = -1;
         const bool is_ok = core.query(transport, "example.com", 123, 5000, error, offset, delay, stratum);
-        assert(!is_ok);
-        assert(error == detail::NTP_E_BAD_TS);
+        TIME_SHIELD_TEST_CHECK(!is_ok);
+        TIME_SHIELD_TEST_CHECK(error == detail::NTP_E_BAD_TS);
         (void)is_ok;
     }
 
@@ -232,8 +232,8 @@ int main() {
         int64_t delay = 0;
         int stratum = -1;
         const bool is_ok = core.query(transport, "example.com", 123, 5000, error, offset, delay, stratum);
-        assert(!is_ok);
-        assert(error == detail::NTP_E_BAD_TS);
+        TIME_SHIELD_TEST_CHECK(!is_ok);
+        TIME_SHIELD_TEST_CHECK(error == detail::NTP_E_BAD_TS);
         (void)is_ok;
     }
 

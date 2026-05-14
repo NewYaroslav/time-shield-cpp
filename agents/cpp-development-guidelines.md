@@ -72,6 +72,14 @@
 - Do not use `Ninja`.
 - Do not use `NMake` / `nmake`.
 
+## Tests
+
+- Runtime test expectations must use `TIME_SHIELD_TEST_CHECK(...)` from
+  `tests/test_assert.hpp`.
+- Do not use `<cassert>` / `assert(...)` for test expectations because
+  Release/NDEBUG builds can compile them out.
+- `static_assert` is appropriate for compile-time expectations.
+
 ## Constants and macros
 
 - Constants and macro names use `UPPER_SNAKE_CASE`.

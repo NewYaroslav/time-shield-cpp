@@ -481,6 +481,33 @@ Use `zone_to_gmt()` / `gmt_to_zone()` / `convert_time_zone()` for the generic
 seconds-based API and `zone_to_gmt_ms()` / `gmt_to_zone_ms()` /
 `convert_time_zone_ms()` for millisecond timestamps.
 
+The legacy two-argument `zone_to_gmt*()` functions keep their best-effort
+behavior for compatibility. For calendar scheduling and other cases that need
+explicit DST handling, use `resolve_local_time_ms()` first or call the policy
+overloads:
+
+```cpp
+ts_ms_t local = to_timestamp_ms(2024, OCT, 27, 2, 30, 0);
+auto resolved = resolve_local_time_ms(local, CET);
+
+if (resolved.status == LocalTimeStatus::ambiguous) {
+    ts_ms_t first = resolved.first_utc_ms;
+    ts_ms_t second = resolved.second_utc_ms;
+}
+
+ts_ms_t utc = zone_to_gmt_ms(
+    local,
+    CET,
+    AmbiguousTimePolicy::first_occurrence,
+    NonexistentTimePolicy::error);
+```
+
+`LocalTimeStatus::nonexistent` marks a local timestamp inside a DST spring gap;
+`LocalTimeStatus::ambiguous` marks a local timestamp repeated during a DST fall
+fold. `gmt_to_zone*()` maps UTC to local time and is always a single instant,
+but repeated local times need `zone_offset_at_utc*()` if you must preserve which
+occurrence/offset was used.
+
 ### NTP client, pool, and time service
 
 ```cpp

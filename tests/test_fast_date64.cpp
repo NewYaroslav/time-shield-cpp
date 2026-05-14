@@ -9,7 +9,7 @@
 #   endif
 #endif
 
-#include <cassert>
+#include "test_assert.hpp"
 #include <chrono>
 #include <cstdint>
 #include <iostream>
@@ -84,12 +84,12 @@ namespace {
     }
 
     void assert_date_parts(const time_shield::DateTimeStruct& dt, const DateParts& ref) {
-        assert(dt.year == ref.year);
-        assert(dt.mon == ref.month);
-        assert(dt.day == ref.day);
-        assert(dt.hour == ref.hour);
-        assert(dt.min == ref.minute);
-        assert(dt.sec == ref.second);
+        TIME_SHIELD_TEST_CHECK(dt.year == ref.year);
+        TIME_SHIELD_TEST_CHECK(dt.mon == ref.month);
+        TIME_SHIELD_TEST_CHECK(dt.day == ref.day);
+        TIME_SHIELD_TEST_CHECK(dt.hour == ref.hour);
+        TIME_SHIELD_TEST_CHECK(dt.min == ref.minute);
+        TIME_SHIELD_TEST_CHECK(dt.sec == ref.second);
         (void)dt;
         (void)ref;
     }
@@ -101,7 +101,7 @@ namespace {
 
         const int64_t year_ref = ref.year - time_shield::UNIX_EPOCH;
         const int64_t year_fast = time_shield::years_since_epoch<int64_t>(ts);
-        assert(year_fast == year_ref);
+        TIME_SHIELD_TEST_CHECK(year_fast == year_ref);
         (void)year_ref;
         (void)year_fast;
     }
@@ -111,8 +111,8 @@ namespace {
         const time_shield::dse_t fast_day = time_shield::date_to_unix_day(year, month, day);
         const time_shield::dse_t legacy_day = time_shield::legacy::date_to_unix_day(year, month, day);
 
-        assert(static_cast<int64_t>(fast_day) == ref_day);
-        assert(static_cast<int64_t>(legacy_day) == ref_day);
+        TIME_SHIELD_TEST_CHECK(static_cast<int64_t>(fast_day) == ref_day);
+        TIME_SHIELD_TEST_CHECK(static_cast<int64_t>(legacy_day) == ref_day);
         (void)ref_day;
         (void)fast_day;
         (void)legacy_day;
@@ -128,8 +128,8 @@ namespace {
         const time_shield::ts_t fast_ts = time_shield::to_timestamp(year, month, day, hour, minute, second);
         const time_shield::ts_t legacy_ts = time_shield::legacy::to_timestamp(year, month, day, hour, minute, second);
 
-        assert(static_cast<int64_t>(fast_ts) == ref_ts);
-        assert(static_cast<int64_t>(legacy_ts) == ref_ts);
+        TIME_SHIELD_TEST_CHECK(static_cast<int64_t>(fast_ts) == ref_ts);
+        TIME_SHIELD_TEST_CHECK(static_cast<int64_t>(legacy_ts) == ref_ts);
         (void)ref_ts;
         (void)fast_ts;
         (void)legacy_ts;
@@ -224,12 +224,12 @@ namespace {
             const time_shield::ts_t ts = time_shield::to_timestamp(year, month, day, hour, minute, second);
             const time_shield::DateTimeStruct dt = time_shield::to_date_time<time_shield::DateTimeStruct>(ts);
 
-            assert(dt.year == year);
-            assert(dt.mon == month);
-            assert(dt.day == day);
-            assert(dt.hour == hour);
-            assert(dt.min == minute);
-            assert(dt.sec == second);
+            TIME_SHIELD_TEST_CHECK(dt.year == year);
+            TIME_SHIELD_TEST_CHECK(dt.mon == month);
+            TIME_SHIELD_TEST_CHECK(dt.day == day);
+            TIME_SHIELD_TEST_CHECK(dt.hour == hour);
+            TIME_SHIELD_TEST_CHECK(dt.min == minute);
+            TIME_SHIELD_TEST_CHECK(dt.sec == second);
         }
     }
 

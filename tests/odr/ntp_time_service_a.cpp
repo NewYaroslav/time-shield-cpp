@@ -4,7 +4,7 @@
 #define TIME_SHIELD_TEST_FAKE_NTP
 #include <time_shield/ntp_time_service.hpp>
 
-#include <cassert>
+#include "../test_assert.hpp"
 #include <cstdint>
 
 std::uintptr_t ntp_time_service_instance_address_b();
@@ -14,10 +14,10 @@ int main() {
     service.shutdown();
 
     const auto instance_address = reinterpret_cast<std::uintptr_t>(&service);
-    assert(instance_address == ntp_time_service_instance_address_b());
+    TIME_SHIELD_TEST_CHECK(instance_address == ntp_time_service_instance_address_b());
 
     (void)service.utc_time_ms();
-    assert(service.running());
+    TIME_SHIELD_TEST_CHECK(service.running());
     service.shutdown();
     return 0;
 }

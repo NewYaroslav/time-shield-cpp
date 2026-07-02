@@ -1,4 +1,4 @@
-# Не включать эти папки в GitHub source archive (tar.gz/zip)
+# Exclude these directories from GitHub source archives (tar.gz/zip).
 vcpkg-overlay/ export-ignore
 .github/       export-ignore
 *.mq4          text diff

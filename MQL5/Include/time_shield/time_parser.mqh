@@ -317,7 +317,7 @@ namespace time_shield {
        dt.mon =(int)StringToInteger(parts[1]);
        dt.day =(int)StringToInteger(parts[2]);
 
-       if(!is_valid_date(dt))
+       if(!is_valid_date(dt.year, dt.mon, dt.day))
           return false;
 
        if (StringLen(time_part)>0) {

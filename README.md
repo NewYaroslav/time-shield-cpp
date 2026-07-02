@@ -92,8 +92,10 @@ library and report platform capabilities:
 - `TIME_SHIELD_ENABLE_NTP_CLIENT` — enables the optional `NtpClient` module
   (defaults to `1` on supported platforms).
 
-All public headers place their declarations inside the `time_shield` namespace.
-Use `time_shield::` or `using namespace time_shield;` to access the API.
+C++ and MQL5 public headers place their declarations inside the `time_shield`
+namespace. Use `time_shield::` or `using namespace time_shield;` to access that
+API. MQL4 uses the `TimeShield` class with static methods and constants because
+the MQL4 language does not provide namespaces.
 
 > Some functions depend on platform APIs and may be limited (for example,
 > obtaining realtime via `QueryPerformanceCounter` on Windows).
@@ -184,6 +186,9 @@ Use `install_mql5.bat` to install the MQL5 files. For MQL4, copy
 
 ```mql
 #include <TimeShield.mqh>
+
+long now_ms = TimeShield::now();
+int second_day = TimeShield::sec_of_day(TimeCurrent());
 ```
 
 ### Integration Notes

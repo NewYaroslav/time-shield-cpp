@@ -1,6 +1,5 @@
 var NAVTREEINDEX3 =
 {
-"classtime__shield_1_1astronomy_1_1MoonPhase.html":[19,0,0,0,2],
 "classtime__shield_1_1astronomy_1_1MoonPhase.html":[20,0,0,0,2],
 "classtime__shield_1_1astronomy_1_1MoonPhase.html#a1149b5dacf88afce4526fca7d6c2204f":[19,0,0,0,2,37],
 "classtime__shield_1_1astronomy_1_1MoonPhase.html#a1149b5dacf88afce4526fca7d6c2204f":[20,0,0,0,2,37],
@@ -178,12 +177,12 @@ var NAVTREEINDEX3 =
 "config_8hpp_source.html":[21,0,2,0,3],
 "constants_8hpp.html":[21,0,2,0,4],
 "constants_8hpp_source.html":[21,0,2,0,4],
-"constants_8mqh.html":[18,1,6],
+"constants_8mqh.html":[18,1,5],
 "date__conversions_8hpp.html":[21,0,2,0,6],
 "date__conversions_8hpp_source.html":[21,0,2,0,6],
 "date__struct_8hpp.html":[21,0,2,0,7],
 "date__struct_8hpp_source.html":[21,0,2,0,7],
-"date__struct_8mqh.html":[18,1,7],
+"date__struct_8mqh.html":[18,1,6],
 "date__time__conversions_8hpp.html":[21,0,2,0,8],
 "date__time__conversions_8hpp_source.html":[21,0,2,0,8],
 "date__time__example_8cpp.html":[21,0,1,0],
@@ -191,7 +190,7 @@ var NAVTREEINDEX3 =
 "date__time__example_8cpp_source.html":[21,0,1,0],
 "date__time__struct_8hpp.html":[21,0,2,0,9],
 "date__time__struct_8hpp_source.html":[21,0,2,0,9],
-"date__time__struct_8mqh.html":[18,1,8],
+"date__time__struct_8mqh.html":[18,1,7],
 "dir_023a4b85dcdce17cdb38aba1524ef4de.html":[21,0,3],
 "dir_07c7b06f5dd7d1513dc7d4081673a960.html":[21,0,2,0],
 "dir_1fd7a2f06cd126dbe3eda5e674b9b389.html":[21,0,3,1,0],
@@ -208,7 +207,7 @@ var NAVTREEINDEX3 =
 "dir_f5910b02c33f121c56d84798d1ea4304.html":[21,0,2,0,1],
 "dir_fa8f018cfeb51826a0ee9534616f7969.html":[21,0,3,1,0,1],
 "enums_8hpp.html":[18,5,0],
-"enums_8mqh.html":[18,1,10],
+"enums_8mqh.html":[18,1,9],
 "fast__date_8hpp.html":[21,0,2,0,0,0],
 "fast__date_8hpp_source.html":[21,0,2,0,0,0],
 "files.html":[21,0],
@@ -249,5 +248,6 @@ var NAVTREEINDEX3 =
 "functions_func_z.html":[20,3,1,23],
 "functions_func_~.html":[20,3,1,24],
 "functions_g.html":[20,3,0,6],
-"functions_h.html":[20,3,0,7]
+"functions_h.html":[20,3,0,7],
+"functions_i.html":[20,3,0,8]
 };

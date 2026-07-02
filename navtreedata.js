@@ -174,19 +174,19 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "CpuTickTimer_8hpp.html",
-"classtime__shield_1_1DateTime.html#adf831752250e96986a57d0bb069e436a",
-"classtime__shield_1_1NtpTimeServiceT.html#a2f17857107d756c815390af87c9ea8f8",
+"classtime__shield_1_1DateTime.html#ae2af9e20e29150d25cf1f44044a5169c",
+"classtime__shield_1_1NtpTimeServiceT.html#a31fdc76f7e0777429e2ae92a340a52b6",
 "classtime__shield_1_1astronomy_1_1MoonPhase.html",
-"functions_i.html",
-"group__time__conversions.html#ga0e5c9f1cae6a79d3c26a1c244b100b8f",
-"group__time__conversions.html#ga7b9b1b808aba917b3f6cd6d20360bd10",
+"functions_j.html",
+"group__time__conversions.html#ga0eb1cd1e035752272fa11f725fd0afb3",
+"group__time__conversions.html#ga7ba206ac40caf7e60ac6caa33ae9d53a",
 "group__time__conversions.html#gaf0ec4ea201c4e0e9d3635f2a6fd7a717",
-"group__time__enums.html#ggad8cb858fb6cedcf76c4f0630d56e042bacce69cd6d90a968533a24acb0a5d3a72",
-"group__time__structures.html#ga08af694e8d0d7dc501bcb8b127703ee2",
-"md_docs_2library-integration-guidelines-RU.html#autotoc_md79",
-"namespacetime__shield.html#affbab7026478f6c258a0890f183e133f",
-"structtime__shield_1_1astronomy_1_1MoonPhaseResult.html#ab228bffaa62de41e0808ea069dd2363a",
-"time__formatting__example_8cpp_source.html"
+"group__time__enums.html#ggad8cb858fb6cedcf76c4f0630d56e042bacf73d4da4aef3e52e0ef5e8cc372a62c",
+"group__time__structures.html#ga08b66dadc7689d8e8b7cdcec9140fa15",
+"md_docs_2library-integration-guidelines-RU.html#autotoc_md80",
+"namespacetime__shield_1_1astronomy.html",
+"structtime__shield_1_1astronomy_1_1MoonPhaseResult.html#ab8d76a7d973ff539b60d7a0aaf5c4671",
+"time__formatting__showcase__example_8cpp.html"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

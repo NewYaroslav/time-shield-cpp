@@ -1,6 +1,5 @@
 var NAVTREEINDEX10 =
 {
-"md_docs_2library-integration-guidelines-RU.html#autotoc_md79":[14,3],
 "md_docs_2library-integration-guidelines-RU.html#autotoc_md80":[14,4],
 "md_docs_2library-integration-guidelines-RU.html#autotoc_md81":[14,5],
 "md_docs_2library-integration-guidelines-RU.html#autotoc_md82":[14,6],
@@ -249,5 +248,6 @@ var NAVTREEINDEX10 =
 "namespacetime__shield.html#afc0dae236862cd7587414a5e72f38ff1":[19,0,0,125],
 "namespacetime__shield.html#afc26156e2e002636d11038ab4822b977":[19,0,0,38],
 "namespacetime__shield.html#afc81e9814544b3add214ccd3f5004396":[19,0,0,333],
-"namespacetime__shield.html#afe94b27396fd9967b45f76a26e0ae035":[19,0,0,493]
+"namespacetime__shield.html#afe94b27396fd9967b45f76a26e0ae035":[19,0,0,493],
+"namespacetime__shield.html#affbab7026478f6c258a0890f183e133f":[19,0,0,571]
 };

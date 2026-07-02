@@ -1,6 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"classtime__shield_1_1NtpTimeServiceT.html#a2f17857107d756c815390af87c9ea8f8":[18,2,10,28],
 "classtime__shield_1_1NtpTimeServiceT.html#a31fdc76f7e0777429e2ae92a340a52b6":[18,2,10,1],
 "classtime__shield_1_1NtpTimeServiceT.html#a31fdc76f7e0777429e2ae92a340a52b6a1ee85f6c60017a7f0646ba8dc5824de6":[18,2,10,1,1],
 "classtime__shield_1_1NtpTimeServiceT.html#a31fdc76f7e0777429e2ae92a340a52b6a3b2a3c8ed19fc3647432e72885d633e7":[18,2,10,1,3],
@@ -249,5 +248,6 @@ var NAVTREEINDEX2 =
 "classtime__shield_1_1ZonedClock.html#af9bc4e15770e91fd91a582a5e49cb10f":[19,0,0,28,33],
 "classtime__shield_1_1ZonedClock.html#af9bc4e15770e91fd91a582a5e49cb10f":[20,0,0,26,33],
 "classtime__shield_1_1ZonedClock.html#afc4aeb533d99f23107178f7c29bf0e7c":[19,0,0,28,4],
-"classtime__shield_1_1ZonedClock.html#afc4aeb533d99f23107178f7c29bf0e7c":[20,0,0,26,4]
+"classtime__shield_1_1ZonedClock.html#afc4aeb533d99f23107178f7c29bf0e7c":[20,0,0,26,4],
+"classtime__shield_1_1astronomy_1_1MoonPhase.html":[19,0,0,0,2]
 };

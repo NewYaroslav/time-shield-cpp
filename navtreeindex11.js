@@ -1,6 +1,5 @@
 var NAVTREEINDEX11 =
 {
-"namespacetime__shield.html#affbab7026478f6c258a0890f183e133f":[19,0,0,571],
 "namespacetime__shield_1_1astronomy.html":[19,0,0,0],
 "namespacetime__shield_1_1detail.html":[18,7,0],
 "namespacetime__shield_1_1detail.html#a034e998bbe602832241d2fc8b0c67cd3":[19,0,0,1,75],
@@ -249,5 +248,6 @@ var NAVTREEINDEX11 =
 "structtime__shield_1_1astronomy_1_1MoonPhaseResult.html#aa5e113195cdff17210b79cf78a87fc35":[20,0,0,0,0,8],
 "structtime__shield_1_1astronomy_1_1MoonPhaseResult.html#aab77c808b2b2bd104293bd7808156bd6":[19,0,0,0,0,6],
 "structtime__shield_1_1astronomy_1_1MoonPhaseResult.html#aab77c808b2b2bd104293bd7808156bd6":[20,0,0,0,0,6],
-"structtime__shield_1_1astronomy_1_1MoonPhaseResult.html#ab228bffaa62de41e0808ea069dd2363a":[19,0,0,0,0,0]
+"structtime__shield_1_1astronomy_1_1MoonPhaseResult.html#ab228bffaa62de41e0808ea069dd2363a":[19,0,0,0,0,0],
+"structtime__shield_1_1astronomy_1_1MoonPhaseResult.html#ab228bffaa62de41e0808ea069dd2363a":[20,0,0,0,0,0]
 };

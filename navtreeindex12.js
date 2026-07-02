@@ -1,6 +1,5 @@
 var NAVTREEINDEX12 =
 {
-"structtime__shield_1_1astronomy_1_1MoonPhaseResult.html#ab228bffaa62de41e0808ea069dd2363a":[20,0,0,0,0,0],
 "structtime__shield_1_1astronomy_1_1MoonPhaseResult.html#ab8d76a7d973ff539b60d7a0aaf5c4671":[19,0,0,0,0,7],
 "structtime__shield_1_1astronomy_1_1MoonPhaseResult.html#ab8d76a7d973ff539b60d7a0aaf5c4671":[20,0,0,0,0,7],
 "structtime__shield_1_1astronomy_1_1MoonPhaseResult.html#ae253f47c5b67846a3f274cecf527e65f":[19,0,0,0,0,4],
@@ -235,7 +234,7 @@ var NAVTREEINDEX12 =
 "time__conversion__aliases_8hpp_source.html":[21,0,2,0,24],
 "time__conversions_8hpp.html":[21,0,2,0,25],
 "time__conversions_8hpp_source.html":[21,0,2,0,25],
-"time__conversions_8mqh.html":[18,1,12],
+"time__conversions_8mqh.html":[18,1,11],
 "time__conversions__demo_8mq5.html":[21,0,3,1,0,0,0],
 "time__conversions__demo_8mq5_source.html":[21,0,3,1,0,0,0],
 "time__conversions__example_8cpp.html":[21,0,1,3],
@@ -245,9 +244,10 @@ var NAVTREEINDEX12 =
 "time__format__parser_8hpp_source.html":[21,0,2,0,26],
 "time__formatting_8hpp.html":[21,0,2,0,27],
 "time__formatting_8hpp_source.html":[21,0,2,0,27],
-"time__formatting_8mqh.html":[18,1,13],
+"time__formatting_8mqh.html":[18,1,12],
 "time__formatting__demo_8mq5.html":[21,0,3,1,0,0,1],
 "time__formatting__demo_8mq5_source.html":[21,0,3,1,0,0,1],
 "time__formatting__example_8cpp.html":[21,0,1,4],
-"time__formatting__example_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4":[21,0,1,4,0]
+"time__formatting__example_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4":[21,0,1,4,0],
+"time__formatting__example_8cpp_source.html":[21,0,1,4]
 };

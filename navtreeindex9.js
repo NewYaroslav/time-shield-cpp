@@ -1,6 +1,5 @@
 var NAVTREEINDEX9 =
 {
-"group__time__structures.html#ga08af694e8d0d7dc501bcb8b127703ee2":[18,8,15],
 "group__time__structures.html#ga08b66dadc7689d8e8b7cdcec9140fa15":[18,8,72],
 "group__time__structures.html#ga0abf8fe2ff0896085f95212e82354e5f":[18,8,65],
 "group__time__structures.html#ga0c596486a334547054b4e8ac71e4b3e4":[18,8,9],
@@ -200,7 +199,7 @@ var NAVTREEINDEX9 =
 "index.html#tested_sec":[8],
 "index.html#workday_helpers":[6,1],
 "initialization_8hpp.html":[18,0,0],
-"initialization_8mqh.html":[18,1,11],
+"initialization_8mqh.html":[18,1,10],
 "iso__week__conversions_8hpp.html":[21,0,2,0,15],
 "iso__week__conversions_8hpp_source.html":[21,0,2,0,15],
 "iso__week__struct_8hpp.html":[21,0,2,0,16],
@@ -249,5 +248,6 @@ var NAVTREEINDEX9 =
 "md_docs_2library-integration-guidelines-RU.html":[14],
 "md_docs_2library-integration-guidelines-RU.html#autotoc_md76":[14,0],
 "md_docs_2library-integration-guidelines-RU.html#autotoc_md77":[14,1],
-"md_docs_2library-integration-guidelines-RU.html#autotoc_md78":[14,2]
+"md_docs_2library-integration-guidelines-RU.html#autotoc_md78":[14,2],
+"md_docs_2library-integration-guidelines-RU.html#autotoc_md79":[14,3]
 };

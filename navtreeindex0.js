@@ -4,14 +4,13 @@ var NAVTREEINDEX0 =
 "CpuTickTimer_8hpp_source.html":[21,0,2,0,5],
 "DateTime_8hpp.html":[21,0,2,0,10],
 "DateTime_8hpp_source.html":[21,0,2,0,10],
-"DateTime_8mqh.html":[18,1,9],
+"DateTime_8mqh.html":[18,1,8],
 "DeadlineTimer_8hpp.html":[21,0,2,0,11],
 "DeadlineTimer_8hpp_source.html":[21,0,2,0,11],
 "ElapsedTimer_8hpp.html":[21,0,2,0,12],
 "ElapsedTimer_8hpp_source.html":[21,0,2,0,12],
 "MoonPhase_8hpp.html":[18,4,4],
-"TimeShield_8mqh.html":[21,0,3,0,2],
-"TimeShield_8mqh_source.html":[21,0,3,0,2],
+"TimeShield_8mqh.html":[18,1,19],
 "TimerScheduler_8hpp.html":[21,0,2,0,36],
 "TimerScheduler_8hpp_source.html":[21,0,2,0,36],
 "ZonedClock_8hpp.html":[21,0,2,0,41],
@@ -249,5 +248,6 @@ var NAVTREEINDEX0 =
 "classtime__shield_1_1DateTime.html#ad54768079cbe312160109bb76624cf59":[20,0,0,5,83],
 "classtime__shield_1_1DateTime.html#ad73a5068b0f16fdfdc3e1e6484d360be":[19,0,0,7,94],
 "classtime__shield_1_1DateTime.html#ad73a5068b0f16fdfdc3e1e6484d360be":[20,0,0,5,94],
-"classtime__shield_1_1DateTime.html#adf831752250e96986a57d0bb069e436a":[19,0,0,7,7]
+"classtime__shield_1_1DateTime.html#adf831752250e96986a57d0bb069e436a":[19,0,0,7,7],
+"classtime__shield_1_1DateTime.html#adf831752250e96986a57d0bb069e436a":[20,0,0,5,7]
 };

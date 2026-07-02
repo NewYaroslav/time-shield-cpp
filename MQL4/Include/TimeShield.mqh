@@ -25,6 +25,36 @@ public:
         SEC_PER_DAY = 86400      ///< Seconds per day.
     };
 
+    /// \brief Get milliseconds per second.
+    /// \return Milliseconds per second.
+    static int ms_per_sec() {
+        return MS_PER_SEC;
+    }
+
+    /// \brief Get microseconds per second.
+    /// \return Microseconds per second.
+    static int us_per_sec() {
+        return US_PER_SEC;
+    }
+
+    /// \brief Get seconds per minute.
+    /// \return Seconds per minute.
+    static int sec_per_min() {
+        return SEC_PER_MIN;
+    }
+
+    /// \brief Get seconds per hour.
+    /// \return Seconds per hour.
+    static int sec_per_hour() {
+        return SEC_PER_HOUR;
+    }
+
+    /// \brief Get seconds per day.
+    /// \return Seconds per day.
+    static int sec_per_day() {
+        return SEC_PER_DAY;
+    }
+
     /// \brief Get raw terminal tick counter in milliseconds.
     /// \return Wrapped 32-bit terminal tick counter.
     static uint tick_count_ms() {

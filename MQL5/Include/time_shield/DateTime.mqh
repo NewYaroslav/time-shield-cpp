@@ -34,14 +34,16 @@ namespace time_shield {
         /// \param offset Fixed UTC offset in seconds.
         /// \return Constructed DateTime.
         static DateTime from_unix_ms(const long utc_ms, const int offset = 0) {
-            return DateTime(utc_ms, offset);
+            DateTime result(utc_ms, offset);
+            return result;
         }
 
         /// \brief Construct instance for current UTC time.
         /// \param offset Fixed UTC offset in seconds.
         /// \return DateTime set to now.
         static DateTime now_utc(const int offset = 0) {
-            return DateTime(ts_ms(), offset);
+            DateTime result(ts_ms(), offset);
+            return result;
         }
 
         /// \brief Try to build from calendar components interpreted in provided offset.
@@ -73,7 +75,8 @@ namespace time_shield {
                 return false;
 
             const long local_ms = to_timestamp_ms(year, month, day, hour, min, sec, ms);
-            out = DateTime(local_ms - offset_to_ms(offset), offset);
+            DateTime result(local_ms - offset_to_ms(offset), offset);
+            out = result;
             return true;
         }
 
@@ -94,7 +97,8 @@ namespace time_shield {
                 return false;
 
             const long local_ms = dt_to_timestamp_ms(local_dt);
-            out = DateTime(local_ms - offset_to_ms(offset), offset);
+            DateTime result(local_ms - offset_to_ms(offset), offset);
+            out = result;
             return true;
         }
 
@@ -108,8 +112,9 @@ namespace time_shield {
             if (!parse_iso8601(str, dt, tz))
                 return false;
 
-            out = DateTime(dt_to_timestamp_ms(dt) - offset_to_ms(time_zone_struct_to_offset(tz)),
-                           time_zone_struct_to_offset(tz));
+            const int offset = time_zone_struct_to_offset(tz);
+            DateTime result(dt_to_timestamp_ms(dt) - offset_to_ms(offset), offset);
+            out = result;
             return true;
         }
 
@@ -123,7 +128,10 @@ namespace time_shield {
         int utc_offset() const { return m_offset; }
 
         /// \brief Return copy with new offset preserving instant.
-        DateTime with_offset(const int new_offset) const { return DateTime(m_utc_ms, new_offset); }
+        DateTime with_offset(const int new_offset) const {
+            DateTime result(m_utc_ms, new_offset);
+            return result;
+        }
 
         /// \brief Return copy with zero offset.
         DateTime to_utc() const { return with_offset(0); }

@@ -94,8 +94,8 @@ library and report platform capabilities:
 
 C++ and MQL5 public headers place their declarations inside the `time_shield`
 namespace. Use `time_shield::` or `using namespace time_shield;` to access that
-API. MQL4 uses the `TimeShield` class with static methods and constants because
-the MQL4 language does not provide namespaces.
+API. MQL4 uses the `TimeShield` class for static methods and `TSHIELD_`
+constants because the MQL4 language does not provide namespaces.
 
 > Some functions depend on platform APIs and may be limited (for example,
 > obtaining realtime via `QueryPerformanceCounter` on Windows).
@@ -189,6 +189,7 @@ Use `install_mql5.bat` to install the MQL5 files. For MQL4, copy
 
 long now_ms = TimeShield::now();
 int second_day = TimeShield::sec_of_day(TimeCurrent());
+int one_day = TSHIELD_SEC_PER_DAY;
 ```
 
 ### Integration Notes

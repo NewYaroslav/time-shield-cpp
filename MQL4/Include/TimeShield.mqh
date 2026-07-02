@@ -13,48 +13,16 @@
 #property link      "https://github.com/NewYaroslav/time-shield-cpp"
 #property strict
 
+const int TSHIELD_MS_PER_SEC = 1000;       ///< Milliseconds per second.
+const int TSHIELD_US_PER_SEC = 1000000;    ///< Microseconds per second.
+const int TSHIELD_SEC_PER_MIN = 60;        ///< Seconds per minute.
+const int TSHIELD_SEC_PER_HOUR = 3600;     ///< Seconds per hour.
+const int TSHIELD_SEC_PER_DAY = 86400;     ///< Seconds per day.
+
 /// \class TimeShield
 /// \brief Provides static time helpers for MQL4.
 class TimeShield {
 public:
-    enum Constants {
-        MS_PER_SEC = 1000,       ///< Milliseconds per second.
-        US_PER_SEC = 1000000,    ///< Microseconds per second.
-        SEC_PER_MIN = 60,        ///< Seconds per minute.
-        SEC_PER_HOUR = 3600,     ///< Seconds per hour.
-        SEC_PER_DAY = 86400      ///< Seconds per day.
-    };
-
-    /// \brief Get milliseconds per second.
-    /// \return Milliseconds per second.
-    static int ms_per_sec() {
-        return MS_PER_SEC;
-    }
-
-    /// \brief Get microseconds per second.
-    /// \return Microseconds per second.
-    static int us_per_sec() {
-        return US_PER_SEC;
-    }
-
-    /// \brief Get seconds per minute.
-    /// \return Seconds per minute.
-    static int sec_per_min() {
-        return SEC_PER_MIN;
-    }
-
-    /// \brief Get seconds per hour.
-    /// \return Seconds per hour.
-    static int sec_per_hour() {
-        return SEC_PER_HOUR;
-    }
-
-    /// \brief Get seconds per day.
-    /// \return Seconds per day.
-    static int sec_per_day() {
-        return SEC_PER_DAY;
-    }
-
     /// \brief Get raw terminal tick counter in milliseconds.
     /// \return Wrapped 32-bit terminal tick counter.
     static uint tick_count_ms() {
@@ -107,7 +75,7 @@ public:
             while((next_ts = ts()) == start_ts) {
             }
 
-            offset = next_ts * MS_PER_SEC - (long)monotonic_ms();
+            offset = next_ts * TSHIELD_MS_PER_SEC - (long)monotonic_ms();
             initialized = true;
         }
 
@@ -130,14 +98,14 @@ public:
     /// \param timestamp Timestamp in seconds.
     /// \return Second of day.
     static int sec_of_day(const long timestamp) {
-        return (int)(timestamp % SEC_PER_DAY);
+        return (int)(timestamp % TSHIELD_SEC_PER_DAY);
     }
 
     /// \brief Get second of day from milliseconds timestamp.
     /// \param timestamp_ms Timestamp in milliseconds.
     /// \return Second of day.
     static int sec_of_day_ms(const long timestamp_ms) {
-        return sec_of_day(timestamp_ms / MS_PER_SEC);
+        return sec_of_day(timestamp_ms / TSHIELD_MS_PER_SEC);
     }
 
     /// \brief Get second of day from hours, minutes and seconds.
@@ -146,7 +114,7 @@ public:
     /// \param second Second value.
     /// \return Second of day.
     static int sec_of_day(const int hour, const int minute, const int second) {
-        return hour * SEC_PER_HOUR + minute * SEC_PER_MIN + second;
+        return hour * TSHIELD_SEC_PER_HOUR + minute * TSHIELD_SEC_PER_MIN + second;
     }
 
     /// \brief Check time-of-day components.
@@ -162,7 +130,7 @@ public:
 
     /// \brief Convert string with time of day to second of day.
     /// \param value Time string in HH, HH:MM, or HH:MM:SS format.
-    /// \return Second of day or SEC_PER_DAY on parse failure.
+    /// \return Second of day or TSHIELD_SEC_PER_DAY on parse failure.
     static int sec_of_day(const string value) {
         string parts[];
         const ushort separator = StringGetCharacter(":", 0);
@@ -170,7 +138,7 @@ public:
 
         if(count < 1 || count > 3) {
             ArrayFree(parts);
-            return SEC_PER_DAY;
+            return TSHIELD_SEC_PER_DAY;
         }
 
         int hour = 0;
@@ -188,7 +156,7 @@ public:
         ArrayFree(parts);
 
         if(!is_valid_time(hour, minute, second)) {
-            return SEC_PER_DAY;
+            return TSHIELD_SEC_PER_DAY;
         }
 
         return sec_of_day(hour, minute, second);

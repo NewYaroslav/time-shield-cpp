@@ -182,7 +182,7 @@ Examples can be built with the provided scripts:
 - `build-cb.bat` to generate a Code::Blocks project.
 
 Use `install_mql5.bat` to install the MQL5 files. For MQL4, copy
-`MQL4/Include` into the terminal `Include` directory and include the facade:
+`MQL4/Include` into the terminal `Include` directory and include the header:
 
 ```mql
 #include <TimeShield.mqh>

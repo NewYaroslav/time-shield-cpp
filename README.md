@@ -3,7 +3,7 @@
 <img src="docs/logo-1280x640.png" alt="Logo" width="600"/>
 
 ![MIT License](https://img.shields.io/badge/license-MIT-green.svg)
-![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS%20%7C%20MQL5-blue)
+![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS%20%7C%20MQL4%20%7C%20MQL5-blue)
 ![C++ Standard](https://img.shields.io/badge/C++-11--17-orange)
 ![CI Windows](https://img.shields.io/github/actions/workflow/status/newyaroslav/time-shield-cpp/ci.yml?branch=main&label=Windows&logo=windows)
 ![CI Linux](https://img.shields.io/github/actions/workflow/status/newyaroslav/time-shield-cpp/ci.yml?branch=main&label=Linux&logo=linux)
@@ -47,7 +47,7 @@ more academic solutions like `HowardHinnant/date`, the library:
   parts of a timestamp and calculating period boundaries;
 - has an **extensible architecture**—new formats (Julian, OLE, UTC offset) can be
   added as separate types and modules;
-- **works even in restricted environments** such as MQL5/MetaTrader—no
+- **works even in restricted environments** such as MQL4/MQL5/MetaTrader—no
   exceptions or dynamic memory are required for the core API; optional helpers
   can use `std::string` or throw and can be disabled in restricted builds;
 - ships as **header-only**—a single include without build steps or external
@@ -76,7 +76,7 @@ more academic solutions like `HowardHinnant/date`, the library:
   works with fractions of a second.
 - **Time zone conversion**—functions for European, US, and selected Asia/EMEA trading zones plus generic zone-to-zone conversion.
 - **NTP client and pool**—single-client queries plus a configurable pool/runner/service pipeline with offline testing hooks (Windows and Unix).
-- **MQL5 support**—adapted headers in the `MQL5` directory allow using the
+- **MQL4/MQL5 support**—adapted headers in the `MQL4` and `MQL5` directories allow using the
   library in MetaTrader.
 - Compatible with `C++11`–`C++17`.
 
@@ -179,7 +179,12 @@ Examples can be built with the provided scripts:
 - `build_examples.sh` for Linux/macOS;
 - `build-cb.bat` to generate a Code::Blocks project.
 
-Use `install_mql5.bat` to install the MQL5 files.
+Use `install_mql5.bat` to install the MQL5 files. For MQL4, copy
+`MQL4/Include` into the terminal `Include` directory and include the facade:
+
+```mql
+#include <TimeShield.mqh>
+```
 
 ### Integration Notes
 

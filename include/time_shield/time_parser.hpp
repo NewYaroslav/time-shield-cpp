@@ -1,7 +1,6 @@
-// SPDX-License-Identifier: MIT
 #pragma once
-#ifndef _TIME_SHIELD_TIME_PARSER_HPP_INCLUDED
-#define _TIME_SHIELD_TIME_PARSER_HPP_INCLUDED
+#ifndef TIME_SHIELD_HEADER_TIME_SHIELD_TIME_PARSER_HPP_INCLUDED
+#define TIME_SHIELD_HEADER_TIME_SHIELD_TIME_PARSER_HPP_INCLUDED
 
 /// \file time_parser.hpp
 /// \brief Header file with functions for parsing dates and times in ISO8601 format and converting them to various timestamp formats.
@@ -1767,4 +1766,4 @@ namespace time_shield {
 
 };
 
-#endif // _TIME_SHIELD_TIME_PARSER_HPP_INCLUDED
+#endif // TIME_SHIELD_HEADER_TIME_SHIELD_TIME_PARSER_HPP_INCLUDED

@@ -1,7 +1,6 @@
-// SPDX-License-Identifier: MIT
 #pragma once
-#ifndef _TIME_SHIELD_TIME_UNIT_CONVERSIONS_HPP_INCLUDED
-#define _TIME_SHIELD_TIME_UNIT_CONVERSIONS_HPP_INCLUDED
+#ifndef TIME_SHIELD_HEADER_TIME_SHIELD_TIME_UNIT_CONVERSIONS_HPP_INCLUDED
+#define TIME_SHIELD_HEADER_TIME_SHIELD_TIME_UNIT_CONVERSIONS_HPP_INCLUDED
 
 /// \file time_unit_conversions.hpp
 /// \brief Helper functions for unit conversions between seconds, minutes, hours, and milliseconds.
@@ -484,4 +483,4 @@ namespace time_shield {
 
 }; // namespace time_shield
 
-#endif // _TIME_SHIELD_TIME_UNIT_CONVERSIONS_HPP_INCLUDED
+#endif // TIME_SHIELD_HEADER_TIME_SHIELD_TIME_UNIT_CONVERSIONS_HPP_INCLUDED

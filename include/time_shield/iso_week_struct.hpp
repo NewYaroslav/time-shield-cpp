@@ -1,7 +1,6 @@
-// SPDX-License-Identifier: MIT
 #pragma once
-#ifndef _TIME_SHIELD_ISO_WEEK_STRUCT_HPP_INCLUDED
-#define _TIME_SHIELD_ISO_WEEK_STRUCT_HPP_INCLUDED
+#ifndef TIME_SHIELD_HEADER_TIME_SHIELD_ISO_WEEK_STRUCT_HPP_INCLUDED
+#define TIME_SHIELD_HEADER_TIME_SHIELD_ISO_WEEK_STRUCT_HPP_INCLUDED
 
 /// \file iso_week_struct.hpp
 /// \brief Header for ISO week date structure.
@@ -36,4 +35,4 @@ namespace time_shield {
 
 }; // namespace time_shield
 
-#endif // _TIME_SHIELD_ISO_WEEK_STRUCT_HPP_INCLUDED
+#endif // TIME_SHIELD_HEADER_TIME_SHIELD_ISO_WEEK_STRUCT_HPP_INCLUDED

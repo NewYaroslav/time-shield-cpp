@@ -1,7 +1,6 @@
-// SPDX-License-Identifier: MIT
 #pragma once
-#ifndef _TIME_SHIELD_DATE_CONVERSIONS_HPP_INCLUDED
-#define _TIME_SHIELD_DATE_CONVERSIONS_HPP_INCLUDED
+#ifndef TIME_SHIELD_HEADER_TIME_SHIELD_DATE_CONVERSIONS_HPP_INCLUDED
+#define TIME_SHIELD_HEADER_TIME_SHIELD_DATE_CONVERSIONS_HPP_INCLUDED
 
 /// \file date_conversions.hpp
 /// \brief Conversions related to calendar dates and DateStruct helpers.
@@ -109,4 +108,4 @@ namespace time_shield {
 
 }; // namespace time_shield
 
-#endif // _TIME_SHIELD_DATE_CONVERSIONS_HPP_INCLUDED
+#endif // TIME_SHIELD_HEADER_TIME_SHIELD_DATE_CONVERSIONS_HPP_INCLUDED

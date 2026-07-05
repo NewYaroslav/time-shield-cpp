@@ -1,6 +1,6 @@
 #pragma once
-#ifndef _TIME_SHIELD_WSA_GUARD_HPP_INCLUDED
-#define _TIME_SHIELD_WSA_GUARD_HPP_INCLUDED
+#ifndef TIME_SHIELD_HEADER_TIME_SHIELD_NTP_CLIENT_WSA_GUARD_HPP_INCLUDED
+#define TIME_SHIELD_HEADER_TIME_SHIELD_NTP_CLIENT_WSA_GUARD_HPP_INCLUDED
 
 /// \file wsa_guard.hpp
 /// \brief Singleton guard for WinSock initialization.
@@ -65,5 +65,4 @@ namespace time_shield {
 
 } // namespace time_shield
 
-#endif // _TIME_SHIELD_WSA_GUARD_HPP_INCLUDED
-
+#endif // TIME_SHIELD_HEADER_TIME_SHIELD_NTP_CLIENT_WSA_GUARD_HPP_INCLUDED

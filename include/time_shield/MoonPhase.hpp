@@ -1,7 +1,6 @@
-// SPDX-License-Identifier: MIT
 #pragma once
-#ifndef _TIME_SHIELD_MOON_PHASE_HPP_INCLUDED
-#define _TIME_SHIELD_MOON_PHASE_HPP_INCLUDED
+#ifndef TIME_SHIELD_HEADER_TIME_SHIELD_MOONPHASE_HPP_INCLUDED
+#define TIME_SHIELD_HEADER_TIME_SHIELD_MOONPHASE_HPP_INCLUDED
 
 /// \file MoonPhase.hpp
 /// \brief Geocentric Moon phase calculator and result helpers.
@@ -400,4 +399,4 @@ namespace astronomy {
 
 } // namespace time_shield
 
-#endif // _TIME_SHIELD_MOON_PHASE_HPP_INCLUDED
+#endif // TIME_SHIELD_HEADER_TIME_SHIELD_MOONPHASE_HPP_INCLUDED

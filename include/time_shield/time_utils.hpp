@@ -1,7 +1,6 @@
-// SPDX-License-Identifier: MIT
 #pragma once
-#ifndef _TIME_SHIELD_TIME_UTILS_HPP_INCLUDED
-#define _TIME_SHIELD_TIME_UTILS_HPP_INCLUDED
+#ifndef TIME_SHIELD_HEADER_TIME_SHIELD_TIME_UTILS_HPP_INCLUDED
+#define TIME_SHIELD_HEADER_TIME_SHIELD_TIME_UTILS_HPP_INCLUDED
 
 /// \file time_utils.hpp
 /// \brief Header file with time-related utility functions.
@@ -343,4 +342,4 @@ namespace time_shield {
 
 }; // namespace time_shield
 
-#endif // _TIME_SHIELD_TIME_UTILS_HPP_INCLUDED
+#endif // TIME_SHIELD_HEADER_TIME_SHIELD_TIME_UTILS_HPP_INCLUDED

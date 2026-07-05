@@ -1,7 +1,6 @@
-// SPDX-License-Identifier: MIT
 #pragma once
-#ifndef _TIME_SHIELD_TYPES_HPP_INCLUDED
-#define _TIME_SHIELD_TYPES_HPP_INCLUDED
+#ifndef TIME_SHIELD_HEADER_TIME_SHIELD_TYPES_HPP_INCLUDED
+#define TIME_SHIELD_HEADER_TIME_SHIELD_TYPES_HPP_INCLUDED
 
 /// \file types.hpp
 /// \brief Type definitions for time-related units and formats.
@@ -64,4 +63,4 @@ namespace time_shield {
 
 }; // namespace time_shield
 
-#endif // _TIME_SHIELD_TYPES_HPP_INCLUDED
+#endif // TIME_SHIELD_HEADER_TIME_SHIELD_TYPES_HPP_INCLUDED

@@ -4,8 +4,8 @@
 //|                                      Copyright 2025, NewYaroslav |
 //|                   https://github.com/NewYaroslav/time-shield-cpp |
 //+------------------------------------------------------------------+
-#ifndef __TIME_SHIELD_TIME_UTILS_MQH__
-#define __TIME_SHIELD_TIME_UTILS_MQH__
+#ifndef TIME_SHIELD_MQL5_HEADER_TIME_SHIELD_TIME_UTILS_MQH_INCLUDED
+#define TIME_SHIELD_MQL5_HEADER_TIME_SHIELD_TIME_UTILS_MQH_INCLUDED
 
 /// \file time_utils.mqh
 /// \ingroup mql5
@@ -112,4 +112,4 @@ namespace time_shield {
 
 }; // namespace time_shield
 
-#endif // __TIME_SHIELD_TIME_UTILS_MQH__
+#endif // TIME_SHIELD_MQL5_HEADER_TIME_SHIELD_TIME_UTILS_MQH_INCLUDED

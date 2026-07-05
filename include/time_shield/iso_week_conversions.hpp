@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 #pragma once
-#ifndef _TIME_SHIELD_ISO_WEEK_CONVERSIONS_HPP_INCLUDED
-#define _TIME_SHIELD_ISO_WEEK_CONVERSIONS_HPP_INCLUDED
+#ifndef TIME_SHIELD_HEADER_TIME_SHIELD_ISO_WEEK_CONVERSIONS_HPP_INCLUDED
+#define TIME_SHIELD_HEADER_TIME_SHIELD_ISO_WEEK_CONVERSIONS_HPP_INCLUDED
 
 /// \file iso_week_conversions.hpp
 /// \brief Conversions and utilities for ISO week dates (ISO 8601).
@@ -263,4 +263,4 @@ namespace time_shield {
 
 }; // namespace time_shield
 
-#endif // _TIME_SHIELD_ISO_WEEK_CONVERSIONS_HPP_INCLUDED
+#endif // TIME_SHIELD_HEADER_TIME_SHIELD_ISO_WEEK_CONVERSIONS_HPP_INCLUDED

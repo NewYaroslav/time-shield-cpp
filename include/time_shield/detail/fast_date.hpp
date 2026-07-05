@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 #pragma once
-#ifndef _TIME_SHIELD_DETAIL_FAST_DATE_HPP_INCLUDED
-#define _TIME_SHIELD_DETAIL_FAST_DATE_HPP_INCLUDED
+#ifndef TIME_SHIELD_HEADER_TIME_SHIELD_DETAIL_FAST_DATE_HPP_INCLUDED
+#define TIME_SHIELD_HEADER_TIME_SHIELD_DETAIL_FAST_DATE_HPP_INCLUDED
 
 /// \file fast_date.hpp
 /// \brief Fast date conversion helpers.
@@ -242,4 +242,4 @@ namespace detail {
 } // namespace detail
 } // namespace time_shield
 
-#endif // _TIME_SHIELD_DETAIL_FAST_DATE_HPP_INCLUDED
+#endif // TIME_SHIELD_HEADER_TIME_SHIELD_DETAIL_FAST_DATE_HPP_INCLUDED

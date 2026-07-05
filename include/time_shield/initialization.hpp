@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 #pragma once
-#ifndef _TIME_SHIELD_INITIALIZATION_HPP_INCLUDED
-#define _TIME_SHIELD_INITIALIZATION_HPP_INCLUDED
+#ifndef TIME_SHIELD_HEADER_TIME_SHIELD_INITIALIZATION_HPP_INCLUDED
+#define TIME_SHIELD_HEADER_TIME_SHIELD_INITIALIZATION_HPP_INCLUDED
 
 /// \file initialization.hpp
 /// \ingroup lib_initialization
@@ -26,4 +26,4 @@ namespace time_shield {
 
 }; // namespace time_shield
 
-#endif // _TIME_SHIELD_INITIALIZATION_HPP_INCLUDED
+#endif // TIME_SHIELD_HEADER_TIME_SHIELD_INITIALIZATION_HPP_INCLUDED

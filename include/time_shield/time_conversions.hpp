@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 #pragma once
-#ifndef _TIME_SHIELD_TIME_CONVERSIONS_HPP_INCLUDED
-#define _TIME_SHIELD_TIME_CONVERSIONS_HPP_INCLUDED
+#ifndef TIME_SHIELD_HEADER_TIME_SHIELD_TIME_CONVERSIONS_HPP_INCLUDED
+#define TIME_SHIELD_HEADER_TIME_SHIELD_TIME_CONVERSIONS_HPP_INCLUDED
 
 /// \file time_conversions.hpp
 /// \brief Umbrella header for time conversion functions.
@@ -26,4 +26,4 @@
 #include "astronomy_conversions.hpp"
 #include "time_conversion_aliases.hpp"
 
-#endif // _TIME_SHIELD_TIME_CONVERSIONS_HPP_INCLUDED
+#endif // TIME_SHIELD_HEADER_TIME_SHIELD_TIME_CONVERSIONS_HPP_INCLUDED

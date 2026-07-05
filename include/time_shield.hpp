@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 #pragma once
-#ifndef _TIME_SHIELD_HPP_INCLUDED
-#define _TIME_SHIELD_HPP_INCLUDED
+#ifndef TIME_SHIELD_HEADER_TIME_SHIELD_HPP_INCLUDED
+#define TIME_SHIELD_HEADER_TIME_SHIELD_HPP_INCLUDED
 
 /// \file time_shield.hpp
 /// \brief Main header file for the Time Shield library.
@@ -62,4 +62,4 @@ namespace tshield = time_shield;
 /// - timers and scheduling utilities
 namespace time_shield {};
 
-#endif // _TIME_SHIELD_HPP_INCLUDED
+#endif // TIME_SHIELD_HEADER_TIME_SHIELD_HPP_INCLUDED

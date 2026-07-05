@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 #pragma once
-#ifndef _TIME_SHIELD_JULIAN_CONVERSIONS_HPP_INCLUDED
-#define _TIME_SHIELD_JULIAN_CONVERSIONS_HPP_INCLUDED
+#ifndef TIME_SHIELD_HEADER_TIME_SHIELD_JULIAN_CONVERSIONS_HPP_INCLUDED
+#define TIME_SHIELD_HEADER_TIME_SHIELD_JULIAN_CONVERSIONS_HPP_INCLUDED
 
 /// \file julian_conversions.hpp
 /// \brief Julian Date / MJD / JDN helpers using the proleptic Gregorian calendar.
@@ -240,4 +240,4 @@ namespace time_shield {
 
 } // namespace time_shield
 
-#endif // _TIME_SHIELD_JULIAN_CONVERSIONS_HPP_INCLUDED
+#endif // TIME_SHIELD_HEADER_TIME_SHIELD_JULIAN_CONVERSIONS_HPP_INCLUDED

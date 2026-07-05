@@ -39,3 +39,14 @@ Additional policy:
 - Runtime test expectations use `TIME_SHIELD_TEST_CHECK(...)` from
   `tests/test_assert.hpp`; avoid `<cassert>` / `assert(...)` for tests because
   Release/NDEBUG builds can compile them out.
+
+Header guard rules:
+
+- For every project-owned C/C++ header, use `#pragma once` together with a
+  non-reserved include guard derived from the project prefix and header path:
+  `TIME_SHIELD_HEADER_<PATH>_<FILE>_<EXT>_INCLUDED`.
+- For MQL include files, use non-reserved guards derived from the project,
+  language, and path, for example
+  `TIME_SHIELD_MQL5_HEADER_<PATH>_<FILE>_<EXT>_INCLUDED`.
+- Do not use guard names that start with an underscore, start with an underscore
+  followed by an uppercase letter, or contain a double underscore.

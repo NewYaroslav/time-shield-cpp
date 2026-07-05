@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 #pragma once
-#ifndef _TIME_SHIELD_CONFIG_HPP_INCLUDED
-#define _TIME_SHIELD_CONFIG_HPP_INCLUDED
+#ifndef TIME_SHIELD_HEADER_TIME_SHIELD_CONFIG_HPP_INCLUDED
+#define TIME_SHIELD_HEADER_TIME_SHIELD_CONFIG_HPP_INCLUDED
 
 /// \file config.hpp
 /// \brief Configuration macros for the library.
@@ -116,4 +116,4 @@
 #endif
 ///@}
 
-#endif // _TIME_SHIELD_CONFIG_HPP_INCLUDED
+#endif // TIME_SHIELD_HEADER_TIME_SHIELD_CONFIG_HPP_INCLUDED

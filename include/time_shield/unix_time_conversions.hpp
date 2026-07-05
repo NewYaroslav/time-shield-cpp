@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 #pragma once
-#ifndef _TIME_SHIELD_UNIX_TIME_CONVERSIONS_HPP_INCLUDED
-#define _TIME_SHIELD_UNIX_TIME_CONVERSIONS_HPP_INCLUDED
+#ifndef TIME_SHIELD_HEADER_TIME_SHIELD_UNIX_TIME_CONVERSIONS_HPP_INCLUDED
+#define TIME_SHIELD_HEADER_TIME_SHIELD_UNIX_TIME_CONVERSIONS_HPP_INCLUDED
 
 /// \file unix_time_conversions.hpp
 /// \brief Conversions related to UNIX-based time units and epochs.
@@ -329,4 +329,4 @@ namespace time_shield {
 
 }; // namespace time_shield
 
-#endif // _TIME_SHIELD_UNIX_TIME_CONVERSIONS_HPP_INCLUDED
+#endif // TIME_SHIELD_HEADER_TIME_SHIELD_UNIX_TIME_CONVERSIONS_HPP_INCLUDED

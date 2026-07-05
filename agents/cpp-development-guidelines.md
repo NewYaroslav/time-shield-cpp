@@ -51,7 +51,14 @@
 - Keep opening braces on the same line for classes, methods, and namespaces.
 - Do not use `using namespace`; always qualify names (for example `std::`).
 - Keep project headers before system headers in include lists.
-- Header files must start with `#pragma once`; if an include guard is additionally used, prefer `_MGC_PLATFORM_*_HPP_INCLUDED`.
+- Header files must start with `#pragma once` and a non-reserved include guard
+  derived from the project prefix and header path:
+  `TIME_SHIELD_HEADER_<PATH>_<FILE>_<EXT>_INCLUDED`.
+- MQL include files use non-reserved guards derived from the project, language,
+  and path, for example
+  `TIME_SHIELD_MQL5_HEADER_<PATH>_<FILE>_<EXT>_INCLUDED`.
+- Do not use guard names that start with an underscore, start with an
+  underscore followed by an uppercase letter, or contain a double underscore.
 
 ## Header / Implementation ownership
 

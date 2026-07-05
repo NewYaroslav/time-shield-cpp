@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 #pragma once
-#ifndef _TIME_SHIELD_TIME_ZONE_OFFSET_HPP_INCLUDED
-#define _TIME_SHIELD_TIME_ZONE_OFFSET_HPP_INCLUDED
+#ifndef TIME_SHIELD_HEADER_TIME_SHIELD_TIME_ZONE_OFFSET_HPP_INCLUDED
+#define TIME_SHIELD_HEADER_TIME_SHIELD_TIME_ZONE_OFFSET_HPP_INCLUDED
 
 /// \file time_zone_offset.hpp
 /// \brief UTC offset arithmetic helpers (UTC <-> local) and TimeZoneStruct offset extraction.
@@ -74,4 +74,4 @@ namespace time_shield {
 
 } // namespace time_shield
 
-#endif
+#endif // TIME_SHIELD_HEADER_TIME_SHIELD_TIME_ZONE_OFFSET_HPP_INCLUDED

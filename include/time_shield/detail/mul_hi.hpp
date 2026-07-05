@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 #pragma once
-#ifndef _TIME_SHIELD_DETAIL_MUL_HI_HPP_INCLUDED
-#define _TIME_SHIELD_DETAIL_MUL_HI_HPP_INCLUDED
+#ifndef TIME_SHIELD_HEADER_TIME_SHIELD_DETAIL_MUL_HI_HPP_INCLUDED
+#define TIME_SHIELD_HEADER_TIME_SHIELD_DETAIL_MUL_HI_HPP_INCLUDED
 
 /// \file mul_hi.hpp
 /// \brief Helpers for 64-bit multiply-high operations.
@@ -56,4 +56,4 @@ namespace detail {
 } // namespace detail
 } // namespace time_shield
 
-#endif // _TIME_SHIELD_DETAIL_MUL_HI_HPP_INCLUDED
+#endif // TIME_SHIELD_HEADER_TIME_SHIELD_DETAIL_MUL_HI_HPP_INCLUDED

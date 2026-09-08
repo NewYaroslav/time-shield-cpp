@@ -137,7 +137,7 @@ namespace time_shield {
     const long MIN_PER_WEEK      = 10080;    ///< Minutes per week
     const long MIN_PER_10_DAY    = 10*1440;  ///< Minutes per 10 day
     const long MIN_PER_15_DAY    = 15*1440;  ///< Minutes per 15 day
-    const long MIN_PER_30_DAY    = 15*1440;  ///< Minutes per 30 day
+    const long MIN_PER_30_DAY    = 30*1440;  ///< Minutes per 30 day
     const long MIN_PER_MONTH     = 40320;    ///< Minutes per month (28 days)
     const long MAX_MOON_MIN      = 42523;    ///< Maximum lunar minutes
 
@@ -160,7 +160,10 @@ namespace time_shield {
     const long MAX_YEAR          = 292277022000;   ///< Maximum representable year
     const long MIN_YEAR          = -2967369602200; ///< Minimum representable year
     const long ERROR_YEAR        = 9223372036854770000; ///< Error year value
-    const long MAX_TIMESTAMP     = 9223371890843040000; ///< Maximum timestamp value
+    const long MAX_TIMESTAMP     = 9223372005318775; ///< Maximum timestamp value in seconds
+    const long MIN_TIMESTAMP     = -9223372005318775; ///< Minimum timestamp value in seconds
+    const long MAX_TIMESTAMP_MS  = 9223372005318775999; ///< Maximum timestamp value in milliseconds
+    const long MIN_TIMESTAMP_MS  = -9223372005318775000; ///< Minimum timestamp value in milliseconds
     const long ERROR_TIMESTAMP   = 9223372036854770000; ///< Error timestamp value
     const double MAX_OADATE      = 1.7976931348623158e+308; ///< Maximum representable oadate_t value
     const double AVG_DAYS_PER_YEAR  = 365.25;   ///< Average days per year

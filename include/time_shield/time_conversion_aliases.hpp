@@ -4,11 +4,11 @@
 #define TIME_SHIELD_HEADER_TIME_SHIELD_TIME_CONVERSION_ALIASES_HPP_INCLUDED
 
 /// \file time_conversion_aliases.hpp
-/// \brief Doxygen-only stubs for alias functions defined via macros.
+/// \brief Convenience aliases for the time-conversion API.
 ///
-/// These declarations are only visible to Doxygen to enable searching and linking
-/// to functions like `ts`, `get_ts`, etc., which are defined via macros.
-/// This file should be included only at the end of `time_conversion.hpp`.
+/// Definitions provide alternative names for commonly used conversion helpers.
+/// Doxygen sees the declarations directly and can index each alias independently.
+/// Include this header after the canonical conversion declarations.
 
 #include <string>
 

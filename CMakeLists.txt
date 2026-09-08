@@ -6,6 +6,9 @@ if(NOT DEFINED CMAKE_CXX_STANDARD)
 endif()
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+include(GNUInstallDirs)
+include(CMakePackageConfigHelpers)
+
 add_library(time_shield INTERFACE)
 add_library(time_shield::time_shield ALIAS time_shield)
 
@@ -17,9 +20,6 @@ target_include_directories(
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
         $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
 )
-
-include(GNUInstallDirs)
-include(CMakePackageConfigHelpers)
 
 set(TIME_SHIELD_ENABLE_NTP_CLIENT_DEFAULT ON)
 option(TIME_SHIELD_ENABLE_NTP_CLIENT "Enable NTP client" ${TIME_SHIELD_ENABLE_NTP_CLIENT_DEFAULT})
@@ -79,8 +79,10 @@ option(TIME_SHIELD_CPP_BUILD_EXAMPLES "Build examples" ${is_top_level})
 option(TIME_SHIELD_CPP_BUILD_TESTS "Build tests" ${is_top_level})
 if(MSVC)
     set(COMMON_WARN_FLAGS /W4 /wd4996)
+    set(TEST_ASSERT_FLAGS /UNDEBUG)
 else()
     set(COMMON_WARN_FLAGS -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow)
+    set(TEST_ASSERT_FLAGS -UNDEBUG)
 endif()
 
 file(GLOB_RECURSE PROJECT_HEADERS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} include/*.hpp)
@@ -109,6 +111,9 @@ if(TIME_SHIELD_CPP_BUILD_TESTS)
         target_link_libraries(${test_name} PRIVATE time_shield::time_shield)
         if(COMMON_WARN_FLAGS)
             target_compile_options(${test_name} PRIVATE ${COMMON_WARN_FLAGS})
+        endif()
+        if(TEST_ASSERT_FLAGS)
+            target_compile_options(${test_name} PRIVATE ${TEST_ASSERT_FLAGS})
         endif()
         add_test(NAME ${test_name} COMMAND ${test_name})
     endforeach()

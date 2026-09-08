@@ -106,7 +106,7 @@ for working with date-time structures, UNIX days, and various time units (hours,
 
 - Determine the start of the current year:
   \code{.cpp}
-  auto year_start = time_shield::start_of_year(current_timestamp());
+  auto year_start = time_shield::start_of_year(time_shield::ts());
   \endcode
 */
 

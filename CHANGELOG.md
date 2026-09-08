@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [v1.0.6] - 2026-04-23
+## [v1.0.6] - Unreleased
 - Added `ZonedClock` with reusable named-zone and fixed-offset local-time helpers and clarified timezone semantics.
 - Completed ISO week-date parsing support and formatter/parser round-trip coverage.
 - Added timeframe parsing helpers for trading and engineering strings in C++ and MQL5, with docs, examples, and tests.

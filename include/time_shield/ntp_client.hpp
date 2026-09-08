@@ -6,7 +6,7 @@
 /// \file ntp_client.hpp
 /// \brief Simple NTP client for querying time offset from NTP servers.
 ///
-/// The feature is optional and controlled by `TIME_SHIELD_ENABLE_NTP_CLIENT`.
+/// Feature availability is controlled by `TIME_SHIELD_ENABLE_NTP_CLIENT`.
 /// \ingroup ntp
 
 #include "config.hpp"

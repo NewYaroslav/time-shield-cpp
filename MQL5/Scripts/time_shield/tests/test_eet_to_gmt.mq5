@@ -11,6 +11,7 @@
 
 void OnStart() {
     time_shield::init();
+    bool is_ok = true;
 
     // Winter timestamp: 2024-01-15 12:00:00 EET
     datetime winter_eet = (datetime)time_shield::to_ts(2024, time_shield::JAN, 15, 12, 0, 0);
@@ -19,8 +20,10 @@ void OnStart() {
 
     if (winter_gmt == winter_expected)
         Print("Winter conversion passed");
-    else
+    else {
         Print("Winter conversion failed: ", winter_gmt, " != ", winter_expected);
+        is_ok = false;
+    }
 
     // Summer timestamp: 2024-07-15 12:00:00 EET (EEST)
     datetime summer_eet = (datetime)time_shield::to_ts(2024, time_shield::JUL, 15, 12, 0, 0);
@@ -29,7 +32,11 @@ void OnStart() {
 
     if(summer_gmt == summer_expected)
         Print("Summer conversion passed");
-    else
+    else {
         Print("Summer conversion failed: ", summer_gmt, " != ", summer_expected);
+        is_ok = false;
+    }
+
+    Print(is_ok ? "EET to GMT tests passed" : "EET to GMT tests failed");
 }
 

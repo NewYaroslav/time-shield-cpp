@@ -11,25 +11,34 @@
 
 void OnStart() {
     time_shield::init();
+    bool is_ok = true;
 
     datetime ist_local = (datetime)time_shield::to_ts(2024, time_shield::JUL, 15, 12, 0, 0);
     datetime expected_gmt = (datetime)time_shield::to_ts(2024, time_shield::JUL, 15, 6, 30, 0);
     datetime gmt_from_ist = time_shield::ist_to_gmt(ist_local);
     if(gmt_from_ist == expected_gmt)
         Print("IST -> GMT passed");
-    else
+    else {
         Print("IST -> GMT failed: ", gmt_from_ist, " != ", expected_gmt);
+        is_ok = false;
+    }
 
     datetime myt_from_ist = time_shield::convert_time_zone(ist_local, time_shield::IST, time_shield::MYT);
     datetime expected_myt = (datetime)time_shield::to_ts(2024, time_shield::JUL, 15, 14, 30, 0);
     if(myt_from_ist == expected_myt)
         Print("IST -> MYT passed");
-    else
+    else {
         Print("IST -> MYT failed: ", myt_from_ist, " != ", expected_myt);
+        is_ok = false;
+    }
 
     datetime kyiv_local = (datetime)time_shield::to_ts(2024, time_shield::JUL, 15, 12, 0, 0);
     if(time_shield::kyiv_to_gmt(kyiv_local) == time_shield::eet_to_gmt(kyiv_local))
         Print("Kyiv alias passed");
-    else
+    else {
         Print("Kyiv alias failed");
+        is_ok = false;
+    }
+
+    Print(is_ok ? "Time zone matrix tests passed" : "Time zone matrix tests failed");
 }

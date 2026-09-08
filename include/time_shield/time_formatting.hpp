@@ -396,7 +396,7 @@ namespace time_shield {
     /// This function is similar to the strftime function and supports the majority of its specifiers,
     /// as well as additional ones: YY, YYYY, YYYYYY, WWW, www, hh, mm, ss, dd, sss.
     ///
-    /// The function accepts the following format specifiers as parameters:
+    /// Accepts the following format specifiers as parameters:
     /// - %YYYYYY: Year with reduction in the number of millennia.
     /// - %YYYY: Year represented by 4 digits.
     /// - %YY: Last two digits of the year.
@@ -484,7 +484,7 @@ namespace time_shield {
     /// This function is similar to the strftime function and supports the majority of its specifiers,
     /// as well as additional ones: YY, YYYY, YYYYYY, WWW, www, hh, mm, ss, dd, sss.
     ///
-    /// The function accepts the following format specifiers as parameters:
+    /// Accepts the following format specifiers as parameters:
     /// - %YYYYYY: Year with reduction in the number of millennia.
     /// - %YYYY: Year represented by 4 digits.
     /// - %YY: Last two digits of the year.

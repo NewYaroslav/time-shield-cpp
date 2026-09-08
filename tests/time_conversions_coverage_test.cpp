@@ -5,6 +5,9 @@
 #include <cmath>
 #include <ctime>
 
+static_assert(time_shield::MIN_PER_30_DAY == 30 * time_shield::MIN_PER_DAY,
+              "MIN_PER_30_DAY must represent thirty days");
+
 int main() {
     using namespace time_shield;
 

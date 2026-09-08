@@ -45,9 +45,9 @@ namespace time_shield {
         /// \return A date-time structure of type T1.
         template<class T1 = DateTimeStruct, class T2 = ts_t>
         T1 to_date_time(T2 ts) {
-            // 9223372029693630000 - значение на момент 292277024400 от 2000 года
-            // Такое значение приводит к неправильному вычислению умножения n_400_years * SEC_PER_400_YEARS
-            // Поэтому пришлось снизить до 9223371890843040000
+            // 9223372029693630000 reaches year 292277024400 from the 2000 epoch.
+            // This value overflows the n_400_years * SEC_PER_400_YEARS calculation.
+            // The supported bound is reduced to 9223371890843040000.
             constexpr int64_t BIAS_292277022000 = 9223371890843040000LL;
             constexpr int64_t BIAS_2000 = 946684800LL;
 
@@ -86,10 +86,10 @@ namespace time_shield {
 
             constexpr int JAN_AND_FEB_DAY_LEAP_YEAR = 60 - 1;
             constexpr int TABLE_MONTH_OF_YEAR[] = {
-                1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,  // 31 январь
-                2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,        // 28 февраль
-                3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,  // 31 март
-                4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,    // 30 апрель
+                1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,  // January (31 days)
+                2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,        // February (28 days)
+                3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,  // March (31 days)
+                4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,    // April (30 days)
                 5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,
                 6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,
                 7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,
@@ -100,10 +100,10 @@ namespace time_shield {
                 12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,
             };
             constexpr int TABLE_DAY_OF_YEAR[] = {
-                1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,    // 31 январь
-                1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,             // 28 февраль
-                1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,    // 31 март
-                1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,       // 30 апрель
+                1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,    // January (31 days)
+                1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,             // February (28 days)
+                1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,    // March (31 days)
+                1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,       // April (30 days)
                 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,
                 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,
                 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,
@@ -219,7 +219,7 @@ namespace time_shield {
         /// \throws std::invalid_argument if the date-time combination is invalid.
         ///
         /// \par Aliases:
-        /// The following function names are provided as aliases:
+        /// Following function names are provided as aliases:
         /// - `ts(...)`
         /// - `get_ts(...)`
         /// - `get_timestamp(...)`
@@ -262,9 +262,9 @@ namespace time_shield {
 
             secs += years * SEC_PER_YEAR;
 
-            // 9223372029693630000 - значение на момент 292277024400 от 2000 года
-            // Такое значение приводит к неправильному вычислению умножения n_400_years * SEC_PER_400_YEARS
-            // Поэтому пришлось снизить до 9223371890843040000
+            // 9223372029693630000 reaches year 292277024400 from the 2000 epoch.
+            // This value overflows the n_400_years * SEC_PER_400_YEARS calculation.
+            // The supported bound is reduced to 9223371890843040000.
             constexpr int64_t BIAS_292277022000 = 9223371890843040000LL;
             constexpr int64_t BIAS_2000 = 946684800LL;
 
@@ -332,9 +332,9 @@ namespace time_shield {
 
             secs += years * SEC_PER_YEAR;
 
-            // 9223372029693630000 - значение на момент 292277024400 от 2000 года
-            // Такое значение приводит к неправильному вычислению умножения n_400_years * SEC_PER_400_YEARS
-            // Поэтому пришлось снизить до 9223371890843040000
+            // 9223372029693630000 reaches year 292277024400 from the 2000 epoch.
+            // This value overflows the n_400_years * SEC_PER_400_YEARS calculation.
+            // The supported bound is reduced to 9223371890843040000.
             constexpr int64_t BIAS_292277022000 = 9223371890843040000LL;
             constexpr int64_t BIAS_2000 = 946684800LL;
 
@@ -422,7 +422,7 @@ namespace time_shield {
     /// \throws std::invalid_argument if the date-time combination is invalid.
     ///
     /// \par Aliases:
-    /// The following function names are provided as aliases:
+    /// Following function names are provided as aliases:
     /// - `ts(...)`
     /// - `get_ts(...)`
     /// - `get_timestamp(...)`
@@ -646,7 +646,7 @@ namespace time_shield {
     /// \brief Get the start of the day timestamp.
     ///
     /// This function returns the timestamp at the start of the day.
-    /// The function sets the hours, minutes, and seconds to zero.
+    /// Sets the hours, minutes, and seconds to zero.
     ///
     /// \param ts Timestamp.
     /// \return Start of the day timestamp.
@@ -669,7 +669,7 @@ namespace time_shield {
     /// \brief Get the start of the day timestamp in seconds.
     ///
     /// This function returns the timestamp at the start of the day in seconds.
-    /// The function sets the hours, minutes, and seconds to zero.
+    /// Sets the hours, minutes, and seconds to zero.
     ///
     /// \param ts_ms Timestamp in milliseconds.
     /// \return Start of the day timestamp in seconds.
@@ -680,7 +680,7 @@ namespace time_shield {
     /// \brief Get the start of the day timestamp in milliseconds.
     ///
     /// This function returns the timestamp at the start of the day in milliseconds.
-    /// The function sets the hours, minutes, seconds, and milliseconds to zero.
+    /// Sets the hours, minutes, seconds, and milliseconds to zero.
     ///
     /// \param ts_ms Timestamp in milliseconds.
     /// \return Start of the day timestamp in milliseconds.
@@ -904,10 +904,10 @@ namespace time_shield {
         constexpr int JAN_AND_FEB_DAY_LEAP_YEAR = 60;
         constexpr int TABLE_MONTH_OF_YEAR[] = {
             0,
-            1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,  // 31 январь
-            2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,        // 28 февраль
-            3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,  // 31 март
-            4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,    // 30 апрель
+            1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,  // January (31 days)
+            2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,        // February (28 days)
+            3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,  // March (31 days)
+            4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,    // April (30 days)
             5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,
             6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,
             7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,
@@ -930,13 +930,13 @@ namespace time_shield {
     template<class T = int>
     TIME_SHIELD_CONSTEXPR inline T day_of_month(ts_t ts = time_shield::ts()) {
         constexpr int JAN_AND_FEB_DAY_LEAP_YEAR = 60;
-        // таблица для обычного года, не високосного
+        // Month numbers for a common year.
         constexpr int TABLE_DAY_OF_YEAR[] = {
             0,
-            1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,    // 31 январь
-            1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,             // 28 февраль
-            1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,    // 31 март
-            1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,       // 30 апрель
+            1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,    // January (31 days)
+            1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,             // February (28 days)
+            1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,    // March (31 days)
+            1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,       // April (30 days)
             1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,
             1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,
             1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,

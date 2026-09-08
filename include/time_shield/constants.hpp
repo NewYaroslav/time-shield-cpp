@@ -131,7 +131,7 @@ namespace time_shield {
     constexpr int64_t MIN_PER_WEEK      = 10080;    ///< Minutes per week
     constexpr int64_t MIN_PER_10_DAY    = 10*1440;  ///< Minutes per 10 day
     constexpr int64_t MIN_PER_15_DAY    = 15*1440;  ///< Minutes per 15 day
-    constexpr int64_t MIN_PER_30_DAY    = 15*1440;  ///< Minutes per 30 day
+    constexpr int64_t MIN_PER_30_DAY    = 30*1440;  ///< Minutes per 30 day
     constexpr int64_t MIN_PER_MONTH     = 40320;    ///< Minutes per month (28 days)
     constexpr int64_t MAX_MOON_MIN      = 42523;    ///< Maximum lunar minutes
 

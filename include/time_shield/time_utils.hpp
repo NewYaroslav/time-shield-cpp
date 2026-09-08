@@ -41,7 +41,7 @@ namespace time_shield {
         // https://en.cppreference.com/w/c/chrono/timespec_get
         struct timespec ts;
 #       if defined(CLOCK_REALTIME)
-        clock_gettime(CLOCK_REALTIME, &ts); // Версия для POSIX
+        clock_gettime(CLOCK_REALTIME, &ts); // POSIX implementation
 #       else
         timespec_get(&ts, TIME_UTC);
 #       endif

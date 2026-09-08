@@ -53,7 +53,7 @@ namespace tshield = time_shield;
 /// \brief Main namespace for the Time Shield library.
 /// \details
 /// Contains all public types, constants, and functions of the library.
-/// The API provides:
+/// API coverage includes:
 /// - time and date structures
 /// - parsing and formatting
 /// - conversions between representations (seconds/milliseconds, calendar fields, etc.)

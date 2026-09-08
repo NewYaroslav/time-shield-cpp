@@ -27,7 +27,7 @@ namespace time_shield {
 
     /// \brief Stores a target local-time context backed by a named zone or fixed UTC offset.
     ///
-    /// The class resolves the effective offset on demand. Named zones are recalculated
+    /// Class resolves the effective offset on demand. Named zones are recalculated
     /// for the requested UTC instant, while numeric offsets remain fixed. Current UTC time
     /// can come from the local realtime clock or from the global NTP service.
     class ZonedClock final {

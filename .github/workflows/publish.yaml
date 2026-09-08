@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    tags:
+      - "v*"
   workflow_dispatch:
 
 jobs:
@@ -15,13 +17,19 @@ jobs:
         with:
           submodules: "true"
           fetch-depth: 0
-      - name: Inject version into mainpage.md
+      - name: Inject version into documentation sources
         run: |
-          TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "0.0.0-untagged")
-          TAG=$(echo "$TAG" | sed 's/^v//')
-          echo "Using version: $TAG"
+          if [ "$GITHUB_REF_TYPE" = "tag" ]; then
+            VERSION="${GITHUB_REF_NAME#v}"
+          else
+            VERSION=$(sed -nE 's/^project\(TimeShield VERSION ([^ ]+) .*/\1/p' CMakeLists.txt)
+          fi
+          test -n "$VERSION" || { echo "Unable to determine project version"; exit 1; }
+          echo "Using version: $VERSION"
+          TAG="$VERSION"
           test -f docs/mainpage.md || { echo "mainpage.md not found!"; exit 1; }
-          sed -i "0,/VERSION_PLACEHOLDER/s//$TAG/" docs/mainpage.md
+          sed -i -E "s/^(\\*\\*Version:\*\\* ).*/\\1\\`$TAG\\`/" docs/mainpage.md
+          sed -i -E "s/^PROJECT_NUMBER[[:space:]]*=.*/PROJECT_NUMBER         = $VERSION/" Doxyfile
       - name: Generate Documentation
         uses: mattnotmitt/doxygen-action@edge
       - name: Publish generated content to GitHub Pages

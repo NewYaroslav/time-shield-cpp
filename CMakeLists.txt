@@ -6,6 +6,9 @@ if(NOT DEFINED CMAKE_CXX_STANDARD)
 endif()
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+include(GNUInstallDirs)
+include(CMakePackageConfigHelpers)
+
 add_library(time_shield INTERFACE)
 add_library(time_shield::time_shield ALIAS time_shield)
 
@@ -17,9 +20,6 @@ target_include_directories(
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
         $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
 )
-
-include(GNUInstallDirs)
-include(CMakePackageConfigHelpers)
 
 set(TIME_SHIELD_ENABLE_NTP_CLIENT_DEFAULT ON)
 option(TIME_SHIELD_ENABLE_NTP_CLIENT "Enable NTP client" ${TIME_SHIELD_ENABLE_NTP_CLIENT_DEFAULT})

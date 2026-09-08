@@ -136,7 +136,7 @@ namespace time_shield {
 
         /// \brief Processes all timers that are ready to fire at the moment of the call.
         ///
-        /// The method is non-blocking: it does not wait for future timers.
+        /// Method is non-blocking and does not wait for future timers.
         /// It must not be called while the worker thread started by run() is
         /// active.
         void process();
@@ -204,7 +204,7 @@ namespace time_shield {
 
         /// \brief Stops the timer.
         ///
-        /// The operation is non-blocking: the method does not wait for a
+        /// Operation is non-blocking and does not wait for a
         /// running callback to finish. Use stop_and_wait() to synchronously
         /// wait for completion.
         void stop();
@@ -231,7 +231,7 @@ namespace time_shield {
 
         /// \brief Creates a single-shot timer that invokes the callback once.
         ///
-        /// The helper keeps the timer alive until the callback finishes.
+        /// Helper keeps the timer alive until the callback finishes.
         template<class Rep, class Period>
         static void single_shot(TimerScheduler& scheduler,
                                 std::chrono::duration<Rep, Period> interval,

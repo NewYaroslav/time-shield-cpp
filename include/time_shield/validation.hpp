@@ -82,9 +82,9 @@ namespace time_shield {
     /// \param ts Timestamp in seconds since the Unix epoch.
     /// \return Returns true if the year is a leap year.
     TIME_SHIELD_CONSTEXPR inline bool is_leap_year_ts(ts_t ts) {
-        // 9223372029693630000 - значение на момент 292277024400 от 2000 года
-        // Такое значение приводит к неправильному вычислению умножения n_400_years * SEC_PER_400_YEARS
-        // Поэтому пришлось снизить до 9223371890843040000
+        // 9223372029693630000 reaches year 292277024400 from the 2000 epoch.
+        // This value overflows the n_400_years * SEC_PER_400_YEARS calculation.
+        // The supported bound is reduced to 9223371890843040000.
         constexpr int64_t BIAS_292277022000 = 9223371890843040000LL;
         constexpr int64_t BIAS_2000         = 946684800LL;
 
